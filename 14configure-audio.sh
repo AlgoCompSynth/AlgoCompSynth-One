@@ -26,6 +26,7 @@ sudo apt-get install -y \
   fluidsynth \
   jackd2 \
   jack-tools \
+  jacktrip \
   libsox-fmt-all \
   mp3splt \
   pmidi \
