@@ -7,3 +7,4 @@ Main code repository for AlgoCompSynth One
 2. To disable the display manager / desktop and reboot, enter "./02disable-desktop.sh". You will need to enter your password.
 3. To install Miniforge, enter "./20install-miniforge.sh".
 4. To install the audio plumbing, enter "30-install-audio-plumbing.sh". You will need to enter your password. One of the audio packages will ask you if you want to enable realtime priority. The correct answer is "yes".
+5. To install SuperCollider (no IDE and no X!), enter "40-install-supercollider.sh". You will need to enter your password.
