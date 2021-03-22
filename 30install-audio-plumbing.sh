@@ -20,6 +20,9 @@ echo "Installing L4T audio plumbing packages"
 echo "Be sure to say 'yes' when it asks if you want to enable realtime process priority:"
 sudo apt-get install -y \
   alsa-tools \
+  bluetooth \
+  bluez \
+  bluez-tools \
   flac \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
@@ -43,9 +46,28 @@ sudo apt-get install -y \
   libudev-dev \
   libvulkan-dev \
   mp3splt \
+  ofono \
+  pavucontrol \
+  pavumeter \
   pmidi \
+  pulseaudio \
+  pulseaudio-dlna \
+  pulseaudio-equalizer \
+  pulseaudio-module-bluetooth \
+  pulseaudio-module-gconf \
+  pulseaudio-module-jack \
+  pulseaudio-module-lirc \
+  pulseaudio-module-raop \
+  pulseaudio-module-zeroconf \
+  pulseaudio-utils \
+  pulsemixer \
+  rfkill \
   sox \
   timidity
+echo "Adding '${USER}' to the 'bluetooth' and 'pulse' groups"
+sudo usermod -aG pulse ${USER}
+sudo usermod -aG bluetooth ${USER}
+exit
 
 source $HOME/miniconda3/etc/profile.d/conda.sh
 
