@@ -17,18 +17,16 @@
 
 set -e
 
-echo "Installing command line conveniences"
-sudo apt-get install -y --no-install-recommends \
-  apt-file \
-  file \
-  lynx \
-  mlocate \
-  speedtest-cli \
-  sysstat \
-  time \
-  tree \
-  vim-nox
-echo "Updating 'apt-file' database"
-sudo apt-file update
-echo "Updating 'locate' database"
-sudo updatedb
+mkdir --parents $HOME/Notebooks
+cd $HOME/Notebooks
+
+echo "Activating 'r-reticulate'"
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate r-reticulate
+
+echo "Generating Jupyter configuration file"
+jupyter notebook --generate-config
+echo "Enter the same strong password twice"
+jupyter server password
+echo "If running remotely, browse to port 8888 on this Jetson host instead of 'localhost'"
+SHELL=/bin/bash jupyter lab --no-browser --ip=0.0.0.0

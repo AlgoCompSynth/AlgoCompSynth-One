@@ -1,5 +1,3 @@
-#! /bin/bash
-
 # Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,21 +12,17 @@
 # 
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# .Rprofile -- commands to execute at the beginning of each R session
+#
+# You can use this file to load packages, set options, etc.
+#
+# NOTE: changes in this file won't be reflected until after you quit
+# and start a new session
 
-set -e
-
-echo "Installing command line conveniences"
-sudo apt-get install -y --no-install-recommends \
-  apt-file \
-  file \
-  lynx \
-  mlocate \
-  speedtest-cli \
-  sysstat \
-  time \
-  tree \
-  vim-nox
-echo "Updating 'apt-file' database"
-sudo apt-file update
-echo "Updating 'locate' database"
-sudo updatedb
+# set CRAN repo
+local({
+   r <- getOption("repos");
+   r["CRAN"] <- "https://cloud.r-project.org/"
+   options(repos=r)
+})

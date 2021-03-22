@@ -1,4 +1,3 @@
-   97  ./deviceQuery 
 #! /bin/bash
 
 # Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
