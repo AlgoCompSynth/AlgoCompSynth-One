@@ -32,3 +32,11 @@ echo "Updating 'apt-file' database"
 sudo apt-file update
 echo "Updating 'locate' database"
 sudo updatedb
+
+echo "Configuring 'sysstat' crontab to sample every 3 minutes"
+diff etc-cron.d-sysstat /etc/cron.d/sysstat || true
+cp /etc/cron.d/sysstat etc-cron.d-sysstat.bak
+sudo cp etc-cron.d-sysstat /etc/cron.d/sysstat 
+echo "Enabling and starting 'sysstat.service'"
+sudo systemctl enable --now sysstat.service
+echo "Log files and reports are in '/var/log/sysstat'"
