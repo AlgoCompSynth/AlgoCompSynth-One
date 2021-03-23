@@ -85,3 +85,6 @@ pushd $SOURCE_DIR
   popd
 
 cat misc/Rprofile >> $HOME/.Rprofile
+
+echo "Installing R integration packages"
+Rscript -e "source('misc/r-base.R')"

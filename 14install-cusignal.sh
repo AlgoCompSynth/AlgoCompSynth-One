@@ -44,33 +44,26 @@ pushd $HOME/Projects
   echo "Activating 'r-reticulate'"
   conda activate r-reticulate
   
-  echo "Installing 'cusignal'"
-  export PATH=$PATH:/usr/local/cuda-10.2/bin
-  /usr/bin/time ./build.sh
-  echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
-  mkdir --parents $HOME/Notebooks
-  cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
-
-  echo "Installing JupyterLab and R base"
-  conda install --quiet --yes \
-    jupyterlab \
-    pandas \
-    sympy \
-    r-base \
-    r-data.table \
-    r-renv \
-    r-irkernel \
-    r-reticulate
-
-  echo "Installing R kernel in JupyterLab"
-  Rscript -e "IRkernel::installspec()"
-
-  echo "Installing R library package 'caracas'"
-  Rscript -e "install.packages('caracas', quiet = TRUE)"
-  echo "Available R packages"
-  conda search 'r-' | grep ^r- | sed 's/ .*$//' | sort -u | tee $AVAILABLE_R_PACKAGES
+    echo "Installing 'cusignal'"
+    export PATH=$PATH:/usr/local/cuda-10.2/bin
+    /usr/bin/time ./build.sh
+    echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
+    mkdir --parents $HOME/Notebooks
+    cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
   
-  echo "Installed packages:"
-  conda list | tee $INSTALLED_PACKAGES
+    echo "Installing JupyterLab"
+    conda install --quiet --yes \
+      jupyterlab \
+      pandas \
+      sympy
+  
+    echo "Installed packages:"
+    conda list | tee $INSTALLED_PACKAGES
 
+    echo "Enabling R kernel"
+    Rscript -e "IRkernel::installspec()"
+  
+    echo "deactivating 'r-reticulate'"
+    conda deactivate
+  
   popd
