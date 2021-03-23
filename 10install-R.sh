@@ -83,3 +83,5 @@ pushd $SOURCE_DIR
   zip -9rmyq $R_LATEST.zip $R_LATEST
   sudo rm -fr build-dir
   popd
+
+cat misc/Rprofile >> $HOME/.Rprofile

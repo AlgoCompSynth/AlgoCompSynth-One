@@ -20,6 +20,15 @@
 # NOTE: changes in this file won't be reflected until after you quit
 # and start a new session
 
+# make library directory if we're not 'root'
+if (as.list(Sys.info())$user != 'root') {
+  if (!dir.exists(Sys.getenv('R_LIBS_USER'))) {
+    dir.create(Sys.getenv('R_LIBS_USER'), recursive = TRUE, mode = '0755')
+  }
+}
+
+.libPaths(Sys.getenv('R_LIBS_USER'))
+
 # set CRAN repo
 local({
    r <- getOption("repos");
