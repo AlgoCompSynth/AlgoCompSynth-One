@@ -17,14 +17,12 @@
 
 set -e
 
-# see https://github.com/edgyR/edgyR-containers/issues/31,
-# https://docs.cupy.dev/en/stable/reference/environment.html#for-installation,
-# and https://developer.nvidia.com/cuda-gpus
 export CUSIGNAL_VERSION=v0.18.0
 export CUPY_NUM_BUILD_JOBS=`nproc`
 export CUSIGNAL_JETSON_BASE=$PWD/misc/cusignal_jetson_base.yml
 export INSTALLED_PACKAGES=$PWD/installed-packages.txt
 export AVAILABLE_R_PACKAGES=$PWD/available-R-packages.txt
+cat misc/Rprofile >> $HOME/.Rprofile
 
 echo "Cloning 'cusignal'"
 mkdir --parents $HOME/Projects
