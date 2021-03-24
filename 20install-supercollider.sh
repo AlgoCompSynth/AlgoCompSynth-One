@@ -58,7 +58,8 @@ echo "Creating fresh 'supercollider' conda environment"
 source $HOME/miniconda3/etc/profile.d/conda.sh
 conda env remove --name supercollider --yes
 conda create --name supercollider --quiet --yes \
-  cmake
+  cmake \
+  >> $LOGFILES/supercollider.log 2>&1
 conda activate supercollider
 mkdir --parents $CONDA_PREFIX/src
 pushd $CONDA_PREFIX/src
@@ -76,6 +77,10 @@ pushd $CONDA_PREFIX/src
     cmake \
       -DCMAKE_BUILD_TYPE=Release \
       -DNATIVE=ON \
+      -DNO_X11=ON \
+      -DSC_IDE=OFF \
+      -DSC_QT=OFF \
+      -DSC_USE_QTWEBENGINE=OFF \
       .. \
       >> $LOGFILES/supercollider.log 2>&1
     make --jobs=`nproc` \
