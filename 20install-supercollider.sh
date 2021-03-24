@@ -15,9 +15,14 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu
+# https://github.com/supercollider/supercollider/wiki/Installing-supercollider-from-source-on-Ubuntu
+
+set -e
+export LOGFILES=$HOME/logfiles
+rm -f $LOGFILES/supercollider.log
+
 echo "Installing build dependencies"
-sudo apt-get install -y \
+sudo apt-get install -y --no-install-recommends \
   emacs-nox \
   libasound2-dev \
   libavahi-client-dev \
@@ -43,20 +48,20 @@ sudo apt-get install -y \
   qttools5-dev \
   qttools5-dev-tools \
   qtwebengine5-dev \
-  vim-nox
-source $HOME/miniconda3/etc/profile.d/conda.sh
+  vim-nox \
+  >> $LOGFILES/supercollider.log 2>&1
 
 export SUPERCOLLIDER_VERSION="Version-3.11.1"
 export SC3_PLUGINS_VERSION="Version-3.11.1"
 
-echo "Creating fresh 'SuperCollider' conda environment"
-conda env remove --name SuperCollider --yes
-conda create --name SuperCollider --quiet --yes \
+echo "Creating fresh 'supercollider' conda environment"
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda env remove --name supercollider --yes
+conda create --name supercollider --quiet --yes \
   cmake
-conda activate SuperCollider
+conda activate supercollider
 mkdir --parents $CONDA_PREFIX/src
 pushd $CONDA_PREFIX/src
-  rm -fr SuperCollider*
 
   echo "Cloning 'supercollider' repo"
   git clone --recursive https://github.com/supercollider/supercollider.git
@@ -64,20 +69,18 @@ pushd $CONDA_PREFIX/src
     git checkout $SUPERCOLLIDER_VERSION
     export SC_PATH=$PWD
 
-    echo "Building 'SuperCollider'"
+    echo "Building 'supercollider'"
     mkdir build && cd build
-    cmake -L ..
+    cmake -L .. \
+      >> $LOGFILES/supercollider.log
     cmake \
       -DCMAKE_BUILD_TYPE=Release \
       -DNATIVE=ON \
-      -DNO_X11=ON \
-      -DSC_IDE=OFF \
-      -DSC_QT=OFF \
-      -DSC_ABLETON_LINK=OFF \
-      -DSC_USE_QTWEBENGINE=OFF \
-      ..
-    make --jobs=`nproc`
-    echo "Installing 'SuperCollider'"
+      .. \
+      >> $LOGFILES/supercollider.log 2>&1
+    make --jobs=`nproc` \
+      >> $LOGFILES/supercollider.log 2>&1
+    echo "Installing 'supercollider'"
     sudo make install
     sudo /sbin/ldconfig
     popd
@@ -89,15 +92,19 @@ pushd $CONDA_PREFIX/src
 
     echo "Building 'sc3-plugins'"
     mkdir build && cd build
-    cmake -L ..
+    cmake -L .. \
+      >> $LOGFILES/supercollider.log 2>&1
     cmake \
       -DCMAKE_BUILD_TYPE=Release \
       -DNATIVE=ON \
       -DQUARKS=ON \
-      ..
-    make --jobs=`nproc`
+      .. \
+      >> $LOGFILES/supercollider.log 2>&1
+    make --jobs=`nproc` \
+      >> $LOGFILES/supercollider.log 2>&1
     echo "Installing 'sc3-plugins'"
-    sudo make install
+    sudo make install \
+      >> $LOGFILES/supercollider.log 2>&1
     sudo /sbin/ldconfig
     popd
 

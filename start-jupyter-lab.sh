@@ -18,7 +18,7 @@
 set -e
 
 mkdir --parents $HOME/Notebooks
-cd $HOME/Notebooks
+cd $HOME
 
 echo "Activating 'r-reticulate'"
 source $HOME/miniconda3/etc/profile.d/conda.sh

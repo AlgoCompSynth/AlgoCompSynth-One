@@ -16,6 +16,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
+export LOGFILES=$HOME/logfiles
+rm -f $LOGFILES/R.log
 
 export SOURCE_DIR=$HOME/src
 export R_VERSION_MAJOR=4
@@ -47,7 +49,8 @@ sudo apt-get install -y --no-install-recommends \
   openjdk-8-jdk \
   texinfo \
   tk-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  >> $LOGFILES/R.log 2>&1
 
 echo "Creating / entering source directory"
 mkdir --parents $SOURCE_DIR
@@ -65,19 +68,24 @@ pushd $SOURCE_DIR
   mkdir build-dir
   pushd build-dir
 
-    ../$R_LATEST/configure --enable-R-shlib
+    ../$R_LATEST/configure --enable-R-shlib \
+      >> $LOGFILES/R.log 2>&1
   
     echo "Compiling"
-    /usr/bin/time make --jobs=`nproc`
+    /usr/bin/time make --jobs=`nproc` \
+      >> $LOGFILES/R.log 2>&1
   
     echo "Making standalone math library"
     pushd src/nmath/standalone
-      /usr/bin/time make --jobs=`nproc`
-      sudo make install
+      /usr/bin/time make --jobs=`nproc` \
+        >> $LOGFILES/R.log 2>&1
+      sudo make install \
+        >> $LOGFILES/R.log 2>&1
       popd
   
     echo "Installing"
-    sudo make install
+    sudo make install \
+        >> $LOGFILES/R.log 2>&1
     popd
   
   zip -9rmyq $R_LATEST.zip $R_LATEST
@@ -87,4 +95,5 @@ pushd $SOURCE_DIR
 cat misc/Rprofile >> $HOME/.Rprofile
 
 echo "Installing R integration packages"
-Rscript -e "source('misc/r-base.R')"
+Rscript -e "source('misc/r-base.R')" \
+  >> $LOGFILES/R.log 2>&1

@@ -16,18 +16,24 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
+export LOGFILES=$HOME/logfiles
+rm -f $LOGFILES/R-audio.log
 
-echo "Installing command line conveniences"
+# The versions of 'gdal' and 'libpq' in the base
+# repos are too old, so we get them from the
+# PostgreSQL Global Development Group (PGDG)
+# https://wiki.postgresql.org/wiki/Apt
+echo "Attaching PostgreSQL Global Development Group Repository"
+curl -Ls https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo cp misc/pgdg.list /etc/apt/sources.list.d/pgdg.list
+sudo apt-get update >> $LOGFILES/R-audio.log
+echo "Installing Linux dependencies"
 sudo apt-get install -y --no-install-recommends \
-  apt-file \
-  file \
-  lynx \
-  mlocate \
-  speedtest-cli \
-  time \
-  tree \
-  vim-nox
-echo "Updating 'apt-file' database"
-sudo apt-file update
-echo "Updating 'locate' database"
-sudo updatedb
+  libfftw3-dev \
+  libgdal-dev \
+  libudunits2-dev \
+  >> $LOGFILES/R-audio.log 2>&1
+
+echo "Installing R audio packages"
+/usr/bin/time Rscript -e "source('misc/audio.R')" \
+  >> $LOGFILES/R-audio.log 2>&1

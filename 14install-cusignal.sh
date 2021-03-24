@@ -16,13 +16,12 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
+export LOGFILES=$HOME/logfiles
+rm -f $LOGFILES/cusignal.log
 
 export CUSIGNAL_VERSION=v0.18.0
 export CUPY_NUM_BUILD_JOBS=`nproc`
 export CUSIGNAL_JETSON_BASE=$PWD/misc/cusignal_jetson_base.yml
-export INSTALLED_PACKAGES=$PWD/installed-packages.txt
-export AVAILABLE_R_PACKAGES=$PWD/available-R-packages.txt
-cat misc/Rprofile >> $HOME/.Rprofile
 
 echo "Cloning 'cusignal'"
 mkdir --parents $HOME/Projects
@@ -39,14 +38,16 @@ pushd $HOME/Projects
   echo "This takes about 45 minutes on a Jetson Xavier NX"
   source $HOME/miniconda3/etc/profile.d/conda.sh
   /usr/bin/time conda env create --quiet --force --file \
-    $CUSIGNAL_JETSON_BASE
+    $CUSIGNAL_JETSON_BASE \
+    >> $LOGFILES/cusignal.log 2>&1
   
   echo "Activating 'r-reticulate'"
   conda activate r-reticulate
   
     echo "Installing 'cusignal'"
     export PATH=$PATH:/usr/local/cuda-10.2/bin
-    /usr/bin/time ./build.sh
+    /usr/bin/time ./build.sh \
+    >> $LOGFILES/cusignal.log 2>&1
     echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
     mkdir --parents $HOME/Notebooks
     cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
@@ -55,10 +56,12 @@ pushd $HOME/Projects
     conda install --quiet --yes \
       jupyterlab \
       pandas \
-      sympy
+      sympy \
+      >> $LOGFILES/cusignal.log 2>&1
   
     echo "Installed packages:"
-    conda list | tee $INSTALLED_PACKAGES
+    conda list \
+      >> $LOGFILES/cusignal.log 2>&1
 
     echo "Enabling R kernel"
     Rscript -e "IRkernel::installspec()"

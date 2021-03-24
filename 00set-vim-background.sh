@@ -15,6 +15,8 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+set -e
+
 echo "Setting 'vim' editor background"
 echo "If your terminal background is light, enter any text string."
 read -p "If it's dark, just press 'Enter':"
