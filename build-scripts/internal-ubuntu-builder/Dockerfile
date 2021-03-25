@@ -1,0 +1,25 @@
+FROM "ubuntu:bionic"
+LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
+
+ARG DEBIAN_FRONTEND=noninteractive
+USER root
+
+ENV SOURCE_DIR=/usr/local/src
+ENV LOGS=$SOURCE_DIR/logs
+ENV SCRIPTS=$SOURCE_DIR/scripts
+RUN mkdir --parents $LOGS $SCRIPTS
+
+ENV CHUCK_VERSION="1.4.0.1"
+ENV CSOUND_VERSION="6.15.0"
+ENV FAUST_VERSION="2.30.5"
+ENV FLUIDSYNTH_VERSION="2.1.8"
+ENV LIBMUSICXML_VERSION="3.18"
+ENV SC3_PLUGINS_VERSION="Version-3.11.1"
+ENV SUPERCOLLIDER_VERSION="Version-3.11.1"
+ENV SONIC_PI_VERSION="v3.3.1"
+
+WORKDIR $SOURCE_DIR
+
+RUN echo "set bg=dark" >> /root/.vimrc
+COPY scripts/10base.sh $SCRIPTS/
+RUN $SCRIPTS/10base.sh
