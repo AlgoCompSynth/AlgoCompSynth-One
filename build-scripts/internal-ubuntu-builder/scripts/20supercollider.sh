@@ -20,9 +20,15 @@
 set -e
 rm -f $LOGS/supercollider.log
 
+echo "Installing latest 'cmake'"
+wget --quiet https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0-linux-aarch64.sh
+chmod +x cmake-3.20.0-linux-aarch64.sh 
+./cmake-3.20.0-linux-aarch64.sh --skip-license --prefix=/usr/local
+which cmake
+cmake --version
+
 echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  cmake \
+apt-get install -qqy --no-install-recommends \
   emacs-nox \
   libasound2-dev \
   libavahi-client-dev \
