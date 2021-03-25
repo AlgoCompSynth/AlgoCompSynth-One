@@ -19,27 +19,13 @@
 
 set -e
 rm -f $LOGS/sonic-pi.log
+cd $SOURCE_DIR
 
 echo "Installing build dependencies"
 apt-get install -qqy --no-install-recommends \
-  erlang-base \
-  erlang-dev \
-  libqt5concurrent5 \
-  libqt5core5a \
-  libqt5gui5 \
-  libqt5network5 \
-  libqt5opengl5 \
-  libqt5opengl5-dev \
-  libqt5printsupport5 \
-  libqt5svg5 \
-  libqt5svg5-dev \
-  libqt5widgets5 \
   librtmidi-dev \
-  qt5-default \
-  qttools5-dev-tools \
   >> $LOGS/sonic-pi.log 2>&1
 
-cd $SOURCE_DIR
 echo "Cloning sonic-pi repo"
 rm -fr sonic-pi
 git clone --recursive https://github.com/sonic-pi-net/sonic-pi.git \

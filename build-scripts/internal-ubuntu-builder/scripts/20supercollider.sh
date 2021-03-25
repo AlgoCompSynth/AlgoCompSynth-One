@@ -19,26 +19,27 @@
 
 set -e
 rm -f $LOGS/supercollider.log
-
-echo "Installing latest 'cmake'"
-wget --quiet https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0-linux-aarch64.sh
-chmod +x cmake-3.20.0-linux-aarch64.sh 
-./cmake-3.20.0-linux-aarch64.sh --skip-license --prefix=/usr/local
-which cmake
-cmake --version
+cd $SOURCE_DIR
 
 echo "Installing build dependencies"
 apt-get install -qqy --no-install-recommends \
-  emacs-nox \
   libasound2-dev \
   libavahi-client-dev \
   libfftw3-dev \
   libjack-jackd2-dev \
+  libqt5opengl5-dev \
+  libqt5svg5-dev \
+  libqt5websockets5-dev \
   libsndfile1-dev \
   libudev-dev \
+  libx11-dev \
+  libxt-dev \
+  qtbase5-dev \
+  qtdeclarative5-dev \
+  qttools5-dev \
+  qtwebengine5-dev \
   >> $LOGS/supercollider.log 2>&1
 
-cd $SOURCE_DIR
 echo "Cloning supercollider repo"
 rm -fr supercollider
 git clone --recursive https://github.com/supercollider/supercollider.git \
@@ -53,20 +54,10 @@ pushd supercollider
   cmake -L .. \
     -DCMAKE_BUILD_TYPE=Release \
     -DNATIVE=ON \
-    -DNO_X11=ON \
-    -DSC_ABLETON_LINK=OFF \
-    -DSC_ED=OFF \
-    -DSC_IDE=OFF \
-    -DSC_QT=OFF \
     >> $LOGS/supercollider.log
   cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DNATIVE=ON \
-    -DNO_X11=ON \
-    -DSC_ABLETON_LINK=OFF \
-    -DSC_ED=OFF \
-    -DSC_IDE=OFF \
-    -DSC_QT=OFF \
     .. \
     >> $LOGS/supercollider.log 2>&1
   make --jobs=`nproc` \

@@ -34,6 +34,7 @@ apt-get install -qqy --no-install-recommends \
   ca-certificates \
   curl \
   emacs-nox \
+  git \
   gnupg \
   lynx \
   mlocate \

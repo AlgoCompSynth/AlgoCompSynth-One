@@ -23,3 +23,7 @@ WORKDIR $SOURCE_DIR
 RUN echo "set bg=dark" >> /root/.vimrc
 COPY scripts/10base.sh $SCRIPTS/
 RUN $SCRIPTS/10base.sh
+COPY scripts/20supercollider.sh $SCRIPTS/
+RUN $SCRIPTS/20supercollider.sh
+COPY scripts/21sonic-pi.sh $SCRIPTS/
+#RUN $SCRIPTS/21sonic-pi.sh
