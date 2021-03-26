@@ -17,17 +17,20 @@
 
 set -e
 rm -f $LOGS/libmusicxml.log
-
-echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  >> $LOGS/libmusicxml.log 2>&1
-
 cd $SRCDIR
-rm -fr libmusicxml*
-echo "Downloading libmusicxml $LIBMUSICXML_VERSION source"
-curl -Ls https://codeload.github.com/grame-cncm/libmusicxml/tar.gz/v3.18 \
-  | tar xzf -
-cd libmusicxml-$LIBMUSICXML_VERSION/build
+
+#echo "Installing build dependencies"
+#apt-get install -y --no-install-recommends \
+  #>> $LOGS/libmusicxml.log 2>&1
+
+echo "Cloning libmusicxml repo"
+rm -fr libmusicxml
+git clone https://github.com/grame-cncm/libmusicxml.git \
+  >> $LOGS/libmusicxml.log 2>&1
+cd libmusicxml
+git checkout $LIBMUSICXML_VERSION \
+  >> $LOGS/libmusicxml.log 2>&1
+cd build
 
 echo "Compiling libmusicxml"
 /usr/bin/time make --jobs=`nproc` \

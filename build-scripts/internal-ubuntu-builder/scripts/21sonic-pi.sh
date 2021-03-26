@@ -24,6 +24,7 @@ cd $SOURCE_DIR
 echo "Installing build dependencies"
 apt-get install -qqy --no-install-recommends \
   librtmidi-dev \
+  qt5-default \
   >> $LOGS/sonic-pi.log 2>&1
 
 echo "Cloning sonic-pi repo"
@@ -36,8 +37,10 @@ pushd sonic-pi
   cd app
 
   echo "Linux pre-build"
+  set +e
   ./linux-prebuild.sh \
     >> $LOGS/sonic-pi.log 2>&1
+  set -e
 
   echo "Linux configuration"
   ./linux-config.sh \
