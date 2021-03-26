@@ -72,6 +72,7 @@ apt-get install -qqy --no-install-recommends \
   libxtst-dev \
   llvm-3.7-dev \
   lynx \
+  mlocate \
   nano \
   python3-cairo-dev \
   python-gi-dev \
