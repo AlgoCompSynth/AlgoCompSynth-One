@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/xpra.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Cloning xpra"
 rm -fr xpra

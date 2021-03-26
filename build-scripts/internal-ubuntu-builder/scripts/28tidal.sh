@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/tidal.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Updating package list"
 rm -fr /root/.cabal/

@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/libmusicxml.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Cloning libmusicxml repo"
 rm -fr libmusicxml

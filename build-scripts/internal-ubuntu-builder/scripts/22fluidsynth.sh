@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/fluidsynth.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Cloning fluidsynth"
 rm -fr fluidsynth

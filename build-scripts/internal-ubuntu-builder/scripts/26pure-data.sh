@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/pure-data.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Cloning pure-data"
 rm -fr pure-data

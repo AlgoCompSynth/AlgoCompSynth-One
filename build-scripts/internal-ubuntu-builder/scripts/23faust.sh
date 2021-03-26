@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/faust.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Cloning faust"
 rm -fr faust

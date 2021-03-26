@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/chuck.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 rm -fr chuck*
 echo "Downloading ChucK $CHUCK_VERSION source"
