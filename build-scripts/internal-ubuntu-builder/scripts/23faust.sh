@@ -19,10 +19,6 @@ set -e
 rm -f $LOGS/faust.log
 cd $SRCDIR
 
-#echo "Installing build dependencies"
-#apt-get install -y --no-install-recommends \
-  #>> $LOGS/faust.log 2>&1
-
 echo "Cloning faust"
 rm -fr faust
 git clone https://github.com/grame-cncm/faust.git \

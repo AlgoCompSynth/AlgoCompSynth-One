@@ -19,10 +19,6 @@ set -e
 rm -f $LOGS/libmusicxml.log
 cd $SRCDIR
 
-#echo "Installing build dependencies"
-#apt-get install -y --no-install-recommends \
-  #>> $LOGS/libmusicxml.log 2>&1
-
 echo "Cloning libmusicxml repo"
 rm -fr libmusicxml
 git clone https://github.com/grame-cncm/libmusicxml.git \

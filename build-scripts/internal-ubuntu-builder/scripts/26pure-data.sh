@@ -16,27 +16,27 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/chuck.log
-
-echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  >> $LOGS/chuck.log 2>&1
-
+rm -f $LOGS/pure-data.log
 cd $SRCDIR
-rm -fr chuck*
-echo "Downloading ChucK $CHUCK_VERSION source"
-curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
-  | tar xzf -
-cd chuck-$CHUCK_VERSION/src
 
-# the Jetson "native" sound infrastructure is ALSA
-echo "Compiling ChucK for ALSA"
-/usr/bin/time make linux-alsa \
-  >> $LOGS/chuck.log 2>&1
-echo "Installing ChucK"
+echo "Cloning pure-data"
+rm -fr pure-data
+git clone https://github.com/pure-data/pure-data.git \
+  >> $LOGS/pure-data.log 2>&1
+cd pure-data
+export PD_VERSION="0.51-4"
+git checkout $PD_VERSION \
+  >> $LOGS/pure-data.log 2>&1
+
+echo "Compiling Pure Data"
+./autogen.sh \
+  >> $LOGS/pure-data.log 2>&1
+./configure \
+  >> $LOGS/pure-data.log 2>&1
+/usr/bin/time make --jobs=`nproc` \
+  >> $LOGS/pure-data.log 2>&1
+echo "Installing Pure Data"
 make install \
-  >> $LOGS/chuck.log 2>&1
-
-rm -fr /usr/local/share/chuck
-mkdir --parents /usr/local/share/chuck
-mv ../examples /usr/local/share/chuck/examples
+  >> $LOGS/pure-data.log 2>&1
+ldconfig \
+  >> $LOGS/pure-data.log 2>&1

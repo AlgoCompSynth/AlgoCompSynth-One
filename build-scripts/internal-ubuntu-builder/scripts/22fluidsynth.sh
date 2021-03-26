@@ -19,15 +19,6 @@ set -e
 rm -f $LOGS/fluidsynth.log
 cd $SRCDIR
 
-echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  fluid-soundfont-gm \
-  fluid-soundfont-gs \
-  freepats \
-  libglib2.0-dev \
-  timidity \
-  >> $LOGS/fluidsynth.log 2>&1
-
 echo "Cloning fluidsynth"
 rm -fr fluidsynth
 git clone --recursive https://github.com/FluidSynth/fluidsynth.git \

@@ -19,13 +19,6 @@ set -e
 rm -f $LOGS/csound.log
 cd $SRCDIR
 
-echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  bison \
-  flex \
-  libcurl4-openssl-dev \
-  >> $LOGS/csound.log 2>&1
-
 echo "Cloning CSound"
 rm -fr csound
 git clone https://github.com/csound/csound.git csound \

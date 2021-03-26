@@ -21,25 +21,6 @@ set -e
 rm -f $LOGS/supercollider.log
 cd $SOURCE_DIR
 
-echo "Installing build dependencies"
-apt-get install -qqy --no-install-recommends \
-  libasound2-dev \
-  libavahi-client-dev \
-  libfftw3-dev \
-  libjack-jackd2-dev \
-  libqt5opengl5-dev \
-  libqt5svg5-dev \
-  libqt5websockets5-dev \
-  libsndfile1-dev \
-  libudev-dev \
-  libx11-dev \
-  libxt-dev \
-  qtbase5-dev \
-  qtdeclarative5-dev \
-  qttools5-dev \
-  qtwebengine5-dev \
-  >> $LOGS/supercollider.log 2>&1
-
 echo "Cloning supercollider repo"
 rm -fr supercollider
 git clone --recursive https://github.com/supercollider/supercollider.git \

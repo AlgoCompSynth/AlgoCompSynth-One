@@ -15,33 +15,24 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# https://github.com/sonic-pi/supercollider/wiki/Installing-supercollider-from-source-on-Ubuntu
-
 set -e
-rm -f $LOGS/sonic-pi.log
-cd $SOURCE_DIR
+rm -f $LOGS/chuck.log
+cd $SRCDIR
 
-echo "Cloning sonic-pi repo"
-rm -fr sonic-pi
-git clone --recursive https://github.com/sonic-pi-net/sonic-pi.git \
-  >> $LOGS/sonic-pi.log 2>&1
-pushd sonic-pi
-  git checkout $SONIC_PI_VERSION \
-    >> $LOGS/sonic-pi.log 2>&1
-  cd app
+rm -fr chuck*
+echo "Downloading ChucK $CHUCK_VERSION source"
+curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
+  | tar xzf -
+cd chuck-$CHUCK_VERSION/src
 
-  echo "Linux pre-build"
-  set +e
-  ./linux-prebuild.sh \
-    >> $LOGS/sonic-pi.log 2>&1
-  set -e
+echo "Compiling ChucK for JACK"
+/usr/bin/time make linux-jack \
+  >> $LOGS/chuck.log 2>&1
+echo "Installing ChucK"
+make install \
+  >> $LOGS/chuck.log 2>&1
 
-  echo "Linux configuration"
-  ./linux-config.sh \
-    >> $LOGS/sonic-pi.log 2>&1
-
-  echo "Build"
-  cd build/
-  cmake --build . --config Release \
-    >> $LOGS/sonic-pi.log 2>&1
-  popd
+echo "Relocating ChucK examples"
+rm -fr /usr/local/share/chuck
+mkdir --parents /usr/local/share/chuck
+mv ../examples /usr/local/share/chuck/examples
