@@ -40,4 +40,8 @@ RUN $SCRIPTS/22fluidsynth.sh
 
 COPY scripts/23faust.sh $SCRIPTS
 ENV FAUST_VERSION="2.30.5"
-#RUN $SCRIPTS/23faust.sh
+RUN $SCRIPTS/23faust.sh
+
+COPY scripts/24csound.sh $SCRIPTS
+ENV CSOUND_VERSION="6.15.0"
+#RUN $SCRIPTS/24csound.sh

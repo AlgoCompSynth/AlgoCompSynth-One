@@ -23,19 +23,19 @@ cd $SRCDIR
 #apt-get install -y --no-install-recommends \
   #>> $LOGS/faust.log 2>&1
 
-rm -fr faust*
-echo "Downloading faust $FAUST_VERSION source"
-curl -Ls https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
-  | tar xzf -
-cd faust-$FAUST_VERSION
+echo "Cloning faust"
+rm -fr faust
+git clone https://github.com/grame-cncm/faust.git \
+  >> $LOGS/faust.log 2>&1
+cd faust
+git submodule update --init \
+  >> $LOGS/faust.log 2>&1
+git checkout $FAUST_VERSION \
+  >> $LOGS/faust.log 2>&1
 
-echo "Symlinking llvm-10-config"
-ln -s /usr/lib/llvm-10/bin/llvm-config /usr/bin/llvm-config
 echo "Compiling faust"
-/usr/bin/time make --jobs=`nproc` most \
+/usr/bin/time make --jobs=`nproc` \
   >> $LOGS/faust.log 2>&1
 echo "Installing faust"
 make install \
   >> $LOGS/faust.log 2>&1
-echo "Removing llvm-10 symlink"
-rm /usr/bin/llvm-config

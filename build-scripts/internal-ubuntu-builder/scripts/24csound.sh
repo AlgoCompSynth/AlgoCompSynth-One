@@ -17,19 +17,21 @@
 
 set -e
 rm -f $LOGS/csound.log
-
-echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  >> $LOGS/csound.log 2>&1
-
 cd $SRCDIR
-echo "Downloading CSound $CSOUND_VERSION source"
-rm -fr csound*
-wget -q -O - https://github.com/csound/csound/archive/$CSOUND_VERSION.tar.gz \
-  | tar xzf -
-cd csound-$CSOUND_VERSION/
+
+#echo "Installing build dependencies"
+#apt-get install -y --no-install-recommends \
+  #>> $LOGS/csound.log 2>&1
+
+echo "Cloning CSound"
+rm -fr csound
+git clone https://github.com/csound/csound.git csound \
+cd csound
+git checkout $CSOUND_VERSION \
+cd ..
+
 mkdir cs6make
-cd cs6make/
+cd cs6make
 export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
 
 echo "Compiling CSound"
@@ -38,16 +40,17 @@ cmake \
   -DBUILD_STATIC_LIBRARY=ON \
   -DLAME_HEADER="/usr/include/lame/lame.h" \
   -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
-  ..  >> $LOGS/csound.log 2>&1
+  ../csound \
+  >> $LOGS/csound.log 2>&1
 /usr/bin/time make --jobs=`nproc` \
   >> $LOGS/csound.log 2>&1
 echo "Installing CSound"
-make install >> $LOGS/csound.log 2>&1
-/sbin/ldconfig --verbose \
+make install \
   >> $LOGS/csound.log 2>&1
-cd ..
-rm -fr cs6make
+/sbin/ldconfig \
+  >> $LOGS/csound.log 2>&1
 
+echo "Relocating samples to '/usr/local/share/csound/samples'"
 rm -fr /usr/local/share/csound
 mkdir --parents /usr/local/share/csound
 mv /usr/local/share/samples /usr/local/share/csound/samples
