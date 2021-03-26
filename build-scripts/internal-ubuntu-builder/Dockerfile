@@ -37,17 +37,17 @@ ENV FAUST_VERSION="2.30.5"
 COPY scripts/23faust.sh $SCRIPTS
 RUN $SCRIPTS/23faust.sh || true
 
+ENV PD_VERSION="0.51-4"
+COPY scripts/24pure-data.sh $SCRIPTS
+RUN $SCRIPTS/24pure-data.sh || true
+
 ENV CSOUND_VERSION="6.15.0"
-COPY scripts/24csound.sh $SCRIPTS
-RUN $SCRIPTS/24csound.sh || true
+COPY scripts/25csound.sh $SCRIPTS
+RUN $SCRIPTS/25csound.sh || true
 
 ENV CHUCK_VERSION="1.4.0.1"
-COPY scripts/25chuck.sh $SCRIPTS
-RUN $SCRIPTS/25chuck.sh || true
-
-ENV PD_VERSION="0.51-4"
-COPY scripts/26pure-data.sh $SCRIPTS
-RUN $SCRIPTS/26pure-data.sh || true
+COPY scripts/26chuck.sh $SCRIPTS
+RUN $SCRIPTS/26chuck.sh || true
 
 ENV XPRA_VERSION="v4.1.1"
 COPY scripts/27xpra.sh $SCRIPTS
