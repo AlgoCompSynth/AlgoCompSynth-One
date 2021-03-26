@@ -35,3 +35,5 @@ echo "Compiling faust"
 echo "Installing faust"
 make install \
   >> $LOGS/faust.log 2>&1
+ldconfig \
+  >> $LOGS/faust.log 2>&1

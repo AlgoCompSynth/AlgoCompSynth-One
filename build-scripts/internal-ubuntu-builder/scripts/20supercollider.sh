@@ -46,7 +46,8 @@ pushd supercollider
   echo "Installing supercollider"
   make install \
     >> $LOGS/supercollider.log 2>&1
-  /sbin/ldconfig >> $LOGS/supercollider.log 2>&1
+  ldconfig \
+    >> $LOGS/supercollider.log 2>&1
   popd
 
 echo "Cloning sc3-plugins repo"
@@ -72,5 +73,6 @@ pushd sc3-plugins
   echo "Installing sc3-plugins"
   make install \
     >> $LOGS/supercollider.log 2>&1
-  /sbin/ldconfig >> $LOGS/supercollider.log 2>&1
+  ldconfig \
+    >> $LOGS/supercollider.log 2>&1
   popd

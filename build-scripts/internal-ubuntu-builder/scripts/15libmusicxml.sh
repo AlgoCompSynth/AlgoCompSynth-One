@@ -34,3 +34,5 @@ echo "Compiling libmusicxml"
 echo "Installing libmusicxml"
 make install \
   >> $LOGS/libmusicxml.log 2>&1
+ldconfig \
+  >> $LOGS/libmusicxml.log 2>&1

@@ -57,7 +57,7 @@ cmake \
 echo "Installing CSound"
 make install \
   >> $LOGS/csound.log 2>&1
-/sbin/ldconfig \
+ldconfig \
   >> $LOGS/csound.log 2>&1
 
 echo "Relocating samples to '/usr/local/share/csound/samples'"

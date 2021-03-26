@@ -45,3 +45,6 @@ pushd sonic-pi
   cmake --build . --config Release \
     >> $LOGS/sonic-pi.log 2>&1
   popd
+
+ldconfig \
+  >> $LOGS/sonic-pi.log 2>&1

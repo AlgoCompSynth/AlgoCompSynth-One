@@ -31,6 +31,8 @@ echo "Compiling ChucK for JACK"
 echo "Installing ChucK"
 make install \
   >> $LOGS/chuck.log 2>&1
+ldconfig \
+  >> $LOGS/chuck.log 2>&1
 
 echo "Relocating ChucK examples"
 rm -fr /usr/local/share/chuck
