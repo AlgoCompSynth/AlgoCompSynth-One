@@ -17,7 +17,7 @@
 
 set -e
 rm -f $LOGS/csound.log
-cd $SRCDIR
+cd $SOURCE_DIR
 
 echo "Cloning CSound"
 rm -fr csound
@@ -33,12 +33,23 @@ mkdir cs6make
 cd cs6make
 export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
 
+if [ ! -x "/usr/local/cuda/bin/nvcc" ]
+then
+  echo "CUDA absent"
+  export CUDA_PRESENT=OFF
+else
+  echo "CUDA present!"
+  export CUDA_PRESENT=ON
+fi
+
 echo "Compiling CSound"
 cmake \
-  -DBUILD_CUDA_OPCODES=ON \
+  -DBUILD_CUDA_OPCODES=$CUDA_PRESENT \
   -DBUILD_STATIC_LIBRARY=ON \
   -DLAME_HEADER="/usr/include/lame/lame.h" \
   -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
+  -DLUA_H_PATH="/usr/include/lua5.2/" \
+  -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
   ../csound \
   >> $LOGS/csound.log 2>&1
 /usr/bin/time make --jobs=`nproc` \

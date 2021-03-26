@@ -34,36 +34,55 @@ apt-get install -qqy --no-install-recommends \
   automake \
   bison \
   build-essential \
-  cabal-install \
   ca-certificates \
+  cabal-install \
   curl \
   cython3 \
+  dssi-dev \
   emacs-nox \
   flex \
+  fluid \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
   freepats \
   gettext \
   git \
   gnupg \
+  hdf5-tools \
+  ladspa-sdk \
   libasound2-dev \
   libavahi-client-dev \
   libcurl4-openssl-dev \
+  libeigen3-dev \
   libfftw3-dev \
+  libfltk1.3-dev \
   libglib2.0-dev \
+  libgmm++-dev \
   libgtk-3-dev \
+  libhdf5-dev \
+  libhdf5-serial-dev \
   libjack-jackd2-dev \
+  liblo-dev \
+  liblua5.2-dev \
+  libmp3lame-dev \
+  libportmidi-dev \
+  libpulse-dev \
   libpython3-dev \
   libqt5opengl5-dev \
   libqt5svg5-dev \
   libqt5websockets5-dev \
   librtmidi-dev \
+  libsamplerate0-dev \
   libsndfile1-dev \
+  libstk0-dev \
   libtool \
   libudev-dev \
   libvpx-dev \
+  libwebsockets-dev \
   libx11-dev \
+  libx11-xcb-dev \
   libx264-dev \
+  libxcb-*-dev \
   libxcomposite-dev \
   libxfixes-dev \
   libxkbfile-dev \
@@ -74,14 +93,16 @@ apt-get install -qqy --no-install-recommends \
   lynx \
   mlocate \
   nano \
-  python3-cairo-dev \
+  portaudio19-dev \
   python-gi-dev \
+  python3-cairo-dev \
   qt5-default \
   qtbase5-dev \
   qtdeclarative5-dev \
   qttools5-dev \
   qtwebengine5-dev \
   software-properties-common \
+  swig3.0 \
   time \
   timidity \
   tk \
