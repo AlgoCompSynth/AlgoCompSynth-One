@@ -17,18 +17,24 @@
 
 set -e
 rm -f $LOGS/fluidsynth.log
+cd $SRCDIR
 
 echo "Installing build dependencies"
-#sudo apt-get install -y --no-install-recommends \
-  #>> $LOGS/fluidsynth.log 2>&1
+apt-get install -y --no-install-recommends \
+  fluid-soundfont-gm \
+  fluid-soundfont-gs \
+  freepats \
+  libglib2.0-dev \
+  timidity \
+  >> $LOGS/fluidsynth.log 2>&1
 
-cd $SRCDIR
-rm -fr fluidsynth*
-echo "Downloading FluidSynth $FLUIDSYNTH_VERSION source"
-curl -Ls \
-  https://github.com/FluidSynth/fluidsynth/archive/v$FLUIDSYNTH_VERSION.tar.gz \
-  | tar xzf -
-cd fluidsynth-$FLUIDSYNTH_VERSION
+echo "Cloning fluidsynth"
+rm -fr fluidsynth
+git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
+  >> $LOGS/fluidsynth.log 2>&1
+cd fluidsynth
+git checkout $FLUIDSYNTH_VERSION \
+  >> $LOGS/fluidsynth.log 2>&1
 
 echo "Compiling FluidSynth"
 mkdir --parents build; cd build
@@ -39,3 +45,6 @@ cmake -DLIB_SUFFIX="" .. \
 echo "Installing FluidSynth"
 make install \
   >> $LOGS/fluidsynth.log 2>&1
+ldconfig \
+  >> $LOGS/fluidsynth.log 2>&1
+fluidsynth --version

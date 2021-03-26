@@ -30,5 +30,14 @@ RUN $SCRIPTS/15libmusicxml.sh
 
 COPY scripts/20supercollider.sh $SCRIPTS/
 RUN $SCRIPTS/20supercollider.sh
+
 COPY scripts/21sonic-pi.sh $SCRIPTS/
 #RUN $SCRIPTS/21sonic-pi.sh
+
+COPY scripts/22fluidsynth.sh $SCRIPTS
+ENV FLUIDSYNTH_VERSION="v2.1.8"
+RUN $SCRIPTS/22fluidsynth.sh
+
+COPY scripts/23faust.sh $SCRIPTS
+ENV FAUST_VERSION="2.30.5"
+#RUN $SCRIPTS/23faust.sh

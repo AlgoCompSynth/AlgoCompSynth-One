@@ -17,12 +17,12 @@
 
 set -e
 rm -f $LOGS/faust.log
-
-echo "Installing build dependencies"
-apt-get install -y --no-install-recommends \
-  >> $LOGS/faust.log 2>&1
-
 cd $SRCDIR
+
+#echo "Installing build dependencies"
+#apt-get install -y --no-install-recommends \
+  #>> $LOGS/faust.log 2>&1
+
 rm -fr faust*
 echo "Downloading faust $FAUST_VERSION source"
 curl -Ls https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
