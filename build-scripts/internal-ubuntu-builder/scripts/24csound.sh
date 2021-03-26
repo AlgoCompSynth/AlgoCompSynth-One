@@ -19,17 +19,23 @@ set -e
 rm -f $LOGS/csound.log
 cd $SRCDIR
 
-#echo "Installing build dependencies"
-#apt-get install -y --no-install-recommends \
-  #>> $LOGS/csound.log 2>&1
+echo "Installing build dependencies"
+apt-get install -y --no-install-recommends \
+  bison \
+  flex \
+  libcurl4-openssl-dev \
+  >> $LOGS/csound.log 2>&1
 
 echo "Cloning CSound"
 rm -fr csound
 git clone https://github.com/csound/csound.git csound \
+  >> $LOGS/csound.log 2>&1
 cd csound
 git checkout $CSOUND_VERSION \
+  >> $LOGS/csound.log 2>&1
 cd ..
 
+rm -fr cs6make
 mkdir cs6make
 cd cs6make
 export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
