@@ -100,7 +100,7 @@ apt-get install -qqy --no-install-recommends \
   libsqlite3-dev \
   libstk0-dev \
   libswresample-dev \
-  libswscale-dev
+  libswscale-dev \
   libsystemd-dev \
   libtool \
   libudev-dev \
