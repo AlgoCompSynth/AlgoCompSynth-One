@@ -55,3 +55,7 @@ RUN $SCRIPTS/27xpra.sh || true
 
 COPY scripts/28tidal.sh $SCRIPTS
 RUN $SCRIPTS/28tidal.sh || true
+
+ENV EXTEMPORE_VERSION="v0.8.8"
+COPY scripts/29extempore.sh $SCRIPTS
+RUN $SCRIPTS/29extempore.sh || true

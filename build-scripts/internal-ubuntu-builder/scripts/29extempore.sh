@@ -19,7 +19,6 @@ set -e
 rm -f $LOGS/extempore.log
 cd $SOURCE_DIR
 
-export EXTEMPORE_VERSION="v0.8.8"
 echo "Cloning extempore repo"
 rm -fr extempore
 git clone https://github.com/digego/extempore \
