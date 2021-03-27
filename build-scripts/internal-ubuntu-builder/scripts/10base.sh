@@ -77,7 +77,10 @@ apt-get install -qqy --no-install-recommends \
   liblo-dev \
   liblua5.2-dev \
   libmicrohttpd-dev \
+  libminizip-dev \
   libmp3lame-dev \
+  libopus-dev \
+  libopusfile-dev \
   libpam0g-dev \
   libportmidi-dev \
   libpostproc-dev \
@@ -119,6 +122,7 @@ apt-get install -qqy --no-install-recommends \
   libxtst-dev \
   llvm-3.7-dev \
   lynx \
+  minizip \
   mlocate \
   nano \
   portaudio19-dev \
@@ -168,3 +172,5 @@ curl -Ls https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-linux-
 echo "Updating 'locate' database"
 updatedb \
   >> $LOGS/base.log 2>&1
+
+
