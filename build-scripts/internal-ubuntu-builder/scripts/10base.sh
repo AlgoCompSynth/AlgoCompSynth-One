@@ -144,17 +144,6 @@ apt-get install -qqy --no-install-recommends \
   wget \
   >> $LOGS/base.log 2>&1
 
-echo "Installing latest Erlang OTP"
-wget --quiet \
-  https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
-dpkg -i erlang-solutions_2.0_all.deb \
-  >> $LOGS/base.log 2>&1
-apt-get update \
-  >> $LOGS/base.log 2>&1
-apt-get install -qqy --no-install-recommends \
-  erlang-dev \
-  >> $LOGS/base.log 2>&1
-
 echo "Updating apt-file database"
 apt-file update \
   >> $LOGS/base.log 2>&1

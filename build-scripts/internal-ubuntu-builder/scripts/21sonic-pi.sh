@@ -21,6 +21,17 @@ set -e
 rm -f $LOGS/sonic-pi.log
 cd $SOURCE_DIR
 
+echo "Installing latest Erlang OTP"
+wget --quiet \
+  https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+dpkg -i erlang-solutions_2.0_all.deb \
+  >> $LOGS/sonic-pi.log 2>&1
+apt-get update \
+  >> $LOGS/sonic-pi.log 2>&1
+apt-get install -qqy --no-install-recommends \
+  erlang-dev \
+  >> $LOGS/sonic-pi.log 2>&1
+
 echo "Cloning sonic-pi repo"
 rm -fr sonic-pi
 git clone --recursive https://github.com/sonic-pi-net/sonic-pi.git \
