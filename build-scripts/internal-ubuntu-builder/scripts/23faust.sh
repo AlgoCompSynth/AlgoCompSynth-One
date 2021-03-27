@@ -29,8 +29,10 @@ git submodule update --init \
 git checkout $FAUST_VERSION \
   >> $LOGS/faust.log 2>&1
 
-echo "Compiling faust"
-/usr/bin/time make --jobs=`nproc` \
+echo "Compiling faust - selecting only 'regular' backends"
+#cp build/backends/regular.cmake build/backends/all.cmake
+cd build
+/usr/bin/time make TARGETS=all.cmake BACKENDS=regular.cmake \
   >> $LOGS/faust.log 2>&1
 echo "Installing faust"
 make install \
