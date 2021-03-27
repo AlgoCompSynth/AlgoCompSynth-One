@@ -42,8 +42,9 @@ else
   export CUDA_PRESENT=ON
 fi
 
-echo "Compiling CSound"
+echo "Configuring CSound"
 cmake \
+  -Wno-dev \
   -DBUILD_CUDA_OPCODES=$CUDA_PRESENT \
   -DBUILD_STATIC_LIBRARY=ON \
   -DLAME_HEADER="/usr/include/lame/lame.h" \
@@ -52,6 +53,7 @@ cmake \
   -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
   ../csound \
   >> $LOGS/csound.log 2>&1
+echo "Compiling CSound"
 /usr/bin/time make --jobs=`nproc` \
   >> $LOGS/csound.log 2>&1
 echo "Installing CSound"
