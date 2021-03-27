@@ -32,10 +32,6 @@ pushd supercollider
 
   echo "Building supercollider"
   mkdir build && cd build
-  cmake -L .. \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DNATIVE=ON \
-    >> $LOGS/supercollider.log
   cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DNATIVE=ON \
@@ -60,8 +56,6 @@ pushd sc3-plugins
 
   echo "Building sc3-plugins"
   mkdir build && cd build
-  cmake -L .. \
-    >> $LOGS/supercollider.log 2>&1
   cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DNATIVE=ON \
