@@ -38,6 +38,7 @@ apt-get install -qqy --no-install-recommends \
   ca-certificates \
   curl \
   cython3 \
+  default-jdk \
   dssi-dev \
   emacs-nox \
   ffmpeg \
