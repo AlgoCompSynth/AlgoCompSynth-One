@@ -32,6 +32,8 @@ echo "Compiling Pure Data"
 ./autogen.sh \
   >> $LOGS/pure-data.log 2>&1
 ./configure \
+  --enable-fftw \
+  --enable-portmidi \
   >> $LOGS/pure-data.log 2>&1
 /usr/bin/time make --jobs=`nproc` \
   >> $LOGS/pure-data.log 2>&1
