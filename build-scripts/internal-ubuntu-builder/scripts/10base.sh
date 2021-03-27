@@ -61,20 +61,31 @@ apt-get install -qqy --no-install-recommends \
   libgtk-3-dev \
   libhdf5-dev \
   libhdf5-serial-dev \
+  libinstpatch-dev \
   libjack-jackd2-dev \
+  liblash-compat-dev \
   liblo-dev \
   liblua5.2-dev \
+  libmicrohttpd-dev \
   libmp3lame-dev \
+  libpam0g-dev \
   libportmidi-dev \
   libpulse-dev \
   libpython3-dev \
   libqt5opengl5-dev \
   libqt5svg5-dev \
   libqt5websockets5-dev \
+  libreadline-dev \
   librtmidi-dev \
   libsamplerate0-dev \
+  libsdl2-dev \
   libsndfile1-dev \
+  libsndio-dev \
+  libspeex-dev \
+  libspeexdsp-dev \
+  libsqlite3-dev \
   libstk0-dev \
+  libsystemd-dev \
   libtool \
   libudev-dev \
   libvpx-dev \
