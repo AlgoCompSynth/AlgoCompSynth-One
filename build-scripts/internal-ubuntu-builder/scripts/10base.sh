@@ -34,12 +34,13 @@ apt-get install -qqy --no-install-recommends \
   automake \
   bison \
   build-essential \
-  ca-certificates \
   cabal-install \
+  ca-certificates \
   curl \
   cython3 \
   dssi-dev \
   emacs-nox \
+  ffmpeg \
   flex \
   fluid \
   fluid-soundfont-gm \
@@ -52,8 +53,17 @@ apt-get install -qqy --no-install-recommends \
   ladspa-sdk \
   libasound2-dev \
   libavahi-client-dev \
+  libavcodec-dev \
+  libavdevice-dev \
+  libavfilter-dev \
+  libavformat-dev \
+  libavresample-dev \
+  libavutil-dev \
   libcurl4-openssl-dev \
+  libdlna-dev \
   libeigen3-dev \
+  libffmpegthumbnailer-dev \
+  libffms2-dev \
   libfftw3-dev \
   libfltk1.3-dev \
   libglib2.0-dev \
@@ -70,25 +80,32 @@ apt-get install -qqy --no-install-recommends \
   libmp3lame-dev \
   libpam0g-dev \
   libportmidi-dev \
+  libpostproc-dev \
   libpulse-dev \
   libpython3-dev \
   libqt5opengl5-dev \
   libqt5svg5-dev \
   libqt5websockets5-dev \
+  libqtav-dev \
+  libqtav-private-dev \
   libreadline-dev \
   librtmidi-dev \
   libsamplerate0-dev \
   libsdl2-dev \
+  libsdl-kitchensink-dev \
   libsndfile1-dev \
   libsndio-dev \
   libspeex-dev \
   libspeexdsp-dev \
   libsqlite3-dev \
   libstk0-dev \
+  libswresample-dev \
+  libswscale-dev
   libsystemd-dev \
   libtool \
   libudev-dev \
   libvpx-dev \
+  libvulkan-dev \
   libwebsockets-dev \
   libx11-dev \
   libx11-xcb-dev \
@@ -105,8 +122,8 @@ apt-get install -qqy --no-install-recommends \
   mlocate \
   nano \
   portaudio19-dev \
-  python-gi-dev \
   python3-cairo-dev \
+  python-gi-dev \
   qt5-default \
   qtbase5-dev \
   qtdeclarative5-dev \
