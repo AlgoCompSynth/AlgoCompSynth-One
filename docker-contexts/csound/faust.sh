@@ -16,18 +16,32 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/tidal.log
+rm -f $LOGS/faust.log
 cd $SOURCE_DIR
 
-echo "Updating package list"
-rm -fr /root/.cabal/
-/usr/bin/time cabal update \
-  >> $LOGS/tidal.log 2>&1
-echo "Installing tidal"
-/usr/bin/time cabal install \
-  --prefix=/usr/local \
-  --bindir=/usr/local/bin \
-  --global \
-  --jobs=`nproc` \
-  tidal \
-  >> $LOGS/tidal.log 2>&1
+echo "Installing dependencies"
+apt-get install -qqy --no-install-recommends \
+  libmicrohttpd-dev \
+  >> $LOGS/faust.log 2>&1
+apt-get clean
+
+echo "Cloning faust"
+rm -fr faust
+git clone https://github.com/grame-cncm/faust.git \
+  >> $LOGS/faust.log 2>&1
+cd faust
+git submodule update --init \
+  >> $LOGS/faust.log 2>&1
+git checkout $FAUST_VERSION \
+  >> $LOGS/faust.log 2>&1
+
+echo "Compiling faust - selecting only 'regular' backends"
+#cp build/backends/regular.cmake build/backends/all.cmake
+cd build
+/usr/bin/time make TARGETS=all.cmake BACKENDS=regular.cmake \
+  >> $LOGS/faust.log 2>&1
+echo "Installing faust"
+make install \
+  >> $LOGS/faust.log 2>&1
+ldconfig \
+  >> $LOGS/faust.log 2>&1

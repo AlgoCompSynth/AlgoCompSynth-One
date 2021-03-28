@@ -19,6 +19,32 @@ set -e
 rm -f $LOGS/chuck.log
 cd $SOURCE_DIR
 
+echo "Updating and upgrading"
+apt-get update \
+  >> $LOGS/chuck.log 2>&1
+apt-get upgrade -y \
+  >> $LOGS/chuck.log 2>&1
+
+echo "Installing dependencies"
+apt-get install -qqy --no-install-recommends \
+  bison \
+  build-essential \
+  ca-certificates \
+  curl \
+  emacs-nox \
+  flex \
+  libasound2-dev \
+  libfftw3-dev \
+  libjack-jackd2-dev \
+  libsndfile1-dev \
+  nano \
+  sudo \
+  time \
+  vim-nox \
+  wget \
+  >> $LOGS/chuck.log 2>&1
+apt-get clean
+
 rm -fr chuck*
 echo "Downloading ChucK $CHUCK_VERSION source"
 curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \

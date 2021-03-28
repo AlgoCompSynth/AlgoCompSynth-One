@@ -19,6 +19,28 @@ set -e
 rm -f $LOGS/fluidsynth.log
 cd $SOURCE_DIR
 
+echo "Installing dependencies"
+apt-get install -qqy --no-install-recommends \
+  fluid-soundfont-gm \
+  fluid-soundfont-gs \
+  freepats \
+  ladspa-sdk \
+  libasound2-dev \
+  libdbus-1-dev \
+  libglib2.0-dev \
+  libinstpatch-dev \
+  libjack-jackd2-dev \
+  liblash-compat-dev \
+  libpulse-dev \
+  libreadline-dev \
+  libsdl2-dev \
+  libsdl-kitchensink-dev \
+  libsndfile1-dev \
+  libsystemd-dev \
+  pkg-config \
+  >> $LOGS/fluidsynth.log 2>&1
+apt-get clean
+
 echo "Cloning fluidsynth"
 rm -fr fluidsynth
 git clone --recursive https://github.com/FluidSynth/fluidsynth.git \

@@ -16,23 +16,24 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/libmusicxml.log
+rm -f $LOGS/tidal.log
 cd $SOURCE_DIR
 
-echo "Cloning libmusicxml repo"
-rm -fr libmusicxml
-git clone https://github.com/grame-cncm/libmusicxml.git \
-  >> $LOGS/libmusicxml.log 2>&1
-cd libmusicxml
-git checkout $LIBMUSICXML_VERSION \
-  >> $LOGS/libmusicxml.log 2>&1
-cd build
+echo "Installing dependencies"
+apt-get install -qqy --no-install-recommends \
+  cabal-install \
+  >> $LOGS/tidal.log 2>&1
+apt-get clean
 
-echo "Compiling libmusicxml"
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/libmusicxml.log 2>&1
-echo "Installing libmusicxml"
-make install \
-  >> $LOGS/libmusicxml.log 2>&1
-ldconfig \
-  >> $LOGS/libmusicxml.log 2>&1
+echo "Updating package list"
+rm -fr /root/.cabal/
+/usr/bin/time cabal update \
+  >> $LOGS/tidal.log 2>&1
+echo "Installing tidal"
+/usr/bin/time cabal install \
+  --prefix=/usr/local \
+  --bindir=/usr/local/bin \
+  --global \
+  --jobs=`nproc` \
+  tidal \
+  >> $LOGS/tidal.log 2>&1

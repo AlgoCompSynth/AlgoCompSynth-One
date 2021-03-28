@@ -19,6 +19,40 @@ set -e
 rm -f $LOGS/csound.log
 cd $SOURCE_DIR
 
+echo "Installing dependencies"
+apt-get install -qqy --no-install-recommends \
+  bison \
+  dssi-dev \
+  flex \
+  gettext \
+  hdf5-tools \
+  ladspa-sdk \
+  libasound2-dev \
+  libcurl4-openssl-dev \
+  libeigen3-dev \
+  libfftw3-dev \
+  libgmm++-dev \
+  libhdf5-dev \
+  libhdf5-serial-dev \
+  libjack-jackd2-dev \
+  liblash-compat-dev \
+  liblo-dev \
+  liblua5.2-dev \
+  libmp3lame-dev \
+  libncurses5-dev \
+  libpng-dev \
+  libportmidi-dev \
+  libpulse-dev \
+  libpython3-dev \
+  libsamplerate0-dev \
+  libsndfile1-dev \
+  libstk0-dev \
+  libwebsockets-dev \
+  portaudio19-dev \
+  swig3.0 \
+  >> $LOGS/csound.log 2>&1
+apt-get clean
+
 echo "Cloning CSound"
 rm -fr csound
 git clone https://github.com/csound/csound.git csound \
@@ -51,6 +85,12 @@ cmake \
   -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
   -DLUA_H_PATH="/usr/include/lua5.2/" \
   -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
+  -DBUILD_JAVA_INTERFACE=OFF \
+  -DBUILD_P5GLOVE_OPCODES=OFF \
+  -DBUILD_VIRTUAL_KEYBOARD=OFF \
+  -DBUILD_WIIMOTE_OPCODES=OFF \
+  -DUSE_FLTK=OFF \
+  -DCUDA_cufft_LIBRARY="/usr/local/cuda-10.2/targets/aarch64-linux/lib/libcufft.so" \
   ../csound \
   >> $LOGS/csound.log 2>&1
 echo "Compiling CSound"

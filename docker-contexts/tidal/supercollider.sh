@@ -21,6 +21,41 @@ set -e
 rm -f $LOGS/supercollider.log
 cd $SOURCE_DIR
 
+echo "Updating and upgrading"
+apt-get update \
+  >> $LOGS/supercollider.log 2>&1
+apt-get upgrade -y \
+  >> $LOGS/supercollider.log 2>&1
+
+echo "Installing dependencies"
+apt-get install -qqy --no-install-recommends \
+  build-essential \
+  curl \
+  git \
+  emacs-nox \
+  libasound2-dev \
+  libavahi-client-dev \
+  libfftw3-dev \
+  libjack-jackd2-dev \
+  libsndfile1-dev \
+  libudev-dev \
+  nano \
+  sudo \
+  time \
+  vim-nox \
+  wget \
+  >> $LOGS/supercollider.log 2>&1
+apt-get clean
+
+echo "Installing latest 'cmake'"
+wget --quiet --no-clobber \
+  https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0-linux-aarch64.sh
+chmod +x cmake-3.20.0-linux-aarch64.sh 
+./cmake-3.20.0-linux-aarch64.sh --skip-license --prefix=/usr/local
+which cmake
+cmake --version
+rm cmake-3.20.0-linux-aarch64.sh 
+
 echo "Cloning supercollider repo"
 rm -fr supercollider
 git clone --recursive https://github.com/supercollider/supercollider.git \
@@ -30,15 +65,24 @@ pushd supercollider
     >> $LOGS/supercollider.log 2>&1
   export SC_PATH=$PWD
 
-  echo "Building supercollider"
+  echo "Configuring supercollider"
   mkdir build && cd build
   cmake \
+    -Wno-dev \
     -DCMAKE_BUILD_TYPE=Release \
     -DNATIVE=ON \
+    -DNO_X11=ON \
+    -DSC_ABLETON_LINK=OFF \
+    -DSC_IDE=OFF \
+    -DSC_QT=OFF \
+    -DSC_ED=OFF \
     .. \
     >> $LOGS/supercollider.log 2>&1
-  make --jobs=`nproc` \
+
+  echo "Compiling supercollider"
+  /usr/bin/time make --jobs=`nproc` \
     >> $LOGS/supercollider.log 2>&1
+
   echo "Installing supercollider"
   make install \
     >> $LOGS/supercollider.log 2>&1
@@ -62,7 +106,7 @@ pushd sc3-plugins
     -DQUARKS=ON \
     .. \
     >> $LOGS/supercollider.log 2>&1
-  make --jobs=`nproc` \
+  /usr/bin/time make --jobs=`nproc` \
     >> $LOGS/supercollider.log 2>&1
   echo "Installing sc3-plugins"
   make install \
