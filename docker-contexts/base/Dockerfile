@@ -35,6 +35,8 @@ ENV SYNTH_HOME=/home/synth
 COPY --chown=synth:synth Desktop $SYNTH_HOME/Desktop
 COPY --chown=synth:synth Music $SYNTH_HOME/Music
 COPY --chown=synth:synth Projects $SYNTH_HOME/Projects
+COPY --chown=synth:synth Scripts $SYNTH_HOME/Scripts
+COPY --chown=synth:synth Logfiles $SYNTH_HOME/Logfiles
 RUN chown -R synth:synth $SYNTH_HOME
 
 USER synth
