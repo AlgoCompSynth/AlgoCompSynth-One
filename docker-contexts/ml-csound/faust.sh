@@ -16,23 +16,29 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/cusignal.log
+rm -f $HOME/Logfiles/faust.log
 cd $HOME/Projects
 
-rm -fr cusignal*
-echo "Downloading cuSignal $CUSIGNAL_VERSION source"
+echo "Installing dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  libmicrohttpd-dev \
+  >> $HOME/Logfiles/faust.log 2>&1
+sudo apt-get clean
+
+echo "Downloading faust source"
+rm -fr faust*
 curl -Ls \
-  https://github.com/rapidsai/cusignal/archive/refs/tags/v$CUSIGNAL_VERSION.tar.gz \
+  https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
   | tar --extract --gunzip --file=-
-export CUSIGNAL_HOME=$(pwd)/cusignal-$CUSIGNAL_VERSION
-cd $CUSIGNAL_HOME
 
-sed --in-place=.bak --expression='s;python setup.py;sudo python3 setup.py;' ./build.sh
-/usr/bin/time ./build.sh --allgpuarch \
-  >> $HOME/Logfiles/cusignal.log 2>&1
-echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
-mkdir --parents $HOME/Notebooks
-cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
-
-
-
+echo "Compiling faust - selecting only 'regular' backends"
+cd faust-$FAUST_VERSION/build
+#cp build/backends/regular.cmake build/backends/all.cmake
+export CMAKEOPT="-Wno-dev"
+/usr/bin/time make TARGETS=all.cmake BACKENDS=regular.cmake \
+  >> $HOME/Logfiles/faust.log 2>&1
+echo "Installing faust"
+sudo make install \
+  >> $HOME/Logfiles/faust.log 2>&1
+sudo ldconfig -v \
+  >> $HOME/Logfiles/faust.log 2>&1
