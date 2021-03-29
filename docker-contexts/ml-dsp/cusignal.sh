@@ -16,24 +16,23 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/tidal.log
-cd $SOURCE_DIR
+rm -f $HOME/Logfiles/cusignal.log
+cd $HOME/Projects
 
-echo "Installing dependencies"
-apt-get install -qqy --no-install-recommends \
-  cabal-install \
-  >> $LOGS/tidal.log 2>&1
-apt-get clean
+rm -fr cusignal*
+echo "Downloading cuSignal $CUSIGNAL_VERSION source"
+curl -Ls \
+  https://github.com/rapidsai/cusignal/archive/refs/tags/v$CUSIGNAL_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
+export CUSIGNAL_HOME=$(pwd)/cusignal-$CUSIGNAL_VERSION
+cd $CUSIGNAL_HOME
 
-echo "Updating package list"
-rm -fr /root/.cabal/
-/usr/bin/time cabal update \
-  >> $LOGS/tidal.log 2>&1
-echo "Installing tidal"
-/usr/bin/time cabal install \
-  --prefix=/usr/local \
-  --bindir=/usr/local/bin \
-  --global \
-  --jobs=`nproc` \
-  tidal \
-  >> $LOGS/tidal.log 2>&1
+sed --in-place=.bak --expression='s;python setup.py;sudo python3 setup.py;' ./build.sh
+/usr/bin/time ./build.sh --allgpuarch \
+  >> $HOME/Logfiles/cusignal.log 2>&1
+echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
+mkdir --parents $HOME/Notebooks
+cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
+
+
+

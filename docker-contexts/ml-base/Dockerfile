@@ -1,4 +1,4 @@
-FROM "ubuntu:bionic"
+FROM "nvcr.io/nvidia/l4t-ml:r32.5.0-py3"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive

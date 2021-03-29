@@ -16,52 +16,22 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/libmusicxml.log
-cd $SOURCE_DIR
+rm -f $HOME/Logfiles/libmusicxml.log
+cd $HOME/Projects
 
-echo "Updating and upgrading"
-apt-get update \
-  >> $LOGS/libmusicxml.log 2>&1
-apt-get upgrade -y \
-  >> $LOGS/libmusicxml.log 2>&1
-
-echo "Installing dependencies"
-apt-get install -qqy --no-install-recommends \
-  build-essential \
-  curl \
-  git \
-  emacs-nox \
-  nano \
-  sudo \
-  time \
-  vim-nox \
-  wget \
-  >> $LOGS/libmusicxml.log 2>&1
-apt-get clean
-
-echo "Installing latest 'cmake'"
-wget --quiet --no-clobber \
-  https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0-linux-aarch64.sh
-chmod +x cmake-3.20.0-linux-aarch64.sh 
-./cmake-3.20.0-linux-aarch64.sh --skip-license --prefix=/usr/local
-which cmake
-cmake --version
-rm cmake-3.20.0-linux-aarch64.sh 
-
-echo "Cloning libmusicxml repo"
-rm -fr libmusicxml
-git clone https://github.com/grame-cncm/libmusicxml.git \
-  >> $LOGS/libmusicxml.log 2>&1
-cd libmusicxml
-git checkout $LIBMUSICXML_VERSION \
-  >> $LOGS/libmusicxml.log 2>&1
-cd build
+echo "Downloading libmusicxml source"
+rm -fr libmusicxml*
+curl -Ls \
+  https://github.com/grame-cncm/libmusicxml/archive/refs/tags/v$LIBMUSICXML_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
+cd libmusicxml-$LIBMUSICXML_VERSION/build
 
 echo "Compiling libmusicxml"
+export CMAKEOPT=-DLILY=off
 /usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/libmusicxml.log 2>&1
+  >> $HOME/Logfiles/libmusicxml.log 2>&1
 echo "Installing libmusicxml"
-make install \
-  >> $LOGS/libmusicxml.log 2>&1
-ldconfig \
-  >> $LOGS/libmusicxml.log 2>&1
+sudo make install \
+  >> $HOME/Logfiles/libmusicxml.log 2>&1
+sudo ldconfig -v \
+  >> $HOME/Logfiles/libmusicxml.log 2>&1

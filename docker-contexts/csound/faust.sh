@@ -16,32 +16,28 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/faust.log
-cd $SOURCE_DIR
+rm -f $HOME/Logfiles/faust.log
+cd $HOME/Projects
 
 echo "Installing dependencies"
-apt-get install -qqy --no-install-recommends \
+sudo apt-get install -qqy --no-install-recommends \
   libmicrohttpd-dev \
-  >> $LOGS/faust.log 2>&1
-apt-get clean
+  >> $HOME/Logfiles/faust.log 2>&1
+sudo apt-get clean
 
-echo "Cloning faust"
-rm -fr faust
-git clone https://github.com/grame-cncm/faust.git \
-  >> $LOGS/faust.log 2>&1
-cd faust
-git submodule update --init \
-  >> $LOGS/faust.log 2>&1
-git checkout $FAUST_VERSION \
-  >> $LOGS/faust.log 2>&1
+echo "Downloading faust source"
+rm -fr faust*
+curl -Ls \
+  https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
 
 echo "Compiling faust - selecting only 'regular' backends"
+cd faust-$FAUST_VERSION/build
 #cp build/backends/regular.cmake build/backends/all.cmake
-cd build
 /usr/bin/time make TARGETS=all.cmake BACKENDS=regular.cmake \
-  >> $LOGS/faust.log 2>&1
+  >> $HOME/Logfiles/faust.log 2>&1
 echo "Installing faust"
-make install \
-  >> $LOGS/faust.log 2>&1
-ldconfig \
-  >> $LOGS/faust.log 2>&1
+sudo make install \
+  >> $HOME/Logfiles/faust.log 2>&1
+sudo ldconfig -v \
+  >> $HOME/Logfiles/faust.log 2>&1

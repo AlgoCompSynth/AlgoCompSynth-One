@@ -16,26 +16,21 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
-cd $SOURCE_DIR
+rm -f $HOME/Logfiles/tidal.log
+cd $HOME/Projects
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
+echo "Installing dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  cabal-install \
+  >> $HOME/Logfiles/tidal.log 2>&1
+sudo apt-get clean
 
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake -DLIB_SUFFIX="" .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+echo "Updating package list"
+rm -fr $HOME/.cabal/
+/usr/bin/time cabal update \
+  >> $HOME/Logfiles/tidal.log 2>&1
+echo "Installing tidal"
+/usr/bin/time cabal install \
+  --jobs=`nproc` \
+  tidal \
+  >> $HOME/Logfiles/tidal.log 2>&1

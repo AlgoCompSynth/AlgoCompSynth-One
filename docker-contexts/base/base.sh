@@ -32,21 +32,25 @@ apt-get install -qqy --no-install-recommends \
   alsa-tools \
   alsa-utils \
   apt-file \
+  bison \
   build-essential \
   ca-certificates \
   curl \
   emacs-nox \
   file \
   flac \
+  flex \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
   freepats \
+  gettext \
   git \
   gnupg \
   jack-tools \
   jacktrip \
   ladspa-sdk \
   libasound2-dev \
+  libcurl4-openssl-dev \
   libdbus-1-dev \
   libfftw3-dev \
   libglib2.0-dev \
@@ -55,6 +59,8 @@ apt-get install -qqy --no-install-recommends \
   liblash-compat-dev \
   liblo-dev \
   libmp3lame-dev \
+  libncurses5-dev \
+  libpng-dev \
   libportmidi-dev \
   libpulse-dev \
   libreadline-dev \
@@ -64,6 +70,7 @@ apt-get install -qqy --no-install-recommends \
   libsndfile1-dev \
   libsox-dev \
   libsox-fmt-all \
+  libstk0-dev \
   libsystemd-dev \
   lynx \
   mlocate \
@@ -71,6 +78,7 @@ apt-get install -qqy --no-install-recommends \
   nano \
   pkg-config \
   portaudio19-dev \
+  python3-dev \
   snd-nox \
   software-properties-common \
   sox \

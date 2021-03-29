@@ -15,49 +15,78 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# https://github.com/supercollider/supercollider/wiki/Installing-supercollider-from-source-on-Ubuntu
+
 set -e
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/base.log
 cd $SOURCE_DIR
+
+echo "Updating and upgrading"
+apt-get update \
+  >> $LOGS/base.log 2>&1
+apt-get upgrade -y \
+  >> $LOGS/base.log 2>&1
 
 echo "Installing dependencies"
 apt-get install -qqy --no-install-recommends \
+  alsa-tools \
+  alsa-utils \
+  apt-file \
+  bison \
+  build-essential \
+  ca-certificates \
+  curl \
+  emacs-nox \
+  file \
+  flac \
+  flex \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
   freepats \
+  gettext \
+  git \
+  gnupg \
+  jack-tools \
+  jacktrip \
   ladspa-sdk \
   libasound2-dev \
+  libcurl4-openssl-dev \
   libdbus-1-dev \
+  libfftw3-dev \
   libglib2.0-dev \
   libinstpatch-dev \
   libjack-jackd2-dev \
   liblash-compat-dev \
+  liblo-dev \
+  libmp3lame-dev \
+  libncurses5-dev \
+  libpng-dev \
+  libportmidi-dev \
   libpulse-dev \
   libreadline-dev \
+  libsamplerate0-dev \
   libsdl2-dev \
   libsdl-kitchensink-dev \
   libsndfile1-dev \
+  libsox-dev \
+  libsox-fmt-all \
+  libstk0-dev \
   libsystemd-dev \
+  lynx \
+  mlocate \
+  mp3splt \
+  nano \
   pkg-config \
-  >> $LOGS/fluidsynth.log 2>&1
+  portaudio19-dev \
+  python3-dev \
+  snd-nox \
+  software-properties-common \
+  sox \
+  sudo \
+  time \
+  timidity \
+  tree \
+  vim-nox \
+  wget \
+  >> $LOGS/base.log 2>&1
 apt-get clean
-
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
-
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake -DLIB_SUFFIX="" .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version

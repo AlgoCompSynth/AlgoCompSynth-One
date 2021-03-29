@@ -16,26 +16,16 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
-cd $SOURCE_DIR
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
+echo "Setting 'vim' editor background"
+echo "If your terminal background is light, enter any text string."
+read -p "If it's dark, just press 'Enter':"
 
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake -DLIB_SUFFIX="" .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+if [ ${#REPLY} == "0" ]
+then
+  echo "set bg=dark" >> $HOME/.vimrc
+else
+  echo "set bg=light" >> $HOME/.vimrc
+fi
+
+echo "'vim' background is set"

@@ -16,56 +16,26 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/csound.log
-cd $SOURCE_DIR
+rm -f $HOME/Logfiles/csound.log
+cd $HOME/Projects
 
 echo "Installing dependencies"
-apt-get install -qqy --no-install-recommends \
-  bison \
-  dssi-dev \
-  flex \
-  gettext \
+sudo apt-get install -qqy --no-install-recommends \
   hdf5-tools \
-  ladspa-sdk \
-  libasound2-dev \
-  libcurl4-openssl-dev \
   libeigen3-dev \
-  libfftw3-dev \
   libgmm++-dev \
   libhdf5-dev \
   libhdf5-serial-dev \
-  libjack-jackd2-dev \
-  liblash-compat-dev \
-  liblo-dev \
   liblua5.2-dev \
-  libmp3lame-dev \
-  libncurses5-dev \
-  libpng-dev \
-  libportmidi-dev \
-  libpulse-dev \
-  libpython3-dev \
-  libsamplerate0-dev \
-  libsndfile1-dev \
-  libstk0-dev \
-  libwebsockets-dev \
-  portaudio19-dev \
   swig3.0 \
-  >> $LOGS/csound.log 2>&1
-apt-get clean
+  >> $HOME/Logfiles/csound.log 2>&1
+sudo apt-get clean
 
-echo "Cloning CSound"
-rm -fr csound
-git clone https://github.com/csound/csound.git csound \
-  >> $LOGS/csound.log 2>&1
-cd csound
-git checkout $CSOUND_VERSION \
-  >> $LOGS/csound.log 2>&1
-cd ..
-
-rm -fr cs6make
-mkdir cs6make
-cd cs6make
-export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
+echo "Downloading csound source"
+rm -fr csound*
+curl -Ls \
+  https://github.com/csound/csound/archive/refs/tags/$CSOUND_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
 
 if [ ! -x "/usr/local/cuda/bin/nvcc" ]
 then
@@ -77,6 +47,10 @@ else
 fi
 
 echo "Configuring CSound"
+rm -fr cs6make
+mkdir cs6make
+cd cs6make
+export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
 cmake \
   -Wno-dev \
   -DBUILD_CUDA_OPCODES=$CUDA_PRESENT \
@@ -90,19 +64,18 @@ cmake \
   -DBUILD_VIRTUAL_KEYBOARD=OFF \
   -DBUILD_WIIMOTE_OPCODES=OFF \
   -DUSE_FLTK=OFF \
-  -DCUDA_cufft_LIBRARY="/usr/local/cuda-10.2/targets/aarch64-linux/lib/libcufft.so" \
-  ../csound \
-  >> $LOGS/csound.log 2>&1
+  ../csound-$CSOUND_VERSION \
+  >> $HOME/Logfiles/csound.log 2>&1
 echo "Compiling CSound"
 /usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/csound.log 2>&1
+  >> $HOME/Logfiles/csound.log 2>&1
 echo "Installing CSound"
-make install \
-  >> $LOGS/csound.log 2>&1
-ldconfig \
-  >> $LOGS/csound.log 2>&1
+sudo make install \
+  >> $HOME/Logfiles/csound.log 2>&1
+sudo ldconfig -v \
+  >> $HOME/Logfiles/csound.log 2>&1
 
 echo "Relocating samples to '/usr/local/share/csound/samples'"
-rm -fr /usr/local/share/csound
-mkdir --parents /usr/local/share/csound
-mv /usr/local/share/samples /usr/local/share/csound/samples
+sudo rm -fr /usr/local/share/csound
+sudo mkdir --parents /usr/local/share/csound
+sudo mv /usr/local/share/samples /usr/local/share/csound/samples

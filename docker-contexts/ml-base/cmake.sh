@@ -15,27 +15,17 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# https://github.com/supercollider/supercollider/wiki/Installing-supercollider-from-source-on-Ubuntu
+
 set -e
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/cmake.log
 cd $SOURCE_DIR
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
-
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake -DLIB_SUFFIX="" .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+echo "Installing latest 'cmake'"
+wget --quiet --no-clobber \
+  https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-linux-aarch64.sh
+chmod +x cmake-$CMAKE_VERSION-linux-aarch64.sh 
+./cmake-$CMAKE_VERSION-linux-aarch64.sh --skip-license --prefix=/usr/local
+which cmake
+cmake --version
+rm cmake-$CMAKE_VERSION-linux-aarch64.sh 
