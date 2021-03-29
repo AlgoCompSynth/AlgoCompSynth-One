@@ -16,33 +16,30 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/chuck.log
 cd $SOURCE_DIR
 
-echo "Downloading fluidsynth"
-rm -fr fluidsynth*
-curl -Ls \
-  https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v$FLUIDSYNTH_VERSION.tar.gz \
+rm -fr chuck*
+echo "Downloading ChucK $CHUCK_VERSION source"
+curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
   | tar --extract --gunzip --file=-
-pushd fluidsynth-$FLUIDSYNTH_VERSION
+pushd chuck-$CHUCK_VERSION/src
 
-  echo "Compiling FluidSynth"
-  mkdir --parents build; cd build
-  cmake \
-    -Wno-dev \
-    -DLIB_SUFFIX="" \
-    .. \
-    >> $LOGS/fluidsynth.log 2>&1
-  /usr/bin/time make --jobs=`nproc` \
-    >> $LOGS/fluidsynth.log 2>&1
-  echo "Installing FluidSynth"
+  echo "Compiling ChucK for JACK"
+  /usr/bin/time make linux-jack \
+    >> $LOGS/chuck.log 2>&1
+  echo "Installing ChucK"
   make install \
-    >> $LOGS/fluidsynth.log 2>&1
+    >> $LOGS/chuck.log 2>&1
+
+  echo "Relocating ChucK examples"
+  rm -fr /usr/local/share/chuck
+  mkdir --parents /usr/local/share/chuck
+  mv ../examples /usr/local/share/chuck/examples
   popd
 
 ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+  >> $LOGS/chuck.log 2>&1
 
 echo "Cleanup"
-rm -fr $SOURCE_DIR/fluidsynth*
+rm -fr $SOURCE_DIR/chuck*
