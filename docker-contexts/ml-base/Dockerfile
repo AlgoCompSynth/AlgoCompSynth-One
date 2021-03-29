@@ -69,5 +69,11 @@ RUN chown -R synth:synth $SYNTH_HOME
 USER synth
 WORKDIR $SYNTH_HOME
 
+# Miniforge
+RUN $SYNTH_HOME/Scripts/miniforge.sh
+
 # R packages
 RUN $SYNTH_HOME/Scripts/r-packages.sh
+
+# Get rid of JupyterLab start on image
+CMD [ "/bin/bash" ]
