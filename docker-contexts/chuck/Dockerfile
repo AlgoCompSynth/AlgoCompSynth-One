@@ -1,6 +1,0 @@
-FROM "docker.io/algocompsynth/base:latest"
-LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
-
-ENV CHUCK_VERSION="1.4.0.1"
-COPY chuck.sh $SYNTH_HOME/Scripts/
-RUN $SYNTH_HOME/Scripts/chuck.sh

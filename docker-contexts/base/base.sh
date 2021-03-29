@@ -84,6 +84,7 @@ apt-get install -qqy --no-install-recommends \
   snd-nox \
   software-properties-common \
   sox \
+  stk \
   sudo \
   time \
   timidity \

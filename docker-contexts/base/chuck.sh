@@ -16,22 +16,30 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/libmusicxml.log
-cd $HOME/Projects
+rm -f $LOGS/chuck.log
+cd $SOURCE_DIR
 
-echo "Downloading libmusicxml source"
-rm -fr libmusicxml*
-curl -Ls \
-  https://github.com/grame-cncm/libmusicxml/archive/refs/tags/v$LIBMUSICXML_VERSION.tar.gz \
+rm -fr chuck*
+echo "Downloading ChucK $CHUCK_VERSION source"
+curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
   | tar --extract --gunzip --file=-
-cd libmusicxml-$LIBMUSICXML_VERSION/build
+pushd chuck-$CHUCK_VERSION/src
 
-echo "Compiling libmusicxml"
-export CMAKEOPT="-DLILY=off,-Wno-dev"
-/usr/bin/time make --jobs=`nproc` \
-  >> $HOME/Logfiles/libmusicxml.log 2>&1
-echo "Installing libmusicxml"
-sudo make install \
-  >> $HOME/Logfiles/libmusicxml.log 2>&1
-sudo ldconfig -v \
-  >> $HOME/Logfiles/libmusicxml.log 2>&1
+  echo "Compiling ChucK for JACK"
+  /usr/bin/time make linux-jack \
+    >> $LOGS/chuck.log 2>&1
+  echo "Installing ChucK"
+  make install \
+    >> $LOGS/chuck.log 2>&1
+
+  echo "Relocating ChucK examples"
+  rm -fr /usr/local/share/chuck
+  mkdir --parents /usr/local/share/chuck
+  mv ../examples /usr/local/share/chuck/examples
+  popd
+
+ldconfig -v \
+  >> $LOGS/chuck.log 2>&1
+
+echo "Cleanup"
+rm -fr $SOURCE_DIR/chuck*

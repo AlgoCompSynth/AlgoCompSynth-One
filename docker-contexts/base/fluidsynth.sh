@@ -19,26 +19,30 @@ set -e
 rm -f $LOGS/fluidsynth.log
 cd $SOURCE_DIR
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
+echo "Downloading fluidsynth"
+rm -fr fluidsynth*
+curl -Ls \
+  https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v$FLUIDSYNTH_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
+pushd fluidsynth-$FLUIDSYNTH_VERSION
 
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake \
-  -Wno-dev \
-  -DLIB_SUFFIX="" \
-  .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
+  echo "Compiling FluidSynth"
+  mkdir --parents build; cd build
+  cmake \
+    -Wno-dev \
+    -DLIB_SUFFIX="" \
+    .. \
+    >> $LOGS/fluidsynth.log 2>&1
+  /usr/bin/time make --jobs=`nproc` \
+    >> $LOGS/fluidsynth.log 2>&1
+  echo "Installing FluidSynth"
+  make install \
+    >> $LOGS/fluidsynth.log 2>&1
+  popd
+
 ldconfig -v \
   >> $LOGS/fluidsynth.log 2>&1
 fluidsynth --version
+
+echo "Cleanup"
+rm -fr $SOURCE_DIR/fluidsynth*
