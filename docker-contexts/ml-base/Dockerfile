@@ -61,9 +61,13 @@ COPY --chown=synth:synth Desktop $SYNTH_HOME/Desktop
 COPY --chown=synth:synth Music $SYNTH_HOME/Music
 COPY --chown=synth:synth Projects $SYNTH_HOME/Projects
 COPY --chown=synth:synth Scripts $SYNTH_HOME/Scripts
+COPY --chown=synth:synth Rprofile $SYNTH_HOME/.Rprofile
 COPY --chown=synth:synth Logfiles $SYNTH_HOME/Logfiles
 RUN echo "set bg=dark" >> $SYNTH_HOME/.vimrc
 RUN chown -R synth:synth $SYNTH_HOME
 
 USER synth
 WORKDIR $SYNTH_HOME
+
+# R packages
+RUN $SYNTH_HOME/Scripts/r-packages.sh
