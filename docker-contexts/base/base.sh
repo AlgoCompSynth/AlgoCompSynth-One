@@ -70,8 +70,10 @@ apt-get install -qqy --no-install-recommends \
   libsndfile1-dev \
   libsox-dev \
   libsox-fmt-all \
+  libssl-dev \
   libstk0-dev \
   libsystemd-dev \
+  libwebsockets-dev \
   lynx \
   mlocate \
   mp3splt \

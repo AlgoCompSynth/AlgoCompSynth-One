@@ -16,29 +16,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/pandoc.log
 cd $SOURCE_DIR
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
-
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake \
-  -Wno-dev \
-  -DLIB_SUFFIX="" \
-  .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+echo "Downloading pandoc binary"
+export BASE_URL=https://github.com/jgm/pandoc/releases/download/$PANDOC_VERSION
+export FILE=pandoc-$PANDOC_VERSION-linux-arm64.tar.gz
+echo $BASE_URL/$FILE
+curl -Ls $BASE_URL/$FILE \
+  | tar --directory=/usr/local --strip-components=2 --extract --gunzip --file=-
+/usr/local/bin/pandoc --version

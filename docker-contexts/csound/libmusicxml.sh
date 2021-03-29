@@ -27,7 +27,7 @@ curl -Ls \
 cd libmusicxml-$LIBMUSICXML_VERSION/build
 
 echo "Compiling libmusicxml"
-export CMAKEOPT=-DLILY=off
+export CMAKEOPT="-DLILY=off,-Wno-dev"
 /usr/bin/time make --jobs=`nproc` \
   >> $HOME/Logfiles/libmusicxml.log 2>&1
 echo "Installing libmusicxml"

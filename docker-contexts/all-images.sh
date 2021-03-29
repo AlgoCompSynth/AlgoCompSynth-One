@@ -2,9 +2,15 @@
 
 set -e
 
-./image.sh base > /tmp/i-base.log 2>&1
 for repo in \
-  tidal \
+  base \
+  ml-base
+do
+  ./image.sh $repo > /tmp/i-$repo.log 2>&1 &
+done
+wait
+
+for repo in \
   csound \
   chuck
 do

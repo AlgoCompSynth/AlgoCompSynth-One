@@ -16,29 +16,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/pgdg.log
 cd $SOURCE_DIR
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
-
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake \
-  -Wno-dev \
-  -DLIB_SUFFIX="" \
-  .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+echo "Installing PGDG Linux repository"
+# https://wiki.postgresql.org/wiki/Apt
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+apt-get update \
+  >> $LOGS/pgdg.log 2>&1
+apt-get upgrade -y \
+  >> $LOGS/pgdg.log 2>&1
+apt-get clean \
+  >> $LOGS/pgdg.log 2>&1

@@ -34,6 +34,7 @@ curl -Ls \
 echo "Compiling faust - selecting only 'regular' backends"
 cd faust-$FAUST_VERSION/build
 #cp build/backends/regular.cmake build/backends/all.cmake
+export CMAKEOPT="-Wno-dev"
 /usr/bin/time make TARGETS=all.cmake BACKENDS=regular.cmake \
   >> $HOME/Logfiles/faust.log 2>&1
 echo "Installing faust"

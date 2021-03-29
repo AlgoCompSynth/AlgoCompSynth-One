@@ -24,6 +24,31 @@ ENV FLUIDSYNTH_VERSION="v2.1.8"
 COPY fluidsynth.sh $SCRIPTS
 RUN $SCRIPTS/fluidsynth.sh
 
+# Pandoc
+ENV PANDOC_VERSION="2.12"
+COPY upstream-pandoc.sh $SCRIPTS/
+RUN $SCRIPTS/upstream-pandoc.sh
+
+# R
+ENV R_VERSION_MAJOR=4 R_VERSION_MINOR=0 R_VERSION_PATCH=4
+ENV R_LATEST=R-$R_VERSION_MAJOR.$R_VERSION_MINOR.$R_VERSION_PATCH
+COPY R.conf /etc/ld.so.conf.d/R.conf
+COPY r-from-source.sh $SCRIPTS/
+RUN $SCRIPTS/r-from-source.sh
+
+# PGDG repository
+COPY pgdg.list /etc/apt/sources.list.d/pgdg.list
+COPY pgdg.sh $SCRIPTS/
+RUN $SCRIPTS/pgdg.sh
+
+# SymPy
+COPY sympy.sh $SCRIPTS/
+RUN $SCRIPTS/sympy.sh
+
+# cuSignal
+COPY cusignal.sh $SCRIPTS/
+RUN $SCRIPTS/cusignal.sh
+
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
 RUN $SCRIPTS/synth-user.sh

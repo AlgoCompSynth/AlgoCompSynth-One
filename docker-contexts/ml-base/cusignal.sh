@@ -16,29 +16,23 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/cusignal.log
 cd $SOURCE_DIR
 
-echo "Cloning fluidsynth"
-rm -fr fluidsynth
-git clone --recursive https://github.com/FluidSynth/fluidsynth.git \
-  >> $LOGS/fluidsynth.log 2>&1
-cd fluidsynth
-git checkout $FLUIDSYNTH_VERSION \
-  >> $LOGS/fluidsynth.log 2>&1
+echo "Cloning 'cusignal'"
+cd $SOURCE_DIR
+export CUSIGNAL_VERSION=v0.18.0
+export CUSIGNAL_HOME=$(pwd)/cusignal
+rm -fr $CUSIGNAL_HOME
+git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME \
+  >> $LOGS/cusignal.log 2>&1
+cd $CUSIGNAL_HOME
+echo "Checking out version '$CUSIGNAL_VERSION'"
+git checkout $CUSIGNAL_VERSION \
+  >> $LOGS/cusignal.log 2>&1
 
-echo "Compiling FluidSynth"
-mkdir --parents build; cd build
-cmake \
-  -Wno-dev \
-  -DLIB_SUFFIX="" \
-  .. \
-  >> $LOGS/fluidsynth.log 2>&1
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/fluidsynth.log 2>&1
-echo "Installing FluidSynth"
-make install \
-  >> $LOGS/fluidsynth.log 2>&1
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
+sed --in-place=.bak --expression='s;python setup.py;python3 setup.py;' ./build.sh
+/usr/bin/time ./build.sh --allgpuarch \
+  >> $LOGS/cusignal.log 2>&1
+echo "Copying '$CUSIGNAL_HOME/notebooks' to '/usr/local/share/cusignal-notebooks'"
+cp -rp $CUSIGNAL_HOME/notebooks /usr/local/share/cusignal-notebooks
