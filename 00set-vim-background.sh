@@ -23,9 +23,9 @@ read -p "If it's dark, just press 'Enter':"
 
 if [ ${#REPLY} == "0" ]
 then
-  cat misc/vimrc-dark >> $HOME/.vimrc
+  echo "set bg=dark" >> $HOME/.vimrc
+  echo "dark background set"
 else
-  cat misc/vimrc-light >> $HOME/.vimrc
+  echo "set bg=light" >> $HOME/.vimrc
+  echo "light background set"
 fi
-
-echo "'vim' background is set"
