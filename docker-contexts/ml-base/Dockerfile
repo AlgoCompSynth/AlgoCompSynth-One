@@ -75,5 +75,9 @@ RUN $SYNTH_HOME/Scripts/miniforge.sh
 # R packages
 RUN $SYNTH_HOME/Scripts/r-packages.sh
 
-# Get rid of JupyterLab start on image
+# cuSignal notebooks
+RUN mkdir --parents $SYNTH_HOME/Notebooks \
+  && cp -rp /usr/local/share/cusignal-notebooks $SYNTH_HOME/Notebooks
+
+# Get rid of root JupyterLab start on image
 CMD [ "/bin/bash" ]
