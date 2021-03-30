@@ -27,8 +27,10 @@ apt-get install -qqy --no-install-recommends \
   ca-certificates \
   flex \
   libasound2-dev \
+  libjack-jackd2-dev \
   libsndfile-dev \
   >> $LOGS/chuck.log 2>&1
+apt-get clean
 
 rm -fr chuck*
 echo "Downloading ChucK $CHUCK_VERSION source"
@@ -36,8 +38,8 @@ curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
   | tar --extract --gunzip --file=-
 pushd chuck-$CHUCK_VERSION/src
 
-  echo "Compiling ChucK for alsa"
-  make --jobs=`nproc` linux-alsa \
+  echo "Compiling ChucK for JACK"
+  make --jobs=`nproc` linux-jack \
     >> $LOGS/chuck.log 2>&1
   echo "Installing ChucK"
   make install \
