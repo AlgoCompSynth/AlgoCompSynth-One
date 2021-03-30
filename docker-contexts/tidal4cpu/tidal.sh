@@ -16,21 +16,25 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/tidal.log
-cd $HOME/Projects
+rm -f $LOGS/tidal.log
+cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   cabal-install \
-  >> $HOME/Logfiles/tidal.log 2>&1
-sudo apt-get clean
+  >> $LOGS/tidal.log 2>&1
+apt-get clean
 
 echo "Updating package list"
-rm -fr $HOME/.cabal/
-/usr/bin/time cabal update \
-  >> $HOME/Logfiles/tidal.log 2>&1
+rm -fr /root/.cabal/
+cabal update \
+  >> $LOGS/tidal.log 2>&1
+cabal install --help \
+  >> $LOGS/tidal.log 2>&1
 echo "Installing tidal"
-/usr/bin/time cabal install \
+cabal install \
+  --prefix=/usr/local \
+  --global \
   --jobs=`nproc` \
   tidal \
-  >> $HOME/Logfiles/tidal.log 2>&1
+  >> $LOGS/tidal.log 2>&1
