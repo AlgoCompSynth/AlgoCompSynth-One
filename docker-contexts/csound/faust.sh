@@ -11,19 +11,37 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/faust.log
-cd $HOME/Projects
+rm -f $LOGS/faust.log
+cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+apt-get update \
+  >> $LOGS/faust.log 2>&1
+apt-get upgrade -y \
+  >> $LOGS/faust.log 2>&1
+apt-get install -qqy --no-install-recommends \
+  build-essential \
+  ca-certificates \
+  curl \
   libmicrohttpd-dev \
-  >> $HOME/Logfiles/faust.log 2>&1
-sudo apt-get clean
+  pkg-config \
+  wget \
+  >> $LOGS/faust.log 2>&1
+apt-get clean
+
+echo "Installing latest 'cmake'"
+wget --quiet --no-clobber \
+  https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-linux-aarch64.sh
+chmod +x cmake-$CMAKE_VERSION-linux-aarch64.sh
+./cmake-$CMAKE_VERSION-linux-aarch64.sh --skip-license --prefix=/usr/local
+which cmake
+cmake --version
+rm cmake-$CMAKE_VERSION-linux-aarch64.sh
 
 echo "Downloading faust source"
 rm -fr faust*
@@ -33,12 +51,14 @@ curl -Ls \
 
 echo "Compiling faust - selecting only 'regular' backends"
 cd faust-$FAUST_VERSION/build
-#cp build/backends/regular.cmake build/backends/all.cmake
 export CMAKEOPT="-Wno-dev"
-/usr/bin/time make TARGETS=all.cmake BACKENDS=regular.cmake \
-  >> $HOME/Logfiles/faust.log 2>&1
+make TARGETS=all.cmake BACKENDS=regular.cmake \
+  >> $LOGS/faust.log 2>&1
 echo "Installing faust"
-sudo make install \
-  >> $HOME/Logfiles/faust.log 2>&1
-sudo ldconfig -v \
-  >> $HOME/Logfiles/faust.log 2>&1
+make install \
+  >> $LOGS/faust.log 2>&1
+ldconfig -v \
+  >> $LOGS/faust.log 2>&1
+
+echo "Cleanup"
+rm -fr $SOURCE_DIR/faust*

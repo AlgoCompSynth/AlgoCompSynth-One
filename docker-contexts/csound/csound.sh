@@ -16,20 +16,36 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/csound.log
-cd $HOME/Projects
+rm -f $LOGS/csound.log
+cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
+  bison \
+  default-jdk \
+  flex \
+  gettext \
   hdf5-tools \
+  libcurl4-openssl-dev \
   libeigen3-dev \
+  libgettextpo-dev \
   libgmm++-dev \
   libhdf5-dev \
   libhdf5-serial-dev \
   liblua5.2-dev \
+  libmp3lame-dev \
+  libncurses5-dev \
+  libpng-dev\
+  libpython-dev \
+  libpython3-dev \
+  libsamplerate0-dev \
+  libstk0-dev \
+  libwebsockets-dev \
+  python-dev \
+  python3-dev \
   swig3.0 \
-  >> $HOME/Logfiles/csound.log 2>&1
-sudo apt-get clean
+  >> $LOGS/csound.log 2>&1
+apt-get clean
 
 echo "Downloading csound source"
 rm -fr csound*
@@ -65,17 +81,20 @@ cmake \
   -DBUILD_WIIMOTE_OPCODES=OFF \
   -DUSE_FLTK=OFF \
   ../csound-$CSOUND_VERSION \
-  >> $HOME/Logfiles/csound.log 2>&1
+  >> $LOGS/csound.log 2>&1
 echo "Compiling CSound"
-/usr/bin/time make --jobs=`nproc` \
-  >> $HOME/Logfiles/csound.log 2>&1
+make --jobs=`nproc` \
+  >> $LOGS/csound.log 2>&1
 echo "Installing CSound"
-sudo make install \
-  >> $HOME/Logfiles/csound.log 2>&1
-sudo ldconfig -v \
-  >> $HOME/Logfiles/csound.log 2>&1
+make install \
+  >> $LOGS/csound.log 2>&1
+ldconfig -v \
+  >> $LOGS/csound.log 2>&1
 
 echo "Relocating samples to '/usr/local/share/csound/samples'"
-sudo rm -fr /usr/local/share/csound
-sudo mkdir --parents /usr/local/share/csound
-sudo mv /usr/local/share/samples /usr/local/share/csound/samples
+rm -fr /usr/local/share/csound
+mkdir --parents /usr/local/share/csound
+mv /usr/local/share/samples /usr/local/share/csound/samples
+
+echo "Cleanup"
+rm -fr $SOURCE_DIR/cs6make $SOURCE_DIR/csound*
