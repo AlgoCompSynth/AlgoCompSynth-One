@@ -114,4 +114,3 @@ pushd xpra
 echo "Installing xpra"
 sudo apt-get install -qqy --no-install-recommends $HOME/Projects/xpra_*.deb \
   >> $HOME/Logfiles/xpra.log 2>&1
-
