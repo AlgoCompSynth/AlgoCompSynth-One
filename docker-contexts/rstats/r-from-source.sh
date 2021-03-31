@@ -29,7 +29,8 @@ cd $SOURCE_DIR
 # see https://wiki.postgresql.org/wiki/Apt
 
 echo "Installing PGDG Linux repository"
-curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - \
+  >> $LOGS/R.log 2>&1
 apt-get update \
   >> $LOGS/R.log 2>&1
 
@@ -69,7 +70,7 @@ echo "Downloading $WEBSITE/$RELEASE_DIR/$R_TARBALL"
 curl -Ls "$WEBSITE/$RELEASE_DIR/$R_TARBALL" | tar xzf -
 echo "Using $R_LATEST"
 
-echo "Configuring"
+echo "Configuring build"
 mkdir --parents build-dir
 
 pushd build-dir
@@ -93,8 +94,9 @@ pushd build-dir
     >> $LOGS/R.log 2>&1
   popd
 
+echo "Cleanup"
 cd $SOURCE_DIR
-rm -fr build_dir
+rm -fr R-* build_dir
 
 echo "Configuring R"
 ldconfig -v \
@@ -103,8 +105,6 @@ R CMD javareconf \
   >> $LOGS/R.log 2>&1
 
 echo "Updating packages"
-Rscript -e "update.packages(ask = FALSE, quiet = TRUE)"
-
-echo "Installing audio packages"
-/usr/bin/time Rscript -e "source('Scripts/audio.R')" \
-  >> $HOME/Logfiles/R.log 2>&1
+Rscript -e \
+  "update.packages(ask = FALSE, quiet = TRUE, repos = 'https://cloud.r-project.org/')" \
+  >> $LOGS/R.log 2>&1

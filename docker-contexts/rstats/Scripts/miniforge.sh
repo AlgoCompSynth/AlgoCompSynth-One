@@ -35,7 +35,7 @@ echo "Initializing conda for 'bash'"
 source $HOME/miniconda3/etc/profile.d/conda.sh
 conda init bash \
   >> $HOME/Logfiles/miniforge.log 2>&1
-conda config --set auto_activate_base true
+conda config --set auto_activate_base false
 
 echo "Creating fresh 'r-reticulate' environment"
 /usr/bin/time conda create --name r-reticulate --quiet --force --yes \

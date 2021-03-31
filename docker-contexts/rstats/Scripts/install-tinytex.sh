@@ -16,8 +16,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/r-packages.log
+rm -f $HOME/Logfiles/install-tinytex.log
 cd $HOME
 
 /usr/bin/time Rscript -e "tinytex::install_tinytex()" \
-  >> $HOME/Logfiles/r-packages.log 2>&1
+  >> $HOME/Logfiles/install-tinytex.log 2>&1

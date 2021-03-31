@@ -20,11 +20,6 @@ COPY ram_kilobytes.sh /usr/local/bin/
 COPY base.sh $SCRIPTS
 RUN $SCRIPTS/base.sh
 
-# CMake
-#ENV CMAKE_VERSION="3.20.0"
-#COPY cmake.sh $SCRIPTS
-#RUN $SCRIPTS/cmake.sh
-
 # Pandoc
 ENV PANDOC_VERSION="2.12"
 COPY upstream-pandoc.sh $SCRIPTS/
@@ -36,6 +31,8 @@ ENV R_LATEST=R-$R_VERSION_MAJOR.$R_VERSION_MINOR.$R_VERSION_PATCH
 COPY R.conf /etc/ld.so.conf.d/R.conf
 COPY r-from-source.sh $SCRIPTS/
 RUN $SCRIPTS/r-from-source.sh
+COPY audio.sh audio.R $SCRIPTS/
+RUN $SCRIPTS/audio.sh
 
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
@@ -60,8 +57,8 @@ WORKDIR $SYNTH_HOME
 # Miniforge
 RUN $SYNTH_HOME/Scripts/miniforge.sh
 
-# R packages
-RUN $SYNTH_HOME/Scripts/install_tinytex.sh
+# TinyTex
+RUN $SYNTH_HOME/Scripts/install-tinytex.sh
 
 # Define the startup command
 CMD [ "/bin/bash" ]
