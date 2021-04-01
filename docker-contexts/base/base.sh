@@ -62,7 +62,6 @@ apt-get install -qqy --no-install-recommends \
   libncurses5-dev \
   libpng-dev \
   libportmidi-dev \
-  libpulse-dev \
   libreadline-dev \
   libsamplerate0-dev \
   libsdl2-dev \
@@ -81,6 +80,7 @@ apt-get install -qqy --no-install-recommends \
   pkg-config \
   portaudio19-dev \
   python3-dev \
+  qjackctl \
   snd-nox \
   software-properties-common \
   sox \
