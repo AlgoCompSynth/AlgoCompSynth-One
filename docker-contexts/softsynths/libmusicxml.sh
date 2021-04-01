@@ -16,8 +16,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/libmusicxml.log
-cd $HOME/Projects
+rm -f $LOGS/libmusicxml.log
+cd $SOURCE_DIR
 
 echo "Downloading libmusicxml source"
 rm -fr libmusicxml*
