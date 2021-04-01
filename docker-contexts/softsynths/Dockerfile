@@ -28,11 +28,11 @@ RUN chown -R synth:synth $SYNTH_HOME
 USER synth
 WORKDIR $SYNTH_HOME
 
-COPY fluidsynth.sh $SYNTH_HOME/Scripts
+COPY --chown=synth:synth fluidsynth.sh $SYNTH_HOME/Scripts
 ENV FLUIDSYNTH_VERSION="2.1.8"
 RUN $SYNTH_HOME/Scripts/fluidsynth.sh
 
-COPY supercollider.sh $SYNTH_HOME/Scripts
+COPY --chown=synth:synth supercollider.sh $SYNTH_HOME/Scripts
 ENV SUPERCOLLIDER_VERSION="3.11.2"
 ENV SUPERCOLLIDER_REPO="https://github.com/supercollider/supercollider/releases/download/Version-$SUPERCOLLIDER_VERSION"
 ENV SUPERCOLLIDER_TARBALL="$SUPERCOLLIDER_REPO/SuperCollider-$SUPERCOLLIDER_VERSION-Source.tar.bz2"
@@ -41,18 +41,18 @@ ENV SC3_PLUGINS_REPO="https://github.com/supercollider/sc3-plugins/releases/down
 ENV SC3_PLUGINS_TARBALL="$SC3_PLUGINS_REPO/sc3-plugins-$SC3_PLUGINS_VERSION-Source.tar.bz2"
 RUN $SYNTH_HOME/Scripts/supercollider.sh
 
-COPY faust.sh $SYNTH_HOME/Scripts
+COPY --chown=synth:synth faust.sh $SYNTH_HOME/Scripts
 ENV FAUST_VERSION="2.30.5"
 RUN $SYNTH_HOME/Scripts/faust.sh
 
-COPY pure-data.sh $SYNTH_HOME/Scripts
+COPY --chown=synth:synth pure-data.sh $SYNTH_HOME/Scripts
 ENV PURE_DATA_VERSION="0.51-4"
 RUN $SYNTH_HOME/Scripts/pure-data.sh
 
-COPY csound.sh $SYNTH_HOME/Scripts
+COPY --chown=synth:synth csound.sh $SYNTH_HOME/Scripts
 ENV CSOUND_VERSION="6.15.0"
 RUN $SYNTH_HOME/Scripts/csound.sh
 
-COPY chuck.sh $SYNTH_HOME/Scripts
+COPY --chown=synth:synth chuck.sh $SYNTH_HOME/Scripts
 ENV CHUCK_VERSION="1.4.0.1"
 RUN $SYNTH_HOME/Scripts/chuck.sh
