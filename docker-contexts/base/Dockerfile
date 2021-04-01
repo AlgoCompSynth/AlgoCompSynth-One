@@ -33,5 +33,17 @@ RUN apt install -qqy --no-install-recommends \
   $SOURCE_DIR/code_1.55.0-1617120113_arm64.deb > $LOGS/VScode.log 2>&1 \
   && rm -f $SOURCE_DIR/code_1.55.0-1617120113_arm64.deb
 
+COPY llvm.sh $SCRIPTS/
+ENV LLVM_VERSION="11.0.1"
+RUN $SCRIPTS/llvm.sh
+
+COPY cmake.sh $SCRIPTS/
+ENV CMAKE_VERSION="3.20.0"
+RUN $SCRIPTS/cmake.sh
+
+COPY fluidsynth.sh $SCRIPTS/
+ENV FLUIDSYNTH_VERSION="2.1.8"
+RUN $SCRIPTS/fluidsynth.sh
+
 # Define the startup command
 CMD [ "/bin/bash" ]
