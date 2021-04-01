@@ -16,8 +16,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/fluidsynth.log
 cd $SOURCE_DIR
 
@@ -38,9 +36,9 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
   /usr/bin/time make --jobs=`nproc` \
     >> $LOGS/fluidsynth.log 2>&1
   echo "Installing FluidSynth"
-  sudo make install \
+  make install \
     >> $LOGS/fluidsynth.log 2>&1
-  sudo ldconfig \
+  ldconfig \
     >> $LOGS/fluidsynth.log 2>&1
   popd
 

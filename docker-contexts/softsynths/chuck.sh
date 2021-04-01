@@ -16,8 +16,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/chuck.log
 cd $SOURCE_DIR
 
@@ -31,16 +29,16 @@ pushd chuck-$CHUCK_VERSION/src
   make --jobs=`nproc` linux-pulse \
     >> $LOGS/chuck.log 2>&1
   echo "Installing ChucK"
-  sudo make install \
+  make install \
     >> $LOGS/chuck.log 2>&1
 
   echo "Relocating ChucK examples"
-  sudo rm -fr /usr/local/share/chuck
-  sudo mkdir --parents /usr/local/share/chuck
-  sudo mv ../examples /usr/local/share/chuck/examples
+  rm -fr /usr/local/share/chuck
+  mkdir --parents /usr/local/share/chuck
+  mv ../examples /usr/local/share/chuck/examples
   popd
 
-sudo ldconfig -v \
+ldconfig -v \
   >> $LOGS/chuck.log 2>&1
 
 echo "Installing Chugins"
@@ -50,7 +48,7 @@ pushd chugins
 
   make linux \
     >> $LOGS/chuck.log 2>&1
-  sudo make install \
+  make install \
     >> $LOGS/chuck.log 2>&1
   popd
 

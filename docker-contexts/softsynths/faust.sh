@@ -16,18 +16,16 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/faust.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get update \
+apt-get update \
   >> $LOGS/faust.log 2>&1
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   libmicrohttpd-dev \
   >> $LOGS/faust.log 2>&1
-sudo apt-get clean
+apt-get clean
 
 echo "Downloading faust source"
 rm -fr faust*
@@ -41,9 +39,9 @@ export CMAKEOPT="-Wno-dev"
 make TARGETS=all.cmake BACKENDS=all.cmake \
   >> $LOGS/faust.log 2>&1
 echo "Installing faust"
-sudo make install \
+make install \
   >> $LOGS/faust.log 2>&1
-sudo ldconfig -v \
+ldconfig -v \
   >> $LOGS/faust.log 2>&1
 
 echo "Cleanup"

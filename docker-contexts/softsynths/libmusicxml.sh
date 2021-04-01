@@ -31,7 +31,7 @@ export CMAKEOPT="-DLILY=off,-Wno-dev"
 /usr/bin/time make --jobs=`nproc` \
   >> $HOME/Logfiles/libmusicxml.log 2>&1
 echo "Installing libmusicxml"
-sudo make install \
+make install \
   >> $HOME/Logfiles/libmusicxml.log 2>&1
-sudo ldconfig -v \
+ldconfig -v \
   >> $HOME/Logfiles/libmusicxml.log 2>&1

@@ -18,15 +18,13 @@
 # https://github.com/supercollider/supercollider/wiki/Installing-supercollider-from-source-on-Ubuntu
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/supercollider.log
 cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
-sudo apt-get update \
+apt-get update \
   >> $LOGS/supercollider.log 2>&1
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   gedit \
   libavahi-client-dev \
   libqt5opengl5-dev \
@@ -39,11 +37,13 @@ sudo apt-get install -qqy --no-install-recommends \
   qttools5-dev \
   qtwebengine5-dev \
   >> $LOGS/supercollider.log 2>&1
-sudo apt-get clean
+apt-get clean
 
 echo "Downloading supercollider source"
 rm -fr SuperCollider*
-curl -Ls $SUPERCOLLIDER_TARBALL \
+export SUPERCOLLIDER_REPO="https://github.com/supercollider/supercollider/releases/download/Version-$SUPERCOLLIDER_VERSION"
+export SUPERCOLLIDER_FILE="SuperCollider-$SUPERCOLLIDER_VERSION-Source.tar.bz2"
+curl -Ls $SUPERCOLLIDER_REPO/$SUPERCOLLIDER_FILE \
   | tar --extract --bzip2 --file=- \
   >> $LOGS/supercollider.log 2>&1
 pushd SuperCollider*
@@ -66,15 +66,17 @@ pushd SuperCollider*
     >> $LOGS/supercollider.log 2>&1
 
   echo "Installing supercollider"
-  sudo make install \
+  make install \
     >> $LOGS/supercollider.log 2>&1
-  sudo ldconfig -v \
+  ldconfig -v \
     >> $LOGS/supercollider.log 2>&1
   popd
 
 echo "Downloading sc3-plugins source"
 rm -fr sc3-plugins*
-curl -Ls $SC3_PLUGINS_TARBALL \
+export SC3_PLUGINS_REPO="https://github.com/supercollider/sc3-plugins/releases/download/Version-$SC3_PLUGINS_VERSION"
+export SC3_PLUGINS_FILE="sc3-plugins-$SC3_PLUGINS_VERSION-Source.tar.bz2"
+curl -Ls $SC3_PLUGINS_REPO/$SC3_PLUGINS_FILE \
   | tar --extract --bzip2 --file=- \
   >> $LOGS/supercollider.log 2>&1
 pushd sc3-plugins*
@@ -91,9 +93,9 @@ pushd sc3-plugins*
   make --jobs=`nproc` \
     >> $LOGS/supercollider.log 2>&1
   echo "Installing sc3-plugins"
-  sudo make install \
+  make install \
     >> $LOGS/supercollider.log 2>&1
-  sudo ldconfig -v \
+  ldconfig -v \
     >> $LOGS/supercollider.log 2>&1
   popd
 

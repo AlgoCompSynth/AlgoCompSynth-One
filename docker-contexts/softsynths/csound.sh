@@ -16,15 +16,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/csound.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get update \
+apt-get update \
   >> $LOGS/csound.log 2>&1
-sudo apt-get install -y --no-install-recommends \
+apt-get install -y --no-install-recommends \
   default-jdk \
   libfltk1.3-dev \
   fluid \
@@ -46,7 +44,7 @@ sudo apt-get install -y --no-install-recommends \
   python3-dev \
   swig3.0 \
   >> $LOGS/csound.log 2>&1
-sudo apt-get clean \
+apt-get clean \
   >> $LOGS/csound.log 2>&1
 
 echo "Downloading csound source"
@@ -79,15 +77,15 @@ echo "Compiling CSound"
 make --jobs=`nproc` \
   >> $LOGS/csound.log 2>&1
 echo "Installing CSound"
-sudo make install \
+make install \
   >> $LOGS/csound.log 2>&1
-sudo ldconfig -v \
+ldconfig -v \
   >> $LOGS/csound.log 2>&1
 
 echo "Relocating samples to '/usr/local/share/csound/samples'"
-sudo rm -fr /usr/local/share/csound
-sudo mkdir --parents /usr/local/share/csound
-sudo mv /usr/local/share/samples /usr/local/share/csound/samples
+rm -fr /usr/local/share/csound
+mkdir --parents /usr/local/share/csound
+mv /usr/local/share/samples /usr/local/share/csound/samples
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/cs6make $SOURCE_DIR/csound*

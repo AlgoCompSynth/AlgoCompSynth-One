@@ -16,20 +16,18 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/pure-data.log
 cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
-sudo apt-get update \
+apt-get update \
   >> $LOGS/pure-data.log 2>&1
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   autoconf \
   automake \
   libtool-bin \
   >> $LOGS/pure-data.log 2>&1
-sudo apt-get clean \
+apt-get clean \
   >> $LOGS/pure-data.log 2>&1
 
 echo "Downloading pure-data source"
@@ -57,7 +55,7 @@ echo "Compiling Pure Data"
 /usr/bin/time make --jobs=`nproc` \
   >> $LOGS/pure-data.log 2>&1
 echo "Installing Pure Data"
-sudo make install \
+make install \
   >> $LOGS/pure-data.log 2>&1
-sudo ldconfig \
+ldconfig \
   >> $LOGS/pure-data.log 2>&1
