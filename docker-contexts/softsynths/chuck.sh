@@ -21,40 +21,39 @@ export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/chuck.log
 cd $SOURCE_DIR
 
-apt-get update
-apt-get install -qqy --no-install-recommends \
-  bison \
-  build-essential \
-  curl \
-  ca-certificates \
-  flex \
-  libasound2-dev \
-  libjack-jackd2-dev \
-  libsndfile-dev \
-  >> $LOGS/chuck.log 2>&1
-apt-get clean
-
 rm -fr chuck*
 echo "Downloading ChucK $CHUCK_VERSION source"
 curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
   | tar --extract --gunzip --file=-
 pushd chuck-$CHUCK_VERSION/src
 
-  echo "Compiling ChucK for JACK"
-  make --jobs=`nproc` linux-jack \
+  echo "Compiling ChucK for PulseAudio"
+  make --jobs=`nproc` linux-pulse \
     >> $LOGS/chuck.log 2>&1
   echo "Installing ChucK"
-  make install \
+  sudo make install \
     >> $LOGS/chuck.log 2>&1
 
   echo "Relocating ChucK examples"
-  rm -fr /usr/local/share/chuck
-  mkdir --parents /usr/local/share/chuck
-  mv ../examples /usr/local/share/chuck/examples
+  sudo rm -fr /usr/local/share/chuck
+  sudo mkdir --parents /usr/local/share/chuck
+  sudo mv ../examples /usr/local/share/chuck/examples
   popd
 
-ldconfig -v \
+sudo ldconfig -v \
   >> $LOGS/chuck.log 2>&1
+
+echo "Installing Chugins"
+git clone https://github.com/ccrma/chugins.git \
+  >> $LOGS/chuck.log 2>&1
+pushd chugins
+
+  make linux \
+    >> $LOGS/chuck.log 2>&1
+  sudo make install \
+    >> $LOGS/chuck.log 2>&1
+  popd
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/chuck*
+rm -fr $SOURCE_DIR/chugins

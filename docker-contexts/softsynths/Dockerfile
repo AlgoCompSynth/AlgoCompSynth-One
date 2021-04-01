@@ -52,3 +52,7 @@ RUN $SYNTH_HOME/Scripts/pure-data.sh
 COPY csound.sh $SYNTH_HOME/Scripts
 ENV CSOUND_VERSION="6.15.0"
 RUN $SYNTH_HOME/Scripts/csound.sh
+
+COPY chuck.sh $SYNTH_HOME/Scripts
+ENV CHUCK_VERSION="1.4.0.1"
+RUN $SYNTH_HOME/Scripts/chuck.sh
