@@ -18,6 +18,8 @@
 # https://github.com/supercollider/supercollider/wiki/Installing-supercollider-from-source-on-Ubuntu
 
 set -e
+export LOGS=$SYNTH_HOME/Logfiles
+export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/supercollider.log
 cd $SOURCE_DIR
 

@@ -16,6 +16,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
+export LOGS=$SYNTH_HOME/Logfiles
+export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/faust.log
 cd $SOURCE_DIR
 

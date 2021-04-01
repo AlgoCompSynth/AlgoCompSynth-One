@@ -17,6 +17,7 @@ Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
 install.packages(c(
   "audio",
   "data.table",
+  "flexdashboard",
   "knitr",
   "monitoR",
   "NatureSounds",
