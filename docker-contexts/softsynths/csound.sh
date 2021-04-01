@@ -22,13 +22,14 @@ rm -f $LOGS/csound.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
-apt-get install -qqy --no-install-recommends \
-  bison \
+sudo apt-get update \
+  >> $LOGS/csound.log 2>&1
+sudo apt-get install -y --no-install-recommends \
   default-jdk \
-  flex \
+  libfltk1.3-dev \
+  fluid \
   gettext \
   hdf5-tools \
-  libcurl4-openssl-dev \
   libeigen3-dev \
   libgettextpo-dev \
   libgmm++-dev \
@@ -38,8 +39,6 @@ apt-get install -qqy --no-install-recommends \
   libmp3lame-dev \
   libncurses5-dev \
   libpng-dev\
-  libpython-dev \
-  libpython3-dev \
   libsamplerate0-dev \
   libstk0-dev \
   libwebsockets-dev \
@@ -47,22 +46,14 @@ apt-get install -qqy --no-install-recommends \
   python3-dev \
   swig3.0 \
   >> $LOGS/csound.log 2>&1
-apt-get clean
+sudo apt-get clean \
+  >> $LOGS/csound.log 2>&1
 
 echo "Downloading csound source"
 rm -fr csound*
 curl -Ls \
   https://github.com/csound/csound/archive/refs/tags/$CSOUND_VERSION.tar.gz \
   | tar --extract --gunzip --file=-
-
-if [ ! -x "/usr/local/cuda/bin/nvcc" ]
-then
-  echo "CUDA absent"
-  export CUDA_PRESENT=OFF
-else
-  echo "CUDA present!"
-  export CUDA_PRESENT=ON
-fi
 
 echo "Configuring CSound"
 rm -fr cs6make
@@ -71,32 +62,32 @@ cd cs6make
 export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
 cmake \
   -Wno-dev \
-  -DBUILD_CUDA_OPCODES=$CUDA_PRESENT \
+  -DBUILD_CUDA_OPCODES=OFF \
   -DBUILD_STATIC_LIBRARY=ON \
   -DLAME_HEADER="/usr/include/lame/lame.h" \
   -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
   -DLUA_H_PATH="/usr/include/lua5.2/" \
   -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
-  -DBUILD_JAVA_INTERFACE=OFF \
+  -DBUILD_JAVA_INTERFACE=ON \
   -DBUILD_P5GLOVE_OPCODES=OFF \
   -DBUILD_VIRTUAL_KEYBOARD=OFF \
   -DBUILD_WIIMOTE_OPCODES=OFF \
-  -DUSE_FLTK=OFF \
+  -DUSE_FLTK=ON \
   ../csound-$CSOUND_VERSION \
   >> $LOGS/csound.log 2>&1
 echo "Compiling CSound"
 make --jobs=`nproc` \
   >> $LOGS/csound.log 2>&1
 echo "Installing CSound"
-make install \
+sudo make install \
   >> $LOGS/csound.log 2>&1
-ldconfig -v \
+sudo ldconfig -v \
   >> $LOGS/csound.log 2>&1
 
 echo "Relocating samples to '/usr/local/share/csound/samples'"
-rm -fr /usr/local/share/csound
-mkdir --parents /usr/local/share/csound
-mv /usr/local/share/samples /usr/local/share/csound/samples
+sudo rm -fr /usr/local/share/csound
+sudo mkdir --parents /usr/local/share/csound
+sudo mv /usr/local/share/samples /usr/local/share/csound/samples
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/cs6make $SOURCE_DIR/csound*

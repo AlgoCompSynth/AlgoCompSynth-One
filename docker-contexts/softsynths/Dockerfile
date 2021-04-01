@@ -48,3 +48,7 @@ RUN $SYNTH_HOME/Scripts/faust.sh
 COPY pure-data.sh $SYNTH_HOME/Scripts
 ENV PURE_DATA_VERSION="0.51-4"
 RUN $SYNTH_HOME/Scripts/pure-data.sh
+
+COPY csound.sh $SYNTH_HOME/Scripts
+ENV CSOUND_VERSION="6.15.0"
+RUN $SYNTH_HOME/Scripts/csound.sh
