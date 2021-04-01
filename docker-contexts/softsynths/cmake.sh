@@ -16,35 +16,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-export LOGS=$SYNTH_HOME/Logfiles
-export SOURCE_DIR=$SYNTH_HOME/Projects
-rm -f $LOGS/fluidsynth.log
+rm -f $LOGS/cmake.log
 cd $SOURCE_DIR
 
-echo "Downloading fluidsynth"
-rm -fr fluidsynth*
-curl -Ls \
-  https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v$FLUIDSYNTH_VERSION.tar.gz \
-  | tar --extract --gunzip --file=-
-pushd fluidsynth-$FLUIDSYNTH_VERSION
-
-  echo "Compiling FluidSynth"
-  mkdir --parents build; cd build
-  cmake \
-    -Wno-dev \
-    -DLIB_SUFFIX="" \
-    .. \
-    >> $LOGS/fluidsynth.log 2>&1
-  /usr/bin/time make --jobs=`nproc` \
-    >> $LOGS/fluidsynth.log 2>&1
-  echo "Installing FluidSynth"
-  make install \
-    >> $LOGS/fluidsynth.log 2>&1
-  popd
-
-ldconfig -v \
-  >> $LOGS/fluidsynth.log 2>&1
-fluidsynth --version
-
-echo "Cleanup"
-rm -fr $SOURCE_DIR/fluidsynth*
+echo "Installing latest 'cmake'"
+wget --quiet --no-clobber \
+  https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-linux-aarch64.sh
+chmod +x cmake-$CMAKE_VERSION-linux-aarch64.sh 
+./cmake-$CMAKE_VERSION-linux-aarch64.sh --skip-license --prefix=/usr/local
+which cmake
+cmake --version
+rm cmake-$CMAKE_VERSION-linux-aarch64.sh 

@@ -24,30 +24,22 @@ rm -f $LOGS/supercollider.log
 cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
-apt-get update \
+sudo apt-get update \
   >> $LOGS/supercollider.log 2>&1
-apt-get install -qqy --no-install-recommends \
-  build-essential \
-  curl \
-  ca-certificates \
-  libasound2-dev \
+sudo apt-get install -qqy --no-install-recommends \
+  gedit \
   libavahi-client-dev \
-  libfftw3-dev \
-  libjack-jackd2-dev \
-  libsndfile1-dev \
-  libudev-dev \
-  wget \
+  libqt5opengl5-dev \
+  libqt5svg5-dev \
+  libqt5websockets5-dev \
+  libxcb-icccm4-dev \
+  libxcb-util-dev \
+  qtbase5-dev \
+  qtdeclarative5-dev \
+  qttools5-dev \
+  qtwebengine5-dev \
   >> $LOGS/supercollider.log 2>&1
-apt-get clean
-
-echo "Installing latest 'cmake'"
-wget --quiet --no-clobber \
-  https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-linux-aarch64.sh
-chmod +x cmake-$CMAKE_VERSION-linux-aarch64.sh 
-./cmake-$CMAKE_VERSION-linux-aarch64.sh --skip-license --prefix=/usr/local
-which cmake
-cmake --version
-rm cmake-$CMAKE_VERSION-linux-aarch64.sh 
+sudo apt-get clean
 
 echo "Downloading supercollider source"
 rm -fr SuperCollider*
@@ -58,20 +50,14 @@ pushd SuperCollider*
   export SC_PATH=$PWD
 
   echo "Configuring supercollider"
-  mkdir build && cd build
+  rm -fr build && mkdir build && cd build
   cmake \
     -Wno-dev \
     -DCMAKE_BUILD_TYPE=Release \
     -DNATIVE=ON \
-    -DNO_X11=ON \
     -DSC_ABLETON_LINK=OFF \
-    -DSC_IDE=OFF \
-    -DSC_QT=OFF \
-    -DSC_ED=OFF \
-    -DSC_VIM=OFF \
     -DENABLE_TESTSUITE=OFF \
-    -DSC_EL=NO \
-    -DINSTALL_HELP=OFF \
+    -DLIBSCSYNTH=OFF \
     .. \
     >> $LOGS/supercollider.log 2>&1
 
@@ -80,9 +66,9 @@ pushd SuperCollider*
     >> $LOGS/supercollider.log 2>&1
 
   echo "Installing supercollider"
-  make install \
+  sudo make install \
     >> $LOGS/supercollider.log 2>&1
-  ldconfig -v \
+  sudo ldconfig -v \
     >> $LOGS/supercollider.log 2>&1
   popd
 
@@ -105,9 +91,9 @@ pushd sc3-plugins*
   make --jobs=`nproc` \
     >> $LOGS/supercollider.log 2>&1
   echo "Installing sc3-plugins"
-  make install \
+  sudo make install \
     >> $LOGS/supercollider.log 2>&1
-  ldconfig -v \
+  sudo ldconfig -v \
     >> $LOGS/supercollider.log 2>&1
   popd
 

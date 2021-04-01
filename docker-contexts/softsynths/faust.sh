@@ -22,28 +22,12 @@ rm -f $LOGS/faust.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
-apt-get update \
+sudo apt-get update \
   >> $LOGS/faust.log 2>&1
-apt-get upgrade -y \
-  >> $LOGS/faust.log 2>&1
-apt-get install -qqy --no-install-recommends \
-  build-essential \
-  ca-certificates \
-  curl \
+sudo apt-get install -qqy --no-install-recommends \
   libmicrohttpd-dev \
-  pkg-config \
-  wget \
   >> $LOGS/faust.log 2>&1
-apt-get clean
-
-echo "Installing latest 'cmake'"
-wget --quiet --no-clobber \
-  https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-linux-aarch64.sh
-chmod +x cmake-$CMAKE_VERSION-linux-aarch64.sh
-./cmake-$CMAKE_VERSION-linux-aarch64.sh --skip-license --prefix=/usr/local
-which cmake
-cmake --version
-rm cmake-$CMAKE_VERSION-linux-aarch64.sh
+sudo apt-get clean
 
 echo "Downloading faust source"
 rm -fr faust*
@@ -54,12 +38,12 @@ curl -Ls \
 echo "Compiling faust - selecting only 'regular' backends"
 cd faust-$FAUST_VERSION/build
 export CMAKEOPT="-Wno-dev"
-make TARGETS=all.cmake BACKENDS=regular.cmake \
+make TARGETS=all.cmake BACKENDS=all.cmake \
   >> $LOGS/faust.log 2>&1
 echo "Installing faust"
-make install \
+sudo make install \
   >> $LOGS/faust.log 2>&1
-ldconfig -v \
+sudo ldconfig -v \
   >> $LOGS/faust.log 2>&1
 
 echo "Cleanup"
