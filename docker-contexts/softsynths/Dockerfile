@@ -45,5 +45,6 @@ COPY faust.sh $SYNTH_HOME/Scripts
 ENV FAUST_VERSION="2.30.5"
 RUN $SYNTH_HOME/Scripts/faust.sh
 
-
-
+COPY pure-data.sh $SYNTH_HOME/Scripts
+ENV PURE_DATA_VERSION="0.51-4"
+RUN $SYNTH_HOME/Scripts/pure-data.sh

@@ -21,26 +21,43 @@ export SOURCE_DIR=$SYNTH_HOME/Projects
 rm -f $LOGS/pure-data.log
 cd $SOURCE_DIR
 
-echo "Cloning pure-data"
-rm -fr pure-data
-git clone https://github.com/pure-data/pure-data.git \
+echo "Installing Linux dependencies"
+sudo apt-get update \
   >> $LOGS/pure-data.log 2>&1
-cd pure-data
-export PD_VERSION="0.51-4"
-git checkout $PD_VERSION \
+sudo apt-get install -qqy --no-install-recommends \
+  autoconf \
+  automake \
+  libtool-bin \
+  >> $LOGS/pure-data.log 2>&1
+sudo apt-get clean \
   >> $LOGS/pure-data.log 2>&1
 
-echo "Compiling Pure Data"
+echo "Downloading pure-data source"
+rm -fr pure-data*
+export PURE_DATA_REPO="https://github.com/pure-data/pure-data/archive/refs/tags"
+export PURE_DATA_FILE="$PURE_DATA_VERSION.tar.gz"
+curl -Ls $PURE_DATA_REPO/$PURE_DATA_FILE \
+  | tar --extract --gunzip --file=-
+cd pure-data-$PURE_DATA_VERSION
+
+echo "Configuring Pure Data"
 ./autogen.sh \
   >> $LOGS/pure-data.log 2>&1
 ./configure \
+  --enable-alsa \
   --enable-fftw \
+  --enable-jack \
+  --disable-oss \
+  --enable-portaudio \
   --enable-portmidi \
+  --without-local-portaudio \
+  --without-local-portmidi \
   >> $LOGS/pure-data.log 2>&1
+echo "Compiling Pure Data"
 /usr/bin/time make --jobs=`nproc` \
   >> $LOGS/pure-data.log 2>&1
 echo "Installing Pure Data"
-make install \
+sudo make install \
   >> $LOGS/pure-data.log 2>&1
-ldconfig \
+sudo ldconfig \
   >> $LOGS/pure-data.log 2>&1
