@@ -2,7 +2,7 @@ FROM "docker.io/algocompsynth/base"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 USER root
-WORKDIR SOURCE_DIR
+WORKDIR $SOURCE_DIR
 
 # Pandoc
 ENV PANDOC_VERSION="2.12"
