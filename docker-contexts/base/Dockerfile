@@ -8,23 +8,30 @@ ENV SOURCE_DIR=/usr/local/src
 ENV LOGS=$SOURCE_DIR/logs
 ENV SCRIPTS=$SOURCE_DIR/scripts
 RUN mkdir --parents $LOGS $SCRIPTS
+RUN echo "set bg=dark" >> /root/.vimrc
 
 WORKDIR $SOURCE_DIR
 
-RUN echo "set bg=dark" >> /root/.vimrc
+# set up 'synth' account
+COPY synth-user.sh $SCRIPTS/
+RUN $SCRIPTS/synth-user.sh
+
+# enable passwordless sudo for 'synth'
+COPY passwordless-sudo /etc/sudoers.d/
+
+ENV SYNTH_HOME=/home/synth
+RUN mkdir --parents \
+  $SYNTH_HOME/Scripts \
+  $SYNTH_HOME/Downloads/Installers \
+  $SYNTH_HOME/Logfiles
+COPY \
+  set-vim-background.sh \
+  edit-me-then-run-4-git-config.sh \
+  $SYNTH_HOME/
+RUN chown -R synth:synth $SYNTH_HOME
 
 # Utility to get RAM size
 COPY ram_kilobytes.sh /usr/local/bin/
-
-# Command line basics and audio libraries
-COPY base.sh $SCRIPTS
-RUN $SCRIPTS/base.sh
-
-# Xpra
-COPY --from="algocompsynth/xpra:latest" /home/synth/Projects/xpra_4.1.1-1_arm64.deb $SOURCE_DIR/
-RUN apt install -qqy --no-install-recommends \
-  $SOURCE_DIR/xpra_4.1.1-1_arm64.deb > $LOGS/xpra.log 2>&1 \
-  && rm -f $SOURCE_DIR/xpra_4.1.1-1_arm64.deb
 
 # VScode
 RUN wget --quiet \
@@ -40,22 +47,6 @@ RUN $SCRIPTS/cmake.sh
 COPY fluidsynth.sh $SCRIPTS/
 ENV FLUIDSYNTH_VERSION="2.1.8"
 RUN $SCRIPTS/fluidsynth.sh
-
-# set up 'synth' account
-COPY synth-user.sh $SCRIPTS/
-RUN $SCRIPTS/synth-user.sh
-
-# enable passwordless sudo for 'synth'
-COPY passwordless-sudo /etc/sudoers.d/
-
-ENV SYNTH_HOME=/home/synth
-COPY --chown=synth:synth Desktop $SYNTH_HOME/Desktop
-COPY --chown=synth:synth Music $SYNTH_HOME/Music
-COPY --chown=synth:synth Projects $SYNTH_HOME/Projects
-COPY --chown=synth:synth Scripts $SYNTH_HOME/Scripts
-COPY --chown=synth:synth Logfiles $SYNTH_HOME/Logfiles
-RUN echo "set bg=dark" >> $SYNTH_HOME/.vimrc
-RUN chown -R synth:synth $SYNTH_HOME
 
 USER synth
 WORKDIR $SYNTH_HOME
