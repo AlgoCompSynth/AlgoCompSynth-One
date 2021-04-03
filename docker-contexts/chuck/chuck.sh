@@ -50,8 +50,15 @@ pushd chugins
     >> $LOGS/chuck.log 2>&1
   make install \
     >> $LOGS/chuck.log 2>&1
+  pushd Faust
+
+    make linux \
+      >> $LOGS/chuck.log 2>&1
+    make install \
+      >> $LOGS/chuck.log 2>&1
+    popd
+
   popd
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/chuck*
-rm -fr $SOURCE_DIR/chugins
