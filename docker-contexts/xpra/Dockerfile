@@ -8,10 +8,9 @@ ENV SOURCE_DIR=/usr/local/src
 ENV LOGS=$SOURCE_DIR/logs
 ENV SCRIPTS=$SOURCE_DIR/scripts
 RUN mkdir --parents $LOGS $SCRIPTS
+RUN echo "set bg=dark" >> /root/.vimrc
 
 WORKDIR $SOURCE_DIR
-
-RUN echo "set bg=dark" >> /root/.vimrc
 
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
@@ -21,7 +20,10 @@ RUN $SCRIPTS/synth-user.sh
 COPY passwordless-sudo /etc/sudoers.d/
 
 ENV SYNTH_HOME=/home/synth
-COPY --chown=synth:synth Scripts $SYNTH_HOME/Scripts
+RUN mkdir --parents \
+  $SYNTH_HOME/Scripts \
+  $SYNTH_HOME/Downloads/Installers \
+  $SYNTH_HOME/Logfiles
 RUN echo "set bg=dark" >> $SYNTH_HOME/.vimrc
 RUN chown -R synth:synth $SYNTH_HOME
 

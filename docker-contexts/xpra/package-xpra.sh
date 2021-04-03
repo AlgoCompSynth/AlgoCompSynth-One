@@ -16,7 +16,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-mkdir --parents $HOME/Logfiles
 rm -f $HOME/Logfiles/xpra.log
 
 echo "Installing dependencies"
@@ -93,7 +92,6 @@ sudo \
     >> $HOME/Logfiles/xpra.log 2>&1
 
 echo "Installing latest 'cmake'"
-mkdir --parents $HOME/Downloads/Installers
 pushd $HOME/Downloads/Installers
 
   wget --quiet --no-clobber \
