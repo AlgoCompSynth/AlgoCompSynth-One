@@ -13,13 +13,6 @@ WORKDIR $SOURCE_DIR
 
 RUN echo "set bg=dark" >> /root/.vimrc
 
-COPY base.sh $SCRIPTS
-RUN $SCRIPTS/base.sh
-
-ENV CMAKE_VERSION="3.20.0"
-COPY cmake.sh $SCRIPTS
-RUN $SCRIPTS/cmake.sh
-
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
 RUN $SCRIPTS/synth-user.sh
@@ -28,16 +21,19 @@ RUN $SCRIPTS/synth-user.sh
 COPY passwordless-sudo /etc/sudoers.d/
 
 ENV SYNTH_HOME=/home/synth
-COPY --chown=synth:synth Desktop $SYNTH_HOME/Desktop
-COPY --chown=synth:synth Music $SYNTH_HOME/Music
-COPY --chown=synth:synth Projects $SYNTH_HOME/Projects
 COPY --chown=synth:synth Scripts $SYNTH_HOME/Scripts
-COPY --chown=synth:synth Logfiles $SYNTH_HOME/Logfiles
 RUN echo "set bg=dark" >> $SYNTH_HOME/.vimrc
 RUN chown -R synth:synth $SYNTH_HOME
 
 USER synth
 WORKDIR $SYNTH_HOME
 
+ENV CMAKE_VERSION="3.20.0"
 ENV XPRA_VERSION="4.1.1"
+COPY package-xpra.sh $SYNTH_HOME/Scripts/
 RUN $SYNTH_HOME/Scripts/package-xpra.sh
+
+ENV XPRA_HTML5_VERSION="4.1.2"
+COPY package-xpra-html5.sh $SYNTH_HOME/Scripts/
+RUN $SYNTH_HOME/Scripts/package-xpra-html5.sh
+RUN cp $SYNTH_HOME/Downloads/Installers/xpra-html5/dist/*.deb $SYNTH_HOME/Downloads/Installers/

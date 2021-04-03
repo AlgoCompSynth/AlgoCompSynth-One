@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash 
 
 # Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
 #
@@ -16,8 +16,24 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
+mkdir --parents $HOME/Logfiles
+rm -f $HOME/Logfiles/xpra-html5.log
 
-echo "Disabling display manager / desktop"
-sudo systemctl set-default multi-user.target
-echo "Rebooting"
-sudo systemctl reboot
+pushd $HOME/Downloads/Installers
+
+  echo "Cloning xpra-html5"
+  rm -fr xpra-html5
+  git clone https://github.com/Xpra-org/xpra-html5 \
+    >> $HOME/Logfiles/xpra-html5.log 2>&1
+
+  echo "Checking out v$XPRA_HTML5_VERSION"
+  pushd xpra-html5
+    git checkout v$XPRA_HTML5_VERSION \
+      >> $HOME/Logfiles/xpra-html5.log 2>&1
+
+    echo "Building packages"
+    python3 setup.py deb \
+      >> $HOME/Logfiles/xpra-html5.log 2>&1
+    popd
+
+  popd
