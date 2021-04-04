@@ -25,7 +25,11 @@ apt-get update \
 apt-get install -qqy --no-install-recommends \
   autoconf \
   automake \
+  libfftw3-dev \
+  libfftw3-mpi-dev \
+  libportmidi-dev \
   libtool-bin \
+  tk-dev \
   >> $LOGS/pure-data.log 2>&1
 apt-get clean \
   >> $LOGS/pure-data.log 2>&1
@@ -40,6 +44,8 @@ cd pure-data-$PURE_DATA_VERSION
 
 echo "Configuring Pure Data"
 ./autogen.sh \
+  >> $LOGS/pure-data.log 2>&1
+./configure --help \
   >> $LOGS/pure-data.log 2>&1
 ./configure \
   --enable-alsa \
