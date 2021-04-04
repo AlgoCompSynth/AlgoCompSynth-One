@@ -19,4 +19,13 @@ set -e
 rm -f $LOGS/audio.log
 cd $SOURCE_DIR
 
+echo "Installing Linux dependencies"
+apt-get install -qqy --no-install-recommends \
+  libfftw3-dev \
+  libfftw3-mpi-dev \
+  libgdal-dev \
+  libudunits2-dev \
+  >> $LOGS/audio.log 2>&1
+apt-get clean
+
 /usr/bin/time Rscript -e "source('$SCRIPTS/audio.R')"
