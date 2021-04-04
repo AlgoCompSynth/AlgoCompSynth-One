@@ -29,7 +29,7 @@ cd $SOURCE_DIR
 # see https://wiki.postgresql.org/wiki/Apt
 
 echo "Installing PGDG Linux repository"
-curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - \
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
   >> $LOGS/R.log 2>&1
 apt-get update \
   >> $LOGS/R.log 2>&1

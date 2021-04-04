@@ -28,4 +28,5 @@ apt-get install -qqy --no-install-recommends \
   >> $LOGS/audio.log 2>&1
 apt-get clean
 
-/usr/bin/time Rscript -e "source('$SCRIPTS/audio.R')"
+/usr/bin/time Rscript -e "source('$SCRIPTS/audio.R')" \
+  >> $LOGS/audio.log 2>&1

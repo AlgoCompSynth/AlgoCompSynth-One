@@ -22,7 +22,7 @@ install.packages(c(
   "monitoR",
   "NatureSounds",
   "phonTools",
-  "r-reticulate",
+  "reticulate",
   "remotes",
   "renv",
   "rmarkdown",
@@ -33,6 +33,6 @@ install.packages(c(
   "soundgen",
   "tinytex",
   "tuneR",
-  "warbler"
+  "warbleR"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
