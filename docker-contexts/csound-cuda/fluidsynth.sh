@@ -19,6 +19,23 @@ set -e
 rm -f $LOGS/fluidsynth.log
 cd $SOURCE_DIR
 
+echo "Installing Linux dependencies"
+apt-get install -qqy --no-install-recommends \
+  libglib2.0-dev \
+  libsndfile1-dev \
+  libpulse-dev \
+  libasound2-dev \
+  portaudio19-dev \
+  libjack-jackd2-dev \
+  liblash-compat-dev \
+  libsystemd-dev \
+  libdbus-1-dev \
+  ladspa-sdk \
+  libinstpatch-dev \
+  libsdl2-dev \
+  libreadline-dev \
+  >> $LOGS/fluidsynth.log 2>&1
+
 echo "Downloading fluidsynth"
 rm -fr fluidsynth*
 curl -Ls \
@@ -31,6 +48,7 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
   cmake \
     -Wno-dev \
     -DLIB_SUFFIX="" \
+    -Denable-portaudio=ON \
     .. \
     >> $LOGS/fluidsynth.log 2>&1
   /usr/bin/time make --jobs=`nproc` \
@@ -42,7 +60,7 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
     >> $LOGS/fluidsynth.log 2>&1
   popd
 
-fluidsynth --version
-
 echo "Cleanup"
 rm -fr $SOURCE_DIR/fluidsynth*
+apt-get clean
+fluidsynth --version

@@ -25,6 +25,7 @@ apt-get install -qqy --no-install-recommends \
   libsndfile1-dev \
   libpulse-dev \
   libasound2-dev \
+  portaudio19-dev \
   libjack-jackd2-dev \
   liblash-compat-dev \
   libsystemd-dev \
@@ -47,6 +48,7 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
   cmake \
     -Wno-dev \
     -DLIB_SUFFIX="" \
+    -Denable-portaudio=ON \
     .. \
     >> $LOGS/fluidsynth.log 2>&1
   /usr/bin/time make --jobs=`nproc` \
