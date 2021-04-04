@@ -27,6 +27,9 @@ apt-get update \
 apt-get install -qqy --no-install-recommends \
   gedit \
   libavahi-client-dev \
+  libfftw3-dev \
+  libfftw3-mpi-dev \
+  libncurses5-dev \
   libqt5opengl5-dev \
   libqt5svg5-dev \
   libqt5websockets5-dev \
