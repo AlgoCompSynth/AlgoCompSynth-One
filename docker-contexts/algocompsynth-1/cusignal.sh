@@ -30,13 +30,18 @@ echo "Checking out version '$CUSIGNAL_VERSION'"
 git checkout $CUSIGNAL_VERSION \
   >> $HOME/Logfiles/cusignal.log 2>&1
 
-echo "Creating 'cusignal-dev' conda environment"
+echo "Creating 'r-reticulate' conda environment"
 source $HOME/miniconda3/etc/profile.d/conda.sh
+
+# for compatibility with the R / reticulate conventions
+# we change the name of the conda environment
+sed --in-place=.bak --expression='s/cusignal-dev/r-reticulate' \
+  conda/environments/cusignal_jetson_base.yml
 /usr/bin/time conda env create \
   --file conda/environments/cusignal_jetson_base.yml \
   --quiet \
   >> $HOME/Logfiles/cusignal.log 2>&1
-conda activate cusignal-dev
+conda activate r-reticulate
 
 echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
