@@ -18,6 +18,7 @@ install.packages(c(
   "audio",
   "data.table",
   "flexdashboard",
+  "IRkernel",
   "knitr",
   "monitoR",
   "NatureSounds",
@@ -35,4 +36,7 @@ install.packages(c(
   "tuneR",
   "warbleR"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
+warnings()
+
+IRkernel::installspec()
 warnings()
