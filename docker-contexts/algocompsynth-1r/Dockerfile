@@ -1,4 +1,4 @@
-FROM "docker.io/algocompsynth/base"
+FROM "docker.io/algocompsynth/algocompsynth-1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 USER root
