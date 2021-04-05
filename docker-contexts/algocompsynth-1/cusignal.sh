@@ -35,7 +35,7 @@ source $HOME/miniconda3/etc/profile.d/conda.sh
 
 # for compatibility with the R / reticulate conventions
 # we change the name of the conda environment
-sed --in-place=.bak --expression='s/cusignal-dev/r-reticulate' \
+sed --in-place=.bak --expression='s/cusignal-dev/r-reticulate/' \
   conda/environments/cusignal_jetson_base.yml
 /usr/bin/time conda env create \
   --file conda/environments/cusignal_jetson_base.yml \
