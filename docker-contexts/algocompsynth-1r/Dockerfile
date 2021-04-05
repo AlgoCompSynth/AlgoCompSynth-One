@@ -21,5 +21,10 @@ RUN $SCRIPTS/audio.sh
 USER synth
 WORKDIR $SYNTH_HOME
 
+# JupyterLab R kernel
+COPY r-kernel.sh $SYNTH_HOME/Scripts/
+RUN $SYNTH_HOME/Scripts/r-kernel.sh
+
 # TinyTex
+COPY install-tinytex.sh $SYNTH_HOME/Scripts/
 RUN $SYNTH_HOME/Scripts/install-tinytex.sh
