@@ -18,15 +18,8 @@ RUN $SCRIPTS/r-from-source.sh
 COPY audio.sh audio.R $SCRIPTS/
 RUN $SCRIPTS/audio.sh
 
-COPY --chown=synth:synth Scripts $SYNTH_HOME/Scripts
-COPY --chown=synth:synth Rprofile $SYNTH_HOME/.Rprofile
-RUN chown -R synth:synth $SYNTH_HOME
-
 USER synth
 WORKDIR $SYNTH_HOME
-
-# Miniforge
-RUN $SYNTH_HOME/Scripts/miniforge.sh
 
 # TinyTex
 RUN $SYNTH_HOME/Scripts/install-tinytex.sh
