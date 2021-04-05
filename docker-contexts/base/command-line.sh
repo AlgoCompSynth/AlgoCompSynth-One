@@ -16,13 +16,34 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
+rm -f $LOGS/command-line.log
 
-mkdir --parents $HOME/Notebooks
-cd $HOME
-
-echo "Generating Jupyter configuration file"
-jupyter notebook --generate-config
-echo "Enter the same strong password twice"
-jupyter notebook password
-echo "If running remotely, browse to port 8888 on this Jetson host instead of 'localhost'"
-SHELL=/bin/bash jupyter lab --no-browser --ip=0.0.0.0
+echo "Installing command line base"
+apt-get update \
+  >> $LOGS/command-line.log
+apt-get upgrade -y \
+  >> $LOGS/command-line.log
+apt-get install -qqy --no-install-recommends \
+  apt-file \
+  bison \
+  build-essential \
+  ca-certificates \
+  curl \
+  emacs-nox \
+  file \
+  flex \
+  gettext \
+  git \
+  gnupg \
+  lynx \
+  mlocate \
+  nano \
+  pkg-config \
+  software-properties-common \
+  sudo \
+  time \
+  tree \
+  vim-nox \
+  wget \
+  >> $LOGS/command-line.log 2>&1
+apt-get clean

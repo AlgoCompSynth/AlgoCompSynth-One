@@ -23,11 +23,9 @@ echo "Installing dependencies"
 apt-get update \
   >> $LOGS/csound.log 2>&1
 apt-get install -y --no-install-recommends \
-  default-jdk \
-  libfltk1.3-dev \
-  fluid \
   gettext \
   hdf5-tools \
+  libcurl4-openssl-dev \
   libeigen3-dev \
   libgettextpo-dev \
   libgmm++-dev \
@@ -66,11 +64,11 @@ cmake \
   -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
   -DLUA_H_PATH="/usr/include/lua5.2/" \
   -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
-  -DBUILD_JAVA_INTERFACE=ON \
+  -DBUILD_JAVA_INTERFACE=OFF \
   -DBUILD_P5GLOVE_OPCODES=OFF \
   -DBUILD_VIRTUAL_KEYBOARD=OFF \
   -DBUILD_WIIMOTE_OPCODES=OFF \
-  -DUSE_FLTK=ON \
+  -DUSE_FLTK=OFF \
   ../csound-$CSOUND_VERSION \
   >> $LOGS/csound.log 2>&1
 echo "Compiling CSound"

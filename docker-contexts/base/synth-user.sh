@@ -18,36 +18,6 @@
 set -e
 rm -f $LOGS/synth-user.log
 
-echo "Installing command line base"
-apt-get update \
-  >> $LOGS/synth-user.log
-apt-get upgrade -y \
-  >> $LOGS/synth-user.log
-apt-get install -qqy --no-install-recommends \
-  apt-file \
-  bison \
-  build-essential \
-  ca-certificates \
-  curl \
-  emacs-nox \
-  file \
-  flex \
-  gettext \
-  git \
-  gnupg \
-  lynx \
-  mlocate \
-  nano \
-  pkg-config \
-  software-properties-common \
-  sudo \
-  time \
-  tree \
-  vim-nox \
-  wget \
-  >> $LOGS/synth-user.log 2>&1
-apt-get clean
-
 echo "Creating 'synth' user"
 useradd \
   --shell /bin/bash \

@@ -1,4 +1,4 @@
-FROM "ubuntu:bionic"
+FROM "nvcr.io/nvidia/l4t-base:r32.5.0"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -11,6 +11,37 @@ RUN mkdir --parents $LOGS $SCRIPTS
 RUN echo "set bg=dark" >> /root/.vimrc
 
 WORKDIR $SOURCE_DIR
+
+# Utility to get RAM size
+COPY ram_kilobytes.sh /usr/local/bin/
+
+# install command-line base
+COPY command-line.sh $SCRIPTS/
+RUN $SCRIPTS/command-line.sh
+
+COPY cmake.sh $SCRIPTS/
+ENV CMAKE_VERSION="3.20.0"
+RUN $SCRIPTS/cmake.sh
+
+COPY fluidsynth.sh $SCRIPTS/
+ENV FLUIDSYNTH_VERSION="2.1.8"
+RUN $SCRIPTS/fluidsynth.sh
+
+COPY llvm.sh $SCRIPTS/
+ENV LLVM_VERSION="11.0.1"
+RUN $SCRIPTS/llvm.sh
+
+COPY faust.sh $SCRIPTS/
+ENV FAUST_VERSION="2.30.5"
+RUN $SCRIPTS/faust.sh
+
+COPY chuck.sh $SCRIPTS/
+ENV CHUCK_VERSION="1.4.0.1"
+RUN $SCRIPTS/chuck.sh
+
+COPY csound.sh $SCRIPTS/
+ENV CSOUND_VERSION="6.15.0"
+RUN $SCRIPTS/csound.sh
 
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
@@ -27,22 +58,21 @@ RUN mkdir --parents \
 COPY \
   set-vim-background.sh \
   edit-me-then-run-4-git-config.sh \
+  start-jupyter-lab.sh \
   $SYNTH_HOME/
 RUN chown -R synth:synth $SYNTH_HOME
 
-# Utility to get RAM size
-COPY ram_kilobytes.sh /usr/local/bin/
-
-COPY cmake.sh $SCRIPTS/
-ENV CMAKE_VERSION="3.20.0"
-RUN $SCRIPTS/cmake.sh
-
-COPY fluidsynth.sh $SCRIPTS/
-ENV FLUIDSYNTH_VERSION="2.1.8"
-RUN $SCRIPTS/fluidsynth.sh
-
 USER synth
 WORKDIR $SYNTH_HOME
+
+# Miniforge
+COPY --chown=synth:synth miniforge.sh $SYNTH_HOME/Scripts/
+RUN $SYNTH_HOME/Scripts/miniforge.sh
+
+# JupyterLab / cusignal
+COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
+ENV CUSIGNAL_VERSION="0.18.0"
+RUN $SYNTH_HOME/Scripts/cusignal.sh
 
 # Define the startup command
 CMD [ "/bin/bash" ]

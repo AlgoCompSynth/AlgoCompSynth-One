@@ -17,15 +17,12 @@
 
 set -e
 
-echo "Setting 'vim' editor background"
-echo "If your terminal background is light, enter any text string."
-read -p "If it's dark, just press 'Enter':"
+mkdir --parents $HOME/Notebooks
+cd $HOME
 
-if [ ${#REPLY} == "0" ]
-then
-  echo "set bg=dark" >> $HOME/.vimrc
-else
-  echo "set bg=light" >> $HOME/.vimrc
-fi
-
-echo "'vim' background is set"
+echo "Generating Jupyter configuration file"
+jupyter notebook --generate-config
+echo "Enter the same strong password twice"
+jupyter server password
+echo "If running remotely, browse to port 8888 on this Jetson host instead of 'localhost'"
+SHELL=/bin/bash jupyter lab --no-browser --ip=0.0.0.0
