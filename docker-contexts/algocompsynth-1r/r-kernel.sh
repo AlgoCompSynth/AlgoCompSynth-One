@@ -19,5 +19,7 @@ set -e
 rm -f $HOME/Logfiles/r-kernel.log
 cd $HOME
 
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate r-reticulate
 /usr/bin/time Rscript -e "IRkernel::installspec()" \
   >> $HOME/Logfiles/r-kernel.log 2>&1
