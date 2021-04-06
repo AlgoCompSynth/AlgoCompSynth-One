@@ -35,6 +35,7 @@ apt-get install -qqy --no-install-recommends \
   libsdl2-dev \
   libreadline-dev \
   >> $LOGS/fluidsynth.log 2>&1
+apt-get clean
 
 echo "Downloading fluidsynth"
 rm -fr fluidsynth*
@@ -62,5 +63,4 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/fluidsynth*
-apt-get clean
 fluidsynth --version

@@ -54,3 +54,8 @@ echo "Installing 'JupyterLab'"
 echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
 mkdir --parents $HOME/Notebooks/
 cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
+
+echo "Cleaning up"
+conda clean --tarballs --index-cache --quiet --yes
+conda list \
+  >> $HOME/Logfiles/cusignal.log 2>&1

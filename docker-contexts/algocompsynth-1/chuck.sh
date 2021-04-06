@@ -61,4 +61,4 @@ pushd chugins
   popd
 
 echo "Cleanup"
-rm -fr $SOURCE_DIR/chuck*
+rm -fr $SOURCE_DIR/chuck* $SOURCE_DIR/chugins*

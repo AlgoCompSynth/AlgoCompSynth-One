@@ -42,8 +42,7 @@ apt-get install -y --no-install-recommends \
   python3-dev \
   swig3.0 \
   >> $LOGS/csound.log 2>&1
-apt-get clean \
-  >> $LOGS/csound.log 2>&1
+apt-get clean
 
 echo "Downloading csound source"
 rm -fr csound*
