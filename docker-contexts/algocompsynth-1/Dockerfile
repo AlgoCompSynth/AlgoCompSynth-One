@@ -19,6 +19,42 @@ COPY ram_kilobytes.sh /usr/local/bin/
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
 
+# set up 'synth' account
+COPY synth-user.sh $SCRIPTS/
+RUN $SCRIPTS/synth-user.sh
+
+# enable passwordless sudo for 'synth'
+COPY passwordless-sudo /etc/sudoers.d/
+
+ENV SYNTH_HOME=/home/synth
+RUN mkdir --parents \
+  $SYNTH_HOME/Scripts \
+  $SYNTH_HOME/Downloads/Installers \
+  $SYNTH_HOME/Logfiles
+COPY \
+  set-vim-background.sh \
+  edit-me-then-run-4-git-config.sh \
+  start-jupyter-lab.sh \
+  $SYNTH_HOME/
+RUN chown -R synth:synth $SYNTH_HOME
+
+# get cuSignal done as soon as possible because 
+# it takes a long time
+USER synth
+WORKDIR $SYNTH_HOME
+
+# Miniforge
+COPY --chown=synth:synth miniforge.sh $SYNTH_HOME/Scripts/
+RUN $SYNTH_HOME/Scripts/miniforge.sh
+
+# JupyterLab / cusignal
+COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
+ENV CUSIGNAL_VERSION="0.18.0"
+RUN $SYNTH_HOME/Scripts/cusignal.sh
+
+USER root
+WORKDIR $SOURCE_DIR
+
 COPY cmake.sh $SCRIPTS/
 ENV CMAKE_VERSION="3.20.0"
 RUN $SCRIPTS/cmake.sh
@@ -47,37 +83,6 @@ COPY supercollider.sh $SCRIPTS/
 ENV SUPERCOLLIDER_VERSION="3.11.2"
 ENV SC3_PLUGINS_VERSION="3.11.1"
 RUN $SCRIPTS/supercollider.sh
-
-# set up 'synth' account
-COPY synth-user.sh $SCRIPTS/
-RUN $SCRIPTS/synth-user.sh
-
-# enable passwordless sudo for 'synth'
-COPY passwordless-sudo /etc/sudoers.d/
-
-ENV SYNTH_HOME=/home/synth
-RUN mkdir --parents \
-  $SYNTH_HOME/Scripts \
-  $SYNTH_HOME/Downloads/Installers \
-  $SYNTH_HOME/Logfiles
-COPY \
-  set-vim-background.sh \
-  edit-me-then-run-4-git-config.sh \
-  start-jupyter-lab.sh \
-  $SYNTH_HOME/
-RUN chown -R synth:synth $SYNTH_HOME
-
-USER synth
-WORKDIR $SYNTH_HOME
-
-# Miniforge
-COPY --chown=synth:synth miniforge.sh $SYNTH_HOME/Scripts/
-RUN $SYNTH_HOME/Scripts/miniforge.sh
-
-# JupyterLab / cusignal
-COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
-ENV CUSIGNAL_VERSION="0.18.0"
-RUN $SYNTH_HOME/Scripts/cusignal.sh
 
 # Define the startup command
 CMD [ "/bin/bash" ]

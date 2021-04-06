@@ -31,8 +31,7 @@ apt-get install -qqy --no-install-recommends \
   libtool-bin \
   tk-dev \
   >> $LOGS/pure-data.log 2>&1
-apt-get clean \
-  >> $LOGS/pure-data.log 2>&1
+apt-get clean
 
 echo "Downloading pure-data source"
 rm -fr pure-data*
@@ -40,28 +39,33 @@ export PURE_DATA_REPO="https://github.com/pure-data/pure-data/archive/refs/tags"
 export PURE_DATA_FILE="$PURE_DATA_VERSION.tar.gz"
 curl -Ls $PURE_DATA_REPO/$PURE_DATA_FILE \
   | tar --extract --gunzip --file=-
-cd pure-data-$PURE_DATA_VERSION
+pushd pure-data-$PURE_DATA_VERSION
 
-echo "Configuring Pure Data"
-./autogen.sh \
-  >> $LOGS/pure-data.log 2>&1
-./configure --help \
-  >> $LOGS/pure-data.log 2>&1
-./configure \
-  --enable-alsa \
-  --enable-fftw \
-  --enable-jack \
-  --disable-oss \
-  --enable-portaudio \
-  --enable-portmidi \
-  --without-local-portaudio \
-  --without-local-portmidi \
-  >> $LOGS/pure-data.log 2>&1
-echo "Compiling Pure Data"
-/usr/bin/time make --jobs=`nproc` \
-  >> $LOGS/pure-data.log 2>&1
-echo "Installing Pure Data"
-make install \
-  >> $LOGS/pure-data.log 2>&1
-ldconfig \
-  >> $LOGS/pure-data.log 2>&1
+  echo "Configuring Pure Data"
+  ./autogen.sh \
+    >> $LOGS/pure-data.log 2>&1
+  ./configure --help \
+    >> $LOGS/pure-data.log 2>&1
+  ./configure \
+    --enable-alsa \
+    --enable-fftw \
+    --enable-jack \
+    --disable-oss \
+    --enable-portaudio \
+    --enable-portmidi \
+    --without-local-portaudio \
+    --without-local-portmidi \
+    >> $LOGS/pure-data.log 2>&1
+
+  echo "Compiling Pure Data"
+  /usr/bin/time make --jobs=`nproc` \
+    >> $LOGS/pure-data.log 2>&1
+
+  echo "Installing Pure Data"
+  make install \
+    >> $LOGS/pure-data.log 2>&1
+  ldconfig
+  popd
+
+echo "Cleanup"
+rm -fr pure-data*
