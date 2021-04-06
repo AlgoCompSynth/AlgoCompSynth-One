@@ -67,11 +67,8 @@ pushd SuperCollider*
   echo "Installing supercollider"
   make install \
     >> $LOGS/supercollider.log 2>&1
-  ldconfig -v \
-    >> $LOGS/supercollider.log 2>&1
+  ldconfig
   popd
-
-ldconfig
 
 echo "Downloading sc3-plugins source"
 rm -fr sc3-plugins*
@@ -96,11 +93,8 @@ pushd sc3-plugins*
   echo "Installing sc3-plugins"
   make install \
     >> $LOGS/supercollider.log 2>&1
-  ldconfig -v \
-    >> $LOGS/supercollider.log 2>&1
+  ldconfig
   popd
-
-ldconfig
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/SuperCollider*

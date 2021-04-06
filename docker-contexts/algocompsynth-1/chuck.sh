@@ -31,14 +31,13 @@ pushd chuck-$CHUCK_VERSION/src
   echo "Installing ChucK"
   make install \
     >> $LOGS/chuck.log 2>&1
+  ldconfig
 
   echo "Relocating ChucK examples"
   rm -fr /usr/local/share/chuck
   mkdir --parents /usr/local/share/chuck
   mv ../examples /usr/local/share/chuck/examples
   popd
-
-ldconfig
 
 echo "Installing Chugins"
 git clone https://github.com/ccrma/chugins.git \
@@ -49,17 +48,17 @@ pushd chugins
     >> $LOGS/chuck.log 2>&1
   make install \
     >> $LOGS/chuck.log 2>&1
+  ldconfig
   pushd Faust
 
     make linux \
       >> $LOGS/chuck.log 2>&1
     make install \
       >> $LOGS/chuck.log 2>&1
+    ldconfig
     popd
 
   popd
-
-ldconfig
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/chuck* $SOURCE_DIR/chugins*
