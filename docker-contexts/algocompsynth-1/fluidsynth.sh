@@ -61,6 +61,8 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
     >> $LOGS/fluidsynth.log 2>&1
   popd
 
+ldconfig
+
 echo "Cleanup"
 rm -fr $SOURCE_DIR/fluidsynth*
 fluidsynth --version

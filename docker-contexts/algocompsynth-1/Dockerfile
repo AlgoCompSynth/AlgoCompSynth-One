@@ -43,6 +43,11 @@ COPY csound.sh $SCRIPTS/
 ENV CSOUND_VERSION="6.15.0"
 RUN $SCRIPTS/csound.sh
 
+COPY supercollider.sh $SCRIPTS/
+ENV SUPERCOLLIDER_VERSION="3.11.2"
+ENV SC3_PLUGINS_VERSION="3.11.1"
+RUN $SCRIPTS/supercollider.sh
+
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
 RUN $SCRIPTS/synth-user.sh

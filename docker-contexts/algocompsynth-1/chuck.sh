@@ -38,8 +38,7 @@ pushd chuck-$CHUCK_VERSION/src
   mv ../examples /usr/local/share/chuck/examples
   popd
 
-ldconfig -v \
-  >> $LOGS/chuck.log 2>&1
+ldconfig
 
 echo "Installing Chugins"
 git clone https://github.com/ccrma/chugins.git \
@@ -59,6 +58,8 @@ pushd chugins
     popd
 
   popd
+
+ldconfig
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/chuck* $SOURCE_DIR/chugins*

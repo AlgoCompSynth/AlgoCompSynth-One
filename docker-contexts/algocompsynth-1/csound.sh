@@ -76,8 +76,7 @@ make --jobs=`nproc` \
 echo "Installing CSound"
 make install \
   >> $LOGS/csound.log 2>&1
-ldconfig -v \
-  >> $LOGS/csound.log 2>&1
+ldconfig
 
 echo "Relocating samples to '/usr/local/share/csound/samples'"
 rm -fr /usr/local/share/csound

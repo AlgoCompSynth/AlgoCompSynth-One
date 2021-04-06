@@ -40,8 +40,7 @@ make TARGETS=all.cmake BACKENDS=all.cmake \
 echo "Installing faust"
 make install \
   >> $LOGS/faust.log 2>&1
-ldconfig -v \
-  >> $LOGS/faust.log 2>&1
+ldconfig
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/faust*

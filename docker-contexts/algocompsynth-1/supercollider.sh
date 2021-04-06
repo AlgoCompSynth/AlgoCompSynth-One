@@ -25,20 +25,10 @@ echo "Installing Linux dependencies"
 apt-get update \
   >> $LOGS/supercollider.log 2>&1
 apt-get install -qqy --no-install-recommends \
-  gedit \
   libavahi-client-dev \
   libfftw3-dev \
   libfftw3-mpi-dev \
   libncurses5-dev \
-  libqt5opengl5-dev \
-  libqt5svg5-dev \
-  libqt5websockets5-dev \
-  libxcb-icccm4-dev \
-  libxcb-util-dev \
-  qtbase5-dev \
-  qtdeclarative5-dev \
-  qttools5-dev \
-  qtwebengine5-dev \
   >> $LOGS/supercollider.log 2>&1
 apt-get clean
 
@@ -61,6 +51,12 @@ pushd SuperCollider*
     -DSC_ABLETON_LINK=OFF \
     -DENABLE_TESTSUITE=OFF \
     -DLIBSCSYNTH=OFF \
+    -DINSTALL_HELP=OFF \
+    -DNO_X11=ON \
+    -DSCLANG_SERVER=ON \
+    -DSC_IDE=OFF \
+    -DSC_QT=OFF \
+    -DSC_ED=OFF \
     .. \
     >> $LOGS/supercollider.log 2>&1
 
@@ -74,6 +70,8 @@ pushd SuperCollider*
   ldconfig -v \
     >> $LOGS/supercollider.log 2>&1
   popd
+
+ldconfig
 
 echo "Downloading sc3-plugins source"
 rm -fr sc3-plugins*
@@ -101,6 +99,8 @@ pushd sc3-plugins*
   ldconfig -v \
     >> $LOGS/supercollider.log 2>&1
   popd
+
+ldconfig
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/SuperCollider*
