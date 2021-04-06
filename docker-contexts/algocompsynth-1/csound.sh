@@ -53,35 +53,59 @@ curl -Ls \
 echo "Configuring CSound"
 rm -fr cs6make
 mkdir cs6make
-cd cs6make
-export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
-cmake \
-  -Wno-dev \
-  -DBUILD_CUDA_OPCODES=ON \
-  -DBUILD_STATIC_LIBRARY=ON \
-  -DLAME_HEADER="/usr/include/lame/lame.h" \
-  -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
-  -DLUA_H_PATH="/usr/include/lua5.2/" \
-  -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
-  -DBUILD_JAVA_INTERFACE=OFF \
-  -DBUILD_P5GLOVE_OPCODES=OFF \
-  -DBUILD_VIRTUAL_KEYBOARD=OFF \
-  -DBUILD_WIIMOTE_OPCODES=OFF \
-  -DUSE_FLTK=OFF \
-  ../csound-$CSOUND_VERSION \
-  >> $LOGS/csound.log 2>&1
-echo "Compiling CSound"
-make --jobs=`nproc` \
-  >> $LOGS/csound.log 2>&1
-echo "Installing CSound"
-make install \
-  >> $LOGS/csound.log 2>&1
-ldconfig
+pushd cs6make
 
-echo "Relocating samples to '/usr/local/share/csound/samples'"
-rm -fr /usr/local/share/csound
-mkdir --parents /usr/local/share/csound
-mv /usr/local/share/samples /usr/local/share/csound/samples
+  export CPATH=/usr/include/lame:/usr/include/pulse:$CPATH
+  cmake \
+    -Wno-dev \
+    -DBUILD_CUDA_OPCODES=ON \
+    -DBUILD_STATIC_LIBRARY=ON \
+    -DLAME_HEADER="/usr/include/lame/lame.h" \
+    -DPULSEAUDIO_HEADER="/usr/include/pulse/simple.h" \
+    -DLUA_H_PATH="/usr/include/lua5.2/" \
+    -DLUA_LIBRARY="/usr/lib/aarch64-linux-gnu/liblua5.2.so" \
+    -DBUILD_JAVA_INTERFACE=OFF \
+    -DBUILD_P5GLOVE_OPCODES=OFF \
+    -DBUILD_VIRTUAL_KEYBOARD=OFF \
+    -DBUILD_WIIMOTE_OPCODES=OFF \
+    -DUSE_FLTK=OFF \
+    -L \
+    ../csound-$CSOUND_VERSION \
+    >> $LOGS/csound.log 2>&1
+    exit
+  echo "Compiling CSound"
+  make --jobs=`nproc` \
+    >> $LOGS/csound.log 2>&1
+  echo "Installing CSound"
+  make install \
+    >> $LOGS/csound.log 2>&1
+  ldconfig
+
+  echo "Relocating samples to '/usr/local/share/csound/samples'"
+  rm -fr /usr/local/share/csound
+  mkdir --parents /usr/local/share/csound
+  mv /usr/local/share/samples /usr/local/share/csound/samples
+  popd
+
+# http://floss.booktype.pro/csound/a-csound-in-pd/
+echo "Cloning the 'CSound in PD' repo"
+git clone https://github.com/csound/csound_pd.git
+pushd csound_pd
+
+  echo "Configuring csound_pd"
+  rm -fr build; mkdir --parents build; cd build
+  cmake .. \
+    >> $LOGS/csound.log 2>&1
+
+  echo "Compiling csound_pd"
+  make \
+    >> $LOGS/csound.log 2>&1
+
+  echo "Installing csound_pd"
+  cp csound6~.pd_linux /usr/local/lib/pd/extra/
+  cp ../examples/csound6~-help.pd /usr/local/lib/pd/extra/
+  cp -rp ../examples /usr/local/share/csound/samples/csound_pd_examples
+  popd
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/cs6make $SOURCE_DIR/csound*
