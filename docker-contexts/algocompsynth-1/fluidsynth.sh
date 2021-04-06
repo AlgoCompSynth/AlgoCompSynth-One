@@ -57,11 +57,8 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
   echo "Installing FluidSynth"
   make install \
     >> $LOGS/fluidsynth.log 2>&1
-  ldconfig \
-    >> $LOGS/fluidsynth.log 2>&1
+  ldconfig
   popd
-
-ldconfig
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/fluidsynth*
