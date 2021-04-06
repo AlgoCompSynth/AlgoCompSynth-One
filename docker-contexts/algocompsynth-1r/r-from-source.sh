@@ -99,8 +99,7 @@ cd $SOURCE_DIR
 rm -fr R-* build_dir
 
 echo "Configuring R"
-ldconfig -v \
-  >> $LOGS/R.log 2>&1
+ldconfig
 R CMD javareconf \
   >> $LOGS/R.log 2>&1
 
