@@ -34,6 +34,10 @@ host-scripts/llvm.sh
 export XPRA_VERSION="4.1.2"
 host-scripts/xpra.sh
 
+# Pure data aka Pd
+export PURE_DATA_VERSION="0.51-4"
+host-scripts/pure-data.sh
+
 export FAUST_VERSION="2.30.5"
 host-scripts/faust.sh
 
