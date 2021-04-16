@@ -25,8 +25,8 @@ curl -Ls https://chuck.cs.princeton.edu/release/files/chuck-$CHUCK_VERSION.tgz \
   | tar --extract --gunzip --file=-
 pushd chuck-$CHUCK_VERSION/src
 
-  echo "Compiling ChucK for JACK"
-  make --jobs=`nproc` linux-jack \
+  echo "Compiling ChucK for PulseAudio"
+  make --jobs=`nproc` linux-pulse \
     >> $LOGS/chuck.log 2>&1
   echo "Installing ChucK"
   make install \
