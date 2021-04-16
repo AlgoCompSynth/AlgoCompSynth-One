@@ -23,14 +23,17 @@ echo "Installing dependencies"
 apt-get update \
   >> $LOGS/csound.log 2>&1
 apt-get install -y --no-install-recommends \
+  fluid \
   gettext \
   hdf5-tools \
   libcurl4-openssl-dev \
   libeigen3-dev \
+  libfltk1.3-dev \
   libgettextpo-dev \
   libgmm++-dev \
   libhdf5-dev \
   libhdf5-serial-dev \
+  liblo-dev \
   liblua5.2-dev \
   libmp3lame-dev \
   libncurses5-dev \
@@ -68,11 +71,10 @@ pushd cs6make
     -DBUILD_P5GLOVE_OPCODES=OFF \
     -DBUILD_VIRTUAL_KEYBOARD=OFF \
     -DBUILD_WIIMOTE_OPCODES=OFF \
-    -DUSE_FLTK=OFF \
-    -L \
+    -DUSE_FLTK=ON \
     ../csound-$CSOUND_VERSION \
     >> $LOGS/csound.log 2>&1
-    exit
+
   echo "Compiling CSound"
   make --jobs=`nproc` \
     >> $LOGS/csound.log 2>&1
@@ -109,3 +111,4 @@ pushd csound_pd
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/cs6make $SOURCE_DIR/csound*
+
