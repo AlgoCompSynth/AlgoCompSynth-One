@@ -22,6 +22,7 @@ cd $SOURCE_DIR
 echo "Installing latest 'vscode'"
 curl --location --silent --output vscode.deb \
   "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64"
-sudo apt-get install -y --no-install-recommends \
+apt-get install -y --no-install-recommends \
   ./vscode.deb \
   >> $LOGS/vscode.log 2>&1
+rm -f vscode.deb

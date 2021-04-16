@@ -37,3 +37,6 @@ cd buildgtk
 make --jobs=`nproc` install \
   >> $LOGS/wxWidgets.log 2>&1
 ldconfig
+
+echo "Cleanup"
+rm -fr $SOURCE_DIR/wxWidgets

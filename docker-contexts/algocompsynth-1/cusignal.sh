@@ -59,3 +59,4 @@ echo "Cleaning up"
 conda clean --tarballs --index-cache --quiet --yes
 conda list \
   >> $HOME/Logfiles/cusignal.log 2>&1
+rm -fr $CUSIGNAL_HOME

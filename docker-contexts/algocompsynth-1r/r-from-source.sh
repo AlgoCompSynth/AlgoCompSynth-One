@@ -96,7 +96,7 @@ pushd build-dir
 
 echo "Cleanup"
 cd $SOURCE_DIR
-rm -fr R-* build_dir
+rm -fr R-* build-dir
 
 echo "Configuring R"
 ldconfig

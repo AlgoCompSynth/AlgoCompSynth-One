@@ -22,8 +22,6 @@ rm -f $LOGS/supercollider.log
 cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
-apt-get update \
-  >> $LOGS/supercollider.log 2>&1
 apt-get install -y --no-install-recommends \
   gedit \
   libavahi-client-dev \
