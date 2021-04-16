@@ -20,7 +20,7 @@ rm -f $LOGS/xpra.log
 cd $SOURCE_DIR
 
 #echo "Installing dependencies"
-#apt-get install -qqy --no-install-recommends \
+#apt-get install -y --no-install-recommends \
   #cython3 \
   #libx264-dev \
   #libvpx-dev \

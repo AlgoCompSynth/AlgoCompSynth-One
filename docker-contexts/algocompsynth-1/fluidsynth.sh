@@ -20,7 +20,7 @@ rm -f $LOGS/fluidsynth.log
 cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
-apt-get install -qqy --no-install-recommends \
+apt-get install -y --no-install-recommends \
   libglib2.0-dev \
   libsndfile1-dev \
   libpulse-dev \

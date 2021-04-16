@@ -24,7 +24,7 @@ cd $SOURCE_DIR
 echo "Installing Linux dependencies"
 apt-get update \
   >> $LOGS/supercollider.log 2>&1
-apt-get install -qqy --no-install-recommends \
+apt-get install -y --no-install-recommends \
   libavahi-client-dev \
   libfftw3-dev \
   libfftw3-mpi-dev \

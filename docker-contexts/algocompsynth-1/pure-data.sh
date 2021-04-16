@@ -22,7 +22,7 @@ cd $SOURCE_DIR
 echo "Installing Linux dependencies"
 apt-get update \
   >> $LOGS/pure-data.log 2>&1
-apt-get install -qqy --no-install-recommends \
+apt-get install -y --no-install-recommends \
   autoconf \
   automake \
   libfftw3-dev \

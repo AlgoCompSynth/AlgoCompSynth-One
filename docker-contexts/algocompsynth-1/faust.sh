@@ -20,7 +20,7 @@ rm -f $LOGS/faust.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
-apt-get install -qqy --no-install-recommends \
+apt-get install -y --no-install-recommends \
   libmicrohttpd-dev \
   libssl-dev \
   >> $LOGS/faust.log 2>&1
