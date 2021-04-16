@@ -25,10 +25,20 @@ echo "Installing Linux dependencies"
 apt-get update \
   >> $LOGS/supercollider.log 2>&1
 apt-get install -y --no-install-recommends \
+  gedit \
   libavahi-client-dev \
   libfftw3-dev \
   libfftw3-mpi-dev \
   libncurses5-dev \
+  libqt5opengl5-dev \
+  libqt5svg5-dev \
+  libqt5websockets5-dev \
+  libxcb-icccm4-dev \
+  libxcb-util-dev \
+  qtbase5-dev \
+  qtdeclarative5-dev \
+  qttools5-dev \
+  qtwebengine5-dev \
   >> $LOGS/supercollider.log 2>&1
 apt-get clean
 
@@ -52,11 +62,11 @@ pushd SuperCollider*
     -DENABLE_TESTSUITE=OFF \
     -DLIBSCSYNTH=OFF \
     -DINSTALL_HELP=OFF \
-    -DNO_X11=ON \
+    -DNO_X11=OFF \
     -DSCLANG_SERVER=ON \
-    -DSC_IDE=OFF \
-    -DSC_QT=OFF \
-    -DSC_ED=OFF \
+    -DSC_IDE=ON \
+    -DSC_QT=ON \
+    -DSC_ED=ON \
     .. \
     >> $LOGS/supercollider.log 2>&1
 
