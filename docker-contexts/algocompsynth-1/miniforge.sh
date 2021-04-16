@@ -19,7 +19,6 @@ set -e
 rm -f $HOME/Logfiles/miniforge.log
 cd $HOME
 
-mkdir --parents $HOME/Downloads/Installers
 cd $HOME/Downloads/Installers
 echo "Downloading Miniforge3 installer"
 wget -q \
