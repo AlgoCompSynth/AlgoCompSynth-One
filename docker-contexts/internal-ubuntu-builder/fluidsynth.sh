@@ -21,8 +21,6 @@ cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
 apt-get install -y --no-install-recommends \
-  libglib2.0-dev \
-  libsndfile1-dev \
   libpulse-dev \
   libasound2-dev \
   portaudio19-dev \
@@ -31,9 +29,10 @@ apt-get install -y --no-install-recommends \
   libsystemd-dev \
   libdbus-1-dev \
   ladspa-sdk \
-  libinstpatch-dev \
   libsdl2-dev \
   libreadline-dev \
+  fluid-soundfont-gm \
+  fluid-soundfont-gs \
   >> $LOGS/fluidsynth.log 2>&1
 apt-get clean
 
@@ -62,4 +61,3 @@ pushd fluidsynth-$FLUIDSYNTH_VERSION
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/fluidsynth*
-fluidsynth --version

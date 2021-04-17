@@ -11,36 +11,28 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-#
+# 
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/faust.log
+rm -f $LOGS/audio.log
 cd $SOURCE_DIR
 
-echo "Installing dependencies"
-apt-get install -y --no-install-recommends \
-  libmicrohttpd-dev \
-  libssl-dev \
-  libtinfo-dev \
-  >> $LOGS/faust.log 2>&1
+echo "Installing PGDG Linux repository"
+# https://wiki.postgresql.org/wiki/Apt
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo cp $SCRIPTS/pgdg.list /etc/apt/sources.list.d/pgdg.list
+apt-get update
 
-echo "Downloading faust source"
-rm -fr faust*
-curl -Ls \
-  https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
-  | tar --extract --gunzip --file=-
+echo "Installing Linux dependencies"
+apt-get install -qqy --no-install-recommends \
+  libfftw3-dev \
+  libfftw3-mpi-dev \
+  libgdal-dev \
+  libudunits2-dev \
+  >> $LOGS/audio.log 2>&1
+apt-get clean
 
-echo "Compiling faust"
-cd faust-$FAUST_VERSION/build
-export CMAKEOPT="-Wno-dev"
-make TARGETS=all.cmake BACKENDS=all.cmake \
-  >> $LOGS/faust.log 2>&1
-echo "Installing faust"
-make install \
-  >> $LOGS/faust.log 2>&1
-ldconfig
-
-echo "Cleanup"
-rm -fr $SOURCE_DIR/faust*
+/usr/bin/time Rscript -e "source('$SCRIPTS/audio.R')" \
+  >> $LOGS/audio.log 2>&1

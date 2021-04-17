@@ -22,20 +22,16 @@ COPY cmake.sh $SCRIPTS/
 ENV CMAKE_VERSION="3.20.0"
 RUN $SCRIPTS/cmake.sh
 
-ENV XPRA_VERSION="4.1.2"
-COPY package-xpra.sh $SCRIPTS/
-RUN $SCRIPTS/package-xpra.sh
-
-ENV XPRA_HTML5_VERSION="4.1.2"
-COPY package-xpra-html5.sh $SCRIPTS/
-RUN $SCRIPTS/package-xpra-html5.sh
-
 COPY llvm.sh $SCRIPTS/
 ENV LLVM_VERSION="11.0.1"
 RUN $SCRIPTS/llvm.sh
 
 # Utility to get RAM size
 COPY ram_kilobytes.sh /usr/local/bin/
+
+COPY libinstpatch.sh $SCRIPTS/
+ENV LIBINSTPATCH_VERSION="1.1.6"
+RUN $SCRIPTS/libinstpatch.sh
 
 COPY fluidsynth.sh $SCRIPTS/
 ENV FLUIDSYNTH_VERSION="2.2.0"
@@ -49,14 +45,17 @@ COPY chuck.sh $SCRIPTS/
 ENV CHUCK_VERSION="1.4.0.1"
 RUN $SCRIPTS/chuck.sh
 
-COPY supercollider.sh $SCRIPTS/
-ENV SUPERCOLLIDER_VERSION="3.11.2"
-ENV SC3_PLUGINS_VERSION="3.11.1"
-RUN $SCRIPTS/supercollider.sh
+# Pandoc and R
+ENV PANDOC_VERSION="2.12"
+COPY upstream-pandoc.sh $SCRIPTS/
+RUN $SCRIPTS/upstream-pandoc.sh
 
-RUN mv \
-  $SOURCE_DIR/xpra-html5/dist/xpra-html5-4.1.2-1.deb \
-  $SOURCE_DIR/xpra_4.1.2-1_arm64.deb \
-  $PACKAGES/
+ENV R_VERSION_MAJOR=4 R_VERSION_MINOR=0 R_VERSION_PATCH=5
+ENV R_LATEST=R-$R_VERSION_MAJOR.$R_VERSION_MINOR.$R_VERSION_PATCH
+COPY R.conf /etc/ld.so.conf.d/R.conf
+COPY r-from-source.sh $SCRIPTS/
+RUN $SCRIPTS/r-from-source.sh
+COPY audio.sh audio.R pgdg.list $SCRIPTS/
+RUN $SCRIPTS/audio.sh
 
 RUN ls -lR /usr/local > $LOGS/after.log

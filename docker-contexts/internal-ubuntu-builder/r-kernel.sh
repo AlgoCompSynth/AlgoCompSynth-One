@@ -1,4 +1,4 @@
-#! /bin/bash 
+#! /bin/bash
 
 # Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
 #
@@ -16,23 +16,10 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/xpra-html5.log
+rm -f $HOME/Logfiles/r-kernel.log
+cd $HOME
 
-pushd $SOURCE_DIR
-
-  echo "Cloning xpra-html5"
-  rm -fr xpra-html5
-  git clone https://github.com/Xpra-org/xpra-html5 \
-    >> $LOGS/xpra-html5.log 2>&1
-
-  echo "Checking out v$XPRA_HTML5_VERSION"
-  pushd xpra-html5
-    git checkout v$XPRA_HTML5_VERSION \
-      >> $LOGS/xpra-html5.log 2>&1
-
-    echo "Building packages"
-    python3 setup.py deb \
-      >> $LOGS/xpra-html5.log 2>&1
-    popd
-
-  popd
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate r-reticulate
+/usr/bin/time Rscript -e "IRkernel::installspec()" \
+  >> $HOME/Logfiles/r-kernel.log 2>&1

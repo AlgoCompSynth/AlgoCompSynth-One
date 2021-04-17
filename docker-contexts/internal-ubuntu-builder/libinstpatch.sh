@@ -11,36 +11,42 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-#
+# 
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/faust.log
+rm -f $LOGS/libinstpatch.log
 cd $SOURCE_DIR
 
-echo "Installing dependencies"
+echo "Installing Linux dependencies"
 apt-get install -y --no-install-recommends \
-  libmicrohttpd-dev \
-  libssl-dev \
-  libtinfo-dev \
-  >> $LOGS/faust.log 2>&1
+  libglib2.0-dev \
+  libsndfile1-dev \
+  >> $LOGS/libinstpatch.log 2>&1
+apt-get clean
 
-echo "Downloading faust source"
-rm -fr faust*
+echo "Downloading libinstpatch"
+rm -fr libinstpatch*
 curl -Ls \
-  https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
+  https://github.com/swami/libinstpatch/archive/refs/tags/v$LIBINSTPATCH_VERSION.tar.gz \
   | tar --extract --gunzip --file=-
+pushd libinstpatch-$LIBINSTPATCH_VERSION
 
-echo "Compiling faust"
-cd faust-$FAUST_VERSION/build
-export CMAKEOPT="-Wno-dev"
-make TARGETS=all.cmake BACKENDS=all.cmake \
-  >> $LOGS/faust.log 2>&1
-echo "Installing faust"
-make install \
-  >> $LOGS/faust.log 2>&1
-ldconfig
+  echo "Compiling libinstpatch"
+  mkdir --parents build; cd build
+  cmake \
+    -Wno-dev \
+    -DLIB_SUFFIX="" \
+    .. \
+    >> $LOGS/libinstpatch.log 2>&1
+  /usr/bin/time make --jobs=`nproc` \
+    >> $LOGS/libinstpatch.log 2>&1
+  echo "Installing libinstpatch"
+  make install \
+    >> $LOGS/libinstpatch.log 2>&1
+  ldconfig
+  popd
 
 echo "Cleanup"
-rm -fr $SOURCE_DIR/faust*
+rm -fr $SOURCE_DIR/libinstpatch*

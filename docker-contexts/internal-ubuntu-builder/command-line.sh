@@ -43,3 +43,4 @@ apt-get install -y --no-install-recommends \
   vim-nox \
   wget \
   >> $LOGS/command-line.log 2>&1
+apt-get clean
