@@ -20,18 +20,18 @@ rm -f $LOGS/csound.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
+apt-get update \
+  >> $LOGS/csound.log 2>&1
 apt-get install -y --no-install-recommends \
-  fluid \
+  bison \
+  flex \
   gettext \
   hdf5-tools \
-  libcurl4-openssl-dev \
   libeigen3-dev \
-  libfltk1.3-dev \
   libgettextpo-dev \
   libgmm++-dev \
   libhdf5-dev \
   libhdf5-serial-dev \
-  liblo-dev \
   liblua5.2-dev \
   libmp3lame-dev \
   libncurses5-dev \
@@ -69,10 +69,11 @@ pushd cs6make
     -DBUILD_P5GLOVE_OPCODES=OFF \
     -DBUILD_VIRTUAL_KEYBOARD=OFF \
     -DBUILD_WIIMOTE_OPCODES=OFF \
-    -DUSE_FLTK=ON \
+    -DUSE_FLTK=OFF \
+    -L \
     ../csound-$CSOUND_VERSION \
     >> $LOGS/csound.log 2>&1
-
+    exit
   echo "Compiling CSound"
   make --jobs=`nproc` \
     >> $LOGS/csound.log 2>&1
@@ -85,26 +86,6 @@ pushd cs6make
   rm -fr /usr/local/share/csound
   mkdir --parents /usr/local/share/csound
   mv /usr/local/share/samples /usr/local/share/csound/samples
-  popd
-
-# http://floss.booktype.pro/csound/a-csound-in-pd/
-echo "Cloning the 'CSound in PD' repo"
-git clone https://github.com/csound/csound_pd.git
-pushd csound_pd
-
-  echo "Configuring csound_pd"
-  rm -fr build; mkdir --parents build; cd build
-  cmake .. \
-    >> $LOGS/csound.log 2>&1
-
-  echo "Compiling csound_pd"
-  make \
-    >> $LOGS/csound.log 2>&1
-
-  echo "Installing csound_pd"
-  cp csound6~.pd_linux /usr/local/lib/pd/extra/
-  cp ../examples/csound6~-help.pd /usr/local/lib/pd/extra/
-  cp -rp ../examples /usr/local/share/csound/samples/csound_pd_examples
   popd
 
 echo "Cleanup"

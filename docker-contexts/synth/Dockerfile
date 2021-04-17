@@ -13,11 +13,11 @@ RUN echo "set bg=dark" >> /root/.vimrc
 
 WORKDIR $SOURCE_DIR
 
-# install command-line base and multimedia
+# install command-line base and libraries
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
-COPY multimedia.sh $SCRIPTS/
-RUN $SCRIPTS/multimedia.sh
+COPY install-libraries.sh pgdg.list $SCRIPTS/
+RUN $SCRIPTS/install-libraries.sh
 
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/bin /usr/local/bin
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/etc /usr/local/etc
@@ -26,14 +26,10 @@ COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/include /usr
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/lib /usr/local/lib
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/sbin /usr/local/sbin
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/share /usr/local/share
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/src/packages /usr/local/src/packages
 
-COPY download-vscode.sh $SCRIPTS/
-RUN $SCRIPTS/download-vscode.sh
-
-RUN apt-get install -y --no-install-recommends \
-  $PACKAGES/*.deb \
-  > $LOGS/packages.log 2>&1
+COPY csound.sh $SCRIPTS/
+RUN $SCRIPTS/csound.sh
+RUN detonate
 
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
@@ -47,15 +43,14 @@ RUN mkdir --parents \
   $SYNTH_HOME/Scripts \
   $SYNTH_HOME/Downloads/Installers \
   $SYNTH_HOME/Logfiles
-COPY \
+COPY --chown=synth:synth \
   set-vim-background.sh \
   edit-me-then-run-4-git-config.sh \
   start-jupyter-lab.sh \
   $SYNTH_HOME/
+COPY --chown=synth:synth Rprofile $SYNTH_HOME/.Rprofile
 RUN chown -R synth:synth $SYNTH_HOME
 
-# get cuSignal done as soon as possible because 
-# it takes a long time
 USER synth
 WORKDIR $SYNTH_HOME
 
@@ -67,7 +62,5 @@ RUN $SYNTH_HOME/Scripts/miniforge.sh
 COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
 ENV CUSIGNAL_VERSION="0.18.0"
 RUN $SYNTH_HOME/Scripts/cusignal.sh
-
-# R audio
 
 CMD [ "/bin/bash" ]

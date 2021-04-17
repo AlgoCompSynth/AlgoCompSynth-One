@@ -2,5 +2,5 @@
 
 set -e
 
-./image.sh algocompsynth-1 > /tmp/i-algocompsynth-1.log 2>&1
-./image.sh algocompsynth-1r > /tmp/i-algocompsynth-1r.log 2>&1
+./image.sh internal-ubuntu-builder > /tmp/i-internal-ubuntu-builder.log 2>&1
+./image.sh synth > /tmp/i-synth.log 2>&1

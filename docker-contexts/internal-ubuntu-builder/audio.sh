@@ -26,11 +26,19 @@ sudo cp $SCRIPTS/pgdg.list /etc/apt/sources.list.d/pgdg.list
 apt-get update
 
 echo "Installing Linux dependencies"
-apt-get install -qqy --no-install-recommends \
+apt-get install -y --no-install-recommends \
+  alsa-tools \
+  alsa-utils \
+  flac \
   libfftw3-dev \
   libfftw3-mpi-dev \
   libgdal-dev \
+  libsox-dev \
+  libsox-fmt-all \
   libudunits2-dev \
+  mp3splt \
+  sox \
+  timidity \
   >> $LOGS/audio.log 2>&1
 apt-get clean
 

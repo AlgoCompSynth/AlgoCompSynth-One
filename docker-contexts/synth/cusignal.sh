@@ -51,6 +51,9 @@ echo "Installing 'JupyterLab'"
 /usr/bin/time conda install --quiet --yes jupyterlab \
   >> $HOME/Logfiles/cusignal.log 2>&1
 
+echo "Enabling R kernel"
+Rscript -e "IRkernel::installspec()"
+
 echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
 mkdir --parents $HOME/Notebooks/
 cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks

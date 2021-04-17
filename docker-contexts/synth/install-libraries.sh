@@ -16,64 +16,64 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/multimedia.log
+rm -f $LOGS/install-libraries.log
 
-echo "Installing multimedia tools"
+echo "Installing PGDG Linux repository"
+# https://wiki.postgresql.org/wiki/Apt
+curl -Ls https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo cp $SCRIPTS/pgdg.list /etc/apt/sources.list.d/pgdg.list
 apt-get update \
-  >> $LOGS/multimedia.log 2>&1
+  >> $LOGS/install-libraries.log 2>&1
+
+echo "Installing install-libraries tools"
 apt-get install -y --no-install-recommends \
   alsa-tools \
   alsa-utils \
-  ffmpeg \
+  bison \
+  cmake \
+  default-jdk-headless \
   flac \
+  flex \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
-  gedit \
-  gstreamer1.0-alsa \
-  gstreamer1.0-libav \
-  gstreamer1.0-tools \
-  gstreamer1.0-plugins-base \
-  gstreamer1.0-plugins-good \
-  gstreamer1.0-plugins-bad \
-  gstreamer1.0-plugins-ugly \
-  jacktrip \
+  gfortran \
   ladspa-sdk \
   libasound2-dev \
-  libavahi-client-dev \
+  libbz2-dev \
+  libcairo2-dev \
   libdbus-1-dev \
   libfftw3-dev \
   libfftw3-mpi-dev \
+  libgdal-dev \
+  libgit2-dev \
   libglib2.0-dev \
-  libgstreamer1.0-dev \
-  libgstreamer-plugins-base1.0-dev \
-  libgstreamer-plugins-good1.0-dev \
-  libgstreamer-plugins-bad1.0-dev \
-  libinstpatch-dev \
+  libicu-dev \
   libjack-jackd2-dev \
+  libjpeg8-dev \
+  libjpeg-turbo8-dev \
   liblash-compat-dev \
+  liblzma-dev \
   libmicrohttpd-dev \
-  libncurses5-dev \
-  libsox-dev \
-  libsox-fmt-all \
+  libncurses-dev \
+  libpango1.0-dev \
+  libpcre2-dev \
   libpulse-dev \
-  libqt5opengl5-dev \
-  libqt5svg5-dev \
-  libqt5websockets5-dev \
   libreadline-dev \
   libsdl2-dev \
   libsndfile1-dev \
+  libsox-dev \
+  libsox-fmt-all \
   libssl-dev \
   libsystemd-dev \
+  libtiff5-dev \
   libtinfo-dev \
-  libxcb-icccm4-dev \
-  libxcb-util-dev \
+  libudunits2-dev \
   mp3splt \
   portaudio19-dev \
-  qjackctl \
-  qtbase5-dev \
-  qtdeclarative5-dev \
-  qttools5-dev \
-  qtwebengine5-dev \
   sox \
+  texinfo \
   timidity \
-  >> $LOGS/multimedia.log 2>&1
+  tk-dev \
+  zlib1g-dev \
+  >> $LOGS/install-libraries.log 2>&1
+apt-get clean
