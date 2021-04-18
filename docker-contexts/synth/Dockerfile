@@ -33,6 +33,8 @@ COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
 COPY install-libraries.sh pgdg.list $SCRIPTS/
 RUN $SCRIPTS/install-libraries.sh
+COPY deviceQuery.sh $SCRIPTS/
+RUN $SCRIPTS/deviceQuery.sh
 
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/bin /usr/local/bin
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/etc /usr/local/etc

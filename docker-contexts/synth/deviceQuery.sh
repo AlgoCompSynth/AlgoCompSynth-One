@@ -16,13 +16,18 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/cmake.log
-cd $HOME/Downloads/Installers
+rm -f $LOGS/deviceQuery.log
+cd $SOURCE_DIR
 
 echo "Installing deviceQuery"
 rm -fr deviceQuery
 cp -rp /usr/local/cuda/samples/1_Utilities/deviceQuery .
 cd deviceQuery
-make
+make \
+  >> $LOGS/deviceQuery.log
 sudo cp deviceQuery /usr/local/bin
-/usr/local/bin/deviceQuery
+/usr/local/bin/deviceQuery \
+  >> $LOGS/deviceQuery.log
+
+echo "Cleanup"
+rm -fr $SOURCE_DIR/deviceQuery
