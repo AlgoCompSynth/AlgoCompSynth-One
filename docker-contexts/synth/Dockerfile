@@ -27,6 +27,10 @@ COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/lib /usr/loc
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/sbin /usr/local/sbin
 COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/share /usr/local/share
 
+COPY R.conf /etc/ld.so.conf.d/
+COPY configure-r.sh $SCRIPTS/
+RUN $SCRIPTS/configure-r.sh > $LOGS/configure-r.log 2>&1
+
 COPY csound.sh $SCRIPTS/
 RUN $SCRIPTS/csound.sh
 RUN detonate
