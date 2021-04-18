@@ -20,8 +20,6 @@ rm -f $LOGS/csound.log
 cd $SOURCE_DIR
 
 echo "Installing dependencies"
-apt-get update \
-  >> $LOGS/csound.log 2>&1
 apt-get install -y --no-install-recommends \
   bison \
   dssi-dev \

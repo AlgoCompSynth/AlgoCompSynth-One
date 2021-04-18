@@ -33,7 +33,6 @@ RUN $SCRIPTS/configure-r.sh > $LOGS/configure-r.log 2>&1
 
 COPY csound.sh $SCRIPTS/
 RUN $SCRIPTS/csound.sh
-RUN detonate
 
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
