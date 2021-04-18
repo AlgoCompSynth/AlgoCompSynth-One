@@ -32,6 +32,7 @@ COPY configure-r.sh $SCRIPTS/
 RUN $SCRIPTS/configure-r.sh > $LOGS/configure-r.log 2>&1
 
 COPY csound.sh $SCRIPTS/
+ENV CSOUND_VERSION="6.15.0"
 RUN $SCRIPTS/csound.sh
 
 # set up 'synth' account
