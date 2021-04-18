@@ -24,6 +24,7 @@ apt-get update \
   >> $LOGS/csound.log 2>&1
 apt-get install -y --no-install-recommends \
   bison \
+  dssi-dev \
   flex \
   gettext \
   hdf5-tools \
@@ -32,6 +33,7 @@ apt-get install -y --no-install-recommends \
   libgmm++-dev \
   libhdf5-dev \
   libhdf5-serial-dev \
+  liblo-dev \
   liblua5.2-dev \
   libmp3lame-dev \
   libncurses5-dev \
@@ -70,10 +72,9 @@ pushd cs6make
     -DBUILD_VIRTUAL_KEYBOARD=OFF \
     -DBUILD_WIIMOTE_OPCODES=OFF \
     -DUSE_FLTK=OFF \
-    -L \
     ../csound-$CSOUND_VERSION \
     >> $LOGS/csound.log 2>&1
-    exit
+
   echo "Compiling CSound"
   make --jobs=`nproc` \
     >> $LOGS/csound.log 2>&1
@@ -81,11 +82,6 @@ pushd cs6make
   make install \
     >> $LOGS/csound.log 2>&1
   ldconfig
-
-  echo "Relocating samples to '/usr/local/share/csound/samples'"
-  rm -fr /usr/local/share/csound
-  mkdir --parents /usr/local/share/csound
-  mv /usr/local/share/samples /usr/local/share/csound/samples
   popd
 
 echo "Cleanup"
