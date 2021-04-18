@@ -21,7 +21,7 @@ cd $SOURCE_DIR
 
 echo "Installing PGDG Linux repository"
 # https://wiki.postgresql.org/wiki/Apt
-curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+curl -Ls https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo cp $SCRIPTS/pgdg.list /etc/apt/sources.list.d/pgdg.list
 apt-get update
 
