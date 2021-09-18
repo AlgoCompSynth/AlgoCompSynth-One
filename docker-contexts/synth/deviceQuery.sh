@@ -21,8 +21,8 @@ cd $SOURCE_DIR
 
 echo "Installing deviceQuery"
 rm -fr deviceQuery
-cp -rp /usr/local/cuda/samples/1_Utilities/deviceQuery .
-cd deviceQuery
+cp -rp /usr/local/cuda/samples .
+cd samples/1_Utilities/deviceQuery
 make \
   >> $LOGS/deviceQuery.log
 sudo cp deviceQuery /usr/local/bin
@@ -30,4 +30,4 @@ sudo cp deviceQuery /usr/local/bin
   >> $LOGS/deviceQuery.log
 
 echo "Cleanup"
-rm -fr $SOURCE_DIR/deviceQuery
+rm -fr $SOURCE_DIR/samples

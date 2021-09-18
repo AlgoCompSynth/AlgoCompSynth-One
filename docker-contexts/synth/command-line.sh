@@ -33,12 +33,16 @@ apt-get install -y --no-install-recommends \
   git \
   gnupg \
   lynx \
+  man-db \
   mlocate \
+  mutt \
   nano \
   pkg-config \
+  screen \
   software-properties-common \
   sudo \
   time \
+  tmux \
   tree \
   vim-nox \
   wget \

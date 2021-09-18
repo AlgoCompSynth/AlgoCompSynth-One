@@ -18,7 +18,7 @@
 set -e
 
 echo "Setting 'vim' editor background"
-echo "If your terminal background is light, enter any text string."
+echo "If your terminal background is light, enter any non-empty text string."
 read -p "If it's dark, just press 'Enter':"
 
 if [ ${#REPLY} == "0" ]

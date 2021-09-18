@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM "nvcr.io/nvidia/l4t-base:r32.5.0"
+FROM "nvcr.io/nvidia/l4t-ml:r32.6.1-py3"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -32,24 +32,39 @@ WORKDIR $SOURCE_DIR
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
 COPY install-libraries.sh pgdg.list $SCRIPTS/
-RUN $SCRIPTS/install-libraries.sh
+#RUN $SCRIPTS/install-libraries.sh
 COPY deviceQuery.sh $SCRIPTS/
 RUN $SCRIPTS/deviceQuery.sh
 
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/bin /usr/local/bin
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/etc /usr/local/etc
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/games /usr/local/games
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/include /usr/local/include
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/lib /usr/local/lib
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/sbin /usr/local/sbin
-COPY --from=algocompsynth/internal-ubuntu-builder:latest /usr/local/share /usr/local/share
+COPY cmake.sh $SCRIPTS/
+ENV CMAKE_VERSION="3.21.2"
+RUN $SCRIPTS/cmake.sh
 
-COPY R.conf /etc/ld.so.conf.d/
-COPY configure-r.sh $SCRIPTS/
-RUN $SCRIPTS/configure-r.sh > $LOGS/configure-r.log 2>&1
+COPY llvm.sh $SCRIPTS/
+ENV LLVM_VERSION="12.0.1"
+RUN $SCRIPTS/llvm.sh
+
+# Utility to get RAM size
+COPY ram_kilobytes.sh /usr/local/bin/
+
+COPY libinstpatch.sh $SCRIPTS/
+ENV LIBINSTPATCH_VERSION="1.1.6"
+RUN $SCRIPTS/libinstpatch.sh
+
+COPY fluidsynth.sh $SCRIPTS/
+ENV FLUIDSYNTH_VERSION="2.2.3"
+RUN $SCRIPTS/fluidsynth.sh
+
+COPY faust.sh $SCRIPTS/
+ENV FAUST_VERSION="2.33.1"
+RUN $SCRIPTS/faust.sh
+
+COPY chuck.sh $SCRIPTS/
+ENV CHUCK_VERSION="1.4.1.0"
+RUN $SCRIPTS/chuck.sh
 
 COPY csound.sh $SCRIPTS/
-ENV CSOUND_VERSION="6.15.0"
+ENV CSOUND_VERSION="6.16.2"
 RUN $SCRIPTS/csound.sh
 
 # set up 'synth' account
@@ -80,8 +95,8 @@ COPY --chown=synth:synth miniforge.sh $SYNTH_HOME/Scripts/
 RUN $SYNTH_HOME/Scripts/miniforge.sh
 
 # JupyterLab / cusignal / R base
-COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
-ENV CUSIGNAL_VERSION="0.18.0"
-RUN $SYNTH_HOME/Scripts/cusignal.sh
+#--- COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
+#--- ENV CUSIGNAL_VERSION="0.18.0"
+#--- RUN $SYNTH_HOME/Scripts/cusignal.sh
 
 CMD [ "/bin/bash" ]
