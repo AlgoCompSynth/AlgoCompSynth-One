@@ -74,14 +74,12 @@ COPY passwordless-sudo /etc/sudoers.d/
 ENV SYNTH_HOME=/home/synth
 RUN mkdir --parents \
   $SYNTH_HOME/Scripts \
-  $SYNTH_HOME/Downloads/Installers \
   $SYNTH_HOME/Logfiles
 COPY --chown=synth:synth \
   set-vim-background.sh \
   edit-me-then-run-4-git-config.sh \
   start-jupyter-lab.sh \
   $SYNTH_HOME/
-COPY --chown=synth:synth Rprofile $SYNTH_HOME/.Rprofile
 RUN chown -R synth:synth $SYNTH_HOME
 
 RUN ls -lR /usr/local > $LOGS/after.log
