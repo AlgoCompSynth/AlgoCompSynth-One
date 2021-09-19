@@ -26,6 +26,7 @@ apt-get install -y --no-install-recommends \
   flex \
   gettext \
   hdf5-tools \
+  libcurl4-openssl-dev \
   libeigen3-dev \
   libgettextpo-dev \
   libgmm++-dev \
@@ -38,9 +39,13 @@ apt-get install -y --no-install-recommends \
   libpng-dev\
   libsamplerate0-dev \
   libstk0-dev \
+  libtool \
+  libtool-bin \
   libwebsockets-dev \
   python-dev \
   python3-dev \
+  python-pkgconfig \
+  python3-pkgconfig \
   swig3.0 \
   >> $LOGS/csound.log 2>&1
 apt-get clean
