@@ -27,26 +27,23 @@ RUN ls -lR /usr/local > $LOGS/before.log
 RUN echo "set bg=dark" >> /root/.vimrc
 
 WORKDIR $SOURCE_DIR
+CMD [ "/bin/bash" ]
 
 # install command-line base and libraries
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
-COPY install-libraries.sh pgdg.list $SCRIPTS/
-#RUN $SCRIPTS/install-libraries.sh
 COPY deviceQuery.sh $SCRIPTS/
 RUN $SCRIPTS/deviceQuery.sh
 
-COPY cmake.sh $SCRIPTS/
-ENV CMAKE_VERSION="3.21.2"
-RUN $SCRIPTS/cmake.sh
-
-COPY llvm.sh $SCRIPTS/
-ENV LLVM_VERSION="12.0.1"
-RUN $SCRIPTS/llvm.sh
+# cusignal
+COPY cusignal.sh $SCRIPTS/
+ENV CUSIGNAL_VERSION="21.08.00"
+RUN $SCRIPTS/cusignal.sh
 
 # Utility to get RAM size
 COPY ram_kilobytes.sh /usr/local/bin/
 
+# synthesizers
 COPY libinstpatch.sh $SCRIPTS/
 ENV LIBINSTPATCH_VERSION="1.1.6"
 RUN $SCRIPTS/libinstpatch.sh
@@ -87,16 +84,7 @@ COPY --chown=synth:synth \
 COPY --chown=synth:synth Rprofile $SYNTH_HOME/.Rprofile
 RUN chown -R synth:synth $SYNTH_HOME
 
+RUN ls -lR /usr/local > $LOGS/after.log
+
 USER synth
 WORKDIR $SYNTH_HOME
-
-# Miniforge
-COPY --chown=synth:synth miniforge.sh $SYNTH_HOME/Scripts/
-RUN $SYNTH_HOME/Scripts/miniforge.sh
-
-# cusignal
-COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
-ENV CUSIGNAL_VERSION="21.08.00"
-RUN $SYNTH_HOME/Scripts/cusignal.sh
-
-CMD [ "/bin/bash" ]

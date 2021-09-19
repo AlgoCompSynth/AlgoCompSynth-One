@@ -16,39 +16,30 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $HOME/Logfiles/cusignal.log
-cd $HOME/Downloads/Installers
+rm -f $LOGS/cusignal.log
+cd $SOURCE_DIR
 
 echo "Cloning 'cusignal'"
 export CUSIGNAL_HOME=$(pwd)/cusignal
 rm -fr $CUSIGNAL_HOME
 git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME \
-  >> $HOME/Logfiles/cusignal.log 2>&1
+  >> $LOGS/cusignal.log 2>&1
 cd $CUSIGNAL_HOME
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION \
-  >> $HOME/Logfiles/cusignal.log 2>&1
+  >> $LOGS/cusignal.log 2>&1
 
-echo "Activating 'conda' executable"
-source $HOME/miniconda3/etc/profile.d/conda.sh
-
-echo "Creating 'cusignal-dev' environment"
-/usr/bin/time conda env create \
-  --file conda/environments/cusignal_jetson_base.yml \
-  --quiet \
-  >> $HOME/Logfiles/cusignal.log 2>&1
-conda activate cusignal-dev
+echo "Patching build script"
+sed --in-place=.bak --expression='s/python setup/python3 setup/' ./build.sh
 
 echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
-  >> $HOME/Logfiles/cusignal.log 2>&1
+  >> $LOGS/cusignal.log 2>&1
 
-echo "Copying '$CUSIGNAL_HOME/notebooks' to '$HOME/Notebooks/cusignal-notebooks'"
-mkdir --parents $HOME/Notebooks/
-cp -rp $CUSIGNAL_HOME/notebooks $HOME/Notebooks/cusignal-notebooks
+echo "Copying '$CUSIGNAL_HOME/notebooks' to '/usr/local/share/cusignal-notebooks'"
+mkdir --parents /usr/local/share/
+rm -rf /usr/local/share/cusignal-notebooks
+cp -rp $CUSIGNAL_HOME/notebooks /usr/local/share/cusignal-notebooks
 
 echo "Cleaning up"
-conda clean --tarballs --index-cache --quiet --yes
-conda list \
-  >> $HOME/Logfiles/cusignal.log 2>&1
-#rm -fr $CUSIGNAL_HOME
+rm -fr $CUSIGNAL_HOME

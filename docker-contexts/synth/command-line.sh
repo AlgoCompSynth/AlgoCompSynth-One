@@ -27,11 +27,13 @@ apt-get install -y --no-install-recommends \
   apt-file \
   build-essential \
   ca-certificates \
+  cmake \
   curl \
   emacs-nox \
   file \
   git \
   gnupg \
+  llvm-10-dev \
   lynx \
   man-db \
   mlocate \
@@ -44,7 +46,9 @@ apt-get install -y --no-install-recommends \
   time \
   tmux \
   tree \
+  unzip \
   vim-nox \
   wget \
   >> $LOGS/command-line.log 2>&1
+ln -sf /usr/bin/llvm-config-10 /usr/bin/llvm-config
 apt-get clean
