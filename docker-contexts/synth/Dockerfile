@@ -94,9 +94,9 @@ WORKDIR $SYNTH_HOME
 COPY --chown=synth:synth miniforge.sh $SYNTH_HOME/Scripts/
 RUN $SYNTH_HOME/Scripts/miniforge.sh
 
-# JupyterLab / cusignal / R base
-#--- COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
-#--- ENV CUSIGNAL_VERSION="0.18.0"
-#--- RUN $SYNTH_HOME/Scripts/cusignal.sh
+# cusignal
+COPY --chown=synth:synth cusignal.sh $SYNTH_HOME/Scripts/
+ENV CUSIGNAL_VERSION="21.08.00"
+RUN $SYNTH_HOME/Scripts/cusignal.sh
 
 CMD [ "/bin/bash" ]
