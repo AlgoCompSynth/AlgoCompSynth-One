@@ -73,8 +73,9 @@ COPY passwordless-sudo /etc/sudoers.d/
 
 ENV SYNTH_HOME=/home/synth
 RUN mkdir --parents \
-  $SYNTH_HOME/Scripts \
-  $SYNTH_HOME/Logfiles
+  $SYNTH_HOME/Projects \
+  $SYNTH_HOME/Notebooks
+RUN cp -rp /usr/local/share/cusignal-notebooks $SYNTH_HOME/Notebooks/
 COPY --chown=synth:synth \
   set-vim-background.sh \
   edit-me-then-run-4-git-config.sh \
