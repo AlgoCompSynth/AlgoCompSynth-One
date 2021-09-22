@@ -36,6 +36,12 @@ echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
   >> $LOGS/cusignal.log 2>&1
 
+echo "Testing 'cusignal'"
+pip3 install pytest_benchmark \
+  >> $LOGS/cusignal.log 2>&1
+/usr/bin/time pytest -v \
+  >> $LOGS/cusignal.log 2>&1
+
 echo "Copying '$CUSIGNAL_HOME/notebooks' to '/usr/local/share/cusignal-notebooks'"
 mkdir --parents /usr/local/share/
 rm -rf /usr/local/share/cusignal-notebooks
