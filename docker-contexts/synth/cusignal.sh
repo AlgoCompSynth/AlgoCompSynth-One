@@ -39,8 +39,11 @@ echo "Building 'cusignal'"
 echo "Testing 'cusignal'"
 pip3 install pytest_benchmark \
   >> $LOGS/cusignal.log 2>&1
+
+set +e
 /usr/bin/time pytest -v \
   >> $LOGS/cusignal.log 2>&1
+set -e
 
 echo "Copying '$CUSIGNAL_HOME/notebooks' to '/usr/local/share/cusignal-notebooks'"
 mkdir --parents /usr/local/share/
