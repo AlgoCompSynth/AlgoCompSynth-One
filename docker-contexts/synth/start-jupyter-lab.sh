@@ -17,8 +17,8 @@
 
 set -e
 
-mkdir --parents $HOME/Notebooks
-cd $HOME
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate r-reticulate
 
 echo "Generating Jupyter configuration file"
 jupyter notebook --generate-config

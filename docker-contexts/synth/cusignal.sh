@@ -16,39 +16,40 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/cusignal.log
-cd $SOURCE_DIR
+rm -f $SYNTH_LOGS/cusignal.log
+cd $SYNTH_PROJECTS
 
 echo "Cloning 'cusignal'"
 export CUSIGNAL_HOME=$(pwd)/cusignal
 rm -fr $CUSIGNAL_HOME
 git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME \
-  >> $LOGS/cusignal.log 2>&1
+  >> $SYNTH_LOGS/cusignal.log 2>&1
 cd $CUSIGNAL_HOME
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION \
-  >> $LOGS/cusignal.log 2>&1
+  >> $SYNTH_LOGS/cusignal.log 2>&1
 
-echo "Patching build script"
-sed --in-place=.bak --expression='s/python setup/python3 setup/' ./build.sh
+echo "Creating 'r-reticulate'"
+source $HOME/miniconda3/etc/profile.d/conda.sh
+sed --in-place=.bak --expression='s;cusignal-dev;r-reticulate;' conda/environments/cusignal_jetson_base.yml
+/usr/bin/time conda env create -f conda/environments/cusignal_jetson_base.yml \
+  >> $SYNTH_LOGS/cusignal.log 2>&1
+conda activate r-reticulate
 
 echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
-  >> $LOGS/cusignal.log 2>&1
+  >> $SYNTH_LOGS/cusignal.log 2>&1
 
 echo "Testing 'cusignal'"
-pip3 install pytest_benchmark \
-  >> $LOGS/cusignal.log 2>&1
 
 set +e
 /usr/bin/time pytest -v \
-  >> $LOGS/cusignal.log 2>&1
+  >> $SYNTH_LOGS/cusignal.log 2>&1
 set -e
 
-echo "Copying '$CUSIGNAL_HOME/notebooks' to '/usr/local/share/cusignal-notebooks'"
-mkdir --parents /usr/local/share/
-rm -rf /usr/local/share/cusignal-notebooks
-cp -rp $CUSIGNAL_HOME/notebooks /usr/local/share/cusignal-notebooks
+echo "Copying '$CUSIGNAL_HOME/notebooks' to '$SYNTH_NOTEBOOKS'"
+rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
+cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 
 echo "Cleaning up"
 rm -fr $CUSIGNAL_HOME
