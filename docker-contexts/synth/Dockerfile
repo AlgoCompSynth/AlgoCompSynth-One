@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM "nvcr.io/nvidia/l4t-pytorch:r32.6.1-pth1.9-py3"
+FROM "nvcr.io/nvidia/l4t-base:r32.6.1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
