@@ -76,11 +76,21 @@ RUN $SYNTH_SCRIPTS/cusignal.sh
 COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/jupyterlab.sh
 
+ENV PYTORCH_WHEEL_URL "https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl"
+ENV PYTORCH_WHEEL_FILE "torch-1.9.0-cp36-cp36m-linux_aarch64.whl"
+COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/pytorch.sh
+
 COPY --chown=synth:synth \
   set-vim-background.sh \
   edit-me-then-run-4-git-config.sh \
   start-jupyter-lab.sh \
   $SYNTH_HOME/
+
+ENV TORCHAUDIO_VERSION "0.9.0"
+COPY --chown=synth:synth \
+  Installers \
+  $SYNTH_HOME/Installers
 #--- 
 #--- COPY faust.sh $SCRIPTS/
 #--- ENV FAUST_VERSION="2.33.1"
