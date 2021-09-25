@@ -31,8 +31,7 @@ git checkout v$CUSIGNAL_VERSION \
 
 echo "Creating 'r-reticulate'"
 source $HOME/miniconda3/etc/profile.d/conda.sh
-sed --in-place=.bak --expression='s;cusignal-dev;r-reticulate;' conda/environments/cusignal_jetson_base.yml
-/usr/bin/time conda env create -f conda/environments/cusignal_jetson_base.yml \
+/usr/bin/time conda env create -f $SYNTH_SCRIPTS/cusignal_jetson_base.yml \
   >> $SYNTH_LOGS/cusignal.log 2>&1
 conda activate r-reticulate
 

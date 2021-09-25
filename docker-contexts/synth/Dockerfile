@@ -70,7 +70,7 @@ COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
 
 ENV CUSIGNAL_VERSION="21.08.00"
-COPY --chown=synth:synth cusignal.sh $SYNTH_SCRIPTS/
+COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
 
 COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
