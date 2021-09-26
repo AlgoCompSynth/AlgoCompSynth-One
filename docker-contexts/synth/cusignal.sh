@@ -39,12 +39,14 @@ echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
   >> $SYNTH_LOGS/cusignal.log 2>&1
 
-echo "Testing 'cusignal'"
-
-set +e
-/usr/bin/time pytest -v \
-  >> $SYNTH_LOGS/cusignal.log 2>&1
-set -e
+if [ $CUSIGNAL_TEST -gt "0" ]
+then
+  set +e
+  echo "Testing 'cusignal'"
+  /usr/bin/time pytest -v \
+    >> $SYNTH_LOGS/cusignal.log 2>&1
+  set -e
+fi
 
 echo "Copying '$CUSIGNAL_HOME/notebooks' to '$SYNTH_NOTEBOOKS'"
 rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
