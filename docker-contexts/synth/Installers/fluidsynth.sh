@@ -16,11 +16,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $LOGS/fluidsynth.log
-cd $SOURCE_DIR
+rm -f $EDGYR_SYNTH_LOGS/fluidsynth.log
+cd $PROJECT_HOME
 
-echo "Installing Linux dependencies"
-apt-get install -qqy --no-install-recommends \
+echo "Installing FluidSynth Linux dependencies"
+sudo apt-get install -y --no-install-recommends \
+  cmake \
+  libglib2.0-dev \
+  libsndfile1-dev \
   libpulse-dev \
   libasound2-dev \
   portaudio19-dev \
@@ -33,8 +36,36 @@ apt-get install -qqy --no-install-recommends \
   libreadline-dev \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
-  >> $LOGS/fluidsynth.log 2>&1
-apt-get clean
+  >> $EDGYR_SYNTH_LOGS/libinstpatch.log 2>&1
+sudo apt-get clean
+
+echo "Downloading libinstpatch"
+rm -fr libinstpatch*
+curl -Ls \
+  https://github.com/swami/libinstpatch/archive/refs/tags/v$LIBINSTPATCH_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
+pushd libinstpatch-$LIBINSTPATCH_VERSION
+
+  echo "Configuring libinstpatch"
+  mkdir --parents build; cd build
+  cmake \
+    -Wno-dev \
+    -DLIB_SUFFIX="" \
+    .. \
+    >> $EDGYR_SYNTH_LOGS/libinstpatch.log 2>&1
+
+  echo "Compiling libinstpatch"
+  /usr/bin/time make --jobs=`nproc` \
+    >> $EDGYR_SYNTH_LOGS/libinstpatch.log 2>&1
+
+  echo "Installing libinstpatch"
+  sudo make install \
+    >> $EDGYR_SYNTH_LOGS/libinstpatch.log 2>&1
+  sudo ldconfig
+  popd
+
+echo "Cleanup"
+rm -fr $PROJECT_HOME/libinstpatch*
 
 echo "Downloading fluidsynth"
 rm -fr fluidsynth*
@@ -43,21 +74,23 @@ curl -Ls \
   | tar --extract --gunzip --file=-
 pushd fluidsynth-$FLUIDSYNTH_VERSION
 
-  echo "Compiling FluidSynth"
+  echo "Configuring FluidSynth"
   mkdir --parents build; cd build
   cmake \
     -Wno-dev \
     -DLIB_SUFFIX="" \
     -Denable-portaudio=ON \
     .. \
-    >> $LOGS/fluidsynth.log 2>&1
+    >> $EDGYR_SYNTH_LOGS/fluidsynth.log 2>&1
+
+  echo "Compiling FluidSynth"
   /usr/bin/time make --jobs=`nproc` \
-    >> $LOGS/fluidsynth.log 2>&1
+    >> $EDGYR_SYNTH_LOGS/fluidsynth.log 2>&1
   echo "Installing FluidSynth"
-  make install \
-    >> $LOGS/fluidsynth.log 2>&1
-  ldconfig
+  sudo make install \
+    >> $EDGYR_SYNTH_LOGS/fluidsynth.log 2>&1
+  sudo ldconfig
   popd
 
 echo "Cleanup"
-rm -fr $SOURCE_DIR/fluidsynth*
+rm -fr $PROJECT_HOME/fluidsynth*

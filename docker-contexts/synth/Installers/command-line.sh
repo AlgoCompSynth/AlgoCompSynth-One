@@ -16,19 +16,39 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
+rm -f $SYNTH_LOGS/command-line.log
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
-
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Installing command line base"
+apt-get update \
+  >> $SYNTH_LOGS/command-line.log
+apt-get upgrade -y \
+  >> $SYNTH_LOGS/command-line.log
+apt-get install -y --no-install-recommends \
+  apt-file \
+  build-essential \
+  ca-certificates \
+  cmake \
+  curl \
+  emacs-nox \
+  file \
+  git \
+  gnupg \
+  llvm-10-dev \
+  lynx \
+  man-db \
+  mlocate \
+  mutt \
+  nano \
+  pkg-config \
+  screen \
+  software-properties-common \
+  sudo \
+  time \
+  tmux \
+  tree \
+  unzip \
+  vim-nox \
+  wget \
+  >> $SYNTH_LOGS/command-line.log 2>&1
+ln -sf /usr/bin/llvm-config-10 /usr/bin/llvm-config
+apt-get clean

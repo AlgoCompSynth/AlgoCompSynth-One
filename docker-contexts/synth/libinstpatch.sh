@@ -20,7 +20,7 @@ rm -f $LOGS/libinstpatch.log
 cd $SOURCE_DIR
 
 echo "Installing Linux dependencies"
-apt-get install -y --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   libglib2.0-dev \
   libsndfile1-dev \
   >> $LOGS/libinstpatch.log 2>&1

@@ -11,24 +11,36 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
+rm -f $SYNTH_LOGS/faust.log
+cd $SYNTH_PROJECTS
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
+echo "Installing dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  libmicrohttpd-dev \
+  libssl-dev \
+  libtinfo-dev \
+  >> $SYNTH_LOGS/faust.log 2>&1
 
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Downloading faust source"
+rm -fr faust*
+curl -Ls \
+  https://github.com/grame-cncm/faust/releases/download/$FAUST_VERSION/faust-$FAUST_VERSION.tar.gz \
+  | tar --extract --gunzip --file=-
 
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Compiling faust"
+cd faust-$FAUST_VERSION/build
+export CMAKEOPT="-Wno-dev"
+make TARGETS=all.cmake BACKENDS=all.cmake \
+  >> $SYNTH_LOGS/faust.log 2>&1
+echo "Installing faust"
+sudo make install \
+  >> $SYNTH_LOGS/faust.log 2>&1
+sudo ldconfig
 
 echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+rm -fr $SYNTH_PROJECTS/faust*

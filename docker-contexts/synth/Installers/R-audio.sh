@@ -16,19 +16,19 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
+rm -f $EDGYR_SYNTH_LOGS/R-audio.log
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
+echo "Installing R-audio Linux dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  libfftw3-dev \
+  libfftw3-mpi-dev \
+  libgdal-dev \
+  libudunits2-dev \
+  >> $EDGYR_SYNTH_LOGS/R-audio.log 2>&1
+sudo apt-get clean
 
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Installing R packages"
+$HOME/Softsynths/R/audio.R \
+  >> $EDGYR_SYNTH_LOGS/R-audio.log 2>&1
 
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Finished"

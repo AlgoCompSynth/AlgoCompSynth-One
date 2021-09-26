@@ -23,7 +23,7 @@ apt-get update \
   >> $LOGS/command-line.log
 apt-get upgrade -y \
   >> $LOGS/command-line.log
-apt-get install -y --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   apt-file \
   build-essential \
   ca-certificates \

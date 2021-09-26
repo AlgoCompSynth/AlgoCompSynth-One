@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env Rscript
 
 # Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
 #
@@ -15,20 +15,12 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
-
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
-
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
+install.packages(c(
+  "audio",
+  "phonTools",
+  "seewave",
+  "tuneR",
+  "soundgen"
+), quiet = TRUE, repos = "https://cloud.r-project.org/")
+warnings()

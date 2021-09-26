@@ -16,26 +16,26 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/torchaudio.log
+rm -f $SYNTH_SYNTH_LOGS/torchaudio.log
 
 source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate r-reticulate
 
 echo "Installing build tools"
 conda install --yes --quiet cmake ninja \
-  >> $SYNTH_LOGS/torchaudio.log 2>&1
+  >> $SYNTH_SYNTH_LOGS/torchaudio.log 2>&1
 
 echo "Cloning 'torchaudio'"
 pushd /tmp
 git clone --recurse-submodules https://github.com/pytorch/audio.git \
-  >> $SYNTH_LOGS/torchaudio.log 2>&1
+  >> $SYNTH_SYNTH_LOGS/torchaudio.log 2>&1
 cd audio
 git checkout v$TORCHAUDIO_VERSION \
-  >> $SYNTH_LOGS/torchaudio.log 2>&1
+  >> $SYNTH_SYNTH_LOGS/torchaudio.log 2>&1
 
 echo "Installing 'torchaudio'"
 /usr/bin/time python setup.py install \
-  >> $SYNTH_LOGS/torchaudio.log 2>&1
+  >> $SYNTH_SYNTH_LOGS/torchaudio.log 2>&1
 popd
 
 echo "Cleanup"

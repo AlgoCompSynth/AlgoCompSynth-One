@@ -16,19 +16,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
+rm -f $SYNTH_LOGS/cmake.log
+cd $SYNTH_PROJECTS
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
-
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Installing latest 'cmake'"
+wget --quiet --no-clobber \
+  https://github.com/Kitware/CMake/releases/download/v$CMAKE_VERSION/cmake-$CMAKE_VERSION-linux-aarch64.sh
+chmod +x cmake-$CMAKE_VERSION-linux-aarch64.sh 
+./cmake-$CMAKE_VERSION-linux-aarch64.sh --skip-license --prefix=/usr/local
+which cmake
+cmake --version
+rm cmake-$CMAKE_VERSION-linux-aarch64.sh 

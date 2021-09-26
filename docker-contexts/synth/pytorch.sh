@@ -33,3 +33,7 @@ wget -q -nc $PYTORCH_WHEEL_URL -O /tmp/$PYTORCH_WHEEL_FILE
 echo "Installing PyTorch"
 /usr/bin/time pip install /tmp/$PYTORCH_WHEEL_FILE \
   >> $SYNTH_LOGS/pytorch.log 2>&1
+
+echo "Cleanup"
+conda clean --all --yes \
+  >> $SYNTH_LOGS/pytorch.log 2>&1

@@ -16,19 +16,34 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
+rm -f $SYNTH_LOGS/tidal.log
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
+echo "Checking for supercollider"
+if [ ! -f /usr/local/bin/scsynth ]
+then
+  echo "supercollider missing - will install"
+  echo "This takes a while"
+  echo ""
+  $HOME/Installers/supercollider.sh
+else
+  echo "supercollider present - proceeding"
+  echo ""
+fi
 
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Installing TidalCycles Linux dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  cabal-install \
+  >> $SYNTH_LOGS/tidal.log 2>&1
+sudo apt-get clean
 
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Updating package list"
+rm -fr $HOME/.cabal/
+cabal update \
+  >> $SYNTH_LOGS/tidal.log 2>&1
+echo "Installing tidal"
+/usr/bin/time cabal install \
+  --jobs=`nproc` \
+  tidal \
+  >> $SYNTH_LOGS/tidal.log 2>&1
 
-echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Finished"

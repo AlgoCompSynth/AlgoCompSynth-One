@@ -36,12 +36,17 @@ RUN $SCRIPTS/deviceQuery.sh
 COPY ram_kilobytes.sh /usr/local/bin/
 
 # Jetsons don't have ALSA MIDI - install FluidSynth
-COPY libinstpatch.sh $SCRIPTS/
 ENV LIBINSTPATCH_VERSION="1.1.6"
+COPY libinstpatch.sh $SCRIPTS/
 RUN $SCRIPTS/libinstpatch.sh
-COPY fluidsynth.sh $SCRIPTS/
 ENV FLUIDSYNTH_VERSION="2.2.3"
+COPY fluidsynth.sh $SCRIPTS/
 RUN $SCRIPTS/fluidsynth.sh
+
+# Enough packages need Faust to justify system install
+ENV FAUST_VERSION="2.33.1"
+COPY faust.sh $SCRIPTS/
+RUN $SCRIPTS/faust.sh
 
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
@@ -87,20 +92,13 @@ COPY --chown=synth:synth \
   start-jupyter-lab.sh \
   $SYNTH_HOME/
 
-ENV TORCHAUDIO_VERSION "0.9.0"
 COPY --chown=synth:synth \
   Installers \
   $SYNTH_HOME/Installers
-#--- 
-#--- COPY faust.sh $SCRIPTS/
-#--- ENV FAUST_VERSION="2.33.1"
-#--- RUN $SCRIPTS/faust.sh
-#--- 
-#--- COPY chuck.sh $SCRIPTS/
 
-#--- ENV CHUCK_VERSION="1.4.1.0"
-#--- RUN $SCRIPTS/chuck.sh
-#--- 
-#--- COPY csound.sh $SCRIPTS/
-#--- ENV CSOUND_VERSION="6.16.2"
-#--- RUN $SCRIPTS/csound.sh
+# versions of optional components
+ENV CHUCK_VERSION="1.4.1.0"
+ENV CSOUND_VERSION="6.16.2"
+ENV SUPERCOLLIDER_VERSION="3.12.1"
+ENV SC3_PLUGINS_VERSION="3.11.1"
+ENV TORCHAUDIO_VERSION "0.9.0"

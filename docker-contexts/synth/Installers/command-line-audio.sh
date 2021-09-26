@@ -16,19 +16,17 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/jupyterlab.log
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
-
-echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Cleanup"
-conda clean --all --yes \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
+echo "Installing Linux dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  alsa-tools \
+  alsa-utils \
+  flac \
+  fluid-soundfont-gm \
+  fluid-soundfont-gs \
+  libsox-dev \
+  libsox-fmt-all \
+  mp3splt \
+  sox \
+  timidity
+sudo apt-get clean
