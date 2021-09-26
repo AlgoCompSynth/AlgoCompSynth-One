@@ -21,10 +21,6 @@ rm -f $SYNTH_SYNTH_LOGS/torchaudio.log
 source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate r-reticulate
 
-echo "Installing build tools"
-conda install --yes --quiet cmake ninja \
-  >> $SYNTH_SYNTH_LOGS/torchaudio.log 2>&1
-
 echo "Cloning 'torchaudio'"
 pushd /tmp
 git clone --recurse-submodules https://github.com/pytorch/audio.git \

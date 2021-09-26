@@ -27,7 +27,6 @@ apt-get install -qqy --no-install-recommends \
   apt-file \
   build-essential \
   ca-certificates \
-  cmake \
   curl \
   emacs-nox \
   file \
@@ -39,6 +38,7 @@ apt-get install -qqy --no-install-recommends \
   mlocate \
   mutt \
   nano \
+  ninja-build \
   pkg-config \
   screen \
   software-properties-common \

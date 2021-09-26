@@ -29,6 +29,9 @@ WORKDIR $SOURCE_DIR
 # install command-line base and libraries
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
+ENV CMAKE_VERSION="3.21.3"
+COPY cmake.sh $SCRIPTS/
+RUN $SCRIPTS/cmake.sh
 COPY deviceQuery.sh $SCRIPTS/
 RUN $SCRIPTS/deviceQuery.sh
 
