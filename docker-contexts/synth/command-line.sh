@@ -30,18 +30,24 @@ apt-get install -qqy --no-install-recommends \
   curl \
   emacs-nox \
   file \
+  flac \
   git \
   gnupg \
+  libsox-dev \
+  libsox-fmt-all \
+  libsoxr-dev \
   llvm-10-dev \
   lynx \
   man-db \
   mlocate \
+  mp3splt \
   mutt \
   nano \
   ninja-build \
   pkg-config \
   screen \
   software-properties-common \
+  sox \
   sudo \
   time \
   tmux \
