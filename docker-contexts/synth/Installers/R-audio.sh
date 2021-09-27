@@ -16,19 +16,24 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $EDGYR_SYNTH_LOGS/R-audio.log
+rm -f $SYNTH_LOGS/R-audio.log
 
-echo "Installing R-audio Linux dependencies"
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate r-reticulate
+
+echo "Installing conda dependencies"
+conda install r-sf r-units --quiet --yes \
+  >> $SYNTH_LOGS/R-audio.log 2>&1
+
+echo "Installing Linux dependencies"
 sudo apt-get install -qqy --no-install-recommends \
   libfftw3-dev \
   libfftw3-mpi-dev \
-  libgdal-dev \
-  libudunits2-dev \
-  >> $EDGYR_SYNTH_LOGS/R-audio.log 2>&1
+  >> $SYNTH_LOGS/R-audio.log 2>&1
 sudo apt-get clean
 
 echo "Installing R packages"
-$HOME/Softsynths/R/audio.R \
-  >> $EDGYR_SYNTH_LOGS/R-audio.log 2>&1
+$HOME/Installers/R/audio.R \
+  >> $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Finished"

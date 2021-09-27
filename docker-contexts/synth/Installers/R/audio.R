@@ -18,9 +18,14 @@
 Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
 install.packages(c(
   "audio",
+  "monitoR",
+  "NatureSounds",
   "phonTools",
   "seewave",
+  "signal",
+  "soundecology",
+  "soundgen",
   "tuneR",
-  "soundgen"
+  "warbleR"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
