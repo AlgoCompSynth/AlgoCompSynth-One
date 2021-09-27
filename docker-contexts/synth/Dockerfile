@@ -90,6 +90,9 @@ ENV PYTORCH_WHEEL_FILE "torch-1.9.0-cp36-cp36m-linux_aarch64.whl"
 COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/pytorch.sh
 
+COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/R-audio.sh
+
 COPY --chown=synth:synth \
   set-vim-background.sh \
   edit-me-then-run-4-git-config.sh \
