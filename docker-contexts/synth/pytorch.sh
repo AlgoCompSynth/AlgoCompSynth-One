@@ -34,6 +34,20 @@ echo "Installing PyTorch"
 /usr/bin/time pip install /tmp/$PYTORCH_WHEEL_FILE \
   >> $SYNTH_LOGS/pytorch.log 2>&1
 
+echo "Cloning 'torchaudio'"
+pushd /tmp
+git clone --recurse-submodules https://github.com/pytorch/audio.git \
+  >> $SYNTH_LOGS/pytorch.log 2>&1
+cd audio
+git checkout v$TORCHAUDIO_VERSION \
+  >> $SYNTH_LOGS/pytorch.log 2>&1
+
+echo "Installing 'torchaudio'"
+/usr/bin/time python setup.py install \
+  >> $SYNTH_LOGS/pytorch.log 2>&1
+popd
+
 echo "Cleanup"
+rm -fr /tmp/audio
 conda clean --all --yes \
   >> $SYNTH_LOGS/pytorch.log 2>&1
