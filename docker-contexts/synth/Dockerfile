@@ -29,7 +29,7 @@ WORKDIR $SOURCE_DIR
 # install command-line base and libraries
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
-ENV CMAKE_VERSION="3.21.3"
+ENV CMAKE_VERSION="3.22.0"
 COPY cmake.sh $SCRIPTS/
 RUN $SCRIPTS/cmake.sh
 COPY deviceQuery.sh $SCRIPTS/
@@ -42,12 +42,12 @@ COPY ram_kilobytes.sh /usr/local/bin/
 ENV LIBINSTPATCH_VERSION="1.1.6"
 COPY libinstpatch.sh $SCRIPTS/
 RUN $SCRIPTS/libinstpatch.sh
-ENV FLUIDSYNTH_VERSION="2.2.3"
+ENV FLUIDSYNTH_VERSION="2.2.4"
 COPY fluidsynth.sh $SCRIPTS/
 RUN $SCRIPTS/fluidsynth.sh
 
 # Enough packages need Faust to justify system install
-ENV FAUST_VERSION="2.33.1"
+ENV FAUST_VERSION="2.37.3"
 COPY faust.sh $SCRIPTS/
 RUN $SCRIPTS/faust.sh
 
@@ -77,7 +77,7 @@ CMD [ "/bin/bash" ]
 COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
 
-ENV CUSIGNAL_VERSION="21.08.00"
+ENV CUSIGNAL_VERSION="21.10.00"
 ENV CUSIGNAL_TEST="0"
 COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
