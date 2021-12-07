@@ -28,6 +28,7 @@ sudo apt-get install -y --no-install-recommends \
   libfftw3-dev \
   libfftw3-mpi-dev \
   libncurses5-dev \
+  libsndfile1-dev \
   >> $SYNTH_LOGS/supercollider.log 2>&1
 sudo apt-get clean
 
