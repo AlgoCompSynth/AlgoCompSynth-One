@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM "nvcr.io/nvidia/l4t-base:r32.6.1"
+FROM "nvcr.io/nvidia/l4t-pytorch:r32.6.1-pth1.9-py3"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -29,9 +29,6 @@ WORKDIR $SOURCE_DIR
 # install command-line base and libraries
 COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
-ENV CMAKE_VERSION="3.22.0"
-COPY cmake.sh $SCRIPTS/
-RUN $SCRIPTS/cmake.sh
 COPY deviceQuery.sh $SCRIPTS/
 RUN $SCRIPTS/deviceQuery.sh
 
@@ -42,6 +39,11 @@ COPY ram_kilobytes.sh /usr/local/bin/
 ENV LIBINSTPATCH_VERSION="1.1.6"
 COPY libinstpatch.sh $SCRIPTS/
 RUN $SCRIPTS/libinstpatch.sh
+
+# FluidSynth needs a newer version of CMake
+ENV CMAKE_VERSION="3.22.0"
+COPY cmake.sh $SCRIPTS/
+RUN $SCRIPTS/cmake.sh
 ENV FLUIDSYNTH_VERSION="2.2.4"
 COPY fluidsynth.sh $SCRIPTS/
 RUN $SCRIPTS/fluidsynth.sh
@@ -84,12 +86,6 @@ RUN $SYNTH_SCRIPTS/cusignal.sh
 
 COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/jupyterlab.sh
-
-ENV PYTORCH_WHEEL_URL "https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
-ENV PYTORCH_WHEEL_FILE "torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
-ENV TORCHAUDIO_VERSION "0.10.0"
-COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/pytorch.sh
 
 COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/R-audio.sh
