@@ -38,6 +38,7 @@ sudo apt-get install -qqy --no-install-recommends \
   libncurses5-dev \
   libpng-dev\
   libsamplerate0-dev \
+  libsndfile1-dev \
   libstk0-dev \
   libtool \
   libtool-bin \
