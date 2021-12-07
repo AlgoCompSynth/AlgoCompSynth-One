@@ -25,7 +25,6 @@ install.packages(c(
   "signal",
   "soundecology",
   "soundgen",
-  "tuneR",
-  "warbleR"
+  "tuneR"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
