@@ -24,8 +24,11 @@ apt-get install -qqy --no-install-recommends \
   libmicrohttpd-dev \
   libssl-dev \
   libtinfo-dev \
+  llvm-10 \
+  llvm-10-dev \
   >> $LOGS/faust.log 2>&1
 apt-get clean
+ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
 
 echo "Downloading faust source"
 rm -fr faust*
@@ -41,7 +44,8 @@ make TARGETS=all.cmake BACKENDS=all.cmake \
 echo "Installing faust"
 make install \
   >> $LOGS/faust.log 2>&1
-ldconfig
+ldconfig \
+  >> $LOGS/faust.log 2>&1
 
 echo "Cleanup"
 rm -fr $SOURCE_DIR/faust*
