@@ -24,6 +24,7 @@ sudo apt-get install -qqy --no-install-recommends \
   bison \
   flex \
   >> $SYNTH_LOGS/chuck.log 2>&1
+sudo apt-get clean
 
 rm -fr chuck*
 echo "Downloading ChucK $CHUCK_VERSION source"
