@@ -36,7 +36,6 @@ apt-get install -qqy --no-install-recommends \
   libsox-dev \
   libsox-fmt-all \
   libsoxr-dev \
-  llvm-10-dev \
   lynx \
   man-db \
   mlocate \
@@ -56,5 +55,4 @@ apt-get install -qqy --no-install-recommends \
   vim-nox \
   wget \
   >> $LOGS/command-line.log 2>&1
-ln -sf /usr/bin/llvm-config-10 /usr/bin/llvm-config
 apt-get clean
