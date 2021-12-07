@@ -45,7 +45,8 @@ pushd libinstpatch-$LIBINSTPATCH_VERSION
   echo "Installing libinstpatch"
   make install \
     >> $LOGS/libinstpatch.log 2>&1
-  ldconfig
+  ldconfig \
+    >> $LOGS/libinstpatch.log 2>&1
   popd
 
 echo "Cleanup"
