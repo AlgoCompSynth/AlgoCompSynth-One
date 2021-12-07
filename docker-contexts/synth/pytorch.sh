@@ -22,10 +22,11 @@ source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate r-reticulate
 
 echo "Installing Linux dependencies"
-/usr/bin/time sudo apt install -qqy --no-install-recommends \
+/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   libopenblas-base \
   libopenmpi-dev \
   >> $SYNTH_LOGS/pytorch.log 2>&1
+sudo apt-get clean
 
 echo "Downloading PyTorch wheel"
 wget -q -nc $PYTORCH_WHEEL_URL -O /tmp/$PYTORCH_WHEEL_FILE

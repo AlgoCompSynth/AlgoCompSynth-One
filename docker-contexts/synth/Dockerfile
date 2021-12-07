@@ -87,6 +87,7 @@ RUN $SYNTH_SCRIPTS/jupyterlab.sh
 
 ENV PYTORCH_WHEEL_URL "https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl"
 ENV PYTORCH_WHEEL_FILE "torch-1.9.0-cp36-cp36m-linux_aarch64.whl"
+ENV TORCHAUDIO_VERSION "0.9.0"
 COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/pytorch.sh
 
@@ -108,4 +109,3 @@ ENV CHUCK_VERSION="1.4.1.0"
 ENV CSOUND_VERSION="6.16.2"
 ENV SUPERCOLLIDER_VERSION="3.12.1"
 ENV SC3_PLUGINS_VERSION="3.11.1"
-ENV TORCHAUDIO_VERSION "0.9.0"
