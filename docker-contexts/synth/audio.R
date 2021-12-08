@@ -15,16 +15,25 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# reference 
+#@book{sueur2018sound,
+#  title={Sound analysis and synthesis with R},
+#  author={Sueur, J{\'e}r{\^o}me and others},
+#  year={2018},
+#  publisher={Springer}
+#}
+
 Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
 install.packages(c(
   "audio",
   "monitoR",
-  "NatureSounds",
+  "music",
   "phonTools",
   "seewave",
   "signal",
   "soundecology",
   "soundgen",
+  "tabr",
   "tuneR"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
