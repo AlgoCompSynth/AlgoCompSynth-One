@@ -24,67 +24,10 @@ export PKG_CONFIG_PATH=$HOME/miniconda3/envs/r-reticulate/lib/pkgconfig
 
 echo "Installing conda dependencies"
 /usr/bin/time conda install --quiet --yes \
-  fftw \
+  fftw=3.3.10=mpi_openmpi_hfc6c31e_1 \
   portaudio \
-  r-Matrix \
-  r-R6 \
-  r-RCurl \
-  r-bitops \
-  r-brio \
-  r-bslib \
-  r-cachem \
-  r-callr \
-  r-cluster \
-  r-commonmark \
-  r-desc \
-  r-diffobj \
-  r-fontawesome \
-  r-fs \
-  r-highr \
-  r-httpuv \
-  r-ineq \
-  r-jquerylib \
-  r-knitr \
-  r-later \
-  r-lattice \
-  r-mgcv \
-  r-mime \
-  r-moments \
-  r-mvtnorm \
-  r-nlme \
-  r-pbapply \
-  r-permute \
-  r-pkgconfig \
-  r-pkgload \
-  r-plyr \
-  r-pracma \
-  r-praise \
-  r-processx \
-  r-promises \
-  r-ps \
-  r-rappdirs \
-  r-rematch2 \
-  r-reshape2 \
-  r-rjson \
-  r-rprojroot \
-  r-rstudioapi \
-  r-sass \
   r-sf \
-  r-shiny \
-  r-shinyBS \
-  r-shinyjs \
-  r-sourcetools \
-  r-stringi \
-  r-stringr \
-  r-testthat \
-  r-tibble \
   r-units \
-  r-waldo \
-  r-withr \
-  r-xfun \
-  r-xtable \
-  r-yaml \
-  r-zoo \
   >> $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Installing R packages"
