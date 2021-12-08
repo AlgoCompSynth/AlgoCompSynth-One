@@ -100,7 +100,10 @@ COPY --chown=synth:synth \
   Installers \
   $SYNTH_HOME/Installers
 
-# versions of optional components
+# set PYTHONPATH so conda environments can see PyTorch and friends
+ENV PYTHONPATH=/usr/local/lib/python3.6/dist-packages
+
+# set versions of optional components
 ENV CHUCK_VERSION="1.4.1.0"
 ENV CSOUND_VERSION="6.16.2"
 ENV SUPERCOLLIDER_VERSION="3.12.1"
