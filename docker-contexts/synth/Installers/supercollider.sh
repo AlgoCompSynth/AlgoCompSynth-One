@@ -67,7 +67,8 @@ pushd SuperCollider*
   echo "Installing supercollider"
   sudo make install \
     >> $SYNTH_LOGS/supercollider.log 2>&1
-  sudo ldconfig
+  sudo ldconfig \
+    >> $SYNTH_LOGS/supercollider.log 2>&1
   popd
 
 echo "Downloading sc3-plugins source"
@@ -93,7 +94,8 @@ pushd sc3-plugins*
   echo "Installing sc3-plugins"
   sudo make install \
     >> $SYNTH_LOGS/supercollider.log 2>&1
-  sudo ldconfig
+  sudo ldconfig \
+    >> $SYNTH_LOGS/supercollider.log 2>&1
   popd
 
 echo "Cleanup"

@@ -85,7 +85,8 @@ pushd cs6make
   echo "Installing CSound"
   sudo make install \
     >> $SYNTH_LOGS/csound.log 2>&1
-  sudo ldconfig
+  sudo ldconfig \
+    >> $SYNTH_LOGS/csound.log 2>&1
   popd
 
 echo "Cleanup"

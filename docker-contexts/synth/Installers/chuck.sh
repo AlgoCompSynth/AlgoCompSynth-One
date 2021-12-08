@@ -38,7 +38,8 @@ pushd chuck-$CHUCK_VERSION/src
   echo "Installing ChucK"
   sudo make install \
     >> $SYNTH_LOGS/chuck.log 2>&1
-  sudo ldconfig
+  sudo ldconfig \
+    >> $SYNTH_LOGS/chuck.log 2>&1
 
   echo "Relocating ChucK examples"
   sudo rm -fr /usr/local/share/chuck
@@ -55,7 +56,8 @@ pushd chugins
     >> $SYNTH_LOGS/chuck.log 2>&1
   sudo make install \
     >> $SYNTH_LOGS/chuck.log 2>&1
-  sudo ldconfig
+  sudo ldconfig \
+    >> $SYNTH_LOGS/chuck.log 2>&1
   pushd Faust
 
     echo "Installing Fauck"
@@ -63,7 +65,8 @@ pushd chugins
       >> $SYNTH_LOGS/chuck.log 2>&1
     sudo make install \
       >> $SYNTH_LOGS/chuck.log 2>&1
-    sudo ldconfig
+    sudo ldconfig \
+    >> $SYNTH_LOGS/chuck.log 2>&1
     popd
 
   popd
