@@ -2,4 +2,4 @@
 
 set -e
 
-docker pull algocompsynth/synth:latest /bin/bash
+docker pull algocompsynth/synth:latest
