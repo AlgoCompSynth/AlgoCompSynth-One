@@ -22,7 +22,7 @@ source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate r-reticulate
 
 echo "Installing 'jupyterlab' and 'r-irkernel'"
-/usr/bin/time conda install --yes --quiet jupyterlab r-rbase=$RBASE_VERSION r-irkernel \
+/usr/bin/time conda install --yes --quiet jupyterlab r-base=$RBASE_VERSION r-irkernel \
   >> $SYNTH_LOGS/jupyterlab.log 2>&1
 
 echo "Activating R kernel"
