@@ -2,4 +2,8 @@
 
 set -e
 
-docker run --interactive --tty --network host algocompsynth/synth:latest /bin/bash
+docker run --interactive --tty \
+  --name synth \
+  --network host \
+  --runtime nvidia \
+  algocompsynth/synth:latest /bin/bash
