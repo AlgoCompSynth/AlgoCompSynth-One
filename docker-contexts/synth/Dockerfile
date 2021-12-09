@@ -90,9 +90,13 @@ ENV TORCHAUDIO_VERSION="0.10.0"
 COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/pytorch.sh
 
+ENV RBASE_VERSION=4.1.1
 COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/jupyterlab.sh
 
+# definitions required for building R packages
+ENV PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
+ENV PKG_CONFIG_PATH=$SYNTH_HOME/miniconda3/envs/r-reticulate/lib/pkgconfig
 COPY --chown=synth:synth conda-preload.sh R-audio.sh audio.R $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/conda-preload.sh
 RUN $SYNTH_SCRIPTS/R-audio.sh
