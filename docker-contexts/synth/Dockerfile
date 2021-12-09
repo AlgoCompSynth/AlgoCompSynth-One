@@ -93,7 +93,8 @@ RUN $SYNTH_SCRIPTS/pytorch.sh
 COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/jupyterlab.sh
 
-COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
+COPY --chown=synth:synth conda-preload.sh R-audio.sh audio.R $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/conda-preload.sh
 RUN $SYNTH_SCRIPTS/R-audio.sh
 
 COPY --chown=synth:synth \
