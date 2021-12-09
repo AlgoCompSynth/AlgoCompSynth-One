@@ -34,4 +34,8 @@ echo "Installing R packages"
 /usr/bin/time $SYNTH_SCRIPTS/audio.R \
   >> $SYNTH_LOGS/R-audio.log 2>&1
 
+echo "Cleanup"
+conda clean --all --yes \
+  >> $SYNTH_LOGS/R-audio.log 2>&1
+
 echo "Finished"

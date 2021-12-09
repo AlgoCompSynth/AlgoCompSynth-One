@@ -55,4 +55,6 @@ echo "Installing 'torchaudio'"
 popd
 
 echo "Cleanup"
+conda clean --all --yes \
+  >> $SYNTH_LOGS/pytorch.log 2>&1
 rm -fr /tmp/audio
