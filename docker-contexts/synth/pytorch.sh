@@ -25,11 +25,16 @@ echo "Installing Linux dependencies"
 /usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   libopenblas-base \
   libopenmpi-dev \
+  libsox-dev \
+  libsox-fmt-all \
+  libsoxr0 \
+  sox \
   >> $SYNTH_LOGS/pytorch.log 2>&1
 sudo apt-get clean
 
 echo "Downloading PyTorch wheel"
-wget -q -nc $PYTORCH_WHEEL_URL -O /tmp/$PYTORCH_WHEEL_FILE
+rm -f /tmp/$PYTORCH_WHEEL_FILE
+wget -q $PYTORCH_WHEEL_URL -O /tmp/$PYTORCH_WHEEL_FILE
 
 echo "Installing PyTorch"
 /usr/bin/time pip install /tmp/$PYTORCH_WHEEL_FILE \
@@ -37,6 +42,7 @@ echo "Installing PyTorch"
 
 echo "Cloning 'torchaudio'"
 pushd /tmp
+rm -fr audio
 git clone --recurse-submodules https://github.com/pytorch/audio.git \
   >> $SYNTH_LOGS/pytorch.log 2>&1
 cd audio
@@ -50,5 +56,3 @@ popd
 
 echo "Cleanup"
 rm -fr /tmp/audio
-conda clean --all --yes \
-  >> $SYNTH_LOGS/pytorch.log 2>&1
