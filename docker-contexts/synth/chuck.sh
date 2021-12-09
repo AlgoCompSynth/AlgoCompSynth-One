@@ -16,15 +16,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/chuck.log
-cd $SYNTH_PROJECTS
+rm -f $LOGS/chuck.log
+cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   bison \
   flex \
-  >> $SYNTH_LOGS/chuck.log 2>&1
-sudo apt-get clean
+  >> $LOGS/chuck.log 2>&1
+apt-get clean
 
 rm -fr chuck*
 echo "Downloading ChucK $CHUCK_VERSION source"
@@ -34,42 +34,44 @@ pushd chuck-$CHUCK_VERSION/src
 
   echo "Compiling ChucK for jack"
   make --jobs=`nproc` linux-jack \
-    >> $SYNTH_LOGS/chuck.log 2>&1
+    >> $LOGS/chuck.log 2>&1
   echo "Installing ChucK"
-  sudo make install \
-    >> $SYNTH_LOGS/chuck.log 2>&1
-  sudo ldconfig \
-    >> $SYNTH_LOGS/chuck.log 2>&1
+  make install \
+    >> $LOGS/chuck.log 2>&1
+  ldconfig \
+    >> $LOGS/chuck.log 2>&1
 
   echo "Relocating ChucK examples"
-  sudo rm -fr /usr/local/share/chuck
-  sudo mkdir --parents /usr/local/share/chuck
-  sudo mv ../examples /usr/local/share/chuck/examples
+  rm -fr /usr/local/share/chuck
+  mkdir --parents /usr/local/share/chuck
+  mv ../examples /usr/local/share/chuck/examples
   popd
 
 echo "Installing Chugins"
 git clone https://github.com/ccrma/chugins.git \
-  >> $SYNTH_LOGS/chuck.log 2>&1
+  >> $LOGS/chuck.log 2>&1
 pushd chugins
 
   make linux \
-    >> $SYNTH_LOGS/chuck.log 2>&1
-  sudo make install \
-    >> $SYNTH_LOGS/chuck.log 2>&1
-  sudo ldconfig \
-    >> $SYNTH_LOGS/chuck.log 2>&1
+    >> $LOGS/chuck.log 2>&1
+  make install \
+    >> $LOGS/chuck.log 2>&1
+  ldconfig \
+    >> $LOGS/chuck.log 2>&1
   pushd Faust
 
     echo "Installing Fauck"
     make linux \
-      >> $SYNTH_LOGS/chuck.log 2>&1
-    sudo make install \
-      >> $SYNTH_LOGS/chuck.log 2>&1
-    sudo ldconfig \
-    >> $SYNTH_LOGS/chuck.log 2>&1
+      >> $LOGS/chuck.log 2>&1
+    make install \
+      >> $LOGS/chuck.log 2>&1
+    ldconfig \
+    >> $LOGS/chuck.log 2>&1
     popd
 
   popd
 
 echo "Cleanup"
-rm -fr $SYNTH_PROJECTS/chuck $SYNTH_PROJECTS/chugins
+rm -fr $SOURCE_DIR/chuck $SOURCE_DIR/chugins
+
+echo "Finished"

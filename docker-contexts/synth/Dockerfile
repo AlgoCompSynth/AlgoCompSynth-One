@@ -53,6 +53,20 @@ ENV FAUST_VERSION="2.37.3"
 COPY faust.sh $SCRIPTS/
 RUN $SCRIPTS/faust.sh
 
+# Command-line software synths
+ENV CHUCK_VERSION="1.4.1.0"
+COPY chuck.sh $SCRIPTS/
+RUN $SCRIPTS/chuck.sh
+
+ENV CSOUND_VERSION="6.16.2"
+COPY csound.sh $SCRIPTS/
+RUN $SCRIPTS/csound.sh
+
+ENV SUPERCOLLIDER_VERSION="3.12.1"
+ENV SC3_PLUGINS_VERSION="3.11.1"
+COPY supercollider.sh $SCRIPTS/
+RUN $SCRIPTS/supercollider.sh
+
 # set up 'synth' account
 COPY synth-user.sh $SCRIPTS/
 RUN $SCRIPTS/synth-user.sh
@@ -106,13 +120,3 @@ COPY --chown=synth:synth \
   edit-me-then-run-4-git-config.sh \
   start-jupyter-lab.sh \
   $SYNTH_HOME/
-
-COPY --chown=synth:synth \
-  Installers \
-  $SYNTH_HOME/Installers
-
-# set versions of optional components
-ENV CHUCK_VERSION="1.4.1.0"
-ENV CSOUND_VERSION="6.16.2"
-ENV SUPERCOLLIDER_VERSION="3.12.1"
-ENV SC3_PLUGINS_VERSION="3.11.1"

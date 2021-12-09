@@ -16,11 +16,11 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/csound.log
-cd $SYNTH_PROJECTS
+rm -f $LOGS/csound.log
+cd $SOURCE_DIR
 
 echo "Installing dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   bison \
   dssi-dev \
   flex \
@@ -48,8 +48,8 @@ sudo apt-get install -qqy --no-install-recommends \
   python-pkgconfig \
   python3-pkgconfig \
   swig3.0 \
-  >> $SYNTH_LOGS/csound.log 2>&1
-sudo apt-get clean
+  >> $LOGS/csound.log 2>&1
+apt-get clean
 
 echo "Downloading csound source"
 rm -fr csound*
@@ -77,17 +77,19 @@ pushd cs6make
     -DBUILD_WIIMOTE_OPCODES=OFF \
     -DUSE_FLTK=OFF \
     ../csound-$CSOUND_VERSION \
-    >> $SYNTH_LOGS/csound.log 2>&1
+    >> $LOGS/csound.log 2>&1
 
   echo "Compiling CSound"
   make --jobs=`nproc` \
-    >> $SYNTH_LOGS/csound.log 2>&1
+    >> $LOGS/csound.log 2>&1
   echo "Installing CSound"
-  sudo make install \
-    >> $SYNTH_LOGS/csound.log 2>&1
-  sudo ldconfig \
-    >> $SYNTH_LOGS/csound.log 2>&1
+  make install \
+    >> $LOGS/csound.log 2>&1
+  ldconfig \
+    >> $LOGS/csound.log 2>&1
   popd
 
 echo "Cleanup"
-rm -fr $SYNTH_PROJECTS/cs6make $SYNTH_PROJECTS/csound*
+rm -fr $SOURCE_DIR/cs6make $SOURCE_DIR/csound*
+
+echo "Finished"
