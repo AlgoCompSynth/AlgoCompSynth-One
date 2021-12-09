@@ -35,15 +35,15 @@ RUN $SCRIPTS/deviceQuery.sh
 # Utility to get RAM size
 COPY ram_kilobytes.sh /usr/local/bin/
 
-# Jetsons don't have ALSA MIDI - install FluidSynth
-ENV LIBINSTPATCH_VERSION="1.1.6"
-COPY libinstpatch.sh $SCRIPTS/
-RUN $SCRIPTS/libinstpatch.sh
-
 # FluidSynth needs a newer version of CMake
 ENV CMAKE_VERSION="3.22.0"
 COPY cmake.sh $SCRIPTS/
 RUN $SCRIPTS/cmake.sh
+
+# Jetsons don't have ALSA MIDI - install FluidSynth
+ENV LIBINSTPATCH_VERSION="1.1.6"
+COPY libinstpatch.sh $SCRIPTS/
+RUN $SCRIPTS/libinstpatch.sh
 ENV FLUIDSYNTH_VERSION="2.2.4"
 COPY fluidsynth.sh $SCRIPTS/
 RUN $SCRIPTS/fluidsynth.sh
@@ -105,9 +105,6 @@ COPY --chown=synth:synth \
 COPY --chown=synth:synth \
   Installers \
   $SYNTH_HOME/Installers
-
-# set PYTHONPATH so conda environments can see PyTorch and friends
-ENV PYTHONPATH=/usr/local/lib/python3.6/dist-packages
 
 # set versions of optional components
 ENV CHUCK_VERSION="1.4.1.0"
