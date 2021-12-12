@@ -1,0 +1,50 @@
+diff --git a/aten/src/ATen/cpu/vec/vec256/vec256_float_neon.h b/aten/src/ATen/cpu/vec/vec256/vec256_float_neon.h
+index 2aac442d21..f2321dad7a 100644
+--- a/aten/src/ATen/cpu/vec/vec256/vec256_float_neon.h
++++ b/aten/src/ATen/cpu/vec/vec256/vec256_float_neon.h
+@@ -26,6 +26,9 @@ namespace {
+ // Most likely we will do aarch32 support with inline asm.
+ #if defined(__aarch64__)
+ 
++// See https://github.com/pytorch/pytorch/issues/47098
++#if defined(__clang__) || (__GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 3))
++
+ #ifdef __BIG_ENDIAN__
+ #error "Big endian is not supported."
+ #endif
+@@ -713,6 +716,7 @@ Vectorized<float> inline fmadd(const Vectorized<float>& a, const Vectorized<floa
+   return Vectorized<float>(r0, r1);
+ }
+ 
++#endif /* defined(__clang__) || (__GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 3)) */
+ #endif /* defined(aarch64) */
+ 
+ }}}
+diff --git a/aten/src/ATen/cuda/CUDAContext.cpp b/aten/src/ATen/cuda/CUDAContext.cpp
+index 1751128f1a..03e74f5ac2 100644
+--- a/aten/src/ATen/cuda/CUDAContext.cpp
++++ b/aten/src/ATen/cuda/CUDAContext.cpp
+@@ -24,6 +24,8 @@ void initCUDAContextVectors() {
+ void initDeviceProperty(DeviceIndex device_index) {
+   cudaDeviceProp device_prop;
+   AT_CUDA_CHECK(cudaGetDeviceProperties(&device_prop, device_index));
++  // patch for "too many resources requested for launch"
++  device_prop.maxThreadsPerBlock = device_prop.maxThreadsPerBlock / 2;
+   device_properties[device_index] = device_prop;
+ }
+ 
+diff --git a/aten/src/ATen/cuda/detail/KernelUtils.h b/aten/src/ATen/cuda/detail/KernelUtils.h
+index 91a61b04b8..5e9c128eed 100644
+--- a/aten/src/ATen/cuda/detail/KernelUtils.h
++++ b/aten/src/ATen/cuda/detail/KernelUtils.h
+@@ -19,7 +19,9 @@ namespace at { namespace cuda { namespace detail {
+ 
+ 
+ // Use 1024 threads per block, which requires cuda sm_2x or above
+-constexpr int CUDA_NUM_THREADS = 1024;
++//constexpr int CUDA_NUM_THREADS = 1024;
++// patch for "too many resources requested for launch"
++constexpr int CUDA_NUM_THREADS = 512;
+ 
+ // CUDA: number of blocks for threads.
+ inline int GET_BLOCKS(const int64_t N, const int64_t max_threads_per_block=CUDA_NUM_THREADS) {
