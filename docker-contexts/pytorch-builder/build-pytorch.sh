@@ -7,7 +7,7 @@ cd $SOURCE_DIR
 # reference: https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-10-now-available/72048
 
 echo "Creating fresh 'gnash' virtualenv"
-virtualenv --clear $WORKON_HOME/gnash -p /usr/bin/python$PYTHON_VERSION` \
+virtualenv --clear $WORKON_HOME/gnash -p /usr/bin/python$PYTHON_VERSION \
   >> $LOGS/build-pytorch.log 2>&1
 
 # activate it
