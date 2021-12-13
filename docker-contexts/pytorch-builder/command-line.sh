@@ -24,8 +24,12 @@ apt-get install -qqy --no-install-recommends \
   openmpi-bin \
   patch \
   pkg-config \
-  python-dev \
   python3-dev \
+  python3-distlib \
+  python3-distutils-extra \
+  python3-pip \
+  python3-setuptools \
+  python3-venv \
   software-properties-common \
   ssh \
   sudo \
@@ -35,21 +39,5 @@ apt-get install -qqy --no-install-recommends \
   vim-nox \
   virtualenvwrapper \
   wget \
-  >> $LOGS/command-line.log 2>&1
-
-#https://tecadmin.net/how-to-install-python-3-9-on-ubuntu-18-04/
-echo "Installing 'deadsnakes' Python 3.9, 3.8 and 3.7"
-add-apt-repository ppa:deadsnakes/ppa -y \
-  >> $LOGS/command-line.log 2>&1
-apt-get install -qqy --no-install-recommends \
-  python3.9 \
-  python3.9-dev \
-  python3.9-distutils \
-  python3.8 \
-  python3.8-dev \
-  python3.8-distutils \
-  python3.7 \
-  python3.7-dev \
-  python3.7-distutils \
   >> $LOGS/command-line.log 2>&1
 apt-get clean
