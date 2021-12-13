@@ -16,7 +16,7 @@ rm -fr $HOME/mambaforge* $HOME/miniforge* $HOME/miniconda*
 
 echo "Updating base environment"
 source $HOME/miniconda3/etc/profile.d/conda.sh
-mamba update --all --quiet --yes --name base
+conda update --all --quiet --yes --name base
 
 echo "Initializing conda for 'bash'"
 conda init bash
