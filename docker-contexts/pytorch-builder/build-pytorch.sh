@@ -30,3 +30,6 @@ pip install ninja \
 echo "Building wheel"
 /usr/bin/time python setup.py bdist_wheel \
   >> $LOGS/build-pytorch.log 2>&1
+
+echo "Saving wheel to $PACKAGES"
+cp dist/*.whl $PACKAGES/
