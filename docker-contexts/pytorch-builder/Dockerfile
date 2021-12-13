@@ -21,9 +21,13 @@ RUN $SCRIPTS/command-line.sh
 COPY clone-pytorch.sh pytorch-1.10-jetpack-4.5.1.patch $SCRIPTS/
 RUN $SCRIPTS/clone-pytorch.sh
 
-# install Python 3.9 from "deadsnakes" PPA
-COPY deadsnakes.sh $SCRIPTS/
-RUN $SCRIPTS/deadsnakes.sh
+# install Mambaforge
+COPY miniforge.sh $SCRIPTS/
+RUN $SCRIPTS/miniforge.sh
+
+# create virtual environment
+COPY create-venv.sh $SCRIPTS/
+RUN $SCRIPTS/create-venv.sh
 
 # build PyTorch wheel
 COPY build-pytorch.sh pytorch-from-source-requirements.txt $SCRIPTS/

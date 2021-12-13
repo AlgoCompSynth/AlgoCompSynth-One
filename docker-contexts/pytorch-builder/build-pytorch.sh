@@ -6,12 +6,9 @@ cd $SOURCE_DIR
 
 # reference: https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-10-now-available/72048
 
-echo "Creating fresh 'gnash' virtualenv"
-virtualenv --clear $WORKON_HOME/gnash -p /usr/bin/python3.8 \
-  >> $LOGS/build-pytorch.log 2>&1
-
-echo "Activating 'gnash' virtualenv"
-source $WORKON_HOME/gnash/bin/activate
+echo "Activating 'gnash' conda environment"
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate gnash
 
 export USE_NCCL=0
 export USE_QNNPACK=0

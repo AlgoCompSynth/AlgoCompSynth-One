@@ -24,12 +24,6 @@ apt-get install -qqy --no-install-recommends \
   openmpi-bin \
   patch \
   pkg-config \
-  python3-dev \
-  python3-distlib \
-  python3-distutils-extra \
-  python3-pip \
-  python3-setuptools \
-  python3-venv \
   software-properties-common \
   ssh \
   sudo \
@@ -37,7 +31,7 @@ apt-get install -qqy --no-install-recommends \
   tree \
   unzip \
   vim-nox \
-  virtualenvwrapper \
   wget \
   >> $LOGS/command-line.log 2>&1
+
 apt-get clean
