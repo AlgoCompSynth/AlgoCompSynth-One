@@ -22,8 +22,8 @@ COPY clone-pytorch.sh pytorch-1.10-jetpack-4.5.1.patch $SCRIPTS/
 RUN $SCRIPTS/clone-pytorch.sh
 
 # install Mambaforge
-COPY miniforge.sh $SCRIPTS/
-RUN $SCRIPTS/miniforge.sh
+COPY mambaforge.sh $SCRIPTS/
+RUN $SCRIPTS/mambaforge.sh
 
 # create virtual environment
 COPY create-venv.sh $SCRIPTS/
