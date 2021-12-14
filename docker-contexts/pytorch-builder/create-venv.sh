@@ -4,11 +4,11 @@ set -e
 rm -f $LOGS/create-venv.log
 cd $SOURCE_DIR
 
-echo "Creating fresh 'gnash' conda environment"
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba create --force --quiet --yes --name gnash \
+echo "Creating fresh 'pytorch-builder' conda environment"
+source $HOME/mambaforge/etc/profile.d/conda.sh
+conda create --force --quiet --yes --name pytorch-builder \
   python=3.9 \
   numpy=1.20.1 \
   >> $LOGS/create-venv.log 2>&1
-mamba list \
+conda list \
   >> $LOGS/create-venv.log 2>&1

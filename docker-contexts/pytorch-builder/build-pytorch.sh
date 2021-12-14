@@ -6,9 +6,9 @@ cd $SOURCE_DIR
 
 # reference: https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-10-now-available/72048
 
-echo "Activating 'gnash' conda environment"
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate gnash
+echo "Activating 'pytorch-builder' conda environment"
+source $HOME/mambaforge/etc/profile.d/conda.sh
+conda activate pytorch-builder
 
 export USE_NCCL=0
 export USE_QNNPACK=0
