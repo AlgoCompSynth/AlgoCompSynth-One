@@ -3,10 +3,10 @@
 set -e
 
 docker login
-export SYNTH_RELEASE=0.9.5
+export PYTORCH_VERSION="torch-1.7.1-cp39-cp39-linux_aarch64"
 docker push "algocompsynth/pytorch-builder:latest"
-if [ ${#SYNTH_RELEASE} -gt "0" ]
+if [ ${#PYTORCH_VERSION} -gt "0" ]
 then 
-  docker tag "algocompsynth/pytorch-builder:latest" "algocompsynth/pytorch-builder:$SYNTH_RELEASE"
-  docker push "algocompsynth/pytorch-builder:$SYNTH_RELEASE"
+  docker tag "algocompsynth/pytorch-builder:latest" "algocompsynth/pytorch-builder:$PYTORCH_VERSION"
+  docker push "algocompsynth/pytorch-builder:$PYTORCH_VERSION"
 fi
