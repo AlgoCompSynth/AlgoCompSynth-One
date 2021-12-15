@@ -8,10 +8,10 @@ cd $SOURCE_DIR
 
 echo "Downloading PyTorch source"
 rm -fr pytorch
-/usr/bin/time git clone --recursive --branch v1.10.0 http://github.com/pytorch/pytorch \
+/usr/bin/time git clone --recursive --branch v$PYTORCH_VERSION http://github.com/pytorch/pytorch \
   >> $LOGS/clone-pytorch.log 2>&1
 cd pytorch
 
 echo "Applying patch"
-patch --backup --strip=1 < $SCRIPTS/pytorch-1.10-jetpack-4.5.1.patch \
+patch --backup --strip=1 < $SCRIPTS/$PATCHFILE \
   >> $LOGS/clone-pytorch.log 2>&1

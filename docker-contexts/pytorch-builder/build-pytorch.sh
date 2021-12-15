@@ -14,7 +14,7 @@ export USE_NCCL=0
 export USE_QNNPACK=0
 export USE_PYTORCH_QNNPACK=0
 export TORCH_CUDA_ARCH_LIST="5.3;6.2;7.2"
-export PYTORCH_BUILD_VERSION=1.10.0
+export PYTORCH_BUILD_VERSION=$PYTORCH_VERSION
 export PYTORCH_BUILD_NUMBER=1
 
 echo "Installing Python requirements"

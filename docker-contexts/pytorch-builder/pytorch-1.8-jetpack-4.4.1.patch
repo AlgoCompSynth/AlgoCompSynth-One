@@ -1,0 +1,218 @@
+diff --git a/aten/src/ATen/cuda/CUDAContext.cpp b/aten/src/ATen/cuda/CUDAContext.cpp
+index 1751128f1a..03e74f5ac2 100644
+--- a/aten/src/ATen/cuda/CUDAContext.cpp
++++ b/aten/src/ATen/cuda/CUDAContext.cpp
+@@ -24,6 +24,8 @@ void initCUDAContextVectors() {
+ void initDeviceProperty(DeviceIndex device_index) {
+   cudaDeviceProp device_prop;
+   AT_CUDA_CHECK(cudaGetDeviceProperties(&device_prop, device_index));
++  // patch for "too many resources requested for launch"
++  device_prop.maxThreadsPerBlock = device_prop.maxThreadsPerBlock / 2;
+   device_properties[device_index] = device_prop;
+ }
+ 
+diff --git a/aten/src/ATen/cuda/detail/KernelUtils.h b/aten/src/ATen/cuda/detail/KernelUtils.h
+index 45056ab996..81a0246ceb 100644
+--- a/aten/src/ATen/cuda/detail/KernelUtils.h
++++ b/aten/src/ATen/cuda/detail/KernelUtils.h
+@@ -22,7 +22,10 @@ namespace at { namespace cuda { namespace detail {
+ 
+ 
+ // Use 1024 threads per block, which requires cuda sm_2x or above
+-constexpr int CUDA_NUM_THREADS = 1024;
++//constexpr int CUDA_NUM_THREADS = 1024;
++
++// patch for "too many resources requested for launch"
++constexpr int CUDA_NUM_THREADS = 512;
+ 
+ // CUDA: number of blocks for threads.
+ inline int GET_BLOCKS(const int64_t N) {
+diff --git a/aten/src/ATen/native/cpu/BinaryOpsKernel.cpp b/aten/src/ATen/native/cpu/BinaryOpsKernel.cpp
+index 4e9c799986..12c1453073 100644
+--- a/aten/src/ATen/native/cpu/BinaryOpsKernel.cpp
++++ b/aten/src/ATen/native/cpu/BinaryOpsKernel.cpp
+@@ -24,7 +24,13 @@ using namespace vec256;
+ // copysign faster for the half-precision types
+ template<typename T>
+ T copysign(T a, T b) {
++#if (!defined(__aarch64__)) || defined(__clang__) || (__GNUC__ > 8)
++  // std::copysign gets ICE/Segfaults with gcc 7/8 on arm64
++  // (e.g. Jetson), see PyTorch PR #51834
+   return std::copysign(a, b);
++#else
++  return std::signbit(b) ? -std::abs(a) : std::abs(a);
++#endif
+ }
+ 
+ // Implement copysign for half precision floats using bit ops
+@@ -149,6 +155,18 @@ void div_trunc_kernel(TensorIterator& iter) {
+   }
+ }
+ 
++// this is a function because MSVC does not like us to use #if inside AT_DISPATC
++template <typename scalar_t>
++static inline scalar_t signed_zero(scalar_t sign) {
++#if (!defined(__aarch64__)) || defined(__clang__) || (__GNUC__ > 8)
++  // std::copysign gets ICE/Segfaults with gcc 7/8 on arm64
++  // (e.g. Jetson), see PyTorch PR #51834
++  return std::copysign(scalar_t(0), sign);
++#else
++  return std::signbit(sign) ? -scalar_t(0) : scalar_t(0);
++#endif
++}
++
+ // NOTE: [Floor Division in Python]
+ // Python's __floordiv__ operator is more complicated than just floor(a / b).
+ // It aims to maintain the property: a == (a // b) * b + remainder(a, b)
+@@ -201,7 +219,7 @@ void div_floor_kernel(TensorIterator& iter) {
+                 floordiv += scalar_t(1.0);
+               }
+             } else {
+-              floordiv = copysign(scalar_t(0), a / b);
++              floordiv = signed_zero(a / b);
+             }
+             return floordiv;
+           });
+diff --git a/aten/src/ATen/native/cuda/BinaryMulDivKernel.cu b/aten/src/ATen/native/cuda/BinaryMulDivKernel.cu
+index e3ac2665a4..77e866b7f3 100644
+--- a/aten/src/ATen/native/cuda/BinaryMulDivKernel.cu
++++ b/aten/src/ATen/native/cuda/BinaryMulDivKernel.cu
+@@ -1,10 +1,11 @@
+ #include <ATen/AccumulateType.h>
+ #include <ATen/Dispatch.h>
++#include <ATen/native/BinaryOps.h>
+ #include <ATen/native/DispatchStub.h>
+-#include <ATen/native/cuda/Loops.cuh>
+ #include <ATen/native/TensorIterator.h>
+-#include <ATen/native/BinaryOps.h>
+ #include <c10/cuda/CUDAGuard.h>
++#include <c10/cuda/CUDAMathCompat.h>
++#include <ATen/native/cuda/Loops.cuh>
+ 
+ // NOTE: CUDA on Windows requires that the enclosing function
+ // of a __device__ lambda not have internal linkage.
+@@ -139,7 +140,9 @@ void div_floor_kernel_cuda(TensorIterator& iter) {
+             floordiv += scalar_t(1.0);
+           }
+         } else {
+-          floordiv = std::copysign(scalar_t(0), a * inv_b);
++          // std::copysign gets ICE/Segfaults with gcc 7/8 on arm64
++          // (e.g. Jetson), see PyTorch PR #51834
++          floordiv = c10::cuda::compat::copysign(scalar_t(0), a * inv_b);
+         }
+         return floordiv;
+       });
+@@ -160,7 +163,9 @@ void div_floor_kernel_cuda(TensorIterator& iter) {
+             floordiv += scalar_t(1.0);
+           }
+         } else {
+-          floordiv = std::copysign(scalar_t(0), a / b);
++          // std::copysign gets ICE/Segfaults with gcc 7/8 on arm64
++          // (e.g. Jetson), see PyTorch PR #51834
++          floordiv = c10::cuda::compat::copysign(scalar_t(0), a / b);
+         }
+         return floordiv;
+       });
+diff --git a/aten/src/THCUNN/common.h b/aten/src/THCUNN/common.h
+index 69b7f3a4d3..85b0b1305f 100644
+--- a/aten/src/THCUNN/common.h
++++ b/aten/src/THCUNN/common.h
+@@ -5,7 +5,10 @@
+   "Some of weight/gradient/input tensors are located on different GPUs. Please move them to a single one.")
+ 
+ // Use 1024 threads per block, which requires cuda sm_2x or above
+-const int CUDA_NUM_THREADS = 1024;
++//constexpr int CUDA_NUM_THREADS = 1024;
++
++// patch for "too many resources requested for launch"
++constexpr int CUDA_NUM_THREADS = 512;
+ 
+ // CUDA: number of blocks for threads.
+ inline int GET_BLOCKS(const int64_t N)
+diff --git a/c10/cuda/CUDAMathCompat.h b/c10/cuda/CUDAMathCompat.h
+index 1fb0c3ec29..a4c6655859 100644
+--- a/c10/cuda/CUDAMathCompat.h
++++ b/c10/cuda/CUDAMathCompat.h
+@@ -42,11 +42,80 @@ __MATH_FUNCTIONS_DECL__ double ceil(double x) {
+   return ::ceil(x);
+ }
+ 
++__MATH_FUNCTIONS_DECL__ float fp32_from_bits(uint32_t w) {
++#if defined(__OPENCL_VERSION__)
++  return as_float(w);
++#elif defined(__CUDA_ARCH__)
++  return __uint_as_float((unsigned int)w);
++#elif defined(__INTEL_COMPILER)
++  return _castu32_f32(w);
++#else
++  union {
++    uint32_t as_bits;
++    float as_value;
++  } fp32 = {w};
++  return fp32.as_value;
++#endif
++}
++
++__MATH_FUNCTIONS_DECL__ uint32_t fp32_to_bits(float f) {
++#if defined(__OPENCL_VERSION__)
++  return as_uint(f);
++#elif defined(__CUDA_ARCH__)
++  return (uint32_t)__float_as_uint(f);
++#elif defined(__INTEL_COMPILER)
++  return _castf32_u32(f);
++#else
++  union {
++    float as_value;
++    uint32_t as_bits;
++  } fp32 = {f};
++  return fp32.as_bits;
++#endif
++}
++
++__MATH_FUNCTIONS_DECL__ double fp64_from_bits(uint64_t w) {
++#if defined(__CUDA_ARCH__)
++  return __longlong_as_double(w);
++#else
++  union {
++    uint64_t as_bits;
++    double as_value;
++  } fp64 = {w};
++  return fp64.as_value;
++#endif
++}
++
++__MATH_FUNCTIONS_DECL__ uint64_t fp64_to_bits(double f) {
++#if defined(__CUDA_ARCH__)
++  return __double_as_longlong(f);
++#else
++  union {
++    double as_value;
++    int64_t as_bits;
++  } fp64 = {f};
++  return fp64.as_bits;
++#endif
++}
++
+ __MATH_FUNCTIONS_DECL__ float copysign(float x, float y) {
+-  return ::copysignf(x, y);
++#if (!defined(__aarch64__)) || defined(__clang__) || (__GNUC__ > 8)
++   // std::copysign gets ICE/Segfaults with gcc 7/8 on arm64
++   // (e.g. Jetson), see PyTorch PR #51834
++   return ::copysignf(x, y);
++#else
++   return fp32_from_bits(
++      (fp32_to_bits(x) & 0x7fffffffu) | (fp32_to_bits(y) & 0x80000000u));
++#endif
+ }
+ __MATH_FUNCTIONS_DECL__ double copysign(double x, double y) {
+-  return ::copysign(x, y);
++#if (!defined(__aarch64__)) || defined(__clang__) || (__GNUC__ > 8)
++   return ::copysign(x, y);
++#else
++   return fp64_from_bits(
++       (fp64_to_bits(x) & 0x7fffffffffffffffull) |
++       (fp64_to_bits(y) & 0x8000000000000000ull));
++#endif
+ }
+ 
+ __MATH_FUNCTIONS_DECL__ float floor(float x) {

@@ -18,7 +18,9 @@ COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
 
 # clone PyTorch source
-COPY clone-pytorch.sh pytorch-1.10-jetpack-4.5.1.patch $SCRIPTS/
+ENV PYTORCH_VERSION=1.7.1
+ENV PATCHFILE=pytorch-1.7.1-jetpack-4.4.1.patch
+COPY clone-pytorch.sh $PATCHFILE $SCRIPTS/
 RUN $SCRIPTS/clone-pytorch.sh
 
 # install Mambaforge

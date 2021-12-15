@@ -1,0 +1,67 @@
+diff --git a/aten/src/ATen/cpu/vec256/vec256_float_neon.h b/aten/src/ATen/cpu/vec256/vec256_float_neon.h
+index 5f6134112c..15b311d4d6 100644
+--- a/aten/src/ATen/cpu/vec256/vec256_float_neon.h
++++ b/aten/src/ATen/cpu/vec256/vec256_float_neon.h
+@@ -26,6 +26,9 @@ namespace {
+ // Most likely we will do aarch32 support with inline asm.
+ #if defined(__aarch64__)
+ 
++// See https://github.com/pytorch/pytorch/issues/47098
++#if defined(__clang__) || (__GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 3))
++
+ #ifdef __BIG_ENDIAN__
+ #error "Big endian is not supported."
+ #endif
+@@ -710,6 +713,7 @@ Vec256<float> inline fmadd(const Vec256<float>& a, const Vec256<float>& b, const
+   return Vec256<float>(r0, r1);
+ }
+ 
++#endif /* defined(__clang__) || (__GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 3)) */
+ #endif /* defined(aarch64) */
+ 
+ }}}
+diff --git a/aten/src/ATen/cuda/CUDAContext.cpp b/aten/src/ATen/cuda/CUDAContext.cpp
+index 1751128f1a..03e74f5ac2 100644
+--- a/aten/src/ATen/cuda/CUDAContext.cpp
++++ b/aten/src/ATen/cuda/CUDAContext.cpp
+@@ -24,6 +24,8 @@ void initCUDAContextVectors() {
+ void initDeviceProperty(DeviceIndex device_index) {
+   cudaDeviceProp device_prop;
+   AT_CUDA_CHECK(cudaGetDeviceProperties(&device_prop, device_index));
++  // patch for "too many resources requested for launch"
++  device_prop.maxThreadsPerBlock = device_prop.maxThreadsPerBlock / 2;
+   device_properties[device_index] = device_prop;
+ }
+ 
+diff --git a/aten/src/ATen/cuda/detail/KernelUtils.h b/aten/src/ATen/cuda/detail/KernelUtils.h
+index e707e94cc1..4c6fcf3e5e 100644
+--- a/aten/src/ATen/cuda/detail/KernelUtils.h
++++ b/aten/src/ATen/cuda/detail/KernelUtils.h
+@@ -22,7 +22,10 @@ namespace at { namespace cuda { namespace detail {
+ 
+ 
+ // Use 1024 threads per block, which requires cuda sm_2x or above
+-constexpr int CUDA_NUM_THREADS = 1024;
++//constexpr int CUDA_NUM_THREADS = 1024;
++
++// patch for "too many resources requested for launch"
++constexpr int CUDA_NUM_THREADS = 512;
+ 
+ // CUDA: number of blocks for threads.
+ inline int GET_BLOCKS(const int64_t N) {
+diff --git a/aten/src/THCUNN/common.h b/aten/src/THCUNN/common.h
+index 69b7f3a4d3..54455ab4b0 100644
+--- a/aten/src/THCUNN/common.h
++++ b/aten/src/THCUNN/common.h
+@@ -5,7 +5,10 @@
+   "Some of weight/gradient/input tensors are located on different GPUs. Please move them to a single one.")
+ 
+ // Use 1024 threads per block, which requires cuda sm_2x or above
+-const int CUDA_NUM_THREADS = 1024;
++//const int CUDA_NUM_THREADS = 1024;
++
++// patch for "too many resources requested for launch"
++constexpr int CUDA_NUM_THREADS = 512;
+ 
+ // CUDA: number of blocks for threads.
+ inline int GET_BLOCKS(const int64_t N)
