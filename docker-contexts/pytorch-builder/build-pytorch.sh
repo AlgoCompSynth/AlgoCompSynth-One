@@ -28,8 +28,15 @@ pip install ninja \
   >> $LOGS/build-pytorch.log 2>&1
 
 echo "Building wheel"
-/usr/bin/time python setup.py bdist_wheel \
-  >> $LOGS/build-pytorch.log 2>&1
+if [ `ram_kilobytes.sh` -gt 9999999 ]
+then
+  /usr/bin/time python setup.py bdist_wheel \
+    >> $LOGS/build-pytorch.log 2>&1
+else
+  export MAX_JOBS=4
+  /usr/bin/time python setup.py bdist_wheel \
+    >> $LOGS/build-pytorch.log 2>&1
+fi
 
 echo "Saving wheel to $PACKAGES"
 cp dist/*.whl $PACKAGES/

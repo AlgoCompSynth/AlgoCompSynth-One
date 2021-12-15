@@ -30,6 +30,7 @@ COPY create-venv.sh $SCRIPTS/
 RUN $SCRIPTS/create-venv.sh
 
 # build PyTorch wheel
+COPY ram_kilobytes.sh /usr/local/bin/
 COPY build-pytorch.sh pytorch-from-source-requirements.txt $SCRIPTS/
 RUN nice $SCRIPTS/build-pytorch.sh
 
