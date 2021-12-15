@@ -2,11 +2,26 @@
 
 set -e
 
+echo "Running the builder image in the "packages" container"
+docker rm -f packages || true
+docker run --detach --name packages algocompsynth/pytorch-builder:latest
+
+echo "Copying packages"
+rm -fr packages
+docker cp packages:/usr/local/src/packages .
+ls -lt packages
+
+echo "Tagging image with newest package name"
+export PACKAGE_NAME=`ls -1t packages | head -n 1`
+echo "PACKAGE_NAME: $PACKAGE_NAME"
+docker tag "algocompsynth/pytorch-builder:latest" "algocompsynth/pytorch-builder:$PACKAGE_NAME"
+docker images
+
+echo "Pushing tagged image"
 docker login
-export PYTORCH_VERSION="torch-1.7.1-cp39-cp39-linux_aarch64"
-docker push "algocompsynth/pytorch-builder:latest"
-if [ ${#PYTORCH_VERSION} -gt "0" ]
-then 
-  docker tag "algocompsynth/pytorch-builder:latest" "algocompsynth/pytorch-builder:$PYTORCH_VERSION"
-  docker push "algocompsynth/pytorch-builder:$PYTORCH_VERSION"
-fi
+docker push "algocompsynth/pytorch-builder:$PACKAGE_NAME"
+
+echo "Adding new wheel(s) to git"
+cp packages/* pytorch-wheels/
+git lfs install
+git add pytorch-wheels/
