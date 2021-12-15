@@ -32,3 +32,7 @@ RUN $SCRIPTS/create-venv.sh
 # build PyTorch wheel
 COPY build-pytorch.sh pytorch-from-source-requirements.txt $SCRIPTS/
 RUN nice $SCRIPTS/build-pytorch.sh
+
+# test install PyTorch wheel
+COPY test-install.sh $SCRIPTS/
+RUN $SCRIPTS/test-install.sh
