@@ -9,7 +9,7 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
@@ -36,7 +36,7 @@ RUN $SCRIPTS/deviceQuery.sh
 COPY ram_kilobytes.sh /usr/local/bin/
 
 # FluidSynth needs a newer version of CMake
-ENV CMAKE_VERSION="3.22.0"
+ENV CMAKE_VERSION="3.23.0"
 COPY cmake.sh $SCRIPTS/
 RUN $SCRIPTS/cmake.sh
 
@@ -49,7 +49,7 @@ COPY fluidsynth.sh $SCRIPTS/
 RUN $SCRIPTS/fluidsynth.sh
 
 # Enough packages need Faust to justify system install
-ENV FAUST_VERSION="2.37.3"
+ENV FAUST_VERSION="2.40.0"
 COPY faust.sh $SCRIPTS/
 RUN $SCRIPTS/faust.sh
 
@@ -58,11 +58,11 @@ ENV CHUCK_VERSION="1.4.1.0"
 COPY chuck.sh $SCRIPTS/
 RUN $SCRIPTS/chuck.sh
 
-ENV CSOUND_VERSION="6.16.2"
+ENV CSOUND_VERSION="6.17.0"
 COPY csound.sh $SCRIPTS/
 RUN $SCRIPTS/csound.sh
 
-ENV SUPERCOLLIDER_VERSION="3.12.1"
+ENV SUPERCOLLIDER_VERSION="3.12.2"
 ENV SC3_PLUGINS_VERSION="3.11.1"
 COPY supercollider.sh $SCRIPTS/
 RUN $SCRIPTS/supercollider.sh
@@ -93,7 +93,7 @@ CMD [ "/bin/bash" ]
 COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
 
-ENV CUSIGNAL_VERSION="21.10.00"
+ENV CUSIGNAL_VERSION="22.02.00"
 ENV CUSIGNAL_TEST="0"
 COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
