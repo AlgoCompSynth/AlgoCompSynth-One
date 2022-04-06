@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM "nvcr.io/nvidia/l4t-base:r32.6.1"
+FROM "nvcr.io/nvidia/l4t-pytorch:r32.7.1-pth1.10-py3"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -98,13 +98,13 @@ ENV CUSIGNAL_TEST="0"
 COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
 
-ENV PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
-ENV PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
-ENV TORCHAUDIO_VERSION="0.10.0"
-COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/pytorch.sh
+#ENV PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
+#ENV PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
+#ENV TORCHAUDIO_VERSION="0.10.0"
+#COPY --chown=synth:synth pytorch.sh $SYNTH_SCRIPTS/
+#RUN $SYNTH_SCRIPTS/pytorch.sh
 
-ENV RBASE_VERSION=4.1.1
+ENV RBASE_VERSION=4.1.3
 COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/jupyterlab.sh
 
