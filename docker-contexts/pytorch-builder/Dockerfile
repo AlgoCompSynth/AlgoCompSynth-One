@@ -18,8 +18,8 @@ COPY command-line.sh $SCRIPTS/
 RUN $SCRIPTS/command-line.sh
 
 # clone PyTorch source
-ENV PYTORCH_VERSION=1.7.1
-ENV PATCHFILE=pytorch-1.7.1-jetpack-4.4.1.patch
+ENV PYTORCH_VERSION=1.10.0
+ENV PATCHFILE=pytorch-1.10.0-jetpack-4.5.1.patch
 COPY clone-pytorch.sh $PATCHFILE $SCRIPTS/
 RUN $SCRIPTS/clone-pytorch.sh
 
@@ -28,12 +28,16 @@ COPY mambaforge.sh $SCRIPTS/
 RUN $SCRIPTS/mambaforge.sh
 
 # create virtual environment
+ENV PYTHON_VERSION=3.10
 COPY create-venv.sh $SCRIPTS/
 RUN $SCRIPTS/create-venv.sh
 
 # build PyTorch wheel
 COPY ram_kilobytes.sh /usr/local/bin/
 COPY build-pytorch.sh pytorch-from-source-requirements.txt $SCRIPTS/
+RUN nvpmodel -m 2     # on Xavier NX, use -m 2  instead (15W 6-core mode)
+RUN jetson_clocks --fan
+RUN jetson_clocks --show
 RUN nice $SCRIPTS/build-pytorch.sh
 
 # test install PyTorch wheel
