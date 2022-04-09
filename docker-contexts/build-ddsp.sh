@@ -2,4 +2,4 @@
 
 set -e
 
-./image.sh cusignal > /tmp/i-cusignal.log 2>&1
+./image.sh ddsp > /tmp/i-ddsp.log 2>&1
