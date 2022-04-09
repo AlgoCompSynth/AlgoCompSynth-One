@@ -20,7 +20,7 @@ rm -f $SYNTH_LOGS/pytorch.log
 
 source $HOME/miniconda3/etc/profile.d/conda.sh
 source $HOME/miniconda3/etc/profile.d/mamba.sh
-mamba activate r-reticulate
+conda activate r-reticulate
 
 echo "Installing Linux dependencies"
 /usr/bin/time sudo apt-get install -qqy --no-install-recommends \
@@ -38,7 +38,7 @@ echo "Installing PyTorch"
   >> $SYNTH_LOGS/pytorch.log 2>&1
 
 echo "Installing build tools"
-mamba install --quiet --yes \
+conda install --quiet --yes \
   cmake \
   ninja \
   >> $SYNTH_LOGS/pytorch.log 2>&1
@@ -58,6 +58,6 @@ echo "Installing 'torchaudio'"
 popd
 
 echo "Cleanup"
-mamba clean  --all --yes \
+conda clean  --all --yes \
   >> $SYNTH_LOGS/pytorch.log 2>&1
 rm -fr /tmp/audio

@@ -26,11 +26,13 @@
 Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
 install.packages(c(
   "audio",
+  "devtools",
   "monitoR",
   "music",
   "NatureSounds",
   "phonTools",
   "remotes",
+  "reticulate",
   "Rraven",
   "seewave",
   "signal",
@@ -44,11 +46,11 @@ warnings()
 
 # rebuild development versions
 install.packages(c("kableExtra", "maps"), quiet = TRUE)
-remotes::install_github("maRce10/NatureSounds", build_vignettes = TRUE)
-remotes::install_github("maRce10/Rraven", build_vignettes = TRUE)
-remotes::install_github("maRce10/warbleR", build_vignettes = TRUE)
-remotes::install_github("tatters/soundgen", build_vignettes = TRUE)
+remotes::install_github("maRce10/NatureSounds", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
+remotes::install_github("maRce10/Rraven", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
+remotes::install_github("maRce10/warbleR", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
+remotes::install_github("tatters/soundgen", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
 
 # MIDI tools
-remotes::install_github("urswilke/raudiomate", build_vignettes = TRUE)
-remotes::install_github("urswilke/pyramidi", build_vignettes = TRUE)
+remotes::install_github("urswilke/raudiomate", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
+remotes::install_github("urswilke/pyramidi", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")

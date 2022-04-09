@@ -18,25 +18,26 @@
 set -e
 rm -f $SYNTH_LOGS/R-audio.log
 
+echo "Installing Linux packages"
+sudo apt-get install -qqy --no-install-recommends \
+  ffmpeg \
+  flac \
+  less \
+  libsox-fmt-all \
+  mp3splt \
+  >> $SYNTH_LOGS/R-base.log 2>&1
+sudo apt-get clean
+
 source $HOME/miniconda3/etc/profile.d/conda.sh
 source $HOME/miniconda3/etc/profile.d/mamba.sh
 mamba activate r-reticulate
-export PKG_CONFIG_PATH=$HOME/miniconda3/envs/r-reticulate/lib/pkgconfig
-
-echo "Installing conda dependencies"
-/usr/bin/time mamba install --quiet --yes \
-  portaudio \
-  >> $SYNTH_LOGS/R-audio.log 2>&1
-  #fftw \
-  #r-sf \
-  #r-units \
 
 echo "Installing R packages"
 /usr/bin/time $SYNTH_SCRIPTS/audio.R \
   >> $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Cleanup"
-mamba clean --all --yes \
+mamba clean --tarballs --yes \
   >> $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Finished"

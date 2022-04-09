@@ -23,3 +23,4 @@ echo "Initializing conda for 'bash'"
 conda init bash
 mamba init bash
 conda config --set auto_activate_base false
+conda config --set default_threads 4

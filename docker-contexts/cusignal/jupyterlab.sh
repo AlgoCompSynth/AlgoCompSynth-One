@@ -22,17 +22,11 @@ source $HOME/miniconda3/etc/profile.d/conda.sh
 source $HOME/miniconda3/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
-echo "Installing 'jupyterlab', 'r-devtools' and 'r-irkernel'"
+echo "Installing 'jupyterlab'"
 /usr/bin/time mamba install --yes --quiet \
   jupyterlab \
-  r-devtools \
-  r-irkernel \
-  >> $SYNTH_LOGS/jupyterlab.log 2>&1
-
-echo "Activating R kernel"
-R -e "IRkernel::installspec()" \
   >> $SYNTH_LOGS/jupyterlab.log 2>&1
 
 echo "Cleanup"
-mamba clean --all --yes \
+mamba clean --tarballs --yes \
   >> $SYNTH_LOGS/jupyterlab.log 2>&1

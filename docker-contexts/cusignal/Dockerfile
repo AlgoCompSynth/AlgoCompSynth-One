@@ -74,19 +74,15 @@ CMD [ "/bin/bash" ]
 COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
 
+# create environment with cusignal, jupyterlab and r
 ENV CUSIGNAL_VERSION="22.04.00"
 ENV CUSIGNAL_TEST="1"
 COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
 
-COPY --chown=synth:synth jupyterlab.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/jupyterlab.sh
-
-# definitions required for building R packages
-ENV PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
-ENV PKG_CONFIG_PATH=$SYNTH_HOME/miniconda3/envs/r-reticulate/lib/pkgconfig
-COPY --chown=synth:synth conda-preload.sh R-audio.sh audio.R $SYNTH_SCRIPTS/
+COPY --chown=synth:synth conda-preload.sh $SYNTH_SCRIPTS/
 #RUN $SYNTH_SCRIPTS/conda-preload.sh
+COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/R-audio.sh
 
 COPY --chown=synth:synth \
@@ -94,26 +90,3 @@ COPY --chown=synth:synth \
   edit-me-then-run-4-git-config.sh \
   start-jupyter-lab.sh \
   $SYNTH_HOME/
-
-
-
-
-# Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-FROM "algocompsynth/cusignal:latest"
-LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
-
-ARG DEBIAN_FRONTEND=noninteractive

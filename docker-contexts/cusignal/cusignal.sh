@@ -36,6 +36,9 @@ source $HOME/miniconda3/etc/profile.d/mamba.sh
   >> $SYNTH_LOGS/cusignal.log 2>&1
 mamba activate r-reticulate
 
+echo "Enabling R kernel in JupyterLab"
+Rscript -e "IRkernel::installspec()"
+
 echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
   >> $SYNTH_LOGS/cusignal.log 2>&1
@@ -54,6 +57,6 @@ rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
 cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 
 echo "Cleanup"
-mamba clean --all --yes \
+mamba clean --tarballs --yes \
   >> $SYNTH_LOGS/cusignal.log 2>&1
 rm -fr $CUSIGNAL_HOME
