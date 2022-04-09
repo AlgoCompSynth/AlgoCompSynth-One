@@ -80,10 +80,10 @@ ENV CUSIGNAL_TEST="1"
 COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
 
-COPY --chown=synth:synth conda-preload.sh $SYNTH_SCRIPTS/
-#RUN $SYNTH_SCRIPTS/conda-preload.sh
-COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/R-audio.sh
+#---- COPY --chown=synth:synth conda-preload.sh $SYNTH_SCRIPTS/
+#---- #RUN $SYNTH_SCRIPTS/conda-preload.sh
+#---- COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
+#---- RUN $SYNTH_SCRIPTS/R-audio.sh
 
 COPY --chown=synth:synth \
   set-vim-background.sh \
