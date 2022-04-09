@@ -36,9 +36,6 @@ source $HOME/miniconda3/etc/profile.d/mamba.sh
   >> $SYNTH_LOGS/cusignal.log 2>&1
 mamba activate r-reticulate
 
-echo "Enabling R kernel in JupyterLab"
-Rscript -e "IRkernel::installspec()"
-
 echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch \
   >> $SYNTH_LOGS/cusignal.log 2>&1
