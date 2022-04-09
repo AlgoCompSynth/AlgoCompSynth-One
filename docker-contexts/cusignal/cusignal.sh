@@ -57,6 +57,8 @@ rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
 cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 
 echo "Cleanup"
+mamba list \
+  >> $SYNTH_LOGS/cusignal.log 2>&1
 mamba clean --tarballs --yes \
   >> $SYNTH_LOGS/cusignal.log 2>&1
 rm -fr $CUSIGNAL_HOME

@@ -134,5 +134,7 @@ mamba install --quiet --yes \
   >> $SYNTH_LOGS/conda-preload.log 2>&1
 
 echo "Cleanup"
+mamba list \
+  >> $SYNTH_LOGS/conda-preload.log 2>&1
 mamba clean --tarballs --yes \
   >> $SYNTH_LOGS/conda-preload.log 2>&1

@@ -37,6 +37,8 @@ echo "Installing R packages"
   >> $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Cleanup"
+mamba list \
+  >> $SYNTH_LOGS/R-audio.log 2>&1
 mamba clean --tarballs --yes \
   >> $SYNTH_LOGS/R-audio.log 2>&1
 
