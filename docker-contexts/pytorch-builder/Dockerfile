@@ -60,18 +60,15 @@ USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
-COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
+# install mambaforge
+COPY --chown=synth:synth mambaforge.sh $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 # clone PyTorch source
 ENV PYTORCH_VERSION=1.10.0
 ENV PATCHFILE=pytorch-1.10-jetpack-4.5.1.patch
 COPY --chown=synth:synth clone-pytorch.sh $PATCHFILE $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/clone-pytorch.sh
-
-# install Mambaforge
-COPY --chown=synth:synth mambaforge.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/mambaforge.sh
 
 # create virtual environment
 ENV PYTHON_VERSION=3.10
