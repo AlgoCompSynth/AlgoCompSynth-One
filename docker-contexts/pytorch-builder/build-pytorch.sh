@@ -20,8 +20,7 @@ export PYTORCH_BUILD_NUMBER=1
 
 echo "Installing Python requirements"
 cd pytorch
-diff requirements.txt $SCRIPTS/pytorch-from-source-requirements.txt || true
-pip install -r $SCRIPTS/pytorch-from-source-requirements.txt \
+pip install -r requirements.txt \
   >> $LOGS/build-pytorch.log 2>&1
 pip install scikit-build \
   >> $LOGS/build-pytorch.log 2>&1

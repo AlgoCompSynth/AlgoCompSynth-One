@@ -31,5 +31,6 @@ pushd /tmp
   mamba init bash
   mamba init zsh
   conda config --set auto_activate_base false
+  conda config --set default_threads 4
 
   popd

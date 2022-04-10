@@ -1,4 +1,4 @@
-FROM "nvcr.io/nvidia/l4t-base:r32.6.1"
+FROM "nvcr.io/nvidia/l4t-base:r32.7.1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -34,7 +34,8 @@ RUN $SCRIPTS/create-venv.sh
 
 # build PyTorch wheel
 COPY ram_kilobytes.sh /usr/local/bin/
-COPY build-pytorch.sh pytorch-from-source-requirements.txt $SCRIPTS/
+COPY build-pytorch.sh $SCRIPTS/
+RUN $SCRIPTS/build-pytorch.sh
 
 # test install PyTorch wheel
 COPY test-install.sh $SCRIPTS/
