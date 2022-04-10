@@ -35,10 +35,6 @@ RUN $SCRIPTS/create-venv.sh
 # build PyTorch wheel
 COPY ram_kilobytes.sh /usr/local/bin/
 COPY build-pytorch.sh pytorch-from-source-requirements.txt $SCRIPTS/
-RUN nvpmodel -m 2     # on Xavier NX, use -m 2  instead (15W 6-core mode)
-RUN jetson_clocks --fan
-RUN jetson_clocks --show
-RUN nice $SCRIPTS/build-pytorch.sh
 
 # test install PyTorch wheel
 COPY test-install.sh $SCRIPTS/
