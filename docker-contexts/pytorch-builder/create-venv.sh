@@ -1,8 +1,8 @@
 #! /bin/bash
 
 set -e
-rm -f $LOGS/create-venv.log
-cd $SOURCE_DIR
+rm -f $SYNTH_LOGS/create-venv.log
+cd $SYNTH_PROJECTS
 
 echo "Creating fresh 'pytorch-builder' conda environment"
 source $HOME/mambaforge/etc/profile.d/conda.sh
@@ -12,6 +12,6 @@ mamba create --force --quiet --yes --name pytorch-builder \
   cmake \
   ninja \
   setuptools=59.5.0 \
-  >> $LOGS/create-venv.log 2>&1
+  >> $SYNTH_LOGS/create-venv.log 2>&1
 mamba list \
-  >> $LOGS/create-venv.log 2>&1
+  >> $SYNTH_LOGS/create-venv.log 2>&1
