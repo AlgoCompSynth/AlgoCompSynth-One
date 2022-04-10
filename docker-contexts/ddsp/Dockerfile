@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM "nvcr.io/nvidia/l4t-pytorch:r32.7.1-pth1.10-py3"
+FROM "nvcr.io/nvidia/l4t-base:r32.7.1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -74,16 +74,18 @@ CMD [ "/bin/bash" ]
 COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
 
-# create environment with cusignal, jupyterlab and r
+# create environment with cusignal and jupyterlab
 ENV CUSIGNAL_VERSION="22.04.00"
-ENV CUSIGNAL_TEST="1"
+ENV CUSIGNAL_TEST="0"
 COPY --chown=synth:synth cusignal.sh cusignal_jetson_base.yml $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/cusignal.sh
 
-#---- COPY --chown=synth:synth conda-preload.sh $SYNTH_SCRIPTS/
-#---- #RUN $SYNTH_SCRIPTS/conda-preload.sh
-#---- COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
-#---- RUN $SYNTH_SCRIPTS/R-audio.sh
+# R, IRkernel and devtools
+COPY --chown=synth:synth R-base.sh base.R $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/R-base.sh
+
+COPY --chown=synth:synth R-audio.sh audio.R $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/R-audio.sh
 
 COPY --chown=synth:synth \
   set-vim-background.sh \

@@ -16,17 +16,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-rm -f $SYNTH_LOGS/R-audio.log
-
-echo "Installing Linux packages"
-sudo apt-get install -qqy --no-install-recommends \
-  ffmpeg \
-  flac \
-  less \
-  libsox-fmt-all \
-  mp3splt \
-  >> $SYNTH_LOGS/R-base.log 2>&1
-sudo apt-get clean
+rm -f $SYNTH_LOGS/R-base.log
 
 source $HOME/miniconda3/etc/profile.d/conda.sh
 source $HOME/miniconda3/etc/profile.d/mamba.sh
@@ -34,20 +24,22 @@ mamba activate r-reticulate
 
 echo "Installing conda packages"
 mamba install --quiet --yes \
-  fftw=3.3.10=mpi_openmpi_hfc6c31e_1 \
-  portaudio \
-  >> $SYNTH_LOGS/R-audio.log 2>&1
+  libgit2 \
+  r-base \
+  >> $SYNTH_LOGS/R-base.log 2>&1
 
 echo "Installing R packages"
-export PKG_CONFIG_PATH=$SYNTH_HOME/miniconda3/envs/r-reticulate/lib/pkgconfig
-export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
-/usr/bin/time $SYNTH_SCRIPTS/audio.R \
-  >> $SYNTH_LOGS/R-audio.log 2>&1
+/usr/bin/time $SYNTH_SCRIPTS/base.R \
+  >> $SYNTH_LOGS/R-base.log 2>&1
+
+echo "Enabling R Jupyter kernel"
+Rscript -e "IRkernel::installspec()" \
+  >> $SYNTH_LOGS/R-base.log 2>&1
 
 echo "Cleanup"
 mamba list \
-  >> $SYNTH_LOGS/R-audio.log 2>&1
+  >> $SYNTH_LOGS/R-base.log 2>&1
 mamba clean --tarballs --yes \
-  >> $SYNTH_LOGS/R-audio.log 2>&1
+  >> $SYNTH_LOGS/R-base.log 2>&1
 
 echo "Finished"

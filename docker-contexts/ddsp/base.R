@@ -15,37 +15,11 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# reference 
-#@book{sueur2018sound,
-#  title={Sound analysis and synthesis with R},
-#  author={Sueur, J{\'e}r{\^o}me and others},
-#  year={2018},
-#  publisher={Springer}
-#}
-
 options(warn=2)
 Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
 install.packages(c(
-  "audio",
-  "kableExtra",
-  "maps",
-  "monitoR",
-  "music",
-  "NatureSounds",
-  "phonTools",
-  "remotes",
-  "reticulate",
-  "Rraven",
-  "seewave",
-  "signal",
-  "soundecology",
-  "soundgen",
-  "tabr",
-  "tuneR",
-  "warbleR"
+  "devtools",
+  "IRkernel",
+  "reticulate"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
-
-# MIDI tools
-remotes::install_github("urswilke/raudiomate", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
-remotes::install_github("urswilke/pyramidi", force = TRUE, build_vignettes = TRUE, quiet = TRUE, repos = "https://cloud.r-project.org/")
