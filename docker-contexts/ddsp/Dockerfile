@@ -71,8 +71,8 @@ USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
-COPY --chown=synth:synth miniforge.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/miniforge.sh > $SYNTH_LOGS/miniforge.log 2>&1
+COPY --chown=synth:synth mambaforge.sh $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 # create environment with cusignal and jupyterlab
 ENV CUSIGNAL_VERSION="22.04.00"
