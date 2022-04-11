@@ -65,13 +65,20 @@ COPY --chown=synth:synth mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 # clone PyTorch source
-ENV PYTORCH_VERSION=1.10.0
-ENV PATCHFILE=pytorch-1.10-jetpack-4.5.1.patch
+# Versions are the newest where everything builds.
+# Torchaudio 0.10.0 doesn't build with PyTorch 1.10.0
+# so we drop back to 0.9.0 / 1.9.0.
+# The newest supported Python version is 3.9, which is
+# also the default for Mambaforge.
+# See https://github.com/pytorch/audio
+ENV PYTHON_VERSION=3.9
+ENV PYTORCH_VERSION=1.9.0
+ENV TORCHAUDIO_VERSION=0.9.0
+ENV PATCHFILE=pytorch-1.9-jetpack-4.5.1.patch
 COPY --chown=synth:synth clone-pytorch.sh $PATCHFILE $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/clone-pytorch.sh
 
 # create virtual environment
-ENV PYTHON_VERSION=3.10
 COPY --chown=synth:synth create-venv.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/create-venv.sh
 
@@ -80,6 +87,5 @@ COPY --chown=synth:synth build-pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/build-pytorch.sh
 
 # test install PyTorch wheel
-ENV TORCHAUDIO_VERSION=0.10.0
 COPY --chown=synth:synth test-install.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-install.sh
