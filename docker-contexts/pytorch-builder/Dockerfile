@@ -64,17 +64,23 @@ CMD [ "/bin/bash" ]
 COPY --chown=synth:synth mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
-# clone PyTorch source
-# Versions are the newest where everything builds.
-# Torchaudio 0.10.0 doesn't build with PyTorch 1.10.0
-# so we drop back to 0.9.0 / 1.9.0.
-# The newest supported Python version is 3.9, which is
-# also the default for Mambaforge.
-# See https://github.com/pytorch/audio
+# Versioning logic:
+# 1. We want the newest version of Python where "everything works"
+#    so we can use a more recent version of R in our images than
+#    what ships in L4T, which is 3.6.3.
+# 2. We want the newest version of PyTorch and torchaudio that
+#    NVIDIA ship on their L4T images.
+#
+# Constraint 2 is PyTorch 1.10.0 / torchaudio 0.10.0.
+# Referring to https://github.com/pytorch/audio gives
+# Python 3.9 for constraint 1, which is also the current
+# default for Mambaforge.
 ENV PYTHON_VERSION=3.9
-ENV PYTORCH_VERSION=1.9.0
-ENV TORCHAUDIO_VERSION=0.9.0
-ENV PATCHFILE=pytorch-1.9-jetpack-4.5.1.patch
+ENV PYTORCH_VERSION=1.10.0
+ENV TORCHAUDIO_VERSION=0.10.0
+ENV PATCHFILE=pytorch-1.10-jetpack-4.5.1.patch
+
+# clone PyTorch source
 COPY --chown=synth:synth clone-pytorch.sh $PATCHFILE $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/clone-pytorch.sh
 
