@@ -24,7 +24,6 @@ git checkout v$TORCHAUDIO_VERSION \
 echo "Installing 'torchaudio'"
 /usr/bin/time python setup.py install \
   >> $SYNTH_LOGS/test-install.log 2>&1
-popd
 
 echo "Cleanup"
 mamba list \
