@@ -80,5 +80,6 @@ COPY --chown=synth:synth build-pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/build-pytorch.sh
 
 # test install PyTorch wheel
+ENV TORCHAUDIO_VERSION=0.10.0
 COPY --chown=synth:synth test-install.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-install.sh
