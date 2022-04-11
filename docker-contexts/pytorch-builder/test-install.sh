@@ -4,10 +4,17 @@ set -e
 rm -f $SYNTH_LOGS/test-install.log
 cd $SYNTH_PROJECTS
 
-echo "Activating 'pytorch-builder' conda environment"
+echo "Creating 'pytorch-test' conda environment"
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba activate pytorch-builder
+mamba create --force --quiet --yes --name pytorch-test \
+  python=$PYTHON_VERSION \
+  jupyterlab \
+  r-base \
+  >> $SYNTH_LOGS/test-install.log 2>&1
+
+echo "Activating 'pytorch-test' conda environment"
+mamba activate pytorch-test
 
 echo "Installing PyTorch wheel"
 pip install $PACKAGES/torch*.whl \
@@ -28,6 +35,5 @@ echo "Installing 'torchaudio'"
 echo "Cleanup"
 mamba list \
   >> $SYNTH_LOGS/test-install.log 2>&1
-mamba clean  --all --yes \
+mamba clean  --tarballs --yes \
   >> $SYNTH_LOGS/test-install.log 2>&1
-rm -fr /tmp/audio
