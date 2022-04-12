@@ -7,8 +7,12 @@ cd $SYNTH_PROJECTS
 echo "Creating 'pytorch-test' conda environment"
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
+# pinning cmake version because of https://github.com/pytorch/pytorch/issues/74985
 mamba create --force --quiet --yes --name pytorch-test \
   python=$PYTHON_VERSION \
+  cmake=3.22 \
+  ninja \
+  numpy \
   jupyterlab \
   r-base \
   >> $SYNTH_LOGS/test-install.log 2>&1
@@ -30,6 +34,10 @@ git checkout v$TORCHAUDIO_VERSION \
 
 echo "Installing 'torchaudio'"
 /usr/bin/time python setup.py install \
+  >> $SYNTH_LOGS/test-install.log 2>&1
+
+echo "Testing execution and GPU availability"
+python $SYNTH_SCRIPTS/check_gpu.py \
   >> $SYNTH_LOGS/test-install.log 2>&1
 
 echo "Cleanup"

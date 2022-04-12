@@ -93,5 +93,5 @@ COPY --chown=synth:synth build-pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/build-pytorch.sh
 
 # test install PyTorch wheel
-COPY --chown=synth:synth test-install.sh $SYNTH_SCRIPTS/
+COPY --chown=synth:synth test-install.sh check_gpu.py $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-install.sh
