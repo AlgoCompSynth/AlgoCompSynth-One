@@ -18,8 +18,8 @@
 set -e
 rm -f $SYNTH_LOGS/pytorch.log
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-source $HOME/miniconda3/etc/profile.d/mamba.sh
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
 conda activate r-reticulate
 
 echo "Installing Linux dependencies"

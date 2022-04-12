@@ -30,8 +30,8 @@ git checkout v$CUSIGNAL_VERSION \
   >> $SYNTH_LOGS/cusignal.log 2>&1
 
 echo "Creating 'r-reticulate'"
-source $HOME/miniconda3/etc/profile.d/conda.sh
-source $HOME/miniconda3/etc/profile.d/mamba.sh
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
 /usr/bin/time mamba env create -f $SYNTH_SCRIPTS/cusignal_jetson_base.yml \
   >> $SYNTH_LOGS/cusignal.log 2>&1
 mamba activate r-reticulate
