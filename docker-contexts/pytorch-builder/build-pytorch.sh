@@ -33,7 +33,7 @@ then
   /usr/bin/time python setup.py bdist_wheel \
     >> $SYNTH_LOGS/build-pytorch.log 2>&1
 else
-  export MAX_JOBS=4
+  export MAX_JOBS=6
   /usr/bin/time python setup.py bdist_wheel \
     >> $SYNTH_LOGS/build-pytorch.log 2>&1
 fi
