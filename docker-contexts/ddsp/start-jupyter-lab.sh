@@ -17,9 +17,9 @@
 
 set -e
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-source $HOME/miniconda3/etc/profile.d/mamba.sh
-conda activate r-reticulate
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
+mamba activate r-reticulate
 
 echo "Generating Jupyter configuration file"
 jupyter notebook --generate-config

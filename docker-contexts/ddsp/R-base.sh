@@ -18,14 +18,14 @@
 set -e
 rm -f $SYNTH_LOGS/R-base.log
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-source $HOME/miniconda3/etc/profile.d/mamba.sh
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
 echo "Installing conda packages"
 mamba install --quiet --yes \
-  libgit2 \
   r-base \
+  libgit2 \
   >> $SYNTH_LOGS/R-base.log 2>&1
 
 echo "Installing R packages"
