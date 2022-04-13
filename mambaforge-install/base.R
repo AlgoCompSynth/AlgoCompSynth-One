@@ -21,8 +21,9 @@ install.packages(c(
   "data.table",
   "devtools",
   "IRkernel",
+  "renv",
   "reticulate"
-), quiet = TRUE, repos = "https://cloud.r-project.org/")
+), repos = "https://cloud.r-project.org/")
 warnings()
 
 IRkernel::installspec()

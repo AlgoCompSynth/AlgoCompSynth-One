@@ -21,16 +21,15 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
-echo "Installing Linux packages"
-sudo apt-get install -qqy --no-install-recommends \
-  libgit2-dev
-
 echo "Installing mamba packages"
 mamba install --quiet --yes \
-  r-base
+  jupyterlab
 
-echo "Installing R packages"
-/usr/bin/time ./base.R
+echo "Installing IRkernel"
+Rscript -e "install.packages('IRkernel')"
+
+echo "Enabling R kernel"
+Rscript -e "IRkernel::installspec()"
 
 echo "Cleanup"
 mamba list

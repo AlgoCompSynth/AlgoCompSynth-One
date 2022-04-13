@@ -39,21 +39,11 @@ mamba install --quiet --yes \
 echo "Downloading PyTorch wheel"
 pushd /tmp
 rm -f $PYTORCH_WHEEL_FILE
-wget -q $PYTORCH_WHEEL_URL/$PYTORCH_WHEEL_FILE
+wget --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
 popd
 
 echo "Installing PyTorch"
 /usr/bin/time pip install /tmp/$PYTORCH_WHEEL_FILE
-
-echo "Cloning 'torchaudio'"
-cd $SYNTH_PROJECTS
-rm -fr audio*
-git clone --recurse-submodules https://github.com/pytorch/audio.git
-cd audio
-git checkout v$TORCHAUDIO_VERSION
-
-echo "Installing 'torchaudio'"
-/usr/bin/time python setup.py install
 
 echo "Cleanup"
 mamba list

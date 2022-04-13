@@ -43,5 +43,5 @@ install.packages(c(
   "tabr",
   "tuneR",
   "warbleR"
-), quiet = TRUE, repos = "https://cloud.r-project.org/")
+), repos = "https://cloud.r-project.org/")
 warnings()

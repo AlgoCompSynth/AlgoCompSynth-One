@@ -21,16 +21,15 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
-echo "Installing Linux packages"
-sudo apt-get install -qqy --no-install-recommends \
-  libgit2-dev
+echo "Cloning 'torchaudio'"
+cd $SYNTH_PROJECTS
+rm -fr audio*
+git clone --recurse-submodules https://github.com/pytorch/audio.git
+cd audio
+git checkout v$TORCHAUDIO_VERSION
 
-echo "Installing mamba packages"
-mamba install --quiet --yes \
-  r-base
-
-echo "Installing R packages"
-/usr/bin/time ./base.R
+echo "Installing 'torchaudio'"
+/usr/bin/time python setup.py install
 
 echo "Cleanup"
 mamba list

@@ -10,9 +10,10 @@ export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
 export PYTHON_VERSION="3.6"
 export CUSIGNAL_VERSION="22.04.00"
 export CUSIGNAL_TEST="0"
-export PYTORCH_WHEEL_URL="https://developer.download.nvidia.com/compute/redist/jp/v461/pytorch"
-export PYTORCH_WHEEL_FILE="torch-1.11.0a0+17540c5+nv22.01-cp36-cp36m-linux_aarch64.whl"
-export TORCHAUDIO_VERSION="0.11.0"
+export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl"
+export PYTORCH_WHEEL_FILE="torch-1.9.0-cp36-cp36m-linux_aarch64.whl"
+export TORCHAUDIO_VERSION="0.9.0"
+export PATH=$PATH:/usr/local/cuda/bin
 
 echo "Creating $SYNTH_HOME"
 mkdir --parents \
@@ -33,21 +34,21 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 echo "Creating fresh r-reticulate mamba env with cusignal"
 export SYNTH_ENV_FILE=$PWD/cusignal_jetson_base.yml
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" cusignal_jetson_base_template > $SYNTH_ENV_FILE
-./cusignal.sh #> $SYNTH_LOGS/cusignal.log 2>&1
+./cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
 echo "Installing PyTorch"
-cp pytorch.sh ./
-./pytorch.sh #> $SYNTH_LOGS/pytorch.log 2>&1
-cp test-install.sh check_gpu.py ./
-./test-install.sh
+./pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+./test-pytorch.sh
 
-echo "Installing JupyterLab and R"
-cp R-base.sh base.R ./
-./R-base.sh #> $SYNTH_LOGS/R-base.log 2>&1
+echo "Installing torchaudio"
+./torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+./test-torchaudio.sh
+
+echo "Installing R"
+./R-base.sh > $SYNTH_LOGS/R-base.log 2>&1
 
 echo "Installing R audio tools"
-cp R-audio.sh audio.R ./
-./R-audio.sh #> $SYNTH_LOGS/R-audio.log 2>&1
+./R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Installing command line tools"
 cp \
