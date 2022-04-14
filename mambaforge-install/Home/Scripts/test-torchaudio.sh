@@ -7,4 +7,4 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
 echo "Testing torchaudio import"
-python ./check_torchaudio.py
+python $SYNTH_SCRIPTS/check_torchaudio.py

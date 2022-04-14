@@ -24,7 +24,7 @@ mamba activate r-reticulate
 echo "Installing R packages"
 export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
 export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
-/usr/bin/time ./audio.R
+/usr/bin/time $SYNTH_SCRIPTS/audio.R
 
 echo "Cleanup"
 mamba list
