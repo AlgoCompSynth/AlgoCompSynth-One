@@ -30,8 +30,6 @@ git checkout v$TORCHAUDIO_VERSION
 
 echo "Installing 'torchaudio'"
 export BUILD_SOX=1
-export BUILD_RNNT=1
-export BUILD_CTC_DECODER=1
 /usr/bin/time python setup.py install
 
 echo "Cleanup"

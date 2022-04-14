@@ -11,8 +11,12 @@ dependencies:
   - libgit2
   - fftw
   - portaudio
+  - libffi
+  - libsndfile
+  - scikit-build
   - cmake
   - ninja
+  - pysoundfile
   - scipy>=1.5.0
   - numpy
   - matplotlib
