@@ -6,9 +6,11 @@ channels:
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
+  - jupyterlab
   - r-base
   - libgit2
-  - jupyterlab
+  - fftw
+  - portaudio
   - cmake
   - ninja
   - scipy>=1.5.0

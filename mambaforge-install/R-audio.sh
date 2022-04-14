@@ -22,9 +22,9 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
 echo "Installing R packages"
-#export PKG_CONFIG_PATH=$SYNTH_HOME/mambaforge/envs/r-reticulate/lib/pkgconfig
-#export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
-#export CPATH=$CPATH:$CONDA_PREFIX/include
+export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
+export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
+export CPATH=$CPATH:$CONDA_PREFIX/include
 /usr/bin/time ./audio.R
 
 echo "Cleanup"

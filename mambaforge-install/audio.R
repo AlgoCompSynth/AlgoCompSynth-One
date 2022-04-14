@@ -27,8 +27,6 @@ options(warn=2)
 Sys.setenv(MAKE = paste0("make --jobs=", parallel::detectCores()))
 install.packages(c(
   "audio",
-  "kableExtra",
-  "maps",
   "monitoR",
   "music",
   "NatureSounds",

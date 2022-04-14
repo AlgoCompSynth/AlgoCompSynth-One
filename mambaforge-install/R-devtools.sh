@@ -23,7 +23,7 @@ mamba activate r-reticulate
 
 echo "Installing R packages"
 export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
-/usr/bin/time ./base.R
+/usr/bin/time ./devtools.R
 
 echo "Cleanup"
 mamba list

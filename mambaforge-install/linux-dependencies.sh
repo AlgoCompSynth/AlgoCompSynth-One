@@ -24,7 +24,6 @@ sudo apt-get install -qqy --no-install-recommends \
   ffmpeg \
   flac \
   less \
-  libfftw3-dev \
   libopenblas-base \
   libopenmpi-dev \
   libsndfile1-dev \

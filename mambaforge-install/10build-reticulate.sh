@@ -33,6 +33,9 @@ echo "Creating fresh r-reticulate mamba env:"
 echo "  Python $PYTHON_VERSION"
 echo "  JupyterLab"
 echo "  R"
+echo "  libgit2"
+echo "  fftw"
+echo "  portaudio"
 echo "  CMake"
 echo "  Ninja"
 echo "  cuSignal"
@@ -40,8 +43,8 @@ export SYNTH_ENV_FILE=$PWD/cusignal_jetson_base.yml
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" cusignal_jetson_base_template > $SYNTH_ENV_FILE
 ./cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
-echo "Installing R base packages"
-./R-base.sh > $SYNTH_LOGS/R-base.log 2>&1
+echo "Installing R developer tools"
+./R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
 
 echo "Installing R audio packages"
 ./R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
