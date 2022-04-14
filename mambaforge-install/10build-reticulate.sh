@@ -21,17 +21,16 @@ mkdir --parents \
   $SYNTH_PROJECTS \
   $SYNTH_NOTEBOOKS
 
-echo "Installing /usr/bin/time"
-sudo apt-get update
-sudo apt-get install -y \
-  time
+echo "Installing Linux dependencies"
+./linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
 
 echo "Installing Mambaforge if needed"
 ./mambaforge.sh
 
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
-echo "Creating fresh r-reticulate mamba env with cusignal"
+echo "Creating fresh r-reticulate mamba env:"
+echo "JupyterLab, R and cuSignal"
 export SYNTH_ENV_FILE=$PWD/cusignal_jetson_base.yml
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" cusignal_jetson_base_template > $SYNTH_ENV_FILE
 ./cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
@@ -43,9 +42,7 @@ echo "Installing PyTorch"
 echo "Installing torchaudio"
 ./torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
 ./test-torchaudio.sh
-
-echo "Installing R"
-./R-base.sh > $SYNTH_LOGS/R-base.log 2>&1
+exit
 
 echo "Installing R audio tools"
 ./R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1

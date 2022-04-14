@@ -16,25 +16,10 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 set -e
-set -v
 
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
-
-echo "Installing Linux dependencies"
-/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
-  libopenblas-base \
-  libopenmpi-dev \
-  libsox-dev \
-  libsox-fmt-all \
-  libsoxr0 \
-  sox
-
-echo "Installing Mamba dependencies"
-mamba install --quiet --yes \
-  cmake \
-  ninja
 
 echo "Downloading PyTorch wheel"
 pushd /tmp

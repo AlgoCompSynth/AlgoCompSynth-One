@@ -17,22 +17,23 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba activate r-reticulate
-
-echo "Installing mamba packages"
-mamba install --quiet --yes \
-  jupyterlab
-
-echo "Installing IRkernel"
-Rscript -e "install.packages('IRkernel')"
-
-echo "Enabling R kernel"
-Rscript -e "IRkernel::installspec()"
-
-echo "Cleanup"
-mamba list
-mamba clean --tarballs --yes
+echo "Installing Linux dependencies"
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -qqy --no-install-recommends \
+  ffmpeg \
+  flac \
+  less \
+  libgit2-dev \
+  libfftw3-dev \
+  libopenblas-base \
+  libopenmpi-dev \
+  libsndfile1-dev \
+  libsox-dev \
+  libsox-fmt-all \
+  mp3splt \
+  portaudio19-dev \
+  sox \
+  time
 
 echo "Finished"

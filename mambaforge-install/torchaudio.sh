@@ -29,6 +29,7 @@ cd audio
 git checkout v$TORCHAUDIO_VERSION
 
 echo "Installing 'torchaudio'"
+echo "PATH = $PATH"
 /usr/bin/time python setup.py install
 
 echo "Cleanup"

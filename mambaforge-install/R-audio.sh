@@ -17,23 +17,9 @@
 
 set -e
 
-echo "Installing Linux packages"
-sudo apt-get install -qqy --no-install-recommends \
-  ffmpeg \
-  flac \
-  less \
-  libsox-fmt-all \
-  mp3splt \
-  sox
-
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
-
-echo "Installing conda packages"
-mamba install --quiet --yes \
-  fftw \
-  portaudio
 
 echo "Installing R packages"
 #export PKG_CONFIG_PATH=$SYNTH_HOME/mambaforge/envs/r-reticulate/lib/pkgconfig

@@ -20,14 +20,7 @@ set -e
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
-
-echo "Installing Linux packages"
-sudo apt-get install -qqy --no-install-recommends \
-  libgit2-dev
-
-echo "Installing mamba packages"
-mamba install --quiet --yes \
-  r-base
+#export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 
 echo "Installing R packages"
 /usr/bin/time ./base.R

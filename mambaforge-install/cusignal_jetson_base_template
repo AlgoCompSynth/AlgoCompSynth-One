@@ -6,6 +6,10 @@ channels:
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
+  - r-base
+  - jupyterlab
+  - cmake
+  - ninja
   - scipy>=1.5.0
   - numpy
   - matplotlib
