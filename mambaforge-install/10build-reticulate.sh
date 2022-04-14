@@ -30,10 +30,21 @@ echo "Installing Mambaforge if needed"
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 echo "Creating fresh r-reticulate mamba env:"
-echo "JupyterLab, R and cuSignal"
+echo "  Python $PYTHON_VERSION"
+echo "  JupyterLab"
+echo "  R"
+echo "  CMake"
+echo "  Ninja"
+echo "  cuSignal"
 export SYNTH_ENV_FILE=$PWD/cusignal_jetson_base.yml
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" cusignal_jetson_base_template > $SYNTH_ENV_FILE
 ./cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+
+echo "Installing R base packages"
+./R-base.sh > $SYNTH_LOGS/R-base.log 2>&1
+
+echo "Installing R audio packages"
+./R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Installing PyTorch"
 ./pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
@@ -42,10 +53,6 @@ echo "Installing PyTorch"
 echo "Installing torchaudio"
 ./torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
 ./test-torchaudio.sh
-exit
-
-echo "Installing R audio tools"
-./R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
 
 echo "Installing command line tools"
 cp \

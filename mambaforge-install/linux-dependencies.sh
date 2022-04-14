@@ -24,12 +24,12 @@ sudo apt-get install -qqy --no-install-recommends \
   ffmpeg \
   flac \
   less \
-  libgit2-dev \
   libfftw3-dev \
   libopenblas-base \
   libopenmpi-dev \
   libsndfile1-dev \
   libsox-dev \
+  libsoxr-dev \
   libsox-fmt-all \
   mp3splt \
   portaudio19-dev \

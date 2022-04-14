@@ -20,9 +20,9 @@ set -e
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
-#export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 
 echo "Installing R packages"
+export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 /usr/bin/time ./base.R
 
 echo "Cleanup"

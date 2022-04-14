@@ -7,6 +7,7 @@ channels:
 dependencies:
   - python=PYTHON_VERSION
   - r-base
+  - libgit2
   - jupyterlab
   - cmake
   - ninja
