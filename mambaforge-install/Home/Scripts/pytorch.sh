@@ -28,7 +28,7 @@ wget --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
 popd
 
 echo "Installing PyTorch"
-/usr/bin/time pip install /tmp/$PYTORCH_WHEEL_FILE
+pip install /tmp/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"
 mamba list

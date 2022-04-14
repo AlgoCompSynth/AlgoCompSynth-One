@@ -17,18 +17,17 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba activate r-reticulate
-
-echo "Installing R packages"
-export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
-export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
-export CPATH=$CPATH:$CONDA_PREFIX/include
-/usr/bin/time ./audio.R
-
-echo "Cleanup"
-mamba list
-mamba clean --tarballs --yes
+echo "Installing Linux dependencies"
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -qqy --no-install-recommends \
+  ffmpeg \
+  flac \
+  libsox-dev \
+  libsoxr-dev \
+  libsox-fmt-all \
+  mp3splt \
+  sox \
+  time
 
 echo "Finished"
