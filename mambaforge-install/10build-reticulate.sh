@@ -5,14 +5,6 @@ set -e
 echo "Getting environment variables from '00envars'"
 source 00envars
 
-export SYNTH_HOME=$HOME/AlgoCompSynth-One
-export SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
-export SYNTH_LOGS=$SYNTH_HOME/Logs
-export SYNTH_PROJECTS=$SYNTH_HOME/Projects
-export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
-export SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
-export PATH=$PATH:/usr/local/cuda/bin
-
 echo "Creating fresh $SYNTH_HOME"
 rm -fr $SYNTH_HOME
 cp -rp Home $SYNTH_HOME
