@@ -28,12 +28,8 @@ echo "Creating fresh r-reticulate mamba env:"
 echo "  Python $PYTHON_VERSION"
 echo "  JupyterLab"
 echo "  R"
-echo "  libgit2"
-echo "  fftw"
-echo "  portaudio"
-echo "  CMake"
-echo "  Ninja"
 echo "  cuSignal"
+echo "  ... and dependencies"
 export SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/cusignal_jetson_base_template > $SYNTH_ENV_FILE
 /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
@@ -48,8 +44,11 @@ echo "Installing PyTorch"
 /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 $SYNTH_SCRIPTS/test-pytorch.sh
 
-echo "Installing torchaudio"
-/usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
-$SYNTH_SCRIPTS/test-torchaudio.sh
+echo "torchaudio is currently not installing in conda env"
+echo "waiting for newer PyTorch wheel for Python 3.6"
+echo "from NVIDIA"
+#echo "Installing torchaudio"
+#/usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+#$SYNTH_SCRIPTS/test-torchaudio.sh
 
 echo "Finished!"

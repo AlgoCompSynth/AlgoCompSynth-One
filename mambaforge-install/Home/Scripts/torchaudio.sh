@@ -17,6 +17,13 @@
 
 set -e
 
+echo "torchaudio currently either does not compile or compiles and"
+echo "crashes or compiles and imports but can't find a backend."
+echo ""
+echo "I have other projects so I'm waiting for the next round of"
+echo "PyTorch wheels for Python 3.6 from NVIDIA."
+exit
+
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
