@@ -1,9 +1,20 @@
 export PYTHON_VERSION="3.6" # NVIDIA PyTorch wheels require this
 export R_BASE_VERSION="4.0.2" # Newer versions break torchaudio for some reason
+
 export CUSIGNAL_VERSION="22.04.00" # newest version
 export CUSIGNAL_TEST="0" # Testing takes too long
 
 # newest version from NVIDIA
 export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
 export PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
-export TORCHAUDIO_VERSION="0.10.0"
+export TORCHAUDIO_VERSION="0.10.0" # matches PyTorch version
+
+# "virtual desktop"
+export SYNTH_HOME=$HOME/AlgoCompSynth-One
+export SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
+export SYNTH_LOGS=$SYNTH_HOME/Logs
+export SYNTH_PROJECTS=$SYNTH_HOME/Projects
+export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
+export SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
+
+export PATH=$PATH:/usr/local/cuda/bin
