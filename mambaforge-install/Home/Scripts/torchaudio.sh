@@ -21,6 +21,11 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
+echo "Installing mamba dependencies"
+mamba install --quiet --yes \
+  cmake \
+  ninja
+
 cd $SYNTH_PROJECTS
 echo "Removing previous 'audio'"
 rm -fr audio*
