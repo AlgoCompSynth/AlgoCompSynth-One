@@ -19,19 +19,10 @@ set -e
 
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
+
+echo "Creating fresh r-reticulate virtual environment"
+/usr/bin/time mamba env create --force --file $SYNTH_ENV_FILE
 mamba activate r-reticulate
-
-cd $SYNTH_PROJECTS
-echo "Removing previous 'audio'"
-rm -fr audio*
-git clone --recurse-submodules https://github.com/pytorch/audio.git
-cd audio
-echo "Checking out v$TORCHAUDIO_VERSION"
-git checkout v$TORCHAUDIO_VERSION
-
-echo "Installing 'torchaudio'"
-export BUILD_SOX=1
-/usr/bin/time python setup.py install
 
 echo "Cleanup"
 mamba list

@@ -22,17 +22,13 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 
 cd $SYNTH_PROJECTS
 
-echo "Cloning 'cusignal'"
 export CUSIGNAL_HOME=$(pwd)/cusignal
+echo "Removing previous 'cusignal'"
 rm -fr $CUSIGNAL_HOME
 git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME
 cd $CUSIGNAL_HOME
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
-
-echo "Creating fresh r-reticulate virtual environment"
-/usr/bin/time mamba env create --force --file $SYNTH_ENV_FILE
-mamba activate r-reticulate
 
 echo "Building 'cusignal'"
 /usr/bin/time ./build.sh --allgpuarch

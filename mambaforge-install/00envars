@@ -1,4 +1,5 @@
 export PYTHON_VERSION="3.6"
+export R_BASE_VERSION="4.0.2"
 export CUSIGNAL_VERSION="22.04.00"
 export CUSIGNAL_TEST="0"
 export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"

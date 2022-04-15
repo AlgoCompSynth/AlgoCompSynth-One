@@ -6,8 +6,8 @@ channels:
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
+  - r-base=R_BASE_VERSION
   - jupyterlab
-  - r-base
   - libgit2
   - fftw
   - portaudio
