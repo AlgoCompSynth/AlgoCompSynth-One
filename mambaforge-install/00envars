@@ -1,14 +1,9 @@
-export PYTHON_VERSION="3.6"
-export R_BASE_VERSION="4.0.2"
-export CUSIGNAL_VERSION="22.04.00"
-export CUSIGNAL_TEST="0"
+export PYTHON_VERSION="3.6" # NVIDIA PyTorch wheels require this
+export R_BASE_VERSION="4.0.2" # Newer versions break torchaudio for some reason
+export CUSIGNAL_VERSION="22.04.00" # newest version
+export CUSIGNAL_TEST="0" # Testing takes too long
+
+# newest version from NVIDIA
 export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
 export PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
 export TORCHAUDIO_VERSION="0.10.0"
-#export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl"
-#export PYTORCH_WHEEL_FILE="torch-1.9.0-cp36-cp36m-linux_aarch64.whl"
-#export TORCHAUDIO_VERSION="0.9.0"
-#export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl"
-#export PYTORCH_WHEEL_FILE="torch-1.8.0-cp36-cp36m-linux_aarch64.whl"
-#export TORCHAUDIO_VERSION="0.8.0"
-export PATH=$PATH:/usr/local/cuda/bin
