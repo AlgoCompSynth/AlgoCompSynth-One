@@ -11,7 +11,8 @@ export PATH=$PATH:/usr/local/cuda/bin
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
   cmake \
-  ninja
+  ninja \
+  pkg-config
 
 cd $SYNTH_PROJECTS
 echo "Removing previous 'audio'"
