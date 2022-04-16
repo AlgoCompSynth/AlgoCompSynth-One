@@ -1,13 +1,7 @@
 #! /bin/bash
 
 set -e
-
-echo "Getting environment variables from '00envars'"
-source 00envars
-
-echo "Creating fresh $SYNTH_HOME"
-rm -fr $SYNTH_HOME
-cp -rp Home $SYNTH_HOME
+export PATH=$PATH:/usr/local/cuda/bin
 
 echo "Installing Linux dependencies"
 $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
