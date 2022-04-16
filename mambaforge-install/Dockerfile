@@ -15,17 +15,26 @@
 
 FROM "nvcr.io/nvidia/l4t-base:r32.7.1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
+ARG DEBIAN_FRONTEND=noninteractive
 
-ENV PYTHON_VERSION="3.6" # NVIDIA PyTorch wheels require this
-ENV R_BASE_VERSION="4.0.2" # Newer versions break torchaudio for some reason
+# NVIDIA PyTorch wheels require this
+ENV PYTHON_VERSION="3.6"
 
-ENV CUSIGNAL_VERSION="22.04.00" # newest version
-ENV CUSIGNAL_TEST="0" # Testing takes too long
+# Newer versions break torchaudio for some reason
+ENV R_BASE_VERSION="4.0.2"
+
+# newest version
+ENV CUSIGNAL_VERSION="22.04.00"
+
+# Testing takes too long
+ENV CUSIGNAL_TEST="0"
 
 # newest PyTorch version from NVIDIA
 ENV PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
 ENV PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
-ENV TORCHAUDIO_VERSION="0.10.0" # matches PyTorch version
+
+# matches PyTorch version
+ENV TORCHAUDIO_VERSION="0.10.0"
 
 # virtual desktop
 ENV SYNTH_HOME=/home/synth
@@ -33,6 +42,7 @@ ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
 ENV SYNTH_LOGS=$SYNTH_HOME/Logs
 ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
+ENV SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 
 # set up 'synth' account
 COPY synth-user.sh /

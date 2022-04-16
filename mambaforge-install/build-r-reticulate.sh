@@ -11,7 +11,7 @@ $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 echo "Installing cusignal in fresh mamba environment 'r-reticulate'"
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/cusignal_jetson_base_template \
-  | sed "s/R_BASE_VERSION/$R_BASE_VERSION/" > $SYNTH_ENV_FILE
+  > $SYNTH_ENV_FILE
 /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
 echo "Installing PyTorch"
