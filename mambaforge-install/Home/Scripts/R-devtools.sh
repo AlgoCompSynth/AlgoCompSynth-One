@@ -6,8 +6,8 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
-echo "Setting pinned packages"
-cp $SYNTH_SCRIPTS/pinned $CONDA_PREFIX/conda-meta/
+echo "Setting pinned 'r-base' version"
+echo "r-base ==$R_BASE_VERSION" > $CONDA_PREFIX/conda-meta/pinned
 
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
