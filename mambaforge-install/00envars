@@ -16,3 +16,6 @@ export SYNTH_LOGS=$SYNTH_HOME/Logs
 export SYNTH_PROJECTS=$SYNTH_HOME/Projects
 export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
 export SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
+
+# denote non-Docker status
+export DOCKER_IMAGE=0

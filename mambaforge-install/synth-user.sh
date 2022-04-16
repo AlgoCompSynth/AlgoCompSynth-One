@@ -13,6 +13,7 @@ apt-get install -qqy --no-install-recommends \
   sudo \
   vim-nox \
   wget
+apt-get clean
 
 echo "Creating 'synth' user"
 useradd \

@@ -17,5 +17,6 @@ sudo apt-get install -qqy --no-install-recommends \
   mp3splt \
   sox \
   time
+sudo apt-get clean
 
 echo "Finished"
