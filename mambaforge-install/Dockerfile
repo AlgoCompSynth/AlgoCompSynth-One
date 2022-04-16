@@ -64,13 +64,13 @@ RUN $SYNTH_SCRIPTS/test-pytorch.sh
 RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh 2>&1 | gzip -c > $SYNTH_LOGS/torchaudio.log.gz
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh
 
-# Installing JupyterLab
-RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh 2>&1 | gzip -c > $SYNTH_LOGS/jupyterlab.log.gz
-
 # Installing R developer tools
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-devtools.log.gz
 
 # Installing R audio packages
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-audio.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-audio.log.gz
+
+# Installing JupyterLab
+RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh 2>&1 | gzip -c > $SYNTH_LOGS/jupyterlab.log.gz
 
 # Finished!

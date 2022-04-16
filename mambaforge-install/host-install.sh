@@ -28,13 +28,13 @@ echo "Installing torchaudio"
 /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh #> $SYNTH_LOGS/torchaudio.log 2>&1
 $SYNTH_SCRIPTS/test-torchaudio.sh
 
-echo "Installing JupyterLab"
-/usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
-
 echo "Installing R developer tools"
 /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
 
 echo "Installing R audio packages"
 /usr/bin/time $SYNTH_SCRIPTS/R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
+
+echo "Installing JupyterLab"
+/usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
 echo "Finished!"
