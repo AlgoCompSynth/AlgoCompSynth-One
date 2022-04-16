@@ -2,8 +2,11 @@
 
 set -e
 
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate r-reticulate
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
+mamba activate r-reticulate
+# https://forums.developer.nvidia.com/t/error-importerror-usr-lib-aarch64-linux-gnu-libgomp-so-1-cannot-allocate-memory-in-static-tls-block-i-looked-through-available-threads-already/166494/3
+export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
 
 echo "Generating Jupyter configuration file"
 jupyter notebook --generate-config
