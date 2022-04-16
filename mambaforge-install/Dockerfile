@@ -46,34 +46,32 @@ USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
-RUN $SYNTH_HOME/build-r-reticulate.sh
-
-RUN echo "Installing Linux dependencies"
+# Installing Linux dependencies
 RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
 
-RUN echo "Installing Mambaforge if needed"
+# Installing Mambaforge if needed
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
-RUN echo "Installing cusignal in fresh mamba environment 'r-reticulate'"
-RUN sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/cusignal_jetson_base_template \
+# Installing cusignal in fresh mamba environment 'r-reticulate'
+RUN sed s/PYTHON_VERSION/$PYTHON_VERSION/ $SYNTH_SCRIPTS/cusignal_jetson_base_template \
   > $SYNTH_ENV_FILE
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
-RUN echo "Installing PyTorch"
+# Installing PyTorch
 RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 RUN $SYNTH_SCRIPTS/test-pytorch.sh
 
-RUN echo "Installing torchaudio"
+# Installing torchaudio
 RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh #> $SYNTH_LOGS/torchaudio.log 2>&1
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh
 
-RUN echo "Installing JupyterLab"
+# Installing JupyterLab
 RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
-RUN echo "Installing R developer tools"
+# Installing R developer tools
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
 
-RUN echo "Installing R audio packages"
+# Installing R audio packages
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
 
-RUN echo "Finished!"
+# Finished!
