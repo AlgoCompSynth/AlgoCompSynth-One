@@ -10,9 +10,6 @@ echo "Creating fresh r-reticulate virtual environment"
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
-echo "Setting pinned packages"
-cp $SYNTH_SCRIPTS/pinned $CONDA_PREFIX/conda-meta/
-
 cd $SYNTH_PROJECTS
 
 export CUSIGNAL_HOME=$(pwd)/cusignal
