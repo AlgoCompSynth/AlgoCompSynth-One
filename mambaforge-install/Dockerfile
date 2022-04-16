@@ -1,18 +1,3 @@
-# Copyright (C) 2021 M. Edward (Ed) Borasky <mailto:znmeb@algocompsynth.com>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 FROM "nvcr.io/nvidia/l4t-base:r32.7.1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -62,3 +47,33 @@ WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
 RUN $SYNTH_HOME/build-r-reticulate.sh
+
+RUN echo "Installing Linux dependencies"
+RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
+
+RUN echo "Installing Mambaforge if needed"
+RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+
+RUN echo "Installing cusignal in fresh mamba environment 'r-reticulate'"
+RUN sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/cusignal_jetson_base_template \
+  > $SYNTH_ENV_FILE
+RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+
+RUN echo "Installing PyTorch"
+RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+RUN $SYNTH_SCRIPTS/test-pytorch.sh
+
+RUN echo "Installing torchaudio"
+RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh #> $SYNTH_LOGS/torchaudio.log 2>&1
+RUN $SYNTH_SCRIPTS/test-torchaudio.sh
+
+RUN echo "Installing JupyterLab"
+RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
+
+RUN echo "Installing R developer tools"
+RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
+
+RUN echo "Installing R audio packages"
+RUN /usr/bin/time $SYNTH_SCRIPTS/R-audio.sh > $SYNTH_LOGS/R-audio.log 2>&1
+
+RUN echo "Finished!"

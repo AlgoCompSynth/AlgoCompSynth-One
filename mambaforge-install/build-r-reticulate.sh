@@ -19,7 +19,7 @@ echo "Installing PyTorch"
 $SYNTH_SCRIPTS/test-pytorch.sh
 
 echo "Installing torchaudio"
-/usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+/usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh #> $SYNTH_LOGS/torchaudio.log 2>&1
 $SYNTH_SCRIPTS/test-torchaudio.sh
 
 echo "Installing JupyterLab"
