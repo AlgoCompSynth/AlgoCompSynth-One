@@ -32,11 +32,11 @@ ENV SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 ENV DOCKER_IMAGE=1
 
 # set up 'synth' account
-COPY synth-user.sh /
+COPY docker-scripts/synth-user.sh /
 RUN /synth-user.sh
 
 # enable passwordless sudo for 'synth'
-COPY passwordless-sudo /etc/sudoers.d/
+COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
 
 # make virtual desktop
 COPY --chown=synth:synth Home $SYNTH_HOME/
