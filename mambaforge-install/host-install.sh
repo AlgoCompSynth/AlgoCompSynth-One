@@ -47,4 +47,11 @@ echo "Installing JupyterLab"
 cp Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
 /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
+echo "Installing home directory scripts"
+cp \
+  Home/edit-me-then-run-4-git-config.sh \
+  Home/set-vim-background.sh \
+  Home/start-jupyter-lab.sh \
+  $SYNTH_HOME/
+
 echo "Finished!"
