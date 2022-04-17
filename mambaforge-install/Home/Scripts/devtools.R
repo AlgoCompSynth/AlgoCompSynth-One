@@ -6,9 +6,13 @@ install.packages(c(
   "data.table",
   "devtools",
   "IRkernel",
+  "knitr",
   "renv",
-  "reticulate"
+  "reticulate",
+  "rmarkdown",
+  "tinytex"
 ), repos = "https://cloud.r-project.org/")
 warnings()
 
 IRkernel::installspec()
+tinytex::install_tinytex

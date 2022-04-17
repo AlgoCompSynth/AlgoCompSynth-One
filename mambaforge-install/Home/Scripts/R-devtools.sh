@@ -12,6 +12,7 @@ echo "r-base ==$R_BASE_VERSION" > $CONDA_PREFIX/conda-meta/pinned
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
   libgit2 \
+  pandoc \
   r-base
 
 echo "Installing R packages"
