@@ -22,7 +22,7 @@ cp Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
 $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 echo "Installing cusignal in fresh mamba environment 'r-reticulate'"
-cp Home/Scripts/cusignal*.sh $SYNTH_SCRIPTS/
+cp Home/Scripts/cusignal* $SYNTH_SCRIPTS/
 /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
 echo "Installing PyTorch"
