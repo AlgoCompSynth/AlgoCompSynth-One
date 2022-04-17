@@ -13,7 +13,7 @@ mamba install --quiet --yes \
 echo "Installing R packages"
 export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
 export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
-/usr/bin/time $SYNTH_SCRIPTS/audio.R
+/usr/bin/time $SYNTH_SCRIPTS/sound.R
 
 echo "Cleanup"
 mamba list

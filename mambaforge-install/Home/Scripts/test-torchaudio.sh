@@ -8,4 +8,4 @@ mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
 echo "Testing torchaudio import"
-python $SYNTH_SCRIPTS/check_torchaudio.py
+python $SYNTH_SCRIPTS/test-torchaudio.py

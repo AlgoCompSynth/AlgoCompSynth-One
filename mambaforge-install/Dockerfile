@@ -63,30 +63,22 @@ COPY --chown=synth:synth Home/Scripts/cusignal* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh 2>&1 | gzip -c > $SYNTH_LOGS/cusignal.log.gz
 
 # Installing PyTorch
-COPY --chown=synth:synth Home/Scripts/pytorch.sh $SYNTH_SCRIPTS/
+COPY --chown=synth:synth Home/Scripts/*pytorch* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh 2>&1 | gzip -c > $SYNTH_LOGS/pytorch.log.gz
-COPY --chown=synth:synth Home/Scripts/test-pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-pytorch.sh
 
 # Installing torchaudio
-COPY --chown=synth:synth Home/Scripts/torchaudio.sh $SYNTH_SCRIPTS/
+COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh 2>&1 | gzip -c > $SYNTH_LOGS/torchaudio.log.gz
-COPY --chown=synth:synth Home/Scripts/test-torchaudio.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh
 
 # Installing R developer tools
-COPY --chown=synth:synth \
-  Home/Scripts/R-devtools.sh \
-  Home/Scripts/devtools.R \
-  $SYNTH_SCRIPTS/
+COPY --chown=synth:synth Home/Scripts/*devtools* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-devtools.log.gz
 
-# Installing R audio packages
-COPY --chown=synth:synth \
-  Home/Scripts/R-audio.sh \
-  Home/Scripts/audio.R \
-  $SYNTH_SCRIPTS/
-RUN /usr/bin/time $SYNTH_SCRIPTS/R-audio.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-audio.log.gz
+# Installing R sound packages
+COPY --chown=synth:synth Home/Scripts/*sound* $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/R-sound.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-sound.log.gz
 
 # Installing JupyterLab
 COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
