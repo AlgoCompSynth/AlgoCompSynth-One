@@ -39,38 +39,57 @@ RUN /synth-user.sh
 COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
 
 # make virtual desktop
-COPY --chown=synth:synth Home $SYNTH_HOME/
+RUN mkdir --parents \
+  $SYNTH_SCRIPTS \
+  $SYNTH_LOGS \
+  $SYNTH_NOTEBOOKS \
+  $SYNTH_PROJECTS \
+  && chown -R synth:synth $SYNTH_HOME
 
 USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
 # Installing Linux dependencies
+COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/linux-dependencies.sh 2>&1 | gzip -c > $SYNTH_LOGS/linux-dependencies.log.gz
 
-# Installing Mambaforge if needed
+# Installing Mambaforge
+COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh 2>&1 | gzip -c > $SYNTH_LOGS/mambaforge.log.gz
 
 # Installing cusignal in fresh mamba environment 'r-reticulate'
-RUN sed s/PYTHON_VERSION/$PYTHON_VERSION/ $SYNTH_SCRIPTS/cusignal_jetson_base_template \
-  > $SYNTH_ENV_FILE
+COPY --chown=synth:synth Home/Scripts/cusignal* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh 2>&1 | gzip -c > $SYNTH_LOGS/cusignal.log.gz
 
 # Installing PyTorch
+COPY --chown=synth:synth Home/Scripts/pytorch.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh 2>&1 | gzip -c > $SYNTH_LOGS/pytorch.log.gz
+COPY --chown=synth:synth Home/Scripts/test-pytorch.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-pytorch.sh
 
 # Installing torchaudio
+COPY --chown=synth:synth Home/Scripts/torchaudio.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh 2>&1 | gzip -c > $SYNTH_LOGS/torchaudio.log.gz
+COPY --chown=synth:synth Home/Scripts/test-torchaudio.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh
 
 # Installing R developer tools
+COPY --chown=synth:synth \
+  Home/Scripts/R-devtools.sh \
+  Home/Scripts/devtools.R \
+  $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-devtools.log.gz
 
 # Installing R audio packages
+COPY --chown=synth:synth \
+  Home/Scripts/R-audio.sh \
+  Home/Scripts/audio.R \
+  $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-audio.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-audio.log.gz
 
 # Installing JupyterLab
+COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh 2>&1 | gzip -c > $SYNTH_LOGS/jupyterlab.log.gz
 
 # Finished!
