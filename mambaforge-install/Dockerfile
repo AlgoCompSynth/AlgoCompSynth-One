@@ -84,4 +84,11 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/R-sound.sh 2>&1 | gzip -c > $SYNTH_LOGS/R-sound
 COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh 2>&1 | gzip -c > $SYNTH_LOGS/jupyterlab.log.gz
 
+# Installing home directory scripts
+COPY --chown=synth:synth \
+  Home/edit-me-then-run-4-git-config.sh \
+  Home/set-vim-background.sh \
+  Home/start-jupyter-lab.sh \
+  $SYNTH_HOME/
+
 # Finished!
