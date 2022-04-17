@@ -16,6 +16,9 @@ mamba install --quiet --yes \
   jupyterlab \
   jupyterlab-git
 
+echo "Enabling R kernel in JupyterLab"
+Rscript -e "IRkernel::installspec()"
+
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes

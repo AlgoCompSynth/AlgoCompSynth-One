@@ -14,5 +14,4 @@ install.packages(c(
 ), repos = "https://cloud.r-project.org/")
 warnings()
 
-IRkernel::installspec()
 tinytex::install_tinytex
