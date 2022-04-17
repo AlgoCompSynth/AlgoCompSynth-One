@@ -3,8 +3,11 @@ export R_BASE_VERSION="4.0.2" # Newer versions break torchaudio for some reason
 
 export CUSIGNAL_VERSION="22.04.00" # newest version
 export CUSIGNAL_TEST="0" # Testing takes too long
+# we do testing in the Docker build though
 
 # newest version from NVIDIA
+# we are frozen at PyTorch 1.10.0 / torchaudio 0.10.0 because
+# torchaudio 0.10.0 is the last release that supports Python 3.6.
 export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
 export PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
 export TORCHAUDIO_VERSION="0.10.0" # matches PyTorch version

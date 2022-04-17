@@ -15,6 +15,8 @@ ENV CUSIGNAL_VERSION="22.04.00"
 ENV CUSIGNAL_TEST="1"
 
 # newest PyTorch version from NVIDIA
+# we are frozen at PyTorch 1.10.0 / torchaudio 0.10.0 because
+# torchaudio 0.10.0 is the last release that supports Python 3.6.
 ENV PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
 ENV PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
 
@@ -29,6 +31,7 @@ ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
 ENV SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 
+# denote Docker status
 ENV DOCKER_IMAGE=1
 
 # set up 'synth' account
