@@ -54,6 +54,10 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
 COPY --chown=synth:synth Home/Scripts/*sound* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-sound.sh > $SYNTH_LOGS/R-sound.log 2>&1
 
+# Installing cuSignal demo notebooks
+COPY --chown=synth:synth Home/Scripts/cusignal-notebooks.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal-notebooks.sh > $SYNTH_LOGS/cusignal-notebooks.log 2>&1
+
 # Installing home directory scripts
 COPY --chown=synth:synth \
   Home/edit-me-then-run-4-git-config.sh \
