@@ -8,7 +8,8 @@ mamba activate r-reticulate
 
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
-  fftw
+  fftw \
+  pkg-config
 
 echo "Installing R packages"
 export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
