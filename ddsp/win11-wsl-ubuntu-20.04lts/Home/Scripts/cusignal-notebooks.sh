@@ -5,15 +5,7 @@ set -e
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 
-echo "Creating r-reticulate environment file"
-sed "s/PYTHON_VERSION/$PYTHON_VERSION/" \
-  $SYNTH_SCRIPTS/cusignal_base_template \
-  > $SYNTH_ENV_FILE
-
-echo "Creating fresh r-reticulate virtual environment"
-/usr/bin/time mamba env create --force --file $SYNTH_ENV_FILE
 mamba activate r-reticulate
-export PATH=$PATH:/usr/local/cuda/bin
 
 cd $SYNTH_PROJECTS
 
@@ -22,19 +14,11 @@ echo "Removing previous 'cusignal'"
 rm -fr $CUSIGNAL_HOME
 git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME
 cd $CUSIGNAL_HOME
+
+echo "Discovering cusignal version"
+export CUSIGNAL_VERSION=`mamba list | grep cusignal | sed 's/cusignal  *//' | sed 's/  *.*$//'`
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
-
-echo "Building 'cusignal'"
-/usr/bin/time ./build.sh --allgpuarch
-
-if [ $CUSIGNAL_TEST -gt "0" ]
-then
-  set +e
-  echo "Testing 'cusignal'"
-  /usr/bin/time pytest -v
-  set -e
-fi
 
 echo "Copying '$CUSIGNAL_HOME/notebooks' to '$SYNTH_NOTEBOOKS'"
 rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
