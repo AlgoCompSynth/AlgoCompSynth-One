@@ -1,4 +1,5 @@
 FROM "nvcr.io/nvidia/cuda:11.6.2-base-ubuntu20.04"
+#FROM "ubuntu:focal"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -10,14 +11,12 @@ ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
 ENV SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 
-ENV MAMBAFORGE_VERSION="4.12.0-0"
-
 # denote Docker status
 ENV DOCKER_IMAGE=1
 
 # set up 'synth' account
 COPY docker-scripts/synth-user.sh /
-RUN /synth-user.sh
+RUN /synth-user.sh > /synth-user.log 2>&1
 
 # enable passwordless sudo for 'synth'
 COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
