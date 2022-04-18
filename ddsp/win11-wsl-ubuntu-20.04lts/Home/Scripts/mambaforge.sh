@@ -13,11 +13,11 @@ then
     echo "Downloading latest Mambaforge installer"
     rm -fr Mambaforge*
     wget -q \
-      https://github.com/conda-forge/miniforge/releases/download/$MAMBAFORGE_VERSION/Mambaforge-$MAMBAFORGE_VERSION-Linux-$ARCH.sh
-    chmod +x Mambaforge-$MAMBAFORGE_VERSION-Linux-$ARCH.sh
+      https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-$ARCH.sh
+    chmod +x Mambaforge-Linux-$ARCH.sh
 
     echo "Installing Mambaforge to '$HOME/mambaforge' ..."
-    ./Mambaforge-$MAMBAFORGE_VERSION-Linux-$ARCH.sh -b
+    ./Mambaforge-Linux-$ARCH.sh -b
 
     popd
 fi
