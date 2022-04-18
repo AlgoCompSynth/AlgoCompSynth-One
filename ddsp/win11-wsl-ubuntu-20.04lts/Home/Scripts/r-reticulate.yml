@@ -11,4 +11,5 @@ dependencies:
   - torchaudio
   - cusignal
   - jupyterlab
+  - matplotlib
   - r-base
