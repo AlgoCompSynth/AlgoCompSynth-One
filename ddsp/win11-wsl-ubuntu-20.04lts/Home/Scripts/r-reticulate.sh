@@ -6,7 +6,7 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 
 echo "Creating fresh r-reticulate virtual environment"
-/usr/bin/time mamba env create --force --file $SYNTH_ENV_FILE
+/usr/bin/time mamba env create --force --file $SYNTH_SCRIPTS/r-reticulate.yml
 mamba activate r-reticulate
 
 echo "Cleanup"
