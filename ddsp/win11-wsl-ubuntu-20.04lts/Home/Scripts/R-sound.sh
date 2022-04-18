@@ -8,6 +8,7 @@ mamba activate r-reticulate
 
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
+  cmake \
   fftw \
   pkg-config
 
