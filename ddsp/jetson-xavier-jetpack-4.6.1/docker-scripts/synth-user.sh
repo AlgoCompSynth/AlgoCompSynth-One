@@ -11,6 +11,7 @@ apt-get install -qqy --no-install-recommends \
   git \
   software-properties-common \
   sudo \
+  time \
   vim-nox \
   wget
 apt-get clean
