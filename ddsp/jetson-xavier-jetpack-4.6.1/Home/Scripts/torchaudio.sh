@@ -28,9 +28,6 @@ export BUILD_SOX=1
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
-if [ $DOCKER_IMAGE -gt "0" ]
-then
-  rm -fr $SYNTH_PROJECTS/audio
-fi
+rm -fr $SYNTH_PROJECTS/audio
 
 echo "Finished"

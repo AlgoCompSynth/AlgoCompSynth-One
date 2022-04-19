@@ -7,6 +7,10 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
+echo "Installing Cython with mamba"
+mamba install --quiet --yes \
+  Cython
+
 echo "Downloading PyTorch wheel"
 pushd /tmp
 rm -f $PYTORCH_WHEEL_FILE

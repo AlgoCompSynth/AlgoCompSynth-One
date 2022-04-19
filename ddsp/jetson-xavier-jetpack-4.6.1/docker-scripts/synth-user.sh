@@ -6,12 +6,15 @@ echo "Installing Linux dependencies"
 apt-get update
 apt-get upgrade -y
 apt-get install -qqy --no-install-recommends \
+  apt-file \
   build-essential \
   ca-certificates \
   git \
+  mlocate \
   software-properties-common \
   sudo \
   time \
+  tree \
   vim-nox \
   wget
 apt-get clean

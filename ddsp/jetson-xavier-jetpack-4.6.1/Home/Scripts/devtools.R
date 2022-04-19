@@ -8,10 +8,12 @@ install.packages(c(
   "IRkernel",
   "knitr",
   "renv",
+  "remotes",
   "reticulate",
   "rmarkdown",
   "tinytex"
 ), repos = "https://cloud.r-project.org/")
 warnings()
 
-tinytex::install_tinytex
+IRkernel::installspec()
+tinytex::install_tinytex()

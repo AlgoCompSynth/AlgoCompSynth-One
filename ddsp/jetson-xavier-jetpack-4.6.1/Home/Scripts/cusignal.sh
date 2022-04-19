@@ -37,9 +37,6 @@ cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
-if [ $DOCKER_IMAGE -gt "0" ]
-then
-  rm -fr $SYNTH_PROJECTS/cusignal
-fi
+rm -fr $SYNTH_PROJECTS/cusignal
 
 echo "Finished"
