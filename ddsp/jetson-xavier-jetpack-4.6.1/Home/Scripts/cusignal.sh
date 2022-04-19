@@ -5,15 +5,9 @@ set -e
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 
-echo "Creating r-reticulate environment file"
-sed "s/PYTHON_VERSION/$PYTHON_VERSION/" \
-  $SYNTH_SCRIPTS/cusignal_jetson_base_template \
-  > $SYNTH_ENV_FILE
-
-echo "Creating fresh r-reticulate virtual environment"
-/usr/bin/time mamba env create --force --file $SYNTH_ENV_FILE
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
+echo $PATH
 
 cd $SYNTH_PROJECTS
 
