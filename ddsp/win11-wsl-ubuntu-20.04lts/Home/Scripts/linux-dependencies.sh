@@ -12,6 +12,7 @@ sudo apt-get install -qqy --no-install-recommends \
   libsoxr-dev \
   libsox-fmt-all \
   mp3splt \
+  openssh-client \
   sox
 sudo apt-get clean
 
