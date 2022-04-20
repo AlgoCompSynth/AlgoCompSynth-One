@@ -4,7 +4,7 @@ set -e
 
 export REGISTRY="docker.io"
 export ACCOUNT="algocompsynth"
-export REPO="ddsp"
+export REPO="synth"
 
 echo "Creating a backup - ignore missing images"
 docker tag $REGISTRY/$ACCOUNT/$REPO:latest $REGISTRY/$ACCOUNT/$REPO:backup || true
