@@ -1,5 +1,4 @@
 FROM "nvcr.io/nvidia/cuda:11.6.2-base-ubuntu20.04"
-#FROM "ubuntu:focal"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -42,9 +41,14 @@ COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 # Creating fresh mamba environment 'r-reticulate'
+## Python 3.9 is the newest supported by PyTorch and torchaudio
+ENV PYTHON_VERSION="3.9"
 COPY --chown=synth:synth Home/Scripts/r-reticulate* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 RUN $SYNTH_SCRIPTS/r-reticulate-test.sh
+
+# Installing cuSignal demo notebooks
+COPY --chown=synth:synth Home/Scripts/cusignal-notebooks.sh $SYNTH_SCRIPTS/
 
 # Installing R developer tools
 COPY --chown=synth:synth Home/Scripts/*devtools* $SYNTH_SCRIPTS/
@@ -53,10 +57,11 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
 # Installing R sound packages
 COPY --chown=synth:synth Home/Scripts/*sound* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/R-sound.sh > $SYNTH_LOGS/R-sound.log 2>&1
-
-# Installing cuSignal demo notebooks
-COPY --chown=synth:synth Home/Scripts/cusignal-notebooks.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal-notebooks.sh > $SYNTH_LOGS/cusignal-notebooks.log 2>&1
+
+# Installing JupyterLab
+COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
 # Installing home directory scripts
 COPY --chown=synth:synth \
