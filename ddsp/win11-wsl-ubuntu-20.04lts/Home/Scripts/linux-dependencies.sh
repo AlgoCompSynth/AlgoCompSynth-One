@@ -8,6 +8,7 @@ sudo apt-get upgrade -y
 
 # we use chromium-browser because it's the default on Jetsons
 sudo apt-get install -qqy --no-install-recommends \
+  bash-completion \
   chromium-browser \
   ffmpeg \
   flac \
