@@ -9,7 +9,6 @@ dependencies:
   - numpy
   - pytorch
   - torchaudio
-  - ddsp
   - cusignal
   - jupyterlab
   - matplotlib
