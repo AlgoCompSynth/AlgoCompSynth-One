@@ -61,7 +61,7 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
 # Installing home directory scripts
 COPY --chown=synth:synth \
-  Home/bash_aliases.sh \
+  Home/bash_aliases \
   Home/edit-me-then-run-4-git-config.sh \
   Home/set-vim-background.sh \
   Home/start-jupyter-lab.sh \
