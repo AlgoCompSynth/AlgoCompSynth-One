@@ -11,4 +11,6 @@ docker run --interactive --tty \
   --name ddsp \
   --network host \
   --runtime nvidia \
+  --volume /tmp/.X11-unix:/tmp/.X11-unix \
+  --env DISPLAY=$DISPLAY \
   algocompsynth/ddsp:latest /bin/bash
