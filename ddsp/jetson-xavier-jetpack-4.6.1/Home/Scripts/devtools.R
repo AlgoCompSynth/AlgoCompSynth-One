@@ -10,10 +10,6 @@ install.packages(c(
   "renv",
   "remotes",
   "reticulate",
-  "rmarkdown",
-  "tinytex"
+  "rmarkdown"
 ), repos = "https://cloud.r-project.org/")
 warnings()
-
-IRkernel::installspec()
-tinytex::install_tinytex()
