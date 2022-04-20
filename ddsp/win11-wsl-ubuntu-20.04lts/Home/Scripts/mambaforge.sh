@@ -27,12 +27,14 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba update --name base --all --yes --quiet
 
-echo "Setting up bash and zsh command lines"
+echo "Setting up bash command line"
 mamba init bash
-mamba init zsh
 
 echo "Disabling auto-activation of 'base' environment"
 conda config --set auto_activate_base false
 
 echo "Setting default threads to number of processors"
 conda config --set default_threads `nproc`
+
+echo "Lengthening connection timeout"
+conda config --set remote_connect_timeout_secs 60.0
