@@ -8,7 +8,6 @@ ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
 ENV SYNTH_LOGS=$SYNTH_HOME/Logs
 ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
-ENV SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 
 # set up 'synth' account
 COPY docker-scripts/synth-user.sh /
