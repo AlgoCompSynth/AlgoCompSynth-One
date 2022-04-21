@@ -6,8 +6,11 @@ echo "Installing Linux dependencies"
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install -qqy --no-install-recommends \
+  bash-completion \
+  firefox \
   ffmpeg \
   flac \
+  less \
   libopenblas-base \
   libopenmpi-dev \
   libomp-dev \
