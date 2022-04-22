@@ -1,4 +1,4 @@
-FROM "nvcr.io/nvidia/l4t-cuda:10.2.460-runtime"
+FROM "nvcr.io/nvidia/l4t-base:r32.7.1"
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ARG DEBIAN_FRONTEND=noninteractive
 
