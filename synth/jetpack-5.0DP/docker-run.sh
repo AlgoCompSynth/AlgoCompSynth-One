@@ -1,1 +1,1 @@
-../../docker-run.sh
+../docker-run.sh
