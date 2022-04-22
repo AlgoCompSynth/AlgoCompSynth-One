@@ -8,7 +8,6 @@ ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
 ENV SYNTH_LOGS=$SYNTH_HOME/Logs
 ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
-ENV SYNTH_ENV_FILE=$SYNTH_SCRIPTS/cusignal_jetson_base.yml
 
 # set up 'synth' account
 COPY docker-scripts/synth-user.sh /
@@ -84,9 +83,11 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
 # Installing home directory scripts
 COPY --chown=synth:synth \
+  Home/bash_aliases \
   Home/edit-me-then-run-4-git-config.sh \
   Home/set-vim-background.sh \
   Home/start-jupyter-lab.sh \
   $SYNTH_HOME/
+RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
 
 # Finished!
