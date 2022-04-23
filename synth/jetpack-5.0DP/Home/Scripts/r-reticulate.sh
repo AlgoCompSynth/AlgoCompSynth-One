@@ -9,20 +9,26 @@ echo "Activating r-reticulate"
 source $WORKON_HOME/r-reticulate/bin/activate
 echo "PATH is now $PATH"
 
-echo "Installing cusignal build dependencies"
+echo "Installing data science / machine learning stack and cusignal dependencies"
 pip install \
-  scipy>=1.5.0 \
-  numpy \
+  Cython \
+  ipython \
+  jupyterlab \
   matplotlib \
   numba>=0.49 \
+  numpy \
+  numpydoc \
+  onnx \
+  pandas \
+  pybind11 \
+  pycuda \
+  pydata-sphinx-theme \
   pytest \
   pytest-benchmark \
+  scikit-learn \
+  scipy>=1.5.0 \
   sphinx \
-  pydata-sphinx-theme \
-  sphinx-copybutton \
-  numpydoc \
-  ipython \
-  jupyterlab
+  sphinx-copybutton
 
 echo "Cleanup"
 pip list
