@@ -10,7 +10,14 @@ sudo apt-get install -qqy --no-install-recommends \
   firefox \
   ffmpeg \
   flac \
+  gfortran \
+  hdf5-tools \
   less \
+  libblas-dev \
+  libhdf5-dev \
+  libhdf5-serial-dev \
+  libjpeg8-dev \
+  liblapack-dev \
   libopenblas-base \
   libopenmpi-dev \
   libomp-dev \
@@ -19,7 +26,9 @@ sudo apt-get install -qqy --no-install-recommends \
   libsox-fmt-all \
   mp3splt \
   openssh-client \
-  sox
+  sox \
+  zip \
+  zlib1g-dev
 sudo apt-get clean
 
 echo "Finished"
