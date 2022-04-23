@@ -21,7 +21,8 @@ pip install \
   pydata-sphinx-theme \
   sphinx-copybutton \
   numpydoc \
-  ipython
+  ipython \
+  jupyterlab
 
 echo "Cleanup"
 pip list

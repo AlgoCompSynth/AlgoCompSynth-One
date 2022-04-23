@@ -2,10 +2,8 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-
-mamba activate r-reticulate
+echo "Activating r-reticulate"
+source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
 echo $PATH
 
@@ -35,8 +33,7 @@ rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
 cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 
 echo "Cleanup"
-mamba list
-mamba clean --tarballs --yes
+pip list
 rm -fr $SYNTH_PROJECTS/cusignal
 
 echo "Finished"
