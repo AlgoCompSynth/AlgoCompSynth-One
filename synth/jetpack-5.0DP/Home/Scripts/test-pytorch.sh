@@ -2,9 +2,7 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba activate r-reticulate
+source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
 
 echo "Testing PyTorch execution and GPU availability"

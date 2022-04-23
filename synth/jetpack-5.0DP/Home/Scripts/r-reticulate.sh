@@ -2,17 +2,28 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-
 echo "Creating fresh r-reticulate virtual environment"
-sed -i.bak "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/r-reticulate.yml
-sed -i "s/TYPING_EXTENSIONS_VERSION/$TYPING_EXTENSIONS_VERSION/" $SYNTH_SCRIPTS/r-reticulate.yml
-/usr/bin/time mamba env create --force --file $SYNTH_SCRIPTS/r-reticulate.yml
-mamba activate r-reticulate
+/usr/bin/time python3 -m venv --symlinks --clear $WORKON_HOME/r-reticulate
+
+echo "Activating r-reticulate"
+source $WORKON_HOME/r-reticulate/bin/activate
+echo "PATH is now $PATH"
+
+echo "Installing cusignal build dependencies"
+pip install \
+  scipy>=1.5.0 \
+  numpy \
+  matplotlib \
+  numba>=0.49 \
+  pytest \
+  pytest-benchmark \
+  sphinx \
+  pydata-sphinx-theme \
+  sphinx-copybutton \
+  numpydoc \
+  ipython
 
 echo "Cleanup"
-mamba list
-mamba clean --tarballs --yes
+pip list
 
 echo "Finished"

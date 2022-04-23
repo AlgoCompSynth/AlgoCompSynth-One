@@ -2,14 +2,11 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba activate r-reticulate
+source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
 
-echo "Installing Cython with mamba"
-mamba install --quiet --yes \
-  Cython
+echo "Installing Cython"
+pip install Cython
 
 echo "Downloading PyTorch wheel"
 pushd /tmp
@@ -21,7 +18,6 @@ echo "Installing PyTorch"
 pip install /tmp/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"
-mamba list
-mamba clean --tarballs --yes
+pip list
 
 echo "Finished"

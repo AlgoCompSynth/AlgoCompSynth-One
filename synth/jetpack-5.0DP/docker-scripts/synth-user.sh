@@ -10,9 +10,11 @@ apt-get install -qqy --no-install-recommends \
   build-essential \
   ca-certificates \
   cuda-toolkit-11-4 \
+  curl \
   git \
   libcudnn8-dev \
   mlocate \
+  python3-venv \
   software-properties-common \
   sudo \
   time \
