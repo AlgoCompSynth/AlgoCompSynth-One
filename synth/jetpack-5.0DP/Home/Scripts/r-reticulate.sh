@@ -3,15 +3,16 @@
 set -e
 
 echo "Creating fresh r-reticulate virtual environment"
-/usr/bin/time python3 -m venv --symlinks --clear $WORKON_HOME/r-reticulate
+python3 -m venv --symlinks --clear $WORKON_HOME/r-reticulate
 
 echo "Activating r-reticulate"
 source $WORKON_HOME/r-reticulate/bin/activate
 echo "PATH is now $PATH"
 
-echo "Installing data science / machine learning stack and cusignal dependencies"
-pip install \
+echo "Installing Python data science / machine learning stack and cusignal dependencies"
+/usr/bin/time pip install \
   Cython \
+  fastrlock \
   ipython \
   jupyterlab \
   matplotlib \
@@ -28,7 +29,8 @@ pip install \
   scikit-learn \
   scipy>=1.5.0 \
   sphinx \
-  sphinx-copybutton
+  sphinx-copybutton \
+  sympy
 
 echo "Cleanup"
 pip list
