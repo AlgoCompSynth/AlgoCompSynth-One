@@ -19,10 +19,11 @@ git checkout v$CUSIGNAL_VERSION
 
 echo "Installing build dependencies with pip"
 pip install \
-  scipy>=1.5.0 \
-  numpy \
-  matplotlib \
+  "numpy<1.22,>=1.18" \
+  "Jinja2<3.1,>=2.10" \
   numba>=0.49 \
+  scipy>=1.5.0 \
+  matplotlib \
   pytest \
   pytest-benchmark \
   sphinx \
