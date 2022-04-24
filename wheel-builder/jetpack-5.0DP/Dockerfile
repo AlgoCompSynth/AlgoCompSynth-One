@@ -53,6 +53,10 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 
 COPY --chown=synth:synth Home/Scripts/cupy.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
 
+# Saving cupy wheel
+COPY --chown=synth:synth Home/Scripts/save-cupy.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/save-cupy.sh > $SYNTH_LOGS/save-cupy.log 2>&1
+
 # Installing cusignal
 ## newest release
 ENV CUSIGNAL_VERSION="22.04.00"
