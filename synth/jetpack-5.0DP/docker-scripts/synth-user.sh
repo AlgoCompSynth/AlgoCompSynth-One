@@ -14,6 +14,7 @@ apt-get install -qqy --no-install-recommends \
   git \
   libcudnn8-dev \
   mlocate \
+  pkg-config \
   python3-dev \
   python3-venv \
   software-properties-common \
