@@ -8,6 +8,7 @@ ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
 ENV SYNTH_LOGS=$SYNTH_HOME/Logs
 ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
+ENV WORKON_HOME=$SYNTH_HOME/.virtualenvs
 
 # set up 'synth' account
 COPY docker-scripts/synth-user.sh /
@@ -22,6 +23,7 @@ RUN mkdir --parents \
   $SYNTH_LOGS \
   $SYNTH_NOTEBOOKS \
   $SYNTH_PROJECTS \
+  $WORKON_HOME \
   && chown -R synth:synth $SYNTH_HOME
 
 USER synth
@@ -32,62 +34,48 @@ CMD [ "/bin/bash" ]
 COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
 
-# Installing Mambaforge
-COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+# Creating fresh Python 3 venv 'r-reticulate'
+## Newer versions yield a PyTorch crash on import!
+#-----ENV TYPING_EXTENSIONS_VERSION="4.1.1"
+COPY --chown=synth:synth Home/Scripts/r-reticulate.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 
-C-----# Creating fresh mamba environment 'r-reticulate'
-C-----## NVIDIA PyTorch wheels require this
-C-----ENV PYTHON_VERSION="3.6"
-C-----## Newer versions yield a PyTorch crash on import!
-C-----ENV TYPING_EXTENSIONS_VERSION="4.1.1"
-C-----COPY --chown=synth:synth Home/Scripts/r-reticulate* $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
-C-----
-C-----# Installing PyTorch
-C-----## we are frozen at PyTorch 1.10.0 / torchaudio 0.10.0 because
-C-----## torchaudio 0.10.0 is the last release that supports Python 3.6.
-C-----ENV PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
-C-----ENV PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
-C-----ENV TORCHAUDIO_VERSION="0.10.0"
-C-----COPY --chown=synth:synth Home/Scripts/*pytorch* $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
-C-----RUN $SYNTH_SCRIPTS/test-pytorch.sh
-C-----
-C-----# Installing torchaudio
-C-----COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
-C-----RUN $SYNTH_SCRIPTS/test-torchaudio.sh
-C-----
-C-----# Installing cusignal
-C-----## newest release
-C-----ENV CUSIGNAL_VERSION="22.04.00"
-C-----## Run testing in Docker builds
-C-----ENV CUSIGNAL_TEST="1"
-C-----COPY --chown=synth:synth Home/Scripts/cusignal.sh $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
-C-----
-C-----# Installing R developer tools
-C-----## Newer versions break torchaudio for some reason
-C-----ENV R_BASE_VERSION="4.0.2"
-C-----COPY --chown=synth:synth Home/Scripts/*devtools* $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/R-devtools.sh > $SYNTH_LOGS/R-devtools.log 2>&1
-C-----
-C-----# Installing R sound packages
-C-----COPY --chown=synth:synth Home/Scripts/*sound* $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/R-sound.sh > $SYNTH_LOGS/R-sound.log 2>&1
-C-----
-C-----# Installing JupyterLab
-C-----COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
-C-----RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
-C-----
-C-----# Installing home directory scripts
-C-----COPY --chown=synth:synth \
-C-----  Home/bash_aliases \
-C-----  Home/edit-me-then-run-4-git-config.sh \
-C-----  Home/set-vim-background.sh \
-C-----  Home/start-jupyter-lab.sh \
-C-----  $SYNTH_HOME/
-C-----RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
-C-----
-C-----# Finished!
+# Installing TensorFlow
+COPY --chown=synth:synth Home/Scripts/tensorflow.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/tensorflow.sh > $SYNTH_LOGS/tensorflow.log 2>&1
+
+# Installing PyTorch
+ENV PYTORCH_WHEEL_URL="https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl"
+ENV PYTORCH_WHEEL_FILE="torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl"
+COPY --chown=synth:synth Home/Scripts/*pytorch* $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+RUN $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
+
+# Installing torchaudio
+ENV TORCHAUDIO_VERSION="0.11.0"
+COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+RUN $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
+
+# Installing cupy - this takes a *long* time!
+COPY --chown=synth:synth Home/Scripts/cupy.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
+
+# Installing cusignal
+## newest release
+ENV CUSIGNAL_VERSION="22.04.00"
+## Run testing in Docker builds
+ENV CUSIGNAL_TEST="1"
+COPY --chown=synth:synth Home/Scripts/cusignal.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+
+# Installing home directory scripts
+COPY --chown=synth:synth \
+  Home/bash_aliases \
+  Home/edit-me-then-run-4-git-config.sh \
+  Home/set-vim-background.sh \
+  Home/start-jupyter-lab.sh \
+  $SYNTH_HOME/
+RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
+
+# Finished!
