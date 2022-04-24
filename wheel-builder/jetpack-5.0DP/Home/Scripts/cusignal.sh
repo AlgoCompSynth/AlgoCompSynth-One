@@ -37,10 +37,10 @@ sed -i.bak 's/python setup.py install/python setup.py bdist_wheel --universal/' 
 /usr/bin/time ./build.sh --allgpuarch
 
 echo "Saving 'cusignal' wheel to $SYNTH_WHEELS"
-cp dist/cusignal-*.whl $SYNTH_WHEELS/
+cp python/dist/cusignal-*.whl $SYNTH_WHEELS/
 
 echo "Installing 'cusignal' wheel"
-pip install dist/cusignal-*.whl
+pip install python/dist/cusignal-*.whl
 
 if [ $CUSIGNAL_TEST -gt "0" ]
 then
