@@ -1,0 +1,15 @@
+name: r-reticulate
+channels:
+  - pytorch
+  - rapidsai
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=PYTHON_VERSION
+  - numpy
+  - pytorch
+  - torchaudio
+  - cusignal
+  - jupyterlab
+  - matplotlib
+  - r-base
