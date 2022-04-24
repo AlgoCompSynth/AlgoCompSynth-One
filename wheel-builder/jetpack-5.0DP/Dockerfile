@@ -32,13 +32,20 @@ USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
+# Installing home directory scripts
+COPY --chown=synth:synth \
+  Home/bash_aliases \
+  Home/edit-me-then-run-4-git-config.sh \
+  Home/set-vim-background.sh \
+  Home/start-jupyter-lab.sh \
+  $SYNTH_HOME/
+RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
+
 # Installing Linux dependencies
 COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
 
 # Creating fresh Python 3 venv 'r-reticulate'
-## Newer versions yield a PyTorch crash on import!
-#-----ENV TYPING_EXTENSIONS_VERSION="4.1.1"
 COPY --chown=synth:synth Home/Scripts/r-reticulate.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 
@@ -72,14 +79,5 @@ ENV CUSIGNAL_VERSION="22.04.00"
 ENV CUSIGNAL_TEST="1"
 COPY --chown=synth:synth Home/Scripts/cusignal.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
-
-# Installing home directory scripts
-COPY --chown=synth:synth \
-  Home/bash_aliases \
-  Home/edit-me-then-run-4-git-config.sh \
-  Home/set-vim-background.sh \
-  Home/start-jupyter-lab.sh \
-  $SYNTH_HOME/
-RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
 
 # Finished!

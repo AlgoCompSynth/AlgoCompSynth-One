@@ -2,15 +2,19 @@
 
 set -e
 
-echo "Removing 'synth' container"
-echo "Ignore 'No such container' errors"
-docker rm synth || true
+export REGISTRY="docker.io"
+export ACCOUNT="algocompsynth"
+export REPO="wheel-builder"
 
-echo "Running 'algocompsynth/synth:latest'"
+echo "Removing '$REPO' container"
+echo "Ignore 'No such container' errors"
+docker rm $REPO || true
+
+echo "Running '$REGISTRY/$ACCOUNT/$REPO:latest'"
 docker run --interactive --tty \
-  --name synth \
+  --name $REPO \
   --network host \
   --runtime nvidia \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   --env DISPLAY=$DISPLAY \
-  algocompsynth/synth:latest /bin/bash
+  $REGISTRY/$ACCOUNT/$REPO:latest /bin/bash

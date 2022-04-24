@@ -18,7 +18,7 @@ echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
 
 echo "Building 'cusignal' wheel"
-sed -i.bak 's/python setup.py install/python setup.py bdist_wheel --universal/' .build.sh
+sed -i.bak 's/python setup.py install/python setup.py bdist_wheel --universal/' ./build.sh
 /usr/bin/time ./build.sh --allgpuarch
 
 echo "Saving 'cusignal' wheel to $SYNTH_WHEELS"
