@@ -2,13 +2,13 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba activate r-reticulate
+echo "Activating r-reticulate"
+source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
+echo "PATH is now $PATH"
 
-echo "Installing mamba dependencies"
-mamba install --quiet --yes \
+echo "Installing build dependencies"
+pip install \
   cmake \
   ninja \
   pkg-config
@@ -26,8 +26,7 @@ export BUILD_SOX=1
 /usr/bin/time python setup.py install
 
 echo "Cleanup"
-mamba list
-mamba clean --tarballs --yes
+pip list
 rm -fr $SYNTH_PROJECTS/audio
 
 echo "Finished"

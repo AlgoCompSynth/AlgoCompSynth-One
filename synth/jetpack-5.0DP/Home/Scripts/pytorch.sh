@@ -2,11 +2,10 @@
 
 set -e
 
+echo "Activating r-reticulate"
 source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
-
-echo "Installing Cython"
-pip install Cython
+echo "PATH is now $PATH"
 
 echo "Downloading PyTorch wheel"
 pushd /tmp

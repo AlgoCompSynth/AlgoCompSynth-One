@@ -5,7 +5,7 @@ set -e
 echo "Activating r-reticulate"
 source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
-echo $PATH
+echo "PATH is now $PATH"
 
 cd $SYNTH_PROJECTS
 
