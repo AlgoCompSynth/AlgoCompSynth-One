@@ -17,6 +17,20 @@ cd $CUSIGNAL_HOME
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
 
+echo "Installing build dependencies with pip"
+pip install \
+  scipy>=1.5.0 \
+  numpy \
+  matplotlib \
+  numba>=0.49 \
+  pytest \
+  pytest-benchmark \
+  sphinx \
+  pydata-sphinx-theme \
+  sphinx-copybutton \
+  numpydoc \
+  ipython
+
 echo "Building 'cusignal' wheel"
 sed -i.bak 's/python setup.py install/python setup.py bdist_wheel --universal/' ./build.sh
 /usr/bin/time ./build.sh --allgpuarch

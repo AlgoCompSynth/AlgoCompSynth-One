@@ -7,11 +7,6 @@ source $WORKON_HOME/r-reticulate/bin/activate
 export PATH=$PATH:/usr/local/cuda/bin
 echo "PATH is now $PATH"
 
-echo "Installing build dependencies"
-pip install \
-  cmake \
-  ninja
-
 cd $SYNTH_PROJECTS
 echo "Removing previous 'audio'"
 rm -fr audio*
