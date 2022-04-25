@@ -21,11 +21,13 @@ echo "Installing Python data science / machine learning stack and cusignal depen
   'numpy<1.22,>=1.18' \
   onnx \
   pandas \
-  pycuda \
   scikit-learn \
   'scipy>=1.5.0' \
   sympy \
-  $SYNTH_WHEELS/*.whl
+  $SYNTH_WHEELS/cupy-*.whl \
+  $SYNTH_WHEELS/cusignal-*.whl \
+  $SYNTH_WHEELS/torch-*.whl \
+  $SYNTH_WHEELS/torchaudio-*.whl
 
 echo "Cleanup"
 pip list
