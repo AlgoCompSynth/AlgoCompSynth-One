@@ -53,10 +53,6 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 
 COPY --chown=synth:synth Home/Scripts/cupy.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
 
-# Saving cupy wheel
-COPY --chown=synth:synth Home/Scripts/save-cupy.sh $SYNTH_SCRIPTS/
-RUN /usr/bin/time $SYNTH_SCRIPTS/save-cupy.sh > $SYNTH_LOGS/save-cupy.log 2>&1
-
 # Installing cusignal
 ## newest release
 ENV CUSIGNAL_VERSION="22.04.00"
@@ -78,7 +74,7 @@ COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
-# Downloading TensorFlow
+# Installing TensorFlow to build dependency wheels
 ENV TENSORFLOW_WHEEL_URL="https://developer.download.nvidia.com/compute/redist/jp/v50/tensorflow/tensorflow-2.8.0+nv22.3-cp38-cp38-linux_aarch64.whl"
 ENV TENSORFLOW_WHEEL_FILE="tensorflow-2.8.0+nv22.3-cp38-cp38-linux_aarch64.whl"
 COPY --chown=synth:synth Home/Scripts/tensorflow.sh $SYNTH_SCRIPTS/
