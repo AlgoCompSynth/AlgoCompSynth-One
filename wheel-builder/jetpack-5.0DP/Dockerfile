@@ -35,11 +35,10 @@ CMD [ "/bin/bash" ]
 # Installing home directory scripts
 COPY --chown=synth:synth \
   Home/bash_aliases \
-  Home/edit-me-then-run-4-git-config.sh \
-  Home/set-vim-background.sh \
-  Home/start-jupyter-lab.sh \
+  Home/vimrc \
   $SYNTH_HOME/
 RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
+RUN cat $SYNTH_HOME/vimrc >> $SYNTH_HOME/.vimrc
 
 # Installing Linux dependencies
 COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
