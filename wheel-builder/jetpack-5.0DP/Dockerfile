@@ -79,4 +79,8 @@ ENV TENSORFLOW_WHEEL_FILE="tensorflow-2.8.0+nv22.3-cp38-cp38-linux_aarch64.whl"
 COPY --chown=synth:synth Home/Scripts/tensorflow.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/tensorflow.sh > $SYNTH_LOGS/tensorflow.log 2>&1
 
+# Copying cached wheels
+COPY --chown=synth:synth Home/Scripts/copy-cached-wheels.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/copy-cached-wheels.sh > $SYNTH_LOGS/copy-cached-wheels.log 2>&1
+
 # Finished!

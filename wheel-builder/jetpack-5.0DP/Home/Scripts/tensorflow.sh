@@ -15,12 +15,6 @@ popd
 echo "Installing TensorFlow"
 /usr/bin/time pip install $SYNTH_WHEELS/$TENSORFLOW_WHEEL_FILE
 
-echo "pip built a wheel for grpcio"
-echo "pip built a wheel for termcolor"
-echo "Copying them to $SYNTH_WHEELS/"
-cp `find $HOME -name 'grpcio-*.whl'` $SYNTH_WHEELS/
-cp `find $HOME -name 'termcolor-*.whl'` $SYNTH_WHEELS/
-
 echo "Cleanup"
 pip list
 

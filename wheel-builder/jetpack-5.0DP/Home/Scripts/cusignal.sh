@@ -42,10 +42,6 @@ cp python/dist/cusignal-*.whl $SYNTH_WHEELS/
 echo "Installing 'cusignal' wheel"
 pip install python/dist/cusignal-*.whl
 
-echo "pip built a wheel for py_cpuinfo"
-echo "Copying it to $SYNTH_WHEELS/"
-cp `find $HOME -name 'py_cpuinfo-*.whl'` $SYNTH_WHEELS/
-
 if [ $CUSIGNAL_TEST -gt "0" ]
 then
   set +e
