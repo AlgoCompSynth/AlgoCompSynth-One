@@ -19,6 +19,7 @@ echo "Installing Python data science / machine learning stack and cusignal depen
   matplotlib \
   'numba>=0.49' \
   'numpy<1.22,>=1.18' \
+  "Jinja2<3.1,>=2.10" \
   onnx \
   pandas \
   scikit-learn \
