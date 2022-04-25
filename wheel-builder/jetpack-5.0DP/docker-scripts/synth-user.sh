@@ -21,6 +21,7 @@ apt-get install -qqy --no-install-recommends \
   sudo \
   time \
   tree \
+  unzip \
   vim-nox \
   wget
 
