@@ -60,6 +60,5 @@ cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 
 echo "Cleanup"
 pip list
-rm -fr $SYNTH_PROJECTS/cusignal
 
 echo "Finished"

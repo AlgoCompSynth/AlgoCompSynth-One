@@ -39,6 +39,5 @@ pip install dist/torchaudio-*.whl
 
 echo "Cleanup"
 pip list
-rm -fr $SYNTH_PROJECTS/audio
 
 echo "Finished"
