@@ -6,7 +6,30 @@ export REGISTRY="docker.io"
 export ACCOUNT="algocompsynth"
 export REPO="wheel-builder"
 
+echo "Detecting JetPack version"
+export PATH=$PATH:/usr/local/cuda/bin
+export JETPACK4=`nvcc --version | grep -e "10.2" | wc -l`
+export JETPACK5=`nvcc --version | grep -e "11.4" | wc -l`
+if [ "$JETPACK5" -gt "0" ]
+then
+  echo "JetPack 5 detected"
+  export BASE_IMAGE="nvcr.io/nvidia/l4t-pytorch:r34.1.0-pth1.12-py3"
+  export PYTHON_VERSION="3.8"
+elif [ "$JETPACK4" -gt "0" ]
+then
+  echo "JetPack 4 detected"
+  export BASE_IMAGE="nvcr.io/nvidia/l4t-pytorch:r32.7.1-pth1.10-py3"
+  export PYTHON_VERSION="3.6"
+else
+  echo "ERROR: can't detect JetPack version!"
+  exit -1
+fi
+
 echo "Creating a backup - ignore missing images"
 docker tag $REGISTRY/$ACCOUNT/$REPO:latest $REGISTRY/$ACCOUNT/$REPO:backup || true
+
 echo "Building $REPO"
-/usr/bin/time docker build --tag $REGISTRY/$ACCOUNT/$REPO:latest . > /tmp/$REPO.log 2>&1
+/usr/bin/time docker build \
+  --build-arg BASE_IMAGE=$BASE_IMAGE PYTHON_VERSION=$PYTHON_VERSION \
+  --tag $REGISTRY/$ACCOUNT/$REPO:latest \
+  . > /tmp/$REPO.log 2>&1
