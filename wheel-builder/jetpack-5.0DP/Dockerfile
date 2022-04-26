@@ -1,6 +1,16 @@
-FROM "nvcr.io/nvidia/l4t-pytorch:r34.1.0-pth1.12-py3"
+ARG ARG_BASE_IMAGE
+FROM $ARG_BASE_IMAGE
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ARG DEBIAN_FRONTEND=noninteractive
+
+# display arguments
+ARG ARG_BASE_IMAGE
+ENV BASE_IMAGE=$ARG_BASE_IMAGE
+RUN echo "BASE_IMAGE=$BASE_IMAGE"
+
+ARG ARG_PYTHON_VERSION
+ENV PYTHON_VERSION=$ARG_PYTHON_VERSION
+RUN echo "PYTHON_VERSION=$PYTHON_VERSION"
 
 # virtual desktop
 ENV SYNTH_HOME=/home/synth
@@ -45,7 +55,6 @@ COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
 
 # Installing Mambaforge
-ENV PYTHON_VERSION="3.8"
 COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
