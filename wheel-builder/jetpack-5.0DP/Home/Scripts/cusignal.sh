@@ -2,35 +2,32 @@
 
 set -e
 
-echo "Activating r-reticulate"
-source $WORKON_HOME/r-reticulate/bin/activate
+echo "Activating mamba commands"
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
 export PATH=$PATH:/usr/local/cuda/bin
-echo "PATH is now $PATH"
 
 cd $SYNTH_PROJECTS
 
 export CUSIGNAL_HOME=$(pwd)/cusignal
-echo "Removing previous 'cusignal'"
+echo "Removing previous cuSignal"
 rm -fr $CUSIGNAL_HOME
+
+echo "Cloning cuSignal"
 git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME
 cd $CUSIGNAL_HOME
+
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
 
-echo "Installing build dependencies with pip"
-pip install \
-  "numpy<1.22,>=1.18" \
-  "Jinja2<3.1,>=2.10" \
-  numba>=0.49 \
-  scipy>=1.5.0 \
-  matplotlib \
-  pytest \
-  pytest-benchmark \
-  sphinx \
-  pydata-sphinx-theme \
-  sphinx-copybutton \
-  numpydoc \
-  ipython
+echo "Creating mamba environment for build / install"
+echo "This takes a long time; it's building CuPy with pip"
+sed -i.bak "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/cusignal_jetson_base.yml
+/usr/bin/time mamba env create --file $SYNTH_SCRIPTS/cusignal_jetson_base.yml
+
+echo "Activating cusignal-dev"
+mamba activate cusignal-dev
+echo "PATH is now $PATH"
 
 echo "Building 'cusignal' wheel"
 sed -i.bak 's/python setup.py install/python setup.py bdist_wheel --universal/' ./build.sh
@@ -55,6 +52,6 @@ rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
 cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 
 echo "Cleanup"
-pip list
+mamba list
 
 echo "Finished"
