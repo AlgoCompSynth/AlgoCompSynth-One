@@ -50,24 +50,28 @@ COPY --chown=synth:synth \
 RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
 RUN cat $SYNTH_HOME/vimrc >> $SYNTH_HOME/.vimrc
 
-# Installing Linux dependencies
-COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
+# Creating r-reticulate virtual environment
+COPY --chown=synth:synth Home/Scripts/r-reticulate.sh $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 
-# Installing Mambaforge
+# Installing CuPy - takes a long time
+COPY --chown=synth:synth Home/Scripts/cupy.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
+
+# Copying cached wheels
+COPY --chown=synth:synth Home/Scripts/copy-cached-wheels.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/copy-cached-wheels.sh > $SYNTH_LOGS/copy-cached-wheels.log 2>&1
+
+# Installing mambaforge
 COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+RUN /usr/bin/time $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
-# Installing cusignal and CuPy
+# Installing cuSignal - takes a long time if you run the tests
 ## newest release
 ENV CUSIGNAL_VERSION="22.04.00"
 ## Run testing in Docker builds
 ENV CUSIGNAL_TEST="1"
 COPY --chown=synth:synth Home/Scripts/cusignal* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
-
-# Copying cached wheels
-COPY --chown=synth:synth Home/Scripts/copy-cached-wheels.sh $SYNTH_SCRIPTS/
-RUN /usr/bin/time $SYNTH_SCRIPTS/copy-cached-wheels.sh > $SYNTH_LOGS/copy-cached-wheels.log 2>&1
 
 # Finished!

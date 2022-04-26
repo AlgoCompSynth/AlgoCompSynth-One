@@ -6,6 +6,9 @@ channels:
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
+  - pip
+  - setuptools
+  - wheel
   - scipy>=1.5.0
   - numpy
   - matplotlib
@@ -17,6 +20,3 @@ dependencies:
   - sphinx-copybutton
   - numpydoc
   - ipython
-  - pip
-  - pip:
-    - cupy>=9.0.0

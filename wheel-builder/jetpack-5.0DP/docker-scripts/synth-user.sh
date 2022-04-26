@@ -2,15 +2,18 @@
 
 set -e
 
-echo "Installing Linux dependencies"
+echo "Installing command line utilities"
 apt-get update
 apt-get upgrade -y
 apt-get install -qqy --no-install-recommends \
   apt-file \
+  bash-completion \
   build-essential \
   ca-certificates \
   curl \
   git \
+  less \
+  lynx \
   mlocate \
   pkg-config \
   python3-dev \
@@ -21,15 +24,9 @@ apt-get install -qqy --no-install-recommends \
   tree \
   unzip \
   vim-nox \
-  wget
-
-if [ $BASE_IMAGE -eq "nvcr.io/nvidia/l4t-pytorch:r32.7.1-pth1.10-py3" ]
-then
-  echo "JetPack 5 - installing CUDA and CUDNN"
-  apt-get install -qqy --no-install-recommends \
-    cuda-toolkit-11-4 \
-    libcudnn8-dev
-fi
+  wget \
+  zip
+apt-get clean
 
 echo "Creating 'synth' user"
 useradd \

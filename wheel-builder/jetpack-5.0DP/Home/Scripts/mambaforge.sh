@@ -29,17 +29,11 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 echo "Activating 'base'"
 mamba activate base
 
-echo "Lengthening connection timeout"
-conda config --set remote_connect_timeout_secs 60.0
-
 echo "Disabling auto-activation of 'base' environment"
 conda config --set auto_activate_base false
 
 echo "Setting default threads to number of processors"
 conda config --set default_threads `nproc`
-
-echo "Setting default Python version"
-conda config --set default_python $PYTHON_VERSION
 
 echo "Updating base packages"
 mamba update --name base --all --yes --quiet
