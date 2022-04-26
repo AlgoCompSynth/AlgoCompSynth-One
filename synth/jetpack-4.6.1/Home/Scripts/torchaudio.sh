@@ -28,6 +28,5 @@ export BUILD_SOX=1
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
-rm -fr $SYNTH_PROJECTS/audio
 
 echo "Finished"

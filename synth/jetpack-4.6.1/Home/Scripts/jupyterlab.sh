@@ -6,7 +6,7 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
-echo "Installing mamba dependencies"
+echo "Installing JupyterLab data science stack"
 # jupyter_server<1.13.2 workaround
 # https://github.com/jupyterlab/jupyterlab/issues/12094
 # need jupyterlab-git for git
@@ -14,10 +14,10 @@ echo "Installing mamba dependencies"
 mamba install --quiet --yes \
   "jupyter_server<1.13.2" \
   jupyterlab \
-  jupyterlab-git
-
-echo "Enabling R kernel"
-Rscript -e "IRkernel::installspec()"
+  jupyterlab-git \
+  pandas \
+  scikit-learn \
+  sympy
 
 echo "Cleanup"
 mamba list

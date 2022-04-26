@@ -29,9 +29,6 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 echo "Activating 'base'"
 mamba activate base
 
-echo "Lengthening connection timeout"
-conda config --set remote_connect_timeout_secs 60.0
-
 echo "Disabling auto-activation of 'base' environment"
 conda config --set auto_activate_base false
 
