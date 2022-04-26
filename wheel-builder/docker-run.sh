@@ -10,11 +10,14 @@ echo "Removing '$REPO' container"
 echo "Ignore 'No such container' errors"
 docker rm $REPO || true
 
-echo "Running '$REGISTRY/$ACCOUNT/$REPO:latest'"
+echo "Getting latest image name"
+export IMAGE_NAME=`docker images | grep $REPO | head -n 1 | sed 's/  */:/' | sed 's/ .*$//'`
+
+echo "Running $IMAGE_NAME"
 docker run --interactive --tty \
   --name $REPO \
   --network host \
   --runtime nvidia \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   --env DISPLAY=$DISPLAY \
-  $REGISTRY/$ACCOUNT/$REPO:latest /bin/bash
+  $IMAGE_NAME /bin/bash
