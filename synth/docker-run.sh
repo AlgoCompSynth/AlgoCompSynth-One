@@ -2,15 +2,22 @@
 
 set -e
 
-echo "Removing 'synth' container"
-echo "Ignore 'No such container' errors"
-docker rm synth || true
+export REGISTRY="docker.io"
+export ACCOUNT="algocompsynth"
+export REPO="synth"
 
-echo "Running 'algocompsynth/synth:latest'"
+echo "Removing '$REPO' container"
+echo "Ignore 'No such container' errors"
+docker rm $REPO || true
+
+echo "Getting latest image name"
+export IMAGE_NAME=`docker images | grep $REPO | head -n 1 | sed 's/  */:/' | sed 's/ .*$//'`
+
+echo "Running $IMAGE_NAME"
 docker run --interactive --tty \
-  --name synth \
+  --name $REPO \
   --network host \
   --runtime nvidia \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   --env DISPLAY=$DISPLAY \
-  algocompsynth/synth:latest /bin/bash
+  $IMAGE_NAME /bin/bash

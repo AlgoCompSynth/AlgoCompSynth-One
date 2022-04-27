@@ -6,8 +6,15 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
+echo "PATH is now $PATH"
 
-echo "Installing Cython with mamba"
+echo "Installing Linux dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  libopenblas-base \
+  libopenmpi-dev \
+  libomp-dev
+
+echo "Installing Cython"
 mamba install --quiet --yes \
   Cython
 

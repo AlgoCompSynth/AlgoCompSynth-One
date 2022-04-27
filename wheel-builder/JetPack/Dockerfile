@@ -74,4 +74,8 @@ ENV CUSIGNAL_TEST="1"
 COPY --chown=synth:synth Home/Scripts/cusignal* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
+# Test installing wheels
+COPY --chown=synth:synth Home/Scripts/test-wheels.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/test-wheels.sh > $SYNTH_LOGS/test-wheels.log 2>&1
+
 # Finished!

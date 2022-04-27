@@ -19,8 +19,15 @@ cd $CUSIGNAL_HOME
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
 
-echo "Building 'cusignal'"
+echo "Building cuSignal wheel"
+sed -i.bak "s/python setup.py install/python setup.py bdist_wheel/" ./build.sh
 /usr/bin/time ./build.sh --allgpuarch
+
+echo "Saving cuSignal wheel"
+cp python/dist/cusignal-*.whl $SYNTH_WHEELS/
+
+echo "Installing cuSignal wheel"
+pip install python/dist/cusignal-*.whl
 
 if [ $CUSIGNAL_TEST -gt "0" ]
 then
@@ -37,6 +44,5 @@ cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
-rm -fr $SYNTH_PROJECTS/cusignal
 
 echo "Finished"
