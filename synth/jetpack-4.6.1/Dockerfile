@@ -1,5 +1,5 @@
 ARG ARG_BASE_IMAGE
-FROM "nvcr.io/nvidia/l4t-base:r32.7.1"
+FROM $ARG_BASE_IMAGE
 LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -21,6 +21,7 @@ ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
 ENV SYNTH_LOGS=$SYNTH_HOME/Logs
 ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
 ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
+ENV SYNTH_WHEELS=$SYNTH_HOME/Wheels
 
 # set up 'synth' account
 COPY docker-scripts/synth-user.sh /
