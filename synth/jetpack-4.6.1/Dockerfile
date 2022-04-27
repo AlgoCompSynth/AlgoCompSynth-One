@@ -66,8 +66,8 @@ RUN $SYNTH_SCRIPTS/test-torchaudio.sh
 # Installing cusignal
 ## newest release
 ENV CUSIGNAL_VERSION="22.04.00"
-## Run testing in Docker builds
-ENV CUSIGNAL_TEST="1"
+## Don't test by default
+ENV CUSIGNAL_TEST="0"
 COPY --chown=synth:synth Home/Scripts/cusignal.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
