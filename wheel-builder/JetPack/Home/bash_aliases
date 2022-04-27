@@ -1,2 +1,2 @@
-alias r-reticulate="source $WORKON_HOME/r-reticulate/bin/activate"
-alias deac="deactivate"
+alias r-reticulate="mamba activate r-reticulate"
+alias deac="mamba deactivate"

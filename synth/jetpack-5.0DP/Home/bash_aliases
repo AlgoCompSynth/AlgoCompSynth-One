@@ -1,2 +1,0 @@
-alias r-reticulate="source $WORKON_HOME/r-reticulate/bin/activate"
-alias deac="deactivate"
