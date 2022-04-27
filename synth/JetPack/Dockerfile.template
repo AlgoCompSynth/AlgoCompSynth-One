@@ -5,10 +5,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # collect envars
 ARG ARG_BASE_IMAGE
-ARG ARG_FROM_IMAGE
+ARG ARG_WHEEL_IMAGE
 ARG ARG_PYTHON_VERSION
 ENV BASE_IMAGE=$ARG_BASE_IMAGE
-ENV FROM_IMAGE=$ARG_FROM_IMAGE
+ENV WHEEL_IMAGE=$ARG_WHEEL_IMAGE
 ENV PYTHON_VERSION=$ARG_PYTHON_VERSION
 
 # virtual desktop
@@ -27,8 +27,8 @@ RUN /synth-user.sh > /synth-user.log 2>&1
 COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
 
 # make virtual desktop
-COPY --chown=synth:synth --from=$ARG_FROM_IMAGE $SYNTH_NOTEBOOKS $SYNTH_NOTEBOOKS
-COPY --chown=synth:synth --from=$ARG_FROM_IMAGE $SYNTH_WHEELS $SYNTH_WHEELS
+COPY --chown=synth:synth --from=WHEEL_IMAGE $SYNTH_NOTEBOOKS $SYNTH_NOTEBOOKS
+COPY --chown=synth:synth --from=WHEEL_IMAGE $SYNTH_WHEELS $SYNTH_WHEELS
 RUN mkdir --parents \
   $SYNTH_SCRIPTS \
   $SYNTH_LOGS \
