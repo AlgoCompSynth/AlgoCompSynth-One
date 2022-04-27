@@ -19,13 +19,13 @@ mamba install --quiet --yes \
   Cython
 
 echo "Downloading PyTorch wheel"
-pushd /tmp
+pushd $SYNTH_WHEELS
 rm -f $PYTORCH_WHEEL_FILE
 wget --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
 popd
 
 echo "Installing PyTorch"
-pip install /tmp/$PYTORCH_WHEEL_FILE
+pip install $SYNTH_WHEELS/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"
 mamba list
