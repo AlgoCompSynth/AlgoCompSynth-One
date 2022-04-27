@@ -34,8 +34,9 @@ COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
 RUN mkdir --parents \
   $SYNTH_SCRIPTS \
   $SYNTH_LOGS \
-  $SYNTH_NOTEBOOKS \
   $SYNTH_PROJECTS \
+  $SYNTH_NOTEBOOKS \
+  $SYNTH_WHEELS \
   && chown -R synth:synth $SYNTH_HOME
 
 USER synth
@@ -73,6 +74,10 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 # Installing JupyterLab
 COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
+
+# Saving cached wheels
+COPY --chown=synth:synth Home/Scripts/save-cached-wheels.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/save-cached-wheels.sh > $SYNTH_LOGS/save-cached-wheels.log 2>&1
 
 # Installing home directory scripts
 COPY --chown=synth:synth \

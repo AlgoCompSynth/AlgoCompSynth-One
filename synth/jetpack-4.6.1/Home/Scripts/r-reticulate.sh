@@ -10,9 +10,6 @@ sed -i.bak "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/r-reticulate.yml
 sed -i "s/TYPING_EXTENSIONS_VERSION/$TYPING_EXTENSIONS_VERSION/" $SYNTH_SCRIPTS/r-reticulate.yml
 /usr/bin/time mamba env create --force --file $SYNTH_SCRIPTS/r-reticulate.yml
 
-echo "Saving CuPy wheel"
-cp `find $SYNTH_HOME/.cache -name "cupy-*.whl"` $SYNTH_WHEELS/
-
 echo "Cleanup"
 mamba activate r-reticulate
 mamba list
