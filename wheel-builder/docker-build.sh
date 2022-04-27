@@ -33,6 +33,9 @@ else
   exit -1
 fi
 
+echo "Pulling $BASE_IMAGE"
+docker pull $BASE_IMAGE
+
 echo "Building $REPO"
 /usr/bin/time docker build \
   --build-arg "ARG_PYTHON_VERSION=$PYTHON_VERSION" \
