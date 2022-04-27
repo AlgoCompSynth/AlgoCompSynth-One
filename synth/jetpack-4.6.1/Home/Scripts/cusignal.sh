@@ -20,7 +20,7 @@ echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
 
 echo "Building cuSignal wheel"
-sed -i.bak "s/python setup.py install/python setup.py bdist_wheel"
+sed -i.bak "s/python setup.py install/python setup.py bdist_wheel/" ./build.sh
 /usr/bin/time ./build.sh --allgpuarch
 
 echo "Saving cuSignal wheel"
