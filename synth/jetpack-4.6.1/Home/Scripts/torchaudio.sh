@@ -21,9 +21,15 @@ cd audio
 echo "Checking out v$TORCHAUDIO_VERSION"
 git checkout v$TORCHAUDIO_VERSION
 
-echo "Installing 'torchaudio'"
+echo "Building torchaudio wheel"
 export BUILD_SOX=1
-/usr/bin/time python setup.py install
+/usr/bin/time python setup.py bdist_wheel
+
+echo "Saving torchaudio wheel"
+cp dist/torchaudio-*.whl $SYNTH_WHEELS/
+
+echo "Installing torchaudio wheel"
+pip install dist/torchaudio-*.whl
 
 echo "Cleanup"
 mamba list
