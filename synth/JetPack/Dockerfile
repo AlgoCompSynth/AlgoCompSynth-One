@@ -1,0 +1,67 @@
+ARG ARG_BASE_IMAGE
+FROM $ARG_BASE_IMAGE
+LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
+ARG DEBIAN_FRONTEND=noninteractive
+
+# collect envars
+ARG ARG_BASE_IMAGE
+ARG ARG_FROM_IMAGE
+ARG ARG_PYTHON_VERSION
+ENV BASE_IMAGE=$ARG_BASE_IMAGE
+ENV FROM_IMAGE=$ARG_FROM_IMAGE
+ENV PYTHON_VERSION=$ARG_PYTHON_VERSION
+
+# virtual desktop
+ENV SYNTH_HOME=/home/synth
+ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
+ENV SYNTH_LOGS=$SYNTH_HOME/Logs
+ENV SYNTH_PROJECTS=$SYNTH_HOME/Projects
+ENV SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
+ENV SYNTH_WHEELS=$SYNTH_HOME/Wheels
+
+# set up 'synth' account
+COPY docker-scripts/synth-user.sh /
+RUN /synth-user.sh > /synth-user.log 2>&1
+
+# enable passwordless sudo for 'synth'
+COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
+
+# make virtual desktop
+COPY --chown=synth:synth --from=$ARG_FROM_IMAGE $SYNTH_NOTEBOOKS $SYNTH_NOTEBOOKS
+COPY --chown=synth:synth --from=$ARG_FROM_IMAGE $SYNTH_WHEELS $SYNTH_WHEELS
+RUN mkdir --parents \
+  $SYNTH_SCRIPTS \
+  $SYNTH_LOGS \
+  $SYNTH_PROJECTS \
+  && chown -R synth:synth $SYNTH_HOME
+
+USER synth
+WORKDIR $SYNTH_HOME
+CMD [ "/bin/bash" ]
+
+# Installing Mambaforge
+COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+
+# Creating fresh mamba environment 'r-reticulate'
+COPY --chown=synth:synth Home/Scripts/r-reticulate* $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
+
+# Testing PyTorch
+COPY --chown=synth:synth Home/Scripts/*pytorch* $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
+
+# Installing torchaudio
+COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
+
+# Installing home directory scripts
+COPY --chown=synth:synth \
+  Home/bash_aliases \
+  Home/edit-me-then-run-4-git-config.sh \
+  Home/set-vim-background.sh \
+  Home/start-jupyter-lab.sh \
+  $SYNTH_HOME/
+RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
+
+# Finished!

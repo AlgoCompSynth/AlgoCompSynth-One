@@ -1,0 +1,16 @@
+name: r-reticulate
+channels:
+  - conda-forge
+  - nvidia
+  - numba
+  - c4aarch64
+dependencies:
+  - python=PYTHON_VERSION
+  - jupyterlab
+  - scipy>=1.5.0
+  - numpy
+  - matplotlib
+  - numba>=0.49
+  - pandas
+  - scikit-learn
+  - sympy
