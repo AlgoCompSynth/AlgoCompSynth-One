@@ -42,10 +42,6 @@ USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
-# Installing Linux dependencies
-COPY --chown=synth:synth Home/Scripts/linux-dependencies.sh $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/linux-dependencies.sh > $SYNTH_LOGS/linux-dependencies.log 2>&1
-
 # Installing Mambaforge
 COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
