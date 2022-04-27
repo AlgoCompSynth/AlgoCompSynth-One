@@ -22,7 +22,7 @@ echo "Checking out v$TORCHAUDIO_VERSION"
 git checkout v$TORCHAUDIO_VERSION
 
 echo "Patching source"
-if [ "$TORCHAUDIO_VERSION" -eq "0.11.0" ]
+if [ "$TORCHAUDIO_VERSION" == "0.11.0" ]
 then
 
 # https://github.com/dusty-nv/jetson-containers/blob/master/Dockerfile.pytorch
