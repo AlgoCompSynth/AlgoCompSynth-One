@@ -48,8 +48,6 @@ COPY --chown=synth:synth Home/Scripts/mambaforge.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 # Creating fresh mamba environment 'r-reticulate'
-## Newer versions yield a PyTorch crash on import!
-#ENV TYPING_EXTENSIONS_VERSION="4.1.1"
 COPY --chown=synth:synth Home/Scripts/r-reticulate* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 
