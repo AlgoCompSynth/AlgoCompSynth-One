@@ -8,12 +8,6 @@ mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 echo "PATH is now $PATH"
 
-echo "Installing Linux dependencies"
-sudo apt-get install -qqy --no-install-recommends \
-  libopenblas-base \
-  libopenmpi-dev \
-  libomp-dev
-
 echo "Installing Cython"
 mamba install --quiet --yes \
   Cython

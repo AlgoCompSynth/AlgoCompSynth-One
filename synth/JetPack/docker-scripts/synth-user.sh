@@ -30,6 +30,13 @@ apt-get install -qqy --no-install-recommends \
   vim-nox \
   wget \
   zip
+
+echo "Installing PyTorch Linux dependencies"
+sudo apt-get install -qqy --no-install-recommends \
+  libopenblas-base \
+  libopenmpi-dev \
+  libomp-dev
+
 apt-get clean
 
 echo "Creating 'synth' user"
