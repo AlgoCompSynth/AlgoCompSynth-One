@@ -4,7 +4,7 @@ set -e
 
 echo "Before nvpmodel"
 sudo nvpmodel --query
-sudo nvpmodel --mode 8
+sudo nvpmodel --mode 2
 
 echo "After nvpmodel"
 sudo nvpmodel --query

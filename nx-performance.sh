@@ -4,7 +4,7 @@ set -e
 
 echo "Before nvpmodel"
 sudo nvpmodel -q
-sudo nvpmodel -m 8 -d cool
+sudo nvpmodel -m 2 -d cool
 
 echo "After nvpmodel"
 sudo nvpmodel -q
