@@ -18,5 +18,9 @@ dependencies:
   - numpydoc
   - ipython
   - pip
-  - pip:
-    - cupy>=9.0.0
+  - jupyter
+  - jupyterlab
+  - jupyterlab-git
+  - pandas
+  - scikit-learn
+  - sympy

@@ -51,15 +51,19 @@ RUN $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 COPY --chown=synth:synth Home/Scripts/r-reticulate* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 
+# This takes a long time because it is building CuPy from source
+COPY --chown=synth:synth Home/Scripts/cupy.sh $SYNTH_SCRIPTS/
+RUN /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
+
 # Installing PyTorch
 COPY --chown=synth:synth Home/Scripts/*pytorch* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
-RUN $SYNTH_SCRIPTS/test-pytorch.sh
+RUN $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
 # Installing torchaudio
 COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
-RUN $SYNTH_SCRIPTS/test-torchaudio.sh
+RUN $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
 # Installing cusignal
 ## newest release
@@ -70,8 +74,8 @@ COPY --chown=synth:synth Home/Scripts/cusignal.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 
 # Installing JupyterLab
-COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
-RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
+#COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
+#RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
 
 # Saving cached wheels
 COPY --chown=synth:synth Home/Scripts/save-cached-wheels.sh $SYNTH_SCRIPTS/
