@@ -72,6 +72,8 @@ ENV CUSIGNAL_VERSION="22.04.00"
 ENV CUSIGNAL_TEST="0"
 COPY --chown=synth:synth Home/Scripts/cusignal.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+# save test notebooks for smaller Jetsons
+COPY --chown=synth:synth Home/Scripts/E2E* $SYNTH_NOTEBOOKS/
 
 # Installing JupyterLab
 #COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
