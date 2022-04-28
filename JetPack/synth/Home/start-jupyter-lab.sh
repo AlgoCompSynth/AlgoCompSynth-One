@@ -10,8 +10,6 @@ export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
 
 echo "Generating Jupyter configuration file"
 jupyter notebook --generate-config
-echo "Enabling widgets"
-jupyter nbextension enable --py widgetsnbextension
 echo "Enter the same strong password twice"
 jupyter server password
 echo "If running remotely, browse to port 8888 on this host instead of 'localhost'"
