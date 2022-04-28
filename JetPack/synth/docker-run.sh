@@ -2,16 +2,14 @@
 
 set -e
 
-export REGISTRY="docker.io"
-export ACCOUNT="algocompsynth"
-export REPO="synth"
+echo "Defining environment variables"
+source ../jetpack-envars.sh
+export REPO=$SYNTH_REPO
+export IMAGE_NAME=$SYNTH_IMAGE
 
 echo "Removing '$REPO' container"
 echo "Ignore 'No such container' errors"
 docker rm $REPO || true
-
-echo "Getting latest image name"
-export IMAGE_NAME=`docker images | grep $REPO | head -n 1 | sed 's/  */:/' | sed 's/ .*$//'`
 
 echo "Running $IMAGE_NAME"
 docker run --interactive --tty \
