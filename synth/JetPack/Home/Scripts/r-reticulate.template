@@ -6,7 +6,9 @@ channels:
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
+  - jupyter
   - jupyterlab
+  - jupyterlab-git
   - scipy>=1.5.0
   - numpy
   - matplotlib
