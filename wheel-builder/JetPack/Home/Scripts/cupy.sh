@@ -17,7 +17,7 @@ then
 fi
 
 echo "Installing CuPy - this takes a long time!"
-/usr/bin/time pip install cupy
+/usr/bin/time pip install cupy>=9.0.0
 
 echo "Cleanup"
 mamba list
