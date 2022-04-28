@@ -5,13 +5,12 @@ set -e
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 
-#if [ ! -x /usr/local/cuda/bin/nvcc ]
-#then
-  #echo "CUDA missing - installing!"
-  #sudo apt-get install -qqy --no-install-recommends \
-    #cuda-toolkit-11-4 \
-    #libcudnn8-dev
-#fi
+if [ ! -e /usr/lib/aarch64-linux-gnu/libcudnn.so.8 ]
+then
+  echo "cudnn library missing - installing!"
+  sudo apt-get install -qqy --no-install-recommends \
+    libcudnn8
+fi
 
 echo "Creating fresh r-reticulate virtual environment"
 sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/r-reticulate.template > $SYNTH_SCRIPTS/r-reticulate.yml
