@@ -19,7 +19,7 @@ dependencies:
   - ipython
   - pip
   - jupyter
-  - jupyter_server
+  - jupyter_server<1.13.2
   - jupyterlab
   - pandas
   - scikit-learn
