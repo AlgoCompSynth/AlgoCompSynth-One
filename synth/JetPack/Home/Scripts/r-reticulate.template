@@ -7,8 +7,8 @@ channels:
 dependencies:
   - python=PYTHON_VERSION
   - jupyter
+  - jupyter_server
   - jupyterlab
-  - jupyterlab-git
   - scipy>=1.5.0
   - numpy
   - matplotlib

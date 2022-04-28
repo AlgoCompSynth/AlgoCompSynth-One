@@ -19,8 +19,8 @@ dependencies:
   - ipython
   - pip
   - jupyter
+  - jupyter_server
   - jupyterlab
-  - jupyterlab-git
   - pandas
   - scikit-learn
   - sympy
