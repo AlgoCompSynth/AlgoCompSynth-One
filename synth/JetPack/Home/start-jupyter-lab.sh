@@ -8,6 +8,8 @@ mamba activate r-reticulate
 # https://forums.developer.nvidia.com/t/error-importerror-usr-lib-aarch64-linux-gnu-libgomp-so-1-cannot-allocate-memory-in-static-tls-block-i-looked-through-available-threads-already/166494/3
 export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
 
+echo "Enabling widgets"
+jupyter nbextension enable --py widgetsnbextension
 echo "Generating Jupyter configuration file"
 jupyter notebook --generate-config
 echo "Enter the same strong password twice"
