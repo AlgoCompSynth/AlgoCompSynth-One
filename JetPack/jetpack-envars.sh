@@ -29,7 +29,7 @@ else
   exit -1
 fi
 
-echo "Common envars"
+echo "Defining common envars"
 export IMAGE_TAG=`echo $BASE_IMAGE | sed "s/^.*://"`
 export WHEEL_IMAGE="$REGISTRY/$ACCOUNT/$WHEEL_REPO:$IMAGE_TAG"
 export SYNTH_IMAGE="$REGISTRY/$ACCOUNT/$SYNTH_REPO:$IMAGE_TAG"
