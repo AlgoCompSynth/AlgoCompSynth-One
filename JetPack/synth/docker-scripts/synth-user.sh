@@ -37,6 +37,15 @@ sudo apt-get install -qqy --no-install-recommends \
   libopenmpi-dev \
   libomp-dev
 
+if [ ! -e /usr/lib/aarch64-linux-gnu/libcudnn.so.8 ]
+then
+  echo "cudnn library missing - installing!"
+  sudo apt-get install -qqy --no-install-recommends \
+    cuda-nvtx-11-4 \
+    cuda-runtime-11-4 \
+    libcudnn8
+fi
+
 apt-get clean
 
 echo "Creating 'synth' user"
