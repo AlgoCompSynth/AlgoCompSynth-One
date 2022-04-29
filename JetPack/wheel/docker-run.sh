@@ -19,6 +19,3 @@ docker run --interactive --tty \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   --env DISPLAY=$DISPLAY \
   $IMAGE_NAME /bin/bash
-
-echo "Downloading wheels"
-docker cp $REPO:/home/synth/Wheels ./Wheels-$IMAGE_TAG
