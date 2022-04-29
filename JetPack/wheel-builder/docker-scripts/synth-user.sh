@@ -32,10 +32,18 @@ apt-get install -qqy --no-install-recommends \
   zip
 
 echo "Installing PyTorch Linux dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+apt-get install -qqy --no-install-recommends \
   libopenblas-base \
   libopenmpi-dev \
   libomp-dev
+
+if [ ! -x /usr/local/cuda/bin/nvcc ]
+then
+  echo "CUDA toolkit missing - installing!"
+  apt-get install -qqy --no-install-recommends \
+    cuda-toolkit-11-4 \
+    libcudnn8-dev
+fi
 
 apt-get clean
 
