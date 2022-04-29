@@ -13,8 +13,8 @@ then
   export BASE_IMAGE="nvcr.io/nvidia/l4t-base:r34.1"
   export IMAGE_TAG="jp5"
   export PYTHON_VERSION="3.8"
-  export PYTORCH_WHEEL_URL="https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl"
-  export PYTORCH_WHEEL_FILE="torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl"
+  export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/ssf2v7pf5i245fk4i0q926hy4imzs2ph.whl"
+  export PYTORCH_WHEEL_FILE="torch-1.11.0-cp38-cp38-linux_aarch64.whl"
   export TORCHAUDIO_VERSION="0.11.0"
 elif [ "$JETPACK4" -gt "0" ]
 then
