@@ -2,9 +2,18 @@
 
 set -e
 
-echo "Installing command line utilities"
+echo "Upgrading"
 apt-get update
 apt-get upgrade -y
+
+echo "Installing gnupg2 if needed"
+apt-get install -qqy --no-install-recommends gnupg2
+
+echo "Updating NVIDIA keys"
+apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
+
+echo "Installing command line utilities"
 apt-get install -qqy --no-install-recommends \
   apt-file \
   bash-completion \
