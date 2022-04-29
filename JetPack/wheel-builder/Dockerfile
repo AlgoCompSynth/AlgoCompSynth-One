@@ -75,10 +75,6 @@ RUN /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 # save test notebooks for smaller Jetsons
 COPY --chown=synth:synth Home/Scripts/E2E* $SYNTH_NOTEBOOKS/
 
-# Installing JupyterLab
-#COPY --chown=synth:synth Home/Scripts/jupyterlab.sh $SYNTH_SCRIPTS/
-#RUN /usr/bin/time $SYNTH_SCRIPTS/jupyterlab.sh > $SYNTH_LOGS/jupyterlab.log 2>&1
-
 # Saving cached wheels
 COPY --chown=synth:synth Home/Scripts/save-cached-wheels.sh $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/save-cached-wheels.sh > $SYNTH_LOGS/save-cached-wheels.log 2>&1
