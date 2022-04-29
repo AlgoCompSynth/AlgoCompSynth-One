@@ -10,7 +10,7 @@ echo "Pulling $BASE_IMAGE"
 docker pull $BASE_IMAGE
 
 echo "Editing Dockerfile"
-sed "s;WHEEL_IMAGE;$WHEEL_IMAGE;" Dockerfile.template > Dockerfile
+sed "s;--from=WHEEL_IMAGE;--from=$WHEEL_IMAGE;" Dockerfile.template > Dockerfile
 
 echo "Building $REPO"
 /usr/bin/time docker build \
