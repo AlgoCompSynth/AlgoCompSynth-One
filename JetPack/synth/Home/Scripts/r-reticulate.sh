@@ -9,6 +9,8 @@ if [ ! -e /usr/lib/aarch64-linux-gnu/libcudnn.so.8 ]
 then
   echo "cudnn library missing - installing!"
   sudo apt-get install -qqy --no-install-recommends \
+    cuda-nvtx-11-4 \
+    cuda-runtime-11-4 \
     libcudnn8
 fi
 
@@ -18,6 +20,10 @@ sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/r-reticulate.template > $
 
 echo "Activating r-reticulate"
 mamba activate r-reticulate
+
+echo "Configuring widgets"
+jupyter nbextension install --py widgetsnbextension --user
+jupyter nbextension enable --py widgetsnbextension
 
 echo "Installing CuPy, cuSignal, PyTorch and torchaudio from wheels"
 pip install $SYNTH_WHEELS/*.whl
