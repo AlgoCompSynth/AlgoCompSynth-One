@@ -52,8 +52,12 @@ COPY --chown=synth:synth Home/Scripts/*pytorch* $SYNTH_SCRIPTS/
 RUN /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 RUN $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
-# Installing torchaudio
-COPY --chown=synth:synth Home/Scripts/*torchaudio* $SYNTH_SCRIPTS/
+# Installing pip wheels
+COPY --chown=synth:synth Home/Scripts/pip-wheels.sh $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/pip-wheels.sh > $SYNTH_LOGS/pip-wheels.log 2>&1
+
+# Testing torchaudio
+COPY --chown=synth:synth Home/Scripts/test-torchaudio.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
 # Installing home directory scripts
@@ -66,6 +70,3 @@ COPY --chown=synth:synth \
 RUN cat $SYNTH_HOME/bash_aliases >> $SYNTH_HOME/.bash_aliases
 
 # Finished!
-
-
-

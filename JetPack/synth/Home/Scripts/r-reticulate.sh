@@ -13,11 +13,8 @@ echo "Activating r-reticulate"
 mamba activate r-reticulate
 
 echo "Configuring widgets"
-jupyter nbextension install --py widgetsnbextension --user
+jupyter nbextension install --py widgetsnbextension --sys-prefix
 jupyter nbextension enable --py widgetsnbextension
-
-echo "Installing CuPy, cuSignal, PyTorch and torchaudio from wheels"
-pip install $SYNTH_WHEELS/*.whl
 
 echo "Cleanup"
 mamba list
