@@ -13,8 +13,8 @@ echo "Activating r-reticulate"
 mamba activate r-reticulate
 
 echo "Configuring widgets"
-jupyter nbextension install --py widgetsnbextension --sys-prefix
-jupyter nbextension enable --py widgetsnbextension
+jupyter nbextension install widgetsnbextension --py --sys-prefix
+jupyter nbextension enable widgetsnbextension --py --sys-prefix
 
 echo "Cleanup"
 mamba list
