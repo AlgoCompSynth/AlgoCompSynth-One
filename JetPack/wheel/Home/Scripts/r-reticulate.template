@@ -18,7 +18,7 @@ dependencies:
   - numpydoc
   - ipython
   - pip
-  - jupyterlab
+  - jupyterlab=3.3.4
   - pandas
   - scikit-learn
   - sympy
