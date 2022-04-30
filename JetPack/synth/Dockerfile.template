@@ -65,7 +65,7 @@ COPY --chown=synth:synth Home/Scripts/pip-wheels.sh $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/pip-wheels.sh > $SYNTH_LOGS/pip-wheels.log 2>&1
 
 # Testing torchaudio
-COPY --chown=synth:synth Home/Scripts/test-torchaudio.sh $SYNTH_SCRIPTS/
+COPY --chown=synth:synth Home/Scripts/test-torchaudio.* $SYNTH_SCRIPTS/
 RUN $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
 # Installing home directory scripts
