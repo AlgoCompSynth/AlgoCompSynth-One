@@ -12,10 +12,6 @@ sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/r-reticulate.template > $
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
-echo "Configuring widgets"
-jupyter nbextension install widgetsnbextension --py --sys-prefix
-jupyter nbextension enable widgetsnbextension --py --sys-prefix
-
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
