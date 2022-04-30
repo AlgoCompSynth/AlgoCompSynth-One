@@ -46,12 +46,26 @@ apt-get install -qqy --no-install-recommends \
   libopenmpi-dev \
   libomp-dev
 
-if [ ! -x /usr/local/cuda/bin/nvcc ]
+if [ "$IMAGE_TAG" = "jp5.0" ]
 then
-  echo "CUDA toolkit missing - installing!"
-  apt-get install -qqy --no-install-recommends \
-    cuda-toolkit-11-4 \
-    libcudnn8-dev
+
+  if [ "$CUDA_INSTALL" = "developer" ]
+  then
+    echo "Installing CUDA toolkit"
+    apt-get install -qqy --no-install-recommends \
+      cuda-toolkit-11-4 \
+      libcudnn8-dev
+  fi
+
+  if [ "$CUDA_INSTALL" = "runtime" ]
+  then
+    echo "Installing CUDA runtime"
+    apt-get install -qqy --no-install-recommends \
+      cuda-nvtx-11-4 \
+      cuda-runtime-11-4 \
+      libcudnn8
+  fi
+
 fi
 
 apt-get clean

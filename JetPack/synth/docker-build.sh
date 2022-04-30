@@ -5,6 +5,7 @@ set -e
 echo "Defining environment variables"
 source ../jetpack-envars.sh
 export REPO=$SYNTH_REPO
+export CUDA_INSTALL="runtime"
 
 echo "Pulling $BASE_IMAGE"
 docker pull $BASE_IMAGE
@@ -20,5 +21,6 @@ echo "Building $REPO"
   --build-arg "ARG_PYTORCH_WHEEL_FILE=$PYTORCH_WHEEL_FILE" \
   --build-arg "ARG_TORCHAUDIO_VERSION=$TORCHAUDIO_VERSION" \
   --build-arg "ARG_WHEEL_IMAGE=$WHEEL_IMAGE" \
+  --build-arg "ARG_CUDA_INSTALL=$CUDA_INSTALL" \
   --tag $REGISTRY/$ACCOUNT/$REPO:$IMAGE_TAG \
   . > /tmp/$REPO.log 2>&1
