@@ -11,6 +11,8 @@ echo "Removing '$REPO' container"
 echo "Ignore 'No such container' errors"
 docker rm $REPO || true
 
+docker pull $IMAGE_NAME
+
 echo "Running $IMAGE_NAME"
 docker run --interactive --tty \
   --name $REPO \
