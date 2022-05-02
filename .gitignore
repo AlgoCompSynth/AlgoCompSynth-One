@@ -1,11 +1,6 @@
-logs
-Logfiles
 *.log
 *.mid
 *.wav
 *.flac
-deviceQuery.txt
-Logs/*
-Projects/*
-Notebooks/*
-Wheels/*
+*.mp3
+*.ogg
