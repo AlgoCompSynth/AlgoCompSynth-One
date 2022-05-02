@@ -1,8 +1,11 @@
+echo ""
 echo "Detecting JetPack version"
 export PATH=$PATH:/usr/local/cuda/bin
 export JETPACK_VERSION=`dpkg-query --show nvidia-jetpack | sed "s;nvidia-jetpack\t;;" | sed "s;-.*$;;"`
 echo "JETPACK_VERSION: $JETPACK_VERSION"
 
+echo ""
+echo "Setting versions to install"
 if [ "$JETPACK_VERSION" = "5.0" ]
 then
   export PYTHON_VERSION="3.8"
@@ -25,7 +28,8 @@ echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
 echo "PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
 echo "TORCHAUDIO_VERSION: $TORCHAUDIO_VERSION"
 
-echo "Building and running 'deviceQuery'"
+echo ""
+echo "Building and running deviceQuery"
 pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
 sudo make
 sudo cp deviceQuery /usr/local/bin/
@@ -33,6 +37,13 @@ popd
 
 deviceQuery > deviceQuery.txt
 
+echo ""
+echo "Defining CUPY_NVCC_GENERATE_CODE"
+export CUDA_CAPABILITY=`grep -e 'CUDA Capability Major/Minor version number:' deviceQuery.txt | sed "s/^.*:  *//" | sed "s/\.//"`
+export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CAPABILITY,code=sm_$CUDA_CAPABILITY"
+echo "CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
+
+echo ""
 echo "Defining CMAKE_BUILD_PARALLEL_LEVEL"
 if [ `nproc` -lt "5" ]
 then 
@@ -40,3 +51,4 @@ then
 else
   export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
 fi
+echo "CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"

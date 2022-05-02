@@ -5,3 +5,7 @@ Logfiles
 *.wav
 *.flac
 deviceQuery.txt
+Logs/*
+Projects/*
+Notebooks/*
+Wheels/*
