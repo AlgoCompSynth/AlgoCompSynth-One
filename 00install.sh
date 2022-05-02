@@ -7,6 +7,7 @@ echo "Setting environment variables"
 export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
 
+echo ""
 echo "Creating virtual desktop"
 export SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
 export SYNTH_LOGS=$SYNTH_HOME/Logs
@@ -25,14 +26,14 @@ $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 echo "Installing Mambaforge"
 $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
-# Creating fresh mamba environment 'r-reticulate'
+echo "Creating r-reticulate mamba environment"
 /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 
-# Installing PyTorch
+echo "Installing PyTorch"
 /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
-# Installing torchaudio
+echo "Installing torchaudio"
 /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
