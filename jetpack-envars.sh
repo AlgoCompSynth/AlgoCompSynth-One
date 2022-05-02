@@ -24,3 +24,11 @@ echo "PYTHON_VERSION: $PYTHON_VERSION"
 echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
 echo "PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
 echo "TORCHAUDIO_VERSION: $TORCHAUDIO_VERSION"
+
+echo "Building and running 'deviceQuery'"
+pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
+sudo make
+sudo cp deviceQuery /usr/local/bin/
+popd
+
+deviceQuery > deviceQuery.txt
