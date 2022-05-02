@@ -1,24 +1,21 @@
-export REGISTRY="docker.io"
-export ACCOUNT="algocompsynth"
-export WHEEL_REPO="wheel"
-export SYNTH_REPO="synth"
-
+echo ""
 echo "Detecting JetPack version"
 export PATH=$PATH:/usr/local/cuda/bin
-export JETPACK4=`nvcc --version | grep -e "10.2" | wc -l`
-export JETPACK5=`nvcc --version | grep -e "11.4" | wc -l`
-if [ "$JETPACK5" -gt "0" ]
+export JETPACK_VERSION=`dpkg-query --show nvidia-jetpack | sed "s;nvidia-jetpack\t;;" | sed "s;-.*$;;"`
+echo "JETPACK_VERSION: $JETPACK_VERSION"
+
+echo ""
+echo "Setting versions to install"
+if [ "$JETPACK_VERSION" = "5.0" ]
 then
-  echo "JetPack 5 detected"
   export BASE_IMAGE="nvcr.io/nvidia/l4t-base:r34.1"
   export IMAGE_TAG="jp5.0"
   export PYTHON_VERSION="3.8"
   export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/ssf2v7pf5i245fk4i0q926hy4imzs2ph.whl"
   export PYTORCH_WHEEL_FILE="torch-1.11.0-cp38-cp38-linux_aarch64.whl"
   export TORCHAUDIO_VERSION="0.11.0"
-elif [ "$JETPACK4" -gt "0" ]
+elif [ "$JETPACK_VERSION" = "4.6.1" ]
 then
-  echo "JetPack 4 detected"
   export BASE_IMAGE="nvcr.io/nvidia/l4t-base:r32.7.1"
   export IMAGE_TAG="jp4.6.1"
   export PYTHON_VERSION="3.6"
@@ -30,10 +27,36 @@ else
   exit -1
 fi
 
-echo "Defining common envars"
-export WHEEL_IMAGE="$REGISTRY/$ACCOUNT/$WHEEL_REPO:$IMAGE_TAG"
-export SYNTH_IMAGE="$REGISTRY/$ACCOUNT/$SYNTH_REPO:$IMAGE_TAG"
+echo "BASE_IMAGE: $BASE_IMAGE"
+echo "IMAGE_TAG: $IMAGE_TAG"
+echo "PYTHON_VERSION: $PYTHON_VERSION"
+echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
+echo "PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
+echo "TORCHAUDIO_VERSION: $TORCHAUDIO_VERSION"
 
+export WHEEL_REPO="wheel"
+export SYNTH_REPO="synth"
+export WHEEL_IMAGE="$WHEEL_REPO:$IMAGE_TAG"
+export SYNTH_IMAGE="$SYNTH_REPO:$IMAGE_TAG"
+echo "WHEEL_IMAGE: $WHEEL_IMAGE"
+echo "SYNTH_IMAGE: $SYNTH_IMAGE"
+
+echo ""
+echo "Building and running deviceQuery"
+pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
+sudo make
+sudo cp deviceQuery /usr/local/bin/
+popd
+
+deviceQuery > deviceQuery.txt
+
+echo ""
+echo "Defining CUPY_NVCC_GENERATE_CODE"
+export CUDA_CAPABILITY=`grep -e 'CUDA Capability Major/Minor version number:' deviceQuery.txt | sed "s/^.*:  *//" | sed "s/\.//"`
+export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CAPABILITY,code=sm_$CUDA_CAPABILITY"
+echo "CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
+
+echo ""
 echo "Defining CMAKE_BUILD_PARALLEL_LEVEL"
 if [ `nproc` -lt "5" ]
 then 
@@ -41,4 +64,4 @@ then
 else
   export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
 fi
-echo "nproc: `nproc`, CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
+echo "CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
