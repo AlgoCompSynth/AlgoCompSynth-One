@@ -48,7 +48,9 @@ echo "Defining CMAKE_BUILD_PARALLEL_LEVEL"
 if [ `nproc` -lt "5" ]
 then 
   export CMAKE_BUILD_PARALLEL_LEVEL=3
+  export MAKEFLAGS="-j3"
 else
   export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
+  export MAKEFLAGS="-j$(nproc)"
 fi
 echo "CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
