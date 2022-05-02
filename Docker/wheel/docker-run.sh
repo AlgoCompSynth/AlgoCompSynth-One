@@ -16,6 +16,4 @@ docker run --interactive --tty \
   --name $REPO \
   --network host \
   --runtime nvidia \
-  --volume /tmp/.X11-unix:/tmp/.X11-unix \
-  --env DISPLAY=$DISPLAY \
   $IMAGE_NAME /bin/bash
