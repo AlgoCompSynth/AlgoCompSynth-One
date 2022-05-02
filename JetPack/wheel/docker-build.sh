@@ -13,6 +13,7 @@ docker pull $BASE_IMAGE
 echo "Building $REPO"
 /usr/bin/time docker build \
   --build-arg "ARG_BASE_IMAGE=$BASE_IMAGE" \
+  --build-arg "ARG_CMAKE_BUILD_PARALLEL_LEVEL=$CMAKE_BUILD_PARALLEL_LEVEL" \
   --build-arg "ARG_CUDA_INSTALL=$CUDA_INSTALL" \
   --build-arg "ARG_IMAGE_TAG=$IMAGE_TAG" \
   --build-arg "ARG_PYTHON_VERSION=$PYTHON_VERSION" \

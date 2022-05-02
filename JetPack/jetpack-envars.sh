@@ -33,3 +33,12 @@ fi
 echo "Defining common envars"
 export WHEEL_IMAGE="$REGISTRY/$ACCOUNT/$WHEEL_REPO:$IMAGE_TAG"
 export SYNTH_IMAGE="$REGISTRY/$ACCOUNT/$SYNTH_REPO:$IMAGE_TAG"
+
+echo "Defining CMAKE_BUILD_PARALLEL_LEVEL"
+if [ `nproc` -lt "5" ]
+then 
+  export CMAKE_BUILD_PARALLEL_LEVEL=3
+else
+  export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
+fi
+echo "nproc: `nproc`, CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
