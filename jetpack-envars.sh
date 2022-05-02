@@ -32,3 +32,11 @@ sudo cp deviceQuery /usr/local/bin/
 popd
 
 deviceQuery > deviceQuery.txt
+
+echo "Defining CMAKE_BUILD_PARALLEL_LEVEL"
+if [ `nproc` -lt "5" ]
+then 
+  export CMAKE_BUILD_PARALLEL_LEVEL=3
+else
+  export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
+fi
