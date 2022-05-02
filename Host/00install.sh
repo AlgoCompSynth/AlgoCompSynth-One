@@ -24,7 +24,7 @@ echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 
 echo "Installing Mambaforge"
-$SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+/usr/bin/time $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
 
 echo "Creating r-reticulate mamba environment"
 /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
