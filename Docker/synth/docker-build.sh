@@ -23,5 +23,5 @@ echo "Building $REPO"
   --build-arg "ARG_PYTORCH_WHEEL_FILE=$PYTORCH_WHEEL_FILE" \
   --build-arg "ARG_TORCHAUDIO_VERSION=$TORCHAUDIO_VERSION" \
   --build-arg "ARG_WHEEL_IMAGE=$WHEEL_IMAGE" \
-  --tag $REGISTRY/$ACCOUNT/$REPO:$IMAGE_TAG \
+  --tag $REPO:$IMAGE_TAG \
   . > /tmp/$REPO.log 2>&1
