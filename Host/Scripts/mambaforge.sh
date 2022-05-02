@@ -40,3 +40,9 @@ mamba update --name base --all --yes --quiet
 
 echo "Setting up bash command line"
 mamba init bash
+
+if [ -e $HOME/.zshrc ]
+then
+  echo "Setting up zsh command line"
+  mamba init zsh
+fi

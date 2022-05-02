@@ -1,6 +1,6 @@
-logs
-Logfiles
 *.log
 *.mid
 *.wav
 *.flac
+*.mp3
+*.ogg

@@ -1,0 +1,90 @@
+#! /bin/bash
+
+set -e
+
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
+export PATH=$PATH:/usr/local/cuda/bin
+
+echo "Activating r-reticulate"
+mamba activate r-reticulate
+
+if [ `mamba list | grep cusignal | wc -l` -gt "0" ]
+then
+  echo "cusignal is already installed - exiting normally"
+  exit
+fi
+
+if [ `find $SYNTH_WHEELS -name "cusignal-*.whl" | wc -l` -gt "0" ]
+then
+  echo "cusignal wheel found - installing and exiting normally"
+
+  # cupy is cached!
+  pip install cupy
+  pip install $SYNTH_WHEELS/cusignal-*.whl
+  exit
+fi
+
+echo "cusignal build required - deactivating r-reticulate"
+mamba deactivate
+
+cd $SYNTH_PROJECTS
+
+export CUSIGNAL_HOME=$(pwd)/cusignal
+echo "Removing previous 'cusignal'"
+rm -fr $CUSIGNAL_HOME
+git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME
+cd $CUSIGNAL_HOME
+echo "Checking out version v$CUSIGNAL_VERSION"
+git checkout v$CUSIGNAL_VERSION
+
+export NEW_LINE="- python=$PYTHON_VERSION"
+sed -i.bak "/dependencies:/a $NEW_LINE" conda/environments/cusignal_jetson_base.yml
+sed -i "s/^-/  -/" conda/environments/cusignal_jetson_base.yml
+echo "Creating fresh cusignal-dev environment"
+echo "This may take a long time if it needs to build CuPy from source!"
+/usr/bin/time mamba env create --quiet --force --file conda/environments/cusignal_jetson_base.yml
+
+echo "Activating cusignal-dev"
+mamba activate cusignal-dev
+
+echo "Building cuSignal wheel"
+sed -i.bak "s/python setup.py install/python setup.py bdist_wheel/" ./build.sh
+/usr/bin/time ./build.sh --allgpuarch
+
+echo "Saving cuSignal wheel"
+cp python/dist/cusignal-*.whl $SYNTH_WHEELS/
+
+echo "Test installing cuSignal wheel"
+pip install $SYNTH_WHEELS/cusignal-*.whl
+
+if [ $CUSIGNAL_TEST -gt "0" ]
+then
+  set +e
+  echo "Testing 'cusignal'"
+  /usr/bin/time pytest -v
+  set -e
+fi
+
+echo "Copying $CUSIGNAL_HOME/notebooks to $SYNTH_NOTEBOOKS/cusignal-notebooks"
+rm -rf $SYNTH_NOTEBOOKS/cusignal-notebooks
+cp -rp $CUSIGNAL_HOME/notebooks $SYNTH_NOTEBOOKS/cusignal-notebooks
+
+echo "Copying E2E test notebooks to $SYNTH_NOTEBOOKS"
+cp $SYNTH_SCRIPTS/E2E*ipynb $SYNTH_NOTEBOOKS/
+
+echo "Deactivating cusignal-dev"
+mamba deactivate
+
+echo "Activating r-reticulate"
+mamba activate r-reticulate
+echo "Installing cuSignal wheel in r-reticulate"
+# cupy is cached!
+pip install cupy
+pip install $SYNTH_WHEELS/cusignal-*.whl
+
+echo "Cleanup"
+mamba list
+mamba clean --tarballs --yes
+
+echo "Finished"

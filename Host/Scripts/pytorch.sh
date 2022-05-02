@@ -6,20 +6,27 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
-echo "PATH is now $PATH"
+
+if [ `mamba list | grep torch | wc -l` -gt "0" ]
+then
+  echo "PyTorch already installed - exiting"
+  exit
+fi
 
 echo "Installing Cython"
 mamba install --quiet --yes \
   Cython
 
-echo "Downloading PyTorch wheel"
-pushd /tmp
-rm -f $PYTORCH_WHEEL_FILE
-wget --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
+pushd $SYNTH_WHEELS
+if [ ! -e $PYTORCH_WHEEL_FILE ]
+then
+  echo "Downloading PyTorch wheel"
+  wget --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
+fi
 popd
 
 echo "Installing PyTorch"
-pip install /tmp/$PYTORCH_WHEEL_FILE
+pip install $SYNTH_WHEELS/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"
 mamba list
