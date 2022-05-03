@@ -28,6 +28,7 @@ sudo apt-get install -qqy --no-install-recommends \
   bash-completion \
   build-essential \
   ca-certificates \
+  dirmngr \
   ffmpeg \
   git \
   gstreamer1.0-libav \
