@@ -14,11 +14,13 @@ export SYNTH_LOGS=$SYNTH_HOME/Logs
 export SYNTH_PROJECTS=$SYNTH_HOME/Projects
 export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
 export SYNTH_WHEELS=$SYNTH_HOME/Wheels
+export SYNTH_PACKAGES=$SYNTH_HOME/Packages
 mkdir --parents \
   $SYNTH_LOGS \
   $SYNTH_PROJECTS \
   $SYNTH_NOTEBOOKS \
-  $SYNTH_WHEELS
+  $SYNTH_WHEELS \
+  $SYNTH_PACKAGES
 
 echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
@@ -44,5 +46,8 @@ export CUSIGNAL_VERSION="22.04.00"
 ## Don't test by default
 export CUSIGNAL_TEST="0"
 /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+
+echo "Installing r-base-dev - this takes a while if it compiles from source"
+/usr/bin/time $SYNTH_SCRIPTS/r-base-dev.sh #> $SYNTH_LOGS/r-base-dev.log 2>&1
 
 echo "Finished!"
