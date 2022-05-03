@@ -2,6 +2,14 @@
 
 set -e
 
+echo "Enabling source packages"
+if [ `lsb_release --codename --short` == "focal" ]
+then
+  diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list || true
+  sudo cp $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list
+  diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list 
+fi
+
 echo "Upgrading"
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
