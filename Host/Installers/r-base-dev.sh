@@ -3,6 +3,20 @@
 set -e
 set -v
 
+echo "Enabling source packages"
+if [ `lsb_release --codename --short` == "bionic" ]
+then
+  diff $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list || true
+  sudo cp $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list
+  diff $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list 
+fi
+if [ `lsb_release --codename --short` == "focal" ]
+then
+  diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list || true
+  sudo cp $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list
+  diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list 
+fi
+
 # https://cran.r-project.org/bin/linux/ubuntu/
 
 # add the signing key (by Michael Rutter) for these repos
@@ -21,8 +35,6 @@ then
   echo "Adding R 4.0 repository"
   sudo cp $SYNTH_INSTALLERS/CRAN.focal.list /etc/apt/sources.list.d/
 fi
-echo "Adding CRAN package repository"
-sudo add-apt-repository --yes "ppa:c2d4u.team/c2d4u4.0+"
 
 echo "Updating cache"
 sudo apt-get update -qq
