@@ -3,19 +3,13 @@
 set -e
 set -v
 
+echo "Getting codename"
+export CODENAME=`lsb_release --codename --short`
+
 echo "Enabling source packages"
-if [ `lsb_release --codename --short` == "bionic" ]
-then
-  diff $SYNTH_INSTALLERS/sources.list.bionic /etc/apt/sources.list || true
-  sudo cp $SYNTH_INSTALLERS/sources.list.bionic /etc/apt/sources.list
-  diff $SYNTH_INSTALLERS/sources.list.bionic /etc/apt/sources.list 
-fi
-if [ `lsb_release --codename --short` == "focal" ]
-then
-  diff $SYNTH_INSTALLERS/sources.list.focal /etc/apt/sources.list || true
-  sudo cp $SYNTH_INSTALLERS/sources.list.focal /etc/apt/sources.list
-  diff $SYNTH_INSTALLERS/sources.list.focal /etc/apt/sources.list 
-fi
+  diff $SYNTH_INSTALLERS/sources.list.$CODENAME /etc/apt/sources.list || true
+  sudo cp $SYNTH_INSTALLERS/sources.list.$CODENAME /etc/apt/sources.list
+  diff $SYNTH_INSTALLERS/sources.list.$CODENAME /etc/apt/sources.list 
 
 # https://cran.r-project.org/bin/linux/ubuntu/
 
@@ -25,16 +19,8 @@ fi
 echo "Adding signing key"
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 
-if [ `lsb_release --codename --short` == "bionic" ]
-then
   echo "Adding R 4.0 repository"
-  sudo cp $SYNTH_INSTALLERS/CRAN.bionic.list /etc/apt/sources.list.d/
-fi
-if [ `lsb_release --codename --short` == "focal" ]
-then
-  echo "Adding R 4.0 repository"
-  sudo cp $SYNTH_INSTALLERS/CRAN.focal.list /etc/apt/sources.list.d/
-fi
+  sudo cp $SYNTH_INSTALLERS/CRAN.$CODENAME.list /etc/apt/sources.list.d/
 
 echo "Updating cache"
 sudo apt-get update -qq
