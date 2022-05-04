@@ -37,15 +37,9 @@ apt-get source --compile \
   r-base
 mv *deb $SYNTH_PACKAGES
 sudo apt-get install -y --no-install-recommends \
-  $SYNTH_PACKAGES/r-base-core_*.deb \
-  $SYNTH_PACKAGES/r-base-dev_*.deb
-
-  # optional
-  #$SYNTH_PACKAGES/r-mathlib_*.deb
-  #$SYNTH_PACKAGES/r-base-html_*.deb \
-  #$SYNTH_PACKAGES/r-doc-html_*.deb \
-  #$SYNTH_PACKAGES/r-doc-info_*.deb \
-  #$SYNTH_PACKAGES/r-doc-pdf_*.deb \
+  $SYNTH_PACKAGES/r-base-*.deb \
+  $SYNTH_PACKAGES/r-doc-*.deb \
+  $SYNTH_PACKAGES/r-mathlib_*.deb
 
 popd
 
