@@ -38,6 +38,13 @@ fi
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
+echo "Installing CuPy if necessary"
+echo "This can take a long time!"
+if [ ! `mamba list | grep "cupy" | wc -l` -gt "0" ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
+fi
+
 echo "Installing PyTorch if necessary"
 if [ ! `mamba list | grep "torch" | wc -l` -gt "0" ]
 then
