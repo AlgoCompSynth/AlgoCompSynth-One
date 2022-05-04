@@ -7,12 +7,6 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
-if [ `mamba list | grep torch | wc -l` -gt "0" ]
-then
-  echo "PyTorch already installed - exiting"
-  exit
-fi
-
 echo "Installing Cython"
 mamba install --quiet --yes \
   Cython

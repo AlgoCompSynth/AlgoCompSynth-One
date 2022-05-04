@@ -25,27 +25,49 @@ mkdir --parents \
 echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 
-echo "Installing Mambaforge"
-/usr/bin/time $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+echo "Installing Mambaforge if necessary"
+if [ ! -d $HOME/mambaforge ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
+fi
 
-echo "Creating r-reticulate mamba environment"
-/usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
+echo "Enabling conda and mamba commands"
+source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/mambaforge/etc/profile.d/mamba.sh
 
-echo "Installing PyTorch"
-/usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+echo "Creating r-reticulate mamba environment if necessary"
+if [ ! `mamba env list | grep "r-reticulate" | wc -l` -gt "0" ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
+fi
+
+echo "Activating r-reticulate"
+mamba activate r-reticulate
+
+echo "Installing PyTorch if necessary"
+if [ ! `mamba list | grep "torch" | wc -l` -gt "0" ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+fi
 $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
-echo "Installing torchaudio"
-/usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+echo "Installing torchaudio if necessary"
+if [ ! `mamba list | grep "torchaudio" | wc -l` -gt "0" ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+fi
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
-echo "Installing cusignal"
+echo "Installing cusignal if necessary"
 echo "This may take a long time if it needs to build CuPy from source!"
 ## newest release
 export CUSIGNAL_VERSION="22.04.00"
 ## Don't test by default
 export CUSIGNAL_TEST="0"
-/usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+if [ ! `mamba list | grep "cusignal" | wc -l` -gt "0" ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
+fi
 
 echo "Installing r-base-dev - this takes a while if it compiles from source"
 /usr/bin/time $SYNTH_SCRIPTS/r-base-dev.sh #> $SYNTH_LOGS/r-base-dev.log 2>&1

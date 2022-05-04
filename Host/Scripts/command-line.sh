@@ -3,6 +3,12 @@
 set -e
 
 echo "Enabling source packages"
+if [ `lsb_release --codename --short` == "bionic" ]
+then
+  diff $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list || true
+  sudo cp $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list
+  diff $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list 
+fi
 if [ `lsb_release --codename --short` == "focal" ]
 then
   diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list || true
