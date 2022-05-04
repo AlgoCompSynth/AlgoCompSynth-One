@@ -4,17 +4,23 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
   && apt-get upgrade -qqy \
-  && apt-get clean
+  && apt-get install -qqy --no-install-recommends \
+    ca-certificates \
+    fakeroot \
+    lsb-release \
+    sudo \
+    tzdata \
+    wget
 
 # set up 'synth' account
 RUN mkdir --parents \
   /usr/local/src/scripts \
   /usr/local/src/logs
-COPY docker-scripts/synth-user.sh /usr/local/src/scripts/
+COPY synth-user.sh /usr/local/src/scripts/
 RUN /usr/local/src/scripts/synth-user.sh > /usr/local/src/logs/synth-user.log 2>&1
 
 # enable passwordless sudo for 'synth'
-COPY docker-scripts/passwordless-sudo /etc/sudoers.d/
+COPY passwordless-sudo /etc/sudoers.d/
 
 # virtual desktop
 ENV SYNTH_HOME=/home/synth
@@ -35,7 +41,7 @@ WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
 # Installing R
-COPY --chown=synth:synth Home/Scripts/* $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/r-base-dev.sh > $SYNTH_LOGS/r-base-dev.log 2>&1
+COPY --chown=synth:synth Scripts/* $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/r-base-dev.sh #> $SYNTH_LOGS/r-base-dev.log 2>&1
 
 # Finished!
