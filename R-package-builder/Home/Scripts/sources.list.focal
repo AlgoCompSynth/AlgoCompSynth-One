@@ -12,9 +12,9 @@ deb-src http://ports.ubuntu.com/ubuntu-ports/ focal-updates main restricted
 ## team. Also, please note that software in universe WILL NOT receive any
 ## review or updates from the Ubuntu security team.
 deb http://ports.ubuntu.com/ubuntu-ports/ focal universe
- deb-src http://ports.ubuntu.com/ubuntu-ports/ focal universe
+deb-src http://ports.ubuntu.com/ubuntu-ports/ focal universe
 deb http://ports.ubuntu.com/ubuntu-ports/ focal-updates universe
- deb-src http://ports.ubuntu.com/ubuntu-ports/ focal-updates universe
+deb-src http://ports.ubuntu.com/ubuntu-ports/ focal-updates universe
 
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
 ## team, and may not be under a free licence. Please satisfy yourself as to
@@ -22,9 +22,9 @@ deb http://ports.ubuntu.com/ubuntu-ports/ focal-updates universe
 ## multiverse WILL NOT receive any review or updates from the Ubuntu
 ## security team.
 deb http://ports.ubuntu.com/ubuntu-ports/ focal multiverse
- deb-src http://ports.ubuntu.com/ubuntu-ports/ focal multiverse
+deb-src http://ports.ubuntu.com/ubuntu-ports/ focal multiverse
 deb http://ports.ubuntu.com/ubuntu-ports/ focal-updates multiverse
- deb-src http://ports.ubuntu.com/ubuntu-ports/ focal-updates multiverse
+deb-src http://ports.ubuntu.com/ubuntu-ports/ focal-updates multiverse
 
 ## N.B. software from this repository may not have been tested as
 ## extensively as that contained in the main release, although it includes
