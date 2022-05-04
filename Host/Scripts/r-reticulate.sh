@@ -5,12 +5,9 @@ set -e
 source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 
-if [ ! -d $HOME/mambaforge/envs/r-reticulate ]
-then
-  echo "Creating fresh r-reticulate virtual environment"
-  cp $SYNTH_SCRIPTS/r-reticulate.template.$PYTHON_VERSION $SYNTH_SCRIPTS/r-reticulate.yml
-  /usr/bin/time mamba env create --file $SYNTH_SCRIPTS/r-reticulate.yml
-fi
+echo "Creating fresh r-reticulate virtual environment"
+cp $SYNTH_SCRIPTS/r-reticulate.template.$PYTHON_VERSION $SYNTH_SCRIPTS/r-reticulate.yml
+/usr/bin/time mamba env create --file $SYNTH_SCRIPTS/r-reticulate.yml
 
 echo "Activating r-reticulate"
 mamba activate r-reticulate
