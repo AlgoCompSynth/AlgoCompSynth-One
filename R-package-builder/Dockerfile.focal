@@ -1,0 +1,53 @@
+FROM ubuntu:focal
+LABEL maintainer="M. Edward (Ed) Borasky <znmeb@znmeb.net>"
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+  && apt-get upgrade -qqy \
+  && apt-get install -qqy --no-install-recommends \
+    ca-certificates \
+    fakeroot \
+    lsb-release \
+    sudo \
+    tzdata \
+    wget
+
+# set up 'synth' account
+RUN mkdir --parents \
+  /usr/local/src/scripts \
+  /usr/local/src/logs
+COPY synth-user.sh /usr/local/src/scripts/
+RUN /usr/local/src/scripts/synth-user.sh > /usr/local/src/logs/synth-user.log 2>&1
+
+# enable passwordless sudo for 'synth'
+COPY passwordless-sudo /etc/sudoers.d/
+
+# virtual desktop
+ENV SYNTH_HOME=/home/synth
+ENV SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
+ENV SYNTH_LOGS=$SYNTH_HOME/Logs
+ENV SYNTH_SOURCE=$SYNTH_HOME/Source
+ENV SYNTH_PACKAGES=$SYNTH_HOME/Packages
+
+RUN mkdir --parents \
+  $SYNTH_SCRIPTS \
+  $SYNTH_LOGS \
+  $SYNTH_SOURCE \
+  $SYNTH_PACKAGES \
+  && chown -R synth:synth $SYNTH_HOME
+
+# R settings
+ENV R_BROWSER="/usr/bin/chromium-browser"
+ENV R_PAPERSIZE="letter"
+
+USER synth
+WORKDIR $SYNTH_HOME
+CMD [ "/bin/bash" ]
+
+# Installing R
+COPY --chown=synth:synth Scripts/* $SYNTH_SCRIPTS/
+RUN $SYNTH_SCRIPTS/phase1.sh > $SYNTH_LOGS/phase1.log 2>&1
+RUN $SYNTH_SCRIPTS/phase2.sh > $SYNTH_LOGS/phase2.log 2>&1
+RUN $SYNTH_SCRIPTS/phase3.sh > $SYNTH_LOGS/phase3.log 2>&1
+
+# Finished!
