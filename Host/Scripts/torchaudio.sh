@@ -8,12 +8,6 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
-if [ `mamba list | grep torchaudio | wc -l` -gt 0 ]
-then
-  echo "torchaudio is already installed - exiting normally"
-  exit
-fi
-
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
   cmake \

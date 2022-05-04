@@ -9,12 +9,6 @@ export PATH=$PATH:/usr/local/cuda/bin
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
-if [ `mamba list | grep cusignal | wc -l` -gt "0" ]
-then
-  echo "cusignal is already installed - exiting normally"
-  exit
-fi
-
 if [ `find $SYNTH_WHEELS -name "cusignal-*.whl" | wc -l` -gt "0" ]
 then
   echo "cusignal wheel found - installing and exiting normally"
