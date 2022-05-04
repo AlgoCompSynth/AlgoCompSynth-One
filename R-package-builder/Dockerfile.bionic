@@ -36,12 +36,18 @@ RUN mkdir --parents \
   $SYNTH_PACKAGES \
   && chown -R synth:synth $SYNTH_HOME
 
+# R settings
+ENV R_BROWSER="/usr/bin/chromium-browser"
+ENV R_PAPERSIZE="letter"
+
 USER synth
 WORKDIR $SYNTH_HOME
 CMD [ "/bin/bash" ]
 
 # Installing R
 COPY --chown=synth:synth Scripts/* $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/r-base-dev.sh #> $SYNTH_LOGS/r-base-dev.log 2>&1
+RUN $SYNTH_SCRIPTS/phase1.sh > $SYNTH_LOGS/phase1.log 2>&1
+RUN $SYNTH_SCRIPTS/phase2.sh > $SYNTH_LOGS/phase2.log 2>&1
+RUN $SYNTH_SCRIPTS/phase3.sh > $SYNTH_LOGS/phase3.log 2>&1
 
 # Finished!
