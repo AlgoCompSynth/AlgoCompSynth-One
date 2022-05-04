@@ -9,6 +9,7 @@ RUN apt-get update \
     fakeroot \
     lsb-release \
     sudo \
+    time \
     tzdata \
     wget
 
@@ -46,8 +47,8 @@ CMD [ "/bin/bash" ]
 
 # Installing R
 COPY --chown=synth:synth Scripts/* $SYNTH_SCRIPTS/
-RUN $SYNTH_SCRIPTS/phase1.sh > $SYNTH_LOGS/phase1.log 2>&1
-RUN $SYNTH_SCRIPTS/phase2.sh > $SYNTH_LOGS/phase2.log 2>&1
-RUN $SYNTH_SCRIPTS/phase3.sh > $SYNTH_LOGS/phase3.log 2>&1
+RUN /usr/bin/time $SYNTH_SCRIPTS/phase1.sh > $SYNTH_LOGS/phase1.log 2>&1
+RUN /usr/bin/time $SYNTH_SCRIPTS/phase2.sh > $SYNTH_LOGS/phase2.log 2>&1
+RUN /usr/bin/time $SYNTH_SCRIPTS/phase3.sh > $SYNTH_LOGS/phase3.log 2>&1
 
 # Finished!

@@ -13,4 +13,9 @@ echo "Building $REPO:$CODENAME"
 /usr/bin/time docker build \
   --tag $REPO:$CODENAME \
   --file Dockerfile.$CODENAME \
-  . #> /tmp/$REPO.log 2>&1
+  . > /tmp/$REPO.log 2>&1
+
+echo "Downloading R packages"
+docker rm --force $REPO || true
+docker run --detach --name $REPO
+docker cp $REPO:/home/synth/Packages ../Host
