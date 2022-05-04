@@ -4,17 +4,10 @@ set -e
 
 echo ""
 echo "Setting environment variables"
-export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
 
 echo ""
 echo "Creating virtual desktop"
-export SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
-export SYNTH_LOGS=$SYNTH_HOME/Logs
-export SYNTH_PROJECTS=$SYNTH_HOME/Projects
-export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
-export SYNTH_WHEELS=$SYNTH_HOME/Wheels
-export SYNTH_PACKAGES=$SYNTH_HOME/Packages
 mkdir --parents \
   $SYNTH_LOGS \
   $SYNTH_PROJECTS \
@@ -68,8 +61,5 @@ if [ ! `mamba list | grep "cusignal" | wc -l` -gt "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 fi
-
-echo "Installing r-base-dev - this takes a while if it compiles from source"
-/usr/bin/time $SYNTH_SCRIPTS/r-base-dev.sh #> $SYNTH_LOGS/r-base-dev.log 2>&1
 
 echo "Finished!"

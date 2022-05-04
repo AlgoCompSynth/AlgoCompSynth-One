@@ -55,3 +55,14 @@ else
 fi
 echo "CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
 echo "MAKEFLAGS: $MAKEFLAGS"
+
+echo ""
+echo "Defining virtual desktop"
+export SYNTH_HOME=$PWD
+export SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
+export SYNTH_LOGS=$SYNTH_HOME/Logs
+export SYNTH_PROJECTS=$SYNTH_HOME/Projects
+export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
+export SYNTH_WHEELS=$SYNTH_HOME/Wheels
+export SYNTH_INSTALLERS=$SYNTH_HOME/Installers
+export SYNTH_PACKAGES=$SYNTH_HOME/Packages
