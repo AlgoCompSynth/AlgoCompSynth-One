@@ -4,6 +4,7 @@ set -e
 
 echo ""
 echo "Setting environment variables"
+export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
 
 echo ""
@@ -53,10 +54,7 @@ $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
 echo "Installing cusignal if necessary"
 echo "This may take a long time if it needs to build CuPy from source!"
-## newest release
-export CUSIGNAL_VERSION="22.04.00"
-## Don't test by default
-export CUSIGNAL_TEST="0"
+export CUSIGNAL_TEST="0" # Don't test by default
 if [ ! `mamba list | grep "cusignal" | wc -l` -gt "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
