@@ -6,15 +6,15 @@ set -v
 echo "Enabling source packages"
 if [ `lsb_release --codename --short` == "bionic" ]
 then
-  diff $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list || true
-  sudo cp $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list
-  diff $SYNTH_SCRIPTS/sources.list.bionic /etc/apt/sources.list 
+  diff $SYNTH_INSTALLERS/sources.list.bionic /etc/apt/sources.list || true
+  sudo cp $SYNTH_INSTALLERS/sources.list.bionic /etc/apt/sources.list
+  diff $SYNTH_INSTALLERS/sources.list.bionic /etc/apt/sources.list 
 fi
 if [ `lsb_release --codename --short` == "focal" ]
 then
-  diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list || true
-  sudo cp $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list
-  diff $SYNTH_SCRIPTS/sources.list.focal /etc/apt/sources.list 
+  diff $SYNTH_INSTALLERS/sources.list.focal /etc/apt/sources.list || true
+  sudo cp $SYNTH_INSTALLERS/sources.list.focal /etc/apt/sources.list
+  diff $SYNTH_INSTALLERS/sources.list.focal /etc/apt/sources.list 
 fi
 
 # https://cran.r-project.org/bin/linux/ubuntu/
@@ -47,20 +47,24 @@ export R_PAPERSIZE="letter"
 pushd $SYNTH_PACKAGES
 export MAKEFLAGS="-j1"
 export MAKE="make -j1"
-sudo apt-get build-dep -qqy --no-install-recommends \
+echo "Phase 1"
+sudo apt-get build-dep -y --no-install-recommends \
   r-base
 apt-get source --compile \
   r-base
 sudo apt-get install --no-install-recommends \
   ./r-base-core_*.deb \
   ./r-base-dev_*.deb \
-  ./r-base-html_*.deb \
-  ./r-doc-html_*.deb \
-  ./r-doc-info_*.deb \
-  ./r-doc-pdf_*.deb \
   ./r-mathlib_*.deb
 
-sudo apt-get build-dep --no-install-recommends \
+  # optional
+  #./r-base-html_*.deb \
+  #./r-doc-html_*.deb \
+  #./r-doc-info_*.deb \
+  #./r-doc-pdf_*.deb \
+
+echo "Phase 2"
+sudo apt-get build-dep -y --no-install-recommends \
   r-cran-boot \
   r-cran-cluster \
   r-cran-codetools \
@@ -91,7 +95,8 @@ sudo apt-get install --no-install-recommends \
   ./r-cran-nnet_*.deb \
   ./r-cran-spatial_*.deb
 
-sudo apt-get build-dep --no-install-recommends \
+#echo "Phase 3"
+sudo apt-get build-dep -y --no-install-recommends \
   r-cran-class \
   r-cran-matrix \
   r-cran-nlme
@@ -104,7 +109,8 @@ sudo apt-get install --no-install-recommends \
   ./r-cran-matrix_*.deb \
   ./r-cran-nlme_*.deb
 
-sudo apt-get build-dep -qqy --no-install-recommends \
+echo "Phase 4"
+sudo apt-get build-dep -y --no-install-recommends \
   r-cran-mgcv \
   r-cran-survival
 apt-get source --compile --no-install-recommends \
@@ -114,7 +120,8 @@ sudo apt-get install --no-install-recommends \
   ./r-cran-mgcv_*.deb \
   ./r-cran-survival_*.deb
 
-sudo apt-get build-dep -qqy --no-install-recommends \
+echo "Phase 5"
+sudo apt-get build-dep -y --no-install-recommends \
   r-cran-rpart
 apt-get source --compile --no-install-recommends \
   r-cran-rpart
