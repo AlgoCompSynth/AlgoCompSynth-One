@@ -10,6 +10,8 @@ echo "Pulling ubuntu:$CODENAME"
 docker pull ubuntu:$CODENAME
 
 echo "Building $REPO:$CODENAME"
+echo "This takes a while; compiling R base is single-threaded"
+echo "The build logs are in /tmp"
 /usr/bin/time docker build \
   --tag $REPO:$CODENAME \
   --file Dockerfile.$CODENAME \
@@ -18,4 +20,4 @@ echo "Building $REPO:$CODENAME"
 echo "Downloading R packages"
 docker rm --force $REPO || true
 docker run --detach --name $REPO
-docker cp $REPO:/home/synth/Packages ../Host
+docker cp $REPO:/home/synth/Packages ..

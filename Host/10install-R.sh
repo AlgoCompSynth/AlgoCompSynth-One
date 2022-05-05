@@ -4,8 +4,9 @@ set -e
 
 echo "Building R packages with Docker"
 echo "This takes a while; compiling R base is single-threaded"
-pushd ../R-package-builder
-./docker-build.sh > docker-build.log 2>&1
+echo "The build logs are in /tmp"
+pushd ./R-package-builder
+./docker-build.sh > /tmp/docker-build.log 2>&1
 popd
 
 echo "Installing R packages"
