@@ -13,11 +13,16 @@ mkdir --parents \
   $SYNTH_LOGS \
   $SYNTH_PROJECTS \
   $SYNTH_NOTEBOOKS \
-  $SYNTH_WHEELS \
-  $SYNTH_PACKAGES
+  $SYNTH_WHEELS
 
 echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
+
+echo "Installing R globally if necessary"
+if [ `R --version 2>/dev/null | wc -l` -le "0" ]
+then
+  /usr/bin/time $SYNTH_SCRIPTS/R.sh > $SYNTH_LOGS/R.log 2>&1
+fi
 
 echo "Installing Mambaforge if necessary"
 if [ ! -d $HOME/mambaforge ]
@@ -30,7 +35,7 @@ source $HOME/mambaforge/etc/profile.d/conda.sh
 source $HOME/mambaforge/etc/profile.d/mamba.sh
 
 echo "Creating r-reticulate mamba environment if necessary"
-if [ ! `mamba env list | grep "r-reticulate" | wc -l` -gt "0" ]
+if [ `mamba env list | grep "r-reticulate" | wc -l` -le "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
 fi
@@ -40,20 +45,20 @@ mamba activate r-reticulate
 
 echo "Installing CuPy if necessary"
 echo "This can take a long time!"
-if [ ! `mamba list | grep "cupy" | wc -l` -gt "0" ]
+if [ `mamba list | grep "cupy" | wc -l` -le "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
 fi
 
 echo "Installing PyTorch if necessary"
-if [ ! `mamba list | grep "torch" | wc -l` -gt "0" ]
+if [ `mamba list | grep "torch" | wc -l` -le "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 fi
 $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
 echo "Installing torchaudio if necessary"
-if [ ! `mamba list | grep "torchaudio" | wc -l` -gt "0" ]
+if [ `mamba list | grep "torchaudio" | wc -l` -le "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
 fi
@@ -62,7 +67,7 @@ $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 echo "Installing cusignal if necessary"
 echo "This may take a long time if it needs to build CuPy from source!"
 export CUSIGNAL_TEST="0" # Don't test by default
-if [ ! `mamba list | grep "cusignal" | wc -l` -gt "0" ]
+if [ `mamba list | grep "cusignal" | wc -l` -le "0" ]
 then
   /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 fi
