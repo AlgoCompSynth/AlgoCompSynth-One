@@ -30,16 +30,16 @@ pushd $SYNTH_SOURCE
 export MAKEFLAGS="-j1"
 export MAKE="make -j1"
 echo "Phase 1 build-dep"
-sudo apt-get build-dep -y --no-install-recommends \
+/usr/bin/time sudo apt-get build-dep -y --no-install-recommends \
   r-base \
   > $SYNTH_LOGS/build-dep-1.log 2>&1
 echo "Phase 1 compile"
-apt-get source --compile \
+/usr/bin/time apt-get source --compile \
   r-base \
   > $SYNTH_LOGS/compile-1.log 2>&1
 mv *deb $SYNTH_PACKAGES
 echo "Phase 1 install"
-sudo apt-get install -y --no-install-recommends \
+/usr/bin/time sudo apt-get install -y --no-install-recommends \
   $SYNTH_PACKAGES/r-base-*.deb \
   $SYNTH_PACKAGES/r-doc-*.deb \
   $SYNTH_PACKAGES/r-mathlib_*.deb \
