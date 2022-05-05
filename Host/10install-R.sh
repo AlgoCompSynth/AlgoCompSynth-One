@@ -2,11 +2,19 @@
 
 set -e
 
-echo ""
-echo "Setting environment variables"
-export SYNTH_HOME=$PWD
-source $SYNTH_HOME/jetpack-envars.sh
+echo "Building R packages with Docker"
+echo "This takes a while; compiling R base is single-threaded"
+pushd ../R-package-builder
+./docker-build.sh > docker-build.log 2>&1
+popd
 
-/usr/bin/time $SYNTH_INSTALLERS/r-base-dev.sh #> $SYNTH_LOGS/r-base-dev.log 2>&1
+echo "Installing R packages"
+pushd Packages
+sudo apt-get install -y --no-install-recommends \
+  ./r-*.deb
+popd
+
+echo "Enabling R kernel in JupyterLab"
+Rscript -e "IRkernel::installspec()"
 
 echo "Finished!"
