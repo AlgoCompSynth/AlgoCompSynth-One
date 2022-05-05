@@ -18,7 +18,7 @@ RUN mkdir --parents \
   /usr/local/src/scripts \
   /usr/local/src/logs
 COPY synth-user.sh /usr/local/src/scripts/
-RUN /usr/local/src/scripts/synth-user.sh > /usr/local/src/logs/synth-user.log 2>&1
+RUN /usr/bin/time /usr/local/src/scripts/synth-user.sh 2>&1 | tee /usr/local/src/logs/synth-user.log
 
 # enable passwordless sudo for 'synth'
 COPY passwordless-sudo /etc/sudoers.d/
@@ -38,7 +38,6 @@ RUN mkdir --parents \
   && chown -R synth:synth $SYNTH_HOME
 
 # R settings
-ENV R_BROWSER="/usr/bin/chromium-browser"
 ENV R_PAPERSIZE="letter"
 
 USER synth
@@ -47,8 +46,8 @@ CMD [ "/bin/bash" ]
 
 # Installing R
 COPY --chown=synth:synth Scripts/* $SYNTH_SCRIPTS/
-RUN /usr/bin/time $SYNTH_SCRIPTS/phase1.sh > $SYNTH_LOGS/phase1.log 2>&1
-RUN /usr/bin/time $SYNTH_SCRIPTS/phase2.sh > $SYNTH_LOGS/phase2.log 2>&1
-RUN /usr/bin/time $SYNTH_SCRIPTS/phase3.sh > $SYNTH_LOGS/phase3.log 2>&1
+RUN /usr/bin/time $SYNTH_SCRIPTS/phase1.sh 2>&1 | tee $SYNTH_LOGS/phase1.log
+RUN /usr/bin/time $SYNTH_SCRIPTS/phase2.sh 2>&1 | tee $SYNTH_LOGS/phase2.log
+RUN /usr/bin/time $SYNTH_SCRIPTS/phase3.sh 2>&1 | tee $SYNTH_LOGS/phase3.log
 
 # Finished!
