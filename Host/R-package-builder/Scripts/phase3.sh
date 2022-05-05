@@ -44,23 +44,17 @@ echo "Phase 4 install"
 echo "Phase 5 build-dep"
 /usr/bin/time sudo apt-get build-dep -y --no-install-recommends \
   r-cran-data.table \
-  r-cran-irkernel \
-  r-cran-reticulate \
   r-cran-rpart \
   > $SYNTH_LOGS/build-dep-5.log 2>&1
 echo "Phase 5 compile"
 /usr/bin/time apt-get source --compile --no-install-recommends \
   r-cran-data.table \
-  r-cran-irkernel \
-  r-cran-reticulate \
   r-cran-rpart \
   > $SYNTH_LOGS/compile-5.log 2>&1
 mv *deb $SYNTH_PACKAGES
 echo "Phase 5 install"
 /usr/bin/time sudo apt-get install -y --no-install-recommends \
   $SYNTH_PACKAGES/r-cran-data.table_*.deb \
-  $SYNTH_PACKAGES/r-cran-irkernel_*.deb \
-  $SYNTH_PACKAGES/r-cran-reticulate_*.deb \
   $SYNTH_PACKAGES/r-cran-rpart_*.deb \
   $SYNTH_PACKAGES/r-recommended_*.deb \
   > $SYNTH_LOGS/install-5.log 2>&1
