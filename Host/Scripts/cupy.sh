@@ -9,7 +9,7 @@ mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
 echo "Installing CuPy - this can take some time if it's not cached!"
-pip install --verbose cupy>=9.0.0
+pip install --verbose "cupy>=9.0.0"
 
 echo "Cleanup"
 mamba list
