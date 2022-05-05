@@ -4,7 +4,7 @@ set -e
 
 pushd $SYNTH_SOURCE
 echo "Phase 2 build-dep"
-sudo apt-get build-dep -y --no-install-recommends \
+/usr/bin/time sudo apt-get build-dep -y --no-install-recommends \
   r-cran-boot \
   r-cran-cluster \
   r-cran-codetools \
@@ -16,7 +16,7 @@ sudo apt-get build-dep -y --no-install-recommends \
   r-cran-spatial \
   > $SYNTH_LOGS/build-dep-2.log 2>&1
 echo "Phase 2 compile"
-apt-get source --compile \
+/usr/bin/time apt-get source --compile \
   r-cran-boot \
   r-cran-cluster \
   r-cran-codetools \
@@ -29,7 +29,7 @@ apt-get source --compile \
   > $SYNTH_LOGS/compile-2.log 2>&1
 mv *deb $SYNTH_PACKAGES
 echo "Phase 2 install"
-sudo apt-get install -y --no-install-recommends \
+/usr/bin/time sudo apt-get install -y --no-install-recommends \
   $SYNTH_PACKAGES/r-cran-boot_*.deb \
   $SYNTH_PACKAGES/r-cran-cluster_*.deb \
   $SYNTH_PACKAGES/r-cran-codetools_*.deb \
