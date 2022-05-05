@@ -1,7 +1,6 @@
 #! /bin/bash
 
 set -e
-set -v
 
 echo "Getting codename"
 export CODENAME=`lsb_release --codename --short`
@@ -19,8 +18,8 @@ echo "Enabling source packages"
 echo "Adding signing key"
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 
-  echo "Adding R 4.0 repository"
-  sudo cp $SYNTH_SCRIPTS/CRAN.$CODENAME.list /etc/apt/sources.list.d/
+echo "Adding R 4.0 repository"
+sudo cp $SYNTH_SCRIPTS/CRAN.$CODENAME.list /etc/apt/sources.list.d/
 
 echo "Updating cache"
 sudo apt-get update -qq
@@ -30,16 +29,21 @@ sudo apt-get update -qq
 pushd $SYNTH_SOURCE
 export MAKEFLAGS="-j1"
 export MAKE="make -j1"
-echo "Phase 1"
+echo "Phase 1 build-dep"
 sudo apt-get build-dep -y --no-install-recommends \
-  r-base
+  r-base \
+  > $SYNTH_LOGS/build-dep-1.log 2>&1
+echo "Phase 1 compile"
 apt-get source --compile \
-  r-base
+  r-base \
+  > $SYNTH_LOGS/compile-1.log 2>&1
 mv *deb $SYNTH_PACKAGES
+echo "Phase 1 install"
 sudo apt-get install -y --no-install-recommends \
   $SYNTH_PACKAGES/r-base-*.deb \
   $SYNTH_PACKAGES/r-doc-*.deb \
-  $SYNTH_PACKAGES/r-mathlib_*.deb
+  $SYNTH_PACKAGES/r-mathlib_*.deb \
+  > $SYNTH_LOGS/install-1.log 2>&1
 
 popd
 
