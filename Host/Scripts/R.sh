@@ -1,7 +1,14 @@
 #! /bin/bash
 
 set -e
-set -v
+
+# compile crashes if anything from mambaforge is in PATH
+if [ `echo $PATH | grep -e "mambaforge" | wc -l` -gt "0" ]
+then
+  echo "Removing mambaforge from PATH to prevent compile failures"
+  export PATH=`echo $PATH | sed "s;$HOME/mambaforge/envs/r-reticulate/bin;;g" | sed "s;$HOME/mambaforge/condabin;;g"`
+fi
+echo "PATH: $PATH"
 
 echo "Installing Linux dependencies"
 sudo apt-get install -qqy --no-install-recommends \
@@ -41,7 +48,7 @@ sudo apt-get install -qqy --no-install-recommends \
 
 echo "Removing old R source directories"
 pushd $SYNTH_PROJECTS
-rm -fr R-*
+rm -fr R-* build_dir
 
 echo "Downloading $R_SOURCE_TARBALL"
 curl -Ls $R_SOURCE_TARBALL | tar xzf -
@@ -63,7 +70,8 @@ popd
 
 echo "Installing"
 sudo make install
-cp ../R.conf /etc/ld.so.conf.d/
+sudo cp $SYNTH_SCRIPTS/R.conf /etc/ld.so.conf.d/
 sudo /sbin/ldconfig
 cd ..
-echo "Finished"
+
+echo "Finished!"

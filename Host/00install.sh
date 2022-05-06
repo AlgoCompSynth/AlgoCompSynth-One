@@ -18,12 +18,6 @@ mkdir --parents \
 echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 
-echo "Installing R globally if necessary"
-if [ `R --version 2>/dev/null | wc -l` -le "0" ]
-then
-  /usr/bin/time $SYNTH_SCRIPTS/R.sh > $SYNTH_LOGS/R.log 2>&1
-fi
-
 echo "Installing Mambaforge if necessary"
 if [ ! -d $HOME/mambaforge ]
 then
