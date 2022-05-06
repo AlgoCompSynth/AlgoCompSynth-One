@@ -6,7 +6,9 @@ set -e
 if [ `echo $PATH | grep -e "mambaforge" | wc -l` -gt "0" ]
 then
   echo "Removing mambaforge from PATH to prevent compile failures"
-  export PATH=`echo $PATH | sed "s;$HOME/mambaforge/envs/r-reticulate/bin;;g" | sed "s;$HOME/mambaforge/condabin;;g"`
+  export PATH=`echo $PATH | sed "s;$HOME/mambaforge/envs/r-reticulate/bin;;g"`
+  export PATH=`echo $PATH | sed "s;$HOME/mambaforge/condabin;;g"`
+  export PATH=`echo $PATH | sed "s;$HOME/mambaforge/bin;;g"`
 fi
 echo "PATH: $PATH"
 
