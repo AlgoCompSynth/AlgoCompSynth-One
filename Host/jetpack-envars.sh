@@ -73,8 +73,3 @@ echo "SYNTH_PROJECTS: $SYNTH_PROJECTS"
 echo "SYNTH_NOTEBOOKS: $SYNTH_NOTEBOOKS"
 echo "SYNTH_WHEELS: $SYNTH_WHEELS"
 echo "SYNTH_INSTALLERS: $SYNTH_INSTALLERS"
-
-echo ""
-echo "Defining R source tarball"
-export R_SOURCE_TARBALL="https://cloud.r-project.org/src/base/R-4/R-4.2.0.tar.gz"
-echo "R_SOURCE_TARBALL: $R_SOURCE_TARBALL"
