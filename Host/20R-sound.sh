@@ -13,6 +13,7 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
 echo "Installing Linux dependencies"
+export DEBIAN_FRONTEND=noninteractive
 sudo apt-get install -qqy --no-install-recommends \
   fftw-dev \
   libfftw3-dev \
