@@ -37,6 +37,9 @@ export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
 export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 /usr/bin/time $SYNTH_SCRIPTS/sound.R > $SYNTH_LOGS/sound.log 2>&1
 
+echo "Installed R packages"
+Rscript -e "print(rownames(installed.packages()))"
+
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
