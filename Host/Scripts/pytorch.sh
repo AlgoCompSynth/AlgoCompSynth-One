@@ -23,7 +23,9 @@ echo "Installing PyTorch"
 pip install $SYNTH_WHEELS/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"
-mamba list
+echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
+
+mamba list
 
 echo "Finished"
