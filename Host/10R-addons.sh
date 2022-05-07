@@ -36,24 +36,19 @@ echo "Pinning r-base to $R_VERSION"
 echo "r-base ==$R_VERSION" >> $CONDA_PREFIX/conda-meta/pinned
 cat $CONDA_PREFIX/conda-meta/pinned
 
-echo "Installing libgit2 for R 'gert' package"
+echo "Installing dependencies for developer tools packages"
 mamba install --quiet --yes \
-  libgit2
+  libgit2 \
+  pandoc
 
 echo "Updating existing packages"
 Rscript -e "update.packages(ask = FALSE, quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 
-echo "Installing IRkernel"
-Rscript -e "install.packages('IRkernel', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
+echo "Installing developer tools"
+$SYNTH_SCRIPTS/devtools.R > $SYNTH_LOGS/devtools.log 2>&1
+
 echo "Activating R Jupyter kernel"
 Rscript -e "IRkernel::installspec()"
-
-echo "Installing caracas, data.table, devtools, renv, and reticulate"
-Rscript -e "install.packages('caracas', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
-Rscript -e "install.packages('data.table', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
-Rscript -e "install.packages('devtools', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
-Rscript -e "install.packages('renv', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
-Rscript -e "install.packages('reticulate', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 
 echo "Installed R packages"
 Rscript -e "print(rownames(installed.packages()))"
