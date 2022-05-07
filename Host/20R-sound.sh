@@ -25,7 +25,8 @@ sudo apt-get install -qqy --no-install-recommends \
   libsoxr-dev \
   flac \
   mp3splt \
-  sox
+  sox \
+  > /dev/null 2>&1
 
 echo "Installing mamba dependencies"
 mamba install --quiet --yes \
