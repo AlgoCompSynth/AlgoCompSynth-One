@@ -33,7 +33,7 @@ R --version
 # that doesn't need to downgrade 'r-base'!
 export R_VERSION=`R --version | head -n 1 | sed "s;^R version ;;" | sed "s; .*$;;"`
 echo "Pinning r-base to $R_VERSION"
-#echo "r-base ==$R_VERSION" >> $CONDA_PREFIX/conda-meta/pinned
+echo "r-base ==$R_VERSION" >> $CONDA_PREFIX/conda-meta/pinned
 cat $CONDA_PREFIX/conda-meta/pinned
 
 echo "Installing libgit2 for R 'gert' package"
