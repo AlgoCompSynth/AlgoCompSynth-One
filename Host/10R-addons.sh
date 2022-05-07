@@ -37,7 +37,7 @@ echo "r-base ==$R_VERSION" >> $CONDA_PREFIX/conda-meta/pinned
 cat $CONDA_PREFIX/conda-meta/pinned
 
 echo "Installing libgit2 for R 'gert' package"
-mamba install --quiet --force \
+mamba install --quiet --yes \
   libgit2
 
 echo "Updating existing packages"
