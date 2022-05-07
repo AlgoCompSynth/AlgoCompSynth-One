@@ -15,7 +15,9 @@ echo "Installing the recommended packages from source"
 $SYNTH_SCRIPTS/recommended.R > $SYNTH_LOGS/recommended.log 2>&1
 
 echo "Cleanup"
-mamba list
+echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
+
+mamba list
 
 echo "Finished"

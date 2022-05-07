@@ -27,16 +27,18 @@ cd $SYNTH_PROJECTS
 export CUSIGNAL_HOME=$(pwd)/cusignal
 echo "Removing previous 'cusignal'"
 rm -fr $CUSIGNAL_HOME
+echo "Cloning cuSignal source"
 git clone https://github.com/rapidsai/cusignal.git $CUSIGNAL_HOME
 cd $CUSIGNAL_HOME
 echo "Checking out version v$CUSIGNAL_VERSION"
 git checkout v$CUSIGNAL_VERSION
 
+echo "Patching environment file for Python version $PYTHON_VERSION"
 export NEW_LINE="- python=$PYTHON_VERSION"
 sed -i.bak "/dependencies:/a $NEW_LINE" conda/environments/cusignal_jetson_base.yml
 sed -i "s/^-/  -/" conda/environments/cusignal_jetson_base.yml
+
 echo "Creating fresh cusignal-dev environment"
-echo "This may take a long time if it needs to build CuPy from source!"
 /usr/bin/time mamba env create --quiet --force --file conda/environments/cusignal_jetson_base.yml
 
 echo "Activating cusignal-dev"
@@ -78,7 +80,13 @@ pip install cupy
 pip install $SYNTH_WHEELS/cusignal-*.whl
 
 echo "Cleanup"
-mamba list
+echo "..Removing cusignal-dev virtual environment"
+mamba env remove --name cusignal-dev --yes
+echo "..Removing cusignal project repository"
+rm -fr $SYNTH_PROJECTS/cusignal
+echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
+
+mamba list
 
 echo "Finished"
