@@ -15,7 +15,7 @@ mamba activate r-reticulate
 echo "Installing R if necessary"
 if [ `R --version 2>/dev/null | wc -l` -le "0" ]
 then
-  echo "  Installing R and recommended library packages"
+  echo "..Installing R and recommended library packages"
   /usr/bin/time $SYNTH_SCRIPTS/R-mambaforge.sh > $SYNTH_LOGS/R-mambaforge.log 2>&1
 fi
 R --version
