@@ -48,9 +48,10 @@ Rscript -e "install.packages('IRkernel', quiet = TRUE, repos = 'https://cloud.r-
 echo "Activating R Jupyter kernel"
 Rscript -e "IRkernel::installspec()"
 
-echo "Installing devtools, data.table, renv, and reticulate"
-Rscript -e "install.packages('devtools', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
+echo "Installing caracas, data.table, devtools, renv, and reticulate"
+Rscript -e "install.packages('caracas', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 Rscript -e "install.packages('data.table', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
+Rscript -e "install.packages('devtools', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 Rscript -e "install.packages('renv', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 Rscript -e "install.packages('reticulate', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 
