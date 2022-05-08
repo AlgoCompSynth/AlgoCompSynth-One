@@ -4,3 +4,4 @@ Projects/*
 Notebooks/*
 Wheels/*
 .R*
+mamba-init.sh
