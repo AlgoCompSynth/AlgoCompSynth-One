@@ -6,6 +6,7 @@ echo ""
 echo "Setting environment variables"
 export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
+export MAKE="make $MAKEFLAGS"
 
 echo "Activating r-reticulate"
 source $HOME/mambaforge/etc/profile.d/conda.sh
