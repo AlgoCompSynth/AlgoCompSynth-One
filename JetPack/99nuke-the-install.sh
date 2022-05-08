@@ -52,7 +52,7 @@ source $HOME/mambaforge/etc/profile.d/mamba.sh
 mamba env remove --name r-reticulate --yes
 
 echo ""
-echo "Note: some things have not been removed:"
+echo "Note: some files have *not* been removed:"
 echo "1. Linux packages installed via 'apt-get',"
 echo "2. The 'mambaforge' installation,"
 echo "3. The pip cache, which includes the 'CuPy' wheel."
