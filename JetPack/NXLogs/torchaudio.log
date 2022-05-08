@@ -1,0 +1,763 @@
+Activating r-reticulate
+Installing mamba dependencies
+  Package            Version  Build          Channel                         Size
+───────────────────────────────────────────────────────────────────────────────────
+  Install:
+───────────────────────────────────────────────────────────────────────────────────
+
+  + c-ares            1.18.1  hf897c2e_0     conda-forge/linux-aarch64     Cached
+  + cmake             3.23.1  hcad14f8_0     conda-forge/linux-aarch64       16MB
+  + expat              2.4.8  ha18d298_0     conda-forge/linux-aarch64      165kB
+  + keyutils           1.6.1  h4e544f5_0     conda-forge/linux-aarch64     Cached
+  + krb5              1.19.3  h7c456eb_0     conda-forge/linux-aarch64     Cached
+  + libcurl           7.83.0  h8fd98b7_0     conda-forge/linux-aarch64     Cached
+  + libedit     3.1.20191231  he28a2e2_2     conda-forge/linux-aarch64     Cached
+  + libev               4.33  h516909a_1     conda-forge/linux-aarch64     Cached
+  + libnghttp2        1.47.0  h75cb1c7_0     conda-forge/linux-aarch64     Cached
+  + libssh2           1.10.0  h1ab2c7b_2     conda-forge/linux-aarch64     Cached
+  + libuv             1.43.0  hf897c2e_0     conda-forge/linux-aarch64      928kB
+  + ninja             1.10.2  hd62202e_1     conda-forge/linux-aarch64        3MB
+  + pkg-config        0.29.2  hb9de7d4_1008  conda-forge/linux-aarch64      299kB
+  + rhash              1.4.1  hf897c2e_0     conda-forge/linux-aarch64      211kB
+
+  Summary:
+
+  Install: 14 packages
+
+  Total download: 21MB
+
+───────────────────────────────────────────────────────────────────────────────────
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Building torchaudio wheel
+Removing previous 'audio'
+Cloning into 'audio'...
+Submodule 'kaldi' (https://github.com/kaldi-asr/kaldi) registered for path 'third_party/kaldi/submodule'
+Submodule 'third_party/kenlm/submodule' (https://github.com/kpu/kenlm) registered for path 'third_party/kenlm/submodule'
+Cloning into '/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule'...
+Cloning into '/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kenlm/submodule'...
+Submodule path 'third_party/kaldi/submodule': checked out '3eea37dd09b55064e6362216f7e9a60641f29f09'
+Submodule path 'third_party/kenlm/submodule': checked out '5cea457db26950a73d638425c183b368c06ed7c6'
+Checking out v0.11.0
+Note: switching to 'v0.11.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 820b383b [release/0.11] Add Python 3.10 (build and test) (#2255)
+Patching source
+-- Git branch: HEAD
+-- Git SHA: 820b383b3b21fc06e91631a5b1e6ea1557836216
+-- Git tag: v0.11.0
+-- PyTorch dependency: torch
+-- Building version 0.11.0+820b383
+ --- Initializing submodules
+ --- Initialized submodule
+ --- Fetching zlib-1.2.12.tar.gz
+ --- Fetching bzip2-1.0.8.tar.gz
+ --- Fetching xz-5.2.5.tar.gz
+ --- Fetching boost_1_78_0.tar.gz
+ --- Fetching libmad-0.15.1b.tar.gz
+ --- Fetching opencore-amr-0.1.5.tar.gz
+ --- Fetching lame-3.99.5.tar.gz
+ --- Fetching libogg-1.3.3.tar.gz
+ --- Fetching flac-1.3.2.tar.xz
+ --- Fetching libvorbis-1.3.6.tar.gz
+ --- Fetching opus-1.3.1.tar.gz
+ --- Fetching opusfile-0.12.tar.gz
+ --- Fetching sox-14.4.2.tar.bz2
+Excluding torchaudio.prototype from the package.
+running bdist_wheel
+running build
+running build_py
+creating build
+creating build/lib.linux-aarch64-cpython-38
+creating build/lib.linux-aarch64-cpython-38/torchaudio
+copying torchaudio/_extension.py -> build/lib.linux-aarch64-cpython-38/torchaudio
+copying torchaudio/kaldi_io.py -> build/lib.linux-aarch64-cpython-38/torchaudio
+copying torchaudio/transforms.py -> build/lib.linux-aarch64-cpython-38/torchaudio
+copying torchaudio/version.py -> build/lib.linux-aarch64-cpython-38/torchaudio
+copying torchaudio/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio
+creating build/lib.linux-aarch64-cpython-38/torchaudio/functional
+copying torchaudio/functional/filtering.py -> build/lib.linux-aarch64-cpython-38/torchaudio/functional
+copying torchaudio/functional/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/functional
+copying torchaudio/functional/functional.py -> build/lib.linux-aarch64-cpython-38/torchaudio/functional
+creating build/lib.linux-aarch64-cpython-38/torchaudio/_internal
+copying torchaudio/_internal/module_utils.py -> build/lib.linux-aarch64-cpython-38/torchaudio/_internal
+copying torchaudio/_internal/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/_internal
+creating build/lib.linux-aarch64-cpython-38/torchaudio/sox_effects
+copying torchaudio/sox_effects/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/sox_effects
+copying torchaudio/sox_effects/sox_effects.py -> build/lib.linux-aarch64-cpython-38/torchaudio/sox_effects
+creating build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/wav2letter.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/rnnt_decoder.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/wavernn.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/tacotron2.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/rnnt.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/conformer.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/conv_tasnet.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/deepspeech.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+copying torchaudio/models/emformer.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models
+creating build/lib.linux-aarch64-cpython-38/torchaudio/compliance
+copying torchaudio/compliance/kaldi.py -> build/lib.linux-aarch64-cpython-38/torchaudio/compliance
+copying torchaudio/compliance/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/compliance
+creating build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/dr_vctk.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/yesno.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/gtzan.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/tedlium.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/vctk.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/commonvoice.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/utils.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/librimix.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/ljspeech.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/cmuarctic.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/cmudict.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/speechcommands.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/librispeech.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+copying torchaudio/datasets/libritts.py -> build/lib.linux-aarch64-cpython-38/torchaudio/datasets
+creating build/lib.linux-aarch64-cpython-38/torchaudio/pipelines
+copying torchaudio/pipelines/rnnt_pipeline.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines
+copying torchaudio/pipelines/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines
+creating build/lib.linux-aarch64-cpython-38/torchaudio/backend
+copying torchaudio/backend/sox_io_backend.py -> build/lib.linux-aarch64-cpython-38/torchaudio/backend
+copying torchaudio/backend/no_backend.py -> build/lib.linux-aarch64-cpython-38/torchaudio/backend
+copying torchaudio/backend/soundfile_backend.py -> build/lib.linux-aarch64-cpython-38/torchaudio/backend
+copying torchaudio/backend/common.py -> build/lib.linux-aarch64-cpython-38/torchaudio/backend
+copying torchaudio/backend/utils.py -> build/lib.linux-aarch64-cpython-38/torchaudio/backend
+copying torchaudio/backend/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/backend
+creating build/lib.linux-aarch64-cpython-38/torchaudio/utils
+copying torchaudio/utils/sox_utils.py -> build/lib.linux-aarch64-cpython-38/torchaudio/utils
+copying torchaudio/utils/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/utils
+creating build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2
+copying torchaudio/models/wav2vec2/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2
+copying torchaudio/models/wav2vec2/components.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2
+copying torchaudio/models/wav2vec2/model.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2
+creating build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils
+copying torchaudio/models/wav2vec2/utils/import_fairseq.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils
+copying torchaudio/models/wav2vec2/utils/import_huggingface.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils
+copying torchaudio/models/wav2vec2/utils/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils
+creating build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts
+copying torchaudio/pipelines/_tts/interface.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts
+copying torchaudio/pipelines/_tts/utils.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts
+copying torchaudio/pipelines/_tts/impl.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts
+copying torchaudio/pipelines/_tts/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts
+creating build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2
+copying torchaudio/pipelines/_wav2vec2/utils.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2
+copying torchaudio/pipelines/_wav2vec2/impl.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2
+copying torchaudio/pipelines/_wav2vec2/__init__.py -> build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2
+running build_ext
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 11.4.166
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "11.4") 
+-- Caffe2: CUDA detected: 11.4
+-- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+-- Caffe2: CUDA toolkit directory: /usr/local/cuda
+-- Caffe2: Header version is: 11.4
+-- Found CUDNN: /usr/lib/aarch64-linux-gnu/libcudnn.so  
+-- Found cuDNN: v8.3.2  (include: /usr/include, library: /usr/lib/aarch64-linux-gnu/libcudnn.so)
+-- /usr/local/cuda/lib64/libnvrtc.so shorthash is 93f52464
+-- Autodetected CUDA architecture(s):  7.2
+-- Added CUDA NVCC flags for: -gencode;arch=compute_72,code=sm_72
+CMake Warning at /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+  static library kineto_LIBRARY-NOTFOUND not found.
+Call Stack (most recent call first):
+  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:127 (append_torchlib_if_found)
+  CMakeLists.txt:87 (find_package)
+
+
+-- Found Torch: /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch.so  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- Found PkgConfig: /home/znmeb/mambaforge/envs/r-reticulate/bin/pkg-config (found version "0.29.2") 
+Updated 0 paths from the index
+get_version.sh: 37: Bad substitution
+get_version.sh: 45: [[: not found
+get_version.sh: The version number "5.5" specified in src/.version is not in MAJOR.MINOR format.
+get_version.sh: Stopping the construction of full version number from git history.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38
+[1/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/amr-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-mkdir
+[2/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/mad-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-mkdir
+[3/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/ogg-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-mkdir
+[4/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/lame-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-mkdir
+[5/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-download
+[6/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-download
+[7/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-update
+[8/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-update
+[9/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-patch
+[10/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad && patch < /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/patch/libmad.patch && cp /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/patch/config.guess /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad/config.guess && cp /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/patch/config.sub /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad/config.sub && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-patch
+patching file configure
+[11/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-download
+[12/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-download
+[13/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-update
+[14/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-update
+[15/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame && cp /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/patch/config.guess /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame/config.guess && cp /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/patch/config.sub /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame/config.sub && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-patch
+[16/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-patch
+[17/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-configure
+[18/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-configure
+[19/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-build
+[20/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-install
+[21/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/ogg-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/ogg-stamp/ogg-done
+[22/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/flac-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-mkdir
+[23/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-download
+[24/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-update
+[25/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-patch
+[26/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-configure
+[27/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-configure
+[28/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-build
+[29/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-install
+[30/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/mad-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/mad-stamp/mad-done
+[31/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/vorbis-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-mkdir
+[32/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-download
+[33/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-update
+[34/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-patch
+[35/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-build
+[36/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-install
+[37/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/lame-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/lame-stamp/lame-done
+[38/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/opus-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-mkdir
+[39/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-download
+[40/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-update
+[41/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-patch
+[42/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-configure
+[43/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-configure
+[44/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-configure
+[45/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-build
+[46/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-vector.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-vector.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-vector.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src/matrix/kaldi-vector.cc
+[47/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-matrix.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-matrix.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-matrix.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src/matrix/kaldi-matrix.cc
+[48/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-install
+[49/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/vorbis-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/vorbis-stamp/vorbis-done
+[50/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-error.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-error.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-error.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/base/kaldi-error.cc
+[51/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-math.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-math.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-math.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/base/kaldi-math.cc
+[52/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-build
+[53/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-install
+[54/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/opus-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opus-stamp/opus-done
+[55/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/opusfile-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-mkdir
+[56/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-download
+[57/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-update
+[58/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-patch
+[59/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-build
+[60/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-configure
+[61/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-install
+[62/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-build
+[63/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/flac-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/flac-stamp/flac-done
+[64/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-build
+[65/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-install
+[66/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/opusfile-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/opusfile-stamp/opusfile-done
+[67/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-install
+[68/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/amr-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/amr-stamp/amr-done
+[69/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/tmp/sox-mkdirs.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-mkdir
+[70/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-download-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-download
+[71/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E echo_append && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-update
+[72/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox && patch -p1 < /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/patch/sox.patch && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-patch
+patching file src/formats.c
+Hunk #1 succeeded at 333 with fuzz 1.
+[73/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/resample.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/resample.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/resample.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/resample.cc
+[74/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-configure-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-configure
+[75/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/feature-functions.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/feature-functions.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/feature-functions.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/feature-functions.cc
+[76/107] /usr/bin/c++  -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -I/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -fvisibility=hidden -O3 -DNDEBUG -fPIC -std=gnu++14 -MD -MT third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/pitch-functions.cc.o -MF third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/pitch-functions.cc.o.d -o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/pitch-functions.cc.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/pitch-functions.cc
+/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/pitch-functions.cc: In member function ‘void kaldi::OnlinePitchFeatureImpl::UpdateRemainder(const kaldi::VectorBase<float>&)’:
+/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/pitch-functions.cc:814:11: warning: unused variable ‘full_frame_length’ [-Wunused-variable]
+  814 |     int32 full_frame_length = opts_.NccfWindowSize() + nccf_last_lag_;
+      |           ^~~~~~~~~~~~~~~~~
+/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/pitch-functions.cc: In member function ‘void kaldi::OnlineProcessPitch::UpdateNormalizationStats(kaldi::int32)’:
+/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src/feat/pitch-functions.cc:1504:35: warning: comparison of integer expressions of different signedness: ‘std::vector<kaldi::OnlineProcessPitch::NormalizationStats>::size_type’ {aka ‘long unsigned int’} and ‘kaldi::int32’ {aka ‘int’} [-Wsign-compare]
+ 1504 |   if (normalization_stats_.size() <= frame)
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+[77/107] : && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E rm -f third_party/kaldi/libkaldi.a && /usr/bin/ar qc third_party/kaldi/libkaldi.a  third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-vector.cc.o third_party/kaldi/CMakeFiles/kaldi.dir/src/matrix/kaldi-matrix.cc.o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-error.cc.o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/base/kaldi-math.cc.o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/feature-functions.cc.o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/pitch-functions.cc.o third_party/kaldi/CMakeFiles/kaldi.dir/submodule/src/feat/resample.cc.o && /usr/bin/ranlib third_party/kaldi/libkaldi.a && :
+[78/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-build-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-build
+[79/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-build && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-install-Release.cmake && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-install
+[80/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E make_directory /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/CMakeFiles/sox-complete && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -E touch /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/third_party/sox/src/sox-stamp/sox-done
+[81/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/utils.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/utils.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/utils.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/utils.cpp
+[82/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_alphas.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_alphas.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_alphas.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/cpu/compute_alphas.cpp
+[83/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_betas.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_betas.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_betas.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/cpu/compute_betas.cpp
+[84/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/cpu/compute.cpp
+[85/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/overdrive.cpp
+[86/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_alphas.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_alphas.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_alphas.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/compute_alphas.cpp
+[87/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_betas.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_betas.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_betas.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/compute_betas.cpp
+[88/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/lfilter.cpp
+[89/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/compute.cpp
+[90/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/autograd.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/autograd.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/autograd.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/autograd.cpp
+[91/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/io.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/io.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/io.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/sox/io.cpp
+[92/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/utils.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/utils.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/utils.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/sox/utils.cpp
+[93/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/kaldi.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/kaldi.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/kaldi.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/kaldi.cpp
+[94/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/sox/effects.cpp
+[95/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects_chain.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects_chain.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects_chain.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/sox/effects_chain.cpp
+[96/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /usr/local/cuda/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/types.cpp.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/types.cpp.o.d -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/types.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/sox/types.cpp
+[97/107] /usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem=/usr/local/cuda/include -isystem=/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem=/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_72,code=sm_72 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=integer_sign_change,--diag_suppress=useless_using_declaration,--diag_suppress=set_but_not_used,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=implicit_return_from_non_void_function,--diag_suppress=unsigned_compare_with_zero,--diag_suppress=declared_but_not_referenced,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -Xcompiler=-fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_alphas.cu.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_alphas.cu.o.d -x cu -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/gpu/compute_alphas.cu -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_alphas.cu.o
+[98/107] /usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem=/usr/local/cuda/include -isystem=/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem=/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_72,code=sm_72 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=integer_sign_change,--diag_suppress=useless_using_declaration,--diag_suppress=set_but_not_used,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=implicit_return_from_non_void_function,--diag_suppress=unsigned_compare_with_zero,--diag_suppress=declared_but_not_referenced,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -Xcompiler=-fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_betas.cu.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_betas.cu.o.d -x cu -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/gpu/compute_betas.cu -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_betas.cu.o
+[99/107] /usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem=/usr/local/cuda/include -isystem=/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem=/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_72,code=sm_72 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=integer_sign_change,--diag_suppress=useless_using_declaration,--diag_suppress=set_but_not_used,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=implicit_return_from_non_void_function,--diag_suppress=unsigned_compare_with_zero,--diag_suppress=declared_but_not_referenced,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -Xcompiler=-fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14 -MD -MT torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute.cu.o -MF torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute.cu.o.d -x cu -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/rnnt/gpu/compute.cu -o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute.cu.o
+[100/107] : && /usr/bin/c++ -fPIC -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG   -shared -Wl,-soname,libtorchaudio.so -o torchaudio/csrc/libtorchaudio.so torchaudio/csrc/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/utils.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_alphas.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute_betas.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/cpu/compute.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_alphas.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute_betas.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/compute.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/autograd.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_alphas.cu.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute_betas.cu.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/rnnt/gpu/compute.cu.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/kaldi.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/io.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/utils.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/effects_chain.cpp.o torchaudio/csrc/CMakeFiles/libtorchaudio.dir/sox/types.cpp.o -L/usr/local/cuda/targets/aarch64-linux/lib/stubs   -L/usr/local/cuda/targets/aarch64-linux/lib -Wl,-rpath,/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib:/usr/local/cuda/lib64:  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch.so  third_party/kaldi/libkaldi.a  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libc10_cuda.so  /usr/local/cuda/lib64/libcudart.so  -Wl,--no-as-needed,"/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so" -Wl,--as-needed  -lpthread  -Wl,--no-as-needed,"/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so" -Wl,--as-needed  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libc10_cuda.so  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libc10.so  /usr/local/cuda/lib64/libnvToolsExt.so  /usr/local/cuda/lib64/libcufft.so  /usr/local/cuda/lib64/libcurand.so  /usr/local/cuda/lib64/libcublas.so  /usr/lib/aarch64-linux-gnu/libcudnn.so  ../../third_party/sox/../install/lib/libsox.a  ../../third_party/sox/../install/lib/libopencore-amrnb.a  ../../third_party/sox/../install/lib/libopencore-amrwb.a  ../../third_party/sox/../install/lib/libmad.a  ../../third_party/sox/../install/lib/libmp3lame.a  ../../third_party/sox/../install/lib/libFLAC.a  ../../third_party/sox/../install/lib/libopusfile.a  ../../third_party/sox/../install/lib/libopus.a  ../../third_party/sox/../install/lib/libvorbisenc.a  ../../third_party/sox/../install/lib/libvorbisfile.a  ../../third_party/sox/../install/lib/libvorbis.a  ../../third_party/sox/../install/lib/libogg.a  /usr/local/cuda/lib64/libcudart.so  /usr/lib/gcc/aarch64-linux-gnu/9/libgomp.so  /usr/lib/aarch64-linux-gnu/libpthread.so  -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl && :
+[101/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.8 -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects.cpp.o -MF torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects.cpp.o.d -o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/pybind/sox/effects.cpp
+[102/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.8 -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o -MF torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o.d -o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/pybind/pybind.cpp
+[103/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.8 -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects_chain.cpp.o -MF torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects_chain.cpp.o.d -o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects_chain.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/pybind/sox/effects_chain.cpp
+[104/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.8 -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/utils.cpp.o -MF torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/utils.cpp.o.d -o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/utils.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/pybind/sox/utils.cpp
+[105/107] /usr/bin/c++ -DINCLUDE_KALDI -DINCLUDE_SOX -DUSE_C10D_GLOO -DUSE_C10D_MPI -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.8 -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/sox/../install/include -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/src -I/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/third_party/kaldi/submodule/src -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include -isystem /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /usr/local/cuda/include -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -fopenmp -std=gnu++14 -MD -MT torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/io.cpp.o -MF torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/io.cpp.o.d -o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/io.cpp.o -c /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/torchaudio/csrc/pybind/sox/io.cpp
+[106/107] : && /usr/bin/c++ -fPIC -Wall -D_GLIBCXX_USE_CXX11_ABI=1 -O3 -DNDEBUG   -shared -Wl,-soname,_torchaudio.so -o torchaudio/csrc/_torchaudio.so torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects.cpp.o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/effects_chain.cpp.o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/io.cpp.o torchaudio/csrc/CMakeFiles/_torchaudio.dir/pybind/sox/utils.cpp.o  -Wl,-rpath,/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38/torchaudio/csrc:/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib:/usr/local/cuda/lib64:  torchaudio/csrc/libtorchaudio.so  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch_python.so  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch.so  -Wl,--no-as-needed,"/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so" -Wl,--as-needed  -lpthread  -Wl,--no-as-needed,"/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so" -Wl,--as-needed  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libc10_cuda.so  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libc10.so  /usr/local/cuda/lib64/libnvToolsExt.so  /usr/local/cuda/lib64/libcufft.so  /usr/local/cuda/lib64/libcurand.so  /usr/local/cuda/lib64/libcublas.so  /usr/lib/aarch64-linux-gnu/libcudnn.so  ../../third_party/sox/../install/lib/libsox.a  ../../third_party/sox/../install/lib/libopencore-amrnb.a  ../../third_party/sox/../install/lib/libopencore-amrwb.a  ../../third_party/sox/../install/lib/libmad.a  ../../third_party/sox/../install/lib/libmp3lame.a  ../../third_party/sox/../install/lib/libFLAC.a  ../../third_party/sox/../install/lib/libopusfile.a  ../../third_party/sox/../install/lib/libopus.a  ../../third_party/sox/../install/lib/libvorbisenc.a  ../../third_party/sox/../install/lib/libvorbisfile.a  ../../third_party/sox/../install/lib/libvorbis.a  ../../third_party/sox/../install/lib/libogg.a  third_party/kaldi/libkaldi.a  /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/torch/lib/libc10_cuda.so  /usr/local/cuda/lib64/libcudart.so  /usr/lib/gcc/aarch64-linux-gnu/9/libgomp.so  /usr/lib/aarch64-linux-gnu/libpthread.so && :
+[106/107] cd /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/temp.linux-aarch64-cpython-38 && /home/znmeb/mambaforge/envs/r-reticulate/bin/cmake -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/lib.linux-aarch64-cpython-38/torchaudio/lib/libtorchaudio.so
+-- Set runtime path of "/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/lib.linux-aarch64-cpython-38/torchaudio/lib/libtorchaudio.so" to ""
+-- Installing: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/lib.linux-aarch64-cpython-38/torchaudio/./_torchaudio.so
+-- Set runtime path of "/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/audio/build/lib.linux-aarch64-cpython-38/torchaudio/./_torchaudio.so" to ""
+installing to build/bdist.linux-aarch64/wheel
+running install
+running install_lib
+creating build/bdist.linux-aarch64
+creating build/bdist.linux-aarch64/wheel
+creating build/bdist.linux-aarch64/wheel/torchaudio
+creating build/bdist.linux-aarch64/wheel/torchaudio/functional
+copying build/lib.linux-aarch64-cpython-38/torchaudio/functional/filtering.py -> build/bdist.linux-aarch64/wheel/torchaudio/functional
+copying build/lib.linux-aarch64-cpython-38/torchaudio/functional/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/functional
+copying build/lib.linux-aarch64-cpython-38/torchaudio/functional/functional.py -> build/bdist.linux-aarch64/wheel/torchaudio/functional
+creating build/bdist.linux-aarch64/wheel/torchaudio/_internal
+copying build/lib.linux-aarch64-cpython-38/torchaudio/_internal/module_utils.py -> build/bdist.linux-aarch64/wheel/torchaudio/_internal
+copying build/lib.linux-aarch64-cpython-38/torchaudio/_internal/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/_internal
+creating build/bdist.linux-aarch64/wheel/torchaudio/sox_effects
+copying build/lib.linux-aarch64-cpython-38/torchaudio/sox_effects/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/sox_effects
+copying build/lib.linux-aarch64-cpython-38/torchaudio/sox_effects/sox_effects.py -> build/bdist.linux-aarch64/wheel/torchaudio/sox_effects
+creating build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2letter.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/rnnt_decoder.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wavernn.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/tacotron2.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/rnnt.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+creating build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2
+creating build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2/utils
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils/import_fairseq.py -> build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2/utils
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils/import_huggingface.py -> build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2/utils
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/utils/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2/utils
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/components.py -> build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/wav2vec2/model.py -> build/bdist.linux-aarch64/wheel/torchaudio/models/wav2vec2
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/conformer.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/conv_tasnet.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/deepspeech.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+copying build/lib.linux-aarch64-cpython-38/torchaudio/models/emformer.py -> build/bdist.linux-aarch64/wheel/torchaudio/models
+creating build/bdist.linux-aarch64/wheel/torchaudio/compliance
+copying build/lib.linux-aarch64-cpython-38/torchaudio/compliance/kaldi.py -> build/bdist.linux-aarch64/wheel/torchaudio/compliance
+copying build/lib.linux-aarch64-cpython-38/torchaudio/compliance/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/compliance
+copying build/lib.linux-aarch64-cpython-38/torchaudio/_torchaudio.so -> build/bdist.linux-aarch64/wheel/torchaudio
+copying build/lib.linux-aarch64-cpython-38/torchaudio/_extension.py -> build/bdist.linux-aarch64/wheel/torchaudio
+creating build/bdist.linux-aarch64/wheel/torchaudio/lib
+copying build/lib.linux-aarch64-cpython-38/torchaudio/lib/libtorchaudio.so -> build/bdist.linux-aarch64/wheel/torchaudio/lib
+creating build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/dr_vctk.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/yesno.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/gtzan.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/tedlium.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/vctk.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/commonvoice.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/utils.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/librimix.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/ljspeech.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/cmuarctic.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/cmudict.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/speechcommands.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/librispeech.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/datasets/libritts.py -> build/bdist.linux-aarch64/wheel/torchaudio/datasets
+copying build/lib.linux-aarch64-cpython-38/torchaudio/kaldi_io.py -> build/bdist.linux-aarch64/wheel/torchaudio
+copying build/lib.linux-aarch64-cpython-38/torchaudio/transforms.py -> build/bdist.linux-aarch64/wheel/torchaudio
+copying build/lib.linux-aarch64-cpython-38/torchaudio/version.py -> build/bdist.linux-aarch64/wheel/torchaudio
+creating build/bdist.linux-aarch64/wheel/torchaudio/pipelines
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/rnnt_pipeline.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines
+creating build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_tts
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts/interface.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_tts
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts/utils.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_tts
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts/impl.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_tts
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_tts/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_tts
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines
+creating build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_wav2vec2
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2/utils.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_wav2vec2
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2/impl.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_wav2vec2
+copying build/lib.linux-aarch64-cpython-38/torchaudio/pipelines/_wav2vec2/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/pipelines/_wav2vec2
+creating build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/backend/sox_io_backend.py -> build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/backend/no_backend.py -> build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/backend/soundfile_backend.py -> build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/backend/common.py -> build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/backend/utils.py -> build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/backend/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/backend
+copying build/lib.linux-aarch64-cpython-38/torchaudio/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio
+creating build/bdist.linux-aarch64/wheel/torchaudio/utils
+copying build/lib.linux-aarch64-cpython-38/torchaudio/utils/sox_utils.py -> build/bdist.linux-aarch64/wheel/torchaudio/utils
+copying build/lib.linux-aarch64-cpython-38/torchaudio/utils/__init__.py -> build/bdist.linux-aarch64/wheel/torchaudio/utils
+running install_egg_info
+running egg_info
+creating torchaudio.egg-info
+writing torchaudio.egg-info/PKG-INFO
+writing dependency_links to torchaudio.egg-info/dependency_links.txt
+writing requirements to torchaudio.egg-info/requires.txt
+writing top-level names to torchaudio.egg-info/top_level.txt
+writing manifest file 'torchaudio.egg-info/SOURCES.txt'
+reading manifest file 'torchaudio.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'torchaudio.egg-info/SOURCES.txt'
+Copying torchaudio.egg-info to build/bdist.linux-aarch64/wheel/torchaudio-0.11.0+820b383-py3.8.egg-info
+running install_scripts
+adding license file "LICENSE" (matched pattern "LICEN[CS]E*")
+creating build/bdist.linux-aarch64/wheel/torchaudio-0.11.0+820b383.dist-info/WHEEL
+creating 'dist/torchaudio-0.11.0+820b383-cp38-cp38-linux_aarch64.whl' and adding 'build/bdist.linux-aarch64/wheel' to it
+adding 'torchaudio/__init__.py'
+adding 'torchaudio/_extension.py'
+adding 'torchaudio/_torchaudio.so'
+adding 'torchaudio/kaldi_io.py'
+adding 'torchaudio/transforms.py'
+adding 'torchaudio/version.py'
+adding 'torchaudio/_internal/__init__.py'
+adding 'torchaudio/_internal/module_utils.py'
+adding 'torchaudio/backend/__init__.py'
+adding 'torchaudio/backend/common.py'
+adding 'torchaudio/backend/no_backend.py'
+adding 'torchaudio/backend/soundfile_backend.py'
+adding 'torchaudio/backend/sox_io_backend.py'
+adding 'torchaudio/backend/utils.py'
+adding 'torchaudio/compliance/__init__.py'
+adding 'torchaudio/compliance/kaldi.py'
+adding 'torchaudio/datasets/__init__.py'
+adding 'torchaudio/datasets/cmuarctic.py'
+adding 'torchaudio/datasets/cmudict.py'
+adding 'torchaudio/datasets/commonvoice.py'
+adding 'torchaudio/datasets/dr_vctk.py'
+adding 'torchaudio/datasets/gtzan.py'
+adding 'torchaudio/datasets/librimix.py'
+adding 'torchaudio/datasets/librispeech.py'
+adding 'torchaudio/datasets/libritts.py'
+adding 'torchaudio/datasets/ljspeech.py'
+adding 'torchaudio/datasets/speechcommands.py'
+adding 'torchaudio/datasets/tedlium.py'
+adding 'torchaudio/datasets/utils.py'
+adding 'torchaudio/datasets/vctk.py'
+adding 'torchaudio/datasets/yesno.py'
+adding 'torchaudio/functional/__init__.py'
+adding 'torchaudio/functional/filtering.py'
+adding 'torchaudio/functional/functional.py'
+adding 'torchaudio/lib/libtorchaudio.so'
+adding 'torchaudio/models/__init__.py'
+adding 'torchaudio/models/conformer.py'
+adding 'torchaudio/models/conv_tasnet.py'
+adding 'torchaudio/models/deepspeech.py'
+adding 'torchaudio/models/emformer.py'
+adding 'torchaudio/models/rnnt.py'
+adding 'torchaudio/models/rnnt_decoder.py'
+adding 'torchaudio/models/tacotron2.py'
+adding 'torchaudio/models/wav2letter.py'
+adding 'torchaudio/models/wavernn.py'
+adding 'torchaudio/models/wav2vec2/__init__.py'
+adding 'torchaudio/models/wav2vec2/components.py'
+adding 'torchaudio/models/wav2vec2/model.py'
+adding 'torchaudio/models/wav2vec2/utils/__init__.py'
+adding 'torchaudio/models/wav2vec2/utils/import_fairseq.py'
+adding 'torchaudio/models/wav2vec2/utils/import_huggingface.py'
+adding 'torchaudio/pipelines/__init__.py'
+adding 'torchaudio/pipelines/rnnt_pipeline.py'
+adding 'torchaudio/pipelines/_tts/__init__.py'
+adding 'torchaudio/pipelines/_tts/impl.py'
+adding 'torchaudio/pipelines/_tts/interface.py'
+adding 'torchaudio/pipelines/_tts/utils.py'
+adding 'torchaudio/pipelines/_wav2vec2/__init__.py'
+adding 'torchaudio/pipelines/_wav2vec2/impl.py'
+adding 'torchaudio/pipelines/_wav2vec2/utils.py'
+adding 'torchaudio/sox_effects/__init__.py'
+adding 'torchaudio/sox_effects/sox_effects.py'
+adding 'torchaudio/utils/__init__.py'
+adding 'torchaudio/utils/sox_utils.py'
+adding 'torchaudio-0.11.0+820b383.dist-info/LICENSE'
+adding 'torchaudio-0.11.0+820b383.dist-info/METADATA'
+adding 'torchaudio-0.11.0+820b383.dist-info/WHEEL'
+adding 'torchaudio-0.11.0+820b383.dist-info/top_level.txt'
+adding 'torchaudio-0.11.0+820b383.dist-info/RECORD'
+removing build/bdist.linux-aarch64/wheel
+/home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+2712.76user 531.77system 10:35.84elapsed 510%CPU (0avgtext+0avgdata 1253572maxresident)k
+664920inputs+1043176outputs (3334major+42024034minor)pagefaults 0swaps
+Saving torchaudio wheel
+Installing torchaudio wheel
+Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/torchaudio-0.11.0+820b383-cp38-cp38-linux_aarch64.whl
+Requirement already satisfied: torch in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages (from torchaudio==0.11.0+820b383) (1.11.0)
+Requirement already satisfied: typing-extensions in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages (from torch->torchaudio==0.11.0+820b383) (4.2.0)
+Installing collected packages: torchaudio
+Successfully installed torchaudio-0.11.0+820b383
+Cleanup
+..Removing audio project repository
+..Removing downloaded tarballs
+
+                  __    __    __    __
+                 /  \  /  \  /  \  /  \
+                /    \/    \/    \/    \
+███████████████/  /██/  /██/  /██/  /████████████████████████
+              /  / \   / \   / \   / \  \____
+             /  /   \_/   \_/   \_/   \    o \__,
+            / _/                       \_____/  `
+            |/
+        ███╗   ███╗ █████╗ ███╗   ███╗██████╗  █████╗
+        ████╗ ████║██╔══██╗████╗ ████║██╔══██╗██╔══██╗
+        ██╔████╔██║███████║██╔████╔██║██████╔╝███████║
+        ██║╚██╔╝██║██╔══██║██║╚██╔╝██║██╔══██╗██╔══██║
+        ██║ ╚═╝ ██║██║  ██║██║ ╚═╝ ██║██████╔╝██║  ██║
+        ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝
+
+        mamba (0.23.0) supported by @QuantStack
+
+        GitHub:  https://github.com/mamba-org/mamba
+        Twitter: https://twitter.com/QuantStack
+
+█████████████████████████████████████████████████████████████
+
+Cache location: /home/znmeb/mambaforge/pkgs
+Will remove the following tarballs:
+
+/home/znmeb/mambaforge/pkgs
+---------------------------
+cmake-3.23.1-hcad14f8_0.tar.bz2             15.7 MB
+rhash-1.4.1-hf897c2e_0.tar.bz2               206 KB
+expat-2.4.8-ha18d298_0.tar.bz2               162 KB
+ninja-1.10.2-hd62202e_1.tar.bz2              2.6 MB
+pkg-config-0.29.2-hb9de7d4_1008.tar.bz2      292 KB
+libuv-1.43.0-hf897c2e_0.tar.bz2              906 KB
+
+---------------------------------------------------
+Total:                                      19.8 MB
+
+Removed cmake-3.23.1-hcad14f8_0.tar.bz2
+Removed rhash-1.4.1-hf897c2e_0.tar.bz2
+Removed expat-2.4.8-ha18d298_0.tar.bz2
+Removed ninja-1.10.2-hd62202e_1.tar.bz2
+Removed pkg-config-0.29.2-hb9de7d4_1008.tar.bz2
+Removed libuv-1.43.0-hf897c2e_0.tar.bz2
+# packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
+#
+# Name                    Version                   Build  Channel
+_openmp_mutex             4.5                       2_gnu    conda-forge
+anyio                     3.5.0            py38h2063c64_0    conda-forge
+argon2-cffi               21.3.0             pyhd8ed1ab_0    conda-forge
+argon2-cffi-bindings      21.2.0           py38hdacc76a_2    conda-forge
+asttokens                 2.0.5              pyhd8ed1ab_0    conda-forge
+attrs                     21.4.0             pyhd8ed1ab_0    conda-forge
+babel                     2.10.1             pyhd8ed1ab_0    conda-forge
+backcall                  0.2.0              pyh9f0ad1d_0    conda-forge
+backports                 1.0                        py_2    conda-forge
+backports.functools_lru_cache 1.6.4              pyhd8ed1ab_0    conda-forge
+beautifulsoup4            4.11.1             pyha770c72_0    conda-forge
+bleach                    5.0.0              pyhd8ed1ab_0    conda-forge
+brotli                    1.0.9                h4e544f5_7    conda-forge
+brotli-bin                1.0.9                h4e544f5_7    conda-forge
+brotlipy                  0.7.0           py38hdacc76a_1004    conda-forge
+bzip2                     1.0.8                hf897c2e_4    conda-forge
+c-ares                    1.18.1               hf897c2e_0    conda-forge
+ca-certificates           2021.10.8            h4fd8a4c_0    conda-forge
+certifi                   2021.10.8        py38he3eb160_2    conda-forge
+cffi                      1.15.0           py38hc42474b_0    conda-forge
+charset-normalizer        2.0.12             pyhd8ed1ab_0    conda-forge
+cmake                     3.23.1               hcad14f8_0    conda-forge
+cryptography              36.0.2           py38h4672ff4_1    conda-forge
+cupy                      10.4.0                   pypi_0    pypi
+cycler                    0.11.0             pyhd8ed1ab_0    conda-forge
+cython                    0.29.28          py38h5f8a8d0_2    conda-forge
+debugpy                   1.6.0            py38h5f8a8d0_0    conda-forge
+decorator                 5.1.1              pyhd8ed1ab_0    conda-forge
+defusedxml                0.7.1              pyhd8ed1ab_0    conda-forge
+entrypoints               0.4                pyhd8ed1ab_0    conda-forge
+executing                 0.8.3              pyhd8ed1ab_0    conda-forge
+expat                     2.4.8                ha18d298_0    conda-forge
+fastrlock                 0.8                      pypi_0    pypi
+flit-core                 3.7.1              pyhd8ed1ab_0    conda-forge
+fonttools                 4.33.3           py38hdacc76a_0    conda-forge
+freetype                  2.10.4               hdf53a3c_1    conda-forge
+giflib                    5.2.1                hb9de7d4_2    conda-forge
+gmp                       6.2.1                h7fd3ca4_0    conda-forge
+gmpy2                     2.1.2            py38h80d68c0_0    conda-forge
+idna                      3.3                pyhd8ed1ab_0    conda-forge
+importlib-metadata        4.11.3           py38h2063c64_1    conda-forge
+importlib_metadata        4.11.3               hd8ed1ab_1    conda-forge
+importlib_resources       5.7.1              pyhd8ed1ab_0    conda-forge
+ipykernel                 6.13.0           py38hd6ddd68_0    conda-forge
+ipython                   8.3.0            py38he3eb160_0    conda-forge
+ipython_genutils          0.2.0                      py_1    conda-forge
+jbig                      2.1               hf897c2e_2003    conda-forge
+jedi                      0.18.1           py38h2063c64_1    conda-forge
+jinja2                    3.1.2              pyhd8ed1ab_0    conda-forge
+joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
+jpeg                      9e                   h9cdd2b7_1    conda-forge
+json5                     0.9.5              pyh9f0ad1d_0    conda-forge
+jsonschema                4.5.1              pyhd8ed1ab_0    conda-forge
+jupyter_client            7.3.0              pyhd8ed1ab_0    conda-forge
+jupyter_core              4.9.2            py38he3eb160_0    conda-forge
+jupyter_server            1.13.1             pyhd8ed1ab_0    conda-forge
+jupyterlab                3.3.4              pyhd8ed1ab_0    conda-forge
+jupyterlab_pygments       0.2.2              pyhd8ed1ab_0    conda-forge
+jupyterlab_server         2.13.0             pyhd8ed1ab_1    conda-forge
+keyutils                  1.6.1                h4e544f5_0    conda-forge
+kiwisolver                1.4.2            py38hbcd4e1f_0    conda-forge
+krb5                      1.19.3               h7c456eb_0    conda-forge
+lcms2                     2.12                 h012adcb_0    conda-forge
+ld_impl_linux-aarch64     2.36.1               h02ad14f_2    conda-forge
+lerc                      3.0                  h01db608_0    conda-forge
+libblas                   3.9.0           14_linuxaarch64_openblas    conda-forge
+libbrotlicommon           1.0.9                h4e544f5_7    conda-forge
+libbrotlidec              1.0.9                h4e544f5_7    conda-forge
+libbrotlienc              1.0.9                h4e544f5_7    conda-forge
+libcblas                  3.9.0           14_linuxaarch64_openblas    conda-forge
+libcurl                   7.83.0               h8fd98b7_0    conda-forge
+libdeflate                1.10                 hf897c2e_0    conda-forge
+libedit                   3.1.20191231         he28a2e2_2    conda-forge
+libev                     4.33                 h516909a_1    conda-forge
+libffi                    3.4.2                h3557bc0_5    conda-forge
+libgcc-ng                 11.2.0              hf1cc4e7_16    conda-forge
+libgfortran-ng            11.2.0              he9431aa_16    conda-forge
+libgfortran5              11.2.0              h440fb59_16    conda-forge
+libgomp                   11.2.0              hf1cc4e7_16    conda-forge
+liblapack                 3.9.0           14_linuxaarch64_openblas    conda-forge
+libllvm10                 10.0.1               he513fc3_3    conda-forge
+libnghttp2                1.47.0               h75cb1c7_0    conda-forge
+libnsl                    2.0.0                hf897c2e_0    conda-forge
+libopenblas               0.3.20          pthreads_h6cb6f83_0    conda-forge
+libpng                    1.6.37               hbd635b3_2    conda-forge
+libsodium                 1.0.18               hb9de7d4_1    conda-forge
+libssh2                   1.10.0               h1ab2c7b_2    conda-forge
+libstdcxx-ng              11.2.0              h0d0a5bb_16    conda-forge
+libtiff                   4.3.0                hdea21e4_3    conda-forge
+libuuid                   2.32.1            hf897c2e_1000    conda-forge
+libuv                     1.43.0               hf897c2e_0    conda-forge
+libwebp                   1.2.2                h21830e5_0    conda-forge
+libwebp-base              1.2.2                hf897c2e_1    conda-forge
+libxcb                    1.13              h3557bc0_1004    conda-forge
+libzlib                   1.2.11            h4e544f5_1014    conda-forge
+llvmlite                  0.36.0           py38h68ca503_0    conda-forge
+lz4-c                     1.9.3                h01db608_1    conda-forge
+markupsafe                2.1.1            py38h81aae68_1    conda-forge
+matplotlib                3.5.2            py38h2063c64_0    conda-forge
+matplotlib-base           3.5.2            py38h7bc7617_0    conda-forge
+matplotlib-inline         0.1.3              pyhd8ed1ab_0    conda-forge
+mistune                   0.8.4           py38h9544abe_1005    conda-forge
+mpc                       1.2.1                h846f343_0    conda-forge
+mpfr                      4.1.0                h719063d_1    conda-forge
+mpmath                    1.2.1              pyhd8ed1ab_0    conda-forge
+munkres                   1.1.4              pyh9f0ad1d_0    conda-forge
+nbclassic                 0.3.7              pyhd8ed1ab_0    conda-forge
+nbclient                  0.6.2              pyhd8ed1ab_0    conda-forge
+nbconvert                 6.5.0              pyhd8ed1ab_0    conda-forge
+nbconvert-core            6.5.0              pyhd8ed1ab_0    conda-forge
+nbconvert-pandoc          6.5.0              pyhd8ed1ab_0    conda-forge
+nbformat                  5.4.0              pyhd8ed1ab_0    conda-forge
+ncurses                   6.3                  headf329_1    conda-forge
+nest-asyncio              1.5.5              pyhd8ed1ab_0    conda-forge
+ninja                     1.10.2               hd62202e_1    conda-forge
+notebook                  6.4.11             pyha770c72_0    conda-forge
+notebook-shim             0.1.0              pyhd8ed1ab_0    conda-forge
+numba                     0.53.1           py38h887e8e3_1    conda-forge
+numpy                     1.22.3           py38h9138613_2    conda-forge
+openjpeg                  2.4.0                h45037e0_1    conda-forge
+openssl                   1.1.1o               h4e544f5_0    conda-forge
+packaging                 21.3               pyhd8ed1ab_0    conda-forge
+pandas                    1.4.2            py38h2fe58aa_1    conda-forge
+pandoc                    2.18                 h8af1aa0_0    conda-forge
+pandocfilters             1.5.0              pyhd8ed1ab_0    conda-forge
+parso                     0.8.3              pyhd8ed1ab_0    conda-forge
+pexpect                   4.8.0              pyh9f0ad1d_2    conda-forge
+pickleshare               0.7.5                   py_1003    conda-forge
+pillow                    9.1.0            py38h3870bda_2    conda-forge
+pip                       22.0.4             pyhd8ed1ab_0    conda-forge
+pkg-config                0.29.2            hb9de7d4_1008    conda-forge
+prometheus_client         0.14.1             pyhd8ed1ab_0    conda-forge
+prompt-toolkit            3.0.29             pyha770c72_0    conda-forge
+psutil                    5.9.0            py38hdacc76a_1    conda-forge
+pthread-stubs             0.4               hb9de7d4_1001    conda-forge
+ptyprocess                0.7.0              pyhd3deb0d_0    conda-forge
+pure_eval                 0.2.2              pyhd8ed1ab_0    conda-forge
+pycparser                 2.21               pyhd8ed1ab_0    conda-forge
+pygments                  2.12.0             pyhd8ed1ab_0    conda-forge
+pyopenssl                 22.0.0             pyhd8ed1ab_0    conda-forge
+pyparsing                 3.0.8              pyhd8ed1ab_0    conda-forge
+pyrsistent                0.18.1           py38h81aae68_1    conda-forge
+pysocks                   1.7.1            py38h2063c64_5    conda-forge
+python                    3.8.13          h023d47c_0_cpython    conda-forge
+python-dateutil           2.8.2              pyhd8ed1ab_0    conda-forge
+python-fastjsonschema     2.15.3             pyhd8ed1ab_0    conda-forge
+python_abi                3.8                      2_cp38    conda-forge
+pytz                      2022.1             pyhd8ed1ab_0    conda-forge
+pyzmq                     22.3.0           py38h891b4b0_2    conda-forge
+readline                  8.1                  h1a49cc3_0    conda-forge
+requests                  2.27.1             pyhd8ed1ab_0    conda-forge
+rhash                     1.4.1                hf897c2e_0    conda-forge
+scikit-learn              1.0.2            py38h976db20_0    conda-forge
+scipy                     1.8.0            py38h79f4abc_1    conda-forge
+send2trash                1.8.0              pyhd8ed1ab_0    conda-forge
+setuptools                62.1.0           py38h2063c64_0    conda-forge
+six                       1.16.0             pyh6c4a22f_0    conda-forge
+sniffio                   1.2.0            py38he3eb160_3    conda-forge
+soupsieve                 2.3.1              pyhd8ed1ab_0    conda-forge
+sqlite                    3.38.5               hc74f5b8_0    conda-forge
+stack_data                0.2.0              pyhd8ed1ab_0    conda-forge
+sympy                     1.10.1           py38he3eb160_0    conda-forge
+terminado                 0.13.3           py38h2063c64_1    conda-forge
+threadpoolctl             3.1.0              pyh8a188c0_0    conda-forge
+tinycss2                  1.1.1              pyhd8ed1ab_0    conda-forge
+tk                        8.6.12               hd8af866_0    conda-forge
+torch                     1.11.0                   pypi_0    pypi
+torchaudio                0.11.0+820b383           pypi_0    pypi
+tornado                   6.1              py38h81aae68_3    conda-forge
+traitlets                 5.1.1              pyhd8ed1ab_0    conda-forge
+typing-extensions         4.2.0                    pypi_0    pypi
+unicodedata2              14.0.0           py38hdacc76a_1    conda-forge
+urllib3                   1.26.9             pyhd8ed1ab_0    conda-forge
+wcwidth                   0.2.5              pyh9f0ad1d_2    conda-forge
+webencodings              0.5.1                      py_1    conda-forge
+websocket-client          1.3.2              pyhd8ed1ab_0    conda-forge
+wheel                     0.37.1             pyhd8ed1ab_0    conda-forge
+xorg-libxau               1.0.9                h3557bc0_0    conda-forge
+xorg-libxdmcp             1.1.3                h3557bc0_0    conda-forge
+xz                        5.2.5                h6dd45c4_1    conda-forge
+zeromq                    4.3.4                h01db608_1    conda-forge
+zipp                      3.8.0              pyhd8ed1ab_0    conda-forge
+zlib                      1.2.11            h4e544f5_1014    conda-forge
+zstd                      1.5.2                h41fb7a4_0    conda-forge
+Finished
+2825.21user 551.45system 12:13.50elapsed 460%CPU (0avgtext+0avgdata 1253572maxresident)k
+805336inputs+2494928outputs (3586major+42235727minor)pagefaults 0swaps
