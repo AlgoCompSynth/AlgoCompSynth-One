@@ -1,0 +1,28 @@
+also installing the dependencies ‘pkgconfig’, ‘askpass’, ‘credentials’, ‘sys’, ‘zip’, ‘gitcreds’, ‘ini’, ‘diffobj’, ‘fansi’, ‘rematch2’, ‘tibble’, ‘utf8’, ‘vctrs’, ‘clipr’, ‘curl’, ‘gert’, ‘gh’, ‘glue’, ‘purrr’, ‘rprojroot’, ‘whisker’, ‘processx’, ‘R6’, ‘mime’, ‘openssl’, ‘cachem’, ‘prettyunits’, ‘xopen’, ‘brew’, ‘commonmark’, ‘stringi’, ‘xml2’, ‘cpp11’, ‘brio’, ‘praise’, ‘ps’, ‘waldo’, ‘pillar’, ‘base64enc’, ‘sass’, ‘fastmap’, ‘magrittr’, ‘usethis’, ‘callr’, ‘cli’, ‘desc’, ‘ellipsis’, ‘fs’, ‘httr’, ‘lifecycle’, ‘memoise’, ‘pkgbuild’, ‘pkgload’, ‘rcmdcheck’, ‘remotes’, ‘rlang’, ‘roxygen2’, ‘rstudioapi’, ‘rversions’, ‘sessioninfo’, ‘testthat’, ‘withr’, ‘repr’, ‘evaluate’, ‘IRdisplay’, ‘pbdZMQ’, ‘crayon’, ‘jsonlite’, ‘uuid’, ‘digest’, ‘highr’, ‘stringr’, ‘yaml’, ‘xfun’, ‘Rcpp’, ‘RcppTOML’, ‘here’, ‘png’, ‘rappdirs’, ‘bslib’, ‘htmltools’, ‘jquerylib’, ‘tinytex’
+
+Updating HTML index of packages in '.Library'
+Making 'packages.html' ... done
+  [1] "askpass"     "base"        "base64enc"   "boot"        "brew"       
+  [6] "brio"        "bslib"       "cachem"      "callr"       "caracas"    
+ [11] "class"       "cli"         "clipr"       "cluster"     "codetools"  
+ [16] "commonmark"  "compiler"    "cpp11"       "crayon"      "credentials"
+ [21] "curl"        "datasets"    "data.table"  "desc"        "devtools"   
+ [26] "diffobj"     "digest"      "ellipsis"    "evaluate"    "fansi"      
+ [31] "fastmap"     "foreign"     "fs"          "gert"        "gh"         
+ [36] "gitcreds"    "glue"        "graphics"    "grDevices"   "grid"       
+ [41] "here"        "highr"       "htmltools"   "httr"        "ini"        
+ [46] "IRdisplay"   "IRkernel"    "jquerylib"   "jsonlite"    "KernSmooth" 
+ [51] "knitr"       "lattice"     "lifecycle"   "magrittr"    "MASS"       
+ [56] "Matrix"      "memoise"     "methods"     "mgcv"        "mime"       
+ [61] "nlme"        "nnet"        "openssl"     "parallel"    "pbdZMQ"     
+ [66] "pillar"      "pkgbuild"    "pkgconfig"   "pkgload"     "png"        
+ [71] "praise"      "prettyunits" "processx"    "ps"          "purrr"      
+ [76] "R6"          "rappdirs"    "rcmdcheck"   "Rcpp"        "RcppTOML"   
+ [81] "rematch2"    "remotes"     "renv"        "repr"        "reticulate" 
+ [86] "rlang"       "rmarkdown"   "roxygen2"    "rpart"       "rprojroot"  
+ [91] "rstudioapi"  "rversions"   "sass"        "sessioninfo" "spatial"    
+ [96] "splines"     "stats"       "stats4"      "stringi"     "stringr"    
+[101] "survival"    "sys"         "tcltk"       "testthat"    "tibble"     
+[106] "tinytex"     "tools"       "usethis"     "utf8"        "utils"      
+[111] "uuid"        "vctrs"       "waldo"       "whisker"     "withr"      
+[116] "xfun"        "xml2"        "xopen"       "yaml"        "zip"        
