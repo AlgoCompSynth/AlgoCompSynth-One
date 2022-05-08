@@ -1,0 +1,10 @@
+Testing PyTorch execution and GPU availability
+torch version 1.10.0
+CUDA available: True
+cuDNN version: 8201
+CUDA device count: 1
+current CUDA device: 0
+CUDA device name: Xavier
+Tensor a = tensor([0., 0.], device='cuda:0')
+Tensor b = tensor([-1.6007,  0.6909], device='cuda:0')
+Tensor c = tensor([-1.6007,  0.6909], device='cuda:0')
