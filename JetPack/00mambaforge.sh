@@ -83,7 +83,8 @@ then
 fi
 
 echo "Creating 'mamba-init.sh'"
-echo ". $MAMBAFORGE_HOME/etc/profile.d/conda.sh" > mamba-init.sh
-echo ". $MAMBAFORGE_HOME/etc/profile.d/mamba.sh" >> mamba-init.sh
+echo "export MAMBAFORGE_HOME=$MAMBAFORGE_HOME" > mamba-init.sh
+echo "source $MAMBAFORGE_HOME/etc/profile.d/conda.sh" >> mamba-init.sh
+echo "source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh" >> mamba-init.sh
 
 echo "Finished!"
