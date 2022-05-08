@@ -1,0 +1,27 @@
+Upgrading
+Get:1 https://repo.download.nvidia.com/jetson/common r32.7 InRelease [2,555 B]
+Hit:2 https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/ InRelease
+Get:3 https://repo.download.nvidia.com/jetson/t194 r32.7 InRelease [2,547 B]
+Hit:4 http://ports.ubuntu.com/ubuntu-ports bionic InRelease
+Hit:5 http://ppa.launchpad.net/c2d4u.team/c2d4u4.0+/ubuntu bionic InRelease
+Hit:6 http://ports.ubuntu.com/ubuntu-ports bionic-updates InRelease
+Hit:7 http://ports.ubuntu.com/ubuntu-ports bionic-backports InRelease
+Hit:8 http://ports.ubuntu.com/ubuntu-ports bionic-security InRelease
+Fetched 5,102 B in 2s (2,060 B/s)
+Reading package lists...
+Installing gnupg2 if needed
+Updating NVIDIA keys
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+Executing: /tmp/apt-key-gpghome.tXeYAVPSPj/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+gpg: requesting key from 'https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub'
+gpg: key A4B469963BF863CC: "cudatools <cudatools@nvidia.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+Executing: /tmp/apt-key-gpghome.fshHFEkCNq/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
+gpg: requesting key from 'https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub'
+gpg: key F60F4B3D7FA2AF80: "cudatools <cudatools@nvidia.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+Installing command line utilities
+Installing PyTorch Linux dependencies

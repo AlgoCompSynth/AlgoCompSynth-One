@@ -1,0 +1,738 @@
+Activating r-reticulate
+cusignal build required - deactivating r-reticulate
+Removing previous 'cusignal'
+Cloning cuSignal source
+Cloning into '/home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/cusignal'...
+Checking out version v22.04.00
+Note: checking out 'v22.04.00'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 06f58b4 REL v22.04.00 release
+Patching environment file for Python version 3.6
+Creating fresh cusignal-dev environment
+  Package                            Version  Build                Channel                         Size
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Install:
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex                        4.5  2_gnu                conda-forge/linux-aarch64     Cached
+  + alabaster                         0.7.12  py_0                 conda-forge/noarch              15kB
+  + attrs                             21.4.0  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + babel                             2.10.1  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + backcall                           0.2.0  pyh9f0ad1d_0         conda-forge/noarch            Cached
+  + backports                            1.0  py_2                 conda-forge/noarch            Cached
+  + backports.functools_lru_cache      1.6.4  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + beautifulsoup4                    4.11.1  pyha770c72_0         conda-forge/noarch              98kB
+  + brotlipy                           0.7.0  py36h269c3a8_1001    conda-forge/linux-aarch64     Cached
+  + ca-certificates                2021.10.8  h4fd8a4c_0           conda-forge/linux-aarch64     Cached
+  + certifi                        2021.5.30  py36h704843e_0       conda-forge/linux-aarch64     Cached
+  + cffi                              1.14.6  py36h265152b_1       conda-forge/linux-aarch64     Cached
+  + charset-normalizer                2.0.12  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + colorama                           0.4.4  pyh9f0ad1d_0         conda-forge/noarch            Cached
+  + cryptography                      35.0.0  py36h70ab5b5_0       conda-forge/linux-aarch64     Cached
+  + cycler                            0.11.0  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + decorator                          5.1.1  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + docutils                          0.17.1  py36h704843e_0       conda-forge/linux-aarch64      781kB
+  + freetype                          2.10.4  hdf53a3c_1           conda-forge/linux-aarch64     Cached
+  + idna                                 3.3  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + imagesize                          1.3.0  pyhd8ed1ab_0         conda-forge/noarch               9kB
+  + importlib-metadata                 4.8.1  py36h704843e_0       conda-forge/linux-aarch64     Cached
+  + importlib_metadata                 4.8.1  hd8ed1ab_1           conda-forge/noarch               4kB
+  + iniconfig                          1.1.1  pyh9f0ad1d_0         conda-forge/noarch               8kB
+  + ipython                           7.16.1  py36h0e46ebc_2       conda-forge/linux-aarch64     Cached
+  + ipython_genutils                   0.2.0  py_1                 conda-forge/noarch            Cached
+  + jbig                                 2.1  hf897c2e_2003        conda-forge/linux-aarch64     Cached
+  + jedi                              0.17.2  py36h704843e_1       conda-forge/linux-aarch64     Cached
+  + jinja2                             3.0.3  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + jpeg                                  9e  h9cdd2b7_1           conda-forge/linux-aarch64     Cached
+  + kiwisolver                         1.3.1  py36h72e8208_1       conda-forge/linux-aarch64     Cached
+  + lcms2                               2.12  h012adcb_0           conda-forge/linux-aarch64     Cached
+  + ld_impl_linux-aarch64             2.36.1  h02ad14f_2           conda-forge/linux-aarch64     Cached
+  + lerc                                 3.0  h01db608_0           conda-forge/linux-aarch64     Cached
+  + libblas                            3.9.0  8_openblas           conda-forge/linux-aarch64     Cached
+  + libcblas                           3.9.0  8_openblas           conda-forge/linux-aarch64     Cached
+  + libdeflate                          1.10  hf897c2e_0           conda-forge/linux-aarch64     Cached
+  + libffi                             3.4.2  h3557bc0_5           conda-forge/linux-aarch64     Cached
+  + libgcc-ng                         11.2.0  hf1cc4e7_16          conda-forge/linux-aarch64     Cached
+  + libgfortran-ng                     7.5.0  h6d8ffed_20          conda-forge/linux-aarch64     Cached
+  + libgfortran4                       7.5.0  h6d8ffed_20          conda-forge/linux-aarch64     Cached
+  + libgomp                           11.2.0  hf1cc4e7_16          conda-forge/linux-aarch64     Cached
+  + liblapack                          3.9.0  8_openblas           conda-forge/linux-aarch64     Cached
+  + libllvm10                         10.0.1  he513fc3_3           conda-forge/linux-aarch64     Cached
+  + libnsl                             2.0.0  hf897c2e_0           conda-forge/linux-aarch64     Cached
+  + libopenblas                       0.3.12  pthreads_hb3c22a3_1  conda-forge/linux-aarch64     Cached
+  + libpng                            1.6.37  hbd635b3_2           conda-forge/linux-aarch64     Cached
+  + libstdcxx-ng                      11.2.0  h0d0a5bb_16          conda-forge/linux-aarch64     Cached
+  + libtiff                            4.3.0  hdea21e4_3           conda-forge/linux-aarch64     Cached
+  + libwebp-base                       1.2.2  hf897c2e_1           conda-forge/linux-aarch64     Cached
+  + libzlib                           1.2.11  h4e544f5_1014        conda-forge/linux-aarch64     Cached
+  + llvmlite                          0.36.0  py36h2826d25_0       conda-forge/linux-aarch64     Cached
+  + lz4-c                              1.9.3  h01db608_1           conda-forge/linux-aarch64     Cached
+  + markupsafe                         2.0.1  py36h269c3a8_0       conda-forge/linux-aarch64     Cached
+  + matplotlib                         3.3.4  py36h704843e_0       conda-forge/linux-aarch64     Cached
+  + matplotlib-base                    3.3.4  py36hf6608de_0       conda-forge/linux-aarch64     Cached
+  + more-itertools                    8.12.0  pyhd8ed1ab_0         conda-forge/noarch              48kB
+  + ncurses                              6.3  headf329_1           conda-forge/linux-aarch64     Cached
+  + numba                             0.53.1  py36h2d7fd3b_1       conda-forge/linux-aarch64     Cached
+  + numpy                             1.19.5  py36hdc1b780_1       conda-forge/linux-aarch64     Cached
+  + numpydoc                           1.2.1  pyhd8ed1ab_0         conda-forge/noarch              46kB
+  + olefile                             0.46  pyh9f0ad1d_1         conda-forge/noarch            Cached
+  + openjpeg                           2.4.0  h45037e0_1           conda-forge/linux-aarch64     Cached
+  + openssl                           1.1.1o  h4e544f5_0           conda-forge/linux-aarch64     Cached
+  + packaging                           21.3  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + parso                              0.7.1  pyh9f0ad1d_0         conda-forge/noarch            Cached
+  + pexpect                            4.8.0  pyh9f0ad1d_2         conda-forge/noarch            Cached
+  + pickleshare                        0.7.5  py_1003              conda-forge/noarch            Cached
+  + pillow                             8.3.2  py36he1c1ed0_0       conda-forge/linux-aarch64     Cached
+  + pip                               21.3.1  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + pluggy                             1.0.0  py36h704843e_1       conda-forge/linux-aarch64       25kB
+  + prompt-toolkit                    3.0.29  pyha770c72_0         conda-forge/noarch            Cached
+  + ptyprocess                         0.7.0  pyhd3deb0d_0         conda-forge/noarch            Cached
+  + py                                1.11.0  pyh6c4a22f_0         conda-forge/noarch              76kB
+  + py-cpuinfo                         8.0.0  pyhd8ed1ab_0         conda-forge/noarch              24kB
+  + pycparser                           2.21  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + pydata-sphinx-theme                0.7.2  pyhd8ed1ab_0         conda-forge/noarch               1MB
+  + pygments                          2.12.0  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + pyopenssl                         22.0.0  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + pyparsing                          3.0.8  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + pysocks                            1.7.1  py36h704843e_3       conda-forge/linux-aarch64     Cached
+  + pytest                             6.2.5  py36h704843e_0       conda-forge/linux-aarch64      442kB
+  + pytest-benchmark                   3.4.1  pyhd8ed1ab_0         conda-forge/noarch              45kB
+  + python                            3.6.15  h30375ac_0_cpython   conda-forge/linux-aarch64     Cached
+  + python-dateutil                    2.8.2  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + python_abi                           3.6  2_cp36m              conda-forge/linux-aarch64     Cached
+  + pytz                              2022.1  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + readline                             8.1  h1a49cc3_0           conda-forge/linux-aarch64     Cached
+  + requests                          2.27.1  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + scipy                              1.5.3  py36h28959de_0       conda-forge/linux-aarch64     Cached
+  + setuptools                        58.0.4  py36h704843e_2       conda-forge/linux-aarch64     Cached
+  + six                               1.16.0  pyh6c4a22f_0         conda-forge/noarch            Cached
+  + snowballstemmer                    2.2.0  pyhd8ed1ab_0         conda-forge/noarch              59kB
+  + soupsieve                          2.3.1  pyhd8ed1ab_0         conda-forge/noarch              34kB
+  + sphinx                             4.5.0  pyh6c4a22f_0         conda-forge/noarch               2MB
+  + sphinx-copybutton                  0.5.0  pyhd8ed1ab_0         conda-forge/noarch              16kB
+  + sphinxcontrib-applehelp            1.0.2  py_0                 conda-forge/noarch              29kB
+  + sphinxcontrib-devhelp              1.0.2  py_0                 conda-forge/noarch              23kB
+  + sphinxcontrib-htmlhelp             2.0.0  pyhd8ed1ab_0         conda-forge/noarch              32kB
+  + sphinxcontrib-jsmath               1.0.1  py_0                 conda-forge/noarch               7kB
+  + sphinxcontrib-qthelp               1.0.3  py_0                 conda-forge/noarch              26kB
+  + sphinxcontrib-serializinghtml      1.1.5  pyhd8ed1ab_2         conda-forge/noarch              28kB
+  + sqlite                            3.38.5  hc74f5b8_0           conda-forge/linux-aarch64     Cached
+  + tk                                8.6.12  hd8af866_0           conda-forge/linux-aarch64     Cached
+  + toml                              0.10.2  pyhd8ed1ab_0         conda-forge/noarch              18kB
+  + tornado                              6.1  py36h269c3a8_1       conda-forge/linux-aarch64     Cached
+  + traitlets                          4.3.3  pyhd8ed1ab_2         conda-forge/noarch            Cached
+  + typing_extensions                  4.1.1  pyha770c72_0         conda-forge/noarch            Cached
+  + urllib3                           1.26.9  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + wcwidth                            0.2.5  pyh9f0ad1d_2         conda-forge/noarch            Cached
+  + wheel                             0.37.1  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + xz                                 5.2.5  h6dd45c4_1           conda-forge/linux-aarch64     Cached
+  + zipp                               3.6.0  pyhd8ed1ab_0         conda-forge/noarch            Cached
+  + zlib                              1.2.11  h4e544f5_1014        conda-forge/linux-aarch64     Cached
+  + zstd                               1.5.2  h41fb7a4_0           conda-forge/linux-aarch64     Cached
+
+  Summary:
+
+  Install: 115 packages
+
+  Total download: 5MB
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Installing pip dependencies: ...working... done
+33.19user 5.56system 0:36.88elapsed 105%CPU (0avgtext+0avgdata 197364maxresident)k
+0inputs+353008outputs (0major+198554minor)pagefaults 0swaps
+Activating cusignal-dev
+Building cuSignal wheel
+Building for *ALL* supported GPU architectures...
+	 including: CUDA 10.X - {50,52,53,60,61,62,70,72,75}
+Building Convolution kernels...
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/convolution/_convolution.cu -odir python/cusignal/convolution/
+Building Filtering kernels...
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/filtering/_upfirdn.cu -odir python/cusignal/filtering/
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/filtering/_sosfilt.cu -odir python/cusignal/filtering/
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/filtering/_channelizer.cu -odir python/cusignal/filtering/
+Building IO kernels...
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/io/_reader.cu -odir python/cusignal/io/
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/io/_writer.cu -odir python/cusignal/io/
+Building Peak Finding kernels...
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/peak_finding/_peak_finding.cu -odir python/cusignal/peak_finding/
+Building Spectral kernels...
+nvcc --fatbin  -std=c++11 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=[sm_75,compute_75] cpp/src/spectral_analysis/_spectral.cu -odir python/cusignal/spectral_analysis/
+running bdist_wheel
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/cusignal
+copying cusignal/_version.py -> build/lib/cusignal
+copying cusignal/__init__.py -> build/lib/cusignal
+creating build/lib/cusignal/acoustics
+copying cusignal/acoustics/cepstrum.py -> build/lib/cusignal/acoustics
+copying cusignal/acoustics/__init__.py -> build/lib/cusignal/acoustics
+creating build/lib/cusignal/peak_finding
+copying cusignal/peak_finding/_peak_finding_cuda.py -> build/lib/cusignal/peak_finding
+copying cusignal/peak_finding/peak_finding.py -> build/lib/cusignal/peak_finding
+copying cusignal/peak_finding/__init__.py -> build/lib/cusignal/peak_finding
+creating build/lib/cusignal/demod
+copying cusignal/demod/demod.py -> build/lib/cusignal/demod
+copying cusignal/demod/__init__.py -> build/lib/cusignal/demod
+creating build/lib/cusignal/estimation
+copying cusignal/estimation/_filters_cuda.py -> build/lib/cusignal/estimation
+copying cusignal/estimation/filters.py -> build/lib/cusignal/estimation
+copying cusignal/estimation/__init__.py -> build/lib/cusignal/estimation
+creating build/lib/cusignal/waveforms
+copying cusignal/waveforms/__init__.py -> build/lib/cusignal/waveforms
+copying cusignal/waveforms/waveforms.py -> build/lib/cusignal/waveforms
+creating build/lib/cusignal/filtering
+copying cusignal/filtering/_upfirdn_cuda.py -> build/lib/cusignal/filtering
+copying cusignal/filtering/_sosfilt_cuda.py -> build/lib/cusignal/filtering
+copying cusignal/filtering/_channelizer_cuda.py -> build/lib/cusignal/filtering
+copying cusignal/filtering/filtering.py -> build/lib/cusignal/filtering
+copying cusignal/filtering/resample.py -> build/lib/cusignal/filtering
+copying cusignal/filtering/__init__.py -> build/lib/cusignal/filtering
+creating build/lib/cusignal/wavelets
+copying cusignal/wavelets/__init__.py -> build/lib/cusignal/wavelets
+copying cusignal/wavelets/wavelets.py -> build/lib/cusignal/wavelets
+creating build/lib/cusignal/test
+copying cusignal/test/test_filter_design.py -> build/lib/cusignal/test
+copying cusignal/test/test_peak_finding.py -> build/lib/cusignal/test
+copying cusignal/test/test_filtering.py -> build/lib/cusignal/test
+copying cusignal/test/test_convolution.py -> build/lib/cusignal/test
+copying cusignal/test/test_bsplines.py -> build/lib/cusignal/test
+copying cusignal/test/test_waveforms.py -> build/lib/cusignal/test
+copying cusignal/test/test_wavelets.py -> build/lib/cusignal/test
+copying cusignal/test/test_filters.py -> build/lib/cusignal/test
+copying cusignal/test/test_acoustics.py -> build/lib/cusignal/test
+copying cusignal/test/utils.py -> build/lib/cusignal/test
+copying cusignal/test/test_radartools.py -> build/lib/cusignal/test
+copying cusignal/test/__init__.py -> build/lib/cusignal/test
+copying cusignal/test/test_windows.py -> build/lib/cusignal/test
+copying cusignal/test/test_spectral_analysis.py -> build/lib/cusignal/test
+copying cusignal/test/conftest.py -> build/lib/cusignal/test
+creating build/lib/cusignal/io
+copying cusignal/io/_writer_cuda.py -> build/lib/cusignal/io
+copying cusignal/io/writer.py -> build/lib/cusignal/io
+copying cusignal/io/_reader_cuda.py -> build/lib/cusignal/io
+copying cusignal/io/reader.py -> build/lib/cusignal/io
+copying cusignal/io/__init__.py -> build/lib/cusignal/io
+creating build/lib/cusignal/spectral_analysis
+copying cusignal/spectral_analysis/spectral.py -> build/lib/cusignal/spectral_analysis
+copying cusignal/spectral_analysis/_spectral_cuda.py -> build/lib/cusignal/spectral_analysis
+copying cusignal/spectral_analysis/__init__.py -> build/lib/cusignal/spectral_analysis
+creating build/lib/cusignal/radartools
+copying cusignal/radartools/beamformers.py -> build/lib/cusignal/radartools
+copying cusignal/radartools/radartools.py -> build/lib/cusignal/radartools
+copying cusignal/radartools/__init__.py -> build/lib/cusignal/radartools
+creating build/lib/cusignal/convolution
+copying cusignal/convolution/convolve.py -> build/lib/cusignal/convolution
+copying cusignal/convolution/_convolution_cuda.py -> build/lib/cusignal/convolution
+copying cusignal/convolution/correlate.py -> build/lib/cusignal/convolution
+copying cusignal/convolution/convolution_utils.py -> build/lib/cusignal/convolution
+copying cusignal/convolution/__init__.py -> build/lib/cusignal/convolution
+creating build/lib/cusignal/filter_design
+copying cusignal/filter_design/filter_design_utils.py -> build/lib/cusignal/filter_design
+copying cusignal/filter_design/fir_filter_design.py -> build/lib/cusignal/filter_design
+copying cusignal/filter_design/__init__.py -> build/lib/cusignal/filter_design
+creating build/lib/cusignal/windows
+copying cusignal/windows/windows.py -> build/lib/cusignal/windows
+copying cusignal/windows/__init__.py -> build/lib/cusignal/windows
+creating build/lib/cusignal/bsplines
+copying cusignal/bsplines/bsplines.py -> build/lib/cusignal/bsplines
+copying cusignal/bsplines/__init__.py -> build/lib/cusignal/bsplines
+creating build/lib/cusignal/utils
+copying cusignal/utils/helper_tools.py -> build/lib/cusignal/utils
+copying cusignal/utils/fftpack_helper.py -> build/lib/cusignal/utils
+copying cusignal/utils/__init__.py -> build/lib/cusignal/utils
+copying cusignal/utils/arraytools.py -> build/lib/cusignal/utils
+copying cusignal/utils/_caches.py -> build/lib/cusignal/utils
+copying cusignal/peak_finding/_peak_finding.fatbin -> build/lib/cusignal/peak_finding
+copying cusignal/filtering/_sosfilt.fatbin -> build/lib/cusignal/filtering
+copying cusignal/filtering/_channelizer.fatbin -> build/lib/cusignal/filtering
+copying cusignal/filtering/_upfirdn.fatbin -> build/lib/cusignal/filtering
+copying cusignal/io/_writer.fatbin -> build/lib/cusignal/io
+copying cusignal/io/_reader.fatbin -> build/lib/cusignal/io
+copying cusignal/spectral_analysis/_spectral.fatbin -> build/lib/cusignal/spectral_analysis
+copying cusignal/convolution/_convolution.fatbin -> build/lib/cusignal/convolution
+UPDATING build/lib/cusignal/_version.py
+set build/lib/cusignal/_version.py to '22.04.00+0.g06f58b4.dirty'
+installing to build/bdist.linux-aarch64/wheel
+running install
+running install_lib
+creating build/bdist.linux-aarch64
+creating build/bdist.linux-aarch64/wheel
+creating build/bdist.linux-aarch64/wheel/cusignal
+creating build/bdist.linux-aarch64/wheel/cusignal/acoustics
+copying build/lib/cusignal/acoustics/cepstrum.py -> build/bdist.linux-aarch64/wheel/cusignal/acoustics
+copying build/lib/cusignal/acoustics/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/acoustics
+creating build/bdist.linux-aarch64/wheel/cusignal/peak_finding
+copying build/lib/cusignal/peak_finding/_peak_finding_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/peak_finding
+copying build/lib/cusignal/peak_finding/_peak_finding.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/peak_finding
+copying build/lib/cusignal/peak_finding/peak_finding.py -> build/bdist.linux-aarch64/wheel/cusignal/peak_finding
+copying build/lib/cusignal/peak_finding/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/peak_finding
+creating build/bdist.linux-aarch64/wheel/cusignal/demod
+copying build/lib/cusignal/demod/demod.py -> build/bdist.linux-aarch64/wheel/cusignal/demod
+copying build/lib/cusignal/demod/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/demod
+creating build/bdist.linux-aarch64/wheel/cusignal/estimation
+copying build/lib/cusignal/estimation/_filters_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/estimation
+copying build/lib/cusignal/estimation/filters.py -> build/bdist.linux-aarch64/wheel/cusignal/estimation
+copying build/lib/cusignal/estimation/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/estimation
+creating build/bdist.linux-aarch64/wheel/cusignal/waveforms
+copying build/lib/cusignal/waveforms/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/waveforms
+copying build/lib/cusignal/waveforms/waveforms.py -> build/bdist.linux-aarch64/wheel/cusignal/waveforms
+creating build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/_upfirdn_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/_sosfilt.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/_channelizer.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/_upfirdn.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/_sosfilt_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/_channelizer_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/filtering.py -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/resample.py -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+copying build/lib/cusignal/filtering/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/filtering
+creating build/bdist.linux-aarch64/wheel/cusignal/wavelets
+copying build/lib/cusignal/wavelets/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/wavelets
+copying build/lib/cusignal/wavelets/wavelets.py -> build/bdist.linux-aarch64/wheel/cusignal/wavelets
+creating build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_filter_design.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_peak_finding.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_filtering.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_convolution.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_bsplines.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_waveforms.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_wavelets.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_filters.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_acoustics.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/utils.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_radartools.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_windows.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/test_spectral_analysis.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+copying build/lib/cusignal/test/conftest.py -> build/bdist.linux-aarch64/wheel/cusignal/test
+creating build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/_writer_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/writer.py -> build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/_reader_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/reader.py -> build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/_writer.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/io
+copying build/lib/cusignal/io/_reader.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/io
+creating build/bdist.linux-aarch64/wheel/cusignal/spectral_analysis
+copying build/lib/cusignal/spectral_analysis/spectral.py -> build/bdist.linux-aarch64/wheel/cusignal/spectral_analysis
+copying build/lib/cusignal/spectral_analysis/_spectral_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/spectral_analysis
+copying build/lib/cusignal/spectral_analysis/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/spectral_analysis
+copying build/lib/cusignal/spectral_analysis/_spectral.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/spectral_analysis
+creating build/bdist.linux-aarch64/wheel/cusignal/radartools
+copying build/lib/cusignal/radartools/beamformers.py -> build/bdist.linux-aarch64/wheel/cusignal/radartools
+copying build/lib/cusignal/radartools/radartools.py -> build/bdist.linux-aarch64/wheel/cusignal/radartools
+copying build/lib/cusignal/radartools/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/radartools
+creating build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/convolution/convolve.py -> build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/convolution/_convolution_cuda.py -> build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/convolution/correlate.py -> build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/convolution/convolution_utils.py -> build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/convolution/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/convolution/_convolution.fatbin -> build/bdist.linux-aarch64/wheel/cusignal/convolution
+copying build/lib/cusignal/_version.py -> build/bdist.linux-aarch64/wheel/cusignal
+copying build/lib/cusignal/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal
+creating build/bdist.linux-aarch64/wheel/cusignal/filter_design
+copying build/lib/cusignal/filter_design/filter_design_utils.py -> build/bdist.linux-aarch64/wheel/cusignal/filter_design
+copying build/lib/cusignal/filter_design/fir_filter_design.py -> build/bdist.linux-aarch64/wheel/cusignal/filter_design
+copying build/lib/cusignal/filter_design/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/filter_design
+creating build/bdist.linux-aarch64/wheel/cusignal/windows
+copying build/lib/cusignal/windows/windows.py -> build/bdist.linux-aarch64/wheel/cusignal/windows
+copying build/lib/cusignal/windows/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/windows
+creating build/bdist.linux-aarch64/wheel/cusignal/bsplines
+copying build/lib/cusignal/bsplines/bsplines.py -> build/bdist.linux-aarch64/wheel/cusignal/bsplines
+copying build/lib/cusignal/bsplines/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/bsplines
+creating build/bdist.linux-aarch64/wheel/cusignal/utils
+copying build/lib/cusignal/utils/helper_tools.py -> build/bdist.linux-aarch64/wheel/cusignal/utils
+copying build/lib/cusignal/utils/fftpack_helper.py -> build/bdist.linux-aarch64/wheel/cusignal/utils
+copying build/lib/cusignal/utils/__init__.py -> build/bdist.linux-aarch64/wheel/cusignal/utils
+copying build/lib/cusignal/utils/arraytools.py -> build/bdist.linux-aarch64/wheel/cusignal/utils
+copying build/lib/cusignal/utils/_caches.py -> build/bdist.linux-aarch64/wheel/cusignal/utils
+running install_egg_info
+running egg_info
+creating cusignal.egg-info
+writing cusignal.egg-info/PKG-INFO
+writing dependency_links to cusignal.egg-info/dependency_links.txt
+writing requirements to cusignal.egg-info/requires.txt
+writing top-level names to cusignal.egg-info/top_level.txt
+writing manifest file 'cusignal.egg-info/SOURCES.txt'
+reading manifest file 'cusignal.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'cusignal.egg-info/SOURCES.txt'
+Copying cusignal.egg-info to build/bdist.linux-aarch64/wheel/cusignal-22.4.0+0.g06f58b4.dirty-py3.6.egg-info
+running install_scripts
+creating build/bdist.linux-aarch64/wheel/cusignal-22.4.0+0.g06f58b4.dirty.dist-info/WHEEL
+creating 'dist/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl' and adding 'build/bdist.linux-aarch64/wheel' to it
+adding 'cusignal/__init__.py'
+adding 'cusignal/_version.py'
+adding 'cusignal/acoustics/__init__.py'
+adding 'cusignal/acoustics/cepstrum.py'
+adding 'cusignal/bsplines/__init__.py'
+adding 'cusignal/bsplines/bsplines.py'
+adding 'cusignal/convolution/__init__.py'
+adding 'cusignal/convolution/_convolution.fatbin'
+adding 'cusignal/convolution/_convolution_cuda.py'
+adding 'cusignal/convolution/convolution_utils.py'
+adding 'cusignal/convolution/convolve.py'
+adding 'cusignal/convolution/correlate.py'
+adding 'cusignal/demod/__init__.py'
+adding 'cusignal/demod/demod.py'
+adding 'cusignal/estimation/__init__.py'
+adding 'cusignal/estimation/_filters_cuda.py'
+adding 'cusignal/estimation/filters.py'
+adding 'cusignal/filter_design/__init__.py'
+adding 'cusignal/filter_design/filter_design_utils.py'
+adding 'cusignal/filter_design/fir_filter_design.py'
+adding 'cusignal/filtering/__init__.py'
+adding 'cusignal/filtering/_channelizer.fatbin'
+adding 'cusignal/filtering/_channelizer_cuda.py'
+adding 'cusignal/filtering/_sosfilt.fatbin'
+adding 'cusignal/filtering/_sosfilt_cuda.py'
+adding 'cusignal/filtering/_upfirdn.fatbin'
+adding 'cusignal/filtering/_upfirdn_cuda.py'
+adding 'cusignal/filtering/filtering.py'
+adding 'cusignal/filtering/resample.py'
+adding 'cusignal/io/__init__.py'
+adding 'cusignal/io/_reader.fatbin'
+adding 'cusignal/io/_reader_cuda.py'
+adding 'cusignal/io/_writer.fatbin'
+adding 'cusignal/io/_writer_cuda.py'
+adding 'cusignal/io/reader.py'
+adding 'cusignal/io/writer.py'
+adding 'cusignal/peak_finding/__init__.py'
+adding 'cusignal/peak_finding/_peak_finding.fatbin'
+adding 'cusignal/peak_finding/_peak_finding_cuda.py'
+adding 'cusignal/peak_finding/peak_finding.py'
+adding 'cusignal/radartools/__init__.py'
+adding 'cusignal/radartools/beamformers.py'
+adding 'cusignal/radartools/radartools.py'
+adding 'cusignal/spectral_analysis/__init__.py'
+adding 'cusignal/spectral_analysis/_spectral.fatbin'
+adding 'cusignal/spectral_analysis/_spectral_cuda.py'
+adding 'cusignal/spectral_analysis/spectral.py'
+adding 'cusignal/test/__init__.py'
+adding 'cusignal/test/conftest.py'
+adding 'cusignal/test/test_acoustics.py'
+adding 'cusignal/test/test_bsplines.py'
+adding 'cusignal/test/test_convolution.py'
+adding 'cusignal/test/test_filter_design.py'
+adding 'cusignal/test/test_filtering.py'
+adding 'cusignal/test/test_filters.py'
+adding 'cusignal/test/test_peak_finding.py'
+adding 'cusignal/test/test_radartools.py'
+adding 'cusignal/test/test_spectral_analysis.py'
+adding 'cusignal/test/test_waveforms.py'
+adding 'cusignal/test/test_wavelets.py'
+adding 'cusignal/test/test_windows.py'
+adding 'cusignal/test/utils.py'
+adding 'cusignal/utils/__init__.py'
+adding 'cusignal/utils/_caches.py'
+adding 'cusignal/utils/arraytools.py'
+adding 'cusignal/utils/fftpack_helper.py'
+adding 'cusignal/utils/helper_tools.py'
+adding 'cusignal/waveforms/__init__.py'
+adding 'cusignal/waveforms/waveforms.py'
+adding 'cusignal/wavelets/__init__.py'
+adding 'cusignal/wavelets/wavelets.py'
+adding 'cusignal/windows/__init__.py'
+adding 'cusignal/windows/windows.py'
+adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/METADATA'
+adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/WHEEL'
+adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/top_level.txt'
+adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/RECORD'
+removing build/bdist.linux-aarch64/wheel
+/home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages/setuptools/dist.py:487: UserWarning: Normalizing '22.04.00+0.g06f58b4.dirty' to '22.4.0+0.g06f58b4.dirty'
+  warnings.warn(tmpl.format(**locals()))
+123.42user 6.26system 0:42.53elapsed 304%CPU (0avgtext+0avgdata 97412maxresident)k
+0inputs+239168outputs (0major+1498354minor)pagefaults 0swaps
+Saving cuSignal wheel
+Test installing cuSignal wheel
+Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl
+Requirement already satisfied: numba in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
+Requirement already satisfied: setuptools in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
+Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
+Requirement already satisfied: numpy>=1.15 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
+Installing collected packages: cusignal
+Successfully installed cusignal-22.4.0+0.g06f58b4.dirty
+Copying /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/cusignal/notebooks to /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Notebooks/cusignal-notebooks
+Copying E2E test notebooks to /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Notebooks
+Deactivating cusignal-dev
+Activating r-reticulate
+Installing cuSignal wheel in r-reticulate
+Requirement already satisfied: cupy in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (9.6.0)
+Requirement already satisfied: fastrlock>=0.5 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (0.8)
+Requirement already satisfied: numpy<1.24,>=1.17 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (1.19.5)
+Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl
+Requirement already satisfied: numba in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
+Requirement already satisfied: setuptools in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
+Requirement already satisfied: numpy>=1.15 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
+Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
+Installing collected packages: cusignal
+Successfully installed cusignal-22.4.0+0.g06f58b4.dirty
+Cleanup
+..Removing cusignal-dev virtual environment
+
+Remove all packages in environment /home/znmeb/mambaforge/envs/cusignal-dev:
+
+..Removing cusignal project repository
+..Removing downloaded tarballs
+
+                  __    __    __    __
+                 /  \  /  \  /  \  /  \
+                /    \/    \/    \/    \
+███████████████/  /██/  /██/  /██/  /████████████████████████
+              /  / \   / \   / \   / \  \____
+             /  /   \_/   \_/   \_/   \    o \__,
+            / _/                       \_____/  `
+            |/
+        ███╗   ███╗ █████╗ ███╗   ███╗██████╗  █████╗
+        ████╗ ████║██╔══██╗████╗ ████║██╔══██╗██╔══██╗
+        ██╔████╔██║███████║██╔████╔██║██████╔╝███████║
+        ██║╚██╔╝██║██╔══██║██║╚██╔╝██║██╔══██╗██╔══██║
+        ██║ ╚═╝ ██║██║  ██║██║ ╚═╝ ██║██████╔╝██║  ██║
+        ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝
+
+        mamba (0.23.0) supported by @QuantStack
+
+        GitHub:  https://github.com/mamba-org/mamba
+        Twitter: https://twitter.com/QuantStack
+
+█████████████████████████████████████████████████████████████
+
+Cache location: /home/znmeb/mambaforge/pkgs
+Will remove the following tarballs:
+
+/home/znmeb/mambaforge/pkgs
+---------------------------
+sphinxcontrib-serializinghtml-1.1.5-pyhd8ed1ab_2.tar.bz2      27 KB
+iniconfig-1.1.1-pyh9f0ad1d_0.tar.bz2           8 KB
+sphinxcontrib-devhelp-1.0.2-py_0.tar.bz2      22 KB
+py-cpuinfo-8.0.0-pyhd8ed1ab_0.tar.bz2         23 KB
+alabaster-0.7.12-py_0.tar.bz2                 15 KB
+beautifulsoup4-4.11.1-pyha770c72_0.tar.bz2      96 KB
+py-1.11.0-pyh6c4a22f_0.tar.bz2                74 KB
+sphinxcontrib-qthelp-1.0.3-py_0.tar.bz2       25 KB
+pydata-sphinx-theme-0.7.2-pyhd8ed1ab_0.tar.bz2     1.2 MB
+sphinxcontrib-applehelp-1.0.2-py_0.tar.bz2      28 KB
+toml-0.10.2-pyhd8ed1ab_0.tar.bz2              18 KB
+pytest-benchmark-3.4.1-pyhd8ed1ab_0.tar.bz2      44 KB
+docutils-0.17.1-py36h704843e_0.tar.bz2       763 KB
+importlib_metadata-4.8.1-hd8ed1ab_1.tar.bz2       4 KB
+pytest-6.2.5-py36h704843e_0.tar.bz2          431 KB
+pluggy-1.0.0-py36h704843e_1.tar.bz2           25 KB
+sphinxcontrib-htmlhelp-2.0.0-pyhd8ed1ab_0.tar.bz2      31 KB
+soupsieve-2.3.1-pyhd8ed1ab_0.tar.bz2          33 KB
+sphinxcontrib-jsmath-1.0.1-py_0.tar.bz2        7 KB
+numpydoc-1.2.1-pyhd8ed1ab_0.tar.bz2           45 KB
+snowballstemmer-2.2.0-pyhd8ed1ab_0.tar.bz2      57 KB
+sphinx-copybutton-0.5.0-pyhd8ed1ab_0.tar.bz2      15 KB
+imagesize-1.3.0-pyhd8ed1ab_0.tar.bz2           9 KB
+sphinx-4.5.0-pyh6c4a22f_0.tar.bz2            1.6 MB
+more-itertools-8.12.0-pyhd8ed1ab_0.tar.bz2      47 KB
+
+---------------------------------------------------
+Total:                                       4.6 MB
+
+Removed sphinxcontrib-serializinghtml-1.1.5-pyhd8ed1ab_2.tar.bz2
+Removed iniconfig-1.1.1-pyh9f0ad1d_0.tar.bz2
+Removed sphinxcontrib-devhelp-1.0.2-py_0.tar.bz2
+Removed py-cpuinfo-8.0.0-pyhd8ed1ab_0.tar.bz2
+Removed alabaster-0.7.12-py_0.tar.bz2
+Removed beautifulsoup4-4.11.1-pyha770c72_0.tar.bz2
+Removed py-1.11.0-pyh6c4a22f_0.tar.bz2
+Removed sphinxcontrib-qthelp-1.0.3-py_0.tar.bz2
+Removed pydata-sphinx-theme-0.7.2-pyhd8ed1ab_0.tar.bz2
+Removed sphinxcontrib-applehelp-1.0.2-py_0.tar.bz2
+Removed toml-0.10.2-pyhd8ed1ab_0.tar.bz2
+Removed pytest-benchmark-3.4.1-pyhd8ed1ab_0.tar.bz2
+Removed docutils-0.17.1-py36h704843e_0.tar.bz2
+Removed importlib_metadata-4.8.1-hd8ed1ab_1.tar.bz2
+Removed pytest-6.2.5-py36h704843e_0.tar.bz2
+Removed pluggy-1.0.0-py36h704843e_1.tar.bz2
+Removed sphinxcontrib-htmlhelp-2.0.0-pyhd8ed1ab_0.tar.bz2
+Removed soupsieve-2.3.1-pyhd8ed1ab_0.tar.bz2
+Removed sphinxcontrib-jsmath-1.0.1-py_0.tar.bz2
+Removed numpydoc-1.2.1-pyhd8ed1ab_0.tar.bz2
+Removed snowballstemmer-2.2.0-pyhd8ed1ab_0.tar.bz2
+Removed sphinx-copybutton-0.5.0-pyhd8ed1ab_0.tar.bz2
+Removed imagesize-1.3.0-pyhd8ed1ab_0.tar.bz2
+Removed sphinx-4.5.0-pyh6c4a22f_0.tar.bz2
+Removed more-itertools-8.12.0-pyhd8ed1ab_0.tar.bz2
+# packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
+#
+# Name                    Version                   Build  Channel
+_openmp_mutex             4.5                       2_gnu    conda-forge
+anyio                     3.3.2            py36h704843e_0    conda-forge
+argon2-cffi               21.1.0           py36h269c3a8_0    conda-forge
+async_generator           1.10                       py_0    conda-forge
+attrs                     21.4.0             pyhd8ed1ab_0    conda-forge
+babel                     2.10.1             pyhd8ed1ab_0    conda-forge
+backcall                  0.2.0              pyh9f0ad1d_0    conda-forge
+backports                 1.0                        py_2    conda-forge
+backports.functools_lru_cache 1.6.4              pyhd8ed1ab_0    conda-forge
+bleach                    5.0.0              pyhd8ed1ab_0    conda-forge
+brotlipy                  0.7.0           py36h269c3a8_1001    conda-forge
+bzip2                     1.0.8                hf897c2e_4    conda-forge
+c-ares                    1.18.1               hf897c2e_0    conda-forge
+ca-certificates           2021.10.8            h4fd8a4c_0    conda-forge
+certifi                   2021.5.30        py36h704843e_0    conda-forge
+cffi                      1.14.6           py36h265152b_1    conda-forge
+charset-normalizer        2.0.12             pyhd8ed1ab_0    conda-forge
+cmake                     3.23.1               hcad14f8_0    conda-forge
+contextvars               2.4                        py_0    conda-forge
+cryptography              35.0.0           py36h70ab5b5_0    conda-forge
+cupy                      9.6.0                    pypi_0    pypi
+cusignal                  22.4.0+0.g06f58b4.dirty          pypi_0    pypi
+cycler                    0.11.0             pyhd8ed1ab_0    conda-forge
+cython                    0.29.24          py36h86e9a40_0    conda-forge
+dataclasses               0.8                pyh787bdff_2    conda-forge
+decorator                 5.1.1              pyhd8ed1ab_0    conda-forge
+defusedxml                0.7.1              pyhd8ed1ab_0    conda-forge
+entrypoints               0.4                pyhd8ed1ab_0    conda-forge
+expat                     2.4.8                ha18d298_0    conda-forge
+fastrlock                 0.8                      pypi_0    pypi
+freetype                  2.10.4               hdf53a3c_1    conda-forge
+gmp                       6.2.1                h7fd3ca4_0    conda-forge
+gmpy2                     2.1.0b5          py36h27ce407_0    conda-forge
+idna                      3.3                pyhd8ed1ab_0    conda-forge
+immutables                0.16             py36h269c3a8_0    conda-forge
+importlib-metadata        4.8.1            py36h704843e_0    conda-forge
+ipykernel                 5.5.5            py36h103942d_0    conda-forge
+ipython                   7.16.1           py36h0e46ebc_2    conda-forge
+ipython_genutils          0.2.0                      py_1    conda-forge
+jbig                      2.1               hf897c2e_2003    conda-forge
+jedi                      0.17.2           py36h704843e_1    conda-forge
+jinja2                    3.0.3              pyhd8ed1ab_0    conda-forge
+joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
+jpeg                      9e                   h9cdd2b7_1    conda-forge
+json5                     0.9.5              pyh9f0ad1d_0    conda-forge
+jsonschema                4.1.2              pyhd8ed1ab_0    conda-forge
+jupyter_client            7.1.2              pyhd8ed1ab_0    conda-forge
+jupyter_core              4.8.1            py36h704843e_0    conda-forge
+jupyter_server            1.13.1             pyhd8ed1ab_0    conda-forge
+jupyterlab                3.3.4              pyhd8ed1ab_0    conda-forge
+jupyterlab_pygments       0.1.2              pyh9f0ad1d_0    conda-forge
+jupyterlab_server         2.10.3             pyhd8ed1ab_0    conda-forge
+keyutils                  1.6.1                h4e544f5_0    conda-forge
+kiwisolver                1.3.1            py36h72e8208_1    conda-forge
+krb5                      1.19.3               h7c456eb_0    conda-forge
+lcms2                     2.12                 h012adcb_0    conda-forge
+ld_impl_linux-aarch64     2.36.1               h02ad14f_2    conda-forge
+lerc                      3.0                  h01db608_0    conda-forge
+libblas                   3.9.0                8_openblas    conda-forge
+libcblas                  3.9.0                8_openblas    conda-forge
+libcurl                   7.83.0               h8fd98b7_0    conda-forge
+libdeflate                1.10                 hf897c2e_0    conda-forge
+libedit                   3.1.20191231         he28a2e2_2    conda-forge
+libev                     4.33                 h516909a_1    conda-forge
+libffi                    3.4.2                h3557bc0_5    conda-forge
+libgcc-ng                 11.2.0              hf1cc4e7_16    conda-forge
+libgfortran-ng            7.5.0               h6d8ffed_20    conda-forge
+libgfortran4              7.5.0               h6d8ffed_20    conda-forge
+libgomp                   11.2.0              hf1cc4e7_16    conda-forge
+liblapack                 3.9.0                8_openblas    conda-forge
+libllvm10                 10.0.1               he513fc3_3    conda-forge
+libnghttp2                1.47.0               h75cb1c7_0    conda-forge
+libnsl                    2.0.0                hf897c2e_0    conda-forge
+libopenblas               0.3.12          pthreads_hb3c22a3_1    conda-forge
+libpng                    1.6.37               hbd635b3_2    conda-forge
+libsodium                 1.0.18               hb9de7d4_1    conda-forge
+libssh2                   1.10.0               h1ab2c7b_2    conda-forge
+libstdcxx-ng              11.2.0              h0d0a5bb_16    conda-forge
+libtiff                   4.3.0                hdea21e4_3    conda-forge
+libuv                     1.43.0               hf897c2e_0    conda-forge
+libwebp-base              1.2.2                hf897c2e_1    conda-forge
+libzlib                   1.2.11            h4e544f5_1014    conda-forge
+llvmlite                  0.36.0           py36h2826d25_0    conda-forge
+lz4-c                     1.9.3                h01db608_1    conda-forge
+markupsafe                2.0.1            py36h269c3a8_0    conda-forge
+matplotlib                3.3.4            py36h704843e_0    conda-forge
+matplotlib-base           3.3.4            py36hf6608de_0    conda-forge
+mistune                   0.8.4           py36h269c3a8_1004    conda-forge
+mpc                       1.2.1                h846f343_0    conda-forge
+mpfr                      4.1.0                h719063d_1    conda-forge
+mpmath                    1.2.1              pyhd8ed1ab_0    conda-forge
+nbclassic                 0.3.5              pyhd8ed1ab_0    conda-forge
+nbclient                  0.5.9              pyhd8ed1ab_0    conda-forge
+nbconvert                 6.0.7            py36h704843e_3    conda-forge
+nbformat                  5.1.3              pyhd8ed1ab_0    conda-forge
+ncurses                   6.3                  headf329_1    conda-forge
+nest-asyncio              1.5.5              pyhd8ed1ab_0    conda-forge
+ninja                     1.10.2               hd62202e_1    conda-forge
+notebook                  6.3.0            py36h704843e_0    conda-forge
+numba                     0.53.1           py36h2d7fd3b_1    conda-forge
+numpy                     1.19.5           py36hdc1b780_1    conda-forge
+olefile                   0.46               pyh9f0ad1d_1    conda-forge
+openjpeg                  2.4.0                h45037e0_1    conda-forge
+openssl                   1.1.1o               h4e544f5_0    conda-forge
+packaging                 21.3               pyhd8ed1ab_0    conda-forge
+pandas                    1.1.5            py36ha63b481_0    conda-forge
+pandocfilters             1.5.0              pyhd8ed1ab_0    conda-forge
+parso                     0.7.1              pyh9f0ad1d_0    conda-forge
+pexpect                   4.8.0              pyh9f0ad1d_2    conda-forge
+pickleshare               0.7.5                   py_1003    conda-forge
+pillow                    8.3.2            py36he1c1ed0_0    conda-forge
+pip                       21.3.1             pyhd8ed1ab_0    conda-forge
+pkg-config                0.29.2            hb9de7d4_1008    conda-forge
+prometheus_client         0.14.1             pyhd8ed1ab_0    conda-forge
+prompt-toolkit            3.0.29             pyha770c72_0    conda-forge
+ptyprocess                0.7.0              pyhd3deb0d_0    conda-forge
+pycparser                 2.21               pyhd8ed1ab_0    conda-forge
+pygments                  2.12.0             pyhd8ed1ab_0    conda-forge
+pyopenssl                 22.0.0             pyhd8ed1ab_0    conda-forge
+pyparsing                 3.0.8              pyhd8ed1ab_0    conda-forge
+pyrsistent                0.17.3           py36h269c3a8_2    conda-forge
+pysocks                   1.7.1            py36h704843e_3    conda-forge
+python                    3.6.15          h30375ac_0_cpython    conda-forge
+python-dateutil           2.8.2              pyhd8ed1ab_0    conda-forge
+python_abi                3.6                     2_cp36m    conda-forge
+pytz                      2022.1             pyhd8ed1ab_0    conda-forge
+pyzmq                     22.3.0           py36hfbd0944_0    conda-forge
+readline                  8.1                  h1a49cc3_0    conda-forge
+requests                  2.27.1             pyhd8ed1ab_0    conda-forge
+rhash                     1.4.1                hf897c2e_0    conda-forge
+scikit-learn              0.24.2           py36he5c8df8_1    conda-forge
+scipy                     1.5.3            py36h28959de_0    conda-forge
+send2trash                1.8.0              pyhd8ed1ab_0    conda-forge
+setuptools                58.0.4           py36h704843e_2    conda-forge
+six                       1.16.0             pyh6c4a22f_0    conda-forge
+sniffio                   1.2.0            py36h704843e_1    conda-forge
+sqlite                    3.38.5               hc74f5b8_0    conda-forge
+sympy                     1.8              py36h704843e_0    conda-forge
+terminado                 0.12.1           py36h704843e_0    conda-forge
+testpath                  0.6.0              pyhd8ed1ab_0    conda-forge
+threadpoolctl             3.1.0              pyh8a188c0_0    conda-forge
+tk                        8.6.12               hd8af866_0    conda-forge
+torch                     1.10.0                   pypi_0    pypi
+torchaudio                0.10.0+d2634d8           pypi_0    pypi
+tornado                   6.1              py36h269c3a8_1    conda-forge
+traitlets                 4.3.3              pyhd8ed1ab_2    conda-forge
+typing-extensions         4.1.1                hd8ed1ab_0    conda-forge
+typing_extensions         4.1.1              pyha770c72_0    conda-forge
+urllib3                   1.26.9             pyhd8ed1ab_0    conda-forge
+wcwidth                   0.2.5              pyh9f0ad1d_2    conda-forge
+webencodings              0.5.1                      py_1    conda-forge
+websocket-client          1.3.1              pyhd8ed1ab_0    conda-forge
+wheel                     0.37.1             pyhd8ed1ab_0    conda-forge
+xz                        5.2.5                h6dd45c4_1    conda-forge
+zeromq                    4.3.4                h01db608_1    conda-forge
+zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
+zlib                      1.2.11            h4e544f5_1014    conda-forge
+zstd                      1.5.2                h41fb7a4_0    conda-forge
+Finished
+174.42user 13.60system 1:39.35elapsed 189%CPU (0avgtext+0avgdata 197364maxresident)k
+0inputs+660232outputs (0major+1883166minor)pagefaults 0swaps
