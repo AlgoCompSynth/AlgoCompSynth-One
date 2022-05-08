@@ -1,0 +1,41 @@
+Upgrading
+Get:1 file:/var/cuda-repo-l4t-10-2-local  InRelease
+Ign:1 file:/var/cuda-repo-l4t-10-2-local  InRelease
+Get:2 file:/var/visionworks-repo  InRelease
+Ign:2 file:/var/visionworks-repo  InRelease
+Get:3 file:/var/visionworks-sfm-repo  InRelease
+Ign:3 file:/var/visionworks-sfm-repo  InRelease
+Get:4 file:/var/visionworks-tracking-repo  InRelease
+Ign:4 file:/var/visionworks-tracking-repo  InRelease
+Get:5 file:/var/cuda-repo-l4t-10-2-local  Release [564 B]
+Get:6 file:/var/visionworks-repo  Release [2,001 B]
+Get:5 file:/var/cuda-repo-l4t-10-2-local  Release [564 B]
+Get:7 file:/var/visionworks-sfm-repo  Release [2,005 B]
+Get:6 file:/var/visionworks-repo  Release [2,001 B]
+Get:8 file:/var/visionworks-tracking-repo  Release [2,010 B]
+Get:7 file:/var/visionworks-sfm-repo  Release [2,005 B]
+Get:8 file:/var/visionworks-tracking-repo  Release [2,010 B]
+Get:9 https://repo.download.nvidia.com/jetson/common r32.7 InRelease [2,555 B]
+Get:10 https://repo.download.nvidia.com/jetson/t210 r32.7 InRelease [2,547 B]
+Hit:12 http://ports.ubuntu.com/ubuntu-ports bionic InRelease
+Hit:13 http://ports.ubuntu.com/ubuntu-ports bionic-updates InRelease
+Hit:15 http://ports.ubuntu.com/ubuntu-ports bionic-backports InRelease
+Hit:16 http://ports.ubuntu.com/ubuntu-ports bionic-security InRelease
+Fetched 5,102 B in 2s (2,087 B/s)
+Reading package lists...
+Installing gnupg2 if needed
+Updating NVIDIA keys
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+Executing: /tmp/apt-key-gpghome.NPUS4O7XGb/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+gpg: requesting key from 'https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub'
+gpg: key A4B469963BF863CC: "cudatools <cudatools@nvidia.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+Executing: /tmp/apt-key-gpghome.hDNtdu0Jm5/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
+gpg: requesting key from 'https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub'
+gpg: key F60F4B3D7FA2AF80: "cudatools <cudatools@nvidia.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+Installing command line utilities
+Installing PyTorch Linux dependencies
