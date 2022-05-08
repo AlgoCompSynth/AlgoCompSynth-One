@@ -1,0 +1,8 @@
+Updating HTML index of packages in '.Library'
+Making 'packages.html' ... done
+ [1] "base"       "boot"       "class"      "cluster"    "codetools" 
+ [6] "compiler"   "datasets"   "foreign"    "graphics"   "grDevices" 
+[11] "grid"       "KernSmooth" "lattice"    "MASS"       "Matrix"    
+[16] "methods"    "mgcv"       "nlme"       "nnet"       "parallel"  
+[21] "rpart"      "spatial"    "splines"    "stats"      "stats4"    
+[26] "survival"   "tcltk"      "tools"      "utils"     
