@@ -2,8 +2,8 @@
 
 set -e
 
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
+source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 
 echo "Creating fresh r-reticulate virtual environment"
 cp $SYNTH_SCRIPTS/r-reticulate.template.$PYTHON_VERSION $SYNTH_SCRIPTS/r-reticulate.yml

@@ -33,6 +33,10 @@ echo ""
 echo "Setting environment variables"
 export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
+if [ -f "$SYNTH_HOME/mamba-init.sh" ]
+then
+  source $SYNTH_HOME/mamba-init.sh
+fi
 
 echo ""
 echo "Removing the virtual desktop"
@@ -46,15 +50,18 @@ echo "..$SYNTH_WHEELS"
 rm -fr $SYNTH_WHEELS
 
 echo ""
-echo "Removing r-reticulate virtual environment"
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
-mamba env remove --name r-reticulate --yes
+if [ -f "$MAMBAFORGE_HOME/etc/profile.d/conda.sh" ]
+then
+  echo "Removing r-reticulate virtual environment"
+  source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+  source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
+  mamba env remove --name r-reticulate --yes
+fi
 
 echo ""
 echo "Note: some files have *not* been removed:"
 echo "1. Linux packages installed via 'apt-get',"
-echo "2. The 'mambaforge' installation,"
+echo "2. The Mambaforge installation,"
 echo "3. The pip cache, which includes the 'CuPy' wheel."
 
 echo "Finished!"
