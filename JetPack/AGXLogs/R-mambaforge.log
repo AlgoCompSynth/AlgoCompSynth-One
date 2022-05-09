@@ -104,118 +104,118 @@ Cleanup
 
 █████████████████████████████████████████████████████████████
 
-Cache location: /home/znmeb/mambaforge/pkgs
+Cache location: /data/znmeb/mambaforge/pkgs
 Will remove the following tarballs:
 
-/home/znmeb/mambaforge/pkgs
+/data/znmeb/mambaforge/pkgs
 ---------------------------
-curl-7.76.1-h7f0bf2a_1.tar.bz2                90 KB
-pixman-0.40.0-hb9de7d4_0.tar.bz2             538 KB
-xorg-libxau-1.0.9-h3557bc0_0.tar.bz2          14 KB
-cairo-1.16.0-hb2de477_1006.tar.bz2           1.7 MB
-gxx_linux-aarch64-7.5.0-h1c081d7_33.tar.bz2      23 KB
-icu-67.1-h4c5d2ac_0.tar.bz2                 13.2 MB
-kernel-headers_linux-aarch64-4.18.0-h5b4a56d_13.tar.bz2     1.1 MB
-xorg-libxdmcp-1.1.3-h3557bc0_0.tar.bz2        19 KB
-glib-tools-2.70.2-h469bdbd_4.tar.bz2         112 KB
-xorg-libsm-1.2.3-h965e137_1000.tar.bz2        26 KB
-gxx_impl_linux-aarch64-7.5.0-ha647831_20.tar.bz2     7.9 MB
-gfortran_impl_linux-aarch64-7.5.0-h1998433_20.tar.bz2     7.5 MB
-harfbuzz-2.7.2-h1d8f01c_1.tar.bz2            1.8 MB
-glib-2.70.2-h469bdbd_4.tar.bz2               440 KB
-libxcb-1.13-h3557bc0_1004.tar.bz2            403 KB
-xorg-libxext-1.3.4-h3557bc0_1.tar.bz2         53 KB
-make-4.3-h309ac5b_1.tar.bz2                  485 KB
-gcc_impl_linux-aarch64-7.5.0-h8c076ac_20.tar.bz2    32.2 MB
-binutils_linux-aarch64-2.36-h7854541_33.tar.bz2      22 KB
-libcurl-7.76.1-h362eb50_1.tar.bz2            341 KB
-gettext-0.19.8.1-h6edf1e2_1008.tar.bz2       3.7 MB
-fontconfig-2.14.0-h856ede2_0.tar.bz2         351 KB
-libglib-2.70.2-hde3fb6c_4.tar.bz2            3.1 MB
-libstdcxx-devel_linux-aarch64-7.5.0-h3261afa_20.tar.bz2     8.7 MB
-pthread-stubs-0.4-hb9de7d4_1001.tar.bz2        6 KB
-gsl-2.6-h4b56f2c_0.tar.bz2                   3.0 MB
-_r-mutex-1.0.1-anacondar_1.tar.bz2             3 KB
-gcc_linux-aarch64-7.5.0-hc7207d9_33.tar.bz2      23 KB
-libgcc-devel_linux-aarch64-7.5.0-hf7190a3_20.tar.bz2     278 KB
-pango-1.42.4-h128d24a_5.tar.bz2              543 KB
-binutils_impl_linux-aarch64-2.36.1-h026399b_2.tar.bz2    10.4 MB
-graphite2-1.3.13-h7fd3ca4_1001.tar.bz2       105 KB
-xorg-libxrender-0.9.10-h3557bc0_1003.tar.bz2      33 KB
-krb5-1.17.2-he08ec14_0.tar.bz2               1.5 MB
-tktable-2.10-hcd05d48_3.tar.bz2               88 KB
-xorg-libice-1.0.10-h3557bc0_0.tar.bz2         60 KB
-xorg-xproto-7.0.31-h3557bc0_1007.tar.bz2      73 KB
 gfortran_linux-aarch64-7.5.0-h89f2c17_33.tar.bz2      23 KB
-cmake-3.20.2-h1da9803_1.tar.bz2             14.2 MB
-xorg-kbproto-1.0.7-h3557bc0_1002.tar.bz2      27 KB
-pcre-8.45-h01db608_0.tar.bz2                 244 KB
-fribidi-1.0.10-hb9de7d4_0.tar.bz2            113 KB
-xorg-libx11-1.7.2-h3557bc0_0.tar.bz2         960 KB
-pcre2-10.35-h73360fb_2.tar.bz2               691 KB
-bwidget-1.9.14-h8af1aa0_1.tar.bz2            120 KB
-r-base-4.0.2-hd97fb8e_1.tar.bz2             23.8 MB
-xorg-xextproto-7.3.0-h3557bc0_1002.tar.bz2      28 KB
-sed-4.8-ha0d5d3d_0.tar.bz2                   283 KB
-xorg-renderproto-0.11.1-h3557bc0_1002.tar.bz2       9 KB
+gettext-0.19.8.1-h6edf1e2_1008.tar.bz2       3.7 MB
+_r-mutex-1.0.1-anacondar_1.tar.bz2             3 KB
+gxx_linux-aarch64-7.5.0-h1c081d7_33.tar.bz2      23 KB
 sysroot_linux-aarch64-2.17-h43d7e78_13.tar.bz2    33.7 MB
+xorg-libxext-1.3.4-h3557bc0_1.tar.bz2         53 KB
+icu-67.1-h4c5d2ac_0.tar.bz2                 13.2 MB
+libstdcxx-devel_linux-aarch64-7.5.0-h3261afa_20.tar.bz2     8.7 MB
+r-base-4.0.2-hd97fb8e_1.tar.bz2             23.8 MB
+fontconfig-2.14.0-h856ede2_0.tar.bz2         351 KB
+gxx_impl_linux-aarch64-7.5.0-ha647831_20.tar.bz2     7.9 MB
+graphite2-1.3.13-h7fd3ca4_1001.tar.bz2       105 KB
+pixman-0.40.0-hb9de7d4_0.tar.bz2             538 KB
+xorg-xextproto-7.3.0-h3557bc0_1002.tar.bz2      28 KB
+pthread-stubs-0.4-hb9de7d4_1001.tar.bz2        6 KB
+sed-4.8-ha0d5d3d_0.tar.bz2                   283 KB
+xorg-libsm-1.2.3-h965e137_1000.tar.bz2        26 KB
+libxcb-1.13-h3557bc0_1004.tar.bz2            403 KB
+cmake-3.20.2-h1da9803_1.tar.bz2             14.2 MB
+gfortran_impl_linux-aarch64-7.5.0-h1998433_20.tar.bz2     7.5 MB
+libgcc-devel_linux-aarch64-7.5.0-hf7190a3_20.tar.bz2     278 KB
+krb5-1.17.2-he08ec14_0.tar.bz2               1.5 MB
+pcre-8.45-h01db608_0.tar.bz2                 244 KB
+xorg-kbproto-1.0.7-h3557bc0_1002.tar.bz2      27 KB
+tktable-2.10-hcd05d48_3.tar.bz2               88 KB
+bwidget-1.9.14-h8af1aa0_1.tar.bz2            120 KB
+pcre2-10.35-h73360fb_2.tar.bz2               691 KB
+harfbuzz-2.7.2-h1d8f01c_1.tar.bz2            1.8 MB
+cairo-1.16.0-hb2de477_1006.tar.bz2           1.7 MB
+xorg-libxau-1.0.9-h3557bc0_0.tar.bz2          14 KB
+curl-7.76.1-h7f0bf2a_1.tar.bz2                90 KB
+libglib-2.70.2-hde3fb6c_4.tar.bz2            3.1 MB
+glib-2.70.2-h469bdbd_4.tar.bz2               440 KB
+glib-tools-2.70.2-h469bdbd_4.tar.bz2         112 KB
+libcurl-7.76.1-h362eb50_1.tar.bz2            341 KB
+xorg-libice-1.0.10-h3557bc0_0.tar.bz2         60 KB
+gcc_impl_linux-aarch64-7.5.0-h8c076ac_20.tar.bz2    32.2 MB
+gcc_linux-aarch64-7.5.0-hc7207d9_33.tar.bz2      23 KB
+gsl-2.6-h4b56f2c_0.tar.bz2                   3.0 MB
+xorg-xproto-7.0.31-h3557bc0_1007.tar.bz2      73 KB
+xorg-libx11-1.7.2-h3557bc0_0.tar.bz2         960 KB
+make-4.3-h309ac5b_1.tar.bz2                  485 KB
+binutils_linux-aarch64-2.36-h7854541_33.tar.bz2      22 KB
+xorg-libxdmcp-1.1.3-h3557bc0_0.tar.bz2        19 KB
+binutils_impl_linux-aarch64-2.36.1-h026399b_2.tar.bz2    10.4 MB
+xorg-renderproto-0.11.1-h3557bc0_1002.tar.bz2       9 KB
+pango-1.42.4-h128d24a_5.tar.bz2              543 KB
+kernel-headers_linux-aarch64-4.18.0-h5b4a56d_13.tar.bz2     1.1 MB
+fribidi-1.0.10-hb9de7d4_0.tar.bz2            113 KB
 libxml2-2.9.10-hc040a3b_2.tar.bz2            1.4 MB
+xorg-libxrender-0.9.10-h3557bc0_1003.tar.bz2      33 KB
 
 ---------------------------------------------------
 Total:                                     175.5 MB
 
-Removed curl-7.76.1-h7f0bf2a_1.tar.bz2
-Removed pixman-0.40.0-hb9de7d4_0.tar.bz2
-Removed xorg-libxau-1.0.9-h3557bc0_0.tar.bz2
-Removed cairo-1.16.0-hb2de477_1006.tar.bz2
-Removed gxx_linux-aarch64-7.5.0-h1c081d7_33.tar.bz2
-Removed icu-67.1-h4c5d2ac_0.tar.bz2
-Removed kernel-headers_linux-aarch64-4.18.0-h5b4a56d_13.tar.bz2
-Removed xorg-libxdmcp-1.1.3-h3557bc0_0.tar.bz2
-Removed glib-tools-2.70.2-h469bdbd_4.tar.bz2
-Removed xorg-libsm-1.2.3-h965e137_1000.tar.bz2
-Removed gxx_impl_linux-aarch64-7.5.0-ha647831_20.tar.bz2
-Removed gfortran_impl_linux-aarch64-7.5.0-h1998433_20.tar.bz2
-Removed harfbuzz-2.7.2-h1d8f01c_1.tar.bz2
-Removed glib-2.70.2-h469bdbd_4.tar.bz2
-Removed libxcb-1.13-h3557bc0_1004.tar.bz2
-Removed xorg-libxext-1.3.4-h3557bc0_1.tar.bz2
-Removed make-4.3-h309ac5b_1.tar.bz2
-Removed gcc_impl_linux-aarch64-7.5.0-h8c076ac_20.tar.bz2
-Removed binutils_linux-aarch64-2.36-h7854541_33.tar.bz2
-Removed libcurl-7.76.1-h362eb50_1.tar.bz2
-Removed gettext-0.19.8.1-h6edf1e2_1008.tar.bz2
-Removed fontconfig-2.14.0-h856ede2_0.tar.bz2
-Removed libglib-2.70.2-hde3fb6c_4.tar.bz2
-Removed libstdcxx-devel_linux-aarch64-7.5.0-h3261afa_20.tar.bz2
-Removed pthread-stubs-0.4-hb9de7d4_1001.tar.bz2
-Removed gsl-2.6-h4b56f2c_0.tar.bz2
-Removed _r-mutex-1.0.1-anacondar_1.tar.bz2
-Removed gcc_linux-aarch64-7.5.0-hc7207d9_33.tar.bz2
-Removed libgcc-devel_linux-aarch64-7.5.0-hf7190a3_20.tar.bz2
-Removed pango-1.42.4-h128d24a_5.tar.bz2
-Removed binutils_impl_linux-aarch64-2.36.1-h026399b_2.tar.bz2
-Removed graphite2-1.3.13-h7fd3ca4_1001.tar.bz2
-Removed xorg-libxrender-0.9.10-h3557bc0_1003.tar.bz2
-Removed krb5-1.17.2-he08ec14_0.tar.bz2
-Removed tktable-2.10-hcd05d48_3.tar.bz2
-Removed xorg-libice-1.0.10-h3557bc0_0.tar.bz2
-Removed xorg-xproto-7.0.31-h3557bc0_1007.tar.bz2
 Removed gfortran_linux-aarch64-7.5.0-h89f2c17_33.tar.bz2
-Removed cmake-3.20.2-h1da9803_1.tar.bz2
-Removed xorg-kbproto-1.0.7-h3557bc0_1002.tar.bz2
-Removed pcre-8.45-h01db608_0.tar.bz2
-Removed fribidi-1.0.10-hb9de7d4_0.tar.bz2
-Removed xorg-libx11-1.7.2-h3557bc0_0.tar.bz2
-Removed pcre2-10.35-h73360fb_2.tar.bz2
-Removed bwidget-1.9.14-h8af1aa0_1.tar.bz2
-Removed r-base-4.0.2-hd97fb8e_1.tar.bz2
-Removed xorg-xextproto-7.3.0-h3557bc0_1002.tar.bz2
-Removed sed-4.8-ha0d5d3d_0.tar.bz2
-Removed xorg-renderproto-0.11.1-h3557bc0_1002.tar.bz2
+Removed gettext-0.19.8.1-h6edf1e2_1008.tar.bz2
+Removed _r-mutex-1.0.1-anacondar_1.tar.bz2
+Removed gxx_linux-aarch64-7.5.0-h1c081d7_33.tar.bz2
 Removed sysroot_linux-aarch64-2.17-h43d7e78_13.tar.bz2
+Removed xorg-libxext-1.3.4-h3557bc0_1.tar.bz2
+Removed icu-67.1-h4c5d2ac_0.tar.bz2
+Removed libstdcxx-devel_linux-aarch64-7.5.0-h3261afa_20.tar.bz2
+Removed r-base-4.0.2-hd97fb8e_1.tar.bz2
+Removed fontconfig-2.14.0-h856ede2_0.tar.bz2
+Removed gxx_impl_linux-aarch64-7.5.0-ha647831_20.tar.bz2
+Removed graphite2-1.3.13-h7fd3ca4_1001.tar.bz2
+Removed pixman-0.40.0-hb9de7d4_0.tar.bz2
+Removed xorg-xextproto-7.3.0-h3557bc0_1002.tar.bz2
+Removed pthread-stubs-0.4-hb9de7d4_1001.tar.bz2
+Removed sed-4.8-ha0d5d3d_0.tar.bz2
+Removed xorg-libsm-1.2.3-h965e137_1000.tar.bz2
+Removed libxcb-1.13-h3557bc0_1004.tar.bz2
+Removed cmake-3.20.2-h1da9803_1.tar.bz2
+Removed gfortran_impl_linux-aarch64-7.5.0-h1998433_20.tar.bz2
+Removed libgcc-devel_linux-aarch64-7.5.0-hf7190a3_20.tar.bz2
+Removed krb5-1.17.2-he08ec14_0.tar.bz2
+Removed pcre-8.45-h01db608_0.tar.bz2
+Removed xorg-kbproto-1.0.7-h3557bc0_1002.tar.bz2
+Removed tktable-2.10-hcd05d48_3.tar.bz2
+Removed bwidget-1.9.14-h8af1aa0_1.tar.bz2
+Removed pcre2-10.35-h73360fb_2.tar.bz2
+Removed harfbuzz-2.7.2-h1d8f01c_1.tar.bz2
+Removed cairo-1.16.0-hb2de477_1006.tar.bz2
+Removed xorg-libxau-1.0.9-h3557bc0_0.tar.bz2
+Removed curl-7.76.1-h7f0bf2a_1.tar.bz2
+Removed libglib-2.70.2-hde3fb6c_4.tar.bz2
+Removed glib-2.70.2-h469bdbd_4.tar.bz2
+Removed glib-tools-2.70.2-h469bdbd_4.tar.bz2
+Removed libcurl-7.76.1-h362eb50_1.tar.bz2
+Removed xorg-libice-1.0.10-h3557bc0_0.tar.bz2
+Removed gcc_impl_linux-aarch64-7.5.0-h8c076ac_20.tar.bz2
+Removed gcc_linux-aarch64-7.5.0-hc7207d9_33.tar.bz2
+Removed gsl-2.6-h4b56f2c_0.tar.bz2
+Removed xorg-xproto-7.0.31-h3557bc0_1007.tar.bz2
+Removed xorg-libx11-1.7.2-h3557bc0_0.tar.bz2
+Removed make-4.3-h309ac5b_1.tar.bz2
+Removed binutils_linux-aarch64-2.36-h7854541_33.tar.bz2
+Removed xorg-libxdmcp-1.1.3-h3557bc0_0.tar.bz2
+Removed binutils_impl_linux-aarch64-2.36.1-h026399b_2.tar.bz2
+Removed xorg-renderproto-0.11.1-h3557bc0_1002.tar.bz2
+Removed pango-1.42.4-h128d24a_5.tar.bz2
+Removed kernel-headers_linux-aarch64-4.18.0-h5b4a56d_13.tar.bz2
+Removed fribidi-1.0.10-hb9de7d4_0.tar.bz2
 Removed libxml2-2.9.10-hc040a3b_2.tar.bz2
-# packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
+Removed xorg-libxrender-0.9.10-h3557bc0_1003.tar.bz2
+# packages in environment at /data/znmeb/mambaforge/envs/r-reticulate:
 #
 # Name                    Version                   Build  Channel
 _openmp_mutex             4.5                       2_gnu    conda-forge
@@ -427,5 +427,5 @@ zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-595.10user 25.62system 6:23.74elapsed 161%CPU (0avgtext+0avgdata 230960maxresident)k
-8inputs+2014592outputs (1major+4754393minor)pagefaults 0swaps
+600.74user 26.80system 6:29.83elapsed 160%CPU (0avgtext+0avgdata 232360maxresident)k
+74360inputs+2265288outputs (28major+4774207minor)pagefaults 0swaps

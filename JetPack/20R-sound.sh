@@ -6,11 +6,12 @@ echo ""
 echo "Setting environment variables"
 export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
+source $SYNTH_HOME/mamba-init.sh
 export MAKE="make $MAKEFLAGS"
 
 echo "Activating r-reticulate"
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
+source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
 echo "Installing Linux dependencies"

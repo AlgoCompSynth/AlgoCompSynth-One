@@ -24,8 +24,8 @@ Redirecting output to ‘wget-log’.
 ~/Projects/AlgoCompSynth-One/JetPack
 Installing PyTorch
 Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/torch-1.10.0-cp36-cp36m-linux_aarch64.whl
-Requirement already satisfied: typing-extensions in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (4.1.1)
-Requirement already satisfied: dataclasses in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (0.8)
+Requirement already satisfied: typing-extensions in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (4.1.1)
+Requirement already satisfied: dataclasses in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (0.8)
 Installing collected packages: torch
 Successfully installed torch-1.10.0
 Cleanup
@@ -53,10 +53,10 @@ Cleanup
 
 █████████████████████████████████████████████████████████████
 
-Cache location: /home/znmeb/mambaforge/pkgs
+Cache location: /data/znmeb/mambaforge/pkgs
 Will remove the following tarballs:
 
-/home/znmeb/mambaforge/pkgs
+/data/znmeb/mambaforge/pkgs
 ---------------------------
 cython-0.29.24-py36h86e9a40_0.tar.bz2        2.1 MB
 
@@ -64,7 +64,7 @@ cython-0.29.24-py36h86e9a40_0.tar.bz2        2.1 MB
 Total:                                       2.1 MB
 
 Removed cython-0.29.24-py36h86e9a40_0.tar.bz2
-# packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
+# packages in environment at /data/znmeb/mambaforge/envs/r-reticulate:
 #
 # Name                    Version                   Build  Channel
 _openmp_mutex             4.5                       2_gnu    conda-forge
@@ -209,5 +209,5 @@ zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-27.64user 4.54system 1:05.30elapsed 49%CPU (0avgtext+0avgdata 128392maxresident)k
-0inputs+2262736outputs (0major+167011minor)pagefaults 0swaps
+27.78user 4.61system 1:23.00elapsed 39%CPU (0avgtext+0avgdata 128376maxresident)k
+64inputs+2262728outputs (0major+165093minor)pagefaults 0swaps

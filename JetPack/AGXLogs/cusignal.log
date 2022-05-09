@@ -151,8 +151,8 @@ Preparing transaction: ...working... done
 Verifying transaction: ...working... done
 Executing transaction: ...working... done
 Installing pip dependencies: ...working... done
-33.19user 5.56system 0:36.88elapsed 105%CPU (0avgtext+0avgdata 197364maxresident)k
-0inputs+353008outputs (0major+198554minor)pagefaults 0swaps
+34.17user 5.88system 0:38.04elapsed 105%CPU (0avgtext+0avgdata 190796maxresident)k
+32inputs+353016outputs (0major+186346minor)pagefaults 0swaps
 Activating cusignal-dev
 Building cuSignal wheel
 Building for *ALL* supported GPU architectures...
@@ -455,17 +455,17 @@ adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/WHEEL'
 adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/top_level.txt'
 adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/RECORD'
 removing build/bdist.linux-aarch64/wheel
-/home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages/setuptools/dist.py:487: UserWarning: Normalizing '22.04.00+0.g06f58b4.dirty' to '22.4.0+0.g06f58b4.dirty'
+/data/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages/setuptools/dist.py:487: UserWarning: Normalizing '22.04.00+0.g06f58b4.dirty' to '22.4.0+0.g06f58b4.dirty'
   warnings.warn(tmpl.format(**locals()))
-123.42user 6.26system 0:42.53elapsed 304%CPU (0avgtext+0avgdata 97412maxresident)k
-0inputs+239168outputs (0major+1498354minor)pagefaults 0swaps
+121.71user 6.12system 0:42.15elapsed 303%CPU (0avgtext+0avgdata 97276maxresident)k
+664inputs+239168outputs (0major+1501697minor)pagefaults 0swaps
 Saving cuSignal wheel
 Test installing cuSignal wheel
 Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl
-Requirement already satisfied: numba in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
-Requirement already satisfied: setuptools in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
-Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
-Requirement already satisfied: numpy>=1.15 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
+Requirement already satisfied: numba in /data/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
+Requirement already satisfied: numpy>=1.15 in /data/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
+Requirement already satisfied: setuptools in /data/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
+Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /data/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
 Installing collected packages: cusignal
 Successfully installed cusignal-22.4.0+0.g06f58b4.dirty
 Copying /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/cusignal/notebooks to /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Notebooks/cusignal-notebooks
@@ -473,20 +473,20 @@ Copying E2E test notebooks to /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Not
 Deactivating cusignal-dev
 Activating r-reticulate
 Installing cuSignal wheel in r-reticulate
-Requirement already satisfied: cupy in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (9.6.0)
-Requirement already satisfied: fastrlock>=0.5 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (0.8)
-Requirement already satisfied: numpy<1.24,>=1.17 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (1.19.5)
+Requirement already satisfied: cupy in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (9.6.0)
+Requirement already satisfied: fastrlock>=0.5 in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (0.8)
+Requirement already satisfied: numpy<1.24,>=1.17 in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (1.19.5)
 Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl
-Requirement already satisfied: numba in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
-Requirement already satisfied: setuptools in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
-Requirement already satisfied: numpy>=1.15 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
-Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
+Requirement already satisfied: numba in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
+Requirement already satisfied: numpy>=1.15 in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
+Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
+Requirement already satisfied: setuptools in /data/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
 Installing collected packages: cusignal
 Successfully installed cusignal-22.4.0+0.g06f58b4.dirty
 Cleanup
 ..Removing cusignal-dev virtual environment
 
-Remove all packages in environment /home/znmeb/mambaforge/envs/cusignal-dev:
+Remove all packages in environment /data/znmeb/mambaforge/envs/cusignal-dev:
 
 ..Removing cusignal project repository
 ..Removing downloaded tarballs
@@ -513,66 +513,66 @@ Remove all packages in environment /home/znmeb/mambaforge/envs/cusignal-dev:
 
 █████████████████████████████████████████████████████████████
 
-Cache location: /home/znmeb/mambaforge/pkgs
+Cache location: /data/znmeb/mambaforge/pkgs
 Will remove the following tarballs:
 
-/home/znmeb/mambaforge/pkgs
+/data/znmeb/mambaforge/pkgs
 ---------------------------
-sphinxcontrib-serializinghtml-1.1.5-pyhd8ed1ab_2.tar.bz2      27 KB
-iniconfig-1.1.1-pyh9f0ad1d_0.tar.bz2           8 KB
-sphinxcontrib-devhelp-1.0.2-py_0.tar.bz2      22 KB
-py-cpuinfo-8.0.0-pyhd8ed1ab_0.tar.bz2         23 KB
+pluggy-1.0.0-py36h704843e_1.tar.bz2           25 KB
+sphinxcontrib-applehelp-1.0.2-py_0.tar.bz2      28 KB
+sphinx-4.5.0-pyh6c4a22f_0.tar.bz2            1.6 MB
+sphinxcontrib-htmlhelp-2.0.0-pyhd8ed1ab_0.tar.bz2      31 KB
+imagesize-1.3.0-pyhd8ed1ab_0.tar.bz2           9 KB
+pytest-6.2.5-py36h704843e_0.tar.bz2          431 KB
+toml-0.10.2-pyhd8ed1ab_0.tar.bz2              18 KB
+sphinxcontrib-jsmath-1.0.1-py_0.tar.bz2        7 KB
 alabaster-0.7.12-py_0.tar.bz2                 15 KB
-beautifulsoup4-4.11.1-pyha770c72_0.tar.bz2      96 KB
+numpydoc-1.2.1-pyhd8ed1ab_0.tar.bz2           45 KB
+sphinxcontrib-devhelp-1.0.2-py_0.tar.bz2      22 KB
+iniconfig-1.1.1-pyh9f0ad1d_0.tar.bz2           8 KB
+importlib_metadata-4.8.1-hd8ed1ab_1.tar.bz2       4 KB
 py-1.11.0-pyh6c4a22f_0.tar.bz2                74 KB
 sphinxcontrib-qthelp-1.0.3-py_0.tar.bz2       25 KB
-pydata-sphinx-theme-0.7.2-pyhd8ed1ab_0.tar.bz2     1.2 MB
-sphinxcontrib-applehelp-1.0.2-py_0.tar.bz2      28 KB
-toml-0.10.2-pyhd8ed1ab_0.tar.bz2              18 KB
 pytest-benchmark-3.4.1-pyhd8ed1ab_0.tar.bz2      44 KB
-docutils-0.17.1-py36h704843e_0.tar.bz2       763 KB
-importlib_metadata-4.8.1-hd8ed1ab_1.tar.bz2       4 KB
-pytest-6.2.5-py36h704843e_0.tar.bz2          431 KB
-pluggy-1.0.0-py36h704843e_1.tar.bz2           25 KB
-sphinxcontrib-htmlhelp-2.0.0-pyhd8ed1ab_0.tar.bz2      31 KB
-soupsieve-2.3.1-pyhd8ed1ab_0.tar.bz2          33 KB
-sphinxcontrib-jsmath-1.0.1-py_0.tar.bz2        7 KB
-numpydoc-1.2.1-pyhd8ed1ab_0.tar.bz2           45 KB
-snowballstemmer-2.2.0-pyhd8ed1ab_0.tar.bz2      57 KB
+sphinxcontrib-serializinghtml-1.1.5-pyhd8ed1ab_2.tar.bz2      27 KB
+pydata-sphinx-theme-0.7.2-pyhd8ed1ab_0.tar.bz2     1.2 MB
 sphinx-copybutton-0.5.0-pyhd8ed1ab_0.tar.bz2      15 KB
-imagesize-1.3.0-pyhd8ed1ab_0.tar.bz2           9 KB
-sphinx-4.5.0-pyh6c4a22f_0.tar.bz2            1.6 MB
+py-cpuinfo-8.0.0-pyhd8ed1ab_0.tar.bz2         23 KB
+docutils-0.17.1-py36h704843e_0.tar.bz2       763 KB
+beautifulsoup4-4.11.1-pyha770c72_0.tar.bz2      96 KB
+snowballstemmer-2.2.0-pyhd8ed1ab_0.tar.bz2      57 KB
 more-itertools-8.12.0-pyhd8ed1ab_0.tar.bz2      47 KB
+soupsieve-2.3.1-pyhd8ed1ab_0.tar.bz2          33 KB
 
 ---------------------------------------------------
 Total:                                       4.6 MB
 
-Removed sphinxcontrib-serializinghtml-1.1.5-pyhd8ed1ab_2.tar.bz2
-Removed iniconfig-1.1.1-pyh9f0ad1d_0.tar.bz2
-Removed sphinxcontrib-devhelp-1.0.2-py_0.tar.bz2
-Removed py-cpuinfo-8.0.0-pyhd8ed1ab_0.tar.bz2
+Removed pluggy-1.0.0-py36h704843e_1.tar.bz2
+Removed sphinxcontrib-applehelp-1.0.2-py_0.tar.bz2
+Removed sphinx-4.5.0-pyh6c4a22f_0.tar.bz2
+Removed sphinxcontrib-htmlhelp-2.0.0-pyhd8ed1ab_0.tar.bz2
+Removed imagesize-1.3.0-pyhd8ed1ab_0.tar.bz2
+Removed pytest-6.2.5-py36h704843e_0.tar.bz2
+Removed toml-0.10.2-pyhd8ed1ab_0.tar.bz2
+Removed sphinxcontrib-jsmath-1.0.1-py_0.tar.bz2
 Removed alabaster-0.7.12-py_0.tar.bz2
-Removed beautifulsoup4-4.11.1-pyha770c72_0.tar.bz2
+Removed numpydoc-1.2.1-pyhd8ed1ab_0.tar.bz2
+Removed sphinxcontrib-devhelp-1.0.2-py_0.tar.bz2
+Removed iniconfig-1.1.1-pyh9f0ad1d_0.tar.bz2
+Removed importlib_metadata-4.8.1-hd8ed1ab_1.tar.bz2
 Removed py-1.11.0-pyh6c4a22f_0.tar.bz2
 Removed sphinxcontrib-qthelp-1.0.3-py_0.tar.bz2
-Removed pydata-sphinx-theme-0.7.2-pyhd8ed1ab_0.tar.bz2
-Removed sphinxcontrib-applehelp-1.0.2-py_0.tar.bz2
-Removed toml-0.10.2-pyhd8ed1ab_0.tar.bz2
 Removed pytest-benchmark-3.4.1-pyhd8ed1ab_0.tar.bz2
-Removed docutils-0.17.1-py36h704843e_0.tar.bz2
-Removed importlib_metadata-4.8.1-hd8ed1ab_1.tar.bz2
-Removed pytest-6.2.5-py36h704843e_0.tar.bz2
-Removed pluggy-1.0.0-py36h704843e_1.tar.bz2
-Removed sphinxcontrib-htmlhelp-2.0.0-pyhd8ed1ab_0.tar.bz2
-Removed soupsieve-2.3.1-pyhd8ed1ab_0.tar.bz2
-Removed sphinxcontrib-jsmath-1.0.1-py_0.tar.bz2
-Removed numpydoc-1.2.1-pyhd8ed1ab_0.tar.bz2
-Removed snowballstemmer-2.2.0-pyhd8ed1ab_0.tar.bz2
+Removed sphinxcontrib-serializinghtml-1.1.5-pyhd8ed1ab_2.tar.bz2
+Removed pydata-sphinx-theme-0.7.2-pyhd8ed1ab_0.tar.bz2
 Removed sphinx-copybutton-0.5.0-pyhd8ed1ab_0.tar.bz2
-Removed imagesize-1.3.0-pyhd8ed1ab_0.tar.bz2
-Removed sphinx-4.5.0-pyh6c4a22f_0.tar.bz2
+Removed py-cpuinfo-8.0.0-pyhd8ed1ab_0.tar.bz2
+Removed docutils-0.17.1-py36h704843e_0.tar.bz2
+Removed beautifulsoup4-4.11.1-pyha770c72_0.tar.bz2
+Removed snowballstemmer-2.2.0-pyhd8ed1ab_0.tar.bz2
 Removed more-itertools-8.12.0-pyhd8ed1ab_0.tar.bz2
-# packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
+Removed soupsieve-2.3.1-pyhd8ed1ab_0.tar.bz2
+# packages in environment at /data/znmeb/mambaforge/envs/r-reticulate:
 #
 # Name                    Version                   Build  Channel
 _openmp_mutex             4.5                       2_gnu    conda-forge
@@ -734,5 +734,5 @@ zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-174.42user 13.60system 1:39.35elapsed 189%CPU (0avgtext+0avgdata 197364maxresident)k
-0inputs+660232outputs (0major+1883166minor)pagefaults 0swaps
+174.54user 13.69system 1:40.89elapsed 186%CPU (0avgtext+0avgdata 190796maxresident)k
+768inputs+660240outputs (0major+1875275minor)pagefaults 0swaps

@@ -6,5 +6,5 @@ CUDA device count: 1
 current CUDA device: 0
 CUDA device name: Xavier
 Tensor a = tensor([0., 0.], device='cuda:0')
-Tensor b = tensor([-1.6007,  0.6909], device='cuda:0')
-Tensor c = tensor([-1.6007,  0.6909], device='cuda:0')
+Tensor b = tensor([-0.7614,  0.4199], device='cuda:0')
+Tensor c = tensor([-0.7614,  0.4199], device='cuda:0')
