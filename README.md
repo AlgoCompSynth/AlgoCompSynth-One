@@ -41,6 +41,11 @@ be compiled, `torchaudio` and `cuSignal`, take a fair amount of time to build.
 I have included logfiles of my builds on a Jetson Nano, Xavier NX and AGX
 Xavier so you can get an idea of what to expect for build times.
 
+The installers create a virtual desktop inside the repository. The Python
+wheels downloaded or built are cached in `AlgoCompSynth-One/JetPack/Wheels`,
+and the install scripts will look for those first rather than doing a new
+build.
+
 ## Who is it for?
 
 At the moment, it's primarily for developers with a Jetson Developer Kit. I am
@@ -62,7 +67,8 @@ The short version is:
     ./20R-sound.sh # optional for R programmers
     ```
 
-That will install everything.
+That will install everything. If you're not an R programmer, there's no reason
+for you to run `10R-addons.sh` or `20R-sound.sh`.
 
 ## How do I test it?
 
