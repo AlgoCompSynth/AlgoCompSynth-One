@@ -57,7 +57,7 @@ The short version is:
     ```
     cd AlgoCompSynth-One/JetPack
     ./00mambaforge.sh # sets up the Mambaforge package and environment manager
-    ./00install.sh # installs the Python components
+    ./05install.sh # installs the Python components
     ./10R-addons.sh # optional for R programmers
     ./20R-sound.sh # optional for R programmers
     ```
