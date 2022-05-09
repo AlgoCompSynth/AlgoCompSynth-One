@@ -18,8 +18,7 @@ mkdir --parents \
 echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 
-echo "Installing Mambaforge if necessary"
-$SYNTH_SCRIPTS/mambaforge.sh
+echo "Defining Mambaforge home"
 source $SYNTH_HOME/mamba-init.sh
 echo "MAMBAFORGE_HOME: $MAMBAFORGE_HOME"
 
