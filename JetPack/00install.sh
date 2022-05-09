@@ -19,15 +19,13 @@ echo "Installing command line conveniences"
 $SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 
 echo "Installing Mambaforge if necessary"
-if [ ! -d $HOME/mambaforge ]
-then
-  echo "..Installing Mambaforge"
-  /usr/bin/time $SYNTH_SCRIPTS/mambaforge.sh > $SYNTH_LOGS/mambaforge.log 2>&1
-fi
+$SYNTH_SCRIPTS/mambaforge.sh
+source $SYNTH_HOME/mamba-init.sh
+echo "MAMBAFORGE_HOME: $MAMBAFORGE_HOME"
 
 echo "Enabling conda and mamba commands"
-source $HOME/mambaforge/etc/profile.d/conda.sh
-source $HOME/mambaforge/etc/profile.d/mamba.sh
+source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 
 echo "Creating r-reticulate mamba environment if necessary"
 if [ `mamba env list | grep "r-reticulate" | wc -l` -le "0" ]
