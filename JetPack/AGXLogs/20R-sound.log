@@ -91,7 +91,7 @@ Installed R packages
 [171] "xfun"         "xml2"         "xopen"        "xtable"       "yaml"        
 [176] "zip"          "zoo"         
 Cleanup
-# packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
+# packages in environment at /data/znmeb/mambaforge/envs/r-reticulate:
 #
 # Name                    Version                   Build  Channel
 _openmp_mutex             4.5                       2_gnu    conda-forge
@@ -330,23 +330,23 @@ zstd                      1.5.2                h41fb7a4_0    conda-forge
 
 █████████████████████████████████████████████████████████████
 
-Cache location: /home/znmeb/mambaforge/pkgs
+Cache location: /data/znmeb/mambaforge/pkgs
 Will remove the following tarballs:
 
-/home/znmeb/mambaforge/pkgs
+/data/znmeb/mambaforge/pkgs
 ---------------------------
-libflac-1.3.4-h4de3ea5_0.tar.bz2             470 KB
-libgit2-1.1.0-h0beb994_0.tar.bz2             678 KB
 libogg-1.3.4-h3557bc0_1.tar.bz2              209 KB
 fftw-3.3.8-nompi_h050cfe6_1114.tar.bz2       4.3 MB
+libflac-1.3.4-h4de3ea5_0.tar.bz2             470 KB
 pandoc-2.18-h8af1aa0_0.tar.bz2              13.3 MB
+libgit2-1.1.0-h0beb994_0.tar.bz2             678 KB
 
 ---------------------------------------------------
 Total:                                      18.9 MB
 
-Removed libflac-1.3.4-h4de3ea5_0.tar.bz2
-Removed libgit2-1.1.0-h0beb994_0.tar.bz2
 Removed libogg-1.3.4-h3557bc0_1.tar.bz2
 Removed fftw-3.3.8-nompi_h050cfe6_1114.tar.bz2
+Removed libflac-1.3.4-h4de3ea5_0.tar.bz2
 Removed pandoc-2.18-h8af1aa0_0.tar.bz2
+Removed libgit2-1.1.0-h0beb994_0.tar.bz2
 Finished

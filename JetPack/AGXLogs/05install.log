@@ -1,0 +1,65 @@
+
+Setting environment variables
+
+Detecting JetPack version
+JETPACK_VERSION: 4.6.1
+
+Setting versions to install
+PYTHON_VERSION: 3.6
+PYTORCH_WHEEL_URL: https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl
+PYTORCH_WHEEL_FILE: torch-1.10.0-cp36-cp36m-linux_aarch64.whl
+TORCHAUDIO_VERSION: 0.10.0
+CUSIGNAL_VERSION: 22.04.00
+
+Building and running deviceQuery
+/usr/local/cuda/samples/1_Utilities/deviceQuery ~/Projects/AlgoCompSynth-One/JetPack
+make: Nothing to be done for 'all'.
+~/Projects/AlgoCompSynth-One/JetPack
+
+Defining CUPY_NVCC_GENERATE_CODE
+CUPY_NVCC_GENERATE_CODE: arch=compute_72,code=sm_72
+
+Defining CMAKE_BUILD_PARALLEL_LEVEL and MAKEFLAGS
+CMAKE_BUILD_PARALLEL_LEVEL: 8
+MAKEFLAGS: -j8
+
+Defining virtual desktop
+SYNTH_SCRIPTS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Scripts
+SYNTH_LOGS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Logs
+SYNTH_PROJECTS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects
+SYNTH_NOTEBOOKS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Notebooks
+SYNTH_WHEELS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels
+
+Creating virtual desktop
+Installing command line conveniences
+Defining Mambaforge home
+MAMBAFORGE_HOME: /data/znmeb/mambaforge
+Enabling conda and mamba commands
+Creating r-reticulate mamba environment if necessary
+..Creating r-reticulate
+Activating r-reticulate
+Installing CuPy if necessary
+..Installing CuPy
+..This can take a long time if the wheel isn't in the pip cache!
+Installing PyTorch if necessary
+..Installing PyTorch
+Testing PyTorch execution and GPU availability
+torch version 1.10.0
+CUDA available: True
+cuDNN version: 8201
+CUDA device count: 1
+current CUDA device: 0
+CUDA device name: Xavier
+Tensor a = tensor([0., 0.], device='cuda:0')
+Tensor b = tensor([-0.7614,  0.4199], device='cuda:0')
+Tensor c = tensor([-0.7614,  0.4199], device='cuda:0')
+Installing torchaudio if necessary
+..Installing torchaudio
+Testing torchaudio import
+torch import successful
+torchaudio import successful
+torchaudio backends: ['sox_io']
+
+Installing cusignal if necessary
+..Installing cusignal
+Finished!

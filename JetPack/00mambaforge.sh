@@ -2,6 +2,8 @@
 
 set -e
 
+export SYNTH_HOME=$PWD
+
 echo "..Checking for existing Mambaforge installation"
 export MAMBAFORGE_HOME=""
 
