@@ -26,18 +26,18 @@ Collecting cupy>=9.0.0
   -------- Configuring Module: cudnn --------
 
   -------- Configuring Module: nccl --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpfdh462eq/a.cpp -o /tmp/tmpfdh462eq/tmp/tmpfdh462eq/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp7m7zearg/a.cpp -o /tmp/tmp7m7zearg/tmp/tmp7m7zearg/a.o" failed with exit status 1
 
   -------- Configuring Module: nvtx --------
 
   -------- Configuring Module: cutensor --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpiag3zapn/a.cpp -o /tmp/tmpiag3zapn/tmp/tmpiag3zapn/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp96w_sulb/a.cpp -o /tmp/tmp96w_sulb/tmp/tmp96w_sulb/a.o" failed with exit status 1
 
   -------- Configuring Module: cub --------
   **************************************************
   *** WARNING: Cannot determine CUB version
   Cannot determine CUB version from git tag
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpc3sd_mrg/a.cpp -o /tmp/tmpc3sd_mrg/tmp/tmpc3sd_mrg/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpnn5_3emh/a.cpp -o /tmp/tmpnn5_3emh/tmp/tmpnn5_3emh/a.o" failed with exit status 1
   **************************************************
 
   -------- Configuring Module: jitify --------
@@ -49,10 +49,10 @@ Collecting cupy>=9.0.0
   -------- Configuring Module: random --------
 
   -------- Configuring Module: cusparselt --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpjogr2gns/a.cpp -o /tmp/tmpjogr2gns/tmp/tmpjogr2gns/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpzdt9telq/a.cpp -o /tmp/tmpzdt9telq/tmp/tmpzdt9telq/a.o" failed with exit status 1
 
   -------- Configuring Module: cugraph --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp75wukko9/a.cpp -o /tmp/tmp75wukko9/tmp/tmp75wukko9/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpymhajjxf/a.cpp -o /tmp/tmpymhajjxf/tmp/tmpymhajjxf/a.o" failed with exit status 1
 
   -------- Configuring Module: thrust --------
 
@@ -63,7 +63,7 @@ Collecting cupy>=9.0.0
   ************************************************************
 
   Build Environment:
-    Include directories: ['/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub', '/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include', '/usr/local/cuda/include']
+    Include directories: ['/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub', '/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include', '/usr/local/cuda/include']
     Library directories: ['/usr/local/cuda/lib64']
     nvcc command       : ['/usr/local/cuda/bin/nvcc']
     hipcc command      : (not found)
@@ -109,13 +109,13 @@ Collecting cupy>=9.0.0
   ************************************************************
 
   running egg_info
-  creating /tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info
-  writing /tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/PKG-INFO
-  writing dependency_links to /tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/dependency_links.txt
-  writing requirements to /tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/requires.txt
-  writing top-level names to /tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/top_level.txt
-  writing manifest file '/tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/SOURCES.txt'
-  reading manifest file '/tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/SOURCES.txt'
+  creating /tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info
+  writing /tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/PKG-INFO
+  writing dependency_links to /tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/dependency_links.txt
+  writing requirements to /tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/requires.txt
+  writing top-level names to /tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/top_level.txt
+  writing manifest file '/tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/SOURCES.txt'
+  reading manifest file '/tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/SOURCES.txt'
   reading manifest template 'MANIFEST.in'
   warning: no files found matching '*.pxi' under directory 'cupy'
   warning: no files found matching '*.hpp' under directory 'cupy_backends'
@@ -123,14 +123,14 @@ Collecting cupy>=9.0.0
   warning: no previously-included files matching '*.cpp' found under directory 'cupy'
   warning: no previously-included files matching '*.cpp' found under directory 'cupy_backends'
   adding license file 'docs/source/license.rst'
-  writing manifest file '/tmp/pip-pip-egg-info-ud6921hm/cupy.egg-info/SOURCES.txt'
+  writing manifest file '/tmp/pip-pip-egg-info-zeiihru8/cupy.egg-info/SOURCES.txt'
   Preparing metadata (setup.py): finished with status 'done'
 Requirement already satisfied: numpy<1.24,>=1.17 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy>=9.0.0) (1.19.5)
 Collecting fastrlock>=0.5
   Using cached fastrlock-0.8-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (46 kB)
 Building wheels for collected packages: cupy
   Building wheel for cupy (setup.py): started
-  Running command /home/znmeb/mambaforge/envs/r-reticulate/bin/python3.6 -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/setup.py'"'"'; __file__='"'"'/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-c5rw3zwl
+  Running command /home/znmeb/mambaforge/envs/r-reticulate/bin/python3.6 -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/setup.py'"'"'; __file__='"'"'/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-2mmwnx1p
   Options: {'package_name': 'cupy', 'long_description': None, 'wheel_libs': [], 'wheel_includes': [], 'wheel_metadata': None, 'no_rpath': False, 'profile': False, 'linetrace': False, 'annotate': False, 'no_cuda': False, 'use_hip': False}
 
   -------- Configuring Module: cuda --------
@@ -140,18 +140,18 @@ Building wheels for collected packages: cupy
   -------- Configuring Module: cudnn --------
 
   -------- Configuring Module: nccl --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpgkwoqqzv/a.cpp -o /tmp/tmpgkwoqqzv/tmp/tmpgkwoqqzv/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp4c9o118a/a.cpp -o /tmp/tmp4c9o118a/tmp/tmp4c9o118a/a.o" failed with exit status 1
 
   -------- Configuring Module: nvtx --------
 
   -------- Configuring Module: cutensor --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp10gbp517/a.cpp -o /tmp/tmp10gbp517/tmp/tmp10gbp517/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpfz9mwyb3/a.cpp -o /tmp/tmpfz9mwyb3/tmp/tmpfz9mwyb3/a.o" failed with exit status 1
 
   -------- Configuring Module: cub --------
   **************************************************
   *** WARNING: Cannot determine CUB version
   Cannot determine CUB version from git tag
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp2u0kar85/a.cpp -o /tmp/tmp2u0kar85/tmp/tmp2u0kar85/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpwq6bpx2d/a.cpp -o /tmp/tmpwq6bpx2d/tmp/tmpwq6bpx2d/a.o" failed with exit status 1
   **************************************************
 
   -------- Configuring Module: jitify --------
@@ -163,10 +163,10 @@ Building wheels for collected packages: cupy
   -------- Configuring Module: random --------
 
   -------- Configuring Module: cusparselt --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpasv040vm/a.cpp -o /tmp/tmpasv040vm/tmp/tmpasv040vm/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpgypvja6d/a.cpp -o /tmp/tmpgypvja6d/tmp/tmpgypvja6d/a.o" failed with exit status 1
 
   -------- Configuring Module: cugraph --------
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp9x6uhzye/a.cpp -o /tmp/tmp9x6uhzye/tmp/tmp9x6uhzye/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp5hefur9s/a.cpp -o /tmp/tmp5hefur9s/tmp/tmp5hefur9s/a.o" failed with exit status 1
 
   -------- Configuring Module: thrust --------
 
@@ -177,7 +177,7 @@ Building wheels for collected packages: cupy
   ************************************************************
 
   Build Environment:
-    Include directories: ['/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub', '/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include', '/usr/local/cuda/include']
+    Include directories: ['/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub', '/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include', '/usr/local/cuda/include']
     Library directories: ['/usr/local/cuda/lib64']
     nvcc command       : ['/usr/local/cuda/bin/nvcc']
     hipcc command      : (not found)
@@ -743,178 +743,178 @@ Building wheels for collected packages: cupy
   -------- Configuring Module: cuda --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpdsf_s1ct/tmp
-  creating /tmp/tmpdsf_s1ct/tmp/tmpdsf_s1ct
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpdsf_s1ct/a.cpp
+  creating /tmp/tmp4qnkc6xn/tmp
+  creating /tmp/tmp4qnkc6xn/tmp/tmp4qnkc6xn
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmp4qnkc6xn/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpdsf_s1ct/tmp/tmpdsf_s1ct/a.o -o /tmp/tmpdsf_s1ct/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp4qnkc6xn/tmp/tmp4qnkc6xn/a.o -o /tmp/tmp4qnkc6xn/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpsq1i_i76/tmp
-  creating /tmp/tmpsq1i_i76/tmp/tmpsq1i_i76
+  creating /tmp/tmptr0r6w5k/tmp
+  creating /tmp/tmptr0r6w5k/tmp/tmptr0r6w5k
   compile options: '-D_FORCE_INLINES=1 -c'
-  gcc: /tmp/tmpsq1i_i76/a.cpp
+  gcc: /tmp/tmptr0r6w5k/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpsq1i_i76/tmp/tmpsq1i_i76/a.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o /tmp/tmpsq1i_i76/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmptr0r6w5k/tmp/tmptr0r6w5k/a.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o /tmp/tmptr0r6w5k/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmp2jup_m0o/tmp
-  creating /tmp/tmp2jup_m0o/tmp/tmp2jup_m0o
-  compile options: '-I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmp2jup_m0o/a.cpp
+  creating /tmp/tmpjirv6la9/tmp
+  creating /tmp/tmpjirv6la9/tmp/tmpjirv6la9
+  compile options: '-I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpjirv6la9/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmp2jup_m0o/tmp/tmp2jup_m0o/a.o -o /tmp/tmp2jup_m0o/a
+  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpjirv6la9/tmp/tmpjirv6la9/a.o -o /tmp/tmpjirv6la9/a
 
   -------- Configuring Module: cusolver --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmp279hjof2/tmp
-  creating /tmp/tmp279hjof2/tmp/tmp279hjof2
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmp279hjof2/a.cpp
+  creating /tmp/tmpli152po3/tmp
+  creating /tmp/tmpli152po3/tmp/tmpli152po3
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpli152po3/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp279hjof2/tmp/tmp279hjof2/a.o -o /tmp/tmp279hjof2/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpli152po3/tmp/tmpli152po3/a.o -o /tmp/tmpli152po3/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpvc9n5e7i/tmp
-  creating /tmp/tmpvc9n5e7i/tmp/tmpvc9n5e7i
+  creating /tmp/tmp5az0rw2o/tmp
+  creating /tmp/tmp5az0rw2o/tmp/tmp5az0rw2o
   compile options: '-D_FORCE_INLINES=1 -c'
-  gcc: /tmp/tmpvc9n5e7i/a.cpp
+  gcc: /tmp/tmp5az0rw2o/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpvc9n5e7i/tmp/tmpvc9n5e7i/a.o -L/usr/local/cuda/lib64 -lcusolver -o /tmp/tmpvc9n5e7i/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp5az0rw2o/tmp/tmp5az0rw2o/a.o -L/usr/local/cuda/lib64 -lcusolver -o /tmp/tmp5az0rw2o/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpc4h5dg1q/tmp
-  creating /tmp/tmpc4h5dg1q/tmp/tmpc4h5dg1q
-  compile options: '-I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpc4h5dg1q/a.cpp
+  creating /tmp/tmpzsdeiv95/tmp
+  creating /tmp/tmpzsdeiv95/tmp/tmpzsdeiv95
+  compile options: '-I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpzsdeiv95/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpc4h5dg1q/tmp/tmpc4h5dg1q/a.o -o /tmp/tmpc4h5dg1q/a
+  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpzsdeiv95/tmp/tmpzsdeiv95/a.o -o /tmp/tmpzsdeiv95/a
 
   -------- Configuring Module: cudnn --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpxd5mvimw/tmp
-  creating /tmp/tmpxd5mvimw/tmp/tmpxd5mvimw
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpxd5mvimw/a.cpp
+  creating /tmp/tmptls1q53v/tmp
+  creating /tmp/tmptls1q53v/tmp/tmptls1q53v
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmptls1q53v/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpxd5mvimw/tmp/tmpxd5mvimw/a.o -o /tmp/tmpxd5mvimw/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmptls1q53v/tmp/tmptls1q53v/a.o -o /tmp/tmptls1q53v/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpsg9geamh/tmp
-  creating /tmp/tmpsg9geamh/tmp/tmpsg9geamh
+  creating /tmp/tmp_cjjxyb_/tmp
+  creating /tmp/tmp_cjjxyb_/tmp/tmp_cjjxyb_
   compile options: '-D_FORCE_INLINES=1 -c'
-  gcc: /tmp/tmpsg9geamh/a.cpp
+  gcc: /tmp/tmp_cjjxyb_/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpsg9geamh/tmp/tmpsg9geamh/a.o -L/usr/local/cuda/lib64 -lcudnn -o /tmp/tmpsg9geamh/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp_cjjxyb_/tmp/tmp_cjjxyb_/a.o -L/usr/local/cuda/lib64 -lcudnn -o /tmp/tmp_cjjxyb_/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmp2v7r1sot/tmp
-  creating /tmp/tmp2v7r1sot/tmp/tmp2v7r1sot
-  compile options: '-I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmp2v7r1sot/a.cpp
+  creating /tmp/tmpp56gyw80/tmp
+  creating /tmp/tmpp56gyw80/tmp/tmpp56gyw80
+  compile options: '-I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpp56gyw80/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmp2v7r1sot/tmp/tmp2v7r1sot/a.o -o /tmp/tmp2v7r1sot/a
+  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpp56gyw80/tmp/tmpp56gyw80/a.o -o /tmp/tmpp56gyw80/a
 
   -------- Configuring Module: nccl --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpttdaubic/tmp
-  creating /tmp/tmpttdaubic/tmp/tmpttdaubic
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpttdaubic/a.cpp
+  creating /tmp/tmpghbva8r0/tmp
+  creating /tmp/tmpghbva8r0/tmp/tmpghbva8r0
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpghbva8r0/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  /tmp/tmpttdaubic/a.cpp:1:10: fatal error: nccl.h: No such file or directory
+  /tmp/tmpghbva8r0/a.cpp:1:10: fatal error: nccl.h: No such file or directory
    #include <nccl.h>
             ^~~~~~~~
   compilation terminated.
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpttdaubic/a.cpp -o /tmp/tmpttdaubic/tmp/tmpttdaubic/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpghbva8r0/a.cpp -o /tmp/tmpghbva8r0/tmp/tmpghbva8r0/a.o" failed with exit status 1
 
   -------- Configuring Module: nvtx --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmp2hi1e07z/tmp
-  creating /tmp/tmp2hi1e07z/tmp/tmp2hi1e07z
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmp2hi1e07z/a.cpp
+  creating /tmp/tmpe4tjykil/tmp
+  creating /tmp/tmpe4tjykil/tmp/tmpe4tjykil
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpe4tjykil/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp2hi1e07z/tmp/tmp2hi1e07z/a.o -o /tmp/tmp2hi1e07z/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpe4tjykil/tmp/tmpe4tjykil/a.o -o /tmp/tmpe4tjykil/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpwad6hzyn/tmp
-  creating /tmp/tmpwad6hzyn/tmp/tmpwad6hzyn
+  creating /tmp/tmp1ma1n3y9/tmp
+  creating /tmp/tmp1ma1n3y9/tmp/tmp1ma1n3y9
   compile options: '-D_FORCE_INLINES=1 -c'
-  gcc: /tmp/tmpwad6hzyn/a.cpp
+  gcc: /tmp/tmp1ma1n3y9/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpwad6hzyn/tmp/tmpwad6hzyn/a.o -L/usr/local/cuda/lib64 -lnvToolsExt -o /tmp/tmpwad6hzyn/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp1ma1n3y9/tmp/tmp1ma1n3y9/a.o -L/usr/local/cuda/lib64 -lnvToolsExt -o /tmp/tmp1ma1n3y9/liba.so
 
   -------- Configuring Module: cutensor --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmp2zuys5e9/tmp
-  creating /tmp/tmp2zuys5e9/tmp/tmp2zuys5e9
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmp2zuys5e9/a.cpp
+  creating /tmp/tmpuh28tehl/tmp
+  creating /tmp/tmpuh28tehl/tmp/tmpuh28tehl
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpuh28tehl/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  /tmp/tmp2zuys5e9/a.cpp:1:10: fatal error: cutensor.h: No such file or directory
+  /tmp/tmpuh28tehl/a.cpp:1:10: fatal error: cutensor.h: No such file or directory
    #include <cutensor.h>
             ^~~~~~~~~~~~
   compilation terminated.
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp2zuys5e9/a.cpp -o /tmp/tmp2zuys5e9/tmp/tmp2zuys5e9/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpuh28tehl/a.cpp -o /tmp/tmpuh28tehl/tmp/tmpuh28tehl/a.o" failed with exit status 1
 
   -------- Configuring Module: cub --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpj8b4c6q0/tmp
-  creating /tmp/tmpj8b4c6q0/tmp/tmpj8b4c6q0
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpj8b4c6q0/a.cpp
+  creating /tmp/tmpkrvof8sr/tmp
+  creating /tmp/tmpkrvof8sr/tmp/tmpkrvof8sr
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpkrvof8sr/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpj8b4c6q0/tmp/tmpj8b4c6q0/a.o -o /tmp/tmpj8b4c6q0/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpkrvof8sr/tmp/tmpkrvof8sr/a.o -o /tmp/tmpkrvof8sr/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpgnfbwfjt/tmp
-  creating /tmp/tmpgnfbwfjt/tmp/tmpgnfbwfjt
+  creating /tmp/tmpkwm324y6/tmp
+  creating /tmp/tmpkwm324y6/tmp/tmpkwm324y6
   compile options: '-D_FORCE_INLINES=1 -c'
-  gcc: /tmp/tmpgnfbwfjt/a.cpp
+  gcc: /tmp/tmpkwm324y6/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpgnfbwfjt/tmp/tmpgnfbwfjt/a.o -L/usr/local/cuda/lib64 -lcudart -o /tmp/tmpgnfbwfjt/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpkwm324y6/tmp/tmpkwm324y6/a.o -L/usr/local/cuda/lib64 -lcudart -o /tmp/tmpkwm324y6/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmppnznj23a/tmp
-  creating /tmp/tmppnznj23a/tmp/tmppnznj23a
-  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmppnznj23a/a.cpp
+  creating /tmp/tmp8t1g9yxq/tmp
+  creating /tmp/tmp8t1g9yxq/tmp/tmp8t1g9yxq
+  compile options: '-D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmp8t1g9yxq/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  /tmp/tmppnznj23a/a.cpp:3:38: fatal error: cub/version.cuh: No such file or directory
+  /tmp/tmp8t1g9yxq/a.cpp:3:38: fatal error: cub/version.cuh: No such file or directory
                                #include <cub/version.cuh>
                                         ^~~~~~~~~~~~~~~~~
   compilation terminated.
   **************************************************
   *** WARNING: Cannot determine CUB version
   Cannot determine CUB version from git tag
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmppnznj23a/a.cpp -o /tmp/tmppnznj23a/tmp/tmppnznj23a/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp8t1g9yxq/a.cpp -o /tmp/tmp8t1g9yxq/tmp/tmp8t1g9yxq/a.o" failed with exit status 1
   **************************************************
 
   -------- Configuring Module: jitify --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmphcro7m3o/tmp
-  creating /tmp/tmphcro7m3o/tmp/tmphcro7m3o
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmphcro7m3o/a.cpp
+  creating /tmp/tmpualwc2zy/tmp
+  creating /tmp/tmpualwc2zy/tmp/tmpualwc2zy
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpualwc2zy/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmphcro7m3o/tmp/tmphcro7m3o/a.o -o /tmp/tmphcro7m3o/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpualwc2zy/tmp/tmpualwc2zy/a.o -o /tmp/tmpualwc2zy/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpvkep4xiu/tmp
-  creating /tmp/tmpvkep4xiu/tmp/tmpvkep4xiu
+  creating /tmp/tmppmvpxzg5/tmp
+  creating /tmp/tmppmvpxzg5/tmp/tmppmvpxzg5
   compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -c'
-  gcc: /tmp/tmpvkep4xiu/a.cpp
+  gcc: /tmp/tmppmvpxzg5/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpvkep4xiu/tmp/tmpvkep4xiu/a.o -L/usr/local/cuda/lib64 -lcuda -lcudart -lnvrtc -o /tmp/tmpvkep4xiu/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmppmvpxzg5/tmp/tmppmvpxzg5/a.o -L/usr/local/cuda/lib64 -lcuda -lcudart -lnvrtc -o /tmp/tmppmvpxzg5/liba.so
   **************************************************
   *** WARNING: Cannot determine Jitify version
   Cannot determine Jitify version from git
@@ -923,107 +923,107 @@ Building wheels for collected packages: cupy
   -------- Configuring Module: random --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpvhtwpbwg/tmp
-  creating /tmp/tmpvhtwpbwg/tmp/tmpvhtwpbwg
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpvhtwpbwg/a.cpp
+  creating /tmp/tmp1hlzd7v8/tmp
+  creating /tmp/tmp1hlzd7v8/tmp/tmp1hlzd7v8
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmp1hlzd7v8/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpvhtwpbwg/tmp/tmpvhtwpbwg/a.o -o /tmp/tmpvhtwpbwg/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp1hlzd7v8/tmp/tmp1hlzd7v8/a.o -o /tmp/tmp1hlzd7v8/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpubb70kio/tmp
-  creating /tmp/tmpubb70kio/tmp/tmpubb70kio
+  creating /tmp/tmpn097zlb4/tmp
+  creating /tmp/tmpn097zlb4/tmp/tmpn097zlb4
   compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -c'
-  gcc: /tmp/tmpubb70kio/a.cpp
+  gcc: /tmp/tmpn097zlb4/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpubb70kio/tmp/tmpubb70kio/a.o -L/usr/local/cuda/lib64 -lcudart -lcurand -o /tmp/tmpubb70kio/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpn097zlb4/tmp/tmpn097zlb4/a.o -L/usr/local/cuda/lib64 -lcudart -lcurand -o /tmp/tmpn097zlb4/liba.so
 
   -------- Configuring Module: cusparselt --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpdu5tqx4_/tmp
-  creating /tmp/tmpdu5tqx4_/tmp/tmpdu5tqx4_
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpdu5tqx4_/a.cpp
+  creating /tmp/tmplzxs7pc1/tmp
+  creating /tmp/tmplzxs7pc1/tmp/tmplzxs7pc1
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmplzxs7pc1/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  /tmp/tmpdu5tqx4_/a.cpp:1:10: fatal error: cusparseLt.h: No such file or directory
+  /tmp/tmplzxs7pc1/a.cpp:1:10: fatal error: cusparseLt.h: No such file or directory
    #include <cusparseLt.h>
             ^~~~~~~~~~~~~~
   compilation terminated.
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmpdu5tqx4_/a.cpp -o /tmp/tmpdu5tqx4_/tmp/tmpdu5tqx4_/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmplzxs7pc1/a.cpp -o /tmp/tmplzxs7pc1/tmp/tmplzxs7pc1/a.o" failed with exit status 1
 
   -------- Configuring Module: cugraph --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmp32ycx3_h/tmp
-  creating /tmp/tmp32ycx3_h/tmp/tmp32ycx3_h
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmp32ycx3_h/a.cpp
+  creating /tmp/tmp91qher9r/tmp
+  creating /tmp/tmp91qher9r/tmp/tmp91qher9r
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmp91qher9r/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  /tmp/tmp32ycx3_h/a.cpp:1:10: fatal error: cugraph/raft/error.hpp: No such file or directory
+  /tmp/tmp91qher9r/a.cpp:1:10: fatal error: cugraph/raft/error.hpp: No such file or directory
    #include <cugraph/raft/error.hpp>
             ^~~~~~~~~~~~~~~~~~~~~~~~
   compilation terminated.
-  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp32ycx3_h/a.cpp -o /tmp/tmp32ycx3_h/tmp/tmp32ycx3_h/a.o" failed with exit status 1
+  Command "gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c /tmp/tmp91qher9r/a.cpp -o /tmp/tmp91qher9r/tmp/tmp91qher9r/a.o" failed with exit status 1
 
   -------- Configuring Module: thrust --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpls0qqnl_/tmp
-  creating /tmp/tmpls0qqnl_/tmp/tmpls0qqnl_
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpls0qqnl_/a.cpp
+  creating /tmp/tmpn4qwjguu/tmp
+  creating /tmp/tmpn4qwjguu/tmp/tmpn4qwjguu
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpn4qwjguu/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpls0qqnl_/tmp/tmpls0qqnl_/a.o -o /tmp/tmpls0qqnl_/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpn4qwjguu/tmp/tmpn4qwjguu/a.o -o /tmp/tmpn4qwjguu/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpgpdrt3tt/tmp
-  creating /tmp/tmpgpdrt3tt/tmp/tmpgpdrt3tt
+  creating /tmp/tmp2q9oayz4/tmp
+  creating /tmp/tmp2q9oayz4/tmp/tmp2q9oayz4
   compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -c'
-  gcc: /tmp/tmpgpdrt3tt/a.cpp
+  gcc: /tmp/tmp2q9oayz4/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpgpdrt3tt/tmp/tmpgpdrt3tt/a.o -L/usr/local/cuda/lib64 -lcudart -o /tmp/tmpgpdrt3tt/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp2q9oayz4/tmp/tmp2q9oayz4/a.o -L/usr/local/cuda/lib64 -lcudart -o /tmp/tmp2q9oayz4/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpaemx6r_w/tmp
-  creating /tmp/tmpaemx6r_w/tmp/tmpaemx6r_w
-  compile options: '-I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpaemx6r_w/a.cpp
+  creating /tmp/tmptsnrn84q/tmp
+  creating /tmp/tmptsnrn84q/tmp/tmptsnrn84q
+  compile options: '-I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmptsnrn84q/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpaemx6r_w/tmp/tmpaemx6r_w/a.o -o /tmp/tmpaemx6r_w/a
+  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmptsnrn84q/tmp/tmptsnrn84q/a.o -o /tmp/tmptsnrn84q/a
 
   -------- Configuring Module: dlpack --------
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpu5o_zpj8/tmp
-  creating /tmp/tmpu5o_zpj8/tmp/tmpu5o_zpj8
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpu5o_zpj8/a.cpp
+  creating /tmp/tmp98l4jyc9/tmp
+  creating /tmp/tmp98l4jyc9/tmp/tmp98l4jyc9
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmp98l4jyc9/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpu5o_zpj8/tmp/tmpu5o_zpj8/a.o -o /tmp/tmpu5o_zpj8/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp98l4jyc9/tmp/tmp98l4jyc9/a.o -o /tmp/tmp98l4jyc9/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpf9jaj9po/tmp
-  creating /tmp/tmpf9jaj9po/tmp/tmpf9jaj9po
+  creating /tmp/tmp9vtjwi2h/tmp
+  creating /tmp/tmp9vtjwi2h/tmp/tmp9vtjwi2h
   compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -c'
-  gcc: /tmp/tmpf9jaj9po/a.cpp
+  gcc: /tmp/tmp9vtjwi2h/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpf9jaj9po/tmp/tmpf9jaj9po/a.o -L/usr/local/cuda/lib64 -o /tmp/tmpf9jaj9po/liba.so
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp9vtjwi2h/tmp/tmp9vtjwi2h/a.o -L/usr/local/cuda/lib64 -o /tmp/tmp9vtjwi2h/liba.so
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating /tmp/tmpi8vxnz09/tmp
-  creating /tmp/tmpi8vxnz09/tmp/tmpi8vxnz09
-  compile options: '-I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -c'
-  gcc: /tmp/tmpi8vxnz09/a.cpp
+  creating /tmp/tmpejlfchjy/tmp
+  creating /tmp/tmpejlfchjy/tmp/tmpejlfchjy
+  compile options: '-I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -c'
+  gcc: /tmp/tmpejlfchjy/a.cpp
   cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
-  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpi8vxnz09/tmp/tmpi8vxnz09/a.o -L/usr/local/cuda/lib64 -lcudart -o /tmp/tmpi8vxnz09/a
+  g++ -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ /tmp/tmpejlfchjy/tmp/tmpejlfchjy/a.o -L/usr/local/cuda/lib64 -lcudart -o /tmp/tmpejlfchjy/a
 
   ************************************************************
   * CuPy Configuration Summary                               *
   ************************************************************
 
   Build Environment:
-    Include directories: ['/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub', '/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include', '/usr/local/cuda/include']
+    Include directories: ['/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub', '/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include', '/usr/local/cuda/include']
     Library directories: ['/usr/local/cuda/lib64']
     nvcc command       : ['/usr/local/cuda/bin/nvcc']
     hipcc command      : (not found)
@@ -1199,302 +1199,302 @@ Building wheels for collected packages: cupy
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
   building 'cupy_backends.cuda.api.runtime' extension
-  C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
-
-  building 'cupy_backends.cuda.libs.cublas' extension
   creating build/temp.linux-aarch64-3.6
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
+  creating build/temp.linux-aarch64-3.6/cupy_backends
+  building 'cupy_backends.cuda.libs.cublas' extension
+  creating build/temp.linux-aarch64-3.6/cupy_backends/cuda
+  C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
+  creating build/temp.linux-aarch64-3.6/cupy_backends/cuda/api
+  creating build/temp.linux-aarch64-3.6/cupy_backends/cuda/api
   building 'cupy_backends.cuda.libs.curand' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  creating build/temp.linux-aarch64-3.6/cupy_backends
-  creating build/temp.linux-aarch64-3.6/cupy_backends/cuda
-  creating build/temp.linux-aarch64-3.6/cupy_backends/cuda/api
-  creating build/temp.linux-aarch64-3.6/cupy_backends/cuda/api
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   creating build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/api/runtime.cpp
-  gcc: cupy_backends/cuda/api/driver.cpp
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
-  gcc: cupy_backends/cuda/libs/cublas.cpp
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/libs/curand.cpp
+
+  gcc: cupy_backends/cuda/api/driver.cpp
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  gcc: cupy_backends/cuda/libs/cublas.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/curand.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/curand.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy_backends.cuda.libs.cusparse' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/libs/cusparse.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/api/driver.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/api/driver.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy_backends.cuda.libs.nvrtc' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/libs/nvrtc.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/nvrtc.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/nvrtc.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy_backends.cuda.libs.profiler' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/libs/profiler.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/profiler.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/profiler.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/api/runtime.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/api/runtime.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy_backends.cuda.stream' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/stream.cpp
   building 'cupy._core._accelerator' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
   creating build/temp.linux-aarch64-3.6/cupy
   creating build/temp.linux-aarch64-3.6/cupy/_core
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_accelerator.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/stream.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/stream.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._carray' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_carray.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_accelerator.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_accelerator.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._cub_reduction' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_cub_reduction.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_carray.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_carray.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._dtype' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_dtype.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/cublas.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/cublas.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._fusion_kernel' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_fusion_kernel.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_dtype.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_dtype.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._fusion_thread_local' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_fusion_thread_local.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_fusion_thread_local.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_fusion_thread_local.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._fusion_trace' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_fusion_trace.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_cub_reduction.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_cub_reduction.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._fusion_variable' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_fusion_variable.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_fusion_kernel.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_fusion_kernel.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._kernel' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_kernel.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_fusion_variable.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_fusion_variable.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._memory_range' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_memory_range.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_memory_range.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_memory_range.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._optimize_config' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_optimize_config.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_optimize_config.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_optimize_config.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._reduction' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_reduction.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_fusion_trace.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_fusion_trace.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_binary' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_binary.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_binary.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_binary.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_indexing' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_indexing.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_kernel.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_kernel.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_linalg' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_linalg.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_reduction.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_reduction.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_logic' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_logic.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_indexing.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_indexing.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_manipulation' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_manipulation.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_logic.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_logic.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_math' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_math.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/cusparse.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/cusparse.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_sorting' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_sorting.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_linalg.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_linalg.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._routines_statistics' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_routines_statistics.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_sorting.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_sorting.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core._scalar' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/_scalar.cpp
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_manipulation.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_manipulation.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_math.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_math.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core.core' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/core.cpp
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_math.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_math.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_manipulation.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_manipulation.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core.flags' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/flags.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_scalar.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_scalar.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core.internal' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/internal.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/flags.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/flags.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core.fusion' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/fusion.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/_routines_statistics.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/_routines_statistics.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core.new_fusion' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/new_fusion.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/internal.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/internal.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._core.raw' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_core/raw.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/new_fusion.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/new_fusion.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.common' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
   creating build/temp.linux-aarch64-3.6/cupy/cuda
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/common.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/common.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/common.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.cufft' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/cufft.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/raw.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/raw.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.device' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/device.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/device.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/device.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.memory' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/memory.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/core.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/core.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.memory_hook' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/memory_hook.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/cufft.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/cufft.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.pinned_memory' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/pinned_memory.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/memory_hook.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/memory_hook.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.function' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/function.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/fusion.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/_core/fusion.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.stream' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/stream.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/pinned_memory.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/pinned_memory.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.texture' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/texture.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/function.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/function.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.fft._cache' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
   creating build/temp.linux-aarch64-3.6/cupy/fft
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/fft/_cache.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/stream.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/stream.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.fft._callback' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/fft/_callback.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/memory.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/memory.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.lib._polynomial' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
   creating build/temp.linux-aarch64-3.6/cupy/lib
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/lib/_polynomial.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/texture.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/texture.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy._util' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/_util.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/lib/_polynomial.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/lib/_polynomial.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy_backends.cuda.libs.cusolver' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   extra options: '--std=c++11 -fopenmp'
   gcc: cupy_backends/cuda/libs/cusolver.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/fft/_cache.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/fft/_cache.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
@@ -1502,69 +1502,69 @@ Building wheels for collected packages: cupy
   building 'cupy.cusolver' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   extra options: '--std=c++11 -fopenmp'
   gcc: cupy/cusolver.cpp
   building 'cupy_backends.cuda.libs.cudnn' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/libs/cudnn.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/fft/_callback.o -L/usr/local/cuda/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/fft/_callback.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cudnn' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cudnn.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/cudnn.o -L/usr/local/cuda/lib64 -lcudnn -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/cudnn.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy_backends.cuda.libs.nvtx' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy_backends/cuda/libs/nvtx.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cusolver.o -L/usr/local/cuda/lib64 -lcusolver -o build/lib.linux-aarch64-3.6/cupy/cusolver.cpython-36m-aarch64-linux-gnu.so -fopenmp -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.cub' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/cuda/cub.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/nvtx.o -L/usr/local/cuda/lib64 -lnvToolsExt -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/nvtx.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.cuda.jitify' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   extra options: '--std=c++11'
   NVCC options: ['--generate-code=arch=compute_53,code=sm_53', '-O2', '--compiler-options="-fPIC"', '--std=c++11']
-  /usr/local/cuda/bin/nvcc -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c cupy/cuda/cupy_cub.cu -o build/temp.linux-aarch64-3.6/cupy/cuda/cupy_cub.o --generate-code=arch=compute_53,code=sm_53 -O2 --compiler-options="-fPIC" --std=c++11
+  /usr/local/cuda/bin/nvcc -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c cupy/cuda/cupy_cub.cu -o build/temp.linux-aarch64-3.6/cupy/cuda/cupy_cub.o --generate-code=arch=compute_53,code=sm_53 -O2 --compiler-options="-fPIC" --std=c++11
   gcc: cupy/cuda/jitify.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy_backends/cuda/libs/cusolver.o -L/usr/local/cuda/lib64 -lcusolver -o build/lib.linux-aarch64-3.6/cupy_backends/cuda/libs/cusolver.cpython-36m-aarch64-linux-gnu.so -fopenmp -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.random._bit_generator' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
   creating build/temp.linux-aarch64-3.6/cupy/random
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/random/_bit_generator.cpp
-  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/jitify.o -L/usr/local/cuda/lib64 -lcuda -lcudart -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/jitify.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cudnn.o -L/usr/local/cuda/lib64 -lcudnn -o build/lib.linux-aarch64-3.6/cupy/cudnn.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   building 'cupy.random._generator_api' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   gcc: cupy/random/_generator_api.cpp
+  g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/cuda/jitify.o -L/usr/local/cuda/lib64 -lcuda -lcudart -lnvrtc -o build/lib.linux-aarch64-3.6/cupy/cuda/jitify.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   NVCC options: ['--generate-code=arch=compute_53,code=sm_53', '-O2', '--compiler-options="-fPIC"', '--std=c++11']
-  /usr/local/cuda/bin/nvcc -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c cupy/random/cupy_distributions.cu -o build/temp.linux-aarch64-3.6/cupy/random/cupy_distributions.o --generate-code=arch=compute_53,code=sm_53 -O2 --compiler-options="-fPIC" --std=c++11
+  /usr/local/cuda/bin/nvcc -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c cupy/random/cupy_distributions.cu -o build/temp.linux-aarch64-3.6/cupy/random/cupy_distributions.o --generate-code=arch=compute_53,code=sm_53 -O2 --compiler-options="-fPIC" --std=c++11
   building 'cupy.cuda.thrust' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/random/_bit_generator.o -L/usr/local/cuda/lib64 -lcudart -lcurand -o build/lib.linux-aarch64-3.6/cupy/random/_bit_generator.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   gcc: cupy/cuda/thrust.cpp
   building 'cupy._core.dlpack' extension
   C compiler: gcc -pthread -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
+  compile options: '-D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c'
   NVCC options: ['--generate-code=arch=compute_53,code=sm_53', '-O2', '--compiler-options="-fPIC"', '--std=c++11']
-  /usr/local/cuda/bin/nvcc -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-a0940fm4/cupy_13c7358b7f7743b19774044c6648631b/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c cupy/cuda/cupy_thrust.cu -o build/temp.linux-aarch64-3.6/cupy/cuda/cupy_thrust.o --generate-code=arch=compute_53,code=sm_53 -O2 --compiler-options="-fPIC" --std=c++11
+  /usr/local/cuda/bin/nvcc -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=-1 -DCUPY_JITIFY_VERSION_CODE=-1 -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include/cupy/cub -I/tmp/pip-install-2idoo_i3/cupy_9ac023842d714d45ae91c0b0711e8b89/install/../cupy/_core/include -I/usr/local/cuda/include -I/home/znmeb/mambaforge/envs/r-reticulate/include/python3.6m -c cupy/cuda/cupy_thrust.cu -o build/temp.linux-aarch64-3.6/cupy/cuda/cupy_thrust.o --generate-code=arch=compute_53,code=sm_53 -O2 --compiler-options="-fPIC" --std=c++11
   gcc: cupy/_core/dlpack.cpp
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/_core/dlpack.o -L/usr/local/cuda/lib64 -o build/lib.linux-aarch64-3.6/cupy/_core/dlpack.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
   g++ -pthread -shared -B /home/znmeb/mambaforge/envs/r-reticulate/compiler_compat -L/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,-rpath=/home/znmeb/mambaforge/envs/r-reticulate/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-aarch64-3.6/cupy/random/_generator_api.o build/temp.linux-aarch64-3.6/cupy/random/cupy_distributions.o -L/usr/local/cuda/lib64 -lcudart -lcurand -o build/lib.linux-aarch64-3.6/cupy/random/_generator_api.cpython-36m-aarch64-linux-gnu.so -Wl,--disable-new-dtags,-rpath,/usr/local/cuda/lib64
@@ -2162,7 +2162,7 @@ Building wheels for collected packages: cupy
   running install_scripts
   adding license file "docs/source/license.rst" (matched pattern "docs/source/license.rst")
   creating build/bdist.linux-aarch64/wheel/cupy-9.6.0.dist-info/WHEEL
-  creating '/tmp/pip-wheel-c5rw3zwl/cupy-9.6.0-cp36-cp36m-linux_aarch64.whl' and adding 'build/bdist.linux-aarch64/wheel' to it
+  creating '/tmp/pip-wheel-2mmwnx1p/cupy-9.6.0-cp36-cp36m-linux_aarch64.whl' and adding 'build/bdist.linux-aarch64/wheel' to it
   adding 'cupy/__init__.py'
   adding 'cupy/_environment.py'
   adding 'cupy/_util.cpython-36m-aarch64-linux-gnu.so'
@@ -2657,7 +2657,7 @@ Building wheels for collected packages: cupy
   adding 'cupy-9.6.0.dist-info/RECORD'
   removing build/bdist.linux-aarch64/wheel
   Building wheel for cupy (setup.py): finished with status 'done'
-  Created wheel for cupy: filename=cupy-9.6.0-cp36-cp36m-linux_aarch64.whl size=25782102 sha256=d27a7ab37d01e75dc6d265f21ed56e98c28e6ab20297dc7cdf544accaef04aba
+  Created wheel for cupy: filename=cupy-9.6.0-cp36-cp36m-linux_aarch64.whl size=25782177 sha256=928ec8fa6a6eda098f6d9b5b7d9119973fba7adeee868681278117416e3c1d32
   Stored in directory: /home/znmeb/.cache/pip/wheels/11/68/c4/896dee65670b5f3ba0d07f70cd3e2af4272f01c8dae767f959
 Successfully built cupy
 Installing collected packages: fastrlock, cupy
@@ -2844,5 +2844,5 @@ zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-2718.08user 54.81system 21:00.67elapsed 219%CPU (0avgtext+0avgdata 1973684maxresident)k
-505696inputs+2427824outputs (151major+7194587minor)pagefaults 0swaps
+2714.91user 55.45system 21:00.54elapsed 219%CPU (0avgtext+0avgdata 1973784maxresident)k
+503024inputs+2427824outputs (151major+7102597minor)pagefaults 0swaps

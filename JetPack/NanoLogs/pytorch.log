@@ -24,8 +24,8 @@ Redirecting output to ‘wget-log’.
 ~/Projects/AlgoCompSynth-One/JetPack
 Installing PyTorch
 Processing ./Wheels/torch-1.10.0-cp36-cp36m-linux_aarch64.whl
-Requirement already satisfied: typing-extensions in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (4.1.1)
 Requirement already satisfied: dataclasses in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (0.8)
+Requirement already satisfied: typing-extensions in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from torch==1.10.0) (4.1.1)
 Installing collected packages: torch
 Successfully installed torch-1.10.0
 Cleanup
@@ -209,5 +209,5 @@ zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-52.92user 7.94system 1:43.43elapsed 58%CPU (0avgtext+0avgdata 131280maxresident)k
-108032inputs+2262776outputs (60major+164243minor)pagefaults 0swaps
+59.38user 8.97system 2:01.93elapsed 56%CPU (0avgtext+0avgdata 146896maxresident)k
+77344inputs+2513488outputs (59major+173351minor)pagefaults 0swaps

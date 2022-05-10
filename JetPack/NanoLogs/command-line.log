@@ -18,21 +18,26 @@ Get:8 file:/var/visionworks-tracking-repo  Release [2,010 B]
 Get:9 https://repo.download.nvidia.com/jetson/common r32.7 InRelease [2,555 B]
 Get:10 https://repo.download.nvidia.com/jetson/t210 r32.7 InRelease [2,547 B]
 Hit:12 http://ports.ubuntu.com/ubuntu-ports bionic InRelease
-Hit:13 http://ports.ubuntu.com/ubuntu-ports bionic-updates InRelease
-Hit:15 http://ports.ubuntu.com/ubuntu-ports bionic-backports InRelease
-Hit:16 http://ports.ubuntu.com/ubuntu-ports bionic-security InRelease
-Fetched 5,102 B in 2s (2,087 B/s)
+Get:14 http://ports.ubuntu.com/ubuntu-ports bionic-updates InRelease [88.7 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports bionic-backports InRelease [74.6 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports bionic-security InRelease [88.7 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 DEP-11 Metadata [291 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports bionic-updates/universe arm64 DEP-11 Metadata [296 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports bionic-backports/universe arm64 DEP-11 Metadata [9,264 B]
+Get:22 http://ports.ubuntu.com/ubuntu-ports bionic-security/main arm64 DEP-11 Metadata [49.1 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports bionic-security/universe arm64 DEP-11 Metadata [55.0 kB]
+Fetched 957 kB in 3s (331 kB/s)
 Reading package lists...
 Installing gnupg2 if needed
 Updating NVIDIA keys
 Warning: apt-key output should not be parsed (stdout is not a terminal)
-Executing: /tmp/apt-key-gpghome.NPUS4O7XGb/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+Executing: /tmp/apt-key-gpghome.37c9XFNVFs/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 gpg: requesting key from 'https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub'
 gpg: key A4B469963BF863CC: "cudatools <cudatools@nvidia.com>" not changed
 gpg: Total number processed: 1
 gpg:              unchanged: 1
 Warning: apt-key output should not be parsed (stdout is not a terminal)
-Executing: /tmp/apt-key-gpghome.hDNtdu0Jm5/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
+Executing: /tmp/apt-key-gpghome.oV5QwLsBEp/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
 gpg: requesting key from 'https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub'
 gpg: key F60F4B3D7FA2AF80: "cudatools <cudatools@nvidia.com>" not changed
 gpg: Total number processed: 1

@@ -151,8 +151,8 @@ Preparing transaction: ...working... done
 Verifying transaction: ...working... done
 Executing transaction: ...working... done
 Installing pip dependencies: ...working... done
-62.15user 11.56system 1:16.68elapsed 96%CPU (0avgtext+0avgdata 200776maxresident)k
-238176inputs+373648outputs (10major+190535minor)pagefaults 0swaps
+62.00user 11.75system 1:15.16elapsed 98%CPU (0avgtext+0avgdata 197292maxresident)k
+237216inputs+373648outputs (10major+178983minor)pagefaults 0swaps
 Activating cusignal-dev
 Building cuSignal wheel
 Building for *ALL* supported GPU architectures...
@@ -457,15 +457,15 @@ adding 'cusignal-22.4.0+0.g06f58b4.dirty.dist-info/RECORD'
 removing build/bdist.linux-aarch64/wheel
 /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages/setuptools/dist.py:487: UserWarning: Normalizing '22.04.00+0.g06f58b4.dirty' to '22.4.0+0.g06f58b4.dirty'
   warnings.warn(tmpl.format(**locals()))
-184.38user 11.05system 1:19.41elapsed 246%CPU (0avgtext+0avgdata 97260maxresident)k
-63824inputs+239168outputs (35major+1502056minor)pagefaults 0swaps
+184.71user 10.85system 1:19.83elapsed 244%CPU (0avgtext+0avgdata 97444maxresident)k
+64136inputs+239168outputs (33major+1501303minor)pagefaults 0swaps
 Saving cuSignal wheel
 Test installing cuSignal wheel
 Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl
 Requirement already satisfied: numba in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
-Requirement already satisfied: setuptools in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
-Requirement already satisfied: numpy>=1.15 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
 Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
+Requirement already satisfied: numpy>=1.15 in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (1.19.5)
+Requirement already satisfied: setuptools in /home/znmeb/mambaforge/envs/cusignal-dev/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (58.0.4)
 Installing collected packages: cusignal
 Successfully installed cusignal-22.4.0+0.g06f58b4.dirty
 Copying /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Projects/cusignal/notebooks to /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Notebooks/cusignal-notebooks
@@ -474,8 +474,8 @@ Deactivating cusignal-dev
 Activating r-reticulate
 Installing cuSignal wheel in r-reticulate
 Requirement already satisfied: cupy in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (9.6.0)
-Requirement already satisfied: numpy<1.24,>=1.17 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (1.19.5)
 Requirement already satisfied: fastrlock>=0.5 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (0.8)
+Requirement already satisfied: numpy<1.24,>=1.17 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cupy) (1.19.5)
 Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels/cusignal-22.4.0+0.g06f58b4.dirty-py3-none-any.whl
 Requirement already satisfied: numba in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from cusignal==22.4.0+0.g06f58b4.dirty) (0.53.1)
 Requirement already satisfied: llvmlite<0.37,>=0.36.0rc1 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.6/site-packages (from numba->cusignal==22.4.0+0.g06f58b4.dirty) (0.36.0)
@@ -734,5 +734,5 @@ zipp                      3.6.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-279.48user 25.92system 3:13.52elapsed 157%CPU (0avgtext+0avgdata 200776maxresident)k
-338080inputs+680880outputs (85major+1877254minor)pagefaults 0swaps
+279.91user 25.66system 3:12.48elapsed 158%CPU (0avgtext+0avgdata 197292maxresident)k
+328040inputs+680872outputs (73major+1865784minor)pagefaults 0swaps

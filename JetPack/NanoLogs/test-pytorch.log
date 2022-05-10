@@ -6,5 +6,5 @@ CUDA device count: 1
 current CUDA device: 0
 CUDA device name: NVIDIA Tegra X1
 Tensor a = tensor([0., 0.], device='cuda:0')
-Tensor b = tensor([1.1750, 0.2581], device='cuda:0')
-Tensor c = tensor([1.1750, 0.2581], device='cuda:0')
+Tensor b = tensor([1.4127, 0.4605], device='cuda:0')
+Tensor c = tensor([1.4127, 0.4605], device='cuda:0')

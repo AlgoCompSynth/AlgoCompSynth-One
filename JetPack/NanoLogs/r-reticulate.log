@@ -187,8 +187,8 @@ Executing transaction: ...working... done
 #
 #     $ conda deactivate
 
-142.48user 23.49system 2:40.64elapsed 103%CPU (0avgtext+0avgdata 310404maxresident)k
-9832inputs+1789832outputs (11major+241890minor)pagefaults 0swaps
+144.92user 24.16system 2:49.97elapsed 99%CPU (0avgtext+0avgdata 325492maxresident)k
+8inputs+1789960outputs (0major+241486minor)pagefaults 0swaps
 Activating r-reticulate
 Cleanup
 # packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
@@ -769,5 +769,5 @@ Removed reproc-14.2.3-hf897c2e_0.tar.bz2
 Removed zstd-1.5.2-h41fb7a4_0.tar.bz2
 Defining r-reticulate and deac aliases
 Finished
-150.42user 23.97system 2:49.21elapsed 103%CPU (0avgtext+0avgdata 310404maxresident)k
-9936inputs+1789912outputs (13major+273508minor)pagefaults 0swaps
+152.84user 24.60system 2:58.50elapsed 99%CPU (0avgtext+0avgdata 325492maxresident)k
+8inputs+1790040outputs (0major+273037minor)pagefaults 0swaps
