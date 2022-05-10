@@ -115,7 +115,7 @@ joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
 jpeg                      9e                   h9cdd2b7_1    conda-forge
 json5                     0.9.5              pyh9f0ad1d_0    conda-forge
 jsonschema                4.5.1              pyhd8ed1ab_0    conda-forge
-jupyter_client            7.3.0              pyhd8ed1ab_0    conda-forge
+jupyter_client            7.3.1              pyhd8ed1ab_0    conda-forge
 jupyter_core              4.9.2            py38he3eb160_0    conda-forge
 jupyter_server            1.13.1             pyhd8ed1ab_0    conda-forge
 jupyterlab                3.3.4              pyhd8ed1ab_0    conda-forge
@@ -235,5 +235,5 @@ zipp                      3.8.0              pyhd8ed1ab_0    conda-forge
 zlib                      1.2.11            h4e544f5_1014    conda-forge
 zstd                      1.5.2                h41fb7a4_0    conda-forge
 Finished
-51.06user 8.61system 1:19.55elapsed 75%CPU (0avgtext+0avgdata 156060maxresident)k
-8inputs+1689704outputs (0major+194773minor)pagefaults 0swaps
+49.19user 8.75system 1:21.34elapsed 71%CPU (0avgtext+0avgdata 142636maxresident)k
+56inputs+1610192outputs (1major+199269minor)pagefaults 0swaps

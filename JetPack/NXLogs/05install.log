@@ -32,8 +32,8 @@ SYNTH_WHEELS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack/Wheels
 
 Creating virtual desktop
 Installing command line conveniences
-Installing Mambaforge if necessary
-..Installing Mambaforge
+Defining Mambaforge home
+MAMBAFORGE_HOME: /home/znmeb/mambaforge
 Enabling conda and mamba commands
 Creating r-reticulate mamba environment if necessary
 ..Creating r-reticulate
@@ -51,8 +51,8 @@ CUDA device count: 1
 current CUDA device: 0
 CUDA device name: Xavier
 Tensor a = tensor([0., 0.], device='cuda:0')
-Tensor b = tensor([1.1803, 1.1581], device='cuda:0')
-Tensor c = tensor([1.1803, 1.1581], device='cuda:0')
+Tensor b = tensor([-0.0787, -0.2276], device='cuda:0')
+Tensor c = tensor([-0.0787, -0.2276], device='cuda:0')
 Installing torchaudio if necessary
 ..Installing torchaudio
 Testing torchaudio import

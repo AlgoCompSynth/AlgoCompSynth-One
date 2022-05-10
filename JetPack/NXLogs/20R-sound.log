@@ -174,7 +174,7 @@ joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
 jpeg                      9e                   h9cdd2b7_1    conda-forge
 json5                     0.9.5              pyh9f0ad1d_0    conda-forge
 jsonschema                4.5.1              pyhd8ed1ab_0    conda-forge
-jupyter_client            7.3.0              pyhd8ed1ab_0    conda-forge
+jupyter_client            7.3.1              pyhd8ed1ab_0    conda-forge
 jupyter_core              4.9.2            py38he3eb160_0    conda-forge
 jupyter_server            1.13.1             pyhd8ed1ab_0    conda-forge
 jupyterlab                3.3.4              pyhd8ed1ab_0    conda-forge

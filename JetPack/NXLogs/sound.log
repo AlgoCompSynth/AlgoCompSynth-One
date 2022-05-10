@@ -38,5 +38,5 @@ Making 'packages.html' ... done
 [166] "viridisLite"  "waldo"        "warbleR"      "whisker"      "withr"       
 [171] "xfun"         "xml2"         "xopen"        "xtable"       "yaml"        
 [176] "zip"          "zoo"         
-2192.10user 217.37system 20:43.73elapsed 193%CPU (0avgtext+0avgdata 484472maxresident)k
-2480inputs+970720outputs (69major+17086622minor)pagefaults 0swaps
+2200.39user 213.13system 20:48.34elapsed 193%CPU (0avgtext+0avgdata 484872maxresident)k
+10568inputs+970752outputs (82major+17039992minor)pagefaults 0swaps

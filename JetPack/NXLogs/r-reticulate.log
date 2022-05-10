@@ -71,7 +71,7 @@ Transaction
   + jpeg                                  9e  h9cdd2b7_1                conda-forge/linux-aarch64      403kB
   + json5                              0.9.5  pyh9f0ad1d_0              conda-forge/noarch              21kB
   + jsonschema                         4.5.1  pyhd8ed1ab_0              conda-forge/noarch              59kB
-  + jupyter_client                     7.3.0  pyhd8ed1ab_0              conda-forge/noarch              93kB
+  + jupyter_client                     7.3.1  pyhd8ed1ab_0              conda-forge/noarch              93kB
   + jupyter_core                       4.9.2  py38he3eb160_0            conda-forge/linux-aarch64       83kB
   + jupyter_server                    1.13.1  pyhd8ed1ab_0              conda-forge/noarch             272kB
   + jupyterlab                         3.3.4  pyhd8ed1ab_0              conda-forge/noarch               6MB
@@ -214,8 +214,8 @@ Executing transaction: ...working... done
 #
 #     $ conda deactivate
 
-117.70user 28.05system 2:16.75elapsed 106%CPU (0avgtext+0avgdata 365892maxresident)k
-0inputs+2417512outputs (0major+288986minor)pagefaults 0swaps
+118.02user 29.27system 2:27.09elapsed 100%CPU (0avgtext+0avgdata 371200maxresident)k
+1560inputs+2417616outputs (0major+292999minor)pagefaults 0swaps
 Activating r-reticulate
 Cleanup
 # packages in environment at /home/znmeb/mambaforge/envs/r-reticulate:
@@ -268,7 +268,7 @@ joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
 jpeg                      9e                   h9cdd2b7_1    conda-forge
 json5                     0.9.5              pyh9f0ad1d_0    conda-forge
 jsonschema                4.5.1              pyhd8ed1ab_0    conda-forge
-jupyter_client            7.3.0              pyhd8ed1ab_0    conda-forge
+jupyter_client            7.3.1              pyhd8ed1ab_0    conda-forge
 jupyter_core              4.9.2            py38he3eb160_0    conda-forge
 jupyter_server            1.13.1             pyhd8ed1ab_0    conda-forge
 jupyterlab                3.3.4              pyhd8ed1ab_0    conda-forge
@@ -494,7 +494,6 @@ libmamba-0.22.1-hdb87969_0.tar.bz2           1.6 MB
 libcblas-3.9.0-14_linuxaarch64_openblas.tar.bz2      12 KB
 brotli-1.0.9-h4e544f5_7.tar.bz2               18 KB
 scipy-1.8.0-py38h79f4abc_1.tar.bz2          24.7 MB
-jupyter_client-7.3.0-pyhd8ed1ab_0.tar.bz2      90 KB
 pip-22.0.4-pyhd8ed1ab_0.tar.bz2              1.5 MB
 urllib3-1.26.9-pyhd8ed1ab_0.tar.bz2          100 KB
 entrypoints-0.4-pyhd8ed1ab_0.tar.bz2           9 KB
@@ -548,6 +547,7 @@ argon2-cffi-bindings-21.2.0-py38hdacc76a_2.tar.bz2      36 KB
 joblib-1.1.0-pyhd8ed1ab_0.tar.bz2            210 KB
 gmp-6.2.1-h7fd3ca4_0.tar.bz2                 737 KB
 pillow-9.1.0-py38h3870bda_2.tar.bz2         44.7 MB
+jupyter_client-7.3.1-pyhd8ed1ab_0.tar.bz2      90 KB
 terminado-0.13.3-py38h2063c64_1.tar.bz2       27 KB
 python_abi-3.8-2_cp38.tar.bz2                  4 KB
 executing-0.8.3-pyhd8ed1ab_0.tar.bz2          18 KB
@@ -724,7 +724,6 @@ Removed libmamba-0.22.1-hdb87969_0.tar.bz2
 Removed libcblas-3.9.0-14_linuxaarch64_openblas.tar.bz2
 Removed brotli-1.0.9-h4e544f5_7.tar.bz2
 Removed scipy-1.8.0-py38h79f4abc_1.tar.bz2
-Removed jupyter_client-7.3.0-pyhd8ed1ab_0.tar.bz2
 Removed pip-22.0.4-pyhd8ed1ab_0.tar.bz2
 Removed urllib3-1.26.9-pyhd8ed1ab_0.tar.bz2
 Removed entrypoints-0.4-pyhd8ed1ab_0.tar.bz2
@@ -778,6 +777,7 @@ Removed argon2-cffi-bindings-21.2.0-py38hdacc76a_2.tar.bz2
 Removed joblib-1.1.0-pyhd8ed1ab_0.tar.bz2
 Removed gmp-6.2.1-h7fd3ca4_0.tar.bz2
 Removed pillow-9.1.0-py38h3870bda_2.tar.bz2
+Removed jupyter_client-7.3.1-pyhd8ed1ab_0.tar.bz2
 Removed terminado-0.13.3-py38h2063c64_1.tar.bz2
 Removed python_abi-3.8-2_cp38.tar.bz2
 Removed executing-0.8.3-pyhd8ed1ab_0.tar.bz2
@@ -871,5 +871,5 @@ Removed bleach-5.0.0-pyhd8ed1ab_0.tar.bz2
 Removed sqlite-3.38.5-hc74f5b8_0.tar.bz2
 Defining r-reticulate and deac aliases
 Finished
-125.07user 28.80system 2:24.94elapsed 106%CPU (0avgtext+0avgdata 365892maxresident)k
-16inputs+2417600outputs (0major+321395minor)pagefaults 0swaps
+125.57user 30.06system 2:35.51elapsed 100%CPU (0avgtext+0avgdata 371200maxresident)k
+1560inputs+2417704outputs (0major+325397minor)pagefaults 0swaps

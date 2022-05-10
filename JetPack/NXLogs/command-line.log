@@ -5,18 +5,18 @@ Hit:3 http://ports.ubuntu.com/ubuntu-ports focal InRelease
 Hit:4 http://ports.ubuntu.com/ubuntu-ports focal-updates InRelease
 Hit:5 http://ports.ubuntu.com/ubuntu-ports focal-backports InRelease
 Hit:6 http://ports.ubuntu.com/ubuntu-ports focal-security InRelease
-Fetched 5,102 B in 3s (1,911 B/s)
+Fetched 5,102 B in 3s (1,779 B/s)
 Reading package lists...
 Installing gnupg2 if needed
 Updating NVIDIA keys
 Warning: apt-key output should not be parsed (stdout is not a terminal)
-Executing: /tmp/apt-key-gpghome.djaQI596qB/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+Executing: /tmp/apt-key-gpghome.uW5dwdFB1f/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 gpg: requesting key from 'https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub'
 gpg: key A4B469963BF863CC: "cudatools <cudatools@nvidia.com>" not changed
 gpg: Total number processed: 1
 gpg:              unchanged: 1
 Warning: apt-key output should not be parsed (stdout is not a terminal)
-Executing: /tmp/apt-key-gpghome.h2TnJkScUm/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
+Executing: /tmp/apt-key-gpghome.ApDJprY01A/gpg.1.sh --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
 gpg: requesting key from 'https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub'
 gpg: key F60F4B3D7FA2AF80: "cudatools <cudatools@nvidia.com>" not changed
 gpg: Total number processed: 1
