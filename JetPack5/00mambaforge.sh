@@ -7,50 +7,14 @@ export SYNTH_HOME=$PWD
 echo "..Checking for existing Mambaforge installation"
 export MAMBAFORGE_HOME=""
 
-# first check for mamba-init.sh pointing to an existing directory
-echo "....Checking $SYNTH_HOME/mamba-init.sh"
-if [ -f "$SYNTH_HOME/mamba-init.sh" ] && \
-   [ `grep -e "export MAMBAFORGE_HOME=" $SYNTH_HOME/mamba-init.sh | wc -l` -gt "0" ]
+if [ `find $HOME -path '*/bin/mamba' | wc -l` -gt "0" ]
 then
-  # file exists and defines MAMBAFORGE_HOME
-  echo "....$SYNTH_HOME/mamba-init.sh defines MAMBAFORGE_HOME"
-  source $SYNTH_HOME/mamba-init.sh
-
-  if [ ! -d "$MAMBAFORGE_HOME/condabin" ]
-  then
-    # unfortunately it's not a directory
-    echo "....$MAMBAFORGE_HOME/condabin is not a directory"
-    export MAMBAFORGE_HOME=""
-  else
-    echo "....Mambaforge installation found at $MAMBAFORGE_HOME"
-  fi
-fi
-
-# if that failed, try the default
-if [ "$MAMBAFORGE_HOME" == "" ] && [ -d "$HOME/mambaforge/condabin" ]
-then
-  echo "....Default Mambaforge installation found at $HOME/mambaforge"
-  export MAMBAFORGE_HOME=$HOME/mambaforge
-fi
-
-# if it's there, offer to leave it alone
-if [ "$MAMBAFORGE_HOME" != "" ]
-then
-  echo ""
-  echo "..A Mambaforge installation exists at $MAMBAFORGE_HOME."
-  read -p "..Do you want to keep it as is? (Y/n)"
-
-  # require explicit "n" to remove it
-  if [ ${#REPLY} == "0" ] || [ $REPLY != "n" ]
-  then
-    echo "..Updating $SYNTH_HOME/mamba-init.sh"
-    echo "export MAMBAFORGE_HOME=\"$MAMBAFORGE_HOME\"" > $SYNTH_HOME/mamba-init.sh
-    echo "..Exiting without touching $MAMBAFORGE_HOME!"
-    exit
-  else
-    echo "..Removing $MAMBAFORGE_HOME" 
-    rm -rf $MAMBAFORGE_HOME
-  fi
+  export MAMBAFORGE_HOME=`find $HOME -path '*/bin/mamba' | grep -v "pkgs" | sed 's;/bin/mamba;;'`
+  echo "..Found $MAMBAFORGE_HOME - normal exit"
+  echo "..Updating $SYNTH_HOME/mamba-init.sh"
+  echo "export MAMBAFORGE_HOME=\"$MAMBAFORGE_HOME\"" > $SYNTH_HOME/mamba-init.sh
+  echo "..Exiting normally"
+  exit
 fi
 
 # we either couldn't find it or the user removed an existing one
