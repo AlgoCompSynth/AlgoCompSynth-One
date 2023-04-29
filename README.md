@@ -4,8 +4,22 @@
 
 AlgoCompSynth-One is a collection of tools for composing music and synthesizing
 sound on systems with NVIDIA® GPUs. The current implementation is focused on
-the Jetson™ platform. However, a future release will run on Windows 11 with
-Windows Subsystem for Linux.
+the Jetson™ Xavier or Orin hardware, running Jetpack 5.1.1 or later.
+However, a future release will run on Windows 11 with Windows Subsystem for Linux.
+
+The previous version supported Jetpack 4 and would run on the original Nano. I
+can't support that any more. Jetpack 4 is based on Ubuntu `bionic`, which is
+no longer supported, and there aren't convenient binaries for recent versions
+of PyTorch. NVIDIA have moved on, and so have I.
+
+I don't currently have an Orin device to test on. The AGX Xavier development
+kit I have is sufficient for my needs, but I might get an Orin Nano
+development kit in the late summer or fall. My priorities are
+
+1. Clean up everything on Jetpack 5.1.1 / strip out the legacy Jetpack 4 support.
+2. Add some functionality. I have some R packages that I want to add, I want to
+add the `pforth` Forth environment, and I may add some Soundfont tools.
+3. Build the WSL Ubuntu `jammy` version.
 
 ## What can it do?
 
@@ -36,10 +50,10 @@ advantages:
 - It avoids licensing issues with distributing binaries, and
 - The source code is right there for you to examine and enhance.
 
-The downside is that, especially on the Jetson Nano, the components that need to
-be compiled, `torchaudio` and `cuSignal`, take a fair amount of time to build.
-I have included logfiles of my builds on a Jetson Nano, Xavier NX and AGX
-Xavier so you can get an idea of what to expect for build times.
+The downside is that the components that need to be compiled, `torchaudio`
+and `cuSignal`, take a fair amount of time to build. I have included
+logfiles of my builds on a Jetson AGX Xavier so you can get an idea
+of what to expect for build times.
 
 The installers create a virtual desktop inside the repository. The Python
 wheels downloaded or built are cached in `AlgoCompSynth-One/JetPack/Wheels`,
@@ -48,19 +62,20 @@ build.
 
 ## Who is it for?
 
-At the moment, it's primarily for developers with a Jetson Developer Kit. I am
-planning a compatible version for Windows 11 with Windows Subsystem for Linux.
+At the moment, it's primarily for developers with a Jetson Xavier or Orin
+system. I am planning a compatible version for Windows 11 with
+Windows Subsystem for Linux running Ubuntu 22.04 LTS aka `jammy`.
 
 ## How do I get started?
 
 The short version is:
 
-1. Get a Jetson Developer Kit.
+1. Get a Jetson Developer Kit (Xavier or later) and install Jetpack 5.1.1 or later..
 2. Clone this repository.
 3. At the terminal:
 
     ```
-    cd AlgoCompSynth-One/JetPack
+    cd AlgoCompSynth-One/JetPack5
     ./00mambaforge.sh # sets up the Mambaforge package and environment manager
     ./05install.sh # installs the Python components
     ./10R-addons.sh # optional for R programmers
@@ -73,7 +88,7 @@ for you to run `10R-addons.sh` or `20R-sound.sh`.
 ## How do I test it?
 
 ```
-cd AlgoCompSynth-One/JetPack
+cd AlgoCompSynth-One/JetPack5
 ./start-jupyter-lab.sh
 ```
 
@@ -86,20 +101,9 @@ different machine on the same local area network, browse to
 Once you're logged in, there will be a list of folders on the right. Open the
 `Notebooks` folder. You'll see three notebooks:
 
-- `E2E_Example_4GB.ipynb` # 4 GB Nano
-- `E2E_Example_8GB.ipynb` # 8 GB Xavier NX
-- `E2E_Example_16GB.ipynb` # 16 GB or larger AGX Xavier
+- `E2E_Example_8GB.ipynb` # 8 GB Xavier or Orin
+- `E2E_Example_16GB.ipynb` # 16 GB or larger Xavier or Orin
  
 These are copies of the `cuSignal` end-to-end test notebook, which exercise
 both `cuSignal` and `PyTorch`. Pick the one that matches the RAM in your
 Jetson and run all the cells.
-
-## What about JetPack 5.0 DP and the Orin?
-
-I have tested this with the 8 GB Xavier NX running JetPack 5.0 developer preview and
-everything works. In fact, it's slightly better because JetPack 5.0 is based on
-Python 3.8 and CUDA 11.4, while JetPack 4.6.1 uses Python 3.6 and CUDA 10.2.
-
-I do not currently have the budget for an AGX Orin Developer Kit, but if you
-have one and run into issues with AlgoCompSynth-One on it, open an issue and
-I'll try to help troubleshoot it.
