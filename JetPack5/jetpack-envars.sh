@@ -6,22 +6,10 @@ echo "JETPACK_VERSION: $JETPACK_VERSION"
 
 echo ""
 echo "Setting versions to install"
-if [ "$JETPACK_VERSION" = "5.0" ]
-then
-  export PYTHON_VERSION="3.8"
-  export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/ssf2v7pf5i245fk4i0q926hy4imzs2ph.whl"
-  export PYTORCH_WHEEL_FILE="torch-1.11.0-cp38-cp38-linux_aarch64.whl"
-  export TORCHAUDIO_VERSION="0.11.0"
-elif [ "$JETPACK_VERSION" = "4.6.1" ]
-then
-  export PYTHON_VERSION="3.6"
-  export PYTORCH_WHEEL_URL="https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl"
-  export PYTORCH_WHEEL_FILE="torch-1.10.0-cp36-cp36m-linux_aarch64.whl"
-  export TORCHAUDIO_VERSION="0.10.0"
-else
-  echo "ERROR: can't detect JetPack version!"
-  exit -1
-fi
+export PYTHON_VERSION="3.8"
+export PYTORCH_WHEEL_URL="https://developer.download.nvidia.cn/compute/redist/jp/v51/pytorch/torch-2.0.0a0+fe05266f.nv23.04-cp38-cp38-linux_aarch64.whl"
+export PYTORCH_WHEEL_FILE="torch-2.0.0-cp38-cp38-linux_aarch64.whl"
+export TORCHAUDIO_VERSION="2.0.0"
 
 export CUSIGNAL_VERSION="22.04.00"
 echo "PYTHON_VERSION: $PYTHON_VERSION"
@@ -47,10 +35,10 @@ echo "CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
 
 echo ""
 echo "Defining CMAKE_BUILD_PARALLEL_LEVEL and MAKEFLAGS"
-if [ `nproc` -lt "5" ]
+if [ `nproc` -lt "7" ]
 then 
   export CMAKE_BUILD_PARALLEL_LEVEL=3
-  export MAKEFLAGS="-j3"
+  export MAKEFLAGS="-j4"
 else
   export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
   export MAKEFLAGS="-j$(nproc)"
