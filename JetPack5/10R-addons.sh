@@ -39,15 +39,15 @@ echo "r-base ==$R_VERSION" >> $CONDA_PREFIX/conda-meta/pinned
 cat $CONDA_PREFIX/conda-meta/pinned
 
 echo "Installing dependencies for developer tools packages"
-mamba install --quiet --yes \
+/usr/bin/time mamba install --quiet --yes \
   libgit2 \
   pandoc
 
 echo "Updating existing packages"
-Rscript -e "update.packages(ask = FALSE, quiet = TRUE, repos = 'https://cloud.r-project.org/')"
+/usr/bin/time Rscript -e "update.packages(ask = FALSE, quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 
 echo "Installing developer tools"
-$SYNTH_SCRIPTS/devtools.R > $SYNTH_LOGS/devtools.log 2>&1
+/usr/bin/time $SYNTH_SCRIPTS/devtools.R > $SYNTH_LOGS/devtools.log 2>&1
 
 echo "Activating R Jupyter kernel"
 Rscript -e "IRkernel::installspec()"

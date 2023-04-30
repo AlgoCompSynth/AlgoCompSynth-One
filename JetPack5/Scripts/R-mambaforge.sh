@@ -8,11 +8,11 @@ source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 
 echo "Installing r-base"
-mamba install --quiet --yes \
+/usr/bin/time mamba install --quiet --yes \
   r-base
 
 echo "Installing the recommended packages from source"
-$SYNTH_SCRIPTS/recommended.R > $SYNTH_LOGS/recommended.log 2>&1
+/usr/bin/time $SYNTH_SCRIPTS/recommended.R > $SYNTH_LOGS/recommended.log 2>&1
 
 echo "Cleanup"
 echo "..Removing downloaded tarballs"

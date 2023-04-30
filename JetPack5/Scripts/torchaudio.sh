@@ -28,6 +28,7 @@ then
   git checkout v$TORCHAUDIO_VERSION
   echo "Installing from source"
   export USE_CUDA=1
+  export USE_CUDNN=1
   export USE_FFMPEG=1 
   export BUILD_KALDI=1
   export BUILD_SOX=1
