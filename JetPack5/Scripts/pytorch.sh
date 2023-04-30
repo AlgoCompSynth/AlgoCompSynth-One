@@ -18,7 +18,9 @@ wget --verbose $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
 popd
 
 echo "Installing PyTorch"
-pip install $SYNTH_WHEELS/$PYTORCH_WHEEL_FILE
+export "LD_LIBRARY_PATH=/usr/lib/llvm-8/lib:$LD_LIBRARY_PATH"
+python -m pip install --upgrade protobuf
+python -m pip install --no-cache $SYNTH_WHEELS/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"
 echo "..Removing downloaded tarballs"

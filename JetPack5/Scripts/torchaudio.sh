@@ -27,13 +27,16 @@ then
   echo "Checking out v$TORCHAUDIO_VERSION"
   git checkout v$TORCHAUDIO_VERSION
   echo "Installing from source"
-  /usr/bin/time USE_FFMPEG=1 python setup.py develop
+  export USE_CUDA=1
+  export USE_FFMPEG=1 
+  export BUILD_KALDI=1
+  export BUILD_SOX=1
+  /usr/bin/time pip wheel -v -e . --no-use-pep517
   echo "Saving torchaudio wheel"
-  cp dist/torchaudio-*.whl $SYNTH_WHEELS/
-else
-  echo "Installing torchaudio wheel"
-  pip install $SYNTH_WHEELS/torchaudio-*.whl
+  cp ./torchaudio-*.whl $SYNTH_WHEELS/
 fi
+echo "Installing torchaudio wheel"
+pip install $SYNTH_WHEELS/torchaudio-*.whl
 
 echo "Cleanup"
 echo "..Removing audio project repository"
