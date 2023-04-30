@@ -36,9 +36,21 @@ echo "..directory where you can write that has"
 echo "..enough space for Mambaforge and all the"
 echo "..virtual environments you plan to create."
 echo "..The directory will be removed if it exists."
-read -p "..New Mambaforge directory?"
+echo ""
 
-export MAMBAFORGE_HOME=$REPLY
+export MAMBAFORGE_HOME=$HOME/mambaforge
+echo "..Default Mambaforge directory is $MAMBAFORGE_HOME"
+echo "..If that's OK press 'Enter' to accept it."
+echo "..Otherwise enter a different directory."
+read -p "..Mambaforge directory?"
+
+# a real directory name must be at least "/home"
+if [ "${#REPLY}" -gt "5" ]
+then
+  echo "..Setting MAMBAFORGE_HOME to $REPLY"
+  export MAMBAFORGE_HOME=$REPLY
+fi
+
 echo "..Removing $MAMBAFORGE_HOME if it exists"
 if [ -d $MAMBAFORGE_HOME ]
 then
