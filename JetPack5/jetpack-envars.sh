@@ -11,7 +11,7 @@ export PYTORCH_WHEEL_URL="https://developer.download.nvidia.cn/compute/redist/jp
 export PYTORCH_WHEEL_FILE="torch-2.0.0-cp38-cp38-linux_aarch64.whl"
 export TORCHAUDIO_VERSION="2.0.0"
 
-export CUSIGNAL_VERSION="22.04.00"
+export CUSIGNAL_VERSION="23.04.00"
 echo "PYTHON_VERSION: $PYTHON_VERSION"
 echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
 echo "PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
