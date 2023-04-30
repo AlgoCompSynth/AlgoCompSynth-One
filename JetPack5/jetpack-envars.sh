@@ -9,7 +9,7 @@ echo "Setting versions to install"
 export PYTHON_VERSION="3.8"
 export PYTORCH_WHEEL_URL="https://developer.download.nvidia.cn/compute/redist/jp/v51/pytorch/torch-2.0.0a0+8aa34602.nv23.03-cp38-cp38-linux_aarch64.whl"
 export PYTORCH_WHEEL_FILE="torch-2.0.0-cp38-cp38-linux_aarch64.whl"
-export TORCHAUDIO_VERSION="2.0.0"
+export TORCHAUDIO_VERSION="2.0.1"
 
 export CUSIGNAL_VERSION="23.04.00"
 echo "PYTHON_VERSION: $PYTHON_VERSION"
