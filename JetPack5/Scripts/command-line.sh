@@ -24,6 +24,9 @@ sudo apt-get install -qqy --no-install-recommends \
   gstreamer1.0-plugins-ugly \
   gstreamer1.0-tools gstreamer1.0-alsa \
   less \
+  libffmpeg-nvenc-dev \
+  libjpeg-dev \
+  libpng-dev \
   mlocate \
   openssh-client \
   software-properties-common \

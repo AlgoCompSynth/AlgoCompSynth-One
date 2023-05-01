@@ -52,6 +52,13 @@ then
 fi
 $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
+echo "Installing torchvision if necessary"
+if [ `mamba list | grep "torchvision" | wc -l` -le "0" ]
+then
+  echo "..Installing torchvision"
+  /usr/bin/time $SYNTH_SCRIPTS/torchvision.sh > $SYNTH_LOGS/torchvision.log 2>&1
+fi
+
 echo "Installing torchaudio if necessary"
 if [ `mamba list | grep "torchaudio" | wc -l` -le "0" ]
 then

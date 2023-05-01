@@ -32,9 +32,9 @@ then
   export USE_FFMPEG=1 
   export BUILD_KALDI=1
   export BUILD_SOX=1
-  /usr/bin/time pip wheel -v -e . --no-use-pep517
+  /usr/bin/time python setup.py bdist_wheel
   echo "Saving torchaudio wheel"
-  cp ./torchaudio-*.whl $SYNTH_WHEELS/
+  cp dist/torchaudio-*.whl $SYNTH_WHEELS/
 fi
 echo "Installing torchaudio wheel"
 pip install $SYNTH_WHEELS/torchaudio-*.whl
