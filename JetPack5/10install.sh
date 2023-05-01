@@ -67,6 +67,9 @@ then
 fi
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
+echo "Installing 'rTorch' R package"
+/usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
+
 echo "Installing cusignal if necessary"
 export CUSIGNAL_TEST="0" # Don't test by default
 if [ `mamba list | grep "cusignal" | wc -l` -le "0" ]

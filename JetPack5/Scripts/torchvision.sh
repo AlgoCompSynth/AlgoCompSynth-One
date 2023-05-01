@@ -8,13 +8,6 @@ source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
-echo "Installing mamba dependencies"
-mamba install --quiet --yes \
-  cmake \
-  ffmpeg \
-  ninja \
-  pkg-config
-
 if [ `find $SYNTH_WHEELS -name 'torchvision-*.whl' | wc -l` = "0" ]
 then
   echo "Building torchvision wheel"
