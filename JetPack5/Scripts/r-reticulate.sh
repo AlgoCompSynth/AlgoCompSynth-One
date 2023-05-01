@@ -12,6 +12,21 @@ cp $SYNTH_SCRIPTS/r-reticulate.template.$PYTHON_VERSION $SYNTH_SCRIPTS/r-reticul
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
+echo "Updating existing packages"
+/usr/bin/time Rscript -e "update.packages(ask = FALSE, quiet = TRUE, repos = 'https://cloud.r-project.org/')"
+
+echo "Installing 'caracas'"
+/usr/bin/time Rscript -e "install.packages('caracas', repos = 'https://cloud.r-project.org/')"
+
+echo "Installing 'tinytex'"
+/usr/bin/time Rscript -e "tinytex::install_tinytex(force = TRUE)"
+
+echo "Activating R Jupyter kernel"
+Rscript -e "IRkernel::installspec()"
+
+echo "Installed R packages"
+Rscript -e "print(rownames(installed.packages()))"
+
 echo "Cleanup"
 mamba list
 mamba clean --tarballs --yes
