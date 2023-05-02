@@ -13,6 +13,13 @@ export PYTORCH_VERSION="2.0.0"
 export TORCHAUDIO_VERSION="2.0.1"
 export TORCHVISION_VERSION="0.15.1"
 
+# The default is to use the NVIDIA wheel unless $PYTHON_VERSION
+# is not equal to "3.8". Set this to "1" to force recompile of
+# the PyTorch wheel. WARNING: said compile requires four hours
+# on an AGX Xavier, so unless you really need a Python other
+# than 3.8, you probably don't want to do this.
+export PYTORCH_FROM_SOURCE="0"
+
 export CUSIGNAL_VERSION="23.04.00"
 echo "PYTHON_VERSION: $PYTHON_VERSION"
 echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
