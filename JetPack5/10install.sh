@@ -36,19 +36,18 @@ fi
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
-echo "Installing CuPy if necessary"
-if [ `mamba list | grep "cupy" | wc -l` -le "0" ]
-then
-  echo "..Installing CuPy"
-  echo "..This can take a long time if the wheel isn't in the pip cache!"
-  /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
-fi
-
 echo "Installing PyTorch if necessary"
 if [ `mamba list | grep "torch" | wc -l` -le "0" ]
 then
   echo "..Installing PyTorch"
-  /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+  if [ $PYTORCH_FROM_SOURCE -eq "1" | $PYTHON_VERSION -ne "3.8" ]
+  then
+    echo "..Installing PyTorch from source"
+    echo "..This will take a long time!"
+    /usr/bin/time $SYNTH_SCRIPTS/pytorch-source.sh > $SYNTH_LOGS/pytorch-source.log 2>&1
+  else
+    /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
+  fi
 fi
 $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
@@ -69,6 +68,14 @@ $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
 echo "Installing 'rTorch' R package"
 /usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
+
+echo "Installing CuPy if necessary"
+if [ `mamba list | grep "cupy" | wc -l` -le "0" ]
+then
+  echo "..Installing CuPy"
+  echo "..This can take a long time if the wheel isn't in the pip cache!"
+  /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
+fi
 
 echo "Installing cusignal if necessary"
 export CUSIGNAL_TEST="0" # Don't test by default
