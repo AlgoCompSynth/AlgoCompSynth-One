@@ -15,10 +15,8 @@ then
   cd $SYNTH_PROJECTS
   echo "Removing previous 'vision'"
   rm -fr vision*
-  git clone --recurse-submodules https://github.com/pytorch/vision.git
+  git clone --recursive --branch=v$TORCHVISION_VERSION https://github.com/pytorch/vision.git
   cd vision
-  echo "Checking out v$TORCHVISION_VERSION"
-  git checkout v$TORCHVISION_VERSION
   echo "Installing from source"
   export FORCE_CUDA=1
   /usr/bin/time python setup.py bdist_wheel

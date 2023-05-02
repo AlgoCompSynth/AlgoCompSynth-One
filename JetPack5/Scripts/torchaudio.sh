@@ -15,10 +15,8 @@ then
   cd $SYNTH_PROJECTS
   echo "Removing previous 'audio'"
   rm -fr audio*
-  git clone --recurse-submodules https://github.com/pytorch/audio.git
+  git clone --recursive --branch=v$TORCHAUDIO_VERSION https://github.com/pytorch/audio.git
   cd audio
-  echo "Checking out v$TORCHAUDIO_VERSION"
-  git checkout v$TORCHAUDIO_VERSION
   echo "Installing from source"
   export USE_CUDA=1
   export USE_CUDNN=1
