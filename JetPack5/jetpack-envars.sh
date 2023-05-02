@@ -41,16 +41,19 @@ export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CAPABILITY,code=sm_$CUDA_CAPA
 echo "CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
 
 echo ""
-echo "Defining CMAKE_BUILD_PARALLEL_LEVEL and MAKEFLAGS"
+echo "Defining CMAKE_BUILD_PARALLEL_LEVEL, MAX_JOBS and MAKEFLAGS"
 if [ `nproc` -lt "7" ]
 then 
-  export CMAKE_BUILD_PARALLEL_LEVEL=3
+  export CMAKE_BUILD_PARALLEL_LEVEL=4
+  export MAX_JOBS=4
   export MAKEFLAGS="-j4"
 else
   export CMAKE_BUILD_PARALLEL_LEVEL=`nproc`
+  export MAX_JOBS=`nproc`
   export MAKEFLAGS="-j$(nproc)"
 fi
 echo "CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
+echo "MAX_JOBS: $MAX_JOBS"
 echo "MAKEFLAGS: $MAKEFLAGS"
 
 echo ""
