@@ -9,6 +9,7 @@ echo "Setting versions to install"
 export PYTHON_VERSION="3.8"
 export PYTORCH_WHEEL_URL="https://developer.download.nvidia.cn/compute/redist/jp/v51/pytorch/torch-2.0.0a0+8aa34602.nv23.03-cp38-cp38-linux_aarch64.whl"
 export PYTORCH_WHEEL_FILE="torch-2.0.0-cp38-cp38-linux_aarch64.whl"
+export PYTORCH_VERSION="2.0.0"
 export TORCHAUDIO_VERSION="2.0.1"
 export TORCHVISION_VERSION="0.15.1"
 
@@ -16,6 +17,7 @@ export CUSIGNAL_VERSION="23.04.00"
 echo "PYTHON_VERSION: $PYTHON_VERSION"
 echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
 echo "PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
+echo "PYTORCH_VERSION: $PYTORCH_VERSION"
 echo "TORCHAUDIO_VERSION: $TORCHAUDIO_VERSION"
 echo "TORCHVISION_VERSION: $TORCHVISION_VERSION"
 echo "CUSIGNAL_VERSION: $CUSIGNAL_VERSION"
@@ -31,7 +33,10 @@ deviceQuery > deviceQuery.txt
 
 echo ""
 echo "Defining CUPY_NVCC_GENERATE_CODE"
-export CUDA_CAPABILITY=`grep -e 'CUDA Capability Major/Minor version number:' deviceQuery.txt | sed "s/^.*:  *//" | sed "s/\.//"`
+export CUDA_CAPABILITY_WITH_DOT=`grep -e 'CUDA Capability Major/Minor version number:' deviceQuery.txt | sed "s/^.*:  *//"`
+echo "CUDA_CAPABILITY_WITH_DOT: $CUDA_CAPABILITY_WITH_DOT"
+export CUDA_CAPABILITY=`echo $CUDA_CAPABILITY_WITH_DOT | sed "s/\.//"`
+echo "CUDA_CAPABILITY: $CUDA_CAPABILITY"
 export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CAPABILITY,code=sm_$CUDA_CAPABILITY"
 echo "CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
 
