@@ -33,8 +33,6 @@ echo "Installing pytorch wheel"
 pip install $SYNTH_WHEELS/pytorch-*.whl
 
 echo "Cleanup"
-echo "..Removing pytorch project repository"
-rm -fr $SYNTH_PROJECTS/pytorch
 echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
 

@@ -33,8 +33,6 @@ echo "Installing torchaudio wheel"
 pip install $SYNTH_WHEELS/torchaudio-*.whl
 
 echo "Cleanup"
-echo "..Removing audio project repository"
-rm -fr $SYNTH_PROJECTS/audio
 echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
 

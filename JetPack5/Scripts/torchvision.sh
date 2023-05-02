@@ -29,8 +29,6 @@ echo "Installing torchvision wheel"
 pip install $SYNTH_WHEELS/torchvision-*.whl
 
 echo "Cleanup"
-echo "..Removing vision project repository"
-rm -fr $SYNTH_PROJECTS/vision
 echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
 
