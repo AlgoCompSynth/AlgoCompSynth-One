@@ -27,7 +27,7 @@ sudo apt-get install -qqy --no-install-recommends \
   libffmpeg-nvenc-dev \
   libjpeg-dev \
   libopenblas-dev \
-  libopenmpi_dev \
+  libopenmpi-dev \
   libpng-dev \
   mlocate \
   openssh-client \
