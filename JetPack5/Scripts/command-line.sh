@@ -26,6 +26,7 @@ sudo apt-get install -qqy --no-install-recommends \
   less \
   libffmpeg-nvenc-dev \
   libjpeg-dev \
+  libomp-dev \
   libopenblas-dev \
   libopenmpi-dev \
   libpng-dev \
@@ -38,9 +39,3 @@ sudo apt-get install -qqy --no-install-recommends \
   vim-nox \
   wget \
   zip
-
-echo "Installing PyTorch Linux dependencies"
-sudo apt-get install -qqy --no-install-recommends \
-  libopenblas-base \
-  libopenmpi-dev \
-  libomp-dev

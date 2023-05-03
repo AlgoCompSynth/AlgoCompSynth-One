@@ -37,7 +37,7 @@ echo "Activating r-reticulate"
 mamba activate r-reticulate
 
 echo "Installing PyTorch if necessary"
-if [ `mamba list | grep "torch " | wc -l` -le "0" ]
+if [ `mamba list | grep "torch  " | wc -l` -le "0" ]
 then
   echo "..Installing PyTorch"
   if [ "$PYTORCH_FROM_SOURCE" = "0" -a "$PYTHON_VERSION" = "3.8" ]
@@ -60,6 +60,13 @@ then
 fi
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
+echo "Installing torchvision if necessary"
+if [ `mamba list | grep "torchvision" | wc -l` -le "0" ]
+then
+  echo "..Installing torchvision"
+  /usr/bin/time $SYNTH_SCRIPTS/torchvision.sh > $SYNTH_LOGS/torchvision.log 2>&1
+fi
+
 echo "Installing 'rTorch' R package"
 /usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
 
@@ -79,4 +86,5 @@ then
   /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 fi
 
+mamba list --name r-reticulate
 echo "Finished!"
