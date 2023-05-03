@@ -77,8 +77,9 @@ The short version is:
 
     ```
     cd AlgoCompSynth-One/JetPack5
-    ./00mambaforge.sh # sets up the Mambaforge package and environment manager
-    ./10install.sh # installs the Python components
+    ./00command-line.sh # installs command line conveniences and Linux dependencies
+    ./05mambaforge.sh # sets up the Mambaforge package and environment manager
+    ./10install.sh # installs the Python and R components
     ```
 
 That will install everything.
