@@ -26,8 +26,8 @@ then
   echo "Saving torchaudio wheel"
   cp dist/torchaudio-*.whl $SYNTH_WHEELS/
 fi
-echo "Installing torchaudio wheel"
-pip install $SYNTH_WHEELS/torchaudio-*.whl
+echo "Installing torchaudio wheel - dependencies built into r-reticulate"
+pip install --no-deps $SYNTH_WHEELS/torchaudio-*.whl
 
 echo "Cleanup"
 echo "..Removing downloaded tarballs"
