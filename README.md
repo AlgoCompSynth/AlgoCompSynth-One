@@ -8,28 +8,28 @@ the Jetson™ Xavier or Orin hardware, running Jetpack 5.1.1 or later.
 However, a future release will run on Windows 11 with Windows Subsystem for Linux.
 
 The previous version supported Jetpack 4 and would run on the original Nano. I
-can't support that any more. Jetpack 4 is based on Ubuntu `bionic`, which is
-no longer supported, and there aren't convenient binaries for recent versions
-of PyTorch. NVIDIA have moved on, and so have I.
+can't support that any more. Jetpack 4 is based on Ubuntu `bionic` and Python 3.6,
+which are no longer supported, and there aren't convenient binaries for recent
+versions of PyTorch. NVIDIA have moved on, and so have I.
 
 I don't currently have an Orin device to test on. The AGX Xavier development
 kit I have is sufficient for my needs, but I might get an Orin Nano
 development kit in the late summer or fall. My priorities are
 
 1. Clean up everything on Jetpack 5.1.1 / strip out the legacy Jetpack 4 support.
-2. Add some functionality. I have some R packages that I want to add, I want to
-add the `pforth` Forth environment, and I may add some Soundfont tools.
+2. Move the R functionality into the base install.
 3. Build the WSL Ubuntu `jammy` version.
 
 ## What can it do?
 
 The current implementation creates a
 [Mambaforge](https://github.com/conda-forge/miniforge) virtual environment
-containing:
+called `r-reticulate` containing:
 
 - [JupyterLab](https://jupyter.org/),
 - [PyTorch](https://pytorch.org/),
-- [torchaudio](https://pytorch.org/audio/stable/index.html), and
+- [torchaudio](https://pytorch.org/audio/stable/index.html),
+- [torchvison](https://pytorch.org/vision/stable/index.html), and
 - [cuSignal](https://github.com/rapidsai/cusignal).
 
 The above tools are all optimized for the Jetson platform, enabling a variety
@@ -50,13 +50,14 @@ advantages:
 - It avoids licensing issues with distributing binaries, and
 - The source code is right there for you to examine and enhance.
 
-The downside is that the components that need to be compiled, `torchaudio`
-and `cuSignal`, take a fair amount of time to build. I have included
-logfiles of my builds on a Jetson AGX Xavier so you can get an idea
-of what to expect for build times.
+The downside is that the components that need to be compiled, `torchaudio`,
+`torchvision`, `cupy`, and `cuSignal`, take a fair amount of time to
+build. I have included logfiles of my builds on a Jetson AGX Xavier so you
+can get an idea of what to expect for build times.
 
-The installers create a virtual desktop inside the repository. The Python
-wheels downloaded or built are cached in `AlgoCompSynth-One/JetPack/Wheels`,
+The builds only need to be done once unless you want to change versions.
+The installers create a virtual desktop inside this repository. The Python
+wheels downloaded or built are cached in `AlgoCompSynth-One/JetPack5/Wheels`,
 and the install scripts will look for those first rather than doing a new
 build.
 
@@ -70,20 +71,17 @@ Windows Subsystem for Linux running Ubuntu 22.04 LTS aka `jammy`.
 
 The short version is:
 
-1. Get a Jetson Developer Kit (Xavier or later) and install Jetpack 5.1.1 or later..
+1. Get a Jetson Developer Kit (Xavier or later) and install Jetpack 5.1.1 or later.
 2. Clone this repository.
 3. At the terminal:
 
     ```
     cd AlgoCompSynth-One/JetPack5
     ./00mambaforge.sh # sets up the Mambaforge package and environment manager
-    ./05install.sh # installs the Python components
-    ./10R-addons.sh # optional for R programmers
-    ./20R-sound.sh # optional for R programmers
+    ./10install.sh # installs the Python components
     ```
 
-That will install everything. If you're not an R programmer, there's no reason
-for you to run `10R-addons.sh` or `20R-sound.sh`.
+That will install everything.
 
 ## How do I test it?
 
@@ -98,8 +96,8 @@ to `localhost:8888` and log in with the password you created. If you're on a
 different machine on the same local area network, browse to
 `the.jetson.ip.address:8888`.
 
-Once you're logged in, there will be a list of folders on the right. Open the
-`Notebooks` folder. You'll see three notebooks:
+Once you're logged in, there will be a list of folders on the left. Open the
+`Notebooks` folder. You'll see two notebooks:
 
 - `E2E_Example_8GB.ipynb` # 8 GB Xavier or Orin
 - `E2E_Example_16GB.ipynb` # 16 GB or larger Xavier or Orin
