@@ -2,6 +2,9 @@
 
 set -e
 
+export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
+export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
+
 source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
 source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 
@@ -12,7 +15,7 @@ cp $SYNTH_SCRIPTS/r-reticulate.template.$PYTHON_VERSION $SYNTH_SCRIPTS/r-reticul
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
-echo "Updating existing packages"
+echo "Updating existing R packages"
 /usr/bin/time Rscript -e "update.packages(ask = FALSE, quiet = TRUE, repos = 'https://cloud.r-project.org/')"
 
 echo "Installing 'caracas'"
@@ -20,6 +23,9 @@ echo "Installing 'caracas'"
 
 echo "Installing 'tinytex'"
 /usr/bin/time Rscript -e "tinytex::install_tinytex(force = TRUE)"
+
+echo "Installing R sound packages"
+/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/sound.R')"
 
 echo "Activating R Jupyter kernel"
 Rscript -e "IRkernel::installspec()"
