@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 sudo apt-get upgrade -qqy
 
-echo "Installing command line utilities"
+echo "Installing command line conveniences and Linux dependencies"
 sudo apt-get install -qqy --no-install-recommends \
   apt-file \
   bash-completion \
@@ -15,6 +15,8 @@ sudo apt-get install -qqy --no-install-recommends \
   ca-certificates \
   dirmngr \
   ffmpeg \
+  fftw-dev \
+  flac \
   git \
   gnupg2 \
   gstreamer1.0-libav \
@@ -25,14 +27,24 @@ sudo apt-get install -qqy --no-install-recommends \
   gstreamer1.0-tools gstreamer1.0-alsa \
   less \
   libffmpeg-nvenc-dev \
+  libfftw3-dev \
+  libfftw3-mpi-dev \
+  libflac-dev \
   libjpeg-dev \
+  libogg-dev \
   libomp-dev \
   libopenblas-dev \
   libopenmpi-dev \
   libpng-dev \
+  libsox-dev \
+  libsox-fmt-all \
+  libsoxr-dev \
   mlocate \
+  mp3splt \
+  musescore3 \
   openssh-client \
   software-properties-common \
+  sox \
   time \
   tree \
   unzip \
