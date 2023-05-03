@@ -12,6 +12,7 @@
 options(warn=2)
 install.packages(c(
   "audio",
+  "gm",
   "monitoR",
   "music",
   "NatureSounds",
