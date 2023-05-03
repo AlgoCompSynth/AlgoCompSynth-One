@@ -6,6 +6,7 @@ echo ""
 echo "Setting environment variables"
 export SYNTH_HOME=$PWD
 source $SYNTH_HOME/jetpack-envars.sh
+export MAKE="make $MAKEFLAGS"
 
 echo ""
 echo "Creating virtual desktop"
@@ -14,9 +15,6 @@ mkdir --parents \
   $SYNTH_PROJECTS \
   $SYNTH_NOTEBOOKS \
   $SYNTH_WHEELS
-
-echo "Installing command line conveniences"
-$SYNTH_SCRIPTS/command-line.sh > $SYNTH_LOGS/command-line.log 2>&1
 
 echo "Defining Mambaforge home"
 source $SYNTH_HOME/mamba-init.sh
