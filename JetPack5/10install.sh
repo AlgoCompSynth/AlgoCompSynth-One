@@ -46,6 +46,7 @@ then
     echo "..This will take a long time!"
     /usr/bin/time $SYNTH_SCRIPTS/pytorch-source.sh > $SYNTH_LOGS/pytorch-source.log 2>&1
   else
+    echo "..Installing PyTorch from NVIDIA wheel"
     /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
   fi
 fi

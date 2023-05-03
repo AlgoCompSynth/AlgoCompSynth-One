@@ -8,8 +8,9 @@ mamba activate r-reticulate
 export PATH=$PATH:/usr/local/cuda/bin
 
 pushd $SYNTH_WHEELS
+rm -f torch-*.whl
 echo "Downloading PyTorch wheel"
-wget --no-clobber --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
+wget --quiet $PYTORCH_WHEEL_URL --output-document=$PYTORCH_WHEEL_FILE
 popd
 
 echo "Installing PyTorch"
