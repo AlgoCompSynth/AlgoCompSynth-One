@@ -6,7 +6,6 @@ echo "Activating r-reticulate"
 source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
 source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 mamba activate r-reticulate
-export PATH=$PATH:/usr/local/cuda/bin
 
 if [ `find $SYNTH_WHEELS -name 'torchaudio-*.whl' | wc -l` = "0" ]
 then
@@ -15,7 +14,7 @@ then
   cd $SYNTH_PROJECTS
   echo "Removing previous 'audio'"
   rm -fr audio*
-  git clone --recursive --branch=v$TORCHAUDIO_VERSION https://github.com/pytorch/audio.git
+  git clone --branch=v$TORCHAUDIO_VERSION https://github.com/pytorch/audio.git
   cd audio
   echo "Installing from source"
   export USE_CUDA=1
