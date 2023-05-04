@@ -1,0 +1,30 @@
+name: r-reticulate
+channels:
+  - conda-forge
+  - nvidia
+  - numba
+  - c4aarch64
+dependencies:
+  - python=PYTHON_VERSION
+  - jupyterlab
+  - jupyter_server
+  - matplotlib
+  - numba
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - sympy
+  - r-recommended
+  - r-data.table
+  - r-devtools
+  - r-irkernel
+  - r-quarto
+  - r-reticulate
+  - r-tidyverse
+  - cmake
+  - ffmpeg
+  - fftw
+  - imagemagick
+  - libflac
+  - pkg-config

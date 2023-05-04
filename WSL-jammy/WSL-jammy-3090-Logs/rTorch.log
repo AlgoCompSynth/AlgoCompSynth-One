@@ -1,0 +1,71 @@
+Activating r-reticulate
+Installing 'rTorch'
+Installing package into ‘/home/znmeb/R/x86_64-conda-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/rTorch_0.4.2.tar.gz'
+Content type 'application/x-gzip' length 99778 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+* installing *source* package ‘rTorch’ ...
+** package ‘rTorch’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rTorch)
+
+The downloaded source packages are in
+	‘/tmp/RtmpofsbQs/downloaded_packages’
+3.31user 0.22system 0:03.97elapsed 89%CPU (0avgtext+0avgdata 224580maxresident)k
+24inputs+5240outputs (1major+215605minor)pagefaults 0swaps
+Installed R packages
+  [1] "audio"          "bioacoustics"   "bitops"         "caracas"        "Deriv"          "doBy"          
+  [7] "doParallel"     "dtw"            "fftw"           "foreach"        "gm"             "gsw"           
+ [13] "ineq"           "iterators"      "lme4"           "magick"         "microbenchmark" "minqa"         
+ [19] "moments"        "monitoR"        "music"          "mvtnorm"        "NatureSounds"   "nloptr"        
+ [25] "numDeriv"       "oce"            "pbapply"        "pbkrtest"       "permute"        "phonTools"     
+ [31] "pracma"         "proxy"          "RcppEigen"      "RCurl"          "rjson"          "rTorch"        
+ [37] "seewave"        "shinyBS"        "shinyjs"        "signal"         "soundecology"   "soundgen"      
+ [43] "tabr"           "tuneR"          "vegan"          "warbleR"        "zoo"            "askpass"       
+ [49] "assertthat"     "backports"      "base"           "base64enc"      "bit"            "bit64"         
+ [55] "blob"           "boot"           "brew"           "brio"           "broom"          "bslib"         
+ [61] "cachem"         "callr"          "cellranger"     "class"          "cli"            "clipr"         
+ [67] "cluster"        "codetools"      "colorspace"     "commonmark"     "compiler"       "conflicted"    
+ [73] "cpp11"          "crayon"         "credentials"    "curl"           "data.table"     "datasets"      
+ [79] "DBI"            "dbplyr"         "desc"           "devtools"       "diffobj"        "digest"        
+ [85] "downlit"        "dplyr"          "dtplyr"         "ellipsis"       "evaluate"       "fansi"         
+ [91] "farver"         "fastmap"        "fontawesome"    "forcats"        "foreign"        "fs"            
+ [97] "gargle"         "generics"       "gert"           "ggplot2"        "gh"             "gitcreds"      
+[103] "glue"           "googledrive"    "googlesheets4"  "graphics"       "grDevices"      "grid"          
+[109] "gtable"         "haven"          "here"           "highr"          "hms"            "htmltools"     
+[115] "htmlwidgets"    "httpuv"         "httr"           "httr2"          "ids"            "ini"           
+[121] "IRdisplay"      "IRkernel"       "isoband"        "jquerylib"      "jsonlite"       "KernSmooth"    
+[127] "knitr"          "labeling"       "later"          "lattice"        "lifecycle"      "lubridate"     
+[133] "magrittr"       "MASS"           "Matrix"         "memoise"        "methods"        "mgcv"          
+[139] "mime"           "miniUI"         "modelr"         "munsell"        "nlme"           "nnet"          
+[145] "openssl"        "packrat"        "parallel"       "pbdZMQ"         "pillar"         "pkgbuild"      
+[151] "pkgconfig"      "pkgdown"        "pkgload"        "png"            "praise"         "prettyunits"   
+[157] "processx"       "profvis"        "progress"       "promises"       "ps"             "purrr"         
+[163] "quarto"         "R6"             "ragg"           "rappdirs"       "rcmdcheck"      "RColorBrewer"  
+[169] "Rcpp"           "RcppTOML"       "readr"          "readxl"         "rematch"        "rematch2"      
+[175] "remotes"        "repr"           "reprex"         "reticulate"     "rlang"          "rmarkdown"     
+[181] "roxygen2"       "rpart"          "rprojroot"      "rsconnect"      "rstudioapi"     "rversions"     
+[187] "rvest"          "sass"           "scales"         "selectr"        "sessioninfo"    "shiny"         
+[193] "sourcetools"    "spatial"        "splines"        "stats"          "stats4"         "stringi"       
+[199] "stringr"        "survival"       "sys"            "systemfonts"    "tcltk"          "testthat"      
+[205] "textshaping"    "tibble"         "tidyr"          "tidyselect"     "tidyverse"      "timechange"    
+[211] "tinytex"        "tools"          "tzdb"           "urlchecker"     "usethis"        "utf8"          
+[217] "utils"          "uuid"           "vctrs"          "viridisLite"    "vroom"          "waldo"         
+[223] "whisker"        "withr"          "xfun"           "xml2"           "xopen"          "xtable"        
+[229] "yaml"           "zip"           
+Finished
+3.68user 0.39system 0:04.69elapsed 86%CPU (0avgtext+0avgdata 224580maxresident)k
+24inputs+5640outputs (41major+267860minor)pagefaults 0swaps
