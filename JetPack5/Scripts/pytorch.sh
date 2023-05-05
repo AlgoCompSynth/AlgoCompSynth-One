@@ -22,6 +22,4 @@ echo "Cleanup"
 echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
 
-mamba list
-
 echo "Finished"

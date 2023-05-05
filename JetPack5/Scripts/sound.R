@@ -26,4 +26,3 @@ install.packages(c(
   "warbleR"
 ), quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
-print(rownames(installed.packages()))

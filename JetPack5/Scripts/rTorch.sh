@@ -11,7 +11,4 @@ mamba activate r-reticulate
 echo "Installing 'rTorch'"
 /usr/bin/time Rscript -e "install.packages('rTorch', repos = 'https://cloud.r-project.org/')"
 
-echo "Installed R packages"
-Rscript -e "print(rownames(installed.packages()))"
-
 echo "Finished"

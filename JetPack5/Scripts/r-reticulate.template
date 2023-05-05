@@ -5,7 +5,7 @@ channels:
   - numba
   - c4aarch64
 dependencies:
-  - python=3.8
+  - python=PYTHON_VERSION
   - aiohttp
   - cmake
   - Cython

@@ -87,6 +87,4 @@ rm -fr $SYNTH_PROJECTS/cusignal
 echo "..Removing downloaded tarballs"
 mamba clean --tarballs --yes
 
-mamba list
-
 echo "Finished"

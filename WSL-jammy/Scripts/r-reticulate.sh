@@ -28,9 +28,6 @@ echo "Installing R sound packages"
 echo "Activating R Jupyter kernel"
 Rscript -e "IRkernel::installspec()"
 
-echo "Installed R packages"
-Rscript -e "print(rownames(installed.packages()))"
-
 echo "Cleanup"
 mamba clean --tarballs --yes
 
