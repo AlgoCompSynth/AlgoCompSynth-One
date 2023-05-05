@@ -2,7 +2,7 @@ echo ""
 echo "Detecting JetPack version"
 export PATH=$PATH:/usr/local/cuda/bin
 export JETPACK_VERSION=`dpkg-query --show nvidia-jetpack | sed "s;nvidia-jetpack\t;;" | sed "s;-.*$;;"`
-echo "JETPACK_VERSION: $JETPACK_VERSION"
+echo "..JETPACK_VERSION: $JETPACK_VERSION"
 
 echo ""
 echo "Setting versions to install"
@@ -21,31 +21,31 @@ export TORCHVISION_VERSION="0.15.1"
 export PYTORCH_FROM_SOURCE="0"
 
 export CUSIGNAL_VERSION="23.04.00"
-echo "PYTHON_VERSION: $PYTHON_VERSION"
-echo "PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
-echo "PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
-echo "PYTORCH_VERSION: $PYTORCH_VERSION"
-echo "TORCHAUDIO_VERSION: $TORCHAUDIO_VERSION"
-echo "TORCHVISION_VERSION: $TORCHVISION_VERSION"
-echo "CUSIGNAL_VERSION: $CUSIGNAL_VERSION"
+echo "..PYTHON_VERSION: $PYTHON_VERSION"
+echo "..PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
+echo "..PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
+echo "..PYTORCH_VERSION: $PYTORCH_VERSION"
+echo "..TORCHAUDIO_VERSION: $TORCHAUDIO_VERSION"
+echo "..TORCHVISION_VERSION: $TORCHVISION_VERSION"
+echo "..CUSIGNAL_VERSION: $CUSIGNAL_VERSION"
 
-echo ""
-echo "Building and running deviceQuery"
-pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
-sudo make
-sudo cp deviceQuery /usr/local/bin/
-popd
+#echo ""
+#echo "Building and running deviceQuery"
+#pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
+#sudo make
+#sudo cp deviceQuery /usr/local/bin/
+#popd
 
-deviceQuery > deviceQuery.txt
+#deviceQuery > deviceQuery.txt
 
-echo ""
-echo "Defining CUPY_NVCC_GENERATE_CODE"
-export CUDA_CAPABILITY_WITH_DOT=`grep -e 'CUDA Capability Major/Minor version number:' deviceQuery.txt | sed "s/^.*:  *//"`
-echo "CUDA_CAPABILITY_WITH_DOT: $CUDA_CAPABILITY_WITH_DOT"
-export CUDA_CAPABILITY=`echo $CUDA_CAPABILITY_WITH_DOT | sed "s/\.//"`
-echo "CUDA_CAPABILITY: $CUDA_CAPABILITY"
-export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CAPABILITY,code=sm_$CUDA_CAPABILITY"
-echo "CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
+#echo ""
+#echo "Defining CUPY_NVCC_GENERATE_CODE"
+#export CUDA_CAPABILITY_WITH_DOT=`grep -e 'CUDA Capability Major/Minor version number:' deviceQuery.txt | sed "s/^.*:  *//"`
+#echo "..CUDA_CAPABILITY_WITH_DOT: $CUDA_CAPABILITY_WITH_DOT"
+#export CUDA_CAPABILITY=`echo $CUDA_CAPABILITY_WITH_DOT | sed "s/\.//"`
+#echo "..CUDA_CAPABILITY: $CUDA_CAPABILITY"
+#export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CAPABILITY,code=sm_$CUDA_CAPABILITY"
+#echo "..CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
 
 echo ""
 echo "Defining CMAKE_BUILD_PARALLEL_LEVEL, MAX_JOBS and MAKEFLAGS"
@@ -59,9 +59,9 @@ else
   export MAX_JOBS=`nproc`
   export MAKEFLAGS="-j$(nproc)"
 fi
-echo "CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
-echo "MAX_JOBS: $MAX_JOBS"
-echo "MAKEFLAGS: $MAKEFLAGS"
+echo "..CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
+echo "..MAX_JOBS: $MAX_JOBS"
+echo "..MAKEFLAGS: $MAKEFLAGS"
 
 echo ""
 echo "Defining virtual desktop"
@@ -70,8 +70,8 @@ export SYNTH_LOGS=$SYNTH_HOME/Logs
 export SYNTH_PROJECTS=$SYNTH_HOME/Projects
 export SYNTH_NOTEBOOKS=$SYNTH_HOME/Notebooks
 export SYNTH_WHEELS=$SYNTH_HOME/Wheels
-echo "SYNTH_SCRIPTS: $SYNTH_SCRIPTS"
-echo "SYNTH_LOGS: $SYNTH_LOGS"
-echo "SYNTH_PROJECTS: $SYNTH_PROJECTS"
-echo "SYNTH_NOTEBOOKS: $SYNTH_NOTEBOOKS"
-echo "SYNTH_WHEELS: $SYNTH_WHEELS"
+echo "..SYNTH_SCRIPTS: $SYNTH_SCRIPTS"
+echo "..SYNTH_LOGS: $SYNTH_LOGS"
+echo "..SYNTH_PROJECTS: $SYNTH_PROJECTS"
+echo "..SYNTH_NOTEBOOKS: $SYNTH_NOTEBOOKS"
+echo "..SYNTH_WHEELS: $SYNTH_WHEELS"
