@@ -37,16 +37,8 @@ mamba activate r-reticulate
 echo "Installing PyTorch if necessary"
 if [ `mamba list | grep "torch  " | wc -l` -le "0" ]
 then
-  echo "..Installing PyTorch"
-  if [ "$PYTORCH_FROM_SOURCE" = "0" -a "$PYTHON_VERSION" = "3.8" ]
-  then
-    echo "..Installing PyTorch from NVIDIA wheel"
-    /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
-  else
-    echo "..Installing PyTorch from source"
-    echo "..This will take a long time!"
-    /usr/bin/time $SYNTH_SCRIPTS/pytorch-source.sh > $SYNTH_LOGS/pytorch-source.log 2>&1
-  fi
+  echo "..Installing PyTorch from NVIDIA wheel"
+  /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 fi
 $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
