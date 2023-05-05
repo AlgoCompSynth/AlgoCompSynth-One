@@ -64,6 +64,7 @@ then
   echo "..Installing torchvision"
   /usr/bin/time $SYNTH_SCRIPTS/torchvision.sh > $SYNTH_LOGS/torchvision.log 2>&1
 fi
+$SYNTH_SCRIPTS/test-torchvision.sh 2>&1 | tee $SYNTH_LOGS/test-torchvision.log
 
 echo "Installing 'rTorch' R package"
 /usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
@@ -84,5 +85,13 @@ then
   /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 fi
 
+echo ""
+echo "Python packages"
 mamba list --name r-reticulate
+
+echo ""
+echo "R packages"
+Rscript -e 'subset(installed.packages(), select = c("Version", "Built"))'
+
+echo ""
 echo "Finished!"
