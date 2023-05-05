@@ -55,7 +55,7 @@ cd pytorch
 
 echo "Setting environment variables"
 export USE_NCCL=0
-export USE_DISTRIBUTED=0                    # skip setting this if you want to enable OpenMPI backend
+export USE_DISTRIBUTED=1                    # skip setting this if you want to enable OpenMPI backend
 export USE_QNNPACK=0
 export USE_PYTORCH_QNNPACK=0
 export TORCH_CUDA_ARCH_LIST="7.2;8.7" # JetPack 5 wheels for Xavier/Orin
