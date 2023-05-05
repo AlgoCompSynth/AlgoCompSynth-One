@@ -59,10 +59,12 @@ if [ `mamba list | grep "cusignal" | wc -l` -le "0" ]
 then
   echo "..Installing cusignal"
   mamba install --quiet --yes \
-    cusignal \
+    cusignal=$CUSIGNAL_VERSION \
     --channel rapidsai \
     --channel conda-forge \
     --channel nvidia
+  echo "..Installing cusignal notebooks"
+  $SYNTH_SCRIPTS/cusignal-notebooks.sh > $SYNTH_LOGS/cusignal-notebooks.log 2>&1
 fi
 
 echo ""

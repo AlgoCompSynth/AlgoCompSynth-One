@@ -2,6 +2,8 @@ echo ""
 echo "Setting versions to install"
 export PYTHON_VERSION="3.10"
 echo "..PYTHON_VERSION: $PYTHON_VERSION"
+export CUSIGNAL_VERSION="23.04.00"
+echo "..CUSIGNAL_VERSION: $CUSIGNAL_VERSION"
 
 echo ""
 echo "Defining CMAKE_BUILD_PARALLEL_LEVEL, MAX_JOBS and MAKEFLAGS"
