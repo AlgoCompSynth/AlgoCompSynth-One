@@ -44,6 +44,7 @@ mamba create --yes --force --quiet \
   cmake \
   pyyaml \
   typing_extensions
+echo "export ENVNAME=\"$ENVNAME\"" > envname-init.sh
 mamba activate $ENVNAME
 
 echo "Cloning fresh PyTorch repository"
@@ -51,7 +52,6 @@ rm -fr pytorch*
 /usr/bin/time git clone --recursive \
   --branch=v$PYTORCH_VERSION \
   https://github.com/pytorch/pytorch.git
-cd pytorch
 
 echo "Setting environment variables"
 export USE_NCCL=0
@@ -64,10 +64,12 @@ export PYTORCH_BUILD_NUMBER=1
 export PATH=$PATH:/usr/local/cuda/bin
 
 echo "Starting background job to build PyTorch wheel"
+pushd pytorch
 /usr/bin/time python setup.py bdist_wheel \
   > $LOGFILE 2>&1 &
 export BUILD_JOB_PID=$!
 echo "BUILD_JOB_PID=$BUILD_JOB_PID"
+popd
 
 echo ""
 echo "Waiting 30 seconds in case it crashes"
