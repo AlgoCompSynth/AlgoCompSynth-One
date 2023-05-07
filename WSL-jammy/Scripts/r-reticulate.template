@@ -1,8 +1,8 @@
 name: r-reticulate
 channels:
-  - conda-forge
   - nvidia
   - numba
+  - conda-forge
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
