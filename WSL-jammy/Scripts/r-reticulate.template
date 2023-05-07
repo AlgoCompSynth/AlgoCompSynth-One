@@ -6,25 +6,32 @@ channels:
   - c4aarch64
 dependencies:
   - python=PYTHON_VERSION
-  - jupyterlab
-  - jupyter_server
-  - matplotlib
-  - numba
-  - numpy
-  - pandas
-  - scikit-learn
-  - scipy
-  - sympy
-  - r-recommended
-  - r-data.table
-  - r-devtools
-  - r-irkernel
-  - r-quarto
-  - r-reticulate
-  - r-tidyverse
   - cmake
   - ffmpeg
   - fftw
   - imagemagick
+  - jupyter_server
+  - jupyterlab
   - libflac
+  - matplotlib
+  - mido
+  - ninja
+  - numba
+  - numpy
+  - pandas
+  - pip
+  - pip:
+    - jupyterlab-quarto
   - pkg-config
+  - r-data.table
+  - r-devtools
+  - r-irkernel
+  - r-numbers
+  - r-quarto
+  - r-rdpack
+  - r-recommended
+  - r-reticulate
+  - r-tidyverse
+  - scikit-learn
+  - scipy
+  - sympy
