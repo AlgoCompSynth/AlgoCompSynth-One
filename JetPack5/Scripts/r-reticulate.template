@@ -10,29 +10,32 @@ dependencies:
   - cmake
   - Cython
   - fastrlock
-  - filelock
   - ffmpeg
   - fftw
+  - filelock
   - imagemagick
   - jupyterlab
   - jupyter_server
   - libflac
   - matplotlib
+  - mido
   - 'mpmath>=0.19'
   - networkx
   - ninja
   - numba
   - numpy
   - pandas
-  - mido
+  - pip
+  - pip:
+    - jupyterlab-quarto
   - pkg-config
-  - r-recommended=4.2
   - r-data.table
   - r-devtools
   - r-irkernel
   - r-numbers
   - r-quarto
   - r-rdpack
+  - r-recommended
   - r-reticulate
   - r-tidyverse
   - scikit-build
@@ -40,6 +43,3 @@ dependencies:
   - scipy
   - sympy
   - typing-extensions
-  - pip
-  - pip:
-    - jupyterlab-quarto
