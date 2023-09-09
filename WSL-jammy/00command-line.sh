@@ -17,7 +17,6 @@ sudo apt-get install -qqy --no-install-recommends \
   git \
   gnupg2 \
   less \
-  mlocate \
   mp3splt \
   musescore3 \
   openssh-client \
