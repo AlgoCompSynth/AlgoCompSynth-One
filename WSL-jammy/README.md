@@ -40,3 +40,35 @@ are any, open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 
 ## Testing
+
+1. If you're a `vim` user, execute the script
+
+    ./set-vim-background.sh
+
+for light or dark background. If you've already done that, you
+can skip this step.
+
+2. If you're a `git` user, edit and execute the script
+
+    edit-me-then-run-4-git-config.sh
+
+3. Start the JupyterLab server.
+
+    ./start-jupyter-lab.sh
+
+This will generate a configuration file and ask you to enter a
+password. Then it will start the server listening on `0.0.0.0:8888`.
+
+4. Browse to `localhost:8888` and enter the password you defined above.
+You are now in the AlgoCompSynth-One virtual desktop.
+
+5. In the file manager panel on the left, open the `Notebooks` folder.
+Open and run the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
+`E2E_Example_8GB.ipynb` and `E2E_Example_16GB.ipynb`. Depending on how
+much RAM your computer and GPU have, they may not all run, but at least
+the smallest one should.
+
+These notebooks exercise both `cuSignal` and `PyTorch` on the CPU and
+GPU, but they do not test `torchaudio`. If you get crashes on the
+4 GB one, please open an issue at
+<https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
