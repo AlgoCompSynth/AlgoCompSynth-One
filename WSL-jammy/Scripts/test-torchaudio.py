@@ -4,4 +4,5 @@ import torch
 print("torch import successful")
 import torchaudio
 print("torchaudio import successful")
+print("torchaudio backends:", torchaudio.list_audio_backends())
 print("")
