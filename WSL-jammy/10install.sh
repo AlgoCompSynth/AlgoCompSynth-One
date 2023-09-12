@@ -34,21 +34,27 @@ fi
 echo "Activating r-reticulate"
 mamba activate r-reticulate
 
-echo "Installing PyTorch, torchvision and torchaudio if necessary"
+echo "Installing PyTorch and torchaudio if necessary"
 if [ `mamba env list | grep "torch" | wc -l` -le "0" ]
 then
-  echo "..Installing PyTorch, torchvision and torchaudio"
+  echo "..Installing PyTorch and torchaudio"
+
+  # We have to do this in two steps to make sure both pytorch and
+  # torchaudio come from the 'pytorch' channel! If we don't,
+  # tests fail!
   mamba install --quiet --yes \
     pytorch \
-    torchvision \
-    torchaudio \
-    pytorch-cuda=11.8 \
+    pytorch-cuda=$CUDA_VERSION \
     --channel pytorch \
     --channel nvidia
+    $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
+
+  mamba install --quiet --yes \
+    torchaudio \
+    --channel pytorch \
+    --channel nvidia
+    $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 fi
-$SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
-$SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
-$SYNTH_SCRIPTS/test-torchvision.sh 2>&1 | tee $SYNTH_LOGS/test-torchvision.log
 
 echo "Installing 'rTorch' R package"
 /usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
