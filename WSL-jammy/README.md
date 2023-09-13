@@ -47,6 +47,10 @@ the AlgoCompSynth-One packages.
 are any, open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 
+The list of all the Mamba packages installed in the `r-reticulate`
+environment can be found in `Logs/Mamba-packages.log`. For the
+R packages, see `Logs/R-packages.log`.
+
 ## Testing
 
 1. If you're a `vim` user, execute the script
@@ -86,3 +90,21 @@ the smallest one should.
 GPU, but they do not test `torchaudio`. If you get crashes on the
 4 GB one, please open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
+
+## Using from the command line
+You can use the `r-reticulate` environment from the command line. Both
+`bash` and `zsh` are supported. Two aliases are provided.
+`r-reticulate` activates the `r-reticulate` environment, and `deac`
+deactivates whatever environment you are currently in.
+
+Example:
+
+    ```
+    r-reticulate
+    python Scripts/test-torchaudio.py # runs the `torchaudio` test
+
+    R
+    > demo(graphics)
+    > quit()
+    deac
+    ```

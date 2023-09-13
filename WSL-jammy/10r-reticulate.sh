@@ -74,12 +74,16 @@ then
 fi
 
 echo ""
-echo "Python packages"
-mamba list --name r-reticulate
+echo "Listing Mamba packages"
+echo "# Mamba packages" > $SYNTH_LOGS/Mamba-packages.log
+mamba list --name r-reticulate \
+  >> $SYNTH_LOGS/Mamba-packages.log
 
 echo ""
-echo "R packages"
-Rscript -e 'subset(installed.packages(), select = c("Version", "Built"))'
+echo "Listing R packages"
+echo "# R packages" > $SYNTH_LOGS/R-packages.log
+Rscript -e 'subset(installed.packages(), select = c("Version", "Built"))' \
+  >> $SYNTH_LOGS/R-packages.log
 
 echo ""
 echo "Finished!"
