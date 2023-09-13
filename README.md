@@ -3,36 +3,26 @@
 ## What is it?
 
 AlgoCompSynth-One is a collection of tools for composing music and synthesizing
-sound on systems with NVIDIA® GPUs. The current implementation is focused on
-the Jetson™ Xavier or Orin hardware, running Jetpack 5.1.1 or later.
-However, a future release will run on Windows 11 with Windows Subsystem for Linux.
-
-The previous version supported Jetpack 4 and would run on the original Nano. I
-can't support that any more. Jetpack 4 is based on Ubuntu `bionic` and Python 3.6,
-which are no longer supported, and there aren't convenient binaries for recent
-versions of PyTorch. NVIDIA have moved on, and so have I.
+sound on systems with NVIDIA® GPUs. The current implementation runs on
+the Jetson™ Xavier or Orin hardware, running Jetpack 5.1.1 or later, and
+Windows 11 with Ubuntu 22.04 LTS `jammy` running in Windows Subsystem for Linux.
 
 I don't currently have an Orin device to test on. The AGX Xavier development
-kit I have is sufficient for my needs, but I might get an Orin Nano
-development kit in the late summer or fall. My priorities are
-
-1. Clean up everything on Jetpack 5.1.1 / strip out the legacy Jetpack 4 support.
-2. Move the R functionality into the base install.
-3. Build the WSL Ubuntu `jammy` version.
+kit I have is sufficient for my needs, but I might get an Orin device in late
+late fall or early winter 2023.
 
 ## What can it do?
 
-The current implementation creates a
+AlgoCompSynth-One creates a
 [Mambaforge](https://github.com/conda-forge/miniforge) virtual environment
 called `r-reticulate` containing:
 
 - [JupyterLab](https://jupyter.org/),
 - [PyTorch](https://pytorch.org/),
 - [torchaudio](https://pytorch.org/audio/stable/index.html),
-- [torchvison](https://pytorch.org/vision/stable/index.html), and
 - [cuSignal](https://github.com/rapidsai/cusignal).
 
-The above tools are all optimized for the Jetson platform, enabling a variety
+PyTorch and cuSignal are optimized for NVIDIA GPUs, enabling a variety
 of digital signal processing and artificial intelligence applications,
 including the emerging field of differentiable digital signal processing.
 
@@ -50,8 +40,8 @@ advantages:
 - It avoids licensing issues with distributing binaries, and
 - The source code is right there for you to examine and enhance.
 
-The downside is that the components that need to be compiled, `torchaudio`,
-`torchvision`, `cupy`, and `cuSignal`, take a fair amount of time to
+The downside is that the components that need to be compiled on the Jetson,
+`torchaudio`, `cupy`, and `cuSignal`, take a fair amount of time to
 build. I have included logfiles of my builds on a Jetson AGX Xavier so you
 can get an idea of what to expect for build times.
 
@@ -63,46 +53,26 @@ build.
 
 ## Who is it for?
 
-At the moment, it's primarily for developers with a Jetson Xavier or Orin
-system. I am planning a compatible version for Windows 11 with
-Windows Subsystem for Linux running Ubuntu 22.04 LTS aka `jammy`.
+At the moment, it's primarily for developers who need GPU speed for digital
+signal processing or artificial intelligence. That's a fairly narrow audience
+given the kind of power today's CPUs have, but I can think of some composition
+and synthesis approaches that can use GPU power.
 
 ## How do I get started?
 
 The short version is:
 
-1. Get a Jetson Developer Kit (Xavier or later) and install Jetpack 5.1.1 or later.
+1. Get a Jetson Developer Kit (Xavier or later) and install Jetpack 5.1.1 or later,
+
+    or
+
+    get a Windows 11 machine with an NVIDIA GPU capable of supporting CUDA 11.8.
+
+    I don't have an RTX 40xx to test on, and I don't know if this code will work
+on one without any changes. I test on a Jetson AGX Xavier, a laptop with a GTX
+1650 Ti and a desktop with an RTX 3090.
+
 2. Clone this repository.
-3. At the terminal:
 
-    ```
-    cd AlgoCompSynth-One/JetPack5
-    ./00command-line.sh # installs command line conveniences and Linux dependencies
-    ./05mambaforge.sh # sets up the Mambaforge package and environment manager
-    ./10install.sh # installs the Python and R components
-    ```
-
-That will install everything.
-
-## How do I test it?
-
-```
-cd AlgoCompSynth-One/JetPack5
-./start-jupyter-lab.sh
-```
-
-This will ask you to create a strong password, then start up a JupyterLab
-server listening on `0.0.0.0:8888`. If you're on the Jetson GUI, you can browse
-to `localhost:8888` and log in with the password you created. If you're on a
-different machine on the same local area network, browse to
-`the.jetson.ip.address:8888`.
-
-Once you're logged in, there will be a list of folders on the left. Open the
-`Notebooks` folder. You'll see two notebooks:
-
-- `E2E_Example_8GB.ipynb` # 8 GB Xavier or Orin
-- `E2E_Example_16GB.ipynb` # 16 GB or larger Xavier or Orin
- 
-These are copies of the `cuSignal` end-to-end test notebook, which exercise
-both `cuSignal` and `PyTorch`. Pick the one that matches the RAM in your
-Jetson and run all the cells.
+3. `cd` into `JetPack5` (Jetson)  or `WSL-jammy` (Windows Subsystem for Linux
+Ubuntu 22.04 LTS) and follow the instructions on the `README.md` there.
