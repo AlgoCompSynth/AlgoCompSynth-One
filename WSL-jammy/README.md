@@ -16,24 +16,32 @@ NVIDIA "game ready" drivers.
 
 1. Clone the repository.
 
+    ```
     git clone https://github.com/AlgoCompSynth/AlgoCompSynth-One
     cd AlgoCompSynth-One/WSL-jammy
+    ```
 
 2. Install required Ubuntu packages. You will need to authenticate
 via `sudo`.
 
+    ```
     ./00ubuntu-packages.sh
+    ```
 
 3. Install `mambaforge`. This will ask you where you want to install
 `mambaforge`. Unless you have a strong reason for another location,
 the default is fine.
 
+    ```
     ./05mambaforge.sh
+    ```
 
 4. Create the `r-reticulate` Mamba virtual environment and install
 the AlgoCompSynth-One packages.
 
+    ```
     ./10r-reticulate.sh
+    ```
 
 5. Review the log files in `WSL-jammy/Logs` for errors. If there
 are any, open an issue at
@@ -43,18 +51,24 @@ are any, open an issue at
 
 1. If you're a `vim` user, execute the script
 
+    ```
     ./set-vim-background.sh
+    ```
 
 for light or dark background. If you've already done that, you
 can skip this step.
 
 2. If you're a `git` user, edit and execute the script
 
+    ```
     edit-me-then-run-4-git-config.sh
+    ```
 
 3. Start the JupyterLab server.
 
+    ```
     ./start-jupyter-lab.sh
+    ```
 
 This will generate a configuration file and ask you to enter a
 password. Then it will start the server listening on `0.0.0.0:8888`.
