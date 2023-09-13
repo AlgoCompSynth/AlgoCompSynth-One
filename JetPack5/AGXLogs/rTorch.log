@@ -1,0 +1,31 @@
+Activating r-reticulate
+Installing 'rTorch'
+trying URL 'https://cloud.r-project.org/src/contrib/rTorch_0.4.2.tar.gz'
+Content type 'application/x-gzip' length 99778 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+* installing *source* package ‘rTorch’ ...
+** package ‘rTorch’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rTorch)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp8dbJ6w/downloaded_packages’
+Updating HTML index of packages in '.Library'
+Making 'packages.html' ... done
+13.26user 1.59system 0:12.65elapsed 117%CPU (0avgtext+0avgdata 231452maxresident)k
+3544inputs+5400outputs (10major+213119minor)pagefaults 0swaps
+Finished
+19.24user 2.42system 0:16.56elapsed 130%CPU (0avgtext+0avgdata 231452maxresident)k
+3552inputs+5856outputs (58major+269890minor)pagefaults 0swaps
