@@ -14,7 +14,7 @@ mamba activate r-reticulate
 export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
 
 echo "Generating Jupyter configuration file"
-jupyter notebook --generate-config
+jupyter server --generate-config
 
 echo "Enter the same strong password twice"
 jupyter server password
