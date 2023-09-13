@@ -55,7 +55,7 @@ are any, open an issue at
     ./set-vim-background.sh
     ```
 
-for light or dark background. If you've already done that, you
+    for light or dark background. If you've already done that, you
 can skip this step.
 
 2. If you're a `git` user, edit and execute the script
@@ -70,7 +70,7 @@ can skip this step.
     ./start-jupyter-lab.sh
     ```
 
-This will generate a configuration file and ask you to enter a
+    This will generate a configuration file and ask you to enter a
 password. Then it will start the server listening on `0.0.0.0:8888`.
 
 4. Browse to `localhost:8888` and enter the password you defined above.
