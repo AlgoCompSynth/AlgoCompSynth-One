@@ -82,7 +82,7 @@ Open and run the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
 much RAM your computer and GPU have, they may not all run, but at least
 the smallest one should.
 
-These notebooks exercise both `cuSignal` and `PyTorch` on the CPU and
+    These notebooks exercise both `cuSignal` and `PyTorch` on the CPU and
 GPU, but they do not test `torchaudio`. If you get crashes on the
 4 GB one, please open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
