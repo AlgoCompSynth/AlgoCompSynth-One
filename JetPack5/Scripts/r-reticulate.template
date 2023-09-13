@@ -29,6 +29,7 @@ dependencies:
   - pip:
     - jupyterlab-quarto
   - pkg-config
+  - protobuf
   - r-data.table
   - r-devtools
   - r-irkernel

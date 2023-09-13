@@ -15,7 +15,6 @@ popd
 
 echo "Installing PyTorch"
 export "LD_LIBRARY_PATH=/usr/lib/llvm-8/lib:$LD_LIBRARY_PATH"
-python -m pip install --upgrade protobuf
 python -m pip install --no-cache $SYNTH_WHEELS/$PYTORCH_WHEEL_FILE
 
 echo "Cleanup"

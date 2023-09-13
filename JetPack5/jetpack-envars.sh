@@ -6,14 +6,16 @@ echo "..JETPACK_VERSION: $JETPACK_VERSION"
 
 echo ""
 echo "Setting versions to install"
-export PYTHON_VERSION="3.8"
-export PYTORCH_WHEEL_URL="https://developer.download.nvidia.cn/compute/redist/jp/v51/pytorch/torch-2.0.0a0+8aa34602.nv23.03-cp38-cp38-linux_aarch64.whl"
+export PYTHON_VERSION="3.8" # PyTorch wheel is compiled for 3.8 only!
+
+# https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform/index.html
+export PYTORCH_WHEEL_URL="https://developer.download.nvidia.cn/compute/redist/jp/v511/pytorch/torch-2.0.0+nv23.05-cp38-cp38-linux_aarch64.whl"
 export PYTORCH_WHEEL_FILE="torch-2.0.0-cp38-cp38-linux_aarch64.whl"
 export PYTORCH_VERSION="2.0.0"
 export TORCHAUDIO_VERSION="2.0.1"
-export TORCHVISION_VERSION="0.15.1"
 
-export CUSIGNAL_VERSION="23.04.00"
+# https://github.com/rapidsai/cusignal/releases
+export CUSIGNAL_VERSION="23.08.00"
 echo "..PYTHON_VERSION: $PYTHON_VERSION"
 echo "..PYTORCH_WHEEL_URL: $PYTORCH_WHEEL_URL"
 echo "..PYTORCH_WHEEL_FILE: $PYTORCH_WHEEL_FILE"
