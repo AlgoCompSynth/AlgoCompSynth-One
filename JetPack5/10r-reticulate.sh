@@ -50,14 +50,6 @@ then
 fi
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
-echo "Installing torchvision if necessary"
-if [ `mamba list | grep "torchvision" | wc -l` -le "0" ]
-then
-  echo "..Installing torchvision"
-  /usr/bin/time $SYNTH_SCRIPTS/torchvision.sh > $SYNTH_LOGS/torchvision.log 2>&1
-fi
-$SYNTH_SCRIPTS/test-torchvision.sh 2>&1 | tee $SYNTH_LOGS/test-torchvision.log
-
 echo "Installing 'rTorch' R package"
 /usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
 
@@ -78,12 +70,16 @@ then
 fi
 
 echo ""
-echo "Python packages"
-mamba list --name r-reticulate
+echo "Listing Mamba packages"
+echo "# Mamba packages" > $SYNTH_LOGS/Mamba-packages.log
+mamba list --name r-reticulate \
+  >> $SYNTH_LOGS/Mamba-packages.log
 
 echo ""
-echo "R packages"
-Rscript -e 'subset(installed.packages(), select = c("Version", "Built"))'
+echo "Listing R packages"
+echo "# R packages" > $SYNTH_LOGS/R-packages.log
+Rscript -e 'subset(installed.packages(), select = c("Version", "Built"))' \
+  >> $SYNTH_LOGS/R-packages.log
 
 echo ""
 echo "Finished!"
