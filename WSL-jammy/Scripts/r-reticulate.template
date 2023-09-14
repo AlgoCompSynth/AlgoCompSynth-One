@@ -18,6 +18,7 @@ dependencies:
   - ninja
   - numba
   - numpy
+  - nvitop
   - pandas
   - pip
   - pip:

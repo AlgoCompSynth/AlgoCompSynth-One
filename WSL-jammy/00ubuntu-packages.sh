@@ -46,4 +46,8 @@ sudo apt-get update
 sudo apt-get -y install cuda
 popd
 
+echo "Installing 'nvtop'"
+sudo add-apt-repository -y ppa:flexiondotorg/nvtop
+sudo apt install nvtop
+
 echo "Finished"
