@@ -1,4 +1,5 @@
 Creating fresh r-reticulate virtual environment
+Retrieving notices: ...working... done
 conda-forge/linux-aarch64                                   Using cache
 conda-forge/noarch                                          Using cache
 
@@ -89,31 +90,32 @@ Transaction
   + xorg-xproto                                      7.0.31  h3557bc0_1007             conda-forge       75kB
   + xorg-kbproto                                      1.0.7  h3557bc0_1002             conda-forge       27kB
   + xorg-renderproto                                 0.11.1  h3557bc0_1002             conda-forge       10kB
+  + libbrotlicommon                                   1.1.0  h31becfc_0                conda-forge       69kB
+  + libev                                              4.33  h516909a_1                conda-forge     Cached
+  + c-ares                                           1.19.1  h31becfc_0                conda-forge     Cached
+  + xorg-libxau                                      1.0.11  h31becfc_0                conda-forge       15kB
+  + libabseil                                    20230802.0  cxx17_h2f0025b_3          conda-forge        1MB
+  + yaml                                              0.2.5  hf897c2e_2                conda-forge       93kB
+  + make                                                4.3  h309ac5b_1                conda-forge      497kB
+  + libsanitizer                                     13.2.0  h9a76618_0                conda-forge        4MB
+  + keyutils                                          1.6.1  h4e544f5_0                conda-forge     Cached
   + libuv                                            1.46.0  h31becfc_0                conda-forge      625kB
   + x265                                                3.5  hdd96247_3                conda-forge        1MB
   + x264                                         1!164.3095  h4e544f5_2                conda-forge        1MB
   + openh264                                          2.3.1  hd600fc2_2                conda-forge      775kB
   + libopus                                           1.3.1  hf897c2e_1                conda-forge      329kB
   + lame                                              3.100  h4e544f5_1003             conda-forge      605kB
-  + libbrotlicommon                                   1.1.0  h31becfc_0                conda-forge       69kB
   + libtool                                           2.4.7  h4de3ea5_0                conda-forge      417kB
-  + ghostscript                                      9.56.1  h2f0025b_0                conda-forge       60MB
-  + libogg                                            1.3.4  h3557bc0_1                conda-forge      214kB
-  + libev                                              4.33  h516909a_1                conda-forge     Cached
-  + c-ares                                           1.19.1  h31becfc_0                conda-forge     Cached
-  + giflib                                            5.2.1  hb4cce97_3                conda-forge       82kB
-  + xorg-libxau                                      1.0.11  h31becfc_0                conda-forge       15kB
-  + libabseil                                    20230802.0  cxx17_h2f0025b_3          conda-forge        1MB
-  + libffi                                            3.4.2  h3557bc0_5                conda-forge     Cached
-  + yaml                                              0.2.5  hf897c2e_2                conda-forge       93kB
   + xorg-libice                                       1.1.1  h7935292_0                conda-forge       60kB
-  + make                                                4.3  h309ac5b_1                conda-forge      497kB
-  + libsanitizer                                     13.2.0  h9a76618_0                conda-forge        4MB
+  + giflib                                            5.2.1  hb4cce97_3                conda-forge       82kB
+  + ghostscript                                      9.56.1  h2f0025b_0                conda-forge       60MB
   + bzip2                                             1.0.8  hf897c2e_4                conda-forge     Cached
-  + keyutils                                          1.6.1  h4e544f5_0                conda-forge     Cached
-  + openssl                                           3.1.2  h31becfc_0                conda-forge     Cached
+  + libogg                                            1.3.4  h3557bc0_1                conda-forge      214kB
   + libdeflate                                         1.18  hb4cce97_0                conda-forge       67kB
   + lerc                                              4.0.0  h4de3ea5_0                conda-forge      262kB
+  + libffi                                            3.4.2  h3557bc0_5                conda-forge     Cached
+  + openssl                                           3.1.2  h31becfc_0                conda-forge     Cached
+  + libwebp-base                                      1.3.1  h31becfc_0                conda-forge      364kB
   + libjpeg-turbo                                   2.1.5.1  h31becfc_1                conda-forge      509kB
   + libopenblas                                      0.3.23  pthreads_hd703e6f_0       conda-forge        4MB
   + xorg-xextproto                                    7.3.0  h2a766a3_1003             conda-forge       30kB
@@ -124,7 +126,6 @@ Transaction
   + pkg-config                                       0.29.2  hb9de7d4_1008             conda-forge      299kB
   + ninja                                            1.11.1  hdd96247_0                conda-forge        2MB
   + gettext                                          0.21.1  ha18d298_0                conda-forge        5MB
-  + libwebp-base                                      1.3.1  h31becfc_0                conda-forge      364kB
   + jbig                                                2.1  hf897c2e_2003             conda-forge       45kB
   + fftw                                             3.3.10  nompi_h2dcef8e_108        conda-forge        2MB
   + nettle                                            3.8.1  hcc5b78b_1                conda-forge        1MB
@@ -183,17 +184,17 @@ Transaction
   + krb5                                             1.21.2  hc419048_0                conda-forge     Cached
   + python                                           3.8.17  ha43d526_0_cpython        conda-forge       14MB
   + brotli                                            1.1.0  h31becfc_0                conda-forge       19kB
-  + xorg-libxext                                      1.3.4  h2a766a3_2                conda-forge       51kB
   + xorg-libxt                                        1.3.0  h7935292_1                conda-forge      384kB
+  + xorg-libxext                                      1.3.4  h2a766a3_2                conda-forge       51kB
   + xorg-libxrender                                  0.9.11  h7935292_0                conda-forge       37kB
   + gsl                                                 2.7  h294027d_0                conda-forge        4MB
   + atk-1.0                                          2.38.0  hf4e84e4_1                conda-forge      538kB
   + gts                                               0.7.6  he293c15_4                conda-forge      333kB
   + fontconfig                                       2.14.2  ha9a116f_0                conda-forge      280kB
-  + gdk-pixbuf                                      2.42.10  h23fe23e_2                conda-forge      582kB
   + lcms2                                              2.15  h3e0bdec_1                conda-forge      289kB
-  + openjpeg                                          2.5.0  h9508984_2                conda-forge      379kB
+  + gdk-pixbuf                                      2.42.10  h23fe23e_2                conda-forge      582kB
   + libwebp                                           1.3.1  hd7a20fa_0                conda-forge       94kB
+  + openjpeg                                          2.5.0  h9508984_2                conda-forge      379kB
   + libcurl                                           8.3.0  h4e8248e_0                conda-forge     Cached
   + cairo                                            1.16.0  h3b99fb1_1016             conda-forge        1MB
   + libgd                                             2.3.3  h10d7f0e_6                conda-forge      236kB
@@ -207,13 +208,13 @@ Transaction
   + librsvg                                          2.56.3  h2c07517_0                conda-forge        5MB
   + ffmpeg                                            6.0.0  gpl_hb2797d3_104          conda-forge        9MB
   + r-sourcetools                                   0.1.7_1  r42h93f32a7_1             conda-forge       56kB
+  + r-sys                                             3.4.2  r42h25e906a_1             conda-forge       50kB
   + r-bit                                             4.0.5  r42h25e906a_1             conda-forge        1MB
   + r-zip                                             2.3.0  r42h25e906a_1             conda-forge      146kB
   + r-fastmap                                         1.1.1  r42h93f32a7_1             conda-forge       73kB
   + r-colorspace                                      2.1_0  r42h25e906a_1             conda-forge        2MB
   + r-base64enc                                       0.1_3  r42h25e906a_1006          conda-forge       47kB
   + r-farver                                          2.1.1  r42h93f32a7_2             conda-forge        1MB
-  + r-sys                                             3.4.2  r42h25e906a_1             conda-forge       50kB
   + r-png                                             0.1_8  r42hef9d8e0_1             conda-forge       62kB
   + r-commonmark                                      1.9.0  r42h25e906a_1             conda-forge      140kB
   + r-ps                                              1.7.5  r42h25e906a_1             conda-forge      313kB
@@ -247,8 +248,8 @@ Transaction
   + r-magrittr                                        2.0.3  r42h25e906a_2             conda-forge      210kB
   + r-data.table                                     1.14.8  r42hb4ebc13_2             conda-forge        2MB
   + graphviz                                          8.1.0  h1e60024_0                conda-forge        2MB
-  + r-bit64                                           4.0.5  r42h25e906a_2             conda-forge      516kB
   + r-askpass                                         1.2.0  r42h25e906a_0             conda-forge       32kB
+  + r-bit64                                           4.0.5  r42h25e906a_2             conda-forge      516kB
   + r-rcpptoml                                        0.2.2  r42ha6e910b_1             conda-forge      224kB
   + r-xml2                                            1.3.5  r42h9ff23c6_0             conda-forge      180kB
   + r-nnet                                           7.3_19  r42h25e906a_1             conda-forge      132kB
@@ -326,7 +327,13 @@ Transaction
   + executing                                         1.2.0  pyhd8ed1ab_0              conda-forge       25kB
   + pysocks                                           1.7.1  pyha2e5f31_6              conda-forge     Cached
   + pycparser                                          2.21  pyhd8ed1ab_0              conda-forge     Cached
+  + munkres                                           1.1.4  pyh9f0ad1d_0              conda-forge       12kB
+  + pyparsing                                         3.0.9  pyhd8ed1ab_0              conda-forge       81kB
+  + cycler                                           0.11.0  pyhd8ed1ab_0              conda-forge       10kB
+  + python-tzdata                                    2023.3  pyhd8ed1ab_0              conda-forge      143kB
+  + pytz                                       2023.3.post1  pyhd8ed1ab_0              conda-forge      187kB
   + soupsieve                                           2.5  pyhd8ed1ab_1              conda-forge       37kB
+  + webencodings                                      0.5.1  pyhd8ed1ab_2              conda-forge       16kB
   + decorator                                         5.1.1  pyhd8ed1ab_0              conda-forge       12kB
   + backcall                                          0.2.0  pyh9f0ad1d_0              conda-forge       14kB
   + pickleshare                                       0.7.5  py_1003                   conda-forge        9kB
@@ -335,17 +342,11 @@ Transaction
   + pandocfilters                                     1.5.0  pyhd8ed1ab_0              conda-forge       12kB
   + mistune                                           3.0.1  pyhd8ed1ab_0              conda-forge       66kB
   + defusedxml                                        0.7.1  pyhd8ed1ab_0              conda-forge       24kB
-  + webencodings                                      0.5.1  py_1                      conda-forge       12kB
   + entrypoints                                         0.4  pyhd8ed1ab_0              conda-forge        9kB
   + python-fastjsonschema                            2.18.0  pyhd8ed1ab_0              conda-forge      226kB
+  + certifi                                       2023.7.22  pyhd8ed1ab_0              conda-forge     Cached
   + ptyprocess                                        0.7.0  pyhd3deb0d_0              conda-forge       17kB
   + charset-normalizer                                3.2.0  pyhd8ed1ab_0              conda-forge     Cached
-  + munkres                                           1.1.4  pyh9f0ad1d_0              conda-forge       12kB
-  + pyparsing                                         3.0.9  pyhd8ed1ab_0              conda-forge       81kB
-  + cycler                                           0.11.0  pyhd8ed1ab_0              conda-forge       10kB
-  + certifi                                       2023.7.22  pyhd8ed1ab_0              conda-forge     Cached
-  + pytz                                       2023.3.post1  pyhd8ed1ab_0              conda-forge      187kB
-  + python-tzdata                                    2023.3  pyhd8ed1ab_0              conda-forge      143kB
   + threadpoolctl                                     3.2.0  pyha21a80b_0              conda-forge       21kB
   + joblib                                            1.3.2  pyhd8ed1ab_0              conda-forge      221kB
   + cached_property                                   1.5.2  pyha770c72_1              conda-forge       11kB
@@ -358,14 +359,13 @@ Transaction
   + pkgutil-resolve-name                             1.3.10  pyhd8ed1ab_1              conda-forge       11kB
   + webcolors                                          1.13  pyhd8ed1ab_0              conda-forge       18kB
   + uri-template                                      1.3.0  pyhd8ed1ab_0              conda-forge       24kB
-  + jsonpointer                                         2.0  py_0                      conda-forge     Cached
   + idna                                                3.4  pyhd8ed1ab_0              conda-forge     Cached
   + python-json-logger                                2.0.7  pyhd8ed1ab_0              conda-forge       13kB
   + rfc3986-validator                                 0.1.1  pyh9f0ad1d_0              conda-forge        8kB
   + prometheus_client                                0.17.1  pyhd8ed1ab_0              conda-forge       53kB
   + typing_utils                                      0.1.0  pyhd8ed1ab_0              conda-forge       14kB
   + websocket-client                                  1.6.3  pyhd8ed1ab_0              conda-forge       46kB
-  + traitlets                                         5.9.0  pyhd8ed1ab_0              conda-forge       98kB
+  + traitlets                                        5.10.0  pyhd8ed1ab_0              conda-forge      102kB
   + tomli                                             2.0.1  pyhd8ed1ab_0              conda-forge       16kB
   + packaging                                          23.1  pyhd8ed1ab_0              conda-forge     Cached
   + distro                                            1.8.0  pyhd8ed1ab_0              conda-forge       41kB
@@ -380,11 +380,11 @@ Transaction
   + r-pkgload                                       1.3.2.1  r42hc72bb7e_0             conda-forge      195kB
   + backports.functools_lru_cache                     1.6.5  pyhd8ed1ab_0              conda-forge       12kB
   + jedi                                             0.19.0  pyhd8ed1ab_0              conda-forge      845kB
-  + beautifulsoup4                                   4.12.2  pyha770c72_0              conda-forge      115kB
-  + jupyterlab_pygments                               0.2.2  pyhd8ed1ab_0              conda-forge       17kB
-  + tinycss2                                          1.2.1  pyhd8ed1ab_0              conda-forge       23kB
-  + pexpect                                           4.8.0  pyh1a96a4e_2              conda-forge       49kB
   + babel                                            2.12.1  pyhd8ed1ab_1              conda-forge        7MB
+  + beautifulsoup4                                   4.12.2  pyha770c72_0              conda-forge      115kB
+  + tinycss2                                          1.2.1  pyhd8ed1ab_0              conda-forge       23kB
+  + jupyterlab_pygments                               0.2.2  pyhd8ed1ab_0              conda-forge       17kB
+  + pexpect                                           4.8.0  pyh1a96a4e_2              conda-forge       49kB
   + cached-property                                   1.5.2  hd8ed1ab_1                conda-forge        4kB
   + asttokens                                         2.4.0  pyhd8ed1ab_0              conda-forge       29kB
   + rfc3339-validator                                 0.1.4  pyhd8ed1ab_0              conda-forge        8kB
@@ -421,16 +421,17 @@ Transaction
   + r-vctrs                                           0.6.3  r42h93f32a7_0             conda-forge        1MB
   + r-gert                                            1.9.3  r42h3c61000_1             conda-forge      262kB
   + brotli-python                                     1.1.0  py38hb83fbf6_0            conda-forge      355kB
-  + multidict                                         6.0.4  py38hda48048_0            conda-forge       54kB
-  + frozenlist                                        1.4.0  py38h9579f32_0            conda-forge       55kB
   + unicodedata2                                     15.0.0  py38hdacc76a_0            conda-forge      513kB
   + pillow                                           10.0.0  py38h5cbf20c_0            conda-forge       46MB
   + kiwisolver                                        1.4.5  py38h7e3a353_0            conda-forge       73kB
   + llvmlite                                         0.40.1  py38h95a9722_0            conda-forge        2MB
+  + multidict                                         6.0.4  py38hda48048_0            conda-forge       54kB
+  + frozenlist                                        1.4.0  py38h9579f32_0            conda-forge       55kB
   + markupsafe                                        2.1.3  py38hea3b116_0            conda-forge       25kB
   + debugpy                                           1.8.0  py38hb83fbf6_0            conda-forge        2MB
   + psutil                                            5.9.5  py38hda48048_0            conda-forge      361kB
   + rpds-py                                          0.10.3  py38hf532af8_0            conda-forge      997kB
+  + jsonpointer                                         2.4  py38he3eb160_2            conda-forge       17kB
   + pyyaml                                            6.0.1  py38h9579f32_0            conda-forge      171kB
   + pyzmq                                            25.1.1  py38h6a3a231_0            conda-forge      458kB
   + tornado                                           6.3.3  py38hea3b116_0            conda-forge      632kB
@@ -447,8 +448,8 @@ Transaction
   + r-httpuv                                         1.6.11  r42h93f32a7_1             conda-forge      797kB
   + r-tidyselect                                      1.2.0  r42h4571c7f_1             conda-forge      216kB
   + r-purrr                                           1.0.2  r42h25e906a_0             conda-forge      490kB
-  + yarl                                              1.9.2  py38h9579f32_0            conda-forge       96kB
   + fonttools                                        4.42.1  py38h9579f32_0            conda-forge        2MB
+  + yarl                                              1.9.2  py38h9579f32_0            conda-forge       96kB
   + contourpy                                         1.1.0  py38hb4b5b6f_0            conda-forge      224kB
   + pandas                                            2.0.3  py38h958bb2c_1            conda-forge       12MB
   + numba                                            0.57.1  py38h2ab0d9a_0            conda-forge        4MB
@@ -549,13 +550,13 @@ Executing transaction: ...working...
 
 done
 Installing pip dependencies: ...working... Ran pip subprocess with arguments:
-['/home/znmeb/mambaforge/envs/r-reticulate/bin/python', '-m', 'pip', 'install', '-U', '-r', '/home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Scripts/condaenv.ekjdmm5p.requirements.txt', '--exists-action=b']
+['/home/znmeb/mambaforge/envs/r-reticulate/bin/python', '-m', 'pip', 'install', '-U', '-r', '/home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Scripts/condaenv.lebpp1qh.requirements.txt', '--exists-action=b']
 Pip subprocess output:
-Collecting jupyterlab-quarto (from -r /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Scripts/condaenv.ekjdmm5p.requirements.txt (line 1))
+Collecting jupyterlab-quarto (from -r /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Scripts/condaenv.lebpp1qh.requirements.txt (line 1))
   Obtaining dependency information for jupyterlab-quarto from https://files.pythonhosted.org/packages/7d/23/67b43d5d4b8b0aca29f6a626350c9490d753123ccf63395567d1f6a5e0aa/jupyterlab_quarto-0.2.8-py3-none-any.whl.metadata
   Downloading jupyterlab_quarto-0.2.8-py3-none-any.whl.metadata (6.8 kB)
 Downloading jupyterlab_quarto-0.2.8-py3-none-any.whl (909 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 909.8/909.8 kB 15.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 909.8/909.8 kB 16.0 MB/s eta 0:00:00
 Installing collected packages: jupyterlab-quarto
 Successfully installed jupyterlab-quarto-0.2.8
 
@@ -569,160 +570,160 @@ done
 #
 #     $ conda deactivate
 
-159.56user 90.03system 3:04.80elapsed 135%CPU (0avgtext+0avgdata 920480maxresident)k
-368inputs+7040632outputs (240major+1273149minor)pagefaults 0swaps
+158.76user 91.13system 3:08.23elapsed 132%CPU (0avgtext+0avgdata 857068maxresident)k
+321488inputs+7041096outputs (263major+1230171minor)pagefaults 0swaps
 Activating r-reticulate
 Installing 'caracas'
 also installing the dependencies ‘minqa’, ‘nloptr’, ‘RcppEigen’, ‘lme4’, ‘numDeriv’, ‘Deriv’, ‘microbenchmark’, ‘pbkrtest’, ‘doBy’
 
 Updating HTML index of packages in '.Library'
 Making 'packages.html' ... done
-504.34user 45.27system 5:12.42elapsed 175%CPU (0avgtext+0avgdata 1174924maxresident)k
-680inputs+218792outputs (262major+4407181minor)pagefaults 0swaps
+502.90user 48.77system 5:11.78elapsed 176%CPU (0avgtext+0avgdata 1175272maxresident)k
+22232inputs+218792outputs (242major+4408553minor)pagefaults 0swaps
 Installing 'tinytex'
 trying URL 'https://yihui.org/gh/tinytex/tools/install-unx.sh'
 Content type 'application/x-sh' length 821 bytes
 ==================================================
 downloaded 821 bytes
 
---2023-09-13 13:48:34--  https://ctan.math.illinois.edu/systems/texlive/tlnet//install-tl-unx.tar.gz
+--2023-09-14 11:37:48--  https://ctan.math.illinois.edu/systems/texlive/tlnet//install-tl-unx.tar.gz
 Resolving ctan.math.illinois.edu (ctan.math.illinois.edu)... 192.17.3.223
 Connecting to ctan.math.illinois.edu (ctan.math.illinois.edu)|192.17.3.223|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 5742203 (5.5M) [application/octet-stream]
+Length: 5742573 (5.5M) [application/octet-stream]
 Saving to: ‘install-tl-unx.tar.gz’
 
-     0K .......... .......... .......... .......... ..........  0%  719K 8s
-    50K .......... .......... .......... .......... ..........  1%  722K 8s
-   100K .......... .......... .......... .......... ..........  2% 15.8M 5s
-   150K .......... .......... .......... .......... ..........  3% 17.1M 4s
-   200K .......... .......... .......... .......... ..........  4%  753K 5s
-   250K .......... .......... .......... .......... ..........  5% 20.1M 4s
-   300K .......... .......... .......... .......... ..........  6% 19.7M 3s
-   350K .......... .......... .......... .......... ..........  7%  788K 4s
-   400K .......... .......... .......... .......... ..........  8% 17.8M 3s
-   450K .......... .......... .......... .......... ..........  8% 19.9M 3s
-   500K .......... .......... .......... .......... ..........  9% 20.2M 3s
-   550K .......... .......... .......... .......... .......... 10% 17.0M 2s
-   600K .......... .......... .......... .......... .......... 11% 19.8M 2s
-   650K .......... .......... .......... .......... .......... 12% 20.5M 2s
-   700K .......... .......... .......... .......... .......... 13% 19.4M 2s
-   750K .......... .......... .......... .......... .......... 14%  967K 2s
-   800K .......... .......... .......... .......... .......... 15% 18.3M 2s
-   850K .......... .......... .......... .......... .......... 16% 20.3M 2s
-   900K .......... .......... .......... .......... .......... 16% 19.3M 2s
-   950K .......... .......... .......... .......... .......... 17% 17.5M 2s
-  1000K .......... .......... .......... .......... .......... 18% 19.7M 2s
-  1050K .......... .......... .......... .......... .......... 19% 20.0M 1s
-  1100K .......... .......... .......... .......... .......... 20% 20.2M 1s
-  1150K .......... .......... .......... .......... .......... 21% 15.9M 1s
-  1200K .......... .......... .......... .......... .......... 22% 22.0M 1s
-  1250K .......... .......... .......... .......... .......... 23% 20.9M 1s
-  1300K .......... .......... .......... .......... .......... 24% 1.19M 1s
-  1350K .......... .......... .......... .......... .......... 24% 17.6M 1s
-  1400K .......... .......... .......... .......... .......... 25% 21.7M 1s
-  1450K .......... .......... .......... .......... .......... 26% 13.8M 1s
-  1500K .......... .......... .......... .......... .......... 27% 23.6M 1s
-  1550K .......... .......... .......... .......... .......... 28% 21.5M 1s
-  1600K .......... .......... .......... .......... .......... 29% 25.6M 1s
-  1650K .......... .......... .......... .......... .......... 30% 25.3M 1s
-  1700K .......... .......... .......... .......... .......... 31% 25.4M 1s
-  1750K .......... .......... .......... .......... .......... 32% 21.3M 1s
-  1800K .......... .......... .......... .......... .......... 32% 26.1M 1s
-  1850K .......... .......... .......... .......... .......... 33% 21.4M 1s
-  1900K .......... .......... .......... .......... .......... 34% 25.6M 1s
-  1950K .......... .......... .......... .......... .......... 35% 22.0M 1s
-  2000K .......... .......... .......... .......... .......... 36% 26.9M 1s
-  2050K .......... .......... .......... .......... .......... 37% 25.9M 1s
-  2100K .......... .......... .......... .......... .......... 38% 30.6M 1s
-  2150K .......... .......... .......... .......... .......... 39%  430K 1s
-  2200K .......... .......... .......... .......... .......... 40% 32.9M 1s
-  2250K .......... .......... .......... .......... .......... 41% 30.4M 1s
-  2300K .......... .......... .......... .......... .......... 41% 35.6M 1s
-  2350K .......... .......... .......... .......... .......... 42% 31.1M 1s
-  2400K .......... .......... .......... .......... .......... 43% 36.9M 1s
-  2450K .......... .......... .......... .......... .......... 44% 36.3M 1s
-  2500K .......... .......... .......... .......... .......... 45% 34.3M 1s
-  2550K .......... .......... .......... .......... .......... 46% 32.7M 1s
-  2600K .......... .......... .......... .......... .......... 47% 35.2M 1s
-  2650K .......... .......... .......... .......... .......... 48% 35.8M 1s
-  2700K .......... .......... .......... .......... .......... 49% 36.9M 1s
-  2750K .......... .......... .......... .......... .......... 49% 31.6M 1s
-  2800K .......... .......... .......... .......... .......... 50% 37.1M 1s
-  2850K .......... .......... .......... .......... .......... 51% 37.3M 1s
-  2900K .......... .......... .......... .......... .......... 52% 37.9M 1s
-  2950K .......... .......... .......... .......... .......... 53% 32.0M 1s
-  3000K .......... .......... .......... .......... .......... 54% 37.2M 0s
-  3050K .......... .......... .......... .......... .......... 55% 36.0M 0s
-  3100K .......... .......... .......... .......... .......... 56% 36.3M 0s
-  3150K .......... .......... .......... .......... .......... 57% 32.6M 0s
-  3200K .......... .......... .......... .......... .......... 57% 37.5M 0s
-  3250K .......... .......... .......... .......... .......... 58% 35.9M 0s
-  3300K .......... .......... .......... .......... .......... 59% 37.7M 0s
-  3350K .......... .......... .......... .......... .......... 60% 33.5M 0s
-  3400K .......... .......... .......... .......... .......... 61% 37.3M 0s
-  3450K .......... .......... .......... .......... .......... 62% 39.2M 0s
-  3500K .......... .......... .......... .......... .......... 63% 39.9M 0s
-  3550K .......... .......... .......... .......... .......... 64% 33.6M 0s
-  3600K .......... .......... .......... .......... .......... 65% 40.3M 0s
-  3650K .......... .......... .......... .......... .......... 65% 37.6M 0s
-  3700K .......... .......... .......... .......... .......... 66% 3.09M 0s
-  3750K .......... .......... .......... .......... .......... 67% 33.1M 0s
-  3800K .......... .......... .......... .......... .......... 68% 28.7M 0s
-  3850K .......... .......... .......... .......... .......... 69% 33.3M 0s
-  3900K .......... .......... .......... .......... .......... 70% 33.8M 0s
-  3950K .......... .......... .......... .......... .......... 71% 22.3M 0s
-  4000K .......... .......... .......... .......... .......... 72% 29.8M 0s
-  4050K .......... .......... .......... .......... .......... 73% 32.4M 0s
-  4100K .......... .......... .......... .......... .......... 74% 31.3M 0s
-  4150K .......... .......... .......... .......... .......... 74% 31.9M 0s
-  4200K .......... .......... .......... .......... .......... 75% 39.5M 0s
-  4250K .......... .......... .......... .......... .......... 76% 38.8M 0s
-  4300K .......... .......... .......... .......... .......... 77% 39.3M 0s
-  4350K .......... .......... .......... .......... .......... 78% 33.1M 0s
-  4400K .......... .......... .......... .......... .......... 79% 38.9M 0s
-  4450K .......... .......... .......... .......... .......... 80% 41.3M 0s
-  4500K .......... .......... .......... .......... .......... 81% 39.8M 0s
-  4550K .......... .......... .......... .......... .......... 82% 32.5M 0s
-  4600K .......... .......... .......... .......... .......... 82% 40.1M 0s
-  4650K .......... .......... .......... .......... .......... 83% 39.5M 0s
-  4700K .......... .......... .......... .......... .......... 84% 39.6M 0s
-  4750K .......... .......... .......... .......... .......... 85% 31.3M 0s
-  4800K .......... .......... .......... .......... .......... 86% 39.7M 0s
-  4850K .......... .......... .......... .......... .......... 87% 38.6M 0s
-  4900K .......... .......... .......... .......... .......... 88% 1002K 0s
-  4950K .......... .......... .......... .......... .......... 89% 34.4M 0s
-  5000K .......... .......... .......... .......... .......... 90% 38.6M 0s
-  5050K .......... .......... .......... .......... .......... 90% 39.0M 0s
-  5100K .......... .......... .......... .......... .......... 91% 37.3M 0s
-  5150K .......... .......... .......... .......... .......... 92% 33.8M 0s
-  5200K .......... .......... .......... .......... .......... 93% 40.3M 0s
-  5250K .......... .......... .......... .......... .......... 94% 39.8M 0s
-  5300K .......... .......... .......... .......... .......... 95% 37.0M 0s
-  5350K .......... .......... .......... .......... .......... 96% 35.2M 0s
-  5400K .......... .......... .......... .......... .......... 97% 40.3M 0s
-  5450K .......... .......... .......... .......... .......... 98% 38.2M 0s
-  5500K .......... .......... .......... .......... .......... 98% 38.3M 0s
-  5550K .......... .......... .......... .......... .......... 99% 33.9M 0s
-  5600K .......                                               100% 14534G=0.7s
+     0K .......... .......... .......... .......... ..........  0%  965K 6s
+    50K .......... .......... .......... .......... ..........  1%  982K 6s
+   100K .......... .......... .......... .......... ..........  2% 19.6M 4s
+   150K .......... .......... .......... .......... ..........  3% 1.00M 4s
+   200K .......... .......... .......... .......... ..........  4% 21.0M 3s
+   250K .......... .......... .......... .......... ..........  5% 23.4M 3s
+   300K .......... .......... .......... .......... ..........  6% 23.5M 2s
+   350K .......... .......... .......... .......... ..........  7% 1.10M 3s
+   400K .......... .......... .......... .......... ..........  8% 19.2M 2s
+   450K .......... .......... .......... .......... ..........  8% 23.4M 2s
+   500K .......... .......... .......... .......... ..........  9% 24.7M 2s
+   550K .......... .......... .......... .......... .......... 10% 20.3M 2s
+   600K .......... .......... .......... .......... .......... 11% 24.9M 2s
+   650K .......... .......... .......... .......... .......... 12% 24.6M 2s
+   700K .......... .......... .......... .......... .......... 13% 24.8M 1s
+   750K .......... .......... .......... .......... .......... 14% 20.4M 1s
+   800K .......... .......... .......... .......... .......... 15% 1.35M 1s
+   850K .......... .......... .......... .......... .......... 16% 22.6M 1s
+   900K .......... .......... .......... .......... .......... 16% 22.8M 1s
+   950K .......... .......... .......... .......... .......... 17% 18.5M 1s
+  1000K .......... .......... .......... .......... .......... 18% 24.2M 1s
+  1050K .......... .......... .......... .......... .......... 19% 24.3M 1s
+  1100K .......... .......... .......... .......... .......... 20% 25.4M 1s
+  1150K .......... .......... .......... .......... .......... 21% 20.4M 1s
+  1200K .......... .......... .......... .......... .......... 22% 24.3M 1s
+  1250K .......... .......... .......... .......... .......... 23% 24.2M 1s
+  1300K .......... .......... .......... .......... .......... 24%  597K 1s
+  1350K .......... .......... .......... .......... .......... 24% 16.7M 1s
+  1400K .......... .......... .......... .......... .......... 25% 23.9M 1s
+  1450K .......... .......... .......... .......... .......... 26% 24.3M 1s
+  1500K .......... .......... .......... .......... .......... 27% 24.9M 1s
+  1550K .......... .......... .......... .......... .......... 28% 20.6M 1s
+  1600K .......... .......... .......... .......... .......... 29% 24.8M 1s
+  1650K .......... .......... .......... .......... .......... 30% 23.8M 1s
+  1700K .......... .......... .......... .......... .......... 31% 25.3M 1s
+  1750K .......... .......... .......... .......... .......... 32% 21.1M 1s
+  1800K .......... .......... .......... .......... .......... 32% 24.8M 1s
+  1850K .......... .......... .......... .......... .......... 33% 20.8M 1s
+  1900K .......... .......... .......... .......... .......... 34% 26.7M 1s
+  1950K .......... .......... .......... .......... .......... 35% 21.5M 1s
+  2000K .......... .......... .......... .......... .......... 36% 9.64M 1s
+  2050K .......... .......... .......... .......... .......... 37% 27.3M 1s
+  2100K .......... .......... .......... .......... .......... 38% 30.2M 1s
+  2150K .......... .......... .......... .......... .......... 39% 29.6M 1s
+  2200K .......... .......... .......... .......... .......... 40% 33.2M 1s
+  2250K .......... .......... .......... .......... .......... 41% 37.6M 1s
+  2300K .......... .......... .......... .......... .......... 41% 38.0M 1s
+  2350K .......... .......... .......... .......... .......... 42% 28.6M 1s
+  2400K .......... .......... .......... .......... .......... 43% 42.3M 1s
+  2450K .......... .......... .......... .......... .......... 44% 42.1M 1s
+  2500K .......... .......... .......... .......... .......... 45% 35.1M 0s
+  2550K .......... .......... .......... .......... .......... 46% 38.9M 0s
+  2600K .......... .......... .......... .......... .......... 47% 39.6M 0s
+  2650K .......... .......... .......... .......... .......... 48% 41.0M 0s
+  2700K .......... .......... .......... .......... .......... 49% 38.9M 0s
+  2750K .......... .......... .......... .......... .......... 49% 39.0M 0s
+  2800K .......... .......... .......... .......... .......... 50% 45.1M 0s
+  2850K .......... .......... .......... .......... .......... 51% 47.2M 0s
+  2900K .......... .......... .......... .......... .......... 52% 45.5M 0s
+  2950K .......... .......... .......... .......... .......... 53% 41.8M 0s
+  3000K .......... .......... .......... .......... .......... 54% 46.2M 0s
+  3050K .......... .......... .......... .......... .......... 55% 47.6M 0s
+  3100K .......... .......... .......... .......... .......... 56% 47.8M 0s
+  3150K .......... .......... .......... .......... .......... 57% 39.7M 0s
+  3200K .......... .......... .......... .......... .......... 57% 47.0M 0s
+  3250K .......... .......... .......... .......... .......... 58% 48.5M 0s
+  3300K .......... .......... .......... .......... .......... 59% 48.5M 0s
+  3350K .......... .......... .......... .......... .......... 60% 41.0M 0s
+  3400K .......... .......... .......... .......... .......... 61% 48.0M 0s
+  3450K .......... .......... .......... .......... .......... 62% 47.8M 0s
+  3500K .......... .......... .......... .......... .......... 63% 48.2M 0s
+  3550K .......... .......... .......... .......... .......... 64% 39.9M 0s
+  3600K .......... .......... .......... .......... .......... 65% 47.1M 0s
+  3650K .......... .......... .......... .......... .......... 65% 47.5M 0s
+  3700K .......... .......... .......... .......... .......... 66% 7.53M 0s
+  3750K .......... .......... .......... .......... .......... 67% 40.8M 0s
+  3800K .......... .......... .......... .......... .......... 68% 43.1M 0s
+  3850K .......... .......... .......... .......... .......... 69% 43.8M 0s
+  3900K .......... .......... .......... .......... .......... 70% 42.6M 0s
+  3950K .......... .......... .......... .......... .......... 71% 39.3M 0s
+  4000K .......... .......... .......... .......... .......... 72% 42.8M 0s
+  4050K .......... .......... .......... .......... .......... 73% 42.9M 0s
+  4100K .......... .......... .......... .......... .......... 74% 47.7M 0s
+  4150K .......... .......... .......... .......... .......... 74% 42.9M 0s
+  4200K .......... .......... .......... .......... .......... 75% 46.2M 0s
+  4250K .......... .......... .......... .......... .......... 76% 48.0M 0s
+  4300K .......... .......... .......... .......... .......... 77% 47.3M 0s
+  4350K .......... .......... .......... .......... .......... 78% 40.7M 0s
+  4400K .......... .......... .......... .......... .......... 79% 45.4M 0s
+  4450K .......... .......... .......... .......... .......... 80% 48.3M 0s
+  4500K .......... .......... .......... .......... .......... 81%  883K 0s
+  4550K .......... .......... .......... .......... .......... 82% 40.2M 0s
+  4600K .......... .......... .......... .......... .......... 82% 44.1M 0s
+  4650K .......... .......... .......... .......... .......... 83% 47.3M 0s
+  4700K .......... .......... .......... .......... .......... 84% 48.0M 0s
+  4750K .......... .......... .......... .......... .......... 85% 37.5M 0s
+  4800K .......... .......... .......... .......... .......... 86% 47.3M 0s
+  4850K .......... .......... .......... .......... .......... 87% 48.1M 0s
+  4900K .......... .......... .......... .......... .......... 88% 48.8M 0s
+  4950K .......... .......... .......... .......... .......... 89% 41.0M 0s
+  5000K .......... .......... .......... .......... .......... 90% 47.5M 0s
+  5050K .......... .......... .......... .......... .......... 90% 46.6M 0s
+  5100K .......... .......... .......... .......... .......... 91% 47.1M 0s
+  5150K .......... .......... .......... .......... .......... 92% 40.6M 0s
+  5200K .......... .......... .......... .......... .......... 93% 48.0M 0s
+  5250K .......... .......... .......... .......... .......... 94% 48.2M 0s
+  5300K .......... .......... .......... .......... .......... 95% 47.6M 0s
+  5350K .......... .......... .......... .......... .......... 96% 41.4M 0s
+  5400K .......... .......... .......... .......... .......... 97% 47.7M 0s
+  5450K .......... .......... .......... .......... .......... 98% 48.0M 0s
+  5500K .......... .......... .......... .......... .......... 98% 48.5M 0s
+  5550K .......... .......... .......... .......... .......... 99% 39.0M 0s
+  5600K .......                                               100% 42.9M=0.5s
 
-2023-09-13 13:48:35 (7.57 MB/s) - ‘install-tl-unx.tar.gz’ saved [5742203/5742203]
+2023-09-14 11:37:49 (10.2 MB/s) - ‘install-tl-unx.tar.gz’ saved [5742573/5742573]
 
---2023-09-13 13:48:35--  https://yihui.org/gh/tinytex/tools/tinytex.profile
-Resolving yihui.org (yihui.org)... 104.21.87.33, 172.67.140.24, 2606:4700:3035::6815:5721, ...
-Connecting to yihui.org (yihui.org)|104.21.87.33|:443... connected.
+--2023-09-14 11:37:49--  https://yihui.org/gh/tinytex/tools/tinytex.profile
+Resolving yihui.org (yihui.org)... 172.67.140.24, 104.21.87.33, 2606:4700:3032::ac43:8c18, ...
+Connecting to yihui.org (yihui.org)|172.67.140.24|:443... connected.
 HTTP request sent, awaiting response... 301 Moved Permanently
 Location: https://tinytex.yihui.org/tinytex.profile [following]
---2023-09-13 13:48:35--  https://tinytex.yihui.org/tinytex.profile
-Resolving tinytex.yihui.org (tinytex.yihui.org)... 50.18.142.31, 52.9.166.110, 2600:1f1c:446:4901::64, ...
+--2023-09-14 11:37:49--  https://tinytex.yihui.org/tinytex.profile
+Resolving tinytex.yihui.org (tinytex.yihui.org)... 50.18.142.31, 13.57.148.141, 2600:1f1c:471:9d00::c8, ...
 Connecting to tinytex.yihui.org (tinytex.yihui.org)|50.18.142.31|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 183 [application/octet-stream]
 Saving to: ‘tinytex.profile’
 
-     0K                                                       100% 4.32M=0s
+     0K                                                       100% 4.10M=0s
 
-2023-09-13 13:48:35 (4.32 MB/s) - ‘tinytex.profile’ saved [183/183]
+2023-09-14 11:37:49 (4.10 MB/s) - ‘tinytex.profile’ saved [183/183]
 
 Automated TeX Live installation using profile: ../tinytex.profile
 Loading https://ctan.math.illinois.edu/systems/texlive/tlnet/tlpkg/texlive.tlpdb
@@ -730,15 +731,15 @@ Installing TeX Live 2023 from: https://ctan.math.illinois.edu/systems/texlive/tl
 Platform: aarch64-linux => 'GNU/Linux on ARM64'
 Distribution: net  (downloading)
 Using URL: https://ctan.math.illinois.edu/systems/texlive/tlnet
-Directory for temporary files: /tmp/c9TV1Cb8_L
+Directory for temporary files: /tmp/9Rva9M9PhR
 Installing to: ./
 Installing [1/4, time/total: ??:??/??:??]: hyphen-base [22k]
 Installing [2/4, time/total: 00:00/00:00]: kpathsea [32k]
-Installing [3/4, time/total: 00:01/00:09]: texlive-scripts [112k]
+Installing [3/4, time/total: 00:00/00:00]: texlive-scripts [112k]
 Installing [4/4, time/total: 00:01/00:03]: texlive.infra [345k]
-Time used for installing the packages: 00:02
+Time used for installing the packages: 00:01
 Installing [1/3, time/total: ??:??/??:??]: kpathsea.aarch64-linux [38k]
-Installing [2/3, time/total: 00:00/00:00]: texlive-scripts.aarch64-linux [1k]
+Installing [2/3, time/total: 00:01/00:03]: texlive-scripts.aarch64-linux [1k]
 Installing [3/3, time/total: 00:01/00:03]: texlive.infra.aarch64-linux [81k]
 Time used for installing the packages: 00:01
 running mktexlsr ./texmf-dist ...
@@ -767,131 +768,131 @@ tlmgr: package repository https://ctan.math.illinois.edu/systems/texlive/tlnet/ 
 [1/112, ??:??/??:??] install: amscls [32k]
 [2/112, 00:00/00:00] install: amsfonts [3542k]
 [3/112, 00:02/00:20] install: amsmath [31k]
-[4/112, 00:02/00:20] install: atbegshi [5k]
-[5/112, 00:02/00:19] install: atveryend [4k]
+[4/112, 00:03/00:30] install: atbegshi [5k]
+[5/112, 00:03/00:29] install: atveryend [4k]
 [6/112, 00:03/00:29] install: auxhook [2k]
-[7/112, 00:03/00:29] install: babel [212k]
+[7/112, 00:04/00:39] install: babel [212k]
 [8/112, 00:04/00:37] install: bibtex.aarch64-linux [75k]
-[9/112, 00:04/00:37] install: bibtex [15k]
+[9/112, 00:05/00:46] install: bibtex [15k]
 [10/112, 00:05/00:46] install: bigintcalc [7k]
 [11/112, 00:05/00:46] install: bitset [6k]
 [12/112, 00:06/00:55] install: booktabs [3k]
 [13/112, 00:06/00:55] install: cm [233k]
 [14/112, 00:07/01:00] install: ctablestack [2k]
 [15/112, 00:07/01:00] install: dehyph [46k]
-[16/112, 00:08/01:08] install: dvipdfmx.aarch64-linux [399k]
+[16/112, 00:07/01:00] install: dvipdfmx.aarch64-linux [399k]
 [17/112, 00:08/01:02] install: dvipdfmx [27k]
-[18/112, 00:09/01:10] install: dvips.aarch64-linux [141k]
-[19/112, 00:10/01:15] install: dvips [57k]
-[20/112, 00:10/01:14] install: ec [258k]
-[21/112, 00:11/01:18] install: epstopdf-pkg [5k]
-[22/112, 00:11/01:17] install: etex [12k]
-[23/112, 00:12/01:24] install: etexcmds [3k]
-[24/112, 00:12/01:24] install: etoolbox [9k]
-[25/112, 00:13/01:31] install: euenc [4k]
-[26/112, 00:13/01:31] install: everyshi [2k]
-[27/112, 00:13/01:31] install: fancyvrb [12k]
-[28/112, 00:14/01:38] install: filehook [5k]
-[29/112, 00:14/01:38] install: firstaid [4k]
-[30/112, 00:15/01:45] install: float [3k]
-[31/112, 00:15/01:45] install: fontspec [27k]
-[32/112, 00:15/01:44] install: framed [8k]
-[33/112, 00:16/01:51] install: geometry [9k]
-[34/112, 00:16/01:51] install: gettitlestring [3k]
-[35/112, 00:17/01:58] install: glyphlist [25k]
-[36/112, 00:17/01:57] install: graphics [16k]
-[37/112, 00:18/02:04] install: graphics-cfg [2k]
-[38/112, 00:18/02:04] install: graphics-def [11k]
-[39/112, 00:18/02:04] install: helvetic [527k]
-[40/112, 00:19/01:58] install: hycolor [4k]
-[41/112, 00:20/02:05] install: hyperref [89k]
-[42/112, 00:20/02:03] install: hyph-utf8 [16k]
-[43/112, 00:21/02:09] install: iftex [4k]
-[44/112, 00:21/02:08] install: inconsolata [293k]
-[45/112, 00:22/02:08] install: infwarerr [3k]
-[46/112, 00:22/02:08] install: intcalc [6k]
-[47/112, 00:22/02:08] install: knuth-lib [30k]
-[48/112, 00:23/02:13] install: kvdefinekeys [3k]
-[49/112, 00:23/02:13] install: kvoptions [8k]
-[50/112, 00:24/02:19] install: kvsetkeys [4k]
-[51/112, 00:24/02:19] install: l3backend [16k]
-[52/112, 00:25/02:24] install: l3kernel [170k]
-[53/112, 00:25/02:20] install: l3packages [22k]
-[54/112, 00:26/02:26] install: latex [231k]
-[55/112, 00:26/02:20] install: latex-amsmath-dev [31k]
-[56/112, 00:27/02:25] install: latex-bin.aarch64-linux [1k]
-[57/112, 00:27/02:25] install: latex-bin [1k]
-[58/112, 00:28/02:31] install: latex-fonts [18k]
-[59/112, 00:28/02:30] install: latex-tools-dev [43k]
-[60/112, 00:29/02:35] install: latexconfig [4k]
-[61/112, 00:29/02:35] install: latexmk.aarch64-linux [1k]
-[62/112, 00:29/02:34] install: latexmk [108k]
-[63/112, 00:30/02:37] install: letltxmacro [3k]
-[64/112, 00:30/02:37] install: lm [11665k]
-[65/112, 00:34/01:06] install: lm-math [369k]
-[66/112, 00:34/01:04] install: ltxcmds [5k]
-[67/112, 00:35/01:06] install: lua-alt-getopt [2k]
-[68/112, 00:35/01:06] install: lua-uni-algos [8k]
-[69/112, 00:36/01:08] install: luahbtex.aarch64-linux [2152k]
-[70/112, 00:37/01:03] install: luahbtex [1k]
-[71/112, 00:37/01:03] install: lualatex-math [4k]
-[72/112, 00:38/01:05] install: lualibs [131k]
-[73/112, 00:38/01:04] install: luaotfload.aarch64-linux [1k]
-[74/112, 00:39/01:06] install: luaotfload [607k]
-[75/112, 00:40/01:06] install: luatex.aarch64-linux [1685k]
-[76/112, 00:41/01:02] install: luatex [14k]
-[77/112, 00:41/01:02] install: luatexbase [4k]
-[78/112, 00:42/01:04] install: mdwtools [19k]
-[79/112, 00:42/01:04] install: metafont.aarch64-linux [184k]
-[80/112, 00:43/01:05] install: metafont [9k]
-[81/112, 00:43/01:05] install: mfware.aarch64-linux [116k]
-[82/112, 00:44/01:06] install: mfware [4k]
-[83/112, 00:44/01:06] install: modes [27k]
-[84/112, 00:45/01:08] install: natbib [17k]
-[85/112, 00:45/01:07] install: pdfescape [5k]
-[86/112, 00:46/01:09] install: pdftex.aarch64-linux [815k]
-[87/112, 00:46/01:07] install: pdftex [39k]
-[88/112, 00:47/01:08] install: pdftexcmds [7k]
-[89/112, 00:47/01:08] install: plain [29k]
-[90/112, 00:48/01:09] install: psnfss [12k]
-[91/112, 00:48/01:09] install: refcount [3k]
-[92/112, 00:49/01:11] install: rerunfilecheck [4k]
-[93/112, 00:49/01:11] install: selnolig [53k]
-[94/112, 00:49/01:11] install: stringenc [23k]
-[95/112, 00:50/01:12] install: symbol [36k]
-[96/112, 00:50/01:12] install: tex.aarch64-linux [172k]
-[97/112, 00:51/01:13] install: tex [1k]
-[98/112, 00:51/01:13] install: tex-ini-files [4k]
-[99/112, 00:52/01:14] install: times [281k]
-[100/112, 00:53/01:15] install: tipa [2809k]
-[101/112, 00:54/01:09] install: tools [43k]
-[102/112, 00:54/01:09] install: unicode-data [302k]
-[103/112, 00:55/01:09] install: unicode-math [42k]
-[104/112, 00:56/01:10] install: uniquecounter [3k]
-[105/112, 00:56/01:10] install: url [6k]
-[106/112, 00:56/01:10] install: xcolor [17k]
-[107/112, 00:57/01:11] install: xetex.aarch64-linux [7417k]
-[108/112, 00:59/00:59] install: xetex [8k]
-[109/112, 01:00/01:00] install: xetexconfig [1k]
-[110/112, 01:00/01:00] install: xkeyval [9k]
-[111/112, 01:01/01:01] install: xunicode [26k]
-[112/112, 01:01/01:01] install: zapfding [46k]
+[18/112, 00:08/01:02] install: dvips.aarch64-linux [141k]
+[19/112, 00:09/01:08] install: dvips [57k]
+[20/112, 00:09/01:07] install: ec [258k]
+[21/112, 00:10/01:10] install: epstopdf-pkg [5k]
+[22/112, 00:10/01:10] install: etex [12k]
+[23/112, 00:11/01:17] install: etexcmds [3k]
+[24/112, 00:11/01:17] install: etoolbox [9k]
+[25/112, 00:11/01:17] install: euenc [4k]
+[26/112, 00:12/01:24] install: everyshi [2k]
+[27/112, 00:12/01:24] install: fancyvrb [12k]
+[28/112, 00:12/01:24] install: filehook [5k]
+[29/112, 00:13/01:31] install: firstaid [4k]
+[30/112, 00:13/01:31] install: float [3k]
+[31/112, 00:13/01:31] install: fontspec [27k]
+[32/112, 00:14/01:37] install: framed [8k]
+[33/112, 00:14/01:37] install: geometry [9k]
+[34/112, 00:14/01:37] install: gettitlestring [3k]
+[35/112, 00:14/01:37] install: glyphlist [25k]
+[36/112, 00:15/01:43] install: graphics [16k]
+[37/112, 00:15/01:43] install: graphics-cfg [2k]
+[38/112, 00:16/01:50] install: graphics-def [11k]
+[39/112, 00:16/01:50] install: helvetic [527k]
+[40/112, 00:17/01:46] install: hycolor [4k]
+[41/112, 00:17/01:46] install: hyperref [89k]
+[42/112, 00:17/01:44] install: hyph-utf8 [16k]
+[43/112, 00:18/01:50] install: iftex [4k]
+[44/112, 00:18/01:50] install: inconsolata [293k]
+[45/112, 00:19/01:51] install: infwarerr [3k]
+[46/112, 00:19/01:51] install: intcalc [6k]
+[47/112, 00:19/01:51] install: knuth-lib [30k]
+[48/112, 00:20/01:56] install: kvdefinekeys [3k]
+[49/112, 00:20/01:56] install: kvoptions [8k]
+[50/112, 00:20/01:56] install: kvsetkeys [4k]
+[51/112, 00:20/01:56] install: l3backend [16k]
+[52/112, 00:21/02:01] install: l3kernel [170k]
+[53/112, 00:21/01:58] install: l3packages [22k]
+[54/112, 00:22/02:03] install: latex [231k]
+[55/112, 00:22/01:59] install: latex-amsmath-dev [31k]
+[56/112, 00:23/02:04] install: latex-bin.aarch64-linux [1k]
+[57/112, 00:23/02:04] install: latex-bin [1k]
+[58/112, 00:23/02:04] install: latex-fonts [18k]
+[59/112, 00:24/02:09] install: latex-tools-dev [43k]
+[60/112, 00:24/02:08] install: latexconfig [4k]
+[61/112, 00:24/02:08] install: latexmk.aarch64-linux [1k]
+[62/112, 00:25/02:13] install: latexmk [108k]
+[63/112, 00:25/02:11] install: letltxmacro [3k]
+[64/112, 00:25/02:11] install: lm [11665k]
+[65/112, 00:29/00:56] install: lm-math [369k]
+[66/112, 00:30/00:57] install: ltxcmds [5k]
+[67/112, 00:30/00:57] install: lua-alt-getopt [2k]
+[68/112, 00:30/00:57] install: lua-uni-algos [8k]
+[69/112, 00:31/00:59] install: luahbtex.aarch64-linux [2152k]
+[70/112, 00:32/00:54] install: luahbtex [1k]
+[71/112, 00:32/00:54] install: lualatex-math [4k]
+[72/112, 00:32/00:54] install: lualibs [131k]
+[73/112, 00:33/00:56] install: luaotfload.aarch64-linux [1k]
+[74/112, 00:33/00:56] install: luaotfload [607k]
+[75/112, 00:34/00:56] install: luatex.aarch64-linux [1685k]
+[76/112, 00:35/00:53] install: luatex [14k]
+[77/112, 00:35/00:53] install: luatexbase [4k]
+[78/112, 00:35/00:53] install: mdwtools [19k]
+[79/112, 00:36/00:55] install: metafont.aarch64-linux [184k]
+[80/112, 00:36/00:54] install: metafont [9k]
+[81/112, 00:37/00:56] install: mfware.aarch64-linux [116k]
+[82/112, 00:37/00:56] install: mfware [4k]
+[83/112, 00:37/00:56] install: modes [27k]
+[84/112, 00:38/00:57] install: natbib [17k]
+[85/112, 00:38/00:57] install: pdfescape [5k]
+[86/112, 00:39/00:58] install: pdftex.aarch64-linux [815k]
+[87/112, 00:39/00:56] install: pdftex [39k]
+[88/112, 00:40/00:58] install: pdftexcmds [7k]
+[89/112, 00:40/00:58] install: plain [29k]
+[90/112, 00:40/00:58] install: psnfss [12k]
+[91/112, 00:41/00:59] install: refcount [3k]
+[92/112, 00:41/00:59] install: rerunfilecheck [4k]
+[93/112, 00:41/00:59] install: selnolig [53k]
+[94/112, 00:42/01:01] install: stringenc [23k]
+[95/112, 00:42/01:00] install: symbol [36k]
+[96/112, 00:43/01:02] install: tex.aarch64-linux [172k]
+[97/112, 00:43/01:01] install: tex [1k]
+[98/112, 00:43/01:01] install: tex-ini-files [4k]
+[99/112, 00:44/01:03] install: times [281k]
+[100/112, 00:44/01:02] install: tipa [2809k]
+[101/112, 00:45/00:57] install: tools [43k]
+[102/112, 00:46/00:58] install: unicode-data [302k]
+[103/112, 00:46/00:58] install: unicode-math [42k]
+[104/112, 00:47/00:59] install: uniquecounter [3k]
+[105/112, 00:47/00:59] install: url [6k]
+[106/112, 00:47/00:59] install: xcolor [17k]
+[107/112, 00:48/01:00] install: xetex.aarch64-linux [7417k]
+[108/112, 00:50/00:50] install: xetex [8k]
+[109/112, 00:51/00:51] install: xetexconfig [1k]
+[110/112, 00:51/00:51] install: xkeyval [9k]
+[111/112, 00:51/00:51] install: xunicode [26k]
+[112/112, 00:52/00:52] install: zapfding [46k]
 running mktexlsr ...
 done running mktexlsr.
 running updmap-sys ...
 done running updmap-sys.
 regenerating fmtutil.cnf in /home/znmeb/.TinyTeX/texmf-dist
-running fmtutil-sys --byengine luahbtex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/tBzTNq1wkk/2msud_EVf4 ...
-  OK: luahbtex.fmt/luahbtex lualatex.fmt/luahbtex
-running fmtutil-sys --byengine xetex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/tBzTNq1wkk/2msud_EVf4 ...
-  OK: xetex.fmt/xetex xelatex.fmt/xetex
-running fmtutil-sys --byengine luatex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/tBzTNq1wkk/2msud_EVf4 ...
-  OK: luatex.fmt/luatex dviluatex.fmt/luatex dvilualatex.fmt/luatex
-running fmtutil-sys --byengine tex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/tBzTNq1wkk/2msud_EVf4 ...
+running fmtutil-sys --byengine tex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/NVi7PyXEzK/QnWS9vvnah ...
   OK: tex.fmt/tex
-running fmtutil-sys --byengine pdftex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/tBzTNq1wkk/2msud_EVf4 ...
-  OK: pdftex.fmt/pdftex pdflatex.fmt/pdftex pdfetex.fmt/pdftex etex.fmt/pdftex latex.fmt/pdftex
-running fmtutil-sys --byfmt mf --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/tBzTNq1wkk/2msud_EVf4 ...
+running fmtutil-sys --byengine luatex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/NVi7PyXEzK/QnWS9vvnah ...
+  OK: luatex.fmt/luatex dvilualatex.fmt/luatex dviluatex.fmt/luatex
+running fmtutil-sys --byengine pdftex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/NVi7PyXEzK/QnWS9vvnah ...
+  OK: pdftex.fmt/pdftex pdfetex.fmt/pdftex etex.fmt/pdftex pdflatex.fmt/pdftex latex.fmt/pdftex
+running fmtutil-sys --byengine xetex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/NVi7PyXEzK/QnWS9vvnah ...
+  OK: xetex.fmt/xetex xelatex.fmt/xetex
+running fmtutil-sys --byengine luahbtex --no-error-if-no-format --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/NVi7PyXEzK/QnWS9vvnah ...
+  OK: luahbtex.fmt/luahbtex lualatex.fmt/luahbtex
+running fmtutil-sys --byfmt mf --no-error-if-no-engine=luametatex,luajithbtex,luajittex,mfluajit --status-file=/tmp/NVi7PyXEzK/QnWS9vvnah ...
   OK: mf.fmt/mf-nowin
 tlmgr: package log updated: /home/znmeb/.TinyTeX/texmf-var/web2c/tlmgr.log
 tlmgr: command log updated: /home/znmeb/.TinyTeX/texmf-var/web2c/tlmgr-commands.log
@@ -904,19 +905,19 @@ tlmgr: updating /home/znmeb/.TinyTeX/tlpkg/texlive.tlpdb
 tlmgr update --list
 tlmgr: package repository https://ctan.math.illinois.edu/systems/texlive/tlnet (verified)
 tlmgr: no updates available
-113.68user 21.79system 3:18.86elapsed 68%CPU (0avgtext+0avgdata 187744maxresident)k
-5624inputs+1235320outputs (10major+1041195minor)pagefaults 0swaps
+114.01user 22.50system 2:55.26elapsed 77%CPU (0avgtext+0avgdata 185328maxresident)k
+52120inputs+1235312outputs (28major+1037043minor)pagefaults 0swaps
 Installing R sound packages
 also installing the dependencies ‘xts’, ‘TTR’, ‘quadprog’, ‘quantmod’, ‘gsw’, ‘permute’, ‘proxy’, ‘iterators’, ‘tseries’, ‘RcppArmadillo’, ‘bitops’, ‘moments’, ‘magick’, ‘pracma’, ‘oce’, ‘ineq’, ‘vegan’, ‘shinyBS’, ‘zoo’, ‘mvtnorm’, ‘dtw’, ‘shinyjs’, ‘foreach’, ‘doParallel’, ‘nonlinearTseries’, ‘fftw’, ‘pbapply’, ‘RCurl’, ‘rjson’, ‘bioacoustics’
 
 Updating HTML index of packages in '.Library'
 Making 'packages.html' ... done
-1449.11user 127.51system 11:03.83elapsed 237%CPU (0avgtext+0avgdata 590120maxresident)k
-0inputs+749976outputs (15major+12604824minor)pagefaults 0swaps
+1400.23user 133.88system 11:01.49elapsed 231%CPU (0avgtext+0avgdata 588804maxresident)k
+104inputs+749952outputs (18major+12469436minor)pagefaults 0swaps
 Activating R Jupyter kernel
 Cleanup
-Will remove 521 (683.9 MB) tarball(s).
+Will remove 523 (684.0 MB) tarball(s).
 Defining r-reticulate and deac aliases
 Finished
-2237.05user 286.59system 22:48.87elapsed 184%CPU (0avgtext+0avgdata 1174924maxresident)k
-6680inputs+9245296outputs (575major+19439718minor)pagefaults 0swaps
+2186.19user 298.34system 22:25.67elapsed 184%CPU (0avgtext+0avgdata 1175272maxresident)k
+396400inputs+9245728outputs (599major+19259210minor)pagefaults 0swaps

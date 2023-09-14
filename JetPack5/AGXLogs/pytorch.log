@@ -16,5 +16,5 @@ Cleanup
 ..Removing downloaded tarballs
 There are no unused tarball(s) to remove.
 Finished
-24.36user 5.89system 0:32.19elapsed 94%CPU (0avgtext+0avgdata 127856maxresident)k
-0inputs+1320896outputs (48major+173078minor)pagefaults 0swaps
+24.40user 6.17system 0:31.58elapsed 96%CPU (0avgtext+0avgdata 127932maxresident)k
+8inputs+1320888outputs (48major+167870minor)pagefaults 0swaps
