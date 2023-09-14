@@ -50,3 +50,12 @@ sudo apt-get install -qqy --no-install-recommends \
   vim-nox \
   wget \
   zip
+
+echo "Installing /usr/local/bin/deviceQuery"
+pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
+sudo make clean
+sudo make
+sudo cp deviceQuery /usr/local/bin/deviceQuery
+popd
+
+echo "Finished!"
