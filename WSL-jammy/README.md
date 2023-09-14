@@ -81,10 +81,13 @@ password. Then it will start the server listening on `0.0.0.0:8888`.
 You are now in the AlgoCompSynth-One virtual desktop.
 
 5. In the file manager panel on the left, open the `Notebooks` folder.
-Open and run the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
-`E2E_Example_8GB.ipynb` and `E2E_Example_16GB.ipynb`. Depending on how
-much RAM your computer and GPU have, they may not all run, but at least
-the smallest one should.
+Open and run one of the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
+`E2E_Example_8GB.ipynb`, or `E2E_Example_16GB.ipynb`.
+
+   The numbers in the notebook names refer to RAM capacity of the ***GPU***.
+Check your GPU RAM capacity with `nvidia-smi` and run one that will fit. The
+larger ones might run, but if they do, they will spend excessive time
+shuttling data back and forth between the CPU and GPU.
 
     These notebooks exercise both `cuSignal` and `PyTorch` on the CPU and
 GPU, but they do not test `torchaudio`. If you get crashes on the
