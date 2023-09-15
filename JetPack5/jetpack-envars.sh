@@ -40,6 +40,17 @@ echo "..CMAKE_BUILD_PARALLEL_LEVEL: $CMAKE_BUILD_PARALLEL_LEVEL"
 echo "..MAX_JOBS: $MAX_JOBS"
 echo "..MAKEFLAGS: $MAKEFLAGS"
 
+# https://github.com/rapidsai/cusignal#source-aarch64-jetson-nano-tk1-tx2-xavier-agx-clara-devkit-linux-os
+echo "Getting compute capability for installed GPU"
+export CUDA_CC=` \
+deviceQuery | grep 'CUDA Capability' \
+  | sed 's/^.*://' \
+  | sed 's/ //g' \
+  | sed 's/\.//' \
+`
+export CUPY_NVCC_GENERATE_CODE="arch=compute_$CUDA_CC,code=sm_$CUDA_CC"
+echo "..CUPY_NVCC_GENERATE_CODE: $CUPY_NVCC_GENERATE_CODE"
+
 echo ""
 echo "Defining virtual desktop"
 export SYNTH_SCRIPTS=$SYNTH_HOME/Scripts
@@ -52,3 +63,5 @@ echo "..SYNTH_LOGS: $SYNTH_LOGS"
 echo "..SYNTH_PROJECTS: $SYNTH_PROJECTS"
 echo "..SYNTH_NOTEBOOKS: $SYNTH_NOTEBOOKS"
 echo "..SYNTH_WHEELS: $SYNTH_WHEELS"
+
+echo "..finished"

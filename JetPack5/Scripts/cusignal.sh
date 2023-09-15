@@ -46,7 +46,7 @@ mamba activate cusignal-dev
 
 echo "Building cuSignal wheel"
 sed -i.bak "s/python setup.py install/python setup.py bdist_wheel/" ./build.sh
-/usr/bin/time ./build.sh --allgpuarch
+/usr/bin/time ./build.sh
 
 echo "Saving cuSignal wheel"
 cp python/dist/cusignal-*.whl $SYNTH_WHEELS/

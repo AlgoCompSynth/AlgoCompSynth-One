@@ -53,8 +53,8 @@ sudo apt-get install -qqy --no-install-recommends \
 
 echo "Installing /usr/local/bin/deviceQuery"
 pushd /usr/local/cuda/samples/1_Utilities/deviceQuery
-sudo make clean
-sudo make
+sudo make clean > /dev/null
+sudo make > /dev/null
 sudo cp deviceQuery /usr/local/bin/deviceQuery
 popd
 

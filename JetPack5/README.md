@@ -47,7 +47,7 @@ possible the connection will time out and the job will fail. In this
 case, do
 
     ```
-    ./10r-reticulate.sh > Logs/10r-reticulate.log 2>&1 &
+    /usr/bin/time ./10r-reticulate.sh > Logs/10r-reticulate.log 2>&1 &
     top
     ```
 
@@ -92,10 +92,10 @@ can skip this step.
     This will generate a configuration file and ask you to enter a
 password. Then it will start the server listening on `0.0.0.0:8888`.
 
-4. Browse to `localhost:8888` and enter the password you defined above.
-If you're accessing the Jetson remotely, browse to port 8888 on the
-IP address of the Jetson. You are now in the AlgoCompSynth-One
-virtual desktop.
+4. Browse to `http://localhost:8888/lab` and enter the password you
+defined above. If you're accessing the Jetson remotely, use the IP
+address of the Jetson instead of `localhost`. You are now in the
+AlgoCompSynth-One virtual desktop.
 
 5. In the file manager panel on the left, open the `Notebooks` folder.
 Open and run one of the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
