@@ -40,7 +40,7 @@ the AlgoCompSynth-One packages.
 
     This will take quite a while to run. It first installs a number
 of Mamba packages and PyTorch. Then it compiles `torchaudio` from
-source. After that, it compiles `cupy` from source.
+source. After that, it compiles `cupy` and `cuSignal` from source.
 
     If you're running it from a remote machine via `ssh`, it's 
 possible the connection will time out and the job will fail. In this
@@ -57,14 +57,15 @@ doing `tail -f` on the logfiles in `Logs`.
 
 For a reference point on build times, see the archived logfiles
 in `JetPack5/AGX-Xavier-Logs`, which are timestamped from my
-most recent build on a 16 GB AGX Xavier.
+most recent build on a 16 GB AGX Xavier. The total time on a clean
+system was 53 minutes.
 
 5. Review the log files in `JetPack5/Logs` for errors. If there
 are any, open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 You can ignore errors in the `cupy` compile; the build process
 generates errors while discovering the machine configuration
-but continues until it is done.
+but completes and installs `cupy`.
 
 The list of all the Mamba packages installed in the `r-reticulate`
 environment can be found in `Logs/Mamba-packages.log`. For the
