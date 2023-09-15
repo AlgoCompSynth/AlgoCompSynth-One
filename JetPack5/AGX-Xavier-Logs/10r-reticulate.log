@@ -17,6 +17,8 @@ Defining CMAKE_BUILD_PARALLEL_LEVEL, MAX_JOBS and MAKEFLAGS
 ..CMAKE_BUILD_PARALLEL_LEVEL: 8
 ..MAX_JOBS: 8
 ..MAKEFLAGS: -j8
+Getting compute capability for installed GPU
+..CUPY_NVCC_GENERATE_CODE: arch=compute_72,code=sm_72
 
 Defining virtual desktop
 ..SYNTH_SCRIPTS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Scripts
@@ -24,6 +26,7 @@ Defining virtual desktop
 ..SYNTH_PROJECTS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Projects
 ..SYNTH_NOTEBOOKS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Notebooks
 ..SYNTH_WHEELS: /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Wheels
+..finished
 
 Creating virtual desktop
 Defining Mambaforge home
@@ -42,8 +45,8 @@ CUDA device count: 1
 current CUDA device: 0
 CUDA device name: Xavier
 Tensor a = tensor([0., 0.], device='cuda:0')
-Tensor b = tensor([ 0.6192, -0.5213], device='cuda:0')
-Tensor c = tensor([ 0.6192, -0.5213], device='cuda:0')
+Tensor b = tensor([-0.4372,  0.2880], device='cuda:0')
+Tensor c = tensor([-0.4372,  0.2880], device='cuda:0')
 Installing torchaudio if necessary
 ..Installing torchaudio
 Testing torchaudio import
@@ -63,3 +66,5 @@ Listing Mamba packages
 Listing R packages
 
 Finished!
+8848.78user 1045.18system 52:14.11elapsed 315%CPU (0avgtext+0avgdata 2172100maxresident)k
+1822176inputs+15735856outputs (1623major+84733071minor)pagefaults 0swaps

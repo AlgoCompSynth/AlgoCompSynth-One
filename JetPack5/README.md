@@ -55,6 +55,10 @@ case, do
 You can monitor its progress by opening a second `ssh` window and
 doing `tail -f` on the logfiles in `Logs`.
 
+For a reference point on build times, see the archived logfiles
+in `JetPack5/AGX-Xavier-Logs`, which are timestamped from my
+most recent build on a 16 GB AGX Xavier.
+
 5. Review the log files in `JetPack5/Logs` for errors. If there
 are any, open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.

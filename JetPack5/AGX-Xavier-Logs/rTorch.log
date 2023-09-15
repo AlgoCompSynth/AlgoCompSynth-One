@@ -21,11 +21,11 @@ downloaded 97 KB
 * DONE (rTorch)
 
 The downloaded source packages are in
-	‘/tmp/RtmpbkDDkM/downloaded_packages’
+	‘/tmp/Rtmps9xdtq/downloaded_packages’
 Updating HTML index of packages in '.Library'
 Making 'packages.html' ... done
-14.33user 1.70system 0:13.65elapsed 117%CPU (0avgtext+0avgdata 231424maxresident)k
-4144inputs+5416outputs (10major+212117minor)pagefaults 0swaps
+13.65user 1.80system 0:13.16elapsed 117%CPU (0avgtext+0avgdata 231932maxresident)k
+1408inputs+5408outputs (7major+213667minor)pagefaults 0swaps
 Finished
-20.36user 2.60system 0:17.57elapsed 130%CPU (0avgtext+0avgdata 231424maxresident)k
-4160inputs+5872outputs (58major+269364minor)pagefaults 0swaps
+19.64user 2.66system 0:17.05elapsed 130%CPU (0avgtext+0avgdata 231932maxresident)k
+1416inputs+5864outputs (55major+270594minor)pagefaults 0swaps
