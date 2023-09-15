@@ -1,7 +1,8 @@
 # Getting started
 
 ## Hardware
-You will need an Windows 11 machine with an NVIDIA GPU. I test on an
+You will need an Windows 11 machine with an NVIDIA GPU. The GPU should
+have at least 4 GB of RAM to run the test notebooks. I test on an
 Acer Nitro 5 with an GTX 1650 Ti and a Dell Aurora with an RTX 3090.
 I do not have access to a 40 Series GPU and have no idea if this
 will work on one. I also have no idea if it will work on older GPUs
