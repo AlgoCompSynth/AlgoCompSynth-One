@@ -76,3 +76,20 @@ on one without any changes. I test on a Jetson AGX Xavier, a laptop with a GTX
 
 3. `cd` into `JetPack5` (Jetson)  or `WSL-jammy` (Windows Subsystem for Linux
 Ubuntu 22.04 LTS) and follow the instructions on the `README.md` there.
+
+## Roadmap
+
+I'm not sure where I want to take this, now that the WSL / jammy port is done.
+The original motivation for this, powerful synthesizers on an inexpensive device
+(original Jetson Nano Developer Kit) has largely dissipated.
+
+So my focus shifted to the musical applications of deep learning, and for those,
+the price-performance ratio of consumer gaming GPUs like the RTX 20, 30 and now
+40 series is ***much*** better than the new Jetson Orin line. The effort-to-payoff
+ratio is much better as well - the workhorses, `PyTorch` and `cuSignal`, are
+available as binaries via `mamba install`.
+
+So at the moment, the plan is to put the JetPack 5 version into a maintenance mode.
+I plan to track `cuSignal` and `PyTorch` releases, and ensure that my R music
+packages all work on the Jetson, but I don't see the point in enhancing that
+version.
