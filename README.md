@@ -24,7 +24,7 @@ AlgoCompSynth-One creates a
 [Mamba](https://mamba.readthedocs.io/en/latest/index.html) virtual environment
 called `r-reticulate` containing:
 
-- [Python 3 (version 3.8 on JetPack, 3.10 on Ubuntu 22.04 LTS)
+- [Python 3 (version 3.8 on JetPack, 3.10 on Ubuntu 22.04 LTS)](https://www.python.org/)
 - [JupyterLab](https://jupyter.org/),
 - [PyTorch](https://pytorch.org/),
 - [torchaudio](https://pytorch.org/audio/stable/index.html),
