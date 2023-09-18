@@ -24,11 +24,12 @@ AlgoCompSynth-One creates a
 [Mamba](https://mamba.readthedocs.io/en/latest/index.html) virtual environment
 called `r-reticulate` containing:
 
+- [Python 3 (version 3.8 on JetPack, 3.10 on Ubuntu 22.04 LTS)
 - [JupyterLab](https://jupyter.org/),
 - [PyTorch](https://pytorch.org/),
 - [torchaudio](https://pytorch.org/audio/stable/index.html),
 - [cuSignal](https://github.com/rapidsai/cusignal),
-- [R](https://www.r-project.org/),
+- [R (version 4.2.3 on JetPack, 4.3.1 on Ubuntu 22.94 LTS)](https://www.r-project.org/),
 - [R package development tools](https://devtools.r-lib.org/),
 - R audio libraries as described in
 [Sound Analysis and Synthesis with R](https://link.springer.com/book/10.1007/978-3-319-77647-7), and
