@@ -1,0 +1,45 @@
+#! /bin/bash
+
+set -e
+
+export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
+export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
+
+source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
+
+echo "Creating fresh $MAMBA_ENV_NAME virtual environment"
+sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/mamba-env.template \
+  | sed "s/MAMBA_ENV_NAME/$MAMBA_ENV_NAME/" \
+  > $SYNTH_SCRIPTS/mamba-env.yml
+/usr/bin/time mamba env create --force --file $SYNTH_SCRIPTS/mamba-env.yml
+
+echo "Activating $MAMBA_ENV_NAME"
+mamba activate $MAMBA_ENV_NAME
+
+echo "Installing 'caracas'"
+/usr/bin/time Rscript -e "install.packages('caracas', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
+
+echo "Installing 'tinytex'"
+/usr/bin/time Rscript -e "tinytex::install_tinytex(force = TRUE)"
+
+echo "Installing R sound packages"
+/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/sound.R')"
+
+echo "Activating R Jupyter kernel"
+Rscript -e "IRkernel::installspec()"
+
+echo "Cleanup"
+mamba clean --tarballs --yes
+
+echo "Defining \'$MAMBA_ENV_NAME\' and deac aliases"
+echo "alias deac=\"mamba deactivate\"" >> $HOME/.bash_aliases
+echo "alias $MAMBA_ENV_NAME=\"mamba activate $MAMBA_ENV_NAME\"" >> $HOME/.bash_aliases
+
+if [ -e $HOME/.zshrc ]
+then
+  echo "alias deac=\"mamba deactivate\"" >> $HOME/.zshrc
+  echo "alias $MAMBA_ENV_NAME=\"mamba activate $MAMBA_ENV_NAME\"" >> $HOME/.zshrc
+fi
+
+echo "Finished"
