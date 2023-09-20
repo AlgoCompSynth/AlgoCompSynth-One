@@ -50,13 +50,18 @@ else
   mv -f zzwork.txt $SYNTH_HOME/mamba-init.sh
   echo "export MAMBA_ENV_NAME=\"$MAMBA_ENV_NAME\"" >> $SYNTH_HOME/mamba-init.sh
 
-  echo "Creating new $MAMBA_ENV_NAME mamba environment"
-  echo "This can take some time!"
+  echo "..Creating new $MAMBA_ENV_NAME mamba environment"
+  echo "..This can take some time!"
   /usr/bin/time $SYNTH_SCRIPTS/mamba-env.sh > $SYNTH_LOGS/mamba-env.log 2>&1
 
 fi
+echo ""
+echo ""
+echo "Mamba aliases:"
 grep "alias $MAMBA_ENV_NAME" $HOME/.bash_aliases
-exit
+grep "alias deac" $HOME/.bash_aliases
+echo ""
+echo ""
 
 echo "Activating $MAMBA_ENV_NAME"
 mamba activate $MAMBA_ENV_NAME

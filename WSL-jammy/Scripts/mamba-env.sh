@@ -33,13 +33,19 @@ echo "Cleanup"
 mamba clean --tarballs --yes
 
 echo "Defining \'$MAMBA_ENV_NAME\' and deac aliases"
-echo "alias deac=\"mamba deactivate\"" >> $HOME/.bash_aliases
+grep -v "alias $MAMBA_ENV_NAME" $HOME/.bash_aliases \
+  | grep -v "alias deac" > zzwork.txt
+mv zzwork.txt $HOME/.bash_aliases
 echo "alias $MAMBA_ENV_NAME=\"mamba activate $MAMBA_ENV_NAME\"" >> $HOME/.bash_aliases
+echo "alias deac=\"mamba deactivate\"" >> $HOME/.bash_aliases
 
 if [ -e $HOME/.zshrc ]
 then
-  echo "alias deac=\"mamba deactivate\"" >> $HOME/.zshrc
+  grep -v "alias $MAMBA_ENV_NAME" $HOME/.zshrc \
+    | grep -v "alias deac" > zzwork.txt
+  mv zzwork.txt $HOME/.zshrc
   echo "alias $MAMBA_ENV_NAME=\"mamba activate $MAMBA_ENV_NAME\"" >> $HOME/.zshrc
+  echo "alias deac=\"mamba deactivate\"" >> $HOME/.zshrc
 fi
 
 echo "Finished"

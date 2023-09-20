@@ -5,10 +5,10 @@ set -e
 echo "Locating mambaforge"
 source ./mamba-init.sh
 
-echo "Activating r-reticulate"
+echo "Activating $MAMBE_ENV_NAME"
 source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
 source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
-mamba activate r-reticulate
+mamba activate $MAMBA_ENV_NAME
 
 echo "Generating Jupyter configuration file"
 jupyter server --generate-config

@@ -29,20 +29,32 @@ via `sudo`.
     ./00ubuntu-packages.sh
     ```
 
-3. Install `mambaforge`. This will ask you where you want to install
-`mambaforge`. Unless you have a strong reason for another location,
-the default is fine.
+3. Install `mambaforge`. This will search for an existing `mambaforge`
+and exit if it finds one. Otherwise, it will ask you where you
+want to install `mambaforge`. Unless you have a strong reason for
+another location, use the default `$HOME/mambaforge`.
 
     ```
     ./05mambaforge.sh
     ```
 
-4. Create the `r-reticulate` Mamba virtual environment and install
-the AlgoCompSynth-One packages.
+4. Create the Mamba virtual environment and install the
+AlgoCompSynth-One packages.
 
     ```
-    ./10r-reticulate.sh
+    ./10mamba-env.sh
     ```
+
+    If there is an existing Mamba virtual environment, the script
+    will use it. Otherwise, the script will prompt for a Mambaxi
+    environment name to create. The default is `acs-1`, but you
+    can use any name.
+
+    The script adds aliases to `.bash_aliases` and, if it exists,
+    to `.zshrc`, aliasing `deac` to `mamba deactivate` and aliasing the
+    enviroment name to `mamba activate $MAMBA_ENV_NAME`. So you
+    will need to make sure the environment name does not conflict
+    with another alias you have defined.
 
 5. Review the log files in `WSL-jammy/Logs` for errors. If there
 are any, open an issue at
@@ -96,15 +108,17 @@ GPU, but they do not test `torchaudio`. If you get crashes on the
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 
 ## Using from the command line
-You can use the `r-reticulate` environment from the command line. Both
+You can use the Mamba environment from the command line. Both
 `bash` and `zsh` are supported. Two aliases are provided.
-`r-reticulate` activates the `r-reticulate` environment, and `deac`
-deactivates whatever environment you are currently in.
+`deac` deactivates whatever environment you are currently in,
+and the environment name itself is aliased to `mamba activate
+$MAMBA_ENV_NAME`.
 
 Example:
 
     ```
-    r-reticulate
+    # Mamba environment is 'acs-1'
+    acs-1
     python Scripts/test-torchaudio.py # runs the `torchaudio` test
 
     R
