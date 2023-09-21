@@ -17,14 +17,8 @@ sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/mamba-env.template \
 echo "Activating $MAMBA_ENV_NAME"
 mamba activate $MAMBA_ENV_NAME
 
-echo "Installing 'caracas'"
-/usr/bin/time Rscript -e "install.packages('caracas', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
-
 echo "Installing 'tinytex'"
 /usr/bin/time Rscript -e "tinytex::install_tinytex(force = TRUE)"
-
-echo "Installing R sound packages"
-/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/sound.R')"
 
 echo "Activating R Jupyter kernel"
 Rscript -e "IRkernel::installspec()"

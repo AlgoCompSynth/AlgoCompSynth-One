@@ -38,8 +38,7 @@ another location, use the default `$HOME/mambaforge`.
     ./05mambaforge.sh
     ```
 
-4. Create the Mamba virtual environment and install the
-AlgoCompSynth-One packages.
+4. Create the Mamba virtual environment.
 
     ```
     ./10mamba-env.sh
@@ -56,7 +55,16 @@ AlgoCompSynth-One packages.
     will need to make sure the environment name does not conflict
     with another alias you have defined.
 
-5. Review the log files in `WSL-jammy/Logs` for errors. If there
+5. Install the packages into the virtual environment.
+
+    ```
+    ./20packages.sh
+    ```
+
+    This will install `PyTorch`, `torchaudio`, the `rTorch` R library
+    package and `cuSignal`.
+
+6. Review the log files in `WSL-jammy/Logs` for errors. If there
 are any, open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 
