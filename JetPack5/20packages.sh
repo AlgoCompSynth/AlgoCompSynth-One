@@ -5,7 +5,19 @@ set -e
 echo ""
 echo "Setting environment variables"
 export SYNTH_HOME=$PWD
-source $SYNTH_HOME/jetpack-envars.sh
+source $SYNTH_HOME/set-envars.sh
+source $SYNTH_HOME/mamba-init.sh
+
+echo "Enabling conda and mamba commands"
+source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
+
+echo "Activating $MAMBA_ENV_NAME"
+mamba activate $MAMBA_ENV_NAME
+
+echo "Setting R compile flags"
+export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
+export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 export MAKE="make $MAKEFLAGS"
 
 echo ""
@@ -15,24 +27,6 @@ mkdir --parents \
   $SYNTH_PROJECTS \
   $SYNTH_NOTEBOOKS \
   $SYNTH_WHEELS
-
-echo "Defining Mambaforge home"
-source $SYNTH_HOME/mamba-init.sh
-echo "MAMBAFORGE_HOME: $MAMBAFORGE_HOME"
-
-echo "Enabling conda and mamba commands"
-source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
-source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
-
-echo "Creating r-reticulate mamba environment if necessary"
-if [ `mamba env list | grep "r-reticulate" | wc -l` -le "0" ]
-then
-  echo "..Creating r-reticulate"
-  /usr/bin/time $SYNTH_SCRIPTS/r-reticulate.sh > $SYNTH_LOGS/r-reticulate.log 2>&1
-fi
-
-echo "Activating r-reticulate"
-mamba activate r-reticulate
 
 echo "Installing PyTorch if necessary"
 if [ `mamba list | grep "torch  " | wc -l` -le "0" ]
@@ -50,8 +44,8 @@ then
 fi
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
-echo "Installing 'rTorch' R package"
-/usr/bin/time $SYNTH_SCRIPTS/rTorch.sh > $SYNTH_LOGS/rTorch.log 2>&1
+echo "Installing R sound packages"
+/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/sound.R')" > $SYNTH_LOGS/sound.log 2>&1
 
 echo "Installing CuPy if necessary"
 if [ `mamba list | grep "cupy" | wc -l` -le "0" ]
@@ -72,7 +66,7 @@ fi
 echo ""
 echo "Listing Mamba packages"
 echo "# Mamba packages" > $SYNTH_LOGS/Mamba-packages.log
-mamba list --name r-reticulate \
+mamba list --name $MAMBA_ENV_NAME \
   >> $SYNTH_LOGS/Mamba-packages.log
 
 echo ""

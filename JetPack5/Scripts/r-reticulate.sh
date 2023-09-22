@@ -8,13 +8,13 @@ export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
 source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 
-echo "Creating fresh r-reticulate virtual environment"
-#cp $SYNTH_SCRIPTS/r-reticulate.template.$PYTHON_VERSION $SYNTH_SCRIPTS/r-reticulate.yml
-sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/r-reticulate.template > $SYNTH_SCRIPTS/r-reticulate.yml
-/usr/bin/time mamba env create --file $SYNTH_SCRIPTS/r-reticulate.yml
+echo "Creating fresh $MAMBA_ENV_NAME virtual environment"
+#cp $SYNTH_SCRIPTS/$MAMBA_ENV_NAME.template.$PYTHON_VERSION $SYNTH_SCRIPTS/$MAMBA_ENV_NAME.yml
+sed "s/PYTHON_VERSION/$PYTHON_VERSION/" $SYNTH_SCRIPTS/$MAMBA_ENV_NAME.template > $SYNTH_SCRIPTS/$MAMBA_ENV_NAME.yml
+/usr/bin/time mamba env create --file $SYNTH_SCRIPTS/$MAMBA_ENV_NAME.yml
 
-echo "Activating r-reticulate"
-mamba activate r-reticulate
+echo "Activating $MAMBA_ENV_NAME"
+mamba activate $MAMBA_ENV_NAME
 
 echo "Installing 'caracas'"
 /usr/bin/time Rscript -e "install.packages('caracas', quiet = TRUE, repos = 'https://cloud.r-project.org/')"
@@ -31,17 +31,17 @@ Rscript -e "IRkernel::installspec()"
 echo "Cleanup"
 mamba clean --tarballs --yes
 
-echo "Defining r-reticulate and deac aliases"
-if [ ! `grep -e "alias r-reticulate" $HOME/.bash_aliases | wc -l` -gt "0" ]
+echo "Defining $MAMBA_ENV_NAME and deac aliases"
+if [ ! `grep -e "alias $MAMBA_ENV_NAME" $HOME/.bash_aliases | wc -l` -gt "0" ]
 then
-  cat $SYNTH_SCRIPTS/r-reticulate-aliases >> $HOME/.bash_aliases
+  cat $SYNTH_SCRIPTS/$MAMBA_ENV_NAME-aliases >> $HOME/.bash_aliases
 fi
 
 if [ -e $HOME/.zshrc ]
 then
-  if [ ! `grep -e "alias r-reticulate" $HOME/.zshrc | wc -l` -gt "0" ]
+  if [ ! `grep -e "alias $MAMBA_ENV_NAME" $HOME/.zshrc | wc -l` -gt "0" ]
   then
-    cat $SYNTH_SCRIPTS/r-reticulate-aliases >> $HOME/.zshrc
+    cat $SYNTH_SCRIPTS/$MAMBA_ENV_NAME-aliases >> $HOME/.zshrc
   fi
 fi
 

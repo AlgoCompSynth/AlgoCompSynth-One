@@ -6,8 +6,8 @@ source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
 source $MAMBAFORGE_HOME/etc/profile.d/mamba.sh
 export PATH=$PATH:/usr/local/cuda/bin
 
-echo "Activating r-reticulate"
-mamba activate r-reticulate
+echo "Activating $MAMBA_ENV_NAME"
+mamba activate $MAMBA_ENV_NAME
 
 if [ `find $SYNTH_WHEELS -name "cusignal-*.whl" | wc -l` -gt "0" ]
 then
@@ -19,7 +19,7 @@ then
   exit
 fi
 
-echo "cusignal build required - deactivating r-reticulate"
+echo "cusignal build required - deactivating $MAMBA_ENV_NAME"
 mamba deactivate
 
 cd $SYNTH_PROJECTS
@@ -72,9 +72,9 @@ cp $SYNTH_SCRIPTS/E2E*ipynb $SYNTH_NOTEBOOKS/
 echo "Deactivating cusignal-dev"
 mamba deactivate
 
-echo "Activating r-reticulate"
-mamba activate r-reticulate
-echo "Installing cuSignal wheel in r-reticulate"
+echo "Activating $MAMBA_ENV_NAME"
+mamba activate $MAMBA_ENV_NAME
+echo "Installing cuSignal wheel in $MAMBA_ENV_NAME"
 # cupy is cached!
 pip install cupy
 pip install $SYNTH_WHEELS/cusignal-*.whl

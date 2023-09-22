@@ -1,4 +1,4 @@
-name: r-reticulate
+name: MAMBA_ENV_NAME
 channels:
   - conda-forge
   - nvidia

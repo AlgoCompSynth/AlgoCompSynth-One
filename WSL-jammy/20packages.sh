@@ -5,7 +5,7 @@ set -e
 echo ""
 echo "Setting environment variables"
 export SYNTH_HOME=$PWD
-source $SYNTH_HOME/wsl-jammy-envars.sh
+source $SYNTH_HOME/set-envars.sh
 source $SYNTH_HOME/mamba-init.sh
 
 echo "Enabling conda and mamba commands"
