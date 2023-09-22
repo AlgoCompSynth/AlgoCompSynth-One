@@ -20,43 +20,47 @@ export PKG_CPPFLAGS="-DHAVE_WORKING_LOG1P"
 export PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
 export MAKE="make $MAKEFLAGS"
 
-echo "Installing PyTorch and torchaudio if necessary"
-if [ `mamba list | grep "torch" | wc -l` -le "0" ]
+echo ""
+echo "Creating virtual desktop"
+mkdir --parents \
+  $SYNTH_LOGS \
+  $SYNTH_PROJECTS \
+  $SYNTH_NOTEBOOKS \
+  $SYNTH_WHEELS
+
+echo "Installing PyTorch if necessary"
+if [ `mamba list | grep "torch  " | wc -l` -le "0" ]
 then
-  echo "..Installing PyTorch and torchaudio"
-
-  # We have to do this in two steps to make sure both pytorch and
-  # torchaudio come from the 'pytorch' channel! If we don't,
-  # tests fail!
-  mamba install --quiet --yes \
-    pytorch \
-    pytorch-cuda=$CUDA_VERSION \
-    --channel pytorch \
-    --channel nvidia
-    $SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
-
-  mamba install --quiet --yes \
-    torchaudio \
-    --channel pytorch \
-    --channel nvidia
-    $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
+  echo "..Installing PyTorch"
+  /usr/bin/time $SYNTH_SCRIPTS/pytorch.sh > $SYNTH_LOGS/pytorch.log 2>&1
 fi
+$SYNTH_SCRIPTS/test-pytorch.sh 2>&1 | tee $SYNTH_LOGS/test-pytorch.log
 
-echo "Installing R sound packages"
-/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/sound.R')" > $SYNTH_LOGS/sound.log 2>&1
+echo "Installing torchaudio if necessary"
+if [ `mamba list | grep "torchaudio" | wc -l` -le "0" ]
+then
+  echo "..Installing torchaudio"
+  /usr/bin/time $SYNTH_SCRIPTS/torchaudio.sh > $SYNTH_LOGS/torchaudio.log 2>&1
+fi
+$SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
+
+echo "Installing R source packages"
+/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/source-packages.R')" > $SYNTH_LOGS/sound.log 2>&1
+
+echo "Installing CuPy if necessary"
+if [ `mamba list | grep "cupy" | wc -l` -le "0" ]
+then
+  echo "..Installing CuPy"
+  echo "..This can take a long time if the wheel isn't in the pip cache!"
+  /usr/bin/time $SYNTH_SCRIPTS/cupy.sh > $SYNTH_LOGS/cupy.log 2>&1
+fi
 
 echo "Installing cusignal if necessary"
 export CUSIGNAL_TEST="0" # Don't test by default
 if [ `mamba list | grep "cusignal" | wc -l` -le "0" ]
 then
-  echo "..Installing cusignal"
-  mamba install --quiet --yes \
-    cusignal=$CUSIGNAL_VERSION \
-    --channel rapidsai \
-    --channel conda-forge \
-    --channel nvidia
-  echo "..Installing cusignal notebooks"
-  $SYNTH_SCRIPTS/cusignal-notebooks.sh > $SYNTH_LOGS/cusignal-notebooks.log 2>&1
+  echo "..Installing cusignal and test notebooks"
+  /usr/bin/time $SYNTH_SCRIPTS/cusignal.sh > $SYNTH_LOGS/cusignal.log 2>&1
 fi
 
 echo ""
