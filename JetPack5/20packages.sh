@@ -44,8 +44,8 @@ then
 fi
 $SYNTH_SCRIPTS/test-torchaudio.sh 2>&1 | tee $SYNTH_LOGS/test-torchaudio.log
 
-echo "Installing R sound packages"
-/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/sound.R')" > $SYNTH_LOGS/sound.log 2>&1
+echo "Installing R source packages"
+/usr/bin/time Rscript -e "source('$SYNTH_SCRIPTS/source-packages.R')" > $SYNTH_LOGS/sound.log 2>&1
 
 echo "Installing CuPy if necessary"
 if [ `mamba list | grep "cupy" | wc -l` -le "0" ]
