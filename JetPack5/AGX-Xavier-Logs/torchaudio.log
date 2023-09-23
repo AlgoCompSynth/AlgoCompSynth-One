@@ -1,4 +1,4 @@
-Activating r-reticulate
+Activating acs-1
 Building torchaudio wheel
 Removing previous 'audio'
 Cloning into 'audio'...
@@ -23,7 +23,7 @@ Installing from source
 Obtaining file:///home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Projects/audio
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status 'done'
-Requirement already satisfied: torch==2.0.0 in /home/znmeb/mambaforge/envs/r-reticulate/lib/python3.8/site-packages (from torchaudio==2.0.1+3b40834) (2.0.0+nv23.5)
+Requirement already satisfied: torch==2.0.0 in /home/znmeb/mambaforge/envs/acs-1/lib/python3.8/site-packages (from torchaudio==2.0.1+3b40834) (2.0.0+nv23.5)
 Requirement already satisfied: filelock in /home/znmeb/.local/lib/python3.8/site-packages (from torch==2.0.0->torchaudio==2.0.1+3b40834) (3.12.0)
 Requirement already satisfied: jinja2 in /home/znmeb/.local/lib/python3.8/site-packages (from torch==2.0.0->torchaudio==2.0.1+3b40834) (3.1.2)
 Requirement already satisfied: networkx in /home/znmeb/.local/lib/python3.8/site-packages (from torch==2.0.0->torchaudio==2.0.1+3b40834) (3.1)
@@ -34,11 +34,11 @@ Requirement already satisfied: mpmath>=0.19 in /home/znmeb/.local/lib/python3.8/
 Installing collected packages: torchaudio
   Running setup.py develop for torchaudio
 Successfully installed torchaudio-2.0.1+3b40834
-4123.86user 580.15system 11:19.67elapsed 692%CPU (0avgtext+0avgdata 2172100maxresident)k
-234568inputs+1576296outputs (389major+55024805minor)pagefaults 0swaps
+4134.34user 583.47system 11:20.62elapsed 693%CPU (0avgtext+0avgdata 2171880maxresident)k
+393032inputs+1570352outputs (448major+55034489minor)pagefaults 0swaps
 Cleanup
 ..Removing downloaded tarballs
 There are no unused tarball(s) to remove.
 Finished
-4147.95user 591.89system 11:47.86elapsed 669%CPU (0avgtext+0avgdata 2172100maxresident)k
-334616inputs+2411192outputs (494major+55110009minor)pagefaults 0swaps
+4158.08user 594.48system 11:52.52elapsed 667%CPU (0avgtext+0avgdata 2171880maxresident)k
+538408inputs+2403096outputs (604major+55116155minor)pagefaults 0swaps
