@@ -6,3 +6,4 @@
 *.ogg
 .Rproj.user
 .RData
+.Rhistory
