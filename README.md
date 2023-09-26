@@ -17,25 +17,25 @@ that only supports JetPack 4.
 I test the WSL version on a laptop with a GTX 1650 and a desktop with an
 RTX 3090. It should run with any device supported by CUDA 11.8.
 
-I don’t currently have an Orin device to test on. The AGX Xavier
-development kit I have is sufficient for my needs, but I might get an
-Orin device in late late fall or early winter 2023.
-
 ## What can it do?
 
 AlgoCompSynth-One creates a
 [Mamba](https://mamba.readthedocs.io/en/latest/index.html) virtual
-environment called `r-reticulate` containing:
+environment and installs the remaining components in it. The user
+specifies the name of the environment when the script creates it, with a
+default of `acs-1`. This environment contains:specif
 
-- [Python 3 (version 3.8 on JetPack, 3.10 on Ubuntu 22.04
-  LTS)](https://www.python.org/)
+- [Python 3](https://www.python.org/) (version 3.8 on JetPack, 3.10 on
+  Ubuntu 22.04 LTS),
 - [JupyterLab](https://jupyter.org/),
 - [PyTorch](https://pytorch.org/),
 - [torchaudio](https://pytorch.org/audio/stable/index.html),
 - [cuSignal](https://github.com/rapidsai/cusignal),
-- [R (currenty version 4.2.3 on JetPack, 4.3.1 on Ubuntu 22.04
-  LTS)](https://www.r-project.org/),
+- [R](https://www.r-project.org/) (this is the version packaged by
+  Mamba, currenty version 4.2.3 on JetPack, 4.3.1 on Ubuntu 22.04 LTS),
 - [R package development tools](https://devtools.r-lib.org/),
+- the [`reticulate`](https://rstudio.github.io/reticulate/) Python
+  interface library,
 - R audio libraries as described in [Sound Analysis and Synthesis with
   R](https://link.springer.com/book/10.1007/978-3-319-77647-7), and
 - the [Quarto](https://quarto.org/) scientific and technical publishing
@@ -63,22 +63,19 @@ advantages:
 The downside is that the components that need to be compiled on the
 Jetson, `torchaudio`, `cupy`, and `cuSignal`, take a fair amount of time
 to build. I have included logfiles of my builds on a Jetson AGX Xavier
-so you can get an idea of what to expect for build times. The builds
-only need to be done once unless you want to change versions.
+so you can get an idea of what to expect for build times.
 
-The installers create a virtual desktop inside this repository. The
-Python wheels downloaded or built are cached in
-`AlgoCompSynth-One/JetPack5/Wheels`, and the install scripts will look
-for those first rather than doing a new build. Wheels downloaded or
-built by `pip` are automatically cached.
+The builds only need to be done once unless you want to change versions.
+On a Jetson, the Python wheels downloaded or built are cached, and the
+install scripts will look for those first rather than doing a new build.
 
 ## Who is it for?
 
 At the moment, it’s primarily for developers who need GPU speed for
 digital signal processing or artificial intelligence. That’s a fairly
 narrow audience given the kind of power today’s CPUs have, but there are
-a number of audio analysis and synthesis synthesis approaches that can
-use GPU power.
+a number of audio analysis and synthesis approaches that can use GPU
+power.
 
 ## How do I get started?
 
@@ -107,19 +104,21 @@ was before COVID-19, supply chain disruptions, and NVIDIA deploying the
 Orin modules.
 
 The Orin series devices are no doubt excellent, but they are intended
-for applications at industrial scale. A hobbyist like myself can now get
-better performance / dollar and payoff / effort ratios with a 40 series
-laptop or desktop than with a Jetson Orin or Xavier device.
+for applications at industrial scale and budgets. A hobbyist like myself
+can now get better performance / dollar and payoff / effort ratios with
+a 40 series laptop or desktop than with a Jetson Orin or Xavier device.
 
 I plan to track `cuSignal` and `PyTorch` releases, and ensure that my R
 music packages all work on the Jetson. But future enhancements will only
 happen on the WSL version.
 
 Finally, a word about other Linux distros. I believe this platform will
-work out of the box on any x86_64 Ubuntu 22.04 LTS machine with a CUDA
+work out of the box on any `x86_64` Ubuntu 22.04 LTS machine with a CUDA
 11.8 compatible GPU, but I don’t have one available to test. For other
-distros, I don’t have the time to test them, but again, it should work
-if CUDA 11.8 does.
+distros, I don’t have the time to test them, but it should work if CUDA
+11.8 and Mambaforge do, and you rewrite
+`WSL-jammy/00linux-dependencies.sh` to install the required packages
+from the distro.
 
 ## References
 
