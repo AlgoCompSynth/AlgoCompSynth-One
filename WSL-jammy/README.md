@@ -11,7 +11,8 @@ than the GTX 1600 series.
 ## Software
 You will need Windows 11 and Windows Subsystem for Linux 2 running
 Ubuntu 22.04 LTS aka "jammy". You will also need the most recent
-NVIDIA "game ready" drivers.
+NVIDIA "game ready" drivers on Windows. See [CUDA on WSL User
+Guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html) for background.
 
 ## Installation
 
@@ -22,7 +23,7 @@ NVIDIA "game ready" drivers.
     cd AlgoCompSynth-One/WSL-jammy
     ```
 
-2. Install required Ubuntu packages. You will need to authenticate
+2. Install required Linux dependencies. You will need to authenticate
 via `sudo`.
 
     ```
@@ -45,7 +46,7 @@ another location, use the default `$HOME/mambaforge`.
     ```
 
     If there is an existing Mamba virtual environment, the script
-    will use it. Otherwise, the script will prompt for a Mambaxi
+    will use it. Otherwise, the script will prompt for a Mamba
     environment name to create. The default is `acs-1`, but you
     can use any name.
 

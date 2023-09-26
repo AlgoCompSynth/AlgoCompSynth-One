@@ -5,7 +5,7 @@ You will need an NVIDIA Jetson Xavier NX, AGX Xavier or Orin. Older
 Jetsons are no longer supported.
 
 ## Software
-You will need Jetpack 5.1.1 or later.
+You will need JetPack 5.1.1 or later.
 
 ## Installation
 
@@ -16,11 +16,11 @@ You will need Jetpack 5.1.1 or later.
     cd AlgoCompSynth-One/JetPack5
     ```
 
-2. Install required Ubuntu packages. You will need to authenticate
+2. Install required Linux dependencies. You will need to authenticate
 via `sudo`.
 
     ```
-    ./00ubuntu-packages.sh
+    ./00linux-dependencies.sh
     ```
 
 3. Install `mambaforge`. This will ask you where you want to install
@@ -31,20 +31,30 @@ the default is fine.
     ./05mambaforge.sh
     ```
 
-4. Create the `r-reticulate` Mamba virtual environment and install
-the AlgoCompSynth-One packages.
+4. Create the Mamba virtual environment.
 
     ```
-    ./10r-reticulate.sh
+    ./10mamba-env.sh
     ```
+
+    If there is an existing Mamba virtual environment, the script
+    will use it. Otherwise, the script will prompt for a Mamba
+    environment name to create. The default is `acs-1`, but you
+    can use any name.
+
+    The script adds aliases to `.bash_aliases` and, if it exists,
+    to `.zshrc`, aliasing `deac` to `mamba deactivate` and aliasing the
+    enviroment name to `mamba activate $MAMBA_ENV_NAME`. So you
+    will need to make sure the environment name does not conflict
+    with another alias you have defined.
 
     This will take quite a while to run. It first installs a number
-of Mamba packages and PyTorch. Then it compiles `torchaudio` from
-source. After that, it compiles `cupy` and `cuSignal` from source.
+    of Mamba packages and PyTorch. Then it compiles `torchaudio` from
+    source. After that, it compiles `cupy` and `cuSignal` from source.
 
     If you're running it from a remote machine via `ssh`, it's 
-possible the connection will time out and the job will fail. In this
-case, do
+    possible the connection will time out and the job will fail. In this
+    case, do
 
     ```
     /usr/bin/time ./10r-reticulate.sh > Logs/10r-reticulate.log 2>&1 &
@@ -52,13 +62,13 @@ case, do
     ```
 
     The `top` will keep the connection open until the job finishes.
-You can monitor its progress by opening a second `ssh` window and
-doing `tail -f` on the logfiles in `Logs`.
+    You can monitor its progress by opening a second `ssh` window and
+    doing `tail -f` on the logfiles in `Logs`.
 
-For a reference point on build times, see the archived logfiles
-in `JetPack5/AGX-Xavier-Logs`, which are timestamped from my
-most recent build on a 16 GB AGX Xavier. The total time on a clean
-system was 53 minutes.
+    For a reference point on build times, see the archived logfiles
+    in `JetPack5/AGX-Xavier-Logs`, which are timestamped from my
+    most recent build on a 16 GB AGX Xavier. The total time on a clean
+    system was 53 minutes.
 
 5. Review the log files in `JetPack5/Logs` for errors. If there
 are any, open an issue at
