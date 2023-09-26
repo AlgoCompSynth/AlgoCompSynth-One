@@ -27,7 +27,7 @@ Guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html) for background.
 via `sudo`.
 
     ```
-    ./00ubuntu-packages.sh
+    ./00linux-dependencies.sh
     ```
 
 3. Install `mambaforge`. This will search for an existing `mambaforge`
