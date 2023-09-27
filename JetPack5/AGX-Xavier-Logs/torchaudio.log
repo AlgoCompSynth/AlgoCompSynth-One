@@ -34,11 +34,11 @@ Requirement already satisfied: mpmath>=0.19 in /home/znmeb/.local/lib/python3.8/
 Installing collected packages: torchaudio
   Running setup.py develop for torchaudio
 Successfully installed torchaudio-2.0.1+3b40834
-4134.34user 583.47system 11:20.62elapsed 693%CPU (0avgtext+0avgdata 2171880maxresident)k
-393032inputs+1570352outputs (448major+55034489minor)pagefaults 0swaps
+4253.79user 582.27system 11:36.06elapsed 694%CPU (0avgtext+0avgdata 2171840maxresident)k
+473560inputs+1570472outputs (597major+54912398minor)pagefaults 0swaps
 Cleanup
 ..Removing downloaded tarballs
 There are no unused tarball(s) to remove.
 Finished
-4158.08user 594.48system 11:52.52elapsed 667%CPU (0avgtext+0avgdata 2171880maxresident)k
-538408inputs+2403096outputs (604major+55116155minor)pagefaults 0swaps
+4277.55user 592.44system 12:03.51elapsed 673%CPU (0avgtext+0avgdata 2171840maxresident)k
+619072inputs+2403408outputs (756major+54996904minor)pagefaults 0swaps

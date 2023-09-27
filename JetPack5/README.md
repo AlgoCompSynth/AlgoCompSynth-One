@@ -23,13 +23,17 @@ via `sudo`.
     ./00linux-dependencies.sh
     ```
 
-3. Install `mambaforge`. This will ask you where you want to install
-`mambaforge`. Unless you have a strong reason for another location,
-the default is fine.
+3. Install `mambaforge`.
+
 
     ```
     ./05mambaforge.sh
     ```
+
+    The script will exit normally if `mambaforge` is already installed.
+    Otherwise, it will ask you where you want to install `mambaforge`.
+    Unless you have a strong reason for another location, the default
+    is fine.
 
 4. Create the Mamba virtual environment.
 
@@ -37,16 +41,25 @@ the default is fine.
     ./10mamba-env.sh
     ```
 
-    If there is an existing Mamba virtual environment, the script
-    will use it. Otherwise, the script will prompt for a Mamba
-    environment name to create. The default is `acs-1`, but you
-    can use any name.
+    If there is an pre-existing AlgoCompSynth-One Mamba virtual
+    environment, the script will re-use it. Otherwise, the script will
+    prompt for a Mamba environment name to create. The default is
+    `acs-1`, but you can use any name.
 
     The script adds aliases to `.bash_aliases` and, if it exists,
     to `.zshrc`, aliasing `deac` to `mamba deactivate` and aliasing the
     enviroment name to `mamba activate $MAMBA_ENV_NAME`. So you
     will need to make sure the environment name does not conflict
     with another alias you have defined.
+
+5. Install the packages into the virtual environment.
+
+    ```
+    ./20packages.sh
+    ```
+
+    This will install `PyTorch`, `torchaudio`, the `rTorch` R library
+    package and `cuSignal`.
 
     This will take quite a while to run. It first installs a number
     of Mamba packages and PyTorch. Then it compiles `torchaudio` from
@@ -57,7 +70,7 @@ the default is fine.
     case, do
 
     ```
-    /usr/bin/time ./10r-reticulate.sh > Logs/10r-reticulate.log 2>&1 &
+    /usr/bin/time ./20packages.sh > Logs/20packages.log 2>&1 &
     top
     ```
 
@@ -67,10 +80,10 @@ the default is fine.
 
     For a reference point on build times, see the archived logfiles
     in `JetPack5/AGX-Xavier-Logs`, which are timestamped from my
-    most recent build on a 16 GB AGX Xavier. The total time on a clean
-    system was 53 minutes.
+    most recent build on a 16 GB AGX Xavier. The total time for this
+    step was 46 minutes and 18 seconds.
 
-5. Review the log files in `JetPack5/Logs` for errors. If there
+6. Review the log files in `JetPack5/Logs` for errors. If there
 are any, open an issue at
 <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 You can ignore errors in the `cupy` compile; the build process
@@ -90,7 +103,7 @@ R packages, see `Logs/R-packages.log`.
     ```
 
     for light or dark background. If you've already done that, you
-can skip this step.
+    can skip this step.
 
 2. If you're a `git` user, edit and execute the script
 
@@ -105,7 +118,7 @@ can skip this step.
     ```
 
     This will generate a configuration file and ask you to enter a
-password. Then it will start the server listening on `0.0.0.0:8888`.
+    password. Then it will start the server listening on `0.0.0.0:8888`.
 
 4. Browse to `http://localhost:8888/lab` and enter the password you
 defined above. If you're accessing the Jetson remotely, use the IP
@@ -116,15 +129,15 @@ AlgoCompSynth-One virtual desktop.
 Open and run one of the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
 `E2E_Example_8GB.ipynb`, or `E2E_Example_16GB.ipynb`.
 
-   The numbers in the notebook names refer to RAM capacity of the Jetson.
-Run one that will fit. The larger ones might run, but if they do,
-they will spend excessive time shuttling data back and forth between
-the CPU and GPU.
+    The numbers in the notebook names refer to RAM capacity of the Jetson.
+    Run one that will fit. The larger ones might run, but if they do,
+    they will spend excessive time shuttling data back and forth between
+    the CPU and GPU.
 
     These notebooks exercise both `cuSignal` and `PyTorch` on the CPU and
-GPU, but they do not test `torchaudio`. If you get crashes on the
-4 GB one, please open an issue at
-<https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
+    GPU, but they do not test `torchaudio`. If you get crashes on the
+    4 GB one, please open an issue at
+    <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 
 ## Using from the command line
 You can use the `r-reticulate` environment from the command line. Both

@@ -28,8 +28,8 @@ Preparing transaction: ...working... done
 Verifying transaction: ...working... done
 Executing transaction: ...working... done
 Installing pip dependencies: ...working... done
-44.67user 12.28system 0:54.43elapsed 104%CPU (0avgtext+0avgdata 331368maxresident)k
-113616inputs+723392outputs (4major+219786minor)pagefaults 0swaps
+43.58user 11.51system 0:52.58elapsed 104%CPU (0avgtext+0avgdata 331752maxresident)k
+113408inputs+629976outputs (4major+207669minor)pagefaults 0swaps
 Activating cusignal-dev
 Building cuSignal wheel
 Building for the architecture of the GPU in the system...
@@ -48,8 +48,8 @@ nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' an
 nvcc --fatbin -t 0 -std=c++17 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=sm_75 --generate-code arch=compute_80,code=sm_80                 --generate-code arch=compute_86,code=[sm_86,compute_86] cpp/src/io/_reader.cu -odir python/cusignal/io/
 nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
 nvcc --fatbin -t 0 -std=c++17 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=sm_75 --generate-code arch=compute_80,code=sm_80                 --generate-code arch=compute_86,code=[sm_86,compute_86] cpp/src/io/_writer.cu -odir python/cusignal/io/
-nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
 Building Peak Finding kernels...
+nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
 nvcc --fatbin -t 0 -std=c++17 --generate-code arch=compute_50,code=sm_50         --generate-code arch=compute_50,code=sm_52         --generate-code arch=compute_53,code=sm_53         --generate-code arch=compute_60,code=sm_60         --generate-code arch=compute_61,code=sm_61         --generate-code arch=compute_62,code=sm_62         --generate-code arch=compute_70,code=sm_70         --generate-code arch=compute_72,code=sm_72 --generate-code arch=compute_75,code=sm_75 --generate-code arch=compute_80,code=sm_80                 --generate-code arch=compute_86,code=[sm_86,compute_86] cpp/src/peak_finding/_peak_finding.cu -odir python/cusignal/peak_finding/
 Building Spectral kernels...
 nvcc warning : The 'compute_35', 'compute_37', 'compute_50', 'sm_35', 'sm_37' and 'sm_50' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
@@ -318,8 +318,8 @@ removing build/bdist.linux-aarch64/wheel
 
 !!
   self.initialize_options()
-264.33user 28.52system 0:42.81elapsed 684%CPU (0avgtext+0avgdata 143472maxresident)k
-23464inputs+402992outputs (22major+2598078minor)pagefaults 0swaps
+263.83user 28.86system 0:42.76elapsed 684%CPU (0avgtext+0avgdata 143524maxresident)k
+21984inputs+402992outputs (33major+2597558minor)pagefaults 0swaps
 Saving cuSignal wheel
 Test installing cuSignal wheel
 Processing /home/znmeb/Projects/AlgoCompSynth-One/JetPack5/Wheels/cusignal-23.8.0+0.g42d12fd.dirty-py3-none-any.whl
@@ -355,5 +355,5 @@ Remove all packages in environment /home/znmeb/mambaforge/envs/cusignal-dev:
 ..Removing downloaded tarballs
 Will remove 19 (3.8 MB) tarball(s).
 Finished
-336.59user 45.51system 2:03.23elapsed 310%CPU (0avgtext+0avgdata 331368maxresident)k
-147072inputs+1201024outputs (156major+3057941minor)pagefaults 0swaps
+334.75user 45.07system 2:01.44elapsed 312%CPU (0avgtext+0avgdata 331752maxresident)k
+146648inputs+1107624outputs (142major+3044106minor)pagefaults 0swaps
