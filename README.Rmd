@@ -9,7 +9,7 @@ bibliography: "REFERENCES.bib"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is it?
+## What is AlgoCompSynth-One?
 
 AlgoCompSynth-One is a collection of tools for composing music and synthesizing
 sound on systems with NVIDIA® GPUs. The current implementation runs on
@@ -29,7 +29,7 @@ AlgoCompSynth-One creates a
 [Mamba](https://mamba.readthedocs.io/en/latest/index.html) virtual environment
 and installs the remaining components in it. The user specifies the name of the
 environment when the script creates it, with a default of `acs-1`.
-This environment contains:specif
+This environment contains:
 
 - [Python 3](https://www.python.org/) (version 3.8 on JetPack, 3.10 on Ubuntu
 22.04 LTS),
@@ -40,7 +40,7 @@ This environment contains:specif
 - [R](https://www.r-project.org/) (this is the version packaged by Mamba,
 currenty version 4.2.3 on JetPack, 4.3.1 on Ubuntu 22.04 LTS),
 - [R package development tools](https://devtools.r-lib.org/),
-- the [`reticulate`](https://rstudio.github.io/reticulate/) Python interface
+- the [`reticulate`](https://rstudio.github.io/reticulate/) R - Python interface
 library,
 - R audio libraries as described in
 [Sound Analysis and Synthesis with R](https://link.springer.com/book/10.1007/978-3-319-77647-7), and

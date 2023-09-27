@@ -4,6 +4,7 @@
 *.flac
 *.mp3
 *.ogg
+*.html
 .Rproj.user
 .RData
 .Rhistory
