@@ -32,8 +32,9 @@ via `sudo`.
 
     The script will exit normally if `mambaforge` is already installed.
     Otherwise, it will ask you where you want to install `mambaforge`.
-    Unless you have a strong reason for another location, the default
-    is fine.
+    Unless you have a strong reason for another location, use the default.
+    The absolute path to `mambaforge` will be assigned to the
+    environment variable `MAMBAFORGE_HOME` in the install process.
 
 4. Create the Mamba virtual environment.
 
@@ -44,12 +45,13 @@ via `sudo`.
     If there is an pre-existing AlgoCompSynth-One Mamba virtual
     environment, the script will re-use it. Otherwise, the script will
     prompt for a Mamba environment name to create. The default is
-    `acs-1`, but you can use any name.
+    `acs-1`, but you can use any name. This name will be assigned
+    to the environment varible `MAMBA_ENV_NAME` in the install process.
 
     The script adds aliases to `.bash_aliases` and, if it exists,
     to `.zshrc`, aliasing `deac` to `mamba deactivate` and aliasing the
     enviroment name to `mamba activate $MAMBA_ENV_NAME`. So you
-    will need to make sure the environment name does not conflict
+    will need to make sure your environment name does not conflict
     with another alias you have defined.
 
 5. Install the packages into the virtual environment.
@@ -58,8 +60,8 @@ via `sudo`.
     ./20packages.sh
     ```
 
-    This will install `PyTorch`, `torchaudio`, the `rTorch` R library
-    package and `cuSignal`.
+    This will install `PyTorch`, `torchaudio`, R library packages that
+    aren't in the Mambaforge channels, `cupy` and `cuSignal`.
 
     This will take quite a while to run. It first installs a number
     of Mamba packages and PyTorch. Then it compiles `torchaudio` from
@@ -90,7 +92,7 @@ You can ignore errors in the `cupy` compile; the build process
 generates errors while discovering the machine configuration
 but completes and installs `cupy`.
 
-The list of all the Mamba packages installed in the `r-reticulate`
+The list of all the Mamba packages installed in the `MAMBA_ENV_NAME`
 environment can be found in `Logs/Mamba-packages.log`. For the
 R packages, see `Logs/R-packages.log`.
 
@@ -140,15 +142,15 @@ Open and run one of the `cuSignal` test notebooks `E2E_Example_4GB.ipynb`
     <https://github.com/AlgoCompSynth/AlgoCompSynth-One/issues/new>.
 
 ## Using from the command line
-You can use the `r-reticulate` environment from the command line. Both
+You can use the `MAMBA_ENV_NAME` environment from the command line. Both
 `bash` and `zsh` are supported. Two aliases are provided.
-`r-reticulate` activates the `r-reticulate` environment, and `deac`
+`MAMBA_ENV_NAME` activates the `MAMBA_ENV_NAME` environment, and `deac`
 deactivates whatever environment you are currently in.
 
 Example:
 
     ```
-    r-reticulate
+    MAMBA_ENV_NAME
     python Scripts/test-torchaudio.py # runs the `torchaudio` test
 
     R
