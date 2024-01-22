@@ -16,6 +16,7 @@ sudo apt-get install -qqy --no-install-recommends \
   ffmpeg \
   fftw-dev \
   flac \
+  gforth \
   git \
   gnupg2 \
   gstreamer1.0-libav \

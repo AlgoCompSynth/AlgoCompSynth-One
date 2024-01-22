@@ -1,3 +1,4 @@
+# IForth kernel is at https://pypi.org/project/forth-kernel/
 name: MAMBA_ENV_NAME
 channels:
   - conda-forge
@@ -27,6 +28,7 @@ dependencies:
   - pandas
   - pip
   - pip:
+    - forth-kernel
     - jupyterlab-quarto
   - pkg-config
   - protobuf
