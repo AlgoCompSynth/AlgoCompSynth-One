@@ -14,6 +14,7 @@ sudo apt-get install -qqy --no-install-recommends \
   build-essential \
   ca-certificates \
   dirmngr \
+  gforth \
   git \
   gnupg2 \
   less \
