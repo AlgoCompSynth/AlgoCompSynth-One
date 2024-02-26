@@ -1,0 +1,7 @@
+deviceQuery.txt
+Logs/*
+Projects/*
+Notebooks/*
+Wheels/*
+.R*
+mamba-init.sh

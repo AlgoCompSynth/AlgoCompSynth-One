@@ -20,6 +20,7 @@ dependencies:
   - numba
   - numpy
   - nvitop
+  - ocl-icd-system
   - pandas
   - pip
   - pip:
