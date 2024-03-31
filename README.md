@@ -2,6 +2,16 @@ AlgoCompSynth-One - Algorithmic Composition and Digital Sound Synthesis
 ================
 M. Edward (Ed) Borasky
 
+## Archiving - 31 March 2024
+
+I am archiving the project for two reasons:
+1. NVIDIA is no longer enhancing JetPack 5, and the Orin hardware is
+just too expensive for me at the moment, and
+2. I have too many other projects to continue maintaining this one.
+
+There may be some GPU audio projects in the future, but they will
+not use Jetson hardware.
+
 ## What is AlgoCompSynth-One?
 
 AlgoCompSynth-One is a collection of tools for composing music and
