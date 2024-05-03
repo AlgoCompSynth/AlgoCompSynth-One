@@ -2,6 +2,14 @@ AlgoCompSynth-One - Algorithmic Composition and Digital Sound Synthesis
 ================
 M. Edward (Ed) Borasky
 
+## Un-archiving - 3 May 2024
+
+I'm unarchiving this and changing the deployment mechanism. It will be
+a [Distrobox](https://distrobox.it/) container based on Arch Linux,
+designed for use on [Fedora Atomic Desktops](https://fedoraproject.org/atomic-desktops/)
+and [Universal Blue](https://universal-blue.org/) Aurora and Bluefin.
+Watch this space!
+
 ## Archiving - 31 March 2024
 
 I am archiving the project for two reasons:
