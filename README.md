@@ -4,21 +4,24 @@ M. Edward (Ed) Borasky
 
 ## Un-archiving - 3 May 2024
 
-I'm unarchiving this and changing the deployment mechanism. It will be
-a [Distrobox](https://distrobox.it/) container based on Arch Linux,
-designed for use on [Fedora Atomic Desktops](https://fedoraproject.org/atomic-desktops/)
-and [Universal Blue](https://universal-blue.org/) Aurora and Bluefin.
-Watch this space!
+I’m unarchiving this and changing the deployment mechanism. It will be a
+[Distrobox](https://distrobox.it/) container based on Arch Linux,
+designed for use on [Fedora Atomic
+Desktops](https://fedoraproject.org/atomic-desktops/) and [Universal
+Blue](https://universal-blue.org/) Aurora and Bluefin.
+
+If you’re into following along, this is happening in branch
+`Arch-Distrobox`. Watch this space!
 
 ## Archiving - 31 March 2024
 
-I am archiving the project for two reasons:
-1. NVIDIA is no longer enhancing JetPack 5, and the Orin hardware is
-just too expensive for me at the moment, and
-2. I have too many other projects to continue maintaining this one.
+I am archiving the project for two reasons: 1. NVIDIA is no longer
+enhancing JetPack 5, and the Orin hardware is just too expensive for me
+at the moment, and 2. I have too many other projects to continue
+maintaining this one.
 
-There may be some GPU audio projects in the future, but they will
-not use Jetson hardware.
+There may be some GPU audio projects in the future, but they will not
+use Jetson hardware.
 
 ## What is AlgoCompSynth-One?
 
