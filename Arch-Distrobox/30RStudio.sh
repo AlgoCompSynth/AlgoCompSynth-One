@@ -1,11 +1,12 @@
 #! /usr/bin/env bash
 
 echo "Installing RStudio"
-yay --sync --refresh --needed --noconfirm \
-  blas-openblas \
-  cmake \
+sudo pacman --sync --refresh --needed --noconfirm \
   gcc-fortran \
   imagemagick \
+  openssl-1.1 \
+  r
+yay --sync --refresh --needed \
   rstudio-server-bin
 
 echo "Starting RStudio Server"
