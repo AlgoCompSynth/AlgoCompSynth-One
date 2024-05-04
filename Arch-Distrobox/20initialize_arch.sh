@@ -31,4 +31,7 @@ echo "Updating package search databases"
 sudo pacman -Fy
 yay -Fy
 
+echo "Setting .Rprofile"
+cp Rprofile $HOME/.Rprofile
+
 echo "Finished"
