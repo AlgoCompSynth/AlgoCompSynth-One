@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 echo "Installing Linux music tools"
-yay --sync --refresh --needed --noconfirm \
+sudo pacman --sync --refresh --needed --noconfirm \
   audacity \
   audacity-docs \
   chuck \
