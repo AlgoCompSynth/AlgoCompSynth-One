@@ -39,6 +39,7 @@ echo "DBX_CONTAINER_IMAGE: $DBX_CONTAINER_IMAGE"
 echo "Creating Distrobox"
 distrobox create \
   --nvidia \
+  --pull \
   --init \
   --home "$CONTAINER_HOME_DIRECTORY" \
   --additional-packages \
