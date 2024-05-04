@@ -6,7 +6,6 @@ yay --sync --refresh --needed --noconfirm \
   cmake \
   gcc-fortran \
   imagemagick \
-  pandoc \
   rstudio-server-bin
 
 echo "Starting RStudio Server"

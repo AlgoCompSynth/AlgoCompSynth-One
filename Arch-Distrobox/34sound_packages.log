@@ -1,0 +1,9 @@
+
+Installing:
+ [1] "audio"        "caracas"      "fractional"   "gm"           "monitoR"      "music"        "NatureSounds"
+ [8] "numbers"      "phonTools"    "seewave"      "signal"       "soundecology" "soundgen"     "tabr"        
+[15] "tuneR"        "warbleR"     
+also installing the dependencies ‘minqa’, ‘nloptr’, ‘RcppEigen’, ‘xts’, ‘TTR’, ‘colorspace’, ‘backports’, ‘lme4’, ‘numDeriv’, ‘quadprog’, ‘quantmod’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’, ‘broom’, ‘cowplot’, ‘Deriv’, ‘modelr’, ‘microbenchmark’, ‘pbkrtest’, ‘gsw’, ‘permute’, ‘proxy’, ‘iterators’, ‘tseries’, ‘RcppArmadillo’, ‘tidyselect’, ‘gtable’, ‘isoband’, ‘scales’, ‘bitops’, ‘moments’, ‘doBy’, ‘magick’, ‘pracma’, ‘oce’, ‘ineq’, ‘vegan’, ‘shinyBS’, ‘zoo’, ‘mvtnorm’, ‘dtw’, ‘shinyjs’, ‘foreach’, ‘doParallel’, ‘nonlinearTseries’, ‘dplyr’, ‘ggplot2’, ‘tidyr’, ‘fftw’, ‘pbapply’, ‘RCurl’, ‘rjson’, ‘bioacoustics’
+
+1145.27user 67.84system 9:27.10elapsed 213%CPU (0avgtext+0avgdata 1783172maxresident)k
+496inputs+501576outputs (53major+25962780minor)pagefaults 0swaps
