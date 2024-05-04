@@ -15,6 +15,7 @@ yay --sync --refresh --needed --noconfirm \
   fluidsynth \
   freepats-general-midi \
   libsoxr \
+  mp3splt \
   musescore \
   pd \
   pd-externals \
