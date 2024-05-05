@@ -2,7 +2,5 @@
 
 set -e
 
-yay torchaudio
-
 yay --sync --refresh --needed \
-  torchaudio
+  python-torchaudio

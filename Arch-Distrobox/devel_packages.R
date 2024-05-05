@@ -7,7 +7,6 @@ required_packages <- c(
   "data.table",
   "devtools",
   "distill",
-  "IRkernel",
   "quarto",
   "reticulate"
 )

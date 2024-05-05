@@ -13,7 +13,6 @@ options(warn=2)
 already_installed <- rownames(installed.packages())
 required_packages <- c(
   "audio",
-  "caracas",
   "fractional",
   "gm",
   "monitoR",
@@ -34,3 +33,4 @@ cat("\nInstalling:\n")
 print(to_install)
 install.packages(to_install, quiet = TRUE, repos = "https://cloud.r-project.org/")
 warnings()
+# "caracas",

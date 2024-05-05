@@ -16,6 +16,7 @@ echo "Testing PyTorch"
 ./test-pytorch.py
 
 echo "Installing R kernel"
+Rscript -e "install.packages('IRkernel', quiet = TRUE)"
 Rscript -e "IRkernel::installspec()"
 
 echo "Finished"
