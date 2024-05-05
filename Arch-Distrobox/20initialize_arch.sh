@@ -2,9 +2,6 @@
 
 set -e
 
-echo "Ranking mirrors"
-./rank-mirrors.sh
-
 echo "Initializing pacman key"
 sudo pacman-key --init
 
@@ -31,5 +28,8 @@ then
 fi
 echo "Updating yay search database"
 yay --files --refresh
+
+echo "Updating locate database"
+sudo updatedb
 
 echo "Finished"
