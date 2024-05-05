@@ -4,12 +4,13 @@ set -e
 
 if [ ! -x /usr/sbin/yay ]
 then
-  echo "Installing yay"
   pushd /tmp
   rm -fr yay
-  git clone https://aur.archlinux.org/yay.git
+  echo "Cloning repository"
+  git clone https://aur.archlinux.org/yay.git > yay_clone.log 2>&1
   cd yay
-  makepkg -si
+  echo "Compiling yay"
+  makepkg -si 2>&1 | tee yay_build.log
   yay --version
   popd
 fi
