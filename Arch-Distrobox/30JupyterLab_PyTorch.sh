@@ -20,5 +20,3 @@ Rscript -e "install.packages('IRkernel', quiet = TRUE)"
 Rscript -e "IRkernel::installspec()"
 
 echo "Finished"
-  #python-kaldi-io \
-  #python-torchaudio

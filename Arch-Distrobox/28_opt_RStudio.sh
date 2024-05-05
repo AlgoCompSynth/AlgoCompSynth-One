@@ -1,8 +1,10 @@
 #! /usr/bin/env bash
 
 set -e
-yay --sync --refresh --needed \
-  rstudio-server-bin
+
+/usr/bin/time yay --sync --refresh --needed --noconfirm \
+  rstudio-server-bin \
+  > rstudio-server.log 2>&1
 
 echo "Starting RStudio Server"
 sleep 5
