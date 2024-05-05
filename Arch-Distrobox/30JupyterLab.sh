@@ -1,9 +1,8 @@
 #! /usr/bin/env bash
 
 echo "Installing JupyterLab stack"
-yay --sync --refresh --needed --noconfirm \
+sudo pacman --sync --refresh --needed --noconfirm \
   jupyterlab \
-  python-kaldi-io \
   python-matplotlib \
   python-numba \
   python-pandas \
@@ -11,7 +10,7 @@ yay --sync --refresh --needed --noconfirm \
   python-scikit-learn \
   python-scipy \
   python-sympy \
-  python-torchaudio
+  torchvision-cuda
 
 echo "Testing PyTorch"
 ./test-pytorch.py
@@ -20,3 +19,5 @@ echo "Installing R kernel"
 Rscript -e "IRkernel::installspec()"
 
 echo "Finished"
+  #python-kaldi-io \
+  #python-torchaudio

@@ -9,27 +9,10 @@ echo "Initializing pacman key"
 sudo pacman-key --init
 
 echo "Updating packages"
-sudo pacman -Syu
-
-if [ ! -x /usr/sbin/yay ]
-then
-  echo "Installing yay"
-  pushd /tmp
-  rm -fr yay
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
-  makepkg -si
-  yay --version
-  popd
-fi
-
-echo "Setting makepkg.conf make jobs to `nproc`"
-diff makepkg.conf /etc/makepkg.conf || true
-sudo cp makepkg.conf /etc/makepkg.conf
+sudo pacman --sync --refresh --sysupgrade
 
 echo "Updating package search databases"
-sudo pacman -Fy
-yay -Fy
+sudo pacman --files --refresh
 
 echo "Setting .Rprofile"
 cp Rprofile $HOME/.Rprofile
