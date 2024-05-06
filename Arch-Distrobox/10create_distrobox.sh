@@ -35,7 +35,7 @@ distrobox create \
   --init \
   --home "$CONTAINER_HOME_DIRECTORY" \
   --additional-packages \
-    "systemd base-devel blas-openblas cmake gcc-fortran git git-lfs go imagemagick opencl-nvidia plocate r reflector time tree vim"
+    "systemd base-devel blas-openblas cmake gcc-fortran git git-lfs go imagemagick opencl-nvidia r reflector time tree vim"
 echo "Current distroboxes"
 distrobox list
 
