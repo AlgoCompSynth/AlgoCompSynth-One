@@ -11,22 +11,44 @@ echo "Installing Linux music tools"
   csound \
   faust \
   ffmpeg \
+  fftw-openmpi \
   flac \
   fluidsynth \
   freepats-general-midi \
+  imagemagick \
+  intel-compute-runtime \
+  intel-media-driver \
+  liblo \
   libsoxr \
+  libva-vdpau-driver \
+  libvdpau-va-gl \
+  mesa-vdpau \
   mp3splt \
   musescore \
+  nvidia-settings \
+  nvidia-utils \
+  nvtop \
+  openmpi \
+  openmpi-docs \
   pd \
   pd-externals \
+  pipewire-docs \
   pipewire-jack \
   polyphone \
+  realtime-privileges \
+  rtmidi \
+  rtmidi-docs \
   sc3-plugins \
   soundfont-fluid \
   sox \
+  stk \
+  stk-docs \
   supercollider \
   timidity++ \
+  vdpauinfo \
   vim-csound \
   > Logs/24_linux_music.log 2>&1
 
+echo "Adding $USER to the realtime group"
+sudo usermod --append --groups realtime $USER
 echo "Finished"

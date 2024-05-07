@@ -2,6 +2,9 @@
 
 echo "Installing JupyterLab PyTorch stack"
 /usr/bin/time sudo pacman --sync --refresh --needed --noconfirm \
+  cuda \
+  cuda-tools \
+  cudnn \
   jupyterlab \
   python-matplotlib \
   python-numba \
@@ -20,9 +23,8 @@ echo "Installing R kernel"
 Rscript -e "install.packages('IRkernel', quiet = TRUE)"
 Rscript -e "IRkernel::installspec()"
 
-echo "Installing Kaldi and torchaudio"
+echo "Installing torchaudio"
 /usr/bin/time yay --sync --refresh --needed --noconfirm \
-  python-kaldi-io \
   python-torchaudio \
   >> Logs/40_JupyterLab_PyTorch_CUDA.log 2>&1
 

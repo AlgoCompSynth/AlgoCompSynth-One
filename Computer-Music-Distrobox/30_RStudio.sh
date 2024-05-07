@@ -4,6 +4,8 @@ set -e
 
 echo "Installing RStudio Server and Quarto CLI - this takes some time"
 /usr/bin/time yay --sync --refresh --needed --noconfirm \
+  pandoc-cli \
+  pandoc-crossref \
   rstudio-server-bin \
   quarto-cli-bin \
   > Logs/30RStudio.log 2>&1

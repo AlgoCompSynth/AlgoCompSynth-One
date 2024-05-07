@@ -30,7 +30,7 @@ distrobox create \
   --nvidia \
   --init \
   --additional-packages \
-    "blas-openblas cmake gcc-fortran git-lfs go intel-compute-runtime imagemagick libvdpau-va-gl mesa-vdpau ninja nvidia-settings nvidia-utils nvtop opencl-nvidia r reflector speedtest-cli vim"
+    "blas-openblas cmake egl-wayland gcc-fortran git-lfs go libva-vdpau-driver ninja nvidia-settings nvidia-utils opencl-nvidia r reflector speedtest-cli vim"
 cp -rp $HOME/.ssh ${DBX_CONTAINER_HOME_PREFIX}/${DBX_CONTAINER_NAME}
 
 echo "All the distroboxes:"
@@ -38,9 +38,3 @@ distrobox list
 
 echo "Entering ${DBX_CONTAINER_NAME}"
 distrobox enter ${DBX_CONTAINER_NAME}
-
-
-    libvdpau-va-gl: driver using VAAPI
-    mesa-vdpau: driver for Mesa
-    nvidia-utils: driver for NVIDIA
-
