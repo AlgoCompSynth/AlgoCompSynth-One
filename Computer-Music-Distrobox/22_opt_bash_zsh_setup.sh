@@ -30,8 +30,4 @@ cp misc/p10k.zsh $HOME/.p10k.zsh
 echo "Setting default shell for $USER to zsh"
 sudo usermod --shell /usr/bin/zsh $USER
 
-echo "Creating $HOME/.local/bin and $HOME/bin"
-mkdir --parents $HOME/.local/bin
-mkdir --parents $HOME/bin
-
 echo "Finished"

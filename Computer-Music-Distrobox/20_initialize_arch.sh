@@ -31,7 +31,14 @@ yay --files --refresh
 echo "Updating locate database"
 sudo updatedb
 
+echo "Creating $HOME/.local/bin and $HOME/bin"
+mkdir --parents $HOME/.local/bin
+mkdir --parents $HOME/bin
+
 echo "Creating $HOME/Projects directory"
 mkdir --parents $HOME/Projects
+
+echo "Copying utility scripts to $HOME"
+cp misc/vimrc* edit-me-then-run-4-git-config.sh start_jupyter_lab.sh $HOME/
 
 echo "Finished"
