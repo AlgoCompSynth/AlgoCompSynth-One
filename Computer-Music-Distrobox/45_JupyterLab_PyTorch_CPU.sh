@@ -21,7 +21,7 @@ Rscript -e "install.packages('IRkernel', quiet = TRUE)"
 Rscript -e "IRkernel::installspec()"
 
 echo "Installing Kaldi and torchaudio"
-/usr/bin/time yay --sync --refresh --needed \
+/usr/bin/time yay --sync --refresh --needed --noconfirm \
   python-kaldi-io \
   python-torchaudio \
   >> Logs/45_JupyterLab_PyTorch_CPU.log 2>&1

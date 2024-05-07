@@ -29,7 +29,7 @@ echo "Creating new distrobox"
 distrobox create \
   --init \
   --additional-packages \
-    "blas-openblas cmake gcc-fortran git-lfs go imagemagick ninja r reflector speedtest-cli vim"
+    "blas-openblas cmake gcc-fortran git-lfs go imagemagick intel-compute-runtime libvdpau-va-gl mesa-vdpau ninja nvidia-settings nvidia-utils nvtop opencl-nvidia r reflector speedtest-cli vim"
 cp -rp $HOME/.ssh ${DBX_CONTAINER_HOME_PREFIX}/${DBX_CONTAINER_NAME}
 
 echo "All the distroboxes:"

@@ -8,7 +8,6 @@ print("torch version", torch.__version__)
 print('CUDA available: ' + str(torch.cuda.is_available()))
 print('cuDNN version: ' + str(torch.backends.cudnn.version()))
 print("CUDA device count:", torch.cuda.device_count())
-print("current CUDA device:", torch.cuda.current_device())
 
 print("")
 import torchvision
