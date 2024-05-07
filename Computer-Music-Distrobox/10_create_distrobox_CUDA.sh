@@ -2,7 +2,7 @@
 
 set -e
 
-export DBX_CONTAINER_NAME="${1:-CMD}"
+export DBX_CONTAINER_NAME="${1:-CMD-CUDA}"
 export DBX_CONTAINER_HOME_PREFIX="${2:-$HOME/dbx-homes}"
 export DBX_CONTAINER_IMAGE="${3:-quay.io/toolbx/arch-toolbox:latest}"
 export DBX_CONTAINER_DIRECTORY="${DBX_CONTAINER_HOME_PREFIX}/${DBX_CONTAINER_NAME}"
