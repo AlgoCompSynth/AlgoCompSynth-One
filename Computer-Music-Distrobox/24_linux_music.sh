@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 echo "Installing Linux music tools"
-sudo pacman --sync --refresh --needed --noconfirm \
+/usr/bin/time sudo pacman --sync --refresh --needed --noconfirm \
   audacity \
   audacity-docs \
   chuck \
@@ -26,6 +26,7 @@ sudo pacman --sync --refresh --needed --noconfirm \
   sox \
   supercollider \
   timidity++ \
-  vim-csound
+  vim-csound \
+  > Logs/24_linux_music.log 2>&1
 
 echo "Finished"

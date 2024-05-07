@@ -2,9 +2,6 @@
 
 set -e
 
-echo "Initializing pacman key"
-sudo pacman-key --init
-
 echo "Updating packages"
 sudo pacman --sync --refresh --sysupgrade
 
@@ -14,18 +11,20 @@ sudo pacman --files --refresh
 echo "Setting .Rprofile"
 cp Rprofile $HOME/.Rprofile
 
+echo "Installing 'yay'"
 if [ ! -x /usr/sbin/yay ]
 then
   pushd /tmp
   rm -fr yay
   echo "Cloning repository"
-  git clone https://aur.archlinux.org/yay.git > yay_clone.log 2>&1
+  git clone https://aur.archlinux.org/yay.git
   cd yay
   echo "Compiling yay"
-  makepkg -si 2>&1
+  makepkg -si
   yay --version
   popd
 fi
+
 echo "Updating yay search database"
 yay --files --refresh
 

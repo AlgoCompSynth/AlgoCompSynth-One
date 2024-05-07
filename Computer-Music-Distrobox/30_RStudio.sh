@@ -2,9 +2,11 @@
 
 set -e
 
+echo "Installing RStudio Server and Quarto CLI - this takes some time"
 /usr/bin/time yay --sync --refresh --needed --noconfirm \
   rstudio-server-bin \
-  > rstudio-server.log 2>&1
+  quarto-cli-bin \
+  > Logs/30RStudio.log 2>&1
 
 echo "Starting RStudio Server"
 sleep 5

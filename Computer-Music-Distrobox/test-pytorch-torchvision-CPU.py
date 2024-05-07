@@ -9,10 +9,7 @@ print('CUDA available: ' + str(torch.cuda.is_available()))
 print('cuDNN version: ' + str(torch.backends.cudnn.version()))
 print("CUDA device count:", torch.cuda.device_count())
 print("current CUDA device:", torch.cuda.current_device())
-print("CUDA device name:", torch.cuda.get_device_name(torch.cuda.current_device()))
-a = torch.cuda.FloatTensor(2).zero_()
-print('Tensor a = ' + str(a))
-b = torch.randn(2).cuda()
-print('Tensor b = ' + str(b))
-c = a + b
-print('Tensor c = ' + str(c))
+
+print("")
+import torchvision
+print("torchvision import successful")

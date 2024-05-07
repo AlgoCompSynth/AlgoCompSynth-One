@@ -12,11 +12,12 @@ sudo pacman --sync --refresh --needed --noconfirm \
   zsh-doc \
   zsh-history-substring-search \
   zsh-lovers \
-  zsh-syntax-highlighting
+  zsh-syntax-highlighting \
+  > Logs/powerlevel10k.log 2>&1
 /usr/bin/time yay --sync --refresh --needed --noconfirm \
   ttf-meslo-nerd-font-powerlevel10k \
   zsh-theme-powerlevel10k \
-  > powerlevel10.log 2>&1
+  >> Logs/powerlevel10k.log 2>&1
 
 echo "Setting shell control files"
 cp bashrc $HOME/.bashrc
