@@ -20,13 +20,10 @@ echo "Installing Linux music tools"
   intel-media-driver \
   liblo \
   libsoxr \
-  libva-vdpau-driver \
   libvdpau-va-gl \
   mesa-vdpau \
   mp3splt \
   musescore \
-  nvidia-settings \
-  nvidia-utils \
   nvtop \
   openmpi \
   openmpi-docs \
