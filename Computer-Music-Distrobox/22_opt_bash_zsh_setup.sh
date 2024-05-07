@@ -20,12 +20,12 @@ sudo pacman --sync --refresh --needed --noconfirm \
   >> Logs/powerlevel10k.log 2>&1
 
 echo "Setting shell control files"
-cp bashrc $HOME/.bashrc
-cp bash_aliases $HOME/.bash_aliases
-cp vimrc-dark $HOME/.vimrc
-sudo cp vimrc-dark /root/.vimrc
-cp zshrc $HOME/.zshrc
-cp p10k.zsh $HOME/.p10k.zsh
+cp misc/bashrc $HOME/.bashrc
+cp misc/bash_aliases $HOME/.bash_aliases
+cp misc/vimrc-dark $HOME/.vimrc
+sudo cp misc/vimrc-dark /root/.vimrc
+cp misc/zshrc $HOME/.zshrc
+cp misc/p10k.zsh $HOME/.p10k.zsh
 
 echo "Setting default shell for $USER to zsh"
 sudo usermod --shell /usr/bin/zsh $USER

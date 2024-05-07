@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Installing RStudio Server and Quarto CLI - this takes some time"
+echo "Installing RStudio Server and Quarto CLI"
 /usr/bin/time yay --sync --refresh --needed --noconfirm \
   pandoc-cli \
   pandoc-crossref \

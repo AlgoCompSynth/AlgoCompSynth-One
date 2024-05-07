@@ -9,7 +9,7 @@ echo "Updating pacman search databases"
 sudo pacman --files --refresh
 
 echo "Setting .Rprofile"
-cp Rprofile $HOME/.Rprofile
+cp misc/Rprofile $HOME/.Rprofile
 
 echo "Installing 'yay'"
 if [ ! -x /usr/sbin/yay ]
@@ -30,5 +30,8 @@ yay --files --refresh
 
 echo "Updating locate database"
 sudo updatedb
+
+echo "Creating $HOME/Projects directory"
+mkdir --parents $HOME/Projects
 
 echo "Finished"

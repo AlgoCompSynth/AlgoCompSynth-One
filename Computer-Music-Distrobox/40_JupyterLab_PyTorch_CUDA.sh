@@ -17,7 +17,7 @@ echo "Installing JupyterLab PyTorch stack"
   > Logs/40_JupyterLab_PyTorch_CUDA.log 2>&1
 
 echo "Testing PyTorch"
-./test-pytorch-torchvision-CUDA.py
+misc/test-pytorch-torchvision-CUDA.py
 
 echo "Installing R kernel"
 Rscript -e "install.packages('IRkernel', quiet = TRUE)"
@@ -29,4 +29,4 @@ echo "Installing torchaudio"
   >> Logs/40_JupyterLab_PyTorch_CUDA.log 2>&1
 
 echo "Testing torchaudio"
-./test-torchaudio.py
+misc/test-torchaudio.py
