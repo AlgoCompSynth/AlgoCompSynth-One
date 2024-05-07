@@ -30,7 +30,7 @@ distrobox create \
   --nvidia \
   --init \
   --additional-packages \
-    "blas-openblas cmake cuda cuda-tools cudnn egl-wayland gcc-fortran git-lfs go libva-vdpau-driver ninja nvidia-settings nvidia-utils opencl-nvidia r reflector speedtest-cli vim"
+    "blas-openblas cmake egl-wayland gcc-fortran git-lfs go libva-vdpau-driver ninja nvidia-settings nvidia-utils opencl-nvidia r reflector speedtest-cli vim"
 cp -rp $HOME/.ssh ${DBX_CONTAINER_HOME_PREFIX}/${DBX_CONTAINER_NAME}
 
 echo "All the distroboxes:"

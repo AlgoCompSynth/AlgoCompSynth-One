@@ -2,6 +2,9 @@
 
 echo "Installing JupyterLab PyTorch stack"
 /usr/bin/time sudo pacman --sync --refresh --needed --noconfirm \
+  cuda \
+  cuda-tools \
+  cudnn \
   jupyterlab \
   python-matplotlib \
   python-numba \
