@@ -8,9 +8,6 @@ sudo pacman --sync --refresh --sysupgrade
 echo "Updating pacman search databases"
 sudo pacman --files --refresh
 
-echo "Setting .Rprofile"
-cp misc/Rprofile $HOME/.Rprofile
-
 echo "Installing 'yay'"
 if [ ! -x /usr/sbin/yay ]
 then
@@ -39,6 +36,6 @@ echo "Creating $HOME/Projects directory"
 mkdir --parents $HOME/Projects
 
 echo "Copying utility scripts to $HOME"
-cp misc/vimrc* edit-me-then-run-4-git-config.sh start_jupyter_lab.sh $HOME/
+cp vimrc* edit-me-then-run-4-git-config.sh start_jupyter_lab.sh $HOME/
 
 echo "Finished"

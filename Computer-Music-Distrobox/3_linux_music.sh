@@ -44,7 +44,7 @@ echo "Installing Linux music tools"
   timidity++ \
   vdpauinfo \
   vim-csound \
-  > Logs/24_linux_music.log 2>&1
+  > Logs/3_linux_music.log 2>&1
 
 echo "Adding $USER to the realtime group"
 sudo usermod --append --groups realtime $USER

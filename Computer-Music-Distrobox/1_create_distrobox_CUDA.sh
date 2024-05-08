@@ -2,14 +2,14 @@
 
 set -e
 
-export DBX_CONTAINER_NAME="${1:-CMD-CPU}"
-export DBX_CONTAINER_HOME_PREFIX="${2:-$HOME/dbx-homes}"
-export DBX_CONTAINER_IMAGE="${3:-quay.io/toolbx/arch-toolbox:latest}"
+export DBX_CONTAINER_IMAGE="${1:-quay.io/toolbx/arch-toolbox:latest}"
+export DBX_CONTAINER_NAME="${2:-CMD-CUDA}"
+export DBX_CONTAINER_HOME_PREFIX="${3:-$HOME/dbx-homes}"
 export DBX_CONTAINER_DIRECTORY="${DBX_CONTAINER_HOME_PREFIX}/${DBX_CONTAINER_NAME}"
 
-echo "Distrobox named '$DBX_CONTAINER_NAME' with home directory"
-echo "'$DBX_CONTAINER_DIRECTORY' will be created from image"
-echo "'$DBX_CONTAINER_IMAGE'"
+echo "Installing image '$DBX_CONTAINER_IMAGE'"
+echo "into distrobox named '$DBX_CONTAINER_NAME'"
+echo "with home directory '$DBX_CONTAINER_DIRECTORY'."
 echo ""
 echo "Existing distrobox and home directory will be removed."
 echo ""
@@ -27,9 +27,10 @@ distrobox rm --force ${DBX_CONTAINER_NAME}
 
 echo "Creating new distrobox"
 distrobox create \
+  --nvidia \
   --init \
   --additional-packages \
-    "blas-openblas cmake gcc-fortran git-lfs go ninja r reflector speedtest-cli vim"
+    "blas64-openblas git-lfs go reflector speedtest-cli vim"
 cp -rp $HOME/.ssh ${DBX_CONTAINER_HOME_PREFIX}/${DBX_CONTAINER_NAME}
 
 echo "All the distroboxes:"
