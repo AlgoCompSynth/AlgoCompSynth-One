@@ -4,3 +4,4 @@ import torch
 print("torch import successful")
 import torchvision
 print("torchvision import successful")
+print("")

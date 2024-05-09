@@ -14,3 +14,4 @@ b = torch.randn(2).cuda()
 print('Tensor b = ' + str(b))
 c = a + b
 print('Tensor c = ' + str(c))
+print("")
