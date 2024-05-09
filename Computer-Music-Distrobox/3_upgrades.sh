@@ -3,12 +3,16 @@
 set -e
 
 echo "Updating packages"
-yay --sync --refresh --sysupgrade
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get update -qq && sudo apt-get upgrade -qqy
 
-echo "Updating yay search database"
-yay --files --refresh
+echo "Updating apt-file database"
+sudo apt-file update > /dev/null 2>&1
 
 echo "Updating locate database"
-sudo updatedb
+sudo updatedb > /dev/null 2>&1
+
+echo "Updating manual database"
+sudo mandb > /dev/null 2>&1
 
 echo "Finished"
