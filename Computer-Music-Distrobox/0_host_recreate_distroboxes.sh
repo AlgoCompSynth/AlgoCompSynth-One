@@ -3,6 +3,6 @@
 set -e
 
 echo "Creating distroboxes"
-distrobox assemble create
+distrobox assemble create --replace
 
 echo "Finished"
