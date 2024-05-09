@@ -8,6 +8,12 @@ sudo pacman --sync --refresh --sysupgrade
 echo "Updating pacman search databases"
 sudo pacman --files --refresh
 
+echo "Installing base packages"
+sudo pacman --sync --refresh --sysupgrade --noconfirm \
+  blas64-openblas \
+  go \
+  vim
+
 echo "Installing 'yay'"
 if [ ! -x /usr/sbin/yay ]
 then

@@ -16,12 +16,8 @@ echo "Installing Linux music tools"
   fluidsynth \
   freepats-general-midi \
   imagemagick \
-  intel-compute-runtime \
-  intel-media-driver \
   liblo \
   libsoxr \
-  libvdpau-va-gl \
-  mesa-vdpau \
   mp3splt \
   musescore \
   nvtop \
@@ -29,12 +25,8 @@ echo "Installing Linux music tools"
   openmpi-docs \
   pd \
   pd-externals \
-  pipewire-docs \
-  pipewire-jack \
   polyphone \
   realtime-privileges \
-  rtmidi \
-  rtmidi-docs \
   sc3-plugins \
   soundfont-fluid \
   sox \
@@ -42,7 +34,6 @@ echo "Installing Linux music tools"
   stk-docs \
   supercollider \
   timidity++ \
-  vdpauinfo \
   vim-csound \
   > Logs/3_linux_music.log 2>&1
 
