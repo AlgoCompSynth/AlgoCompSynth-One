@@ -1,4 +1,4 @@
-name: JupyterLab_PyTorch
+name: JupyterLab
 channels:
   - pytorch
   - nvidia
@@ -6,6 +6,7 @@ channels:
   - conda-forge
 dependencies:
   - python
+  - ffmpeg
   - jupyter_server
   - jupyterlab
   - matplotlib
