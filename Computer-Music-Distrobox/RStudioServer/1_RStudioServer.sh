@@ -4,6 +4,7 @@ set -e
 
 echo "Installing RStudio Server and Quarto CLI"
 /usr/bin/time yay --sync --refresh --needed --noconfirm \
+  cmake \
   gcc-fortran \
   pandoc-cli \
   pandoc-crossref \

@@ -1,0 +1,25 @@
+name: JupyterLab_PyTorch
+channels:
+  - pytorch
+  - nvidia
+  - numba
+  - conda-forge
+dependencies:
+  - python
+  - jupyter_server
+  - jupyterlab
+  - matplotlib
+  - numba
+  - numpy
+  - nvitop
+  - pandas
+  - pip
+  - pip:
+    - jupyterlab-quarto
+  - pytorch
+  - pytorch-cuda=12.1
+  - scikit-learn
+  - scipy
+  - sympy
+  - torchaudio
+  - torchvision
