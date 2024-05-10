@@ -1,5 +1,8 @@
 #! /usr/bin/env Rscript
 
+# tools I use for R package development / documentation
+# see https://r-pkgs.org/
+
 # detonate on first uninstallable
 options(warn=2)
 already_installed <- rownames(installed.packages())

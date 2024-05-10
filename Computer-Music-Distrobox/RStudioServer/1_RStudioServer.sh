@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Installing R gdebi-core"
+echo "Installing R and gdebi-core"
 sudo apt-get install -qqy --no-install-recommends \
   gdebi-core \
   r-base \

@@ -2,21 +2,19 @@
 
 set -e
 
-echo "There are two COMPUTE_MODE settings: CUDA for an NVIDIA"
-echo "GPU and CPU for any other system. CUDA is the default."
-echo ""
-echo "To select CPU mode, enter any non-empty string, To stay"
-echo "with the default CUDA, simply press 'Enter'."
-read -p "COMPUTE_MODE?"
-
-if [ "${#REPLY}" -gt "0" ]
+if [[ `hostname` =~ "CPU" ]]
 then
   echo "..Setting COMPUTE_MODE to CPU"
   export COMPUTE_MODE=CPU
-else
+elif [[ `hostname` =~ "CUDA" ]]
+then
   echo "..Setting COMPUTE_MODE to CUDA"
   export COMPUTE_MODE=CUDA
+else 
+  echo "Exit -1024: Cannot determine COMPUTE_MODE from hostname `hostname`"
+  exit -1024
 fi
+
 echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 source $HOME/mambaforge/etc/profile.d/conda.sh
@@ -38,7 +36,7 @@ python ./test-torchvision.py
 echo "Installing R package 'IRkernel'"
 Rscript -e "install.packages('IRkernel', quiet = TRUE)"
 
-echo "Installing kernel"
+echo "Installing R kernel"
 Rscript -e "IRkernel::installspec()"
 
 echo "Finished"
