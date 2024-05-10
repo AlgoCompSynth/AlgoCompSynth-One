@@ -21,10 +21,10 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 source $HOME/mambaforge/etc/profile.d/conda.sh
 
-echo "Creating fresh JupyterLab virtual environment"
+echo "Creating new 'JupyterLab' virtual environment"
 /usr/bin/time conda env create --quiet --yes --file conda-env-$COMPUTE_MODE.yml > ../Logs/2_conda$COMPUTE_MODE.log 2>&1
 
-echo "Activating JupyterLab virtual environment"
+echo "Activating 'JupyterLab' virtual environment"
 conda activate JupyterLab
 
 echo "Listing virtual environment to JupyterLab-list.log"

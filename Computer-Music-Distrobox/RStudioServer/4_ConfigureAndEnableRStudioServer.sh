@@ -2,15 +2,16 @@
 
 set -e
 
-echo "Setting $HOME/.Rprofile"
-cp Rprofile $HOME/.Rprofile
-
 echo "Stopping RStudio Server"
 echo "You can ignore error messages"
 sudo systemctl stop rstudio-server.service || true
 
 echo "Installing configuration file rserver.conf:"
+echo ""
+echo ""
 cat rserver.conf
+echo ""
+echo ""
 sudo mkdir --parents /etc/rstudio
 sudo cp rserver.conf /etc/rstudio/
 

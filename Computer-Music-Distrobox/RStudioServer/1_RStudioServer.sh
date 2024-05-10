@@ -9,6 +9,13 @@ sudo apt-get install -qqy --no-install-recommends \
   r-base-dev \
   > ../Logs/1_RStudioServer.log 2>&1
 
+echo ""
+echo ""
+echo "Setting R profile $HOME/.Rprofile"
+cp Rprofile $HOME/.Rprofile
+echo ""
+echo ""
+
 echo "Stopping and disabling rstudio-server"
 echo "You can ignore error messages"
 sudo systemctl disable --now rstudio-server || true
