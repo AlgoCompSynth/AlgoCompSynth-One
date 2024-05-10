@@ -2,16 +2,19 @@
 
 set -e
 
-if [[ `hostname` =~ "CPU" ]]
+export HOSTNAME=`hostname`
+echo "HOSTNAME: $HOSTNAME"
+
+if [[ "$HOSTNAME" =~ "CPU" ]]
 then
   echo "..Setting COMPUTE_MODE to CPU"
   export COMPUTE_MODE=CPU
-elif [[ `hostname` =~ "CUDA" ]]
+elif [[ "$HOSTNAME" =~ "CUDA" ]]
 then
   echo "..Setting COMPUTE_MODE to CUDA"
   export COMPUTE_MODE=CUDA
 else 
-  echo "Exit -1024: Cannot determine COMPUTE_MODE from hostname `hostname`"
+  echo "Exit -1024: Cannot determine COMPUTE_MODE from hostname "$HOSTNAME""
   exit -1024
 fi
 
