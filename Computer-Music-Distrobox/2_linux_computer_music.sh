@@ -12,21 +12,21 @@ sudo usermod -aG audio $USER
 
 echo ""
 echo "Installing multimedia-tasks"
-sudo apt-get install -qqy --no-install-recommends \
+/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   multimedia-tasks \
   > Logs/2_linux_computer_music.log 2>&1
 
 echo "...ambisonics"
-sudo apt-get install -qqy multimedia-ambisonics > Logs/2_ambisonics.log 2>&1
+/usr/bin/time sudo apt-get install -qqy multimedia-ambisonics > Logs/2_ambisonics.log 2>&1
 
 echo "...csound"
-sudo apt-get install -qqy multimedia-csound > Logs/2_csound.log 2>&1
+/usr/bin/time sudo apt-get install -qqy multimedia-csound > Logs/2_csound.log 2>&1
 
 echo "...puredata"
-sudo apt-get install -qqy multimedia-puredata > Logs/2_puredata.log 2>&1
+/usr/bin/time sudo apt-get install -qqy multimedia-puredata > Logs/2_puredata.log 2>&1
 
 echo "...supercollider"
-sudo apt-get install -qqy multimedia-supercollider > Logs/2_supercollider.log 2>&1
+/usr/bin/time sudo apt-get install -qqy multimedia-supercollider > Logs/2_supercollider.log 2>&1
 
 echo ""
 echo "Installing other tools"
