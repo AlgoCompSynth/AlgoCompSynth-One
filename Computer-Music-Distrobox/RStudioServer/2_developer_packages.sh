@@ -15,9 +15,9 @@ echo "Installing Linux dependencies"
   libpng-dev \
   libtiff5-dev \
   libxml2-dev \
-  > ../Logs/2_developer_packages.log 2>&1
+  > Logs/2_developer_packages.log 2>&1
 
 echo "Installing developer R packages - this takes some time"
-/usr/bin/time ./devel_packages.R >> ../Logs/2_developer_packages.log 2>&1
+/usr/bin/time ./devel_packages.R >> Logs/2_developer_packages.log 2>&1
 
 echo "Finished"

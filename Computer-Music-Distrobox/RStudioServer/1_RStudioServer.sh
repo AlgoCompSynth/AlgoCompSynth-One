@@ -19,7 +19,7 @@ sudo apt-get install -qqy --no-install-recommends \
   gdebi-core \
   r-base \
   r-base-dev \
-  > ../Logs/1_RStudioServer.log 2>&1
+  > Logs/1_RStudioServer.log 2>&1
 echo ""
 echo "R --version: `R --version`"
 echo ""
