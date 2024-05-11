@@ -2,12 +2,28 @@
 
 set -e
 
+echo "Getting signing key"
+# https://cran.rstudio.com/bin/linux/debian/#secure-apt
+gpg --keyserver keyserver.ubuntu.com \
+  --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
+gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | \
+  sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
+
+echo "Adding CRAN repository"
+# https://cran.rstudio.com/bin/linux/debian/#debian-bookworm
+sudo cp bookworm.list /etc/apt/sources.list.d/
+sudo apt-get update -qq
+
 echo "Installing R and gdebi-core"
 sudo apt-get install -qqy --no-install-recommends \
   gdebi-core \
   r-base \
   r-base-dev \
   > ../Logs/1_RStudioServer.log 2>&1
+echo ""
+echo "R --version: `R --version`"
+echo ""
+echo ""
 
 echo "Setting R profile $HOME/.Rprofile"
 cp Rprofile $HOME/.Rprofile
