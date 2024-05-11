@@ -50,4 +50,7 @@ wget --quiet https://github.com/quarto-dev/quarto-cli/releases/download/v$QUARTO
 sudo dpkg -i quarto-$QUARTO_VERSION-linux-amd64.deb
 popd
 
-echo "Finished"
+echo "Setting password for $USER - RStudio Server needs it"
+sudo passwd $USER
+
+echo "Finished!"

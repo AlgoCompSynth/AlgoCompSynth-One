@@ -23,7 +23,4 @@ sudo cp rserver.conf /etc/rstudio/
 echo "Enabling / starting RStudio Server"
 sudo systemctl enable --now rstudio-server.service 
 
-echo "Setting password for $USER - RStudio Server needs it"
-sudo passwd $USER
-
 echo "Finished!"
