@@ -3,7 +3,7 @@
 set -e
 
 echo "Installing Linux dependencies"
-sudo apt-get install -qqy --no-install-recommends \
+/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   libcurl4-openssl-dev \
   libfontconfig1-dev \
   libfreetype6-dev \
