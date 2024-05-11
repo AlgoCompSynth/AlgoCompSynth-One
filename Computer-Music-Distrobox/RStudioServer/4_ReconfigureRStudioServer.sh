@@ -3,9 +3,9 @@
 set -e
 
 echo "When the RStudio Server package was installed,"
-echo "the system enableds and started the service."
-echo "So we need to stop it to modify the configuration"
-echo "and then restart it."
+echo "the installer enabled and started the service."
+echo "So we need to stop it before modifying the"
+echo "configuration and then restart it."
 echo ""
 echo "You can ignore error messages"
 sudo systemctl stop rstudio-server.service || true

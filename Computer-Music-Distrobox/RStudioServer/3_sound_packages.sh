@@ -5,6 +5,8 @@ set -e
 echo "Installing Linux dependencies"
 sudo apt-get install -qqy --no-install-recommends \
   cmake \
+  libfftw3-dev \
+  libfftw3-doc \
   > ../Logs/3_sound_packages.log 2>&1
 
 echo "Installing sound R packages - this takes some time"
