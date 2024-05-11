@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Installing jackd2 - selecting "Yes" for real-time priority is recommended"
+echo "Installing jackd2"
 sleep 10
 sudo apt-get install -qqy --no-install-recommends jackd2
 
@@ -51,6 +51,10 @@ echo "Installing other tools"
   musescore \
   polyphone \
   sf3convert \
+  sonic-pi \
+  sonic-pi-samples  \
+  sonic-pi-server  \
+  sonic-pi-server-doc \
   sox \
   stk \
   stk-doc \
