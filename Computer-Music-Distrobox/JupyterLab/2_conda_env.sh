@@ -36,6 +36,10 @@ python ./test-pytorch-$COMPUTE_MODE.py
 python ./test-torchaudio.py
 python ./test-torchvision.py
 
+echo "Installing R package 'caracas'"
+Rscript -e "install.packages('caracas', quiet = TRUE)"
+
+
 echo "Installing R package 'IRkernel'"
 Rscript -e "install.packages('IRkernel', quiet = TRUE)"
 
